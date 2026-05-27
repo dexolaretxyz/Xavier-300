@@ -4,7 +4,7 @@ import { Resend } from 'resend';
 import dotenv from 'dotenv';
 dotenv.config({ path: '../../.env' }); // Load root .env
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy_123456789');
 const JWT_SECRET = process.env.JWT_SECRET || 'fallback_secret_do_not_use_in_prod';
 const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET || 'fallback_refresh_do_not_use_in_prod';
 

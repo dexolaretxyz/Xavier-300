@@ -4,6 +4,11 @@ import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth.routes';
+import domainRoutes from './routes/domain.routes';
+import userRoutes from './routes/user.routes';
+import examRoutes from './routes/exam.routes';
+import { leaderboardRoutes } from './routes/leaderboard.routes';
+import { initLeaderboardJob } from './jobs/leaderboard.job';
 
 dotenv.config({ path: '../../.env' }); // Load root .env
 
@@ -27,6 +32,10 @@ const authLimiter = rateLimit({
 
 // Routes
 app.use('/auth', authLimiter, authRoutes);
+app.use('/domains', domainRoutes);
+app.use('/users', userRoutes);
+app.use('/exams', examRoutes);
+app.use('/leaderboard', leaderboardRoutes);
 
 // Health check endpoint
 app.get('/health', (req, res) => {
@@ -42,6 +51,8 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`Xavier 300 API is running on http://localhost:${PORT}`);
+    // Initialize BullMQ jobs
+    initLeaderboardJob().catch(err => console.error('Failed to init leaderboard job:', err));
   });
 }
 

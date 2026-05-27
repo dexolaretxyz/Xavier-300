@@ -36,6 +36,7 @@ model User {
   questionContributions Question[]
   payments          Payment[]
   weeklyScore       WeeklyScore?
+  leaderboardWins   LeaderboardArchive[]
 }
 
 enum Role {
@@ -170,6 +171,17 @@ model WeeklyScore {
   examsCount  Int      @default(0)
   avgScore    Float    @default(0)
   updatedAt   DateTime @updatedAt
+}
+
+model LeaderboardArchive {
+  id          String   @id @default(cuid())
+  weekStart   DateTime
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  rank        Int
+  avgScore    Float
+  examsCount  Int
+  createdAt   DateTime @default(now())
 }
 
 model SupportTicket {
