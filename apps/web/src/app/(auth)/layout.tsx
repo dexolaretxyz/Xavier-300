@@ -1,44 +1,50 @@
-import React from 'react';
-import { ThemeToggle } from '@/components/theme-toggle';
+"use client";
+
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { Sun, Moon } from 'lucide-react';
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="min-h-screen flex w-full">
-      {/* Left Side: Brand Display (Hidden on Mobile) */}
-      <div className="hidden lg:flex w-1/2 bg-[var(--bg-secondary)] flex-col justify-center items-center p-12 relative border-r border-[var(--border-subtle)]">
-        {/* Abstract X mark could be an SVG here */}
-        <div className="text-center max-w-lg">
-          <h1 className="text-[var(--text-hero)] font-display font-bold text-[var(--text-primary)] leading-none mb-6">
-            Xavier 300
-          </h1>
-          <p className="text-[var(--text-title)] font-display text-[var(--text-secondary)] italic">
-            "Practice like it's real. Pass like you prepared."
-          </p>
-        </div>
-      </div>
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
-      {/* Right Side: Auth Forms */}
-      <div className="w-full lg:w-1/2 flex flex-col bg-[var(--bg-primary)] relative">
-        <div className="absolute top-6 right-6 z-10">
-          <ThemeToggle />
-        </div>
-        
-        <div className="flex-1 flex flex-col justify-center items-center p-8 sm:p-12">
-          <div className="w-full max-w-md">
-            {/* Mobile Header (Only visible on small screens) */}
-            <div className="lg:hidden text-center mb-8">
-              <h1 className="text-4xl font-display font-bold text-[var(--text-primary)] mb-2">
-                Xavier 300
-              </h1>
-              <p className="text-[var(--text-secondary)] font-display italic">
-                "Practice like it's real. Pass like you prepared."
-              </p>
-            </div>
-            
-            {children}
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme as 'light' | 'dark');
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+  };
+
+  return (
+    <div className="min-h-screen flex flex-col bg-[var(--bg-primary)]">
+      {/* Fixed Header */}
+      <header className="fixed top-0 w-full z-50 flex items-center justify-between p-6">
+        <Link href="/" className="flex items-center gap-2 group">
+          <div className="w-8 h-8 rounded-lg bg-[var(--accent-primary)] text-white flex items-center justify-center font-display font-bold text-xl group-hover:bg-[var(--accent-hover)] transition-colors">
+            X
           </div>
-        </div>
-      </div>
+          <span className="font-display font-bold text-[var(--text-primary)] text-xl tracking-tight hidden sm:block">
+            Xavier 300
+          </span>
+        </Link>
+        
+        <button
+          onClick={toggleTheme}
+          className="p-2 rounded-full bg-[var(--bg-elevated)] border border-[var(--border-subtle)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] shadow-sm transition-colors"
+        >
+          {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+        </button>
+      </header>
+
+      {/* Main Content */}
+      <main className="flex-1 w-full flex">
+        {children}
+      </main>
     </div>
   );
 }

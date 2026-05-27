@@ -2,7 +2,8 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { Resend } from 'resend';
 import dotenv from 'dotenv';
-dotenv.config({ path: '../../.env' }); // Load root .env
+import path from 'path';
+dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
 const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy_123456789');
 const JWT_SECRET = process.env.JWT_SECRET || 'fallback_secret_do_not_use_in_prod';
@@ -39,7 +40,7 @@ export const authService = {
       });
     } catch (error) {
       console.error('Error sending email:', error);
-      // In dev environment without real Resend key, we might fail silently or log
+      throw new Error(`Failed to send verification email: ${error}`);
     }
   },
 

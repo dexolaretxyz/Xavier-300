@@ -3,7 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
-import authRoutes from './routes/auth.routes';
+import { authRouter } from './routes/auth.routes';
 import domainRoutes from './routes/domain.routes';
 import userRoutes from './routes/user.routes';
 import examRoutes from './routes/exam.routes';
@@ -15,42 +15,43 @@ dotenv.config({ path: '../../.env' }); // Load root .env
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-// Security and utility middleware
+// Middleware
 app.use(helmet());
-app.use(cors({
-  origin: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
-  credentials: true,
-}));
+app.use(cors({ origin: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000', credentials: true }));
 app.use(express.json());
 
-// Rate limitings
 const authLimiter = rateLimit({
-  windowMs: 1 * 60 * 1000, // 1 minute
-  max: 10, // 10 requests per minute per IP
+  windowMs: 1 * 60 * 1000,
+  max: 10,
   message: { success: false, error: { code: 'RATE_LIMIT_EXCEEDED', message: 'Too many requests to auth endpoints. Please try again later.' } }
 });
 
-// Routes
-app.use('/auth', authLimiter, authRoutes);
-app.use('/domains', domainRoutes);
-app.use('/users', userRoutes);
-app.use('/exams', examRoutes);
-app.use('/leaderboard', leaderboardRoutes);
-
-// Health check endpoint
+// Health check
 app.get('/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+  res.json({ success: true, message: 'Xavier 300 API is running' });
 });
 
-// Error handling middleware
-app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
-  console.error('Unhandled error:', err);
-  res.status(500).json({ success: false, error: { code: 'INTERNAL_SERVER_ERROR', message: 'An unexpected error occurred' } });
+// Routes — MUST be mounted here
+app.use('/api/auth', authLimiter, authRouter);
+app.use('/api/domains', domainRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/exams', examRoutes);
+app.use('/api/leaderboard', leaderboardRoutes);
+
+// 404 handler
+app.use((req, res) => {
+  res.status(404).json({ success: false, error: { code: 'NOT_FOUND', message: 'Route not found' } });
+});
+
+// Global error handler
+app.use((err: any, req: any, res: any, next: any) => {
+  console.error(err.stack);
+  res.status(500).json({ success: false, error: { code: 'SERVER_ERROR', message: 'Internal server error' } });
 });
 
 if (require.main === module) {
   app.listen(PORT, () => {
-    console.log(`Xavier 300 API is running on http://localhost:${PORT}`);
+    console.log(`Xavier 300 API running on port ${PORT}`);
     // Initialize BullMQ jobs
     initLeaderboardJob().catch(err => console.error('Failed to init leaderboard job:', err));
   });

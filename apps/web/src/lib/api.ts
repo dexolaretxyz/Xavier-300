@@ -1,11 +1,9 @@
 import axios from 'axios';
-import Cookies from 'js-cookie';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
 
 export const api = axios.create({
   baseURL: API_URL,
-  withCredentials: true, // If we decide to use HttpOnly cookies later
   headers: {
     'Content-Type': 'application/json',
   },
@@ -13,9 +11,11 @@ export const api = axios.create({
 
 api.interceptors.request.use(
   (config) => {
-    const token = Cookies.get('accessToken');
-    if (token && config.headers) {
-      config.headers.Authorization = `Bearer ${token}`;
+    if (typeof window !== 'undefined') {
+      const token = localStorage.getItem('xavier_access_token');
+      if (token && config.headers) {
+        config.headers.Authorization = `Bearer ${token}`;
+      }
     }
     return config;
   },
@@ -42,7 +42,7 @@ api.interceptors.response.use(
     const originalRequest = error.config;
 
     if (error.response?.status === 401 && !originalRequest._retry) {
-      if (originalRequest.url?.includes('/auth/login') || originalRequest.url?.includes('/auth/refresh')) {
+      if (originalRequest.url?.includes('/api/auth/login') || originalRequest.url?.includes('/api/auth/refresh')) {
         return Promise.reject(error);
       }
 
@@ -62,21 +62,26 @@ api.interceptors.response.use(
       originalRequest._retry = true;
       isRefreshing = true;
 
-      const refreshToken = Cookies.get('refreshToken');
+      const refreshToken = typeof window !== 'undefined' ? localStorage.getItem('xavier_refresh_token') : null;
       if (!refreshToken) {
         isRefreshing = false;
-        // Redirect to login if running in browser
         if (typeof window !== 'undefined') {
+          localStorage.removeItem('xavier_access_token');
+          localStorage.removeItem('xavier_refresh_token');
+          document.cookie = 'xavier_access_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
           window.location.href = '/login';
         }
         return Promise.reject(error);
       }
 
       try {
-        const { data } = await axios.post(`${API_URL}/auth/refresh`, { refreshToken });
+        const { data } = await axios.post(`${API_URL}/api/auth/refresh`, { refreshToken });
         const newAccessToken = data.data.accessToken;
 
-        Cookies.set('accessToken', newAccessToken, { secure: process.env.NODE_ENV === 'production', sameSite: 'strict' });
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('xavier_access_token', newAccessToken);
+          document.cookie = `xavier_access_token=${newAccessToken}; path=/; max-age=900`;
+        }
         
         api.defaults.headers.common['Authorization'] = `Bearer ${newAccessToken}`;
         originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
@@ -85,9 +90,10 @@ api.interceptors.response.use(
         return api(originalRequest);
       } catch (refreshError) {
         processQueue(refreshError, null);
-        Cookies.remove('accessToken');
-        Cookies.remove('refreshToken');
         if (typeof window !== 'undefined') {
+          localStorage.removeItem('xavier_access_token');
+          localStorage.removeItem('xavier_refresh_token');
+          document.cookie = 'xavier_access_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
           window.location.href = '/login';
         }
         return Promise.reject(refreshError);
