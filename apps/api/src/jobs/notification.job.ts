@@ -1,5 +1,5 @@
 import { Queue, Worker, Job } from 'bullmq';
-import { prisma } from '../../../../packages/db/index';
+import prisma from '../lib/db';
 import { notificationService } from '../services/notification.service';
 import IORedis from 'ioredis';
 

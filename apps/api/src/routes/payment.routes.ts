@@ -1,7 +1,7 @@
 import express from 'express';
 import { authenticate, AuthRequest } from '../middleware/auth.middleware';
 import { paymentService } from '../services/payment.service';
-import { prisma } from '../../../../packages/db/index';
+import prisma from '../lib/db';
 
 const router = express.Router();
 

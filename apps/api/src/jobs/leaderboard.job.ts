@@ -1,5 +1,5 @@
 import cron from 'node-cron';
-import { prisma } from '../../../../packages/db/index';
+import prisma from '../lib/db';
 
 // Runs every Monday at 00:00 WAT (Africa/Lagos timezone)
 export const initLeaderboardJob = () => {

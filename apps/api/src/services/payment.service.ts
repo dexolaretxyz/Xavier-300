@@ -1,5 +1,5 @@
 import crypto from 'crypto';
-import { prisma } from '../../../../packages/db/index';
+import prisma from '../lib/db';
 
 export const paymentService = {
   // Initiates a transaction with Paystack

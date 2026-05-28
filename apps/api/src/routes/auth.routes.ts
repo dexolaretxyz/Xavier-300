@@ -1,6 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { z } from 'zod';
-import { prisma } from '../../../../packages/db/index';
+import prisma from '../lib/db';
 import { authService } from '../services/auth.service';
 import jwt from 'jsonwebtoken';
 

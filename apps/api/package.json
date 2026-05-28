@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
-    "build": "tsc",
+    "build": "prisma generate --schema=../../packages/db/prisma/schema.prisma && tsc",
     "start": "node dist/apps/api/src/index.js"
   },
   "keywords": [],
@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.99.0",
-    "@prisma/client": "^7.8.0",
+    "@prisma/client": "^5.15.0",
     "@sentry/node": "^10.55.0",
     "@sentry/profiling-node": "^10.55.0",
     "bcryptjs": "^3.0.3",
@@ -41,6 +41,7 @@
     "@types/node": "^25.9.1",
     "@types/node-cron": "^3.0.11",
     "@types/web-push": "^3.6.4",
+    "prisma": "^5.15.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^6.0.3"
   }

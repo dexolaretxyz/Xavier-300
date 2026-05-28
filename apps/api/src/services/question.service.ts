@@ -1,5 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk';
-import { prisma } from '../../../../packages/db/index';
+import prisma from '../lib/db';
 
 export const questionService = {
   

@@ -1,6 +1,6 @@
 import webpush from 'web-push';
 import { Resend } from 'resend';
-import { prisma } from '../../../../packages/db/index';
+import prisma from '../lib/db';
 import { Prisma } from '@prisma/client';
 
 // Initialize Web Push

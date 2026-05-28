@@ -1,7 +1,7 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { z } from 'zod';
 import { authenticate } from '../middleware/auth.middleware';
-import { prisma } from '../../../../packages/db/index';
+import prisma from '../lib/db';
 import { questionService } from '../services/question.service';
 import { notificationService } from '../services/notification.service';
 
