@@ -2,38 +2,37 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { api } from '@/lib/api';
 
-export type ExamStatus = 'IDLE' | 'IN_PROGRESS' | 'PAUSED' | 'SUBMITTING' | 'COMPLETED' | 'ERROR';
-
-export interface ExamQuestion {
+interface Question {
   id: string;
   text: string;
   options: Record<string, string>;
 }
 
 interface ExamState {
+  // Session data
   attemptId: string | null;
   sessionToken: string | null;
-  questions: ExamQuestion[];
+  questions: Question[];
+  examDuration: number;
+  
+  // Progress
   currentIndex: number;
-  answers: Record<string, string>;
-  flags: Record<string, boolean>;
+  answers: Record<string, string>; // questionId -> selectedOptionKey
   timeRemaining: number; // in seconds
-  status: ExamStatus;
-  integrityFlags: number;
+  flags: Record<string, boolean>; // questionId -> isFlagged
+  status: 'IDLE' | 'IN_PROGRESS' | 'PAUSED' | 'SUBMITTING' | 'COMPLETED' | 'INTEGRITY_VIOLATION';
   
   // Actions
-  startExam: (attemptId: string, sessionToken: string, questions: ExamQuestion[], durationMins: number) => void;
-  setAnswer: (questionId: string, optionKey: string) => void;
+  initializeSession: (attemptId: string, sessionToken: string, questions: Question[], duration: number) => void;
+  setAnswer: (questionId: string, answer: string) => void;
   toggleFlag: (questionId: string) => void;
   nextQuestion: () => void;
   prevQuestion: () => void;
-  goToQuestion: (index: number) => void;
-  tick: () => void;
-  pauseExam: () => void;
-  resumeExam: () => void;
-  addIntegrityViolation: () => void;
-  submitExam: () => Promise<void>;
-  resetExam: () => void;
+  setCurrentIndex: (index: number) => void;
+  tickTimer: () => void;
+  setStatus: (status: ExamState['status']) => void;
+  clearSession: () => void;
+  submitExam: (integrityFlag?: boolean) => Promise<string>;
 }
 
 export const useExamStore = create<ExamState>()(
@@ -42,30 +41,31 @@ export const useExamStore = create<ExamState>()(
       attemptId: null,
       sessionToken: null,
       questions: [],
+      examDuration: 0,
+      
       currentIndex: 0,
       answers: {},
-      flags: {},
       timeRemaining: 0,
+      flags: {},
       status: 'IDLE',
-      integrityFlags: 0,
 
-      startExam: (attemptId, sessionToken, questions, durationMins) => {
+      initializeSession: (attemptId, sessionToken, questions, duration) => {
         set({
           attemptId,
           sessionToken,
           questions,
+          examDuration: duration,
+          timeRemaining: duration * 60,
           currentIndex: 0,
           answers: {},
           flags: {},
-          timeRemaining: durationMins * 60,
-          status: 'IN_PROGRESS',
-          integrityFlags: 0
+          status: 'IN_PROGRESS'
         });
       },
 
-      setAnswer: (questionId, optionKey) => {
+      setAnswer: (questionId, answer) => {
         set((state) => ({
-          answers: { ...state.answers, [questionId]: optionKey }
+          answers: { ...state.answers, [questionId]: answer }
         }));
       },
 
@@ -87,88 +87,77 @@ export const useExamStore = create<ExamState>()(
         }));
       },
 
-      goToQuestion: (index) => {
-        set((state) => ({
-          currentIndex: Math.max(0, Math.min(index, state.questions.length - 1))
-        }));
+      setCurrentIndex: (index) => {
+        set({ currentIndex: index });
       },
 
-      tick: () => {
-        const { status, timeRemaining } = get();
-        if (status === 'IN_PROGRESS' && timeRemaining > 0) {
-          set({ timeRemaining: timeRemaining - 1 });
-        } else if (status === 'IN_PROGRESS' && timeRemaining <= 0) {
-          // Time up! Auto submit
-          get().submitExam();
-        }
+      tickTimer: () => {
+        set((state) => {
+          if (state.status !== 'IN_PROGRESS') return state;
+          const newTime = Math.max(state.timeRemaining - 1, 0);
+          
+          // Auto-submit logic handled in the component for async side-effects,
+          // but we lock the state here if time runs out.
+          if (newTime === 0) {
+            return { timeRemaining: 0, status: 'SUBMITTING' };
+          }
+          
+          return { timeRemaining: newTime };
+        });
       },
 
-      pauseExam: () => {
-        if (get().status === 'IN_PROGRESS') {
-          set({ status: 'PAUSED' });
-        }
-      },
+      setStatus: (status) => set({ status }),
 
-      resumeExam: () => {
-        if (get().status === 'PAUSED') {
-          set({ status: 'IN_PROGRESS' });
-        }
-      },
-
-      addIntegrityViolation: () => {
-        set((state) => ({ integrityFlags: state.integrityFlags + 1 }));
-        const flags = get().integrityFlags;
-        if (flags >= 2) {
-          get().submitExam();
-        }
-      },
-
-      submitExam: async () => {
-        const { attemptId, sessionToken, answers, timeRemaining, questions, integrityFlags } = get();
-        if (!attemptId || !sessionToken) return;
-
-        set({ status: 'SUBMITTING' });
-
-        try {
-          // Total exam duration was initially stored, but we didn't save it directly in state.
-          // Assuming 40 questions -> typical 30-60 mins. We can calculate timeTaken roughly 
-          // or pass it. Let's just track timeRemaining against a fixed 30 mins for now, 
-          // or we should store totalDuration in state.
-          // For now, let's just use 1800 (30 mins) as base.
-          const timeTaken = 1800 - timeRemaining; 
-
-          await api.post(`/exams/${attemptId}/submit`, {
-            sessionToken,
-            answers,
-            timeTaken,
-            integrityFlag: integrityFlags >= 2
-          });
-
-          set({ status: 'COMPLETED' });
-        } catch (error) {
-          console.error('Submit failed', error);
-          set({ status: 'ERROR' }); // Allow retry if it's a network error
-        }
-      },
-
-      resetExam: () => {
+      clearSession: () => {
         set({
           attemptId: null,
           sessionToken: null,
           questions: [],
           currentIndex: 0,
           answers: {},
-          flags: {},
           timeRemaining: 0,
-          status: 'IDLE',
-          integrityFlags: 0
+          flags: {},
+          status: 'IDLE'
         });
+      },
+
+      submitExam: async (integrityFlag = false) => {
+        const state = get();
+        if (!state.attemptId || !state.sessionToken) throw new Error("No active session");
+        
+        set({ status: 'SUBMITTING' });
+        
+        try {
+          const timeTaken = (state.examDuration * 60) - state.timeRemaining;
+          
+          const response = await api.post(`/api/exams/${state.attemptId}/submit`, {
+            sessionToken: state.sessionToken,
+            answers: state.answers,
+            timeTaken,
+            integrityFlag
+          });
+          
+          set({ status: integrityFlag ? 'INTEGRITY_VIOLATION' : 'COMPLETED' });
+          return response.data.data.attemptId;
+        } catch (error) {
+          set({ status: 'IN_PROGRESS' }); // Revert so user can retry
+          throw error;
+        }
       }
     }),
     {
-      name: 'xavier-exam-storage',
-      // Only persist specific fields to avoid huge local storage usage if not needed, 
-      // but questions array is small enough (~40 items).
+      name: 'xavier-exam-storage', // unique name
+      partialize: (state) => ({ 
+        attemptId: state.attemptId,
+        sessionToken: state.sessionToken,
+        questions: state.questions,
+        examDuration: state.examDuration,
+        currentIndex: state.currentIndex,
+        answers: state.answers,
+        timeRemaining: state.timeRemaining,
+        flags: state.flags,
+        status: state.status
+      }),
     }
   )
 );

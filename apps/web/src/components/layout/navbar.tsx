@@ -2,107 +2,134 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
-import { ThemeToggle } from '@/components/theme-toggle';
+import { usePathname } from 'next/navigation';
+import { Sun, Moon, Menu, X, User } from 'lucide-react';
 import { useAuthStore } from '@/store/auth.store';
-import { Button } from '@/components/ui/button';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { isAuthenticated, user } = useAuthStore();
+  const { user, isAuthenticated } = useAuthStore();
+  const pathname = usePathname();
 
   useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme as 'light' | 'dark');
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 20);
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+  };
+
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'py-3 bg-[var(--bg-glass)] backdrop-blur-md border-b border-[var(--border-subtle)]' 
-          : 'py-5 bg-transparent'
-      }`}
-    >
-      <div className="max-w-[1280px] mx-auto px-6 flex items-center justify-between">
-        
-        {/* Left: Logo */}
+    <>
+      <nav 
+        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl transition-all duration-300 rounded-[100px] px-6 py-4 flex items-center justify-between
+          ${scrolled ? 'bg-[var(--bg-primary)]/80 backdrop-blur-md border border-[var(--border-subtle)] shadow-sm' : 'bg-transparent'}`}
+      >
+        {/* LEFT: Logo */}
         <Link href="/" className="flex items-center gap-2 group z-50">
-          <div className="relative w-8 h-8 flex items-center justify-center bg-[var(--text-primary)] text-[var(--text-inverse)] rounded-md transform group-hover:scale-105 transition-transform">
-            <span className="font-display font-bold text-xl leading-none">X</span>
+          <div className="w-8 h-8 rounded-lg bg-[var(--accent-primary)] text-white flex items-center justify-center font-display font-bold text-xl group-hover:bg-[var(--accent-hover)] transition-colors">
+            X
           </div>
-          <span className="font-display font-bold text-xl text-[var(--text-primary)] tracking-tight">
+          <span className="font-ui font-semibold text-[var(--text-primary)] text-xl tracking-tight hidden sm:block">
             Xavier 300
           </span>
         </Link>
 
-        {/* Center: Desktop Nav (Floating Pills) */}
-        <nav className="hidden md:flex items-center gap-2 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] p-1.5 rounded-full shadow-sm">
-          <Link href="/courses" className="px-5 py-2 rounded-full text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-primary)] transition-colors">
+        {/* CENTER: Desktop Nav Links */}
+        <div className="hidden md:flex items-center gap-2 bg-[var(--bg-elevated)] border border-[var(--border-subtle)] p-1 rounded-full shadow-sm">
+          <button className="px-4 py-2 rounded-full font-ui text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors">
+            Menu
+          </button>
+          <Link href="/courses" className="px-4 py-2 rounded-full font-ui text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors">
             Browse Courses
           </Link>
-          <Link href="/pricing" className="px-5 py-2 rounded-full text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-primary)] transition-colors">
-            Pricing
-          </Link>
-        </nav>
-
-        {/* Right: Actions */}
-        <div className="hidden md:flex items-center gap-4 z-50">
-          <ThemeToggle />
-          
-          {isAuthenticated ? (
-            <Link href="/dashboard">
-              <Button className="rounded-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white px-6">
-                Dashboard
-              </Button>
-            </Link>
-          ) : (
-            <>
-              <Link href="/login" className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)]">
-                Log in
-              </Link>
-              <Link href="/signup">
-                <Button className="rounded-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white px-6">
-                  Start Free Trial
-                </Button>
-              </Link>
-            </>
-          )}
         </div>
 
-        {/* Mobile Menu Toggle */}
-        <div className="flex md:hidden items-center gap-3 z-50">
-          <ThemeToggle />
+        {/* RIGHT: Actions */}
+        <div className="flex items-center gap-3 z-50">
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-full bg-[var(--bg-elevated)] border border-[var(--border-subtle)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] shadow-sm transition-colors"
+          >
+            {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+          </button>
+
+          <div className="hidden sm:block">
+            {isAuthenticated ? (
+              <Link href="/dashboard" className="flex items-center gap-2 bg-[var(--bg-elevated)] border border-[var(--border-subtle)] hover:bg-[var(--bg-hover)] px-4 py-2 rounded-full font-ui font-medium text-sm transition-colors text-[var(--text-primary)]">
+                <div className="w-6 h-6 rounded-full bg-[var(--accent-light)] text-[var(--accent-primary)] flex items-center justify-center">
+                  <User size={14} />
+                </div>
+                Dashboard
+              </Link>
+            ) : (
+              <Link href="/signup" className="bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white px-5 py-2.5 rounded-full font-ui font-medium text-sm transition-colors shadow-sm">
+                Start Free Trial
+              </Link>
+            )}
+          </div>
+
           <button 
+            className="md:hidden p-2 text-[var(--text-primary)]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-[var(--text-primary)] p-2 -mr-2"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-      </div>
+      </nav>
 
-      {/* Mobile Menu Overlay */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 bg-[var(--bg-primary)] z-40 flex flex-col pt-24 px-6 md:hidden animate-in fade-in slide-in-from-top-4">
-          <nav className="flex flex-col gap-6 text-2xl font-display font-medium">
-            <Link href="/courses" onClick={() => setMobileMenuOpen(false)}>Browse Courses</Link>
-            <Link href="/pricing" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
-            {isAuthenticated ? (
-              <Link href="/dashboard" onClick={() => setMobileMenuOpen(false)}>Dashboard</Link>
-            ) : (
-              <>
-                <Link href="/login" onClick={() => setMobileMenuOpen(false)}>Log in</Link>
-                <Link href="/signup" onClick={() => setMobileMenuOpen(false)}>Sign Up (Free Trial)</Link>
-              </>
-            )}
-          </nav>
-        </div>
-      )}
-    </header>
+      {/* MOBILE MENU OVERLAY */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed inset-0 z-40 bg-[var(--bg-primary)] pt-28 px-6 pb-6 flex flex-col md:hidden"
+          >
+            <div className="flex flex-col gap-4 font-ui text-xl">
+              <Link href="/courses" className="py-3 border-b border-[var(--border-subtle)] text-[var(--text-primary)] font-medium">Browse Courses</Link>
+              <Link href="/pricing" className="py-3 border-b border-[var(--border-subtle)] text-[var(--text-primary)] font-medium">Pricing</Link>
+              
+              <div className="mt-8">
+                {isAuthenticated ? (
+                  <Link href="/dashboard" className="block w-full text-center bg-[var(--bg-elevated)] border border-[var(--border-medium)] py-3 rounded-xl text-[var(--text-primary)] font-medium">
+                    Go to Dashboard
+                  </Link>
+                ) : (
+                  <div className="flex flex-col gap-3">
+                    <Link href="/login" className="block w-full text-center border border-[var(--border-medium)] py-3 rounded-xl text-[var(--text-primary)] font-medium">
+                      Sign In
+                    </Link>
+                    <Link href="/signup" className="block w-full text-center bg-[var(--accent-primary)] text-white py-3 rounded-xl font-medium">
+                      Start Free Trial
+                    </Link>
+                  </div>
+                )}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }

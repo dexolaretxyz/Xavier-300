@@ -84,6 +84,38 @@ async function main() {
     });
   }
 
+  // 2.5 Generate dummy questions so we can take mock exams!
+  console.log('Seeding dummy questions...');
+  const dbCerts = await prisma.certification.findMany();
+  for (const c of dbCerts) {
+    const existing = await prisma.question.count({ where: { certificationId: c.id } });
+    if (existing < 40) {
+      const questionsToCreate = [];
+      const topics = ['Fundamentals', 'Advanced Concepts', 'Security', 'Architecture', 'Best Practices'];
+      for (let i = existing; i < 40; i++) {
+        questionsToCreate.push({
+          certificationId: c.id,
+          text: `Sample mock exam question ${i + 1} for ${c.name}. This is an auto-generated dummy question to allow testing the exam engine. What is the correct answer?`,
+          options: {
+            A: 'The designated correct answer',
+            B: 'A plausible but incorrect distractor option',
+            C: 'Another incorrect option that sounds technical',
+            D: 'A completely unrelated distractor',
+          },
+          correctAnswer: 'A',
+          explanation: `Option A is correct because this is a dummy question seeded for ${c.name}. In a real scenario, this would contain a detailed technical explanation of the concept.`,
+          topic: topics[i % topics.length],
+          difficulty: Difficulty.MEDIUM,
+          status: 'APPROVED',
+          source: 'AI'
+        });
+      }
+      // Create questions in batches to avoid Prisma limits
+      await prisma.question.createMany({ data: questionsToCreate as any });
+      console.log(`Created ${40 - existing} dummy questions for ${c.name}`);
+    }
+  }
+
   // 3. Create Super Admin User
   const adminEmail = process.env.ADMIN_EMAIL || 'admin@xavier300.com.ng';
   const adminPassword = process.env.ADMIN_PASSWORD || 'Admin@Xavier300';

@@ -7,13 +7,19 @@ import { authRouter } from './routes/auth.routes';
 import domainRoutes from './routes/domain.routes';
 import userRoutes from './routes/user.routes';
 import examRoutes from './routes/exam.routes';
-import { leaderboardRoutes } from './routes/leaderboard.routes';
+import leaderboardRoutes from './routes/leaderboard.routes';
+import paymentRoutes from './routes/payment.routes';
+import questionRoutes from './routes/question.routes';
+import adminRoutes from './routes/admin.routes';
 import { initLeaderboardJob } from './jobs/leaderboard.job';
 
 dotenv.config({ path: '../../.env' }); // Load root .env
 
 const app = express();
 const PORT = process.env.PORT || 4000;
+
+// Initialize Cron Jobs
+initLeaderboardJob();
 
 // Middleware
 app.use(helmet());
@@ -37,6 +43,9 @@ app.use('/api/domains', domainRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/exams', examRoutes);
 app.use('/api/leaderboard', leaderboardRoutes);
+app.use('/api/payments', paymentRoutes);
+app.use('/api/questions', questionRoutes);
+app.use('/api/admin', adminRoutes);
 
 // 404 handler
 app.use((req, res) => {
@@ -52,8 +61,8 @@ app.use((err: any, req: any, res: any, next: any) => {
 if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`Xavier 300 API running on port ${PORT}`);
-    // Initialize BullMQ jobs
-    initLeaderboardJob().catch(err => console.error('Failed to init leaderboard job:', err));
+    // Initialize node-cron jobs
+    initLeaderboardJob();
   });
 }
 

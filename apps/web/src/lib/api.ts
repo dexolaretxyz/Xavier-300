@@ -41,6 +41,17 @@ api.interceptors.response.use(
   async (error) => {
     const originalRequest = error.config;
 
+    // Handle Subscription Hard Locks (403)
+    if (error.response?.status === 403) {
+      const errCode = error.response.data?.error?.code;
+      if (['TRIAL_EXPIRED', 'SUBSCRIPTION_REQUIRED', 'SUBSCRIPTION_EXPIRED'].includes(errCode)) {
+        if (typeof window !== 'undefined' && !window.location.pathname.includes('/pricing')) {
+          window.location.href = '/pricing';
+        }
+        return Promise.reject(error);
+      }
+    }
+
     if (error.response?.status === 401 && !originalRequest._retry) {
       if (originalRequest.url?.includes('/api/auth/login') || originalRequest.url?.includes('/api/auth/refresh')) {
         return Promise.reject(error);

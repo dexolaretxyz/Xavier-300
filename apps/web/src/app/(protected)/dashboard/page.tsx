@@ -1,215 +1,196 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import { useAuthStore } from '@/store/auth.store';
-import { useDashboardStats } from '@/hooks/use-dashboard';
-import { Trophy, Target, TrendingUp, AlertTriangle, ArrowRight, Activity, Clock, Award, BookOpen } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useDashboardStats } from '@/hooks/useDashboard';
+import { motion } from 'framer-motion';
+import { FileText, Target, Trophy, Flame, ChevronRight, AlertCircle, PlayCircle } from 'lucide-react';
+import Link from 'next/link';
 
 export default function DashboardPage() {
   const { user } = useAuthStore();
-  const { data: stats, isLoading, isError } = useDashboardStats();
+  const { data: stats, isLoading } = useDashboardStats();
 
-  const firstName = user?.fullName?.split(' ')[0] || 'Student';
-  const daysLeftInTrial = 7; // Mock for now, would come from user object or subscription data
+  const firstName = user?.fullName?.split(' ')[0] || 'User';
+  
+  // Real subscription logic
+  let isTrial = false;
+  let trialDaysLeft = 0;
+  
+  if (user?.subscriptionStatus === 'FREE_TRIAL' && user?.trialStartedAt) {
+    const start = new Date(user.trialStartedAt);
+    const now = new Date();
+    const passed = (now.getTime() - start.getTime()) / (1000 * 60 * 60 * 24);
+    trialDaysLeft = Math.max(0, 7 - passed);
+    isTrial = trialDaysLeft > 0;
+  }
 
   return (
-    <div className="space-y-8 pb-10">
+    <div className="max-w-6xl mx-auto space-y-8">
       
-      {/* Welcome & Banner */}
-      <div className="flex flex-col gap-6">
-        {user?.subscriptionStatus !== 'ACTIVE' && (
-          <div className="bg-[var(--accent-glow)] border border-[var(--accent-primary)]/20 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[var(--accent-primary)]/10 flex items-center justify-center text-[var(--accent-primary)]">
-                <Clock size={20} />
-              </div>
-              <div>
-                <h4 className="font-bold text-[var(--text-primary)]">Free Trial Active</h4>
-                <p className="text-sm text-[var(--text-secondary)]">You have {daysLeftInTrial} days left in your free trial.</p>
-              </div>
-            </div>
-            <Link href="/pricing">
-              <Button className="rounded-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white w-full sm:w-auto">
-                Upgrade Now
-              </Button>
-            </Link>
+      {/* SUBSCRIPTION BANNER */}
+      {isTrial && (
+        <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3 text-amber-800 dark:text-amber-400">
+            <AlertCircle size={20} />
+            <span className="font-ui font-medium">{Math.ceil(trialDaysLeft)} days remaining in your free trial</span>
           </div>
-        )}
-
-        <div>
-          <h1 className="text-3xl md:text-4xl font-display font-bold text-[var(--text-primary)] tracking-tight">
-            Welcome back, {firstName}
-          </h1>
-          <p className="text-[var(--text-secondary)] mt-1">
-            Ready to continue your certification journey? Let's get to work.
-          </p>
-        </div>
-      </div>
-
-      {/* Stats Row */}
-      {isLoading ? (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-pulse">
-          {[1,2,3,4].map(i => (
-            <div key={i} className="h-32 bg-[var(--bg-elevated)] rounded-3xl border border-[var(--border-subtle)]"></div>
-          ))}
-        </div>
-      ) : (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <StatCard title="Exams This Week" value={stats?.examsTakenThisWeek?.toString() || '0'} icon={Activity} />
-          <StatCard title="Average Score" value={`${stats?.averageScore || 0}%`} icon={Target} color="var(--success)" />
-          <StatCard title="Current Streak" value={`${stats?.currentStreak || 0} days`} icon={TrendingUp} color="var(--warning)" />
-          <StatCard title="Weekly Rank" value={stats?.rank ? `#${stats.rank}` : '-'} icon={Trophy} color="var(--accent-primary)" />
+          <Link href="/pricing" className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-full font-ui text-sm font-medium transition-colors whitespace-nowrap">
+            Upgrade Now
+          </Link>
         </div>
       )}
 
+      {/* HEADER */}
+      <div>
+        <h1 className="font-display font-bold text-4xl text-[var(--text-primary)] tracking-tight">
+          Welcome back, {firstName}
+        </h1>
+        <p className="font-ui text-[var(--text-secondary)] mt-2">
+          Ready to continue your preparation?
+        </p>
+      </div>
+
+      {/* STATS ROW */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {[
+          { label: "Exams This Week", value: stats?.examsTakenThisWeek ?? '-', icon: <FileText size={20} /> },
+          { label: "Average Score", value: stats ? `${stats.averageScore}%` : '-', icon: <Target size={20} /> },
+          { label: "Current Streak", value: stats ? `${stats.currentStreak} days` : '-', icon: <Flame size={20} className="text-orange-500" /> },
+          { label: "Current Rank", value: stats?.rank ? `#${stats.rank}` : 'Unranked', icon: <Trophy size={20} className="text-yellow-500" /> },
+        ].map((stat, i) => (
+          <motion.div 
+            key={i}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.1 }}
+            className="bg-[var(--bg-primary)] border border-[var(--border-subtle)] p-5 rounded-2xl flex flex-col shadow-sm"
+          >
+            <div className="flex items-center gap-2 text-[var(--text-secondary)] mb-3">
+              {stat.icon}
+              <span className="font-ui text-xs font-medium uppercase tracking-wider">{stat.label}</span>
+            </div>
+            <div className="font-display font-bold text-3xl text-[var(--text-primary)]">
+              {isLoading ? <div className="h-8 w-16 bg-[var(--bg-elevated)] animate-pulse rounded" /> : stat.value}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        {/* Left Column (Wider) */}
+        {/* MAIN COL */}
         <div className="lg:col-span-2 space-y-8">
           
-          {/* Continue Practicing */}
+          {/* CONTINUE PRACTICING */}
           <section>
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-display font-bold text-[var(--text-primary)]">Continue Practicing</h2>
-              <Link href="/courses" className="text-sm font-medium text-[var(--accent-primary)] hover:underline flex items-center">
-                Browse all <ArrowRight size={16} className="ml-1" />
+              <h2 className="font-ui font-bold text-xl text-[var(--text-primary)]">Continue Practicing</h2>
+              <Link href="/courses" className="text-[var(--accent-primary)] font-ui text-sm font-medium flex items-center hover:underline">
+                View all <ChevronRight size={16} />
               </Link>
             </div>
             
-            {stats?.recentCertifications?.length ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {stats.recentCertifications.map((cert) => (
-                  <Link href={`/courses/${cert.slug}`} key={cert.id}>
-                    <div className="bg-[var(--bg-glass)] border border-[var(--border-subtle)] rounded-2xl p-5 hover:border-[var(--accent-primary)]/50 transition-colors group">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {isLoading ? (
+                [1,2].map(i => <div key={i} className="h-32 bg-[var(--bg-primary)] border border-[var(--border-subtle)] rounded-2xl animate-pulse" />)
+              ) : stats?.recentCertifications?.length ? (
+                stats.recentCertifications.map((cert: any, i: number) => (
+                  <Link href={`/courses/${cert.slug}`} key={i}>
+                    <div className="bg-[var(--bg-primary)] border border-[var(--border-subtle)] p-5 rounded-2xl hover:border-[var(--accent-light)] hover:shadow-md transition-all group">
                       <div className="flex justify-between items-start mb-4">
-                        <div className="w-10 h-10 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-medium)] flex items-center justify-center text-[var(--text-primary)]">
-                          <Award size={20} />
+                        <div className="w-10 h-10 bg-[var(--accent-light)] text-[var(--accent-primary)] rounded-lg flex items-center justify-center">
+                          <PlayCircle size={20} />
                         </div>
-                        <span className="text-xs font-bold px-2 py-1 bg-[var(--bg-secondary)] text-[var(--text-secondary)] rounded-md uppercase tracking-wider">
+                        <span className={`text-xs font-medium px-2 py-1 rounded-full ${
+                          cert.difficulty === 'ADVANCED' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'
+                        }`}>
                           {cert.difficulty}
                         </span>
                       </div>
-                      <h3 className="font-bold text-[var(--text-primary)] mb-1 group-hover:text-[var(--accent-primary)] transition-colors line-clamp-2">
-                        {cert.name}
-                      </h3>
-                      <p className="text-sm text-[var(--text-muted)]">Practice Exam</p>
+                      <h3 className="font-ui font-semibold text-[var(--text-primary)]">{cert.name}</h3>
+                      <p className="font-ui text-sm text-[var(--text-muted)] mt-1">{cert.questionCount} questions</p>
                     </div>
                   </Link>
-                ))}
-              </div>
-            ) : (
-              <div className="bg-[var(--bg-elevated)] border border-[var(--border-subtle)] border-dashed rounded-3xl p-8 text-center flex flex-col items-center justify-center min-h-[200px]">
-                <div className="w-16 h-16 rounded-full bg-[var(--bg-secondary)] flex items-center justify-center text-[var(--text-muted)] mb-4">
-                  <BookOpen size={24} />
+                ))
+              ) : (
+                <div className="col-span-2 bg-[var(--bg-primary)] border border-[var(--border-subtle)] border-dashed p-8 rounded-2xl text-center">
+                  <p className="font-ui text-[var(--text-secondary)] mb-4">You haven't started any certifications yet.</p>
+                  <Link href="/courses" className="bg-[var(--text-primary)] text-[var(--bg-primary)] px-6 py-2 rounded-full font-ui text-sm font-medium inline-block">
+                    Browse Courses
+                  </Link>
                 </div>
-                <h3 className="text-lg font-bold text-[var(--text-primary)] mb-2">No active courses</h3>
-                <p className="text-[var(--text-secondary)] max-w-sm mb-6 text-sm">You haven't started any certification practice exams yet. Choose a path to begin.</p>
-                <Link href="/courses">
-                  <Button className="rounded-full bg-[var(--text-primary)] hover:bg-[var(--text-secondary)] text-[var(--text-inverse)]">
-                    Explore Courses
-                  </Button>
-                </Link>
-              </div>
-            )}
+              )}
+            </div>
           </section>
 
-          {/* AI Weak Areas */}
+          {/* WEAK AREAS */}
           <section>
-            <h2 className="text-xl font-display font-bold text-[var(--text-primary)] mb-4 flex items-center">
-              <AlertTriangle className="mr-2 text-[var(--warning)]" size={20} />
-              AI-Identified Weak Areas
-            </h2>
-            <div className="bg-[var(--bg-elevated)] border border-[var(--border-subtle)] rounded-3xl p-6">
-              {stats?.weakAreas?.length ? (
+            <h2 className="font-ui font-bold text-xl text-[var(--text-primary)] mb-4">Focus Areas</h2>
+            <div className="bg-[var(--bg-primary)] border border-[var(--border-subtle)] rounded-2xl p-6">
+              {isLoading ? (
+                <div className="h-20 animate-pulse bg-[var(--bg-elevated)] rounded-xl" />
+              ) : stats?.weakAreas?.length ? (
                 <ul className="space-y-4">
-                  {stats.weakAreas.map((area: any, idx: number) => (
-                    <li key={idx} className="flex items-center justify-between p-3 bg-[var(--bg-primary)] rounded-xl border border-[var(--border-subtle)]">
+                  {stats.weakAreas.map((area: any, i: number) => (
+                    <li key={i} className="flex items-center justify-between border-b border-[var(--border-subtle)] last:border-0 pb-4 last:pb-0">
                       <div>
-                        <div className="font-medium text-[var(--text-primary)]">{area.topic}</div>
-                        <div className="text-xs text-[var(--text-muted)]">{area.certName}</div>
+                        <div className="font-ui font-medium text-[var(--text-primary)]">{area.topic}</div>
+                        <div className="font-ui text-sm text-[var(--text-muted)]">{area.certName}</div>
                       </div>
-                      <div className="text-right">
-                        <div className="text-sm font-bold text-[var(--error)]">{area.accuracy}% Accuracy</div>
-                        <Link href={`/courses/${area.certSlug}`} className="text-xs text-[var(--accent-primary)] hover:underline">Practice</Link>
+                      <div className="text-red-500 font-mono font-medium text-sm">
+                        {area.score}%
                       </div>
                     </li>
                   ))}
                 </ul>
               ) : (
-                <div className="text-center py-6">
-                  <div className="inline-block p-3 rounded-full bg-[var(--success)]/10 text-[var(--success)] mb-3">
+                <div className="text-center py-6 text-[var(--text-secondary)] font-ui">
+                  <div className="w-12 h-12 bg-green-50 dark:bg-green-900/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Target size={24} />
                   </div>
-                  <h3 className="font-bold text-[var(--text-primary)]">You're doing great!</h3>
-                  <p className="text-sm text-[var(--text-secondary)] mt-1">Take more exams to get personalized AI feedback on your weak areas.</p>
+                  <p>Take some exams to get AI-powered focus areas.</p>
                 </div>
               )}
             </div>
           </section>
-          
+
         </div>
 
-        {/* Right Column (Narrow) */}
-        <div className="space-y-8">
-          
-          {/* Leaderboard Preview */}
-          <section>
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-display font-bold text-[var(--text-primary)] flex items-center">
-                <Trophy className="mr-2 text-[var(--accent-primary)]" size={20} />
-                Top Performers
-              </h2>
+        {/* RIGHT COL - LEADERBOARD PREVIEW */}
+        <div className="h-full flex flex-col">
+          <section className="bg-[var(--bg-primary)] border border-[var(--border-subtle)] rounded-2xl p-6 shadow-sm flex-1 flex flex-col">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="font-ui font-bold text-lg text-[var(--text-primary)]">Leaderboard</h2>
+              <Link href="/leaderboard" className="text-[var(--accent-primary)] hover:underline text-sm font-medium">Full list</Link>
             </div>
             
-            <div className="bg-[var(--bg-elevated)] border border-[var(--border-subtle)] rounded-3xl p-6 relative overflow-hidden">
-              {/* Coming soon overlay for step 07 since leaderboard is step 10 */}
-              <div className="absolute inset-0 bg-[var(--bg-elevated)]/80 backdrop-blur-sm z-10 flex flex-col items-center justify-center text-center p-6">
-                <div className="w-12 h-12 rounded-full bg-[var(--accent-primary)]/10 text-[var(--accent-primary)] flex items-center justify-center mb-3">
-                  <Trophy size={24} />
-                </div>
-                <h3 className="font-bold text-[var(--text-primary)] mb-1">Weekly Leaderboard</h3>
-                <p className="text-xs text-[var(--text-secondary)] mb-4">Compete with other Nigerian tech pros. Resets every Monday.</p>
-                <div className="px-3 py-1 bg-[var(--bg-secondary)] border border-[var(--border-medium)] rounded text-xs font-mono font-medium text-[var(--text-secondary)]">
-                  Unlock in Step 10
-                </div>
-              </div>
-
-              {/* Blurred background mock data */}
-              <ul className="space-y-4 opacity-30 select-none">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <li key={i} className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-6 text-center font-mono font-bold text-[var(--text-muted)]">{i}</div>
-                      <div className="w-8 h-8 rounded-full bg-[var(--bg-secondary)]"></div>
-                      <div className="w-24 h-4 rounded bg-[var(--bg-secondary)]"></div>
+            <div className="space-y-4">
+              {/* Fake Leaderboard for demo, we build real in Step 10 */}
+              {[
+                { name: "Chuks E.", score: 98, rank: 1 },
+                { name: "Folake A.", score: 94, rank: 2 },
+                { name: "Ibrahim S.", score: 91, rank: 3 },
+                { name: "You", score: stats?.averageScore || 0, rank: stats?.rank || 142, isUser: true },
+              ].map((lb, i) => (
+                <div key={i} className={`flex items-center justify-between p-3 rounded-xl ${lb.isUser ? 'bg-[var(--accent-light)] border border-[var(--accent-primary)]/20' : 'bg-[var(--bg-secondary)]'}`}>
+                  <div className="flex items-center gap-3">
+                    <div className={`w-6 text-center font-mono font-bold text-sm ${lb.rank <= 3 ? 'text-yellow-600' : 'text-[var(--text-muted)]'}`}>
+                      {lb.rank}
                     </div>
-                    <div className="w-12 h-4 rounded bg-[var(--bg-secondary)]"></div>
-                  </li>
-                ))}
-              </ul>
+                    <div className={`font-ui font-medium text-sm ${lb.isUser ? 'text-[var(--accent-primary)]' : 'text-[var(--text-primary)]'}`}>
+                      {lb.name}
+                    </div>
+                  </div>
+                  <div className="font-mono font-medium text-sm text-[var(--text-secondary)]">
+                    {lb.score}%
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
-
         </div>
-      </div>
-    </div>
-  );
-}
 
-// Helper Component
-function StatCard({ title, value, icon: Icon, color = "var(--text-primary)" }: any) {
-  return (
-    <div className="bg-[var(--bg-elevated)] border border-[var(--border-subtle)] rounded-3xl p-5 md:p-6 flex flex-col justify-between hover:border-[var(--border-medium)] transition-colors">
-      <div className="flex justify-between items-start mb-4">
-        <h3 className="text-sm font-medium text-[var(--text-secondary)]">{title}</h3>
-        <div className="p-2 rounded-xl bg-[var(--bg-secondary)]">
-          <Icon size={18} style={{ color }} />
-        </div>
-      </div>
-      <div className="text-2xl md:text-3xl font-display font-bold text-[var(--text-primary)]">
-        {value}
       </div>
     </div>
   );

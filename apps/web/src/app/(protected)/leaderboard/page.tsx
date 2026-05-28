@@ -1,220 +1,251 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
 import { api } from '@/lib/api';
-import { Trophy, Medal, Award, Star, History, ArrowUpRight } from 'lucide-react';
-import { differenceInHours, differenceInDays, nextMonday } from 'date-fns';
+import { useQuery } from '@tanstack/react-query';
+import { Trophy, Clock, Medal, Award, Flame } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+// --- Data Fetching Hooks ---
+function useLeaderboard() {
+  return useQuery({
+    queryKey: ['leaderboard'],
+    queryFn: async () => {
+      const [{ data: weekly }, { data: previous }] = await Promise.all([
+        api.get('/api/leaderboard/weekly'),
+        api.get('/api/leaderboard/previous')
+      ]);
+      return {
+        weekly: weekly.data.leaderboard,
+        currentUser: weekly.data.currentUser,
+        previous: previous.data
+      };
+    }
+  });
+}
+
+// --- Helper Components ---
+const PodiumSpot = ({ rank, user, height, color, delay }: { rank: number, user: any, height: string, color: string, delay: number }) => {
+  if (!user) return <div className={`w-1/3 flex flex-col justify-end opacity-30 ${height}`} />;
+  
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay }}
+      className="w-1/3 flex flex-col items-center justify-end group"
+    >
+      <div className="text-center mb-4 z-10 relative">
+        <div className="absolute -top-10 left-1/2 -translate-x-1/2">
+          {rank === 1 && <Crown />}
+        </div>
+        <div className={`w-16 h-16 rounded-full mx-auto mb-3 flex items-center justify-center font-display font-bold text-2xl shadow-lg border-4 ${
+          rank === 1 ? 'bg-yellow-100 border-yellow-400 text-yellow-700' : 
+          rank === 2 ? 'bg-slate-100 border-slate-300 text-slate-600' : 
+          'bg-orange-100 border-orange-300 text-orange-700'
+        }`}>
+          {user.name.charAt(0)}
+        </div>
+        <h3 className="font-ui font-bold text-[var(--text-primary)] truncate max-w-[100px]">{user.name}</h3>
+        <p className="font-mono text-[var(--accent-primary)] font-bold text-lg">{Math.round(user.avgScore)}%</p>
+        <p className="text-xs text-[var(--text-muted)] font-ui">{user.examsCount} {user.examsCount === 1 ? 'exam' : 'exams'}</p>
+      </div>
+      
+      <div className={`w-full rounded-t-xl ${height} ${color} relative overflow-hidden transition-all duration-300 group-hover:brightness-110`}>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+        <div className="absolute top-4 left-0 right-0 text-center font-display font-bold text-4xl text-black/20">{rank}</div>
+      </div>
+    </motion.div>
+  );
+};
+
+const Crown = () => (
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-yellow-500 fill-yellow-500 drop-shadow-md">
+    <polygon points="2 20 22 20 19 6 15 12 12 4 9 12 5 6 2 20" />
+  </svg>
+);
 
 export default function LeaderboardPage() {
-  const [countdown, setCountdown] = useState('');
+  const { data, isLoading, error } = useLeaderboard();
+  const [timeLeft, setTimeLeft] = useState('');
 
+  // Countdown to Monday 00:00 WAT
   useEffect(() => {
-    const updateCountdown = () => {
+    const calculateTimeLeft = () => {
       const now = new Date();
-      let nextReset = nextMonday(now);
-      nextReset.setHours(0, 0, 0, 0);
+      // Calculate next Monday at 00:00 WAT
+      const nextMonday = new Date();
+      nextMonday.setDate(now.getDate() + ((7 - now.getDay()) % 7 + 1));
+      nextMonday.setHours(0, 0, 0, 0); // Local 00:00, roughly close enough for MVP, properly should use UTC+1
+      
+      // Better timezone handling for WAT (UTC+1)
+      const nowUtc = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const nowWat = new Date(nowUtc + (3600000));
+      
+      const days = nextMonday.getDay() === nowWat.getDay() ? 7 : (8 - nowWat.getDay()) % 7;
+      
+      const targetTime = new Date(nowWat);
+      targetTime.setDate(nowWat.getDate() + days);
+      targetTime.setHours(0, 0, 0, 0);
 
-      const days = differenceInDays(nextReset, now);
-      const hours = differenceInHours(nextReset, now) % 24;
+      const diff = targetTime.getTime() - nowWat.getTime();
+      if (diff <= 0) return 'Resetting...';
 
-      if (days === 0 && hours === 0) {
-        setCountdown('Resets soon');
-      } else {
-        setCountdown(`${days}d ${hours}h`);
-      }
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const m = Math.floor((diff / 1000 / 60) % 60);
+
+      return `${d}d ${h}h ${m}m`;
     };
 
-    updateCountdown();
-    const interval = setInterval(updateCountdown, 1000 * 60 * 60); // Update every hour
-    return () => clearInterval(interval);
+    setTimeLeft(calculateTimeLeft());
+    const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 60000);
+    return () => clearInterval(timer);
   }, []);
 
-  const { data: weeklyData, isLoading: isLoadingWeekly } = useQuery({
-    queryKey: ['leaderboard', 'weekly'],
-    queryFn: async () => {
-      const res = await api.get('/leaderboard/weekly');
-      return res.data.data;
-    }
-  });
-
-  const { data: previousData, isLoading: isLoadingPrevious } = useQuery({
-    queryKey: ['leaderboard', 'previous'],
-    queryFn: async () => {
-      const res = await api.get('/leaderboard/previous');
-      return res.data.data;
-    }
-  });
-
-  if (isLoadingWeekly || isLoadingPrevious) {
-    return (
-      <div className="min-h-screen flex items-center justify-center p-6 text-[var(--text-secondary)]">
-        Loading Leaderboard...
-      </div>
-    );
+  if (isLoading) {
+    return <div className="p-12 text-center font-ui text-[var(--text-secondary)]">Loading Leaderboard...</div>;
   }
 
-  const leaderboard = weeklyData?.leaderboard || [];
-  const currentUser = weeklyData?.currentUser;
-  const champions = previousData?.champions || [];
+  if (error || !data) {
+    return <div className="p-12 text-center text-red-500">Failed to load leaderboard data.</div>;
+  }
 
-  const top3 = leaderboard.slice(0, 3);
-  const rest = leaderboard.slice(3, 20);
+  const { weekly, currentUser, previous } = data;
+
+  const top3 = [weekly[1], weekly[0], weekly[2]]; // Ordered for Podium: 2, 1, 3
+  const restOfBoard = weekly.slice(3);
 
   return (
-    <div className="min-h-screen bg-[var(--bg-primary)] pb-20">
+    <div className="max-w-5xl mx-auto space-y-16 py-8 px-6 pb-32">
       
-      {/* Header */}
-      <div className="bg-[var(--bg-elevated)] border-b border-[var(--border-subtle)] px-6 py-10 text-center">
-        <h1 className="text-4xl font-display font-bold text-[var(--text-primary)] mb-4">
-          Weekly Leaderboard
-        </h1>
-        <div className="inline-flex items-center gap-2 bg-[var(--bg-secondary)] px-4 py-2 rounded-full border border-[var(--border-subtle)]">
-          <History size={16} className="text-[var(--text-secondary)]" />
-          <span className="text-sm font-medium text-[var(--text-secondary)]">
-            Resets in <strong className="text-[var(--text-primary)]">{countdown}</strong>
-          </span>
+      {/* HEADER */}
+      <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h1 className="font-display font-bold text-4xl text-[var(--text-primary)] flex items-center gap-3">
+            <Trophy className="text-yellow-500" size={36} /> Weekly Leaderboard
+          </h1>
+          <p className="font-ui text-[var(--text-secondary)] mt-2">Compete with other students. Ranked by weekly average score.</p>
+        </div>
+        <div className="bg-[var(--bg-primary)] border border-[var(--border-subtle)] px-6 py-3 rounded-full flex items-center gap-3 shadow-sm">
+          <Clock size={18} className="text-[var(--accent-primary)]" />
+          <span className="font-ui font-medium text-[var(--text-secondary)]">Resets in:</span>
+          <span className="font-mono font-bold text-[var(--text-primary)]">{timeLeft}</span>
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 py-12 space-y-16">
-        
-        {/* Podium (Top 3) */}
-        {top3.length > 0 ? (
-          <section>
-            <div className="flex flex-col md:flex-row items-end justify-center gap-4 md:gap-8 min-h-[300px]">
-              {/* Silver (Rank 2) */}
-              {top3[1] && (
-                <div className="flex flex-col items-center w-full md:w-1/3 order-2 md:order-1">
-                  <div className="mb-4 text-center">
-                    <Medal size={40} className="text-gray-400 mx-auto mb-2" />
-                    <h3 className="font-bold text-lg text-[var(--text-primary)]">{top3[1].name}</h3>
-                    <p className="text-sm text-[var(--text-secondary)]">{top3[1].avgScore.toFixed(1)}% Avg</p>
-                  </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-800 rounded-t-2xl border-t border-x border-[var(--border-subtle)] h-32 flex items-center justify-center">
-                    <span className="text-4xl font-black text-gray-400 opacity-50">2</span>
-                  </div>
-                </div>
-              )}
-
-              {/* Gold (Rank 1) */}
-              {top3[0] && (
-                <div className="flex flex-col items-center w-full md:w-1/3 order-1 md:order-2 z-10 -mt-8 md:mt-0">
-                  <div className="mb-4 text-center relative">
-                    <Trophy size={56} className="text-yellow-400 mx-auto mb-2 drop-shadow-md" />
-                    <h3 className="font-bold text-xl text-[var(--text-primary)]">{top3[0].name}</h3>
-                    <p className="text-sm font-bold text-yellow-600 dark:text-yellow-400">{top3[0].avgScore.toFixed(1)}% Avg</p>
-                  </div>
-                  <div className="w-full bg-yellow-100 dark:bg-yellow-900/30 rounded-t-2xl border-t-2 border-x-2 border-yellow-400/50 h-40 flex items-center justify-center shadow-lg">
-                    <span className="text-5xl font-black text-yellow-500 opacity-50">1</span>
-                  </div>
-                </div>
-              )}
-
-              {/* Bronze (Rank 3) */}
-              {top3[2] && (
-                <div className="flex flex-col items-center w-full md:w-1/3 order-3 md:order-3">
-                  <div className="mb-4 text-center">
-                    <Award size={40} className="text-amber-600 mx-auto mb-2" />
-                    <h3 className="font-bold text-lg text-[var(--text-primary)]">{top3[2].name}</h3>
-                    <p className="text-sm text-[var(--text-secondary)]">{top3[2].avgScore.toFixed(1)}% Avg</p>
-                  </div>
-                  <div className="w-full bg-orange-100 dark:bg-orange-900/20 rounded-t-2xl border-t border-x border-orange-300/30 h-24 flex items-center justify-center">
-                    <span className="text-4xl font-black text-amber-700 opacity-50">3</span>
-                  </div>
-                </div>
-              )}
-            </div>
-          </section>
-        ) : (
-          <div className="text-center py-12 border-2 border-dashed border-[var(--border-subtle)] rounded-2xl">
-            <Star className="mx-auto text-[var(--text-secondary)] mb-4" size={32} />
-            <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2">No scores yet this week</h3>
-            <p className="text-[var(--text-secondary)]">Take an exam to claim the #1 spot!</p>
+      {/* TOP 3 PODIUM */}
+      {weekly.length > 0 ? (
+        <div className="pt-16 pb-8 border-b border-[var(--border-subtle)]">
+          <div className="max-w-2xl mx-auto flex items-end justify-center h-80 gap-2 md:gap-4">
+            <PodiumSpot rank={2} user={top3[0]} height="h-32" color="bg-slate-200 dark:bg-slate-700" delay={0.2} />
+            <PodiumSpot rank={1} user={top3[1]} height="h-48" color="bg-yellow-300 dark:bg-yellow-600" delay={0.4} />
+            <PodiumSpot rank={3} user={top3[2]} height="h-24" color="bg-orange-200 dark:bg-orange-800" delay={0.6} />
           </div>
-        )}
+        </div>
+      ) : (
+        <div className="bg-[var(--bg-primary)] border border-[var(--border-subtle)] rounded-2xl p-12 text-center">
+          <Medal size={48} className="mx-auto text-[var(--text-muted)] mb-4" />
+          <h3 className="font-display font-bold text-xl text-[var(--text-primary)] mb-2">A New Week Begins!</h3>
+          <p className="font-ui text-[var(--text-secondary)]">Be the first to take an exam and claim the #1 spot.</p>
+        </div>
+      )}
 
-        {/* Current User Row */}
-        {currentUser && (
-          <section>
-            <div className="bg-[var(--accent-primary)]/10 border-2 border-[var(--accent-primary)]/30 rounded-2xl p-4 flex items-center justify-between shadow-sm">
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-[var(--accent-primary)] text-white flex items-center justify-center font-black">
-                  #{currentUser.rank}
+      {/* FULL RANKINGS TABLE (#4 - #20) */}
+      {restOfBoard.length > 0 && (
+        <div className="bg-[var(--bg-primary)] border border-[var(--border-subtle)] rounded-3xl overflow-hidden shadow-sm">
+          <table className="w-full text-left font-ui">
+            <thead className="bg-[var(--bg-secondary)] text-[var(--text-muted)] text-xs uppercase tracking-wider font-bold border-b border-[var(--border-subtle)]">
+              <tr>
+                <th className="px-6 py-4">Rank</th>
+                <th className="px-6 py-4">Student</th>
+                <th className="px-6 py-4 text-right">Avg Score</th>
+                <th className="px-6 py-4 text-right hidden sm:table-cell">Exams Taken</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-[var(--border-subtle)]">
+              {restOfBoard.map((user: any) => (
+                <tr key={user.userId} className={`hover:bg-[var(--bg-hover)] transition-colors ${currentUser?.userId === user.userId ? 'bg-[var(--accent-light)]/20' : ''}`}>
+                  <td className="px-6 py-4 font-mono font-bold text-[var(--text-secondary)]">#{user.rank}</td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-[var(--bg-elevated)] flex items-center justify-center font-bold text-[var(--text-primary)] text-sm">
+                        {user.name.charAt(0)}
+                      </div>
+                      <span className="font-medium text-[var(--text-primary)]">{user.name}</span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-right font-mono font-bold text-[var(--text-primary)]">{Math.round(user.avgScore)}%</td>
+                  <td className="px-6 py-4 text-right text-[var(--text-secondary)] hidden sm:table-cell">{user.examsCount}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+
+      {/* PREVIOUS CHAMPIONS */}
+      {previous.length > 0 && (
+        <div className="pt-8">
+          <h2 className="font-ui font-bold text-2xl text-[var(--text-primary)] mb-6 flex items-center gap-2">
+            <Award className="text-[var(--accent-primary)]" /> Previous Week Champions
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {previous.map((champ: any) => (
+              <div key={champ.userId} className="bg-[var(--bg-primary)] border border-[var(--border-subtle)] rounded-2xl p-6 flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow">
+                <div className={`w-12 h-12 flex-shrink-0 rounded-full flex items-center justify-center font-bold text-lg border-2 ${
+                  champ.rank === 1 ? 'bg-yellow-50 border-yellow-400 text-yellow-700' : 
+                  champ.rank === 2 ? 'bg-slate-50 border-slate-300 text-slate-600' : 
+                  'bg-orange-50 border-orange-300 text-orange-700'
+                }`}>
+                  #{champ.rank}
                 </div>
                 <div>
-                  <h4 className="font-bold text-[var(--text-primary)]">You ({currentUser.name})</h4>
-                  <p className="text-sm text-[var(--text-secondary)]">{currentUser.examsCount} Exams Taken</p>
-                </div>
-              </div>
-              <div className="text-right">
-                <div className="text-xl font-black text-[var(--accent-primary)]">{currentUser.avgScore.toFixed(1)}%</div>
-                <div className="text-xs font-bold uppercase text-[var(--text-secondary)]">Avg Score</div>
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Ranked List (#4 - #20) */}
-        {rest.length > 0 && (
-          <section>
-            <div className="bg-[var(--bg-elevated)] rounded-2xl border border-[var(--border-subtle)] overflow-hidden">
-              <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr className="bg-[var(--bg-secondary)] border-b border-[var(--border-subtle)] text-[var(--text-secondary)] text-sm uppercase tracking-wider">
-                      <th className="py-4 px-6 font-bold">Rank</th>
-                      <th className="py-4 px-6 font-bold">Candidate</th>
-                      <th className="py-4 px-6 font-bold">Exams</th>
-                      <th className="py-4 px-6 font-bold text-right">Avg Score</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-[var(--border-subtle)]">
-                    {rest.map((user: any) => (
-                      <tr 
-                        key={user.userId} 
-                        className={`transition-colors hover:bg-[var(--bg-secondary)] ${user.userId === currentUser?.userId ? 'bg-[var(--accent-primary)]/5' : ''}`}
-                      >
-                        <td className="py-4 px-6 font-mono font-bold text-[var(--text-secondary)]">#{user.rank}</td>
-                        <td className="py-4 px-6 font-medium text-[var(--text-primary)]">{user.name}</td>
-                        <td className="py-4 px-6 text-[var(--text-secondary)]">{user.examsCount}</td>
-                        <td className="py-4 px-6 font-bold text-right text-[var(--text-primary)]">{user.avgScore.toFixed(1)}%</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Previous Week Champions */}
-        {champions.length > 0 && (
-          <section className="pt-8 border-t border-[var(--border-subtle)]">
-            <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-6 flex items-center gap-2">
-              <History className="text-[var(--text-secondary)]" />
-              Previous Week Champions
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {champions.map((champ: any) => (
-                <div key={champ.rank} className="bg-[var(--bg-elevated)] border border-[var(--border-subtle)] p-6 rounded-2xl flex items-center gap-4 hover:border-[var(--accent-primary)]/30 transition-colors">
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center font-black text-xl
-                    ${champ.rank === 1 ? 'bg-yellow-100 text-yellow-600' : 
-                      champ.rank === 2 ? 'bg-gray-200 text-gray-500' : 
-                      'bg-orange-100 text-orange-600'}`}>
-                    {champ.rank}
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-[var(--text-primary)]">{champ.name}</h4>
-                    <p className="text-sm font-medium text-[var(--text-secondary)]">{champ.avgScore.toFixed(1)}% Avg</p>
+                  <h4 className="font-ui font-bold text-[var(--text-primary)]">{champ.name}</h4>
+                  <div className="flex items-center gap-2 mt-1">
+                    <span className="font-mono text-sm font-bold text-[var(--accent-primary)]">{Math.round(champ.avgScore)}%</span>
+                    <span className="text-xs text-[var(--text-muted)]">• {champ.examsCount} exams</span>
                   </div>
                 </div>
-              ))}
-            </div>
-          </section>
-        )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
-      </div>
+      {/* CURRENT USER STICKY ROW */}
+      {currentUser && (
+        <div className="fixed bottom-0 left-0 right-0 bg-[var(--bg-primary)] border-t border-[var(--border-subtle)] p-4 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-50 md:left-64">
+          <div className="max-w-5xl mx-auto flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-[var(--accent-primary)] text-white flex items-center justify-center font-display font-bold text-xl shadow-md">
+                {currentUser.rank !== '-' ? `#${currentUser.rank}` : '-'}
+              </div>
+              <div>
+                <h4 className="font-ui font-bold text-[var(--text-primary)]">Your Current Rank</h4>
+                <p className="text-sm font-ui text-[var(--text-secondary)]">
+                  {currentUser.rank !== '-' ? `You are #${currentUser.rank} out of everyone this week.` : 'Take an exam to get placed on the leaderboard!'}
+                </p>
+              </div>
+            </div>
+            
+            {currentUser.rank !== '-' && (
+              <div className="text-right flex items-center gap-6">
+                <div className="hidden sm:block">
+                  <div className="text-xs text-[var(--text-muted)] uppercase tracking-wider font-bold">Avg Score</div>
+                  <div className="font-mono font-bold text-xl text-[var(--text-primary)]">{Math.round(currentUser.avgScore)}%</div>
+                </div>
+                <div className="hidden sm:block">
+                  <div className="text-xs text-[var(--text-muted)] uppercase tracking-wider font-bold">Exams</div>
+                  <div className="font-mono font-bold text-xl text-[var(--text-primary)]">{currentUser.examsCount}</div>
+                </div>
+                <Flame className="text-orange-500 animate-pulse" size={28} />
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }

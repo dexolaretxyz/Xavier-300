@@ -2,290 +2,257 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { useQuery } from '@tanstack/react-query';
-import { api } from '@/lib/api';
+import { useExamResults } from '@/hooks/useExam';
 import { useExamStore } from '@/store/exam.store';
-import { CheckCircle2, XCircle, Clock, Zap, Target, ArrowRight, BrainCircuit, RefreshCcw, Medal } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { motion, AnimatePresence } from 'framer-motion';
+import { CheckCircle2, XCircle, Clock, Zap, Target, BookOpen, AlertTriangle, ArrowRight, Trophy } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ExamResultsPage() {
-  const { id: attemptId } = useParams() as { id: string };
+  const params = useParams();
+  const attemptId = params.id as string;
   const router = useRouter();
-  const { resetExam, attemptId: storeAttemptId } = useExamStore();
+  
+  const { data, isLoading, error } = useExamResults(attemptId);
+  const clearSession = useExamStore(state => state.clearSession);
 
-  const [animatedScore, setAnimatedScore] = useState(0);
-
-  // Clear exam store if it was the same attempt we just finished
+  // Clear active session from Zustand once results page is hit
   useEffect(() => {
-    if (storeAttemptId === attemptId) {
-      resetExam();
-    }
-  }, [attemptId, storeAttemptId, resetExam]);
+    clearSession();
+  }, [clearSession]);
 
-  // Query Results
-  const { data, isLoading, error } = useQuery({
-    queryKey: ['examResults', attemptId],
-    queryFn: async () => {
-      const res = await api.get(`/exams/${attemptId}/results`);
-      return res.data.data;
-    },
-    // Poll every 3s if AI recommendations haven't arrived yet and we actually have weak topics
-    refetchInterval: (query) => {
-      const attempt = query.state.data?.attempt;
-      if (!attempt) return false;
-      const hasWeakTopics = attempt.weakTopics && attempt.weakTopics.length > 0;
-      const hasNoAiRecs = !attempt.aiRecommendations || attempt.aiRecommendations.length === 0;
-      return (hasWeakTopics && hasNoAiRecs) ? 3000 : false;
-    }
-  });
-
-  // Animate score count-up
-  useEffect(() => {
-    if (data?.attempt?.score !== undefined) {
-      const targetScore = data.attempt.score;
-      let start = 0;
-      const duration = 1500;
-      const increment = targetScore / (duration / 16);
-
-      const timer = setInterval(() => {
-        start += increment;
-        if (start >= targetScore) {
-          setAnimatedScore(targetScore);
-          clearInterval(timer);
-        } else {
-          setAnimatedScore(Math.floor(start));
-        }
-      }, 16);
-
-      return () => clearInterval(timer);
-    }
-  }, [data?.attempt?.score]);
+  const [expandedQuestion, setExpandedQuestion] = useState<string | null>(null);
 
   if (isLoading) {
-    return <div className="min-h-screen flex items-center justify-center text-[var(--text-secondary)]">Analyzing your performance...</div>;
+    return <div className="p-12 text-center font-ui text-[var(--text-secondary)]">Crunching your results...</div>;
   }
 
   if (error || !data) {
-    return (
-      <div className="min-h-[50vh] flex flex-col items-center justify-center p-6 text-center">
-        <XCircle size={64} className="text-[var(--error)] mb-4" />
-        <h2 className="text-2xl font-bold mb-2">Failed to load results</h2>
-        <Button onClick={() => router.push('/dashboard')}>Return to Dashboard</Button>
-      </div>
-    );
+    return <div className="p-12 text-center text-red-500">Failed to load results.</div>;
   }
 
   const { attempt, questions } = data;
-  const { score, timeTaken, correctAnswers, totalQuestions, weakTopics, aiRecommendations, status, certification } = attempt;
-
-  const scoreColor = score >= 85 ? 'text-green-500' : score >= 70 ? 'text-amber-500' : 'text-red-500';
-  const strokeColor = score >= 85 ? '#22c55e' : score >= 70 ? '#f59e0b' : '#ef4444';
+  const score = attempt.score;
+  const timeTakenMinutes = Math.floor(attempt.timeTaken / 60);
+  const timeTakenSeconds = attempt.timeTaken % 60;
+  const speed = (attempt.timeTaken / attempt.totalQuestions).toFixed(1); // Seconds per question
   
-  const circumference = 2 * Math.PI * 120; // r=120
-  const strokeDashoffset = circumference - (animatedScore / 100) * circumference;
+  const isExcellent = score >= 85;
+  const isGood = score >= 70 && score < 85;
+  const badgeColor = isExcellent ? 'text-green-500' : isGood ? 'text-amber-500' : 'text-red-500';
+  const badgeBg = isExcellent ? 'bg-green-100 dark:bg-green-900/30' : isGood ? 'bg-amber-100 dark:bg-amber-900/30' : 'bg-red-100 dark:bg-red-900/30';
 
-  const formatTime = (seconds: number) => {
-    const m = Math.floor(seconds / 60);
-    const s = seconds % 60;
-    return `${m}m ${s}s`;
-  };
+  const hasWeakTopics = attempt.weakTopics && attempt.weakTopics.length > 0;
+  const aiGenerating = hasWeakTopics && (!attempt.aiRecommendations || attempt.aiRecommendations.length === 0);
 
-  const speed = timeTaken && timeTaken > 0 ? (totalQuestions / (timeTaken / 60)).toFixed(1) : 0;
+  // Circle Math
+  const radius = 60;
+  const circumference = 2 * Math.PI * radius;
+  const strokeDashoffset = circumference - (score / 100) * circumference;
 
   return (
-    <div className="min-h-screen bg-[var(--bg-primary)] pb-20">
-      {/* Top Banner indicating if it was auto-submitted or violated */}
-      {status === 'INTEGRITY_VIOLATION' && (
-        <div className="bg-[var(--error)] text-white p-4 text-center font-bold shadow-md">
-          Exam was terminated due to an Integrity Violation.
+    <div className="max-w-4xl mx-auto space-y-16 py-12 px-6">
+      
+      {/* Integrity Violation Warning */}
+      {attempt.integrityFlag && (
+        <div className="bg-red-50 border border-red-200 dark:bg-red-900/20 dark:border-red-900 p-6 rounded-2xl flex items-start gap-4">
+          <AlertTriangle size={24} className="text-red-600 mt-1 flex-shrink-0" />
+          <div>
+            <h3 className="font-ui font-bold text-red-800 dark:text-red-400 text-lg">Integrity Violation</h3>
+            <p className="text-red-700 dark:text-red-300 mt-1 font-ui">Your exam was automatically submitted due to a violation of the anti-cheat rules (e.g. leaving fullscreen or switching tabs). Your score may not accurately reflect your ability.</p>
+          </div>
         </div>
       )}
 
-      {/* Header Section */}
-      <div className="bg-[var(--bg-elevated)] border-b border-[var(--border-subtle)] px-6 py-10 pt-16 text-center relative overflow-hidden">
-        <h1 className="text-sm font-bold tracking-widest text-[var(--text-secondary)] uppercase mb-2">
-          {certification.name}
-        </h1>
-        <h2 className="text-3xl font-display font-bold text-[var(--text-primary)] mb-8">
-          Exam Results
-        </h2>
+      {/* HEADER & SCORE CARD */}
+      <div className="space-y-6">
+        <div className="bg-[var(--bg-primary)] border border-[var(--border-subtle)] rounded-3xl p-8 md:p-12 shadow-sm relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--accent-light)] rounded-full blur-3xl opacity-30 -translate-y-1/2 translate-x-1/3 z-0" />
+          
+          <div className="relative z-10 flex-1 text-center md:text-left w-full">
+            <div className={`inline-flex items-center px-4 py-1.5 rounded-full font-ui text-sm font-bold uppercase tracking-wider mb-6 ${badgeBg} ${badgeColor} whitespace-nowrap`}>
+              {isExcellent ? 'Excellent Performance' : isGood ? 'Good Effort' : 'Needs Work'}
+            </div>
+            <h1 className="font-display font-bold text-4xl md:text-5xl text-[var(--text-primary)] tracking-tight mb-2">
+              {attempt.certification.name}
+            </h1>
+            <p className="font-ui text-lg text-[var(--text-secondary)] mb-8">
+              Attempt {attempt.attemptNumber} completed on {new Date(attempt.completedAt).toLocaleDateString()}
+            </p>
+            
+            <div className="flex flex-wrap gap-8">
+              <div>
+                <div className="text-[var(--text-muted)] font-ui text-xs font-bold uppercase tracking-wider mb-1 whitespace-nowrap">Correct</div>
+                <div className="font-mono text-2xl font-bold text-[var(--text-primary)] flex items-center gap-2 whitespace-nowrap">
+                  <Target size={18} className="text-[var(--accent-primary)]" /> {attempt.correctAnswers}/{attempt.totalQuestions}
+                </div>
+              </div>
+              <div>
+                <div className="text-[var(--text-muted)] font-ui text-xs font-bold uppercase tracking-wider mb-1 whitespace-nowrap">Time Taken</div>
+                <div className="font-mono text-2xl font-bold text-[var(--text-primary)] flex items-center gap-2 whitespace-nowrap">
+                  <Clock size={18} className="text-amber-500" /> {timeTakenMinutes}m {timeTakenSeconds}s
+                </div>
+              </div>
+              <div>
+                <div className="text-[var(--text-muted)] font-ui text-xs font-bold uppercase tracking-wider mb-1 whitespace-nowrap">Speed</div>
+                <div className="font-mono text-2xl font-bold text-[var(--text-primary)] flex items-center gap-2 whitespace-nowrap">
+                  <Zap size={18} className="text-blue-500" /> {speed}s / q
+                </div>
+              </div>
+            </div>
+          </div>
 
-        {/* Radial Progress Score */}
-        <div className="relative w-64 h-64 mx-auto mb-8 flex items-center justify-center">
-          <svg className="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 260 260">
-            {/* Track */}
-            <circle cx="130" cy="130" r="120" stroke="var(--border-subtle)" strokeWidth="12" fill="none" />
-            {/* Progress */}
-            <circle 
-              cx="130" cy="130" r="120" 
-              stroke={strokeColor} strokeWidth="12" fill="none" 
-              strokeLinecap="round"
-              style={{
-                strokeDasharray: circumference,
-                strokeDashoffset: strokeDashoffset,
-                transition: 'stroke-dashoffset 0.1s linear'
-              }}
-            />
-          </svg>
-          <div className="flex flex-col items-center justify-center">
-            <span className={`text-6xl font-mono font-bold ${scoreColor}`}>
-              {animatedScore}%
-            </span>
-            <span className="text-[var(--text-secondary)] font-medium mt-1">
-              {score >= 85 ? 'Excellent' : score >= 70 ? 'Good' : 'Needs Work'}
-            </span>
+          {/* RADIAL SCORE */}
+          <div className="relative z-10 flex-shrink-0 flex items-center justify-center">
+            <svg width="200" height="200" className="transform -rotate-90">
+              <circle cx="100" cy="100" r={radius} stroke="currentColor" strokeWidth="16" fill="transparent" className="text-[var(--bg-elevated)]" />
+              <motion.circle 
+                cx="100" cy="100" r={radius} 
+                stroke="currentColor" strokeWidth="16" fill="transparent" 
+                strokeDasharray={circumference}
+                initial={{ strokeDashoffset: circumference }}
+                animate={{ strokeDashoffset }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
+                className={badgeColor}
+                strokeLinecap="round"
+              />
+            </svg>
+            <div className="absolute inset-0 flex flex-col items-center justify-center">
+              <span className="font-mono font-bold text-5xl text-[var(--text-primary)]">{Math.round(score)}%</span>
+            </div>
           </div>
         </div>
 
-        {/* Stats Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-10">
-          <div className="bg-[var(--bg-primary)] p-4 rounded-2xl border border-[var(--border-subtle)]">
-            <Target className="mx-auto mb-2 text-[var(--accent-primary)]" />
-            <div className="text-2xl font-bold text-[var(--text-primary)]">{correctAnswers}/{totalQuestions}</div>
-            <div className="text-xs text-[var(--text-secondary)] uppercase">Correct</div>
-          </div>
-          <div className="bg-[var(--bg-primary)] p-4 rounded-2xl border border-[var(--border-subtle)]">
-            <Clock className="mx-auto mb-2 text-indigo-500" />
-            <div className="text-2xl font-bold text-[var(--text-primary)]">{formatTime(timeTaken)}</div>
-            <div className="text-xs text-[var(--text-secondary)] uppercase">Time Taken</div>
-          </div>
-          <div className="bg-[var(--bg-primary)] p-4 rounded-2xl border border-[var(--border-subtle)]">
-            <Zap className="mx-auto mb-2 text-amber-500" />
-            <div className="text-2xl font-bold text-[var(--text-primary)]">{speed}</div>
-            <div className="text-xs text-[var(--text-secondary)] uppercase">Questions / Min</div>
-          </div>
-          <div className="bg-[var(--bg-primary)] p-4 rounded-2xl border border-[var(--border-subtle)]">
-            <Medal className="mx-auto mb-2 text-purple-500" />
-            <div className="text-2xl font-bold text-[var(--text-primary)]">--</div>
-            <div className="text-xs text-[var(--text-secondary)] uppercase">Rank Change</div>
-          </div>
+        {/* CTA ACTIONS MOVED HERE */}
+        <div className="flex flex-col sm:flex-row items-center justify-start gap-4">
+          <Link href="/dashboard" className="w-full sm:w-auto px-8 py-3 rounded-full font-ui font-medium text-[var(--text-primary)] border border-[var(--border-subtle)] hover:bg-[var(--bg-hover)] transition-colors text-center">
+            Return to Dashboard
+          </Link>
+          <Link href="/leaderboard" className="w-full sm:w-auto px-8 py-3 rounded-full font-ui font-medium text-white bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] transition-colors text-center shadow-md flex items-center justify-center gap-2">
+            <Trophy size={18} /> View Leaderboard
+          </Link>
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 py-12 space-y-12">
-        
-        {/* AI Recommendations Section */}
-        {weakTopics && weakTopics.length > 0 && (
-          <section>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-[var(--accent-primary)]/10 text-[var(--accent-primary)] rounded-lg">
-                <BrainCircuit size={24} />
-              </div>
-              <h3 className="text-2xl font-bold text-[var(--text-primary)]">Your Personalised Study Plan</h3>
+      {/* AI RECOMMENDATIONS */}
+      {hasWeakTopics && (
+        <div className="space-y-6">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-10 h-10 rounded-full bg-[var(--accent-light)] flex items-center justify-center text-[var(--accent-primary)]">
+              <BookOpen size={20} />
             </div>
-
-            <div className="space-y-4">
-              {aiRecommendations && aiRecommendations.length > 0 ? (
-                aiRecommendations.map((rec: any, idx: number) => (
-                  <div key={idx} className="bg-[var(--bg-elevated)] border-l-4 border-[var(--accent-primary)] p-6 rounded-r-2xl shadow-sm">
-                    <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-bold text-[var(--text-primary)] text-lg">{rec.topic}</h4>
-                      <span className={`text-xs px-2 py-1 rounded-full font-bold ${
-                        rec.priority === 'High' ? 'bg-[var(--error)]/10 text-[var(--error)]' : 'bg-amber-500/10 text-amber-600'
-                      }`}>
-                        {rec.priority} Priority
-                      </span>
-                    </div>
-                    <p className="text-[var(--text-secondary)] mb-4">{rec.recommendation}</p>
-                    <a href={`https://google.com/search?q=${encodeURIComponent(rec.recommendation)}`} target="_blank" rel="noreferrer" className="text-sm font-bold text-[var(--accent-primary)] hover:underline flex items-center gap-1">
-                      Search Resource <ArrowRight size={14} />
-                    </a>
-                  </div>
-                ))
-              ) : (
-                <div className="bg-[var(--bg-elevated)] border border-[var(--border-subtle)] p-8 rounded-2xl text-center space-y-4 animate-pulse">
-                  <RefreshCcw className="mx-auto text-[var(--accent-primary)] animate-spin" size={32} />
-                  <p className="text-[var(--text-secondary)]">AI is analyzing your performance and generating a custom study plan...</p>
-                </div>
-              )}
-            </div>
-          </section>
-        )}
-
-        {/* Question Review */}
-        <section>
-          <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Question Review</h3>
-          <div className="space-y-4">
-            {questions.map((q: any, idx: number) => {
-              const userAnswer = attempt.answers[q.id];
-              const isCorrect = userAnswer === q.correctAnswer;
-              
-              return (
-                <div key={q.id} className="bg-[var(--bg-elevated)] border border-[var(--border-subtle)] rounded-2xl p-6 transition-all hover:shadow-md">
-                  <div className="flex items-start gap-4">
-                    <div className="mt-1">
-                      {isCorrect ? (
-                        <CheckCircle2 className="text-green-500" size={24} />
-                      ) : (
-                        <XCircle className="text-[var(--error)]" size={24} />
-                      )}
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="text-xs font-bold px-2 py-1 bg-[var(--bg-secondary)] rounded-md text-[var(--text-secondary)]">Question {idx + 1}</span>
-                        <span className="text-xs font-bold px-2 py-1 bg-[var(--accent-primary)]/5 text-[var(--accent-primary)] rounded-md">{q.topic}</span>
-                      </div>
-                      <p className="text-lg text-[var(--text-primary)] mb-4 leading-relaxed">{q.text}</p>
-                      
-                      <div className="space-y-2 mb-4">
-                        {Object.entries(q.options).map(([key, text]) => {
-                          let bg = 'bg-[var(--bg-secondary)]';
-                          let textClass = 'text-[var(--text-secondary)]';
-                          let border = 'border-transparent';
-
-                          if (key === q.correctAnswer) {
-                            bg = 'bg-green-500/10';
-                            textClass = 'text-green-700 dark:text-green-400 font-medium';
-                            border = 'border-green-500/30';
-                          } else if (key === userAnswer && !isCorrect) {
-                            bg = 'bg-[var(--error)]/10';
-                            textClass = 'text-[var(--error)] font-medium';
-                            border = 'border-[var(--error)]/30';
-                          }
-
-                          return (
-                            <div key={key} className={`p-3 rounded-xl border ${bg} ${border} flex gap-3`}>
-                              <span className={`font-bold ${textClass}`}>{key}</span>
-                              <span className={textClass}>{text as string}</span>
-                            </div>
-                          );
-                        })}
-                      </div>
-
-                      {!isCorrect && (
-                        <div className="mt-4 p-4 bg-[var(--accent-primary)]/5 border border-[var(--accent-primary)]/20 rounded-xl">
-                          <h5 className="text-sm font-bold text-[var(--accent-primary)] mb-1">Explanation</h5>
-                          <p className="text-sm text-[var(--text-secondary)] leading-relaxed">{q.explanation}</p>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+            <h2 className="font-ui font-bold text-2xl text-[var(--text-primary)]">Your Personalised Study Plan</h2>
           </div>
-        </section>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {aiGenerating ? (
+              // Skeletons
+              [1, 2, 3, 4].map(i => (
+                <div key={i} className="bg-[var(--bg-primary)] border border-[var(--border-subtle)] p-6 rounded-2xl animate-pulse">
+                  <div className="h-4 bg-[var(--bg-elevated)] rounded w-1/2 mb-4" />
+                  <div className="h-16 bg-[var(--bg-elevated)] rounded mb-4" />
+                  <div className="h-3 bg-[var(--bg-elevated)] rounded w-1/3" />
+                </div>
+              ))
+            ) : (
+              attempt.aiRecommendations?.map((rec: any, i: number) => (
+                <div key={i} className="bg-[var(--bg-primary)] border-l-4 border-l-[var(--accent-primary)] border-y border-r border-[var(--border-subtle)] p-6 rounded-r-2xl shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex justify-between items-start gap-4 mb-3">
+                    <h3 className="font-ui font-bold text-[var(--text-primary)]">{rec.topic}</h3>
+                    <span className={`text-xs font-bold px-2 py-1 rounded-md uppercase whitespace-nowrap flex-shrink-0 ${
+                      rec.priority === 'High' ? 'bg-red-100 text-red-700' : 'bg-amber-100 text-amber-700'
+                    }`}>
+                      {rec.priority} Priority
+                    </span>
+                  </div>
+                  <p className="font-ui text-[var(--text-secondary)] text-sm mb-4 leading-relaxed">
+                    {rec.recommendation}
+                  </p>
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+      )}
 
-        {/* CTA Section */}
-        <section className="flex flex-col sm:flex-row gap-4 pt-8 border-t border-[var(--border-subtle)]">
-          <Link href={`/courses/${certification.slug}`} className="flex-1">
-            <Button className="w-full py-6 rounded-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white shadow-md text-lg">
-              Retake Exam
-            </Button>
-          </Link>
-          <Link href="/courses" className="flex-1">
-            <Button variant="outline" className="w-full py-6 rounded-full text-lg border-2">
-              Try Another
-            </Button>
-          </Link>
-          <Link href="/leaderboard" className="flex-1">
-            <Button variant="outline" className="w-full py-6 rounded-full text-lg border-2">
-              Leaderboard
-            </Button>
-          </Link>
-        </section>
+      {/* QUESTION REVIEW */}
+      <div className="space-y-6">
+        <h2 className="font-ui font-bold text-2xl text-[var(--text-primary)]">Question Review</h2>
+        <div className="bg-[var(--bg-primary)] border border-[var(--border-subtle)] rounded-3xl overflow-hidden shadow-sm">
+          {questions.map((q: any, i: number) => {
+            const userAnswer = (attempt.answers as Record<string, string>)[q.id];
+            const isCorrect = userAnswer === q.correctAnswer;
+            const isExpanded = expandedQuestion === q.id;
 
+            return (
+              <div key={q.id} className="border-b border-[var(--border-subtle)] last:border-0">
+                <div 
+                  onClick={() => setExpandedQuestion(isExpanded ? null : q.id)}
+                  className="p-6 flex items-center justify-between cursor-pointer hover:bg-[var(--bg-hover)] transition-colors"
+                >
+                  <div className="flex items-center gap-4 flex-1 pr-6">
+                    <div className="flex-shrink-0 mt-0.5">
+                      {isCorrect ? <CheckCircle2 size={24} className="text-green-500" /> : <XCircle size={24} className="text-red-500" />}
+                    </div>
+                    <div>
+                      <div className="font-mono text-sm text-[var(--text-muted)] mb-1">Question {i + 1}</div>
+                      <h3 className="font-ui font-medium text-[var(--text-primary)] line-clamp-2">{q.text}</h3>
+                    </div>
+                  </div>
+                  <div className="text-[var(--accent-primary)] font-medium text-sm whitespace-nowrap">
+                    {isExpanded ? 'Hide' : 'Review'}
+                  </div>
+                </div>
+
+                <AnimatePresence>
+                  {isExpanded && (
+                    <motion.div 
+                      initial={{ height: 0, opacity: 0 }} 
+                      animate={{ height: 'auto', opacity: 1 }} 
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden bg-[var(--bg-secondary)]"
+                    >
+                      <div className="p-6 pt-2 border-t border-[var(--border-subtle)]">
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+                          <div>
+                            <div className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-2 whitespace-nowrap">Your Answer</div>
+                            <div className={`p-4 rounded-xl border ${isCorrect ? 'bg-green-50 border-green-200 text-green-900 dark:bg-green-900/20 dark:border-green-900/50 dark:text-green-300' : 'bg-red-50 border-red-200 text-red-900 dark:bg-red-900/20 dark:border-red-900/50 dark:text-red-300'}`}>
+                              <div className="font-bold mb-1">Option {userAnswer}</div>
+                              <div className="text-sm">{userAnswer ? q.options[userAnswer] : 'No answer provided'}</div>
+                            </div>
+                          </div>
+                          
+                          {!isCorrect && (
+                            <div>
+                              <div className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider mb-2 whitespace-nowrap">Correct Answer</div>
+                              <div className="p-4 rounded-xl border bg-green-50 border-green-200 text-green-900 dark:bg-green-900/20 dark:border-green-900/50 dark:text-green-300">
+                                <div className="font-bold mb-1">Option {q.correctAnswer}</div>
+                                <div className="text-sm">{q.options[q.correctAnswer]}</div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+
+                        {q.explanation && (
+                          <div className="bg-[var(--bg-primary)] p-5 rounded-xl border border-[var(--border-subtle)]">
+                            <div className="text-xs font-bold text-[var(--accent-primary)] uppercase tracking-wider mb-2 flex items-center gap-2 whitespace-nowrap">
+                              <BookOpen size={14} /> Explanation
+                            </div>
+                            <div className="font-ui text-[var(--text-secondary)] text-sm leading-relaxed">
+                              {q.explanation}
+                            </div>
+                          </div>
+                        )}
+                        
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

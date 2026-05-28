@@ -163,6 +163,52 @@ router.post('/:id/submit', authenticate, async (req: express.Request, res, next)
       }
     });
 
+    // 4.5 Update Weekly Score for Leaderboard
+    if (!integrityFlag) {
+      // Find the start of the current week (Monday 00:00:00)
+      const now = new Date();
+      const day = now.getDay();
+      const diff = now.getDate() - day + (day === 0 ? -6 : 1); // Adjust when day is sunday
+      const weekStart = new Date(now.setDate(diff));
+      weekStart.setHours(0, 0, 0, 0);
+
+      const existingWeeklyScore = await prisma.weeklyScore.findUnique({
+        where: { userId: authReq.user!.userId }
+      });
+
+      if (!existingWeeklyScore || existingWeeklyScore.weekStart.getTime() !== weekStart.getTime()) {
+        // Reset or create for new week
+        await prisma.weeklyScore.upsert({
+          where: { userId: authReq.user!.userId },
+          update: {
+            weekStart,
+            totalScore: results.score,
+            examsCount: 1,
+            avgScore: results.score
+          },
+          create: {
+            userId: authReq.user!.userId,
+            weekStart,
+            totalScore: results.score,
+            examsCount: 1,
+            avgScore: results.score
+          }
+        });
+      } else {
+        // Update current week
+        const newTotal = existingWeeklyScore.totalScore + results.score;
+        const newCount = existingWeeklyScore.examsCount + 1;
+        await prisma.weeklyScore.update({
+          where: { userId: authReq.user!.userId },
+          data: {
+            totalScore: newTotal,
+            examsCount: newCount,
+            avgScore: newTotal / newCount
+          }
+        });
+      }
+    }
+
     // 5. Trigger AI Recommendations generation asynchronously (non-blocking)
     if (results.weakTopics.length > 0) {
       aiService.generateRecommendations(results.weakTopics, attempt.certification.name)
