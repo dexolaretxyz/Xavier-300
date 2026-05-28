@@ -17,7 +17,7 @@ const QuestionSchema = z.object({
   }),
   correctAnswer: z.enum(['A', 'B', 'C', 'D']),
   explanation: z.string().min(10),
-  difficulty: z.enum(['EASY', 'MEDIUM', 'HARD', 'ADVANCED']),
+  difficulty: z.enum(['EASY', 'MEDIUM', 'HARD']),
   topic: z.string().min(2),
 });
 

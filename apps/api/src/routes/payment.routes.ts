@@ -45,20 +45,16 @@ router.post('/verify', authenticate, async (req: express.Request, res, next) => 
 });
 
 // POST /payments/webhook - Paystack webhook (Public)
-router.post('/webhook', express.raw({ type: 'application/json' }), async (req: express.Request, res, next) => {
+router.post('/webhook', async (req: express.Request, res, next) => {
   try {
     const signature = req.headers['x-paystack-signature'] as string;
     
-    // Validate signature
-    if (!paymentService.validateWebhookSignature(req.body, signature)) {
+    // Validate signature using raw body attached by express.json
+    const rawBody = (req as any).rawBody;
+    if (!rawBody || !paymentService.validateWebhookSignature(rawBody, signature)) {
       return res.status(400).send('Invalid signature');
     }
 
-    // Since we used express.raw, we must parse the body string
-    // Wait, if express.json() is applied globally, req.body is already an object.
-    // In index.ts, app.use(express.json()) is global. So req.body is already JSON. 
-    // Wait, crypto.createHmac needs the raw string. In index.ts it uses express.json().
-    // If webhook needs raw, it might be tricky. For now, since we have dummy fallback, we just check the parsed body.
     const event = req.body;
 
     if (event.event === 'charge.success') {

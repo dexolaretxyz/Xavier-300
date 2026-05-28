@@ -34,7 +34,7 @@ export const useAuthStore = create<AuthState>((set) => ({
       document.cookie = `xavier_access_token=${tokens.accessToken}; path=/; max-age=900`;
     }
     
-    set({ user, isAuthenticated: true });
+    set({ user, isAuthenticated: true, isLoading: false });
   },
   
   logout: async () => {

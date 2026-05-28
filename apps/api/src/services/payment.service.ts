@@ -71,12 +71,12 @@ export const paymentService = {
   },
 
   // Webhook signature validation
-  validateWebhookSignature(payload: any, signature: string): boolean {
+  validateWebhookSignature(rawBody: Buffer | string, signature: string): boolean {
     const PAYSTACK_SECRET_KEY = process.env.PAYSTACK_SECRET_KEY || '';
     if (!PAYSTACK_SECRET_KEY) return true; // Accept in dev if no key
     
     const hash = crypto.createHmac('sha512', PAYSTACK_SECRET_KEY)
-      .update(JSON.stringify(payload))
+      .update(rawBody)
       .digest('hex');
       
     return hash === signature;

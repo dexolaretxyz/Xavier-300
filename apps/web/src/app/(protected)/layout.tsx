@@ -5,23 +5,45 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { LayoutDashboard, Library, Trophy, User, HelpCircle, Bell, Sun, Moon, Menu, X, LogOut } from 'lucide-react';
 import { useAuthStore } from '@/store/auth.store';
+import { toast } from 'sonner';
+import { api } from '@/lib/api';
 
 export default function ProtectedLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const { user, logout } = useAuthStore();
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hasPracticedToday, setHasPracticedToday] = useState(true);
 
   useEffect(() => {
     const savedTheme = document.documentElement.getAttribute('data-theme') || 'light';
     setTheme(savedTheme as 'light' | 'dark');
-  }, []);
+
+    // Fetch practice status
+    if (user) {
+      api.get('/api/users/activity/today').then(res => {
+        if (res.data?.success) {
+          setHasPracticedToday(res.data.data.hasPracticedToday);
+        }
+      }).catch(err => console.error('Failed to fetch activity', err));
+    }
+  }, [user]);
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
     document.documentElement.setAttribute('data-theme', newTheme);
+  };
+
+  const handleNotificationClick = () => {
+    if (!hasPracticedToday) {
+      toast('Practice reminder!', {
+        description: "You haven't taken a mock exam today. Keep your streak alive!",
+        action: { label: 'Practice Now', onClick: () => window.location.href = '/dashboard' }
+      });
+    } else {
+      toast("You don't have any new notifications");
+    }
   };
 
   const navItems = [
@@ -89,8 +111,9 @@ export default function ProtectedLayout({ children }: { children: React.ReactNod
           <button onClick={toggleTheme} className="text-[var(--text-secondary)]">
             {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
           </button>
-          <button className="text-[var(--text-secondary)]">
+          <button onClick={handleNotificationClick} className="text-[var(--text-secondary)] relative">
             <Bell size={20} />
+            {!hasPracticedToday && <span className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>}
           </button>
         </div>
       </header>
@@ -104,9 +127,9 @@ export default function ProtectedLayout({ children }: { children: React.ReactNod
           </div>
           
           <div className="flex items-center gap-6">
-            <button className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors relative">
+            <button onClick={handleNotificationClick} className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors relative">
               <Bell size={20} />
-              <span className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
+              {!hasPracticedToday && <span className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>}
             </button>
             <button onClick={toggleTheme} className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
               {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}

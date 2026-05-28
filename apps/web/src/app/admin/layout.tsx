@@ -7,21 +7,21 @@ import Link from 'next/link';
 import { LayoutDashboard, HelpCircle, Users, MessageSquare, BarChart, LogOut, Loader2 } from 'lucide-react';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
-  const { user, isHydrated, logout } = useAuthStore();
+  const { user, isLoading, logout } = useAuthStore();
   const router = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
-    if (isHydrated) {
+    if (!isLoading) {
       if (!user) {
         router.push('/login');
       } else if (user.role !== 'ADMIN') {
         router.push('/dashboard');
       }
     }
-  }, [isHydrated, user, router]);
+  }, [isLoading, user, router]);
 
-  if (!isHydrated || !user || user.role !== 'ADMIN') {
+  if (isLoading || !user || user.role !== 'ADMIN') {
     return (
       <div className="min-h-screen bg-[var(--bg-secondary)] flex items-center justify-center">
         <Loader2 className="w-8 h-8 animate-spin text-[var(--accent-primary)]" />

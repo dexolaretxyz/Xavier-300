@@ -243,18 +243,21 @@ export default function ExamSessionPage() {
       <main className="relative z-10 flex-1 overflow-y-auto px-6 py-8 md:py-12">
         <div className="max-w-3xl mx-auto h-full flex flex-col">
           
-          <div className="mb-8">
+          <div className="mb-8" aria-live="polite">
             <h2 className="font-ui font-medium text-2xl md:text-3xl text-[var(--text-primary)] leading-relaxed">
               {question.text}
             </h2>
           </div>
 
-          <div className="space-y-4 mb-12">
+          <div className="space-y-4 mb-12" role="radiogroup" aria-labelledby="question-text">
+            <h2 id="question-text" className="sr-only">Answer Options</h2>
             {Object.entries(question.options).map(([key, text]) => {
               const isSelected = answers[question.id] === key;
               return (
                 <button
                   key={key}
+                  role="radio"
+                  aria-checked={isSelected}
                   onClick={() => setAnswer(question.id, key)}
                   className={`w-full text-left p-5 rounded-2xl border-2 transition-all flex items-center gap-4 ${
                     isSelected 
@@ -264,7 +267,7 @@ export default function ExamSessionPage() {
                 >
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center font-ui font-bold text-sm ${
                     isSelected ? 'bg-[var(--accent-primary)] text-white' : 'bg-[var(--bg-elevated)] text-[var(--text-secondary)]'
-                  }`}>
+                  }`} aria-hidden="true">
                     {key}
                   </div>
                   <span className={`font-ui text-lg ${isSelected ? 'text-[var(--text-primary)] font-medium' : 'text-[var(--text-secondary)]'}`}>

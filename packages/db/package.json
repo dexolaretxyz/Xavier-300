@@ -9,7 +9,8 @@
   "scripts": {
     "generate": "prisma generate",
     "push": "prisma db push",
-    "seed": "prisma db seed"
+    "seed": "prisma db seed",
+    "seed:questions": "tsx seed-questions.ts"
   },
   "keywords": [],
   "author": "",
@@ -22,7 +23,9 @@
     "typescript": "^6.0.3"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.99.0",
     "@prisma/client": "^5.15.0",
-    "bcryptjs": "^3.0.3"
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.4.2"
   }
 }

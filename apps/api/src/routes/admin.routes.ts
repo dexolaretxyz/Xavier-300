@@ -170,7 +170,7 @@ router.patch('/users/:id', async (req: any, res: any) => {
 router.get('/stats', async (req: any, res: any) => {
   try {
     const totalUsers = await prisma.user.count();
-    const activeSubscribers = await prisma.user.count({ where: { subscriptionStatus: 'ACTIVE' } });
+    const activeSubscribers = await prisma.user.count({ where: { subscriptionStatus: 'SUBSCRIBED' } });
     const trialUsers = await prisma.user.count({ where: { subscriptionStatus: 'FREE_TRIAL' } });
     
     // Exclude free trials for revenue rough calculation (assume 50k per active for demo)
@@ -240,7 +240,42 @@ router.patch('/tickets/:id', async (req: any, res: any) => {
     return res.json({ success: true, data: ticket });
   } catch (error) {
     console.error('Admin update ticket error:', error);
-    return res.status(500).json({ success: false, error: { message: 'Internal server error' } });
+    next(error);
+  }
+});
+
+// POST /api/admin/tickets/:id/messages
+router.post('/tickets/:id/messages', async (req: any, res: any, next: any) => {
+  try {
+    const { message } = req.body;
+    if (!message) return res.status(400).json({ success: false, error: { message: 'Message is required' }});
+
+    const ticket = await prisma.supportTicket.findUnique({
+      where: { id: req.params.id },
+      include: { user: true }
+    });
+
+    if (!ticket) return res.status(404).json({ success: false, error: { message: 'Ticket not found' } });
+
+    // Add admin reply
+    const newMessage = await prisma.ticketMessage.create({
+      data: {
+        ticketId: ticket.id,
+        senderId: req.user.userId,
+        message: message,
+        isAdmin: true
+      }
+    });
+
+    // Send email notification to user
+    import('../services/notification.service').then(({ notificationService }) => {
+      notificationService.sendTicketUpdatedEmail(ticket.user.email, ticket.id).catch(console.error);
+    });
+
+    return res.status(201).json({ success: true, data: newMessage });
+  } catch (error) {
+    console.error('Admin reply ticket error:', error);
+    next(error);
   }
 });
 

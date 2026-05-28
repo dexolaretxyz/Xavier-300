@@ -35,9 +35,10 @@ export default function AdminQuestionsPage() {
 
   const fetchCerts = async () => {
     try {
-      const { data } = await api.get('/api/exams/certifications'); // Assuming this endpoint exists, or similar
-      setCertifications(data.data);
-      if (data.data.length > 0) setGenForm(prev => ({ ...prev, certificationId: data.data[0].id }));
+      const { data } = await api.get('/api/domains'); 
+      const allCerts = data.data.flatMap((d: any) => d.certifications);
+      setCertifications(allCerts);
+      if (allCerts.length > 0) setGenForm(prev => ({ ...prev, certificationId: allCerts[0].id }));
     } catch (err) {
       console.error('Failed to load certs', err);
     }
