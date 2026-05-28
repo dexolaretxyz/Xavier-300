@@ -10,9 +10,13 @@ export default withSentryConfig(nextConfig, {
   project: "xavier-300-web",
   silent: !process.env.CI,
   widenClientFileUpload: true,
-  reactComponentAnnotation: { enabled: true },
   tunnelRoute: "/monitoring",
-  hideSourceMaps: true,
-  disableLogger: true,
-  automaticVercelMonitors: true,
+  sourcemaps: {
+    disable: true,
+  },
+  webpack: {
+    reactComponentAnnotation: { enabled: true },
+    treeshake: { removeDebugLogging: true },
+    automaticVercelMonitors: true,
+  }
 });
