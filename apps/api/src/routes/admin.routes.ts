@@ -1,8 +1,9 @@
-import { Router } from 'express';
+import { Router, Request, Response, NextFunction } from 'express';
 import { z } from 'zod';
 import { authenticate } from '../middleware/auth.middleware';
 import { prisma } from '../../../../packages/db/index';
 import { questionService } from '../services/question.service';
+import { notificationService } from '../services/notification.service';
 
 const router = Router();
 
@@ -223,7 +224,7 @@ router.get('/tickets', async (req: any, res: any) => {
 /**
  * PATCH /api/admin/tickets/:id
  */
-router.patch('/tickets/:id', async (req: any, res: any) => {
+router.patch('/tickets/:id', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { id } = req.params;
     const { status, adminNote } = req.body;
@@ -233,7 +234,7 @@ router.patch('/tickets/:id', async (req: any, res: any) => {
     if (adminNote) data.adminNote = adminNote;
 
     const ticket = await prisma.supportTicket.update({
-      where: { id },
+      where: { id: id as string },
       data
     });
 
@@ -268,9 +269,7 @@ router.post('/tickets/:id/messages', async (req: any, res: any, next: any) => {
     });
 
     // Send email notification to user
-    import('../services/notification.service').then(({ notificationService }) => {
-      notificationService.sendTicketUpdatedEmail(ticket.user.email, ticket.id).catch(console.error);
-    });
+    notificationService.sendTicketUpdatedEmail(ticket.user.email, ticket.id).catch(console.error);
 
     return res.status(201).json({ success: true, data: newMessage });
   } catch (error) {

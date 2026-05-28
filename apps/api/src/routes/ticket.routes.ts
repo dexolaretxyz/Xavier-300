@@ -42,7 +42,7 @@ router.get('/:id', authenticate, async (req: express.Request, res, next) => {
     const authReq = req as AuthRequest;
     const ticket = await prisma.supportTicket.findFirst({
       where: { 
-        id: req.params.id,
+        id: req.params.id as string,
         userId: authReq.user!.userId
       },
       include: {
@@ -74,6 +74,7 @@ router.post('/', authenticate, async (req: express.Request, res, next) => {
       data: {
         userId: authReq.user!.userId,
         subject: data.subject,
+        description: data.description,
         type: data.category as any,
         status: 'OPEN',
         messages: {
@@ -94,7 +95,7 @@ router.post('/', authenticate, async (req: express.Request, res, next) => {
     res.status(201).json({ success: true, data: ticket });
   } catch (error) {
     if (error instanceof z.ZodError) {
-      return res.status(400).json({ success: false, error: { message: error.errors[0].message } });
+      return res.status(400).json({ success: false, error: { message: (error as any).errors[0].message } });
     }
     next(error);
   }
@@ -108,7 +109,7 @@ router.post('/:id/messages', authenticate, async (req: express.Request, res, nex
 
     const ticket = await prisma.supportTicket.findFirst({
       where: { 
-        id: req.params.id,
+        id: req.params.id as string,
         userId: authReq.user!.userId
       }
     });
@@ -136,7 +137,7 @@ router.post('/:id/messages', authenticate, async (req: express.Request, res, nex
     res.status(201).json({ success: true, data: newMessage });
   } catch (error) {
     if (error instanceof z.ZodError) {
-      return res.status(400).json({ success: false, error: { message: error.errors[0].message } });
+      return res.status(400).json({ success: false, error: { message: (error as any).errors[0].message } });
     }
     next(error);
   }

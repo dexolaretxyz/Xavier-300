@@ -52,7 +52,6 @@ export const initLeaderboardJob = () => {
       console.error('❌ Error executing Weekly Leaderboard Reset Job:', error);
     }
   }, {
-    scheduled: true,
     timezone: "Africa/Lagos"
   });
 

@@ -8,10 +8,10 @@ const connection = new IORedis(process.env.REDIS_URL || 'redis://localhost:6379'
 });
 
 // Queue for scheduling the daily notification sweep
-export const notificationSweepQueue = new Queue('notification-sweep', { connection });
+export const notificationSweepQueue = new Queue('notification-sweep', { connection: connection as any });
 
 // Queue for individual user notifications
-export const userNotificationQueue = new Queue('user-notification', { connection });
+export const userNotificationQueue = new Queue('user-notification', { connection: connection as any });
 
 /**
  * Worker that runs once a day (e.g., at midnight) to schedule individual
@@ -25,7 +25,7 @@ export const sweepWorker = new Worker('notification-sweep', async () => {
       notificationsEnabled: true,
       role: 'STUDENT',
       // only check active or trial users
-      subscriptionStatus: { in: ['ACTIVE', 'FREE_TRIAL', 'SUBSCRIBED'] }
+      subscriptionStatus: { in: ['ACTIVE' as any, 'FREE_TRIAL' as any, 'SUBSCRIBED' as any] }
     },
     select: { id: true, email: true, notificationTime: true, fullName: true }
   });
@@ -57,7 +57,7 @@ export const sweepWorker = new Worker('notification-sweep', async () => {
   }
   
   console.log(`Scheduled reminders for ${users.length} users.`);
-}, { connection });
+}, { connection: connection as any });
 
 /**
  * Worker that executes the actual individual notification job
@@ -86,7 +86,7 @@ export const userWorker = new Worker('user-notification', async (job: Job) => {
   } else {
     console.log(`Skipped reminder for ${email} (already practiced)`);
   }
-}, { connection });
+}, { connection: connection as any });
 
 /**
  * Initializes the BullMQ repeatable job.

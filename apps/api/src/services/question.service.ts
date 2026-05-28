@@ -66,7 +66,7 @@ export const questionService = {
           messages: [{ role: 'user', content: prompt }]
         });
 
-        let rawContent = response.content[0].text;
+        let rawContent = (response.content[0] as any).text;
         
         // Clean markdown fences if Claude accidentally includes them
         if (rawContent.startsWith('```json')) {

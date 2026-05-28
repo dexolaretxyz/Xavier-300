@@ -1,6 +1,7 @@
 import webpush from 'web-push';
 import { Resend } from 'resend';
 import { prisma } from '../../../../packages/db/index';
+import { Prisma } from '@prisma/client';
 
 // Initialize Web Push
 const initWebPush = () => {
@@ -58,7 +59,7 @@ export const notificationService = {
       if (error.statusCode === 410 || error.statusCode === 404) {
         await prisma.user.update({
           where: { id: userId },
-          data: { pushSubscription: null }
+          data: { pushSubscription: Prisma.DbNull as any }
         });
       }
       console.error('Error sending push notification:', error);
