@@ -1,0 +1,226 @@
+// schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                String         @id @default(cuid())
+  email             String         @unique
+  passwordHash      String
+  fullName          String
+  phone             String
+  state             String
+  occupation        String
+  yearsExperience   Int
+  role              Role           @default(STUDENT)
+  emailVerified     Boolean        @default(false)
+  verificationOTP   String?
+  otpExpiresAt      DateTime?
+  subscriptionStatus SubStatus     @default(FREE_TRIAL)
+  trialStartedAt    DateTime       @default(now())
+  subscriptionEndsAt DateTime?
+  notificationsEnabled Boolean     @default(true)
+  notificationTime  String         @default("09:00")
+  pushSubscription  Json?
+  theme             String         @default("light")
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+
+  examAttempts      ExamAttempt[]
+  tickets           SupportTicket[]
+  questionContributions Question[]
+  payments          Payment[]
+  weeklyScore       WeeklyScore?
+  leaderboardWins   LeaderboardArchive[]
+  ticketMessages    TicketMessage[]
+}
+
+enum Role {
+  STUDENT
+  TEACHER
+  ADMIN
+}
+
+enum SubStatus {
+  FREE_TRIAL
+  SUBSCRIBED
+  EXPIRED
+  CANCELLED
+}
+
+model Domain {
+  id            String          @id @default(cuid())
+  name          String
+  slug          String          @unique
+  description   String
+  iconMark      String          // SVG path data
+  priority      Int             @default(0)
+  certifications Certification[]
+}
+
+model Certification {
+  id            String     @id @default(cuid())
+  domainId      String
+  domain        Domain     @relation(fields: [domainId], references: [id])
+  name          String
+  slug          String     @unique
+  description   String
+  examDuration  Int        @default(30)  // minutes
+  questionCount Int        @default(40)  // per session
+  difficulty    Difficulty @default(MEDIUM)
+  questions     Question[]
+  examAttempts  ExamAttempt[]
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+model Question {
+  id              String       @id @default(cuid())
+  certificationId String
+  certification   Certification @relation(fields: [certificationId], references: [id])
+  text            String
+  options         Json         // { A: "", B: "", C: "", D: "" }
+  correctAnswer   String       // "A" | "B" | "C" | "D"
+  explanation     String
+  difficulty      Difficulty   @default(MEDIUM)
+  topic           String       // sub-topic tag for weak area analysis
+  source          QuestionSource @default(AI)
+  status          QuestionStatus @default(PENDING_REVIEW)
+  contributedById String?
+  contributedBy   User?        @relation(fields: [contributedById], references: [id])
+  createdAt       DateTime     @default(now())
+}
+
+enum QuestionSource {
+  AI
+  TEACHER
+  ADMIN
+}
+
+enum QuestionStatus {
+  PENDING_REVIEW
+  APPROVED
+  REJECTED
+}
+
+model ExamAttempt {
+  id              String       @id @default(cuid())
+  userId          String
+  user            User         @relation(fields: [userId], references: [id])
+  certificationId String
+  certification   Certification @relation(fields: [certificationId], references: [id])
+  startedAt       DateTime     @default(now())
+  completedAt     DateTime?
+  timeTaken       Int?         // seconds
+  score           Float?       // percentage 0-100
+  totalQuestions  Int
+  correctAnswers  Int?
+  status          AttemptStatus @default(IN_PROGRESS)
+  integrityFlag   Boolean      @default(false)
+  answers         Json         // { questionId: selectedAnswer }
+  weakTopics      Json?        // [ { topic, score } ]
+  aiRecommendations Json?      // [ { topic, recommendation } ]
+  attemptNumber   Int          // 1, 2, or 3 for that day
+  createdAt       DateTime     @default(now())
+}
+
+enum AttemptStatus {
+  IN_PROGRESS
+  COMPLETED
+  AUTO_SUBMITTED
+  INTEGRITY_VIOLATION
+}
+
+model Payment {
+  id              String        @id @default(cuid())
+  userId          String
+  user            User          @relation(fields: [userId], references: [id])
+  paystackRef     String        @unique
+  amount          Int           // in kobo
+  plan            PlanType
+  status          PaymentStatus @default(PENDING)
+  verifiedAt      DateTime?
+  createdAt       DateTime      @default(now())
+}
+
+enum PlanType {
+  MONTHLY
+  ANNUAL
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCESS
+  FAILED
+}
+
+model WeeklyScore {
+  id          String   @id @default(cuid())
+  userId      String   @unique
+  user        User     @relation(fields: [userId], references: [id])
+  weekStart   DateTime
+  totalScore  Float    @default(0)
+  examsCount  Int      @default(0)
+  avgScore    Float    @default(0)
+  updatedAt   DateTime @updatedAt
+}
+
+model LeaderboardArchive {
+  id          String   @id @default(cuid())
+  weekStart   DateTime
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  rank        Int
+  avgScore    Float
+  examsCount  Int
+  createdAt   DateTime @default(now())
+}
+
+model SupportTicket {
+  id          String       @id @default(cuid())
+  userId      String
+  user        User         @relation(fields: [userId], references: [id])
+  type        TicketType
+  subject     String
+  description String
+  status      TicketStatus @default(OPEN)
+  adminNote   String?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  messages    TicketMessage[]
+}
+
+model TicketMessage {
+  id          String        @id @default(cuid())
+  ticketId    String
+  ticket      SupportTicket @relation(fields: [ticketId], references: [id])
+  senderId    String
+  sender      User          @relation(fields: [senderId], references: [id])
+  message     String
+  isAdmin     Boolean       @default(false)
+  createdAt   DateTime      @default(now())
+}
+
+enum TicketType {
+  PAYMENT
+  ACCESS
+  EXAM_BUG
+  ACCOUNT
+  OTHER
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  RESOLVED
+}
