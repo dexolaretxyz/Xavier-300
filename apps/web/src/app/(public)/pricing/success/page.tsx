@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { api } from '@/lib/api';
 import { CheckCircle2, Loader2, XCircle } from 'lucide-react';
 
-export default function PricingSuccessPage() {
+function PricingSuccessContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const reference = searchParams.get('reference');
@@ -80,5 +80,17 @@ export default function PricingSuccessPage() {
 
       </div>
     </div>
+  );
+}
+
+export default function PricingSuccessPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-[var(--bg-primary)]">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[var(--accent-primary)]" />
+      </div>
+    }>
+      <PricingSuccessContent />
+    </Suspense>
   );
 }
