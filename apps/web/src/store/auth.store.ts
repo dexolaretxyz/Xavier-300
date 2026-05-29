@@ -7,6 +7,7 @@ interface User {
   email: string;
   role: string;
   subscriptionStatus?: string;
+  trialStartedAt?: string;
 }
 
 interface AuthState {

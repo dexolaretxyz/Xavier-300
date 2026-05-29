@@ -16,7 +16,7 @@ const signupSchema = z.object({
   phone: z.string().min(10, 'Phone number must be valid'),
   state: z.string().min(2, 'State is required'),
   occupation: z.string().min(2, 'Occupation is required'),
-  yearsExperience: z.coerce.number().min(0, 'Years of experience cannot be negative')
+  yearsExperience: z.coerce.number().min(0)
 });
 
 type SignupForm = z.infer<typeof signupSchema>;
@@ -35,7 +35,7 @@ export default function SignupPage() {
   const [apiError, setApiError] = useState('');
   
   const { register, handleSubmit, watch, formState: { errors, isSubmitting } } = useForm<SignupForm>({
-    resolver: zodResolver(signupSchema)
+    resolver: zodResolver(signupSchema) as any
   });
 
   const passwordValue = watch('password', '');
