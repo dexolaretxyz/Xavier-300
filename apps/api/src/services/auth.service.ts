@@ -5,7 +5,19 @@ import dotenv from 'dotenv';
 import path from 'path';
 dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
-const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy_123456789');
+let resendClient: any = null;
+
+function getResendClient() {
+  if (!resendClient) {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.warn('RESEND_API_KEY not set - email notifications disabled');
+      return null;
+    }
+    resendClient = new Resend(apiKey);
+  }
+  return resendClient;
+}
 const JWT_SECRET = process.env.JWT_SECRET || 'fallback_secret_do_not_use_in_prod';
 const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET || 'fallback_refresh_do_not_use_in_prod';
 
@@ -32,7 +44,12 @@ export const authService = {
     const fromEmail = process.env.EMAIL_FROM || 'noreply@xavier300.com.ng';
     
     try {
-      await resend.emails.send({
+      const client = getResendClient();
+      if (!client) {
+        console.warn('Email not sent - Resend not configured');
+        return;
+      }
+      await client.emails.send({
         from: `Xavier 300 <${fromEmail}>`,
         to: email,
         subject: 'Verify your Xavier 300 Account',
@@ -50,7 +67,12 @@ export const authService = {
     const resetLink = `${appUrl}/reset-password?token=${token}`;
     
     try {
-      await resend.emails.send({
+      const client = getResendClient();
+      if (!client) {
+        console.warn('Email not sent - Resend not configured');
+        return;
+      }
+      await client.emails.send({
         from: `Xavier 300 <${fromEmail}>`,
         to: email,
         subject: 'Reset your Xavier 300 Password',

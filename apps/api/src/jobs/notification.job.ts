@@ -54,7 +54,7 @@ export const sweepWorker = connection ? new Worker('notification-sweep', async (
     if (scheduledTime.getTime() > now.getTime()) {
       const delay = scheduledTime.getTime() - now.getTime();
       
-      await userNotificationQueue.add('send-reminder', {
+      await userNotificationQueue?.add('send-reminder', {
         userId: user.id,
         email: user.email,
         name: user.fullName
@@ -63,7 +63,7 @@ export const sweepWorker = connection ? new Worker('notification-sweep', async (
   }
   
   console.log(`Scheduled reminders for ${users.length} users.`);
-}, { connection: connection as any });
+}, { connection: connection as any }) : null;
 
 /**
  * Worker that executes the actual individual notification job
@@ -92,7 +92,7 @@ export const userWorker = connection ? new Worker('user-notification', async (jo
   } else {
     console.log(`Skipped reminder for ${email} (already practiced)`);
   }
-}, { connection: connection as any });
+}, { connection: connection as any }) : null;
 
 /**
  * Initializes the BullMQ repeatable job.

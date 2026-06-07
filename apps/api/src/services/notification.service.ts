@@ -21,7 +21,20 @@ const initWebPush = () => {
 };
 
 const isPushConfigured = initWebPush();
-const resend = new Resend(process.env.RESEND_API_KEY);
+
+let resendClient: any = null;
+
+function getResendClient() {
+  if (!resendClient) {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.warn('RESEND_API_KEY not set - email notifications disabled');
+      return null;
+    }
+    resendClient = new Resend(apiKey);
+  }
+  return resendClient;
+}
 
 export const notificationService = {
   /**
@@ -72,12 +85,13 @@ export const notificationService = {
    */
   async sendEmailNotification(email: string, subject: string, content: string) {
     try {
-      if (!process.env.RESEND_API_KEY) {
+      const client = getResendClient();
+      if (!client) {
         console.log(`[MOCK EMAIL to ${email}] ${subject}: ${content}`);
         return true;
       }
 
-      await resend.emails.send({
+      await client.emails.send({
         from: process.env.EMAIL_FROM || 'noreply@xavier300.com.ng',
         to: email,
         subject: subject,
