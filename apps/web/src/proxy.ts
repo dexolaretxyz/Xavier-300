@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-export default function proxy(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const token = request.cookies.get('xavier_access_token')?.value
   const { pathname } = request.nextUrl
 
@@ -51,3 +51,5 @@ export const config = {
     '/reset-password',
   ],
 }
+
+export default proxy;
