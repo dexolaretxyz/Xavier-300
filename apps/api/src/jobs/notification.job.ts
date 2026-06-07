@@ -3,21 +3,27 @@ import prisma from '../lib/db';
 import { notificationService } from '../services/notification.service';
 import IORedis from 'ioredis';
 
-const connection = new IORedis(process.env.REDIS_URL || 'redis://localhost:6379', {
-  maxRetriesPerRequest: null
-});
+const hasRedis = !!process.env.REDIS_URL;
+
+const connection = hasRedis ? new IORedis(process.env.REDIS_URL as string, {
+  maxRetriesPerRequest: null,
+  retryStrategy: (times) => {
+    if (times > 3) return null; // Stop retrying after 3 attempts
+    return Math.min(times * 50, 2000);
+  }
+}) : null;
 
 // Queue for scheduling the daily notification sweep
-export const notificationSweepQueue = new Queue('notification-sweep', { connection: connection as any });
+export const notificationSweepQueue = connection ? new Queue('notification-sweep', { connection: connection as any }) : null;
 
 // Queue for individual user notifications
-export const userNotificationQueue = new Queue('user-notification', { connection: connection as any });
+export const userNotificationQueue = connection ? new Queue('user-notification', { connection: connection as any }) : null;
 
 /**
  * Worker that runs once a day (e.g., at midnight) to schedule individual
  * jobs for each user at their preferred `notificationTime`.
  */
-export const sweepWorker = new Worker('notification-sweep', async () => {
+export const sweepWorker = connection ? new Worker('notification-sweep', async () => {
   console.log('Starting daily notification sweep...');
   
   const users = await prisma.user.findMany({
@@ -63,7 +69,7 @@ export const sweepWorker = new Worker('notification-sweep', async () => {
  * Worker that executes the actual individual notification job
  * It checks if the user has already practiced today before sending.
  */
-export const userWorker = new Worker('user-notification', async (job: Job) => {
+export const userWorker = connection ? new Worker('user-notification', async (job: Job) => {
   const { userId, email, name } = job.data;
 
   // Check if they took an exam today
@@ -93,6 +99,11 @@ export const userWorker = new Worker('user-notification', async (job: Job) => {
  * Runs every day at 00:05 (5 minutes past midnight) to schedule the day's reminders.
  */
 export const initNotificationJobs = async () => {
+  if (!notificationSweepQueue) {
+    console.log('Redis is not configured. Notification jobs are disabled.');
+    return;
+  }
+  
   await notificationSweepQueue.add('daily-sweep', {}, {
     repeat: {
       pattern: '5 0 * * *' // 00:05 AM every day
