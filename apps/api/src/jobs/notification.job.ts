@@ -13,11 +13,27 @@ const connection = hasRedis ? new IORedis(process.env.REDIS_URL as string, {
   }
 }) : null;
 
+if (connection) {
+  connection.on('error', (err) => {
+    console.error('Redis connection error:', err.message);
+  });
+}
+
 // Queue for scheduling the daily notification sweep
 export const notificationSweepQueue = connection ? new Queue('notification-sweep', { connection: connection as any }) : null;
+if (notificationSweepQueue) {
+  notificationSweepQueue.on('error', (err) => {
+    console.error('notificationSweepQueue error:', err.message);
+  });
+}
 
 // Queue for individual user notifications
 export const userNotificationQueue = connection ? new Queue('user-notification', { connection: connection as any }) : null;
+if (userNotificationQueue) {
+  userNotificationQueue.on('error', (err) => {
+    console.error('userNotificationQueue error:', err.message);
+  });
+}
 
 /**
  * Worker that runs once a day (e.g., at midnight) to schedule individual
@@ -65,6 +81,12 @@ export const sweepWorker = connection ? new Worker('notification-sweep', async (
   console.log(`Scheduled reminders for ${users.length} users.`);
 }, { connection: connection as any }) : null;
 
+if (sweepWorker) {
+  sweepWorker.on('error', (err) => {
+    console.error('sweepWorker error:', err.message);
+  });
+}
+
 /**
  * Worker that executes the actual individual notification job
  * It checks if the user has already practiced today before sending.
@@ -93,6 +115,12 @@ export const userWorker = connection ? new Worker('user-notification', async (jo
     console.log(`Skipped reminder for ${email} (already practiced)`);
   }
 }, { connection: connection as any }) : null;
+
+if (userWorker) {
+  userWorker.on('error', (err) => {
+    console.error('userWorker error:', err.message);
+  });
+}
 
 /**
  * Initializes the BullMQ repeatable job.
