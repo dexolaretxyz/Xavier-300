@@ -46,48 +46,6 @@ export const requireRole = (role: string) => {
 };
 
 export const requireSubscription = async (req: AuthRequest, res: Response, next: NextFunction): Promise<void> => {
-  if (!req.user) {
-    res.status(401).json({ success: false, error: { code: 'UNAUTHORIZED', message: 'Not authenticated' } });
-    return;
-  }
-
-  try {
-    const user = await prisma.user.findUnique({
-      where: { id: req.user.userId },
-      select: { subscriptionStatus: true, subscriptionEndsAt: true, trialStartedAt: true }
-    });
-
-    if (!user) {
-      res.status(401).json({ success: false, error: { code: 'UNAUTHORIZED', message: 'User not found' } });
-      return;
-    }
-
-    // Check if free trial is still active (7 days)
-    if (user.subscriptionStatus === 'FREE_TRIAL') {
-      const trialDays = (Date.now() - new Date(user.trialStartedAt).getTime()) / (1000 * 60 * 60 * 24);
-      if (trialDays > 7) {
-        res.status(403).json({ success: false, error: { code: 'TRIAL_EXPIRED', message: 'Free trial has expired' } });
-        return;
-      }
-      return next();
-    }
-
-    // Check if subscribed and not expired
-    if (user.subscriptionStatus === 'SUBSCRIBED' && user.subscriptionEndsAt) {
-      if (new Date() > new Date(user.subscriptionEndsAt)) {
-        res.status(403).json({ success: false, error: { code: 'SUBSCRIPTION_EXPIRED', message: 'Subscription has expired' } });
-        return;
-      }
-      return next();
-    }
-
-    // If admin, bypass subscription check
-    if (req.user.role === 'ADMIN') {
-      return next();
-    }
-
-    res.status(403).json({ success: false, error: { code: 'SUBSCRIPTION_REQUIRED', message: 'Active subscription required' } });
-  } catch (error) {
-    res.status(500).json({ success: false, error: { code: 'SERVER_ERROR', message: 'Failed to verify subscription status' } });
-  }
+  // PAYMENT_DISABLED: Re-enable this when launching payments
+  return next();
 };

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { api } from '@/lib/api';
 import { useRouter } from 'next/navigation';
 import { Check, Shield, Zap, Sparkles } from 'lucide-react';
@@ -11,28 +12,18 @@ export default function PricingPage() {
   const [error, setError] = useState('');
 
   const handleSubscribe = async (plan: 'MONTHLY' | 'ANNUAL') => {
-    try {
-      setLoadingPlan(plan);
-      setError('');
-      
-      const { data } = await api.post('/api/payments/initiate', { plan });
-      
-      if (data.success && data.data?.authorization_url) {
-        window.location.href = data.data.authorization_url; // Redirect to Paystack
-      } else {
-        setError('Failed to initiate payment. Please try again.');
-      }
-    } catch (err: any) {
-      console.error(err);
-      setError(err.response?.data?.error?.message || 'An error occurred while connecting to the payment gateway.');
-    } finally {
-      setLoadingPlan(null);
-    }
+    // PAYMENT_DISABLED: Re-enable this when launching payments
+    router.push('/signup');
   };
 
   return (
     <div className="min-h-screen bg-[var(--bg-primary)] pt-32 pb-20 px-6">
       <div className="max-w-4xl mx-auto text-center">
+        {/* PAYMENT_DISABLED: Re-enable this when launching payments */}
+        <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-4 mb-8 max-w-2xl mx-auto flex items-center justify-center gap-3 text-amber-800 dark:text-amber-400 font-ui font-medium">
+          <span>🎉 Xavier 300 is currently FREE during our launch period! Create an account to get full access.</span>
+        </div>
+
         <h1 className="font-display font-bold text-4xl md:text-5xl text-[var(--text-primary)] mb-4">
           Unlock Your Full Potential
         </h1>
@@ -67,13 +58,12 @@ export default function PricingPage() {
               <li className="flex items-center gap-3"><Check className="text-green-500 flex-shrink-0" size={20}/> Standard Support</li>
             </ul>
 
-            <button 
-              onClick={() => handleSubscribe('MONTHLY')}
-              disabled={loadingPlan !== null}
-              className="w-full py-4 rounded-full border-2 border-[var(--border-strong)] text-[var(--text-primary)] font-bold hover:bg-[var(--bg-hover)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            <Link 
+              href="/signup"
+              className="w-full block text-center py-4 rounded-full border-2 border-[var(--border-strong)] text-[var(--text-primary)] font-bold hover:bg-[var(--bg-hover)] transition-colors"
             >
-              {loadingPlan === 'MONTHLY' ? 'Connecting...' : 'Subscribe Monthly'}
-            </button>
+              Sign Up Free
+            </Link>
           </div>
 
           {/* ANNUAL PLAN */}
@@ -102,13 +92,12 @@ export default function PricingPage() {
               <li className="flex items-center gap-3"><Check className="text-indigo-200 flex-shrink-0" size={20}/> Premium 24/7 Support</li>
             </ul>
 
-            <button 
-              onClick={() => handleSubscribe('ANNUAL')}
-              disabled={loadingPlan !== null}
-              className="w-full py-4 rounded-full bg-white text-[var(--accent-primary)] font-bold hover:bg-gray-50 transition-colors shadow-lg disabled:opacity-75 disabled:cursor-not-allowed"
+            <Link 
+              href="/signup"
+              className="w-full block text-center py-4 rounded-full bg-white text-[var(--accent-primary)] font-bold hover:bg-gray-50 transition-colors shadow-lg"
             >
-              {loadingPlan === 'ANNUAL' ? 'Connecting...' : 'Subscribe Annually'}
-            </button>
+              Sign Up Free
+            </Link>
           </div>
 
         </div>

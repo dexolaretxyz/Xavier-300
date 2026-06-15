@@ -29,7 +29,8 @@ export default function DashboardPage() {
     <div className="max-w-6xl mx-auto space-y-8">
       
       {/* SUBSCRIPTION BANNER */}
-      {isTrial && (
+      {/* PAYMENT_DISABLED: Re-enable this when launching payments
+      isTrial && (
         <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3 text-amber-800 dark:text-amber-400">
             <AlertCircle size={20} />
@@ -39,7 +40,8 @@ export default function DashboardPage() {
             Upgrade Now
           </Link>
         </div>
-      )}
+      )
+      */}
 
       {/* HEADER */}
       <div>

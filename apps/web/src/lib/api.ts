@@ -42,6 +42,8 @@ api.interceptors.response.use(
     const originalRequest = error.config;
 
     // Handle Subscription Hard Locks (403)
+    // PAYMENT_DISABLED: Re-enable this when launching payments
+    /*
     if (error.response?.status === 403) {
       const errCode = error.response.data?.error?.code;
       if (['TRIAL_EXPIRED', 'SUBSCRIPTION_REQUIRED', 'SUBSCRIPTION_EXPIRED'].includes(errCode)) {
@@ -51,6 +53,7 @@ api.interceptors.response.use(
         return Promise.reject(error);
       }
     }
+    */
 
     if (error.response?.status === 401 && !originalRequest._retry) {
       if (originalRequest.url?.includes('/api/auth/login') || originalRequest.url?.includes('/api/auth/refresh')) {
