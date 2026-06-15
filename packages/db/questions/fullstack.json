@@ -1,0 +1,562 @@
+[
+  {
+    "certificationSlug": "fullstack",
+    "text": "Which HTML5 element is the most appropriate semantic tag to wrap the main navigation links of a website?",
+    "options": {
+      "A": "<nav>",
+      "B": "<section>",
+      "C": "<ul>",
+      "D": "<menu>"
+    },
+    "correctAnswer": "A",
+    "explanation": "The HTML5 <nav> element is specifically designed to contain blocks of major navigation links.",
+    "topic": "HTML5 Semantics",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "Why should you use semantic HTML5 elements instead of generic <div> tags?",
+    "options": {
+      "A": "They improve accessibility for screen readers and aid search engine optimization (SEO)",
+      "B": "They automatically apply CSS styling to the wrapped content",
+      "C": "They prevent JavaScript script errors from crashing the page load",
+      "D": "They compress the HTML file size to load pages faster"
+    },
+    "correctAnswer": "A",
+    "explanation": "Semantic tags give meaning to the structure of the document, making it easier for search engines to index and assistive tech to read.",
+    "topic": "HTML5 Semantics",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "Which semantic element is used to represent independent, self-contained content that could be distributed in an RSS feed (e.g. blog post, forum post)?",
+    "options": {
+      "A": "<article>",
+      "B": "<section>",
+      "C": "<aside>",
+      "D": "<main>"
+    },
+    "correctAnswer": "A",
+    "explanation": "<article> is intended for self-contained blocks that make sense independently, whereas <section> is for thematic grouping of content.",
+    "topic": "HTML5 Semantics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What is the correct way to link an image with an alternative text description for accessibility?",
+    "options": {
+      "A": "<img src='logo.png' alt='Company Logo'>",
+      "B": "<img src='logo.png' title='Company Logo'>",
+      "C": "<img src='logo.png' desc='Company Logo'>",
+      "D": "<img src='logo.png' label='Company Logo'>"
+    },
+    "correctAnswer": "A",
+    "explanation": "The 'alt' attribute provides alternative text that screen readers read and is displayed if the image fails to load.",
+    "topic": "HTML5 Semantics",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What does the HTML5 <aside> element represent?",
+    "options": {
+      "A": "Content tangentially related to the content around it, like a sidebar or pull quotes",
+      "B": "A dialog modal box that pops up on the side of the screen",
+      "C": "A section that contains navigation links only",
+      "D": "The footer area at the very bottom of the webpage"
+    },
+    "correctAnswer": "A",
+    "explanation": "<aside> wraps secondary content related to main topics, frequently rendered as sidebars, advertising blocks, or callouts.",
+    "topic": "HTML5 Semantics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "In CSS Flexbox, which property controls the alignment of items along the main axis?",
+    "options": {
+      "A": "justify-content",
+      "B": "align-items",
+      "C": "flex-direction",
+      "D": "align-content"
+    },
+    "correctAnswer": "A",
+    "explanation": "justify-content aligns flex items horizontally (or vertically if flex-direction is column) along the main axis. align-items handles the cross axis.",
+    "topic": "CSS Grid & Flexbox",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What does 'align-items: center' do in a flex container?",
+    "options": {
+      "A": "Centers the flex items along the cross axis",
+      "B": "Centers the flex items along the main axis",
+      "C": "Forces the flex items to wrap onto a new row",
+      "D": "Arranges the flex items in a grid layout layout"
+    },
+    "correctAnswer": "A",
+    "explanation": "align-items specifies default alignment for items along the cross axis (e.g. vertical centering in a default row layout).",
+    "topic": "CSS Grid & Flexbox",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What is the key difference between CSS Grid and CSS Flexbox?",
+    "options": {
+      "A": "Grid is two-dimensional (rows and columns); Flexbox is one-dimensional (row or column)",
+      "B": "Flexbox is only for mobile layouts; Grid is strictly for desktop layouts",
+      "C": "Grid requires JavaScript to render; Flexbox does not",
+      "D": "Flexbox does not support aligning items vertically"
+    },
+    "correctAnswer": "A",
+    "explanation": "Grid is designed for two-dimensional layouts, letting you place items in rows and columns. Flexbox is designed for linear layouts in one direction.",
+    "topic": "CSS Grid & Flexbox",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "Which CSS Grid property defines the sizes of the columns in a grid layout?",
+    "options": {
+      "A": "grid-template-columns",
+      "B": "grid-column-gap",
+      "C": "grid-auto-flow",
+      "D": "grid-template-areas"
+    },
+    "correctAnswer": "A",
+    "explanation": "grid-template-columns specifies the number of columns and their widths (e.g. using px, %, or the fr unit) in a grid.",
+    "topic": "CSS Grid & Flexbox",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What does the CSS grid unit 'fr' represent?",
+    "options": {
+      "A": "A fraction of the free space available in the grid container",
+      "B": "A fixed relative font size based on the root element",
+      "C": "A metric equivalent to 10 pixels of screen width",
+      "D": "The frame refresh rate of the browser window"
+    },
+    "correctAnswer": "A",
+    "explanation": "The 'fr' unit is a fractional unit. grid-template-columns: 1fr 2fr divides space so the second column is twice as wide as the first.",
+    "topic": "CSS Grid & Flexbox",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What is a main characteristic of JavaScript arrow functions compared to traditional functions?",
+    "options": {
+      "A": "They do not have their own 'this' binding; they inherit 'this' lexically from parent scope",
+      "B": "They cannot accept arguments or parameters",
+      "C": "They are compiled instead of interpreted by browser engines",
+      "D": "They cannot be used as callback handlers in event listeners"
+    },
+    "correctAnswer": "A",
+    "explanation": "Arrow functions do not bind their own 'this'. Instead, they capture the 'this' value of the enclosing context.",
+    "topic": "JavaScript ES6+",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "Which state transition represents a JavaScript Promise that completed successfully?",
+    "options": {
+      "A": "fulfilled",
+      "B": "pending",
+      "C": "rejected",
+      "D": "resolved_fail"
+    },
+    "correctAnswer": "A",
+    "explanation": "A Promise has three states: pending (in progress), fulfilled (success, resolved), and rejected (error, failed).",
+    "topic": "JavaScript ES6+",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "How do you handle error rejections when using async/await syntax in JavaScript?",
+    "options": {
+      "A": "Wrap the await statements in a try...catch block",
+      "B": "Append a .catch() method to the async function declaration",
+      "C": "Use the error-first callback pattern in function arguments",
+      "D": "JavaScript handles all async errors silently without crashing"
+    },
+    "correctAnswer": "A",
+    "explanation": "async/await acts synchronously. Wrapping await calls inside a try...catch block catches Promise rejections as standard exceptions.",
+    "topic": "JavaScript ES6+",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What is 'destructuring assignment' in ES6?",
+    "options": {
+      "A": "Unpacking values from arrays or properties from objects into distinct variables",
+      "B": "Deleting unused objects from memory to prevent memory leaks",
+      "C": "Splitting a single code file into multiple modular scripts",
+      "D": "Converting a JSON string back into a JavaScript object"
+    },
+    "correctAnswer": "A",
+    "explanation": "Destructuring is a syntax (e.g. const { name } = user) that extracts properties from objects or arrays concisely.",
+    "topic": "JavaScript ES6+",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What does the JavaScript 'spread operator' (...) do when applied to an array?",
+    "options": {
+      "A": "Expands the elements of the array into individual arguments or elements",
+      "B": "Sums up all the numeric values in the array",
+      "C": "Sorts the array in alphabetical order",
+      "D": "Converts the array elements into lowercase strings"
+    },
+    "correctAnswer": "A",
+    "explanation": "The spread operator expands an iterable array into separate values, allowing quick array copying or joining (e.g. [...arr1, ...arr2]).",
+    "topic": "JavaScript ES6+",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What hook is used to perform side effects (like data fetching, subscriptions) in React functional components?",
+    "options": {
+      "A": "useEffect",
+      "B": "useState",
+      "C": "useContext",
+      "D": "useReducer"
+    },
+    "correctAnswer": "A",
+    "explanation": "useEffect lets functional components interact with external APIs or perform actions when state/props change.",
+    "topic": "React Hooks",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "Why should you never modify a React state variable directly (e.g. state.value = 5)?",
+    "options": {
+      "A": "React will not detect the change, and the component will not re-render",
+      "B": "It throws a compiler syntax error during build",
+      "C": "It permanently deletes the state variable from local memory",
+      "D": "It causes other components to lose their props data"
+    },
+    "correctAnswer": "A",
+    "explanation": "React state must be updated using the provided setter function (e.g. setState) so React can track changes and trigger re-renders.",
+    "topic": "React Hooks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What is the purpose of the React hook 'useMemo'?",
+    "options": {
+      "A": "To cache and return the memoized result of an expensive calculation",
+      "B": "To store values that persist across browser tab restarts",
+      "C": "To create reference links to physical HTML DOM nodes",
+      "D": "To fetch data from backend REST APIs asynchronously"
+    },
+    "correctAnswer": "A",
+    "explanation": "useMemo caches (memoizes) the return value of a computation, recalculating it only when its input dependencies change.",
+    "topic": "React Hooks",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "How does 'useCallback' differ from 'useMemo' in React?",
+    "options": {
+      "A": "useCallback caches a function instance itself; useMemo caches the result of calling a function",
+      "B": "useCallback only works in class components; useMemo is for functional components",
+      "C": "useCallback is used for API calls; useMemo is for styling",
+      "D": "There is no difference; they are interchangeable aliases"
+    },
+    "correctAnswer": "A",
+    "explanation": "useCallback(fn, deps) is equivalent to useMemo(() => fn, deps). It prevents child components from re-rendering due to recreated callback functions.",
+    "topic": "React Hooks",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What is the purpose of the 'key' prop in React when rendering a list of elements?",
+    "options": {
+      "A": "To help React identify which items have changed, been added, or been removed",
+      "B": "To encrypt the rendered list elements for secure display",
+      "C": "To apply unique CSS class styling to list rows",
+      "D": "To link the list elements to database primary key values"
+    },
+    "correctAnswer": "A",
+    "explanation": "Keys provide identity to array elements, helping React's reconciliation algorithm update the DOM efficiently without rebuilding the list.",
+    "topic": "React Hooks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "Which HTTP method should be used to update an existing resource partially in a REST API?",
+    "options": {
+      "A": "PATCH",
+      "B": "PUT",
+      "C": "POST",
+      "D": "GET"
+    },
+    "correctAnswer": "A",
+    "explanation": "PATCH modifies an existing resource partially. PUT replaces the entire resource. POST creates a new resource.",
+    "topic": "REST API Design",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What does a '403 Forbidden' HTTP status code represent?",
+    "options": {
+      "A": "The client is authenticated, but does not have permission to access the resource",
+      "B": "The client lacks valid authentication credentials (not logged in)",
+      "C": "The requested API endpoint does not exist on the server",
+      "D": "The server encountered an unexpected error processing the request"
+    },
+    "correctAnswer": "A",
+    "explanation": "401 represents Unauthorized (not logged in). 403 represents Forbidden (authenticated, but lacking permission/scope).",
+    "topic": "REST API Design",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What design constraint states that a REST API request must contain all context needed to process it, without depending on server-side session state?",
+    "options": {
+      "A": "Statelessness",
+      "B": "Client-Server",
+      "C": "Cacheability",
+      "D": "Uniform Interface"
+    },
+    "correctAnswer": "A",
+    "explanation": "Statelessness requires each request to be self-contained (e.g. including authorization headers), making scaling easier since servers don't store session state.",
+    "topic": "REST API Design",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What Node.js module is used to import code or packages in CommonJS format?",
+    "options": {
+      "A": "require()",
+      "B": "import",
+      "C": "fetch()",
+      "D": "include()"
+    },
+    "correctAnswer": "A",
+    "explanation": "CommonJS uses const module = require('module_name') to load files and packages in Node.js. ES Modules use 'import'.",
+    "topic": "Node.js & Express",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "In Express, what is 'middleware'?",
+    "options": {
+      "A": "Functions that have access to the request, response, and next middleware function in the cycle",
+      "B": "The database storage layer between SQL and the server",
+      "C": "Styling scripts running inside the user's browser window",
+      "D": "Compiler tools that translate JS files to binary machine code"
+    },
+    "correctAnswer": "A",
+    "explanation": "Middleware are pipeline functions (e.g. body-parsers, auth checkers) that run sequentially, modifying request/response or ending the cycle.",
+    "topic": "Node.js & Express",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What is the purpose of call next() inside an Express middleware function?",
+    "options": {
+      "A": "To pass control of the request to the next middleware function in the stack",
+      "B": "To send the final JSON response payload back to the client",
+      "C": "To terminate the active Node.js server process safely",
+      "D": "To redirect the user's browser to the dashboard page"
+    },
+    "correctAnswer": "A",
+    "explanation": "If a middleware doesn't send a response, it must call next() to pass execution forward, otherwise the request hangs.",
+    "topic": "Node.js & Express",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "Which database type is characterized by structured tables, predefined schemas, and SQL query interfaces?",
+    "options": {
+      "A": "Relational Database (RDBMS)",
+      "B": "NoSQL Database",
+      "C": "Key-Value Store",
+      "D": "Graph Database"
+    },
+    "correctAnswer": "A",
+    "explanation": "Relational databases (like PostgreSQL, MySQL) store data in tabular rows/columns, enforcing strict relationship schemas.",
+    "topic": "Database Design",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What type of NoSQL database is MongoDB?",
+    "options": {
+      "A": "Document database",
+      "B": "Key-value store",
+      "C": "Wide-column store",
+      "D": "Graph database"
+    },
+    "correctAnswer": "A",
+    "explanation": "MongoDB stores data as BSON documents (similar to JSON), which is the document database model.",
+    "topic": "Database Design",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What is the benefit of database normalisation?",
+    "options": {
+      "A": "It reduces data redundancy and improves data integrity",
+      "B": "It increases the query execution speed of JOIN statements",
+      "C": "It encrypts table columns to protect passwords",
+      "D": "It automatically generates database backup files"
+    },
+    "correctAnswer": "A",
+    "explanation": "Normalization organizes columns and tables to ensure dependencies are logical, reducing redundancy and minimizing data anomalies.",
+    "topic": "Database Design",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What is a JSON Web Token (JWT) composed of?",
+    "options": {
+      "A": "Header, Payload, Signature",
+      "B": "Username, Password, Salt",
+      "C": "Access Token, Refresh Token, Secret",
+      "D": "IP Address, Timestamp, Session ID"
+    },
+    "correctAnswer": "A",
+    "explanation": "A JWT is a string of three Base64URL-encoded parts separated by dots: Header (meta/alg), Payload (claims), and Signature (verification).",
+    "topic": "Authentication",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "Why should JWTs be stored in HttpOnly cookies instead of LocalStorage?",
+    "options": {
+      "A": "To protect them from access via client-side JavaScript, preventing XSS-based theft",
+      "B": "To increase the expiration time of the token automatically",
+      "C": "To allow the browser to edit the token values dynamically",
+      "D": "To bypass the need for SSL/TLS encryption on request payloads"
+    },
+    "correctAnswer": "A",
+    "explanation": "LocalStorage is readable by JavaScript. If an attacker runs malicious JS (XSS), they can steal the tokens. HttpOnly cookies cannot be read by JS.",
+    "topic": "Authentication",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What is OAuth 2.0?",
+    "options": {
+      "A": "An authorization framework enabling applications to obtain limited access to user accounts on an HTTP service",
+      "B": "A hashing library used to encrypt user passwords in database tables",
+      "C": "An encryption protocol that secures Wi-Fi network routers",
+      "D": "A database synchronization tool used across cloud providers"
+    },
+    "correctAnswer": "A",
+    "explanation": "OAuth 2.0 is an authorization protocol (not authentication) that allows users to grant apps access to their resources without sharing passwords.",
+    "topic": "Authentication",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What type of attack involves an attacker injecting malicious scripts into trusted websites, which then run in user browsers?",
+    "options": {
+      "A": "Cross-Site Scripting (XSS)",
+      "B": "Cross-Site Request Forgery (CSRF)",
+      "C": "SQL Injection",
+      "D": "Man-in-the-Middle"
+    },
+    "correctAnswer": "A",
+    "explanation": "XSS occurs when an app includes untrusted data in a webpage without validation, causing the browser to execute injected scripts.",
+    "topic": "Web Security",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What security vulnerability involves executing arbitrary database queries by entering malicious inputs in input fields?",
+    "options": {
+      "A": "SQL Injection",
+      "B": "Cross-Site Scripting",
+      "C": "CSRF",
+      "D": "Distributed Denial of Service"
+    },
+    "correctAnswer": "A",
+    "explanation": "SQLi occurs when input is concatenated directly into SQL queries without parametrization or escaping, executing malicious commands.",
+    "topic": "Web Security",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What security header is used to specify which dynamic resources are allowed to load and execute on a webpage?",
+    "options": {
+      "A": "Content-Security-Policy (CSP)",
+      "B": "Cross-Origin-Resource-Policy",
+      "C": "Strict-Transport-Security",
+      "D": "X-Frame-Options"
+    },
+    "correctAnswer": "A",
+    "explanation": "CSP is an HTTP response header that restricts where resources (scripts, styles, images) can be fetched and loaded from, preventing XSS.",
+    "topic": "Web Security",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What is the primary way to prevent SQL Injection in backend servers?",
+    "options": {
+      "A": "Using parameterized queries (prepared statements)",
+      "B": "Encrypting the entire SQL database on the server",
+      "C": "Limiting input fields to a maximum of 10 characters",
+      "D": "Changing database passwords every month"
+    },
+    "correctAnswer": "A",
+    "explanation": "Parameterized queries separate the query code from the user input variables, ensuring input is treated strictly as data, not command code.",
+    "topic": "Web Security",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What is the purpose of 'CSRF tokens' in web security?",
+    "options": {
+      "A": "To verify that a request is originating from the authentic, authorized user interface of the app",
+      "B": "To encrypt the access token cookie value",
+      "C": "To keep the user's login session active for longer durations",
+      "D": "To scan incoming uploads for potential malware"
+    },
+    "correctAnswer": "A",
+    "explanation": "CSRF tokens are unique secrets generated by the server for a user session. Forms must submit this token, blocking unauthorized cross-site requests.",
+    "topic": "Web Security",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "In responsive design, what is a 'media query' used for?",
+    "options": {
+      "A": "Applying different CSS styles based on the device's screen size or screen attributes",
+      "B": "Querying the database for image and video files",
+      "C": "Checking if the browser supports JavaScript async functions",
+      "D": "Configuring the default layout width of the webpage container"
+    },
+    "correctAnswer": "A",
+    "explanation": "Media queries (@media) allow styles to scale dynamically, adapting layouts for mobile phones, tablets, and desktop screens.",
+    "topic": "Responsive Design",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What HTML meta tag is essential to ensure responsive scaling on mobile device screens?",
+    "options": {
+      "A": "<meta name='viewport' content='width=device-width, initial-scale=1.0'>",
+      "B": "<meta name='responsive' content='true'>",
+      "C": "<meta name='scale' content='mobile-first'>",
+      "D": "<meta name='device' content='auto'>"
+    },
+    "correctAnswer": "A",
+    "explanation": "The viewport meta tag instructs mobile browsers to render the page layout width matching the physical device screen width, preventing layout shrinking.",
+    "topic": "Responsive Design",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "text": "What does a 'mobile-first' CSS development strategy imply?",
+    "options": {
+      "A": "Writing base CSS rules for mobile screens first, then adding media queries for larger screens",
+      "B": "Restricting the web application to run exclusively on smartphones",
+      "C": "Excluding all image files from the CSS layouts to speed up mobile page load",
+      "D": "Designing mobile applications in native Java/Swift before writing HTML code"
+    },
+    "correctAnswer": "A",
+    "explanation": "Mobile-first CSS writes default styles for small screens, using min-width media queries to overlay styles as screens widen.",
+    "topic": "Responsive Design",
+    "difficulty": "EASY"
+  }
+]

@@ -1,0 +1,562 @@
+[
+  {
+    "certificationSlug": "azure",
+    "text": "What type of cloud service is an Azure Virtual Machine?",
+    "options": {
+      "A": "IaaS (Infrastructure as a Service)",
+      "B": "PaaS (Platform as a Service)",
+      "C": "SaaS (Software as a Service)",
+      "D": "FaaS (Function as a Service)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Virtual machines provide raw virtualized compute hardware (servers, storage) that the user must manage and configure, which is IaaS.",
+    "topic": "Cloud Concepts",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "Which cloud computing model manages the execution of code only when triggered by events, billing only for resources consumed during execution?",
+    "options": {
+      "A": "Serverless Computing",
+      "B": "Infrastructure as a Service",
+      "C": "Private Cloud Hosting",
+      "D": "Hybrid Cloud Hosting"
+    },
+    "correctAnswer": "A",
+    "explanation": "Serverless computing (like Azure Functions) runs code in response to triggers and abstracts the underlying infrastructure management completely.",
+    "topic": "Cloud Concepts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What is the key benefit of 'elasticity' in cloud computing?",
+    "options": {
+      "A": "The ability to dynamically scale resources up or down to match demand automatically",
+      "B": "Ensuring the servers are housed in multiple separate geolocations",
+      "C": "Restricting database connections to encrypted tunnels only",
+      "D": "Reducing the upfront physical server purchasing costs to zero"
+    },
+    "correctAnswer": "A",
+    "explanation": "Elasticity allows cloud resources to automatically scale out (add instances) or scale in (remove instances) as workload demand changes.",
+    "topic": "Cloud Concepts",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "A company hosts its core database on-premises but deploys its front-end web server to Azure. What cloud model is this?",
+    "options": {
+      "A": "Hybrid Cloud",
+      "B": "Public Cloud",
+      "C": "Private Cloud",
+      "D": "SaaS Cloud"
+    },
+    "correctAnswer": "A",
+    "explanation": "Hybrid cloud models combine public cloud services (like Azure) with on-premises private infrastructure or local datacenters.",
+    "topic": "Cloud Concepts",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What is the difference between CapEx (Capital Expenditure) and OpEx (Operating Expenditure)?",
+    "options": {
+      "A": "CapEx involves upfront spending on physical infrastructure; OpEx is continuous pay-as-you-go subscription spending",
+      "B": "OpEx is for software licenses; CapEx is only for database cloud storage",
+      "C": "CapEx is paid monthly; OpEx is paid only once a year",
+      "D": "There is no difference under modern cloud accounting standards"
+    },
+    "correctAnswer": "A",
+    "explanation": "CapEx requires buying physical assets up front (e.g. servers). OpEx is the ongoing cost of running business operations (e.g. pay-as-you-go cloud bill).",
+    "topic": "Cloud Concepts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What represents the physical datacenters grouped together in a boundary and connected by a dedicated regional low-latency network?",
+    "options": {
+      "A": "Azure Region",
+      "B": "Availability Zone",
+      "C": "Resource Group",
+      "D": "Subscription Boundary"
+    },
+    "correctAnswer": "A",
+    "explanation": "An Azure Region is a geographical area containing at least one, but potentially multiple datacenters connected via latency-defined links.",
+    "topic": "Core Architecture",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What are Azure 'Availability Zones' designed to protect applications against?",
+    "options": {
+      "A": "Datacenter failures (power loss, network loss, cooling failure)",
+      "B": "Malicious database hacking attempts",
+      "C": "An entire geographical region being offline due to natural disasters",
+      "D": "Unauthorized user access via phishing attempts"
+    },
+    "correctAnswer": "A",
+    "explanation": "Availability Zones are physically separate datacenter locations within the same region, providing redundancy against localized datacenter failures.",
+    "topic": "Core Architecture",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "Which logical container is used to group and manage related Azure resources collectively?",
+    "options": {
+      "A": "Resource Group",
+      "B": "Subscription",
+      "C": "Management Group",
+      "D": "Availability Set"
+    },
+    "correctAnswer": "A",
+    "explanation": "A Resource Group is a container that holds related resources for an Azure solution, sharing lifecycle and billing boundaries.",
+    "topic": "Core Architecture",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What is the highest level in the Azure organizational hierarchy below the Entra tenant?",
+    "options": {
+      "A": "Management Groups",
+      "B": "Subscriptions",
+      "C": "Resource Groups",
+      "D": "Azure Regions"
+    },
+    "correctAnswer": "A",
+    "explanation": "Management groups provide an organizational hierarchy above subscriptions, allowing governance and policies to be applied across subscriptions.",
+    "topic": "Core Architecture",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What is the purpose of Azure Resource Manager (ARM)?",
+    "options": {
+      "A": "It is the management layer that enables creating, updating, and deleting resources in your Azure account",
+      "B": "It monitors virtual machine CPU temperatures in local datacenters",
+      "C": "It acts as a firewall between local networks and cloud resources",
+      "D": "It compiles resource configuration files into machine code"
+    },
+    "correctAnswer": "A",
+    "explanation": "ARM is the deployment and management service for Azure, processing all portal, CLI, or API resource actions.",
+    "topic": "Core Architecture",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "Which Azure compute service is best suited to deploy a simple containerized web application without managing any servers?",
+    "options": {
+      "A": "Azure Container Instances (ACI)",
+      "B": "Azure Virtual Machines",
+      "C": "Azure Virtual Machine Scale Sets",
+      "D": "Azure Dedicated Hosts"
+    },
+    "correctAnswer": "A",
+    "explanation": "ACI allows running Docker containers in Azure on-demand without configuring or provisioning virtual machines.",
+    "topic": "Azure Core Services",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What Azure service connects local networks to Azure virtual networks over the public internet using encrypted tunnels?",
+    "options": {
+      "A": "Azure VPN Gateway",
+      "B": "Azure ExpressRoute",
+      "C": "Azure DNS Server",
+      "D": "Azure Virtual Network Peering"
+    },
+    "correctAnswer": "A",
+    "explanation": "VPN Gateway sends encrypted traffic across the public internet between an Azure Virtual Network and an on-premises location.",
+    "topic": "Azure Core Services",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "How does Azure ExpressRoute differ from a VPN Gateway?",
+    "options": {
+      "A": "ExpressRoute uses a private, dedicated physical connection that bypasses the public internet",
+      "B": "ExpressRoute only supports Linux computers",
+      "C": "VPN Gateway is much faster and cheaper than ExpressRoute",
+      "D": "ExpressRoute encrypts data using symmetric keys, whereas VPN does not"
+    },
+    "correctAnswer": "A",
+    "explanation": "ExpressRoute provides a private connection to Azure datacenters via a co-location provider, offering higher reliability and speed.",
+    "topic": "Azure Core Services",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "Which Azure storage tier is optimized for storing data that is accessed infrequently and stored for at least 30 days?",
+    "options": {
+      "A": "Cool storage tier",
+      "B": "Hot storage tier",
+      "C": "Archive storage tier",
+      "D": "Premium storage tier"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Cool tier is for infrequently accessed data (minimum 30 days), offering lower storage costs but higher access costs than the Hot tier.",
+    "topic": "Azure Core Services",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What Azure storage service is designed to store massive amounts of unstructured data like images, videos, and document backups?",
+    "options": {
+      "A": "Azure Blob Storage",
+      "B": "Azure Files",
+      "C": "Azure Tables",
+      "D": "Azure Queue Storage"
+    },
+    "correctAnswer": "A",
+    "explanation": "Blob (Binary Large Object) storage is Microsoft's object storage solution for massive volumes of unstructured data in the cloud.",
+    "topic": "Azure Core Services",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What is the primary identity provider service used in Microsoft Azure?",
+    "options": {
+      "A": "Microsoft Entra ID (formerly Azure Active Directory)",
+      "B": "Azure Information Protection",
+      "C": "Azure Key Vault",
+      "D": "Azure Security Center"
+    },
+    "correctAnswer": "A",
+    "explanation": "Microsoft Entra ID is the cloud-based identity and access management service that controls authentication to Azure resources.",
+    "topic": "Identity and Security",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What feature of Entra ID requires additional verification steps (such as a phone code or authenticator app approval) for logins?",
+    "options": {
+      "A": "Multi-Factor Authentication (MFA)",
+      "B": "Single Sign-On (SSO)",
+      "C": "Conditional Access",
+      "D": "Role-Based Access Control (RBAC)"
+    },
+    "correctAnswer": "A",
+    "explanation": "MFA enhances identity security by demanding multiple verification methods before granting access.",
+    "topic": "Identity and Security",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "Which Entra ID feature allows administrators to configure access rules based on criteria like device status, location, or user risk level?",
+    "options": {
+      "A": "Conditional Access",
+      "B": "Role-Based Access Control",
+      "C": "Privileged Identity Management",
+      "D": "Resource Lock"
+    },
+    "correctAnswer": "A",
+    "explanation": "Conditional Access is a policy evaluation tool that analyzes signals (user, location, device, application) to decide whether to block or allow access.",
+    "topic": "Identity and Security",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "How do you assign specific management permissions (e.g. Reader, Contributor) to users in Azure?",
+    "options": {
+      "A": "Role-Based Access Control (RBAC)",
+      "B": "Azure Resource Locks",
+      "C": "Conditional Access Policies",
+      "D": "Management Groups"
+    },
+    "correctAnswer": "A",
+    "explanation": "RBAC enables fine-grained access management by grouping actions into roles and assigning those roles to users or groups.",
+    "topic": "Identity and Security",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What type of lock prevents users from deleting a resource, but allows them to modify its settings?",
+    "options": {
+      "A": "Delete (CanNotDelete) lock",
+      "B": "Read-Only (ReadOnly) lock",
+      "C": "Modify lock",
+      "D": "System lock"
+    },
+    "correctAnswer": "A",
+    "explanation": "A Delete lock (CanNotDelete) allows authorized users to read and modify a resource, but prevents them from deleting it.",
+    "topic": "Identity and Security",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "Which Azure management tool is a web-based console interface for managing resources?",
+    "options": {
+      "A": "Azure Portal",
+      "B": "Azure CLI",
+      "C": "Azure PowerShell",
+      "D": "Azure Cloud Shell"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Azure Portal is a graphical user interface (GUI) accessed via web browsers to manage subscriptions and resources.",
+    "topic": "Management Tools",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "How can you execute commands in Azure using a browser-accessible terminal without installing local tools?",
+    "options": {
+      "A": "Azure Cloud Shell",
+      "B": "Azure Resource Manager",
+      "C": "Azure Advisor Dashboard",
+      "D": "Azure Service Health console"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure Cloud Shell is an interactive, authenticated, browser-accessible terminal for managing Azure resources using Bash or PowerShell.",
+    "topic": "Management Tools",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What is the purpose of Azure Arc?",
+    "options": {
+      "A": "To extend Azure management and services to hybrid and multi-cloud environments (on-premises, AWS, GCP)",
+      "B": "To monitor database latency values in local datacenters",
+      "C": "To automatically encrypt files in cloud backup storage",
+      "D": "To transfer data between Azure and AWS over fiber optic cables"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure Arc acts as a bridge, bringing ARM capabilities (governance, policy, configuration) to resources outside Azure.",
+    "topic": "Management Tools",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "Which tool provides automated recommendations to optimize your Azure deployments for cost, security, reliability, and performance?",
+    "options": {
+      "A": "Azure Advisor",
+      "B": "Azure Service Health",
+      "C": "Azure Monitor",
+      "D": "Azure Sentinel"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure Advisor analyzes your configurations and usage telemetry to suggest best practices and optimizations across multiple categories.",
+    "topic": "Management Tools",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What Azure service acts as a centralized dashboard alerting you about service outages, planned maintenance, and health advisories?",
+    "options": {
+      "A": "Azure Service Health",
+      "B": "Azure Monitor",
+      "C": "Azure Advisor",
+      "D": "Azure Application Insights"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure Service Health monitors Microsoft's global datacenter infrastructure, notifying you of active issues or maintenance affecting your services.",
+    "topic": "Management Tools",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What is the free tool provided by Microsoft to estimate the cost savings of migrating your on-premises servers to Azure?",
+    "options": {
+      "A": "TCO (Total Cost of Ownership) Calculator",
+      "B": "Azure Pricing Calculator",
+      "C": "Azure Cost Management",
+      "D": "Azure Advisor Dashboard"
+    },
+    "correctAnswer": "A",
+    "explanation": "The TCO Calculator helps you model migration savings by comparing on-premises server, network, and labor costs with Azure equivalents.",
+    "topic": "Pricing and Support",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "Which Azure support plan is the cheapest option that provides 24/7 access to technical support via email and phone?",
+    "options": {
+      "A": "Developer",
+      "B": "Standard",
+      "C": "Professional Direct",
+      "D": "Basic"
+    },
+    "correctAnswer": "B",
+    "explanation": "The Standard support plan is the minimum tier that includes 24/7 technical phone and email support. Developer plan only provides business-hours support.",
+    "topic": "Pricing and Support",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What is a Service Level Agreement (SLA) in Azure?",
+    "options": {
+      "A": "A document defining Microsoft's commitments for uptime and connectivity of Azure services",
+      "B": "A legal contract preventing users from deploying prohibited software",
+      "C": "The setup wizard used to configure subscription billing accounts",
+      "D": "The security certification rating of the cloud physical datacenters"
+    },
+    "correctAnswer": "A",
+    "explanation": "SLAs specify uptime guarantees (e.g. 99.9% or 99.99%) and describe the service credits you receive if those targets are missed.",
+    "topic": "Pricing and Support",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What is the purpose of Azure Cost Management + Billing?",
+    "options": {
+      "A": "To monitor, analyze, and budget cloud spending across your subscriptions",
+      "B": "To process customer credit card payments automatically",
+      "C": "To automatically shut down database servers when they run out of storage",
+      "D": "To verify the security compliance of physical hardware datacenters"
+    },
+    "correctAnswer": "A",
+    "explanation": "Cost Management + Billing helps you monitor spending patterns, configure budgets, and set alerts when costs approach thresholds.",
+    "topic": "Pricing and Support",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "How can you run resources in Azure at a heavily discounted price, with the tradeoff that Microsoft can evict them when capacity is needed?",
+    "options": {
+      "A": "Azure Spot Virtual Machines",
+      "B": "Reserved Virtual Machine Instances",
+      "C": "Pay-as-you-go capacity",
+      "D": "Free Trial capacity"
+    },
+    "correctAnswer": "A",
+    "explanation": "Spot VMs use unused Azure capacity at up to 90% discount, but they can be interrupted (evicted) at any time when capacity is reclaimed.",
+    "topic": "Pricing and Support",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "Which Azure compliance resource provides access to independent audit reports and security certifications for Azure services?",
+    "options": {
+      "A": "Service Trust Portal",
+      "B": "Azure Blueprints",
+      "C": "Azure Policy",
+      "D": "Azure Information Protection"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Service Trust Portal hosts compliance documentation, SOC reports, ISO certifications, and regulatory standards verification for Microsoft Cloud.",
+    "topic": "Compliance and Governance",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What is the difference between Azure Policy and Role-Based Access Control (RBAC)?",
+    "options": {
+      "A": "RBAC controls who can perform actions; Azure Policy controls what properties resources can have",
+      "B": "Azure Policy is paid; RBAC is free for all users",
+      "C": "RBAC only applies to database servers; Policy applies to networks",
+      "D": "There is no difference; they are alternative names for the same feature"
+    },
+    "correctAnswer": "A",
+    "explanation": "RBAC manages identity permissions (e.g. who is an owner). Azure Policy enforces guardrails on resource attributes (e.g. blocking VMs outside a specific region).",
+    "topic": "Compliance and Governance",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "Which Azure service helps enforce organization standards and assess compliance at scale using customizable rule templates?",
+    "options": {
+      "A": "Azure Policy",
+      "B": "Azure Monitor",
+      "C": "Azure Key Vault",
+      "D": "Azure Service Health"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure Policy evaluates your resources against business rules and compliance requirements, reporting on non-compliant configurations.",
+    "topic": "Compliance and Governance",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What feature allows you to automatically apply organizational metadata tags to resources for grouping and billing analysis?",
+    "options": {
+      "A": "Azure Tags",
+      "B": "Resource Locks",
+      "C": "Azure Policies",
+      "D": "Management Groups"
+    },
+    "correctAnswer": "A",
+    "explanation": "Tags are name-value pairs applied to resources or resource groups, allowing custom classifications for billing and management.",
+    "topic": "Compliance and Governance",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "Which Azure service provides a secure repository to store and manage cryptographic keys, secrets, and certificates?",
+    "options": {
+      "A": "Azure Key Vault",
+      "B": "Azure Entra ID",
+      "C": "Azure Policy",
+      "D": "Azure Information Protection"
+    },
+    "correctAnswer": "A",
+    "explanation": "Key Vault is a hardware-backed cloud vault used to securely store API keys, passwords, database credentials, and SSL certificates.",
+    "topic": "Identity and Security",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What represents the Azure SLA commitments for uptime in a month? (e.g. 99.9% vs 99.99%)",
+    "options": {
+      "A": "A higher number of 9s represents higher availability and less allowed downtime",
+      "B": "A higher SLA number means the service has higher memory storage capacity",
+      "C": "SLA numbers are only assigned to resources running in private clouds",
+      "D": "The SLA commitments represent the network speed between zones"
+    },
+    "correctAnswer": "A",
+    "explanation": "High availability is measured in '9s'. An SLA of 99.9% permits ~43 minutes of downtime per month; 99.99% permits only ~4 minutes.",
+    "topic": "Cloud Concepts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What Azure database service is a fully managed, globally distributed NoSQL database service?",
+    "options": {
+      "A": "Azure Cosmos DB",
+      "B": "Azure SQL Database",
+      "C": "Azure Database for PostgreSQL",
+      "D": "Azure Synapse Analytics"
+    },
+    "correctAnswer": "A",
+    "explanation": "Cosmos DB is Microsoft's multi-model NoSQL database service, offering single-digit millisecond latency and global replication.",
+    "topic": "Azure Core Services",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "What is the primary function of Azure Virtual Network (VNet)?",
+    "options": {
+      "A": "To enable Azure resources to communicate securely with each other, the internet, and on-premises networks",
+      "B": "To speed up the network throughput of local office routers",
+      "C": "To encrypt files inside Azure Storage automatically",
+      "D": "To build visual network diagrams for report presentations"
+    },
+    "correctAnswer": "A",
+    "explanation": "VNets are the fundamental building blocks for private cloud networks in Azure, providing isolation and routing capabilities.",
+    "topic": "Azure Core Services",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "Which Azure compute service allows you to deploy and manage a group of identical, load-balanced virtual machines?",
+    "options": {
+      "A": "Virtual Machine Scale Sets",
+      "B": "Azure App Service",
+      "C": "Azure Container Instances",
+      "D": "Azure Dedicated Hosts"
+    },
+    "correctAnswer": "A",
+    "explanation": "Scale Sets automatically increase or decrease the number of identical VM instances in response to demand, providing scale.",
+    "topic": "Azure Core Services",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "text": "In cloud computing, what does 'scalability' mean?",
+    "options": {
+      "A": "The ability to increase or decrease resource capacity (vertical or horizontal) to handle workload changes",
+      "B": "Ensuring database transactions are executed sequentially without errors",
+      "C": "Encrypting network connections between different geographical zones",
+      "D": "The capacity to recover from hardware component outages instantly"
+    },
+    "correctAnswer": "A",
+    "explanation": "Scalability is the cloud's capacity to adjust resources. Vertical scaling (up/down) adds RAM/CPU to a VM; horizontal scaling (out/in) adds/removes VM instances.",
+    "topic": "Cloud Concepts",
+    "difficulty": "EASY"
+  }
+]

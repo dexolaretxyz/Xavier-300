@@ -1,0 +1,562 @@
+[
+  {
+    "certificationSlug": "project-management",
+    "text": "What is the correct order of the project lifecycle phases as defined by the PMBOK Guide?",
+    "options": {
+      "A": "Initiating, Planning, Executing, Monitoring & Controlling, Closing",
+      "B": "Planning, Initiating, Executing, Closing, Monitoring & Controlling",
+      "C": "Initiating, Executing, Planning, Closing, Monitoring & Controlling",
+      "D": "Planning, Executing, Monitoring & Controlling, Closing"
+    },
+    "correctAnswer": "A",
+    "explanation": "The standard Project Management lifecycle groups processes into five Process Groups: Initiating, Planning, Executing, Monitoring & Controlling, and Closing.",
+    "topic": "Project Lifecycle",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "During which project lifecycle phase is the Project Charter officially developed and approved?",
+    "options": {
+      "A": "Initiating",
+      "B": "Planning",
+      "C": "Executing",
+      "D": "Monitoring & Controlling"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Project Charter is created during the Initiating phase, authorizing the project's existence and granting authority to the project manager.",
+    "topic": "Project Lifecycle",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What is the primary characteristic of the Waterfall methodology?",
+    "options": {
+      "A": "A linear, sequential approach where each phase must be completed before the next begins",
+      "B": "An iterative approach where deliverables are released in short sprint intervals",
+      "C": "A database development methodology that avoids indexing data tables",
+      "D": "A scheduling framework that excludes the use of milestones"
+    },
+    "correctAnswer": "A",
+    "explanation": "Waterfall is a traditional predictive model characterized by sequential phases (Requirements, Design, Implementation, Testing, Maintenance).",
+    "topic": "Agile vs Waterfall",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "When is an Agile methodology preferred over a Waterfall methodology?",
+    "options": {
+      "A": "When project requirements are highly uncertain and expected to change frequently",
+      "B": "When the project timeline and budget must be strictly fixed with zero changes",
+      "C": "When the project involves constructing a physical highway or building",
+      "D": "When the client has zero availability to participate in status meetings"
+    },
+    "correctAnswer": "A",
+    "explanation": "Agile is adaptive. It uses iterative feedback loops to handle change and deliver incremental value under high uncertainty.",
+    "topic": "Agile vs Waterfall",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "In Agile frameworks, what does a 'Sprint Review' focus on?",
+    "options": {
+      "A": "Demonstrating the increment of completed software to stakeholders for feedback",
+      "B": "Conducting team reviews to identify process improvements",
+      "C": "Writing the technical requirements for the next three sprints",
+      "D": "Calculating the remaining budget spent on hardware resources"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Sprint Review is a demo meeting at the sprint's end, letting stakeholders inspect the product increment and suggest backlog adjustments.",
+    "topic": "Agile vs Waterfall",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What is a 'Stakeholder' in project management?",
+    "options": {
+      "A": "Any individual, group, or organization who may affect or be affected by a project decision or outcome",
+      "B": "Only the client who pays the financial invoice for the project",
+      "C": "The developers actively writing the code files for the project",
+      "D": "The cloud provider hosting the application servers"
+    },
+    "correctAnswer": "A",
+    "explanation": "Stakeholders encompass anyone impacted by the project (team, managers, sponsors, users, suppliers, community, etc.).",
+    "topic": "Stakeholder Management",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "Which tool is used to categorize stakeholders based on their level of authority and concern?",
+    "options": {
+      "A": "Power/Interest Grid",
+      "B": "Gantt Chart",
+      "C": "Risk Register",
+      "D": "Fishbone Diagram"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Power/Interest Grid groups stakeholders into quadrants (Manage Closely, Keep Satisfied, Keep Informed, Monitor) to plan communication.",
+    "topic": "Stakeholder Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What is the primary goal of stakeholder engagement planning?",
+    "options": {
+      "A": "To increase support and minimize resistance from stakeholders throughout the project",
+      "B": "To ensure stakeholders participate in daily standup meetings",
+      "C": "To hide project risks from stakeholders to maintain their trust",
+      "D": "To limit stakeholder feedback to the final closing phase only"
+    },
+    "correctAnswer": "A",
+    "explanation": "Engagement planning ensures stakeholders are involved productively, leveraging their support and mitigating concerns early.",
+    "topic": "Stakeholder Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What is a 'Risk' in project management?",
+    "options": {
+      "A": "An uncertain event or condition that, if it occurs, has a positive or negative effect on project objectives",
+      "B": "A definite event that has already occurred and disrupted the schedule",
+      "C": "The financial cost of purchasing hardware resources",
+      "D": "The line of code that contains a database compile error"
+    },
+    "correctAnswer": "A",
+    "explanation": "Risks are uncertainties. They can be negative (threats) or positive (opportunities), differing from 'issues' which have already occurred.",
+    "topic": "Risk Management",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "Where are identified project risks, their probabilities, impacts, and planned responses documented?",
+    "options": {
+      "A": "Risk Register",
+      "B": "Project Charter",
+      "C": "Gantt Chart",
+      "D": "Scope Statement"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Risk Register is a living document that captures risk analysis, owners, triggers, and response plans.",
+    "topic": "Risk Management",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "Which risk response strategy involves changing the project plan to eliminate a threat entirely?",
+    "options": {
+      "A": "Avoidance",
+      "B": "Mitigation",
+      "C": "Transference",
+      "D": "Acceptance"
+    },
+    "correctAnswer": "A",
+    "explanation": "Risk avoidance alters the project approach (e.g. changing scope or vendor) to bypass the risk condition completely.",
+    "topic": "Risk Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What is the difference between qualitative and quantitative risk analysis?",
+    "options": {
+      "A": "Qualitative ranks risks subjectively; Quantitative models risk numerically using probability simulations",
+      "B": "Quantitative is for Waterfall; Qualitative is only for Agile",
+      "C": "Quantitative analysis does not require a risk register",
+      "D": "There is no difference in mathematical risk metrics"
+    },
+    "correctAnswer": "A",
+    "explanation": "Qualitative analysis estimates probability and impact values (e.g. High/Medium/Low). Quantitative analysis runs numerical models (e.g. Monte Carlo) to calculate impact.",
+    "topic": "Risk Management",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What is the 'Critical Path' in a project schedule?",
+    "options": {
+      "A": "The sequence of dependent tasks that determines the shortest possible duration of the project",
+      "B": "The list of tasks that have the highest financial cost",
+      "C": "The path that contains the most experienced developers",
+      "D": "The final phase of the project lifecycle before closing"
+    },
+    "correctAnswer": "A",
+    "explanation": "The critical path has zero 'float' (slack). Any delay in a critical path task directly delays the final project completion date.",
+    "topic": "Project Scheduling",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What does a Gantt Chart visualize?",
+    "options": {
+      "A": "Project tasks plotted against a timeline showing start dates, end dates, and dependencies",
+      "B": "The hierarchy of project stakeholder organizational relationships",
+      "C": "The financial budget expenditure over the project years",
+      "D": "The percentage of code files that contain errors"
+    },
+    "correctAnswer": "A",
+    "explanation": "Gantt charts are horizontal bar charts displaying schedule timelines, task bars, progress, and logical dependencies.",
+    "topic": "Project Scheduling",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What is 'float' (or slack) in project scheduling?",
+    "options": {
+      "A": "The amount of time a task can be delayed without delaying the project completion date",
+      "B": "The money remaining in the contingency reserve fund",
+      "C": "The number of temporary resources assigned to a team",
+      "D": "The execution speed of the scheduling software engine"
+    },
+    "correctAnswer": "A",
+    "explanation": "Tasks not on the critical path have float. Free float is delay without affecting successors; Total float is delay without affecting project end.",
+    "topic": "Project Scheduling",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What scheduling compression technique adds resources to tasks to shorten project duration, increasing costs?",
+    "options": {
+      "A": "Crashing",
+      "B": "Fast Tracking",
+      "C": "Resource Leveling",
+      "D": "Lag adjustment"
+    },
+    "correctAnswer": "A",
+    "explanation": "Crashing adds resources (e.g. overtime, extra staff) to critical path tasks to shrink duration, trading cost for speed.",
+    "topic": "Project Scheduling",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What scheduling compression technique runs tasks in parallel that would normally be done in sequence, increasing risk?",
+    "options": {
+      "A": "Fast Tracking",
+      "B": "Crashing",
+      "C": "Resource Smoothing",
+      "D": "Lead adjustment"
+    },
+    "correctAnswer": "A",
+    "explanation": "Fast tracking overlaps phases or dependent tasks (e.g. starting design before requirements are 100% signed off), rising risk of rework.",
+    "topic": "Project Scheduling",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "Under Earned Value Management (EVM), what does a Cost Performance Index (CPI) of 0.85 indicate?",
+    "options": {
+      "A": "The project is over budget; we are only getting 85 cents of value for every dollar spent",
+      "B": "The project is under budget; we have saved 15% of our funds",
+      "C": "The project is ahead of schedule by 15% of the timeline",
+      "D": "The dataset contains 15% missing database records"
+    },
+    "correctAnswer": "A",
+    "explanation": "CPI = EV / AC. A CPI of less than 1.0 means the actual cost exceeds the earned value, indicating the project is over budget.",
+    "topic": "Budget and EVM",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "If Planned Value (PV) is $10,000 and Earned Value (EV) is $8,000, what is the Schedule Variance (SV)?",
+    "options": {
+      "A": "-$2,000 (Behind schedule)",
+      "B": "$2,000 (Ahead of schedule)",
+      "C": "0.8 (On track)",
+      "D": "$18,000 (Over budget)"
+    },
+    "correctAnswer": "A",
+    "explanation": "SV = EV - PV. SV = $8,000 - $10,000 = -$2,000. A negative Schedule Variance indicates the project is behind schedule.",
+    "topic": "Budget and EVM",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What does a Schedule Performance Index (SPI) of 1.10 indicate?",
+    "options": {
+      "A": "The project is ahead of schedule",
+      "B": "The project is behind schedule",
+      "C": "The project is over budget by 10%",
+      "D": "The project requires 10% more resources"
+    },
+    "correctAnswer": "A",
+    "explanation": "SPI = EV / PV. An SPI greater than 1.0 indicates the project is executing ahead of its planned schedule timeline.",
+    "topic": "Budget and EVM",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What is the role of a Change Control Board (CCB) in project management?",
+    "options": {
+      "A": "To review, evaluate, approve, or reject requested changes to the project baselines",
+      "B": "To write code modifications for the development team",
+      "C": "To update the database backup files automatically",
+      "D": "To monitor the daily work hours of project employees"
+    },
+    "correctAnswer": "A",
+    "explanation": "The CCB is a formal group of stakeholders responsible for governing changes to project scope, schedule, or cost baselines.",
+    "topic": "Change Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What is 'Scope Creep'?",
+    "options": {
+      "A": "The uncontrolled expansion of project scope without adjustments to time, cost, and resources",
+      "B": "A scheduling delay caused by developers moving slowly",
+      "C": "The database query taking too long to return values",
+      "D": "A software bug that alters the user interface layout"
+    },
+    "correctAnswer": "A",
+    "explanation": "Scope creep happens when new features are added without formal change approval, leading to budget and schedule overruns.",
+    "topic": "Change Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What is the first step a project manager should take when a stakeholder requests a significant project change?",
+    "options": {
+      "A": "Analyze the impact of the change on the project scope, schedule, and cost",
+      "B": "Submit the change request to the Change Control Board immediately",
+      "C": "Tell the team to start coding the change to save time",
+      "D": "Reject the request because it deviates from the plan"
+    },
+    "correctAnswer": "A",
+    "explanation": "The project manager must first assess the change request's impact on all constraints (triple constraints) before presenting it to the CCB.",
+    "topic": "Change Management",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "In quality management, what is the difference between Quality Assurance (QA) and Quality Control (QC)?",
+    "options": {
+      "A": "QA focuses on the process of preventing bugs; QC focuses on inspecting the final product to find bugs",
+      "B": "QC is automated; QA is strictly manual review",
+      "C": "QA is for hardware; QC is only for software databases",
+      "D": "There is no functional difference between them"
+    },
+    "correctAnswer": "A",
+    "explanation": "QA is process-oriented (preventative). QC is product-oriented (inspective/detective).",
+    "topic": "Quality Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "Which tool is used in quality management to trace a problem back to its root cause?",
+    "options": {
+      "A": "Fishbone (Ishikawa) Diagram",
+      "B": "Gantt Chart",
+      "C": "Histogram",
+      "D": "Scatter Plot"
+    },
+    "correctAnswer": "A",
+    "explanation": "Fishbone diagrams group potential causes of an effect into categories (e.g. methods, machines, people) to perform root cause analysis.",
+    "topic": "Quality Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What is a 'milestone' in a project schedule?",
+    "options": {
+      "A": "A significant event or point in time with a duration of zero",
+      "B": "A task that takes exactly one week to complete",
+      "C": "The physical boundary line of the client's property",
+      "D": "The database storage limit of the cloud server host"
+    },
+    "correctAnswer": "A",
+    "explanation": "Milestones mark major achievements or gates (e.g. Design Approved). They have zero duration and show project progress.",
+    "topic": "Project Scheduling",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What document defines the communication channels, frequency, formats, and responsible owners for sharing project info?",
+    "options": {
+      "A": "Communications Management Plan",
+      "B": "Stakeholder Engagement Matrix",
+      "C": "Project Charter document",
+      "D": "WBS (Work Breakdown Structure) dictionary"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Communications Management Plan addresses: who needs what info, when they need it, how it will be delivered, and by whom.",
+    "topic": "Communication Planning",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What is the formula to calculate the number of communication channels in a team of 'N' members?",
+    "options": {
+      "A": "N * (N - 1) / 2",
+      "B": "N * N",
+      "C": "N + 1",
+      "D": "2 * N - 1"
+    },
+    "correctAnswer": "A",
+    "explanation": "Communication channels scale quadratically. The formula is N * (N - 1) / 2, representing the unique pairs of communicators.",
+    "topic": "Communication Planning",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "If a team grows from 4 members to 6 members, how many new communication channels are added?",
+    "options": {
+      "A": "9 new channels",
+      "B": "2 new channels",
+      "C": "15 new channels",
+      "D": "6 new channels"
+    },
+    "correctAnswer": "A",
+    "explanation": "For 4 members: 4 * 3 / 2 = 6 channels. For 6 members: 6 * 5 / 2 = 15 channels. Added channels = 15 - 6 = 9.",
+    "topic": "Communication Planning",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What type of conflict resolution strategy involves finding a win-win solution where both parties are fully satisfied?",
+    "options": {
+      "A": "Collaborating / Problem Solving",
+      "B": "Compromising",
+      "C": "Forcing / Directing",
+      "D": "Smoothing / Accommodating"
+    },
+    "correctAnswer": "A",
+    "explanation": "Collaborating incorporates multiple viewpoints to reach consensus, producing a win-win outcome. Compromising is a lose-lose (both give up something).",
+    "topic": "Resource Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What is 'resource leveling' in project management?",
+    "options": {
+      "A": "Adjusting start and end dates of tasks to address resource over-allocation",
+      "B": "Hiring additional temporary workers to complete task backlogs",
+      "C": "Converting categorical features into numerical binary values",
+      "D": "Distributing project files across redundant backup datacenters"
+    },
+    "correctAnswer": "A",
+    "explanation": "Resource leveling delays tasks to balance demand with resource supply, frequently extending the project schedule.",
+    "topic": "Resource Management",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What represents the 'triple constraints' of project management?",
+    "options": {
+      "A": "Scope, Time, Cost",
+      "B": "Quality, Risk, Stakeholders",
+      "C": "Agile, Waterfall, Scrum",
+      "D": "Design, Code, Test"
+    },
+    "correctAnswer": "A",
+    "explanation": "The triple constraint (or project management triangle) describes constraints that shape project quality: Scope, Schedule (Time), and Budget (Cost).",
+    "topic": "Project Lifecycle",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What is the purpose of the Work Breakdown Structure (WBS)?",
+    "options": {
+      "A": "To decompose the total scope of the project into manageable work packages",
+      "B": "To schedule developer work hours across the week calendar",
+      "C": "To calculate the earned value performance indexes",
+      "D": "To list the security compliance certifications of the servers"
+    },
+    "correctAnswer": "A",
+    "explanation": "A WBS is a hierarchical decomposition of the total scope of work, breaking deliverables down to the work package level.",
+    "topic": "Project Lifecycle",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What is the smallest component of a Work Breakdown Structure (WBS)?",
+    "options": {
+      "A": "Work Package",
+      "B": "Milestone",
+      "C": "Control Account",
+      "D": "Activity Task"
+    },
+    "correctAnswer": "A",
+    "explanation": "The work package is the lowest level of the WBS, where cost and duration can be estimated and managed.",
+    "topic": "Project Lifecycle",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What does 'contingency reserve' budget cover?",
+    "options": {
+      "A": "Known-unknown risks (identified risks with planned responses)",
+      "B": "Unknown-unknown risks (completely unexpected events)",
+      "C": "The annual software license fee upgrades",
+      "D": "The project manager's travel expenses"
+    },
+    "correctAnswer": "A",
+    "explanation": "Contingency reserves are allocated for identified risks (known-unknowns). Management reserves cover unidentified risks (unknown-unknowns).",
+    "topic": "Budget and EVM",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What is the role of a WBS Dictionary?",
+    "options": {
+      "A": "A document providing detailed deliverable, activity, and scheduling information for each WBS component",
+      "B": "A glossary of project management terms used in status meetings",
+      "C": "The database schema describing WBS table key relationships",
+      "D": "A translation tool used for multi-lingual team members"
+    },
+    "correctAnswer": "A",
+    "explanation": "The WBS Dictionary supports the WBS by defining details like description of work, owner, milestones, and resource requirements.",
+    "topic": "Project Lifecycle",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "Which chart type shows a team's progress by plotting outstanding work against time remaining in a sprint?",
+    "options": {
+      "A": "Burn-down chart",
+      "B": "Gantt Chart",
+      "C": "Fishbone Diagram",
+      "D": "Pareto Chart"
+    },
+    "correctAnswer": "A",
+    "explanation": "Burn-down charts show how much work is left (backlog) on the vertical axis, tracking progress down to zero by sprint end.",
+    "topic": "Agile vs Waterfall",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What is the Tuckman ladder model used for in project team development?",
+    "options": {
+      "A": "To describe the stages of team development: Forming, Storming, Norming, Performing, Adjourning",
+      "B": "To calculate the hierarchy of stakeholder priority rankings",
+      "C": "To schedule physical tasks during server migration steps",
+      "D": "To track budget spending against historical baselines"
+    },
+    "correctAnswer": "A",
+    "explanation": "Tuckman's model describes stages that groups progress through as they learn to collaborate and perform effectively.",
+    "topic": "Resource Management",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "What is a 'Project Management Plan'?",
+    "options": {
+      "A": "A master document defining how the project will be executed, monitored, controlled, and closed",
+      "B": "A simple list of dates and tasks in a spreadsheet",
+      "C": "The legal contract signed between the client and the company",
+      "D": "The folder containing the application source code files"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Project Management Plan integrates all subsidiary management plans (scope, cost, schedule, risk, quality, etc.) into a cohesive baseline.",
+    "topic": "Project Lifecycle",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "text": "Which Agile estimation technique assigns values based on relative effort sizing rather than exact hours?",
+    "options": {
+      "A": "Story Point Sizing (Fibonacci scale)",
+      "B": "Parametric Estimating",
+      "C": "Three-Point Estimating",
+      "D": "Bottom-Up Estimating"
+    },
+    "correctAnswer": "A",
+    "explanation": "Story points estimate tasks relatively based on complexity, effort, and risk, often using the modified Fibonacci sequence (1, 2, 3, 5, 8, 13).",
+    "topic": "Agile vs Waterfall",
+    "difficulty": "MEDIUM"
+  }
+]

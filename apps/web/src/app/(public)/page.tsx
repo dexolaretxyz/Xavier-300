@@ -23,7 +23,7 @@ export default function LandingPage() {
     { name: "Microsoft Azure", count: 20, icon: <Cloud size={32} />, slug: "azure" },
     { name: "Microsoft Excel", count: 5, icon: <TableProperties size={32} />, slug: "excel" },
     { name: "DevOps", count: 10, icon: <InfinityIcon size={32} />, slug: "devops" },
-    { name: "Full Stack Web Dev", count: 14, icon: <Code2 size={32} />, slug: "web-dev" },
+    { name: "Full Stack Web Dev", count: 14, icon: <Code2 size={32} />, slug: "fullstack" },
     { name: "Project Management", count: 7, icon: <GanttChartSquare size={32} />, slug: "project-management" },
     { name: "Microsoft Power BI", count: 6, icon: <PieChart size={32} />, slug: "power-bi" },
   ];

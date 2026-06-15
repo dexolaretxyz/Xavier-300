@@ -1,0 +1,562 @@
+[
+  {
+    "certificationSlug": "data-science",
+    "text": "Which pandas function in Python is used to read data from a CSV file into a DataFrame?",
+    "options": {
+      "A": "pd.read_csv()",
+      "B": "pd.open_csv()",
+      "C": "pd.load_csv()",
+      "D": "pd.csv_to_dataframe()"
+    },
+    "correctAnswer": "A",
+    "explanation": "In pandas, pd.read_csv() is the standard function used to load and parse a comma-separated values (CSV) file into a DataFrame object.",
+    "topic": "Python Basics",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "How do you calculate the element-wise sum of two numpy arrays, arr1 and arr2?",
+    "options": {
+      "A": "arr1 + arr2",
+      "B": "np.sum(arr1, arr2)",
+      "C": "arr1.add(arr2)",
+      "D": "np.merge_sum(arr1, arr2)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Numpy arrays support vectorization; adding two arrays directly using the '+' operator sums their elements coordinate-wise.",
+    "topic": "Python Basics",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "Which pandas method is used to filter out rows with missing or null values from a DataFrame?",
+    "options": {
+      "A": "dropna()",
+      "B": "fillna()",
+      "C": "isnull()",
+      "D": "clean_nulls()"
+    },
+    "correctAnswer": "A",
+    "explanation": "dropna() removes rows or columns containing null (NaN) values from a pandas DataFrame.",
+    "topic": "Python Basics",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "In pandas, what is the difference between loc and iloc for selecting data?",
+    "options": {
+      "A": "loc selects by label, while iloc selects by integer position",
+      "B": "iloc selects columns, while loc selects rows only",
+      "C": "loc is used for Excel data; iloc is for SQL data imports",
+      "D": "There is no difference; they are interchangeable aliases"
+    },
+    "correctAnswer": "A",
+    "explanation": "loc is label-based indexing (uses names of rows/columns), while iloc is integer-based indexing (uses 0-indexed positions).",
+    "topic": "Python Basics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "Which numpy function returns the index values of the maximum elements along an axis?",
+    "options": {
+      "A": "np.argmax()",
+      "B": "np.max()",
+      "C": "np.where()",
+      "D": "np.sort_index()"
+    },
+    "correctAnswer": "A",
+    "explanation": "np.argmax() returns the indices of the maximum values along the specified axis of an array.",
+    "topic": "Python Basics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "What characterizes Supervised Machine Learning?",
+    "options": {
+      "A": "The training dataset contains both features and correct labels",
+      "B": "The model learns to cluster data without any correct outputs",
+      "C": "A human supervisor monitors the model's weights in real-time",
+      "D": "The algorithm only runs on local graphic processing units (GPUs)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Supervised learning algorithms are trained on labeled data, where the target outputs are known and provided.",
+    "topic": "Machine Learning Concepts",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "Which algorithm is an example of Unsupervised Learning?",
+    "options": {
+      "A": "K-Means Clustering",
+      "B": "Linear Regression",
+      "C": "Support Vector Machine",
+      "D": "Decision Tree Classifier"
+    },
+    "correctAnswer": "A",
+    "explanation": "K-Means is a clustering algorithm that groups unlabeled data points into clusters, which is an unsupervised task.",
+    "topic": "Machine Learning Concepts",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "What is 'overfitting' in machine learning?",
+    "options": {
+      "A": "When a model performs well on training data but poorly on unseen test data",
+      "B": "When a model has too few parameters to learn the underlying trend",
+      "C": "When the dataset contains more columns than rows",
+      "D": "When the training loop runs for too few epochs"
+    },
+    "correctAnswer": "A",
+    "explanation": "Overfitting happens when a model learns noise and details in the training data too well, failing to generalize to new data.",
+    "topic": "Machine Learning Concepts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "How does cross-validation help in model training?",
+    "options": {
+      "A": "It provides a robust estimate of model generalization performance",
+      "B": "It increases the number of features inside the training dataset",
+      "C": "It automatically cleans missing data rows",
+      "D": "It speeds up the training process by compressing models"
+    },
+    "correctAnswer": "A",
+    "explanation": "Cross-validation splits the data into folds, training and testing on different subsets to ensure the performance metrics are stable.",
+    "topic": "Machine Learning Concepts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "What is bias-variance tradeoff in machine learning?",
+    "options": {
+      "A": "Finding a balance where both underfitting (bias) and overfitting (variance) are minimized",
+      "B": "trading CPU computing speed for higher memory storage capacities",
+      "C": "Converting continuous targets into binary classification variables",
+      "D": "Choosing between accuracy and execution speed during runtime"
+    },
+    "correctAnswer": "A",
+    "explanation": "High bias leads to underfitting. High variance leads to overfitting. The tradeoff involves finding the sweet spot between the two.",
+    "topic": "Machine Learning Concepts",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "In binary classification, what is 'Precision'?",
+    "options": {
+      "A": "The ratio of true positives to all predicted positives",
+      "B": "The ratio of true positives to all actual positives",
+      "C": "The total number of correct predictions divided by total records",
+      "D": "The harmonic mean of accuracy and recall"
+    },
+    "correctAnswer": "A",
+    "explanation": "Precision = TP / (TP + FP). It answers: of all predicted positive cases, what fraction was actually positive?",
+    "topic": "Evaluation Metrics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "In medical screening, which metric is most important to minimize false negatives?",
+    "options": {
+      "A": "Recall / Sensitivity",
+      "B": "Precision",
+      "C": "Accuracy",
+      "D": "F1-Score"
+    },
+    "correctAnswer": "A",
+    "explanation": "Recall = TP / (TP + FN). Minimizing false negatives (FN) maximizes recall, ensuring we don't miss patients who have the disease.",
+    "topic": "Evaluation Metrics",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "What is the F1-Score in machine learning model evaluation?",
+    "options": {
+      "A": "The harmonic mean of Precision and Recall",
+      "B": "The simple arithmetic average of Precision and Accuracy",
+      "C": "The percentage of correct predictions in the test dataset",
+      "D": "The ratio of true positives to true negatives"
+    },
+    "correctAnswer": "A",
+    "explanation": "F1-Score provides a balance between Precision and Recall. It is computed as 2 * (Precision * Recall) / (Precision + Recall).",
+    "topic": "Evaluation Metrics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "What does an Area Under the ROC Curve (AUC-ROC) of 0.5 represent?",
+    "options": {
+      "A": "A model that performs no better than random guessing",
+      "B": "A model with perfect classification accuracy",
+      "C": "A model that classifies every sample as negative",
+      "D": "A model with equal numbers of parameters and features"
+    },
+    "correctAnswer": "A",
+    "explanation": "An AUC-ROC score of 0.5 means the model's ability to distinguish positive and negative classes is equivalent to a random coin flip.",
+    "topic": "Evaluation Metrics",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "What is a Confusion Matrix?",
+    "options": {
+      "A": "A table showing TP, FP, TN, and FN values for classification models",
+      "B": "A matrix containing calculated correlation weights between features",
+      "C": "An error log containing compiled neural network layer parameters",
+      "D": "A scatter plot showing overlapping clusters"
+    },
+    "correctAnswer": "A",
+    "explanation": "A confusion matrix summarizes a classifier's predictions against actual labels, listing true/false positive/negative counts.",
+    "topic": "Evaluation Metrics",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "What is 'feature engineering'?",
+    "options": {
+      "A": "Creating new input variables from raw data to improve model accuracy",
+      "B": "Removing corrupted data rows from a SQL database",
+      "C": "Adjusting the learning rate parameter in a neural network",
+      "D": "Compiling Python source code to make it run faster"
+    },
+    "correctAnswer": "A",
+    "explanation": "Feature engineering uses domain knowledge to extract or create new characteristics (features) from raw data columns.",
+    "topic": "Feature Engineering",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "Which feature selection technique removes columns that have low variance?",
+    "options": {
+      "A": "Variance Thresholding",
+      "B": "Principal Component Analysis",
+      "C": "Lasso Regularisation",
+      "D": "Recursive Feature Elimination"
+    },
+    "correctAnswer": "A",
+    "explanation": "Variance thresholding drops features whose values do not change much across rows, as they contain little information.",
+    "topic": "Feature Engineering",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "What is the effect of applying L1 (Lasso) regularization on features?",
+    "options": {
+      "A": "It can shrink feature coefficients to exactly zero, performing feature selection",
+      "B": "It doubles the weight of collinear columns to prevent underfitting",
+      "C": "It converts all numerical values into category codes",
+      "D": "It forces the network to use dropout layers automatically"
+    },
+    "correctAnswer": "A",
+    "explanation": "Lasso adds the absolute values of coefficients to the loss function, which can force some coefficients to zero, removing them.",
+    "topic": "Feature Engineering",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "What is the purpose of Principal Component Analysis (PCA)?",
+    "options": {
+      "A": "To reduce the dimensionality of data while preserving maximum variance",
+      "B": "To impute missing numerical values in a DataFrame",
+      "C": "To train neural networks using backpropagation",
+      "D": "To classify text documents into different category groups"
+    },
+    "correctAnswer": "A",
+    "explanation": "PCA is a dimensionality reduction method that projects high-dimensional data onto orthogonal axes (principal components).",
+    "topic": "Feature Engineering",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "Which is an example of feature extraction from date values?",
+    "options": {
+      "A": "Extracting 'Day of the Week' (e.g. Monday) from a timestamp string",
+      "B": "Multiplying the date by the product price values",
+      "C": "Filling missing date records using forward fill imputation",
+      "D": "Changing the date format from DD-MM-YYYY to YYYY/MM/DD"
+    },
+    "correctAnswer": "A",
+    "explanation": "Deriving components like 'Day of Week', 'Month', or 'IsWeekend' from a date column adds descriptive features for models.",
+    "topic": "Feature Engineering",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "What is the difference between Normalization (Min-Max Scaling) and Standardization (Z-score Scaling)?",
+    "options": {
+      "A": "Normalization scales data to [0,1]; Standardization scales data to mean=0 and variance=1",
+      "B": "Normalization converts categories to numbers; Standardization does the reverse",
+      "C": "Standardization is only used for image data processing",
+      "D": "There is no difference in scaling outcomes"
+    },
+    "correctAnswer": "A",
+    "explanation": "Min-Max normalization bounds values strictly between 0 and 1. Z-score standardization rescales data to center on 0 with unit variance.",
+    "topic": "Data Preprocessing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "Why do distance-based algorithms like KNN and SVM require feature scaling?",
+    "options": {
+      "A": "Features with larger scales will dominate the distance calculations",
+      "B": "They will crash with division by zero errors otherwise",
+      "C": "Scaling converts categorical variables to integer inputs",
+      "D": "Scaling reduces the time complexity from quadratic to linear"
+    },
+    "correctAnswer": "A",
+    "explanation": "Since KNN and SVM calculate spatial distances between points, columns with large magnitudes (e.g. Salary) dwarf smaller ones (e.g. Age).",
+    "topic": "Data Preprocessing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "Which preprocessing step handles skewed numerical features by compressing long tails?",
+    "options": {
+      "A": "Log transformation",
+      "B": "One-hot encoding",
+      "C": "Binarisation",
+      "D": "Min-Max scaling"
+    },
+    "correctAnswer": "A",
+    "explanation": "Log transformation (e.g. np.log1p) normalizes right-skewed data distributions by reducing the relative distance of extreme values.",
+    "topic": "Data Preprocessing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "What does it mean to 'standardize' a variable?",
+    "options": {
+      "A": "Subtract the mean and divide by the standard deviation",
+      "B": "Divide every value by the maximum value in the column",
+      "C": "Convert all numeric values into category string labels",
+      "D": "Remove the top and bottom 5% outlier records"
+    },
+    "correctAnswer": "A",
+    "explanation": "Standardization computes the Z-score: z = (x - mean) / std_dev, scaling features to a mean of 0 and standard deviation of 1.",
+    "topic": "Data Preprocessing",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "What is the primary danger of data leakage during preprocessing?",
+    "options": {
+      "A": "Information from the test dataset is inadvertently used to train the model",
+      "B": "The database records are leaked to unauthorized external users",
+      "C": "The scaling factor overflows the floating-point memory limit",
+      "D": "It prevents the model from compiling on standard CPU environments"
+    },
+    "correctAnswer": "A",
+    "explanation": "Data leakage occurs when target or test information leaks into the training pipeline (e.g. fitting scaler on the whole dataset), causing optimistic metrics.",
+    "topic": "Data Preprocessing",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "Which regression algorithm models the relationship between features and target using a straight line?",
+    "options": {
+      "A": "Linear Regression",
+      "B": "Logistic Regression",
+      "C": "Random Forest Classifier",
+      "D": "K-Means"
+    },
+    "correctAnswer": "A",
+    "explanation": "Linear Regression models numerical target variables by fitting a linear equation (straight line/hyperplane) to the input features.",
+    "topic": "Algorithms",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "Despite its name, what task is Logistic Regression used for?",
+    "options": {
+      "A": "Classification",
+      "B": "Regression",
+      "C": "Clustering",
+      "D": "Dimension reduction"
+    },
+    "correctAnswer": "A",
+    "explanation": "Logistic Regression uses a sigmoid function to output probabilities between 0 and 1, making it a classification algorithm.",
+    "topic": "Algorithms",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "How does a Decision Tree split nodes during classification?",
+    "options": {
+      "A": "By maximizing information gain or minimizing Gini impurity",
+      "B": "By drawing a linear separator line between the points",
+      "C": "By calculating the Euclidean distance to the nearest centroid",
+      "D": "By randomly assigning classes to split branches"
+    },
+    "correctAnswer": "A",
+    "explanation": "Decision trees evaluate splits using metrics like Gini impurity or Entropy (Information Gain) to separate classes cleanly at each step.",
+    "topic": "Algorithms",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "What is a Random Forest algorithm?",
+    "options": {
+      "A": "An ensemble of decision trees trained using bagging (bootstrap aggregation)",
+      "B": "A single deep decision tree with randomly selected threshold values",
+      "C": "A clustering method that generates random target groups",
+      "D": "A neural network that prunes connections randomly"
+    },
+    "correctAnswer": "A",
+    "explanation": "Random Forest builds multiple decision trees on random samples of the data and aggregates their outputs to make final predictions.",
+    "topic": "Algorithms",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "What is the key difference between Bagging and Boosting algorithms?",
+    "options": {
+      "A": "Bagging trains models in parallel; Boosting trains models sequentially to correct previous errors",
+      "B": "Bagging is for regression; Boosting is strictly for classification",
+      "C": "Boosting uses neural networks, while Bagging only uses decision trees",
+      "D": "There is no difference; they are synonymous ensemble techniques"
+    },
+    "correctAnswer": "A",
+    "explanation": "Bagging (e.g. Random Forest) averages independent parallel models. Boosting (e.g. XGBoost, AdaBoost) trains models in sequence, focusing on hard cases.",
+    "topic": "Algorithms",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "What is the purpose of an activation function in a neural network layer?",
+    "options": {
+      "A": "To introduce non-linearity into the network, allowing it to learn complex patterns",
+      "B": "To normalize the input features to have zero mean and unit variance",
+      "C": "To calculate the derivative of error during backpropagation",
+      "D": "To adjust the learning rate dynamically across training epochs"
+    },
+    "correctAnswer": "A",
+    "explanation": "Without activation functions (like ReLU or Sigmoid), a neural network would just be a combination of linear functions, acting as a single linear model.",
+    "topic": "Neural Networks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "Which activation function is most commonly used in hidden layers of deep neural networks?",
+    "options": {
+      "A": "ReLU (Rectified Linear Unit)",
+      "B": "Sigmoid",
+      "C": "Softmax",
+      "D": "Linear"
+    },
+    "correctAnswer": "A",
+    "explanation": "ReLU, computed as f(x) = max(0, x), is computationally efficient and avoids vanishing gradient issues, making it the hidden layer standard.",
+    "topic": "Neural Networks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "What does the 'backpropagation' algorithm do in neural network training?",
+    "options": {
+      "A": "Calculates gradients of the loss function to update model weights using gradient descent",
+      "B": "Filters out invalid features from the dataset before training starts",
+      "C": "Initializes the weights of connection nodes with random values",
+      "D": "Rescales target outputs to match prediction ranges"
+    },
+    "correctAnswer": "A",
+    "explanation": "Backpropagation computes the gradient of the loss function with respect to each weight using the chain rule, propagating errors backward.",
+    "topic": "Neural Networks",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "Which activation function is used at the output layer of a multi-class classification neural network?",
+    "options": {
+      "A": "Softmax",
+      "B": "Sigmoid",
+      "C": "ReLU",
+      "D": "Tanh"
+    },
+    "correctAnswer": "A",
+    "explanation": "Softmax converts raw output logits into a probability distribution over multiple classes, where all probabilities sum to 1.",
+    "topic": "Neural Networks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "What is the 'vanishing gradient problem' in deep neural networks?",
+    "options": {
+      "A": "Gradients become extremely small during backpropagation, stopping the lower layers from learning",
+      "B": "The learning rate becomes zero automatically at the start of training",
+      "C": "The loss function values drop below the floating-point precision limit",
+      "D": "The network pruning algorithm removes active connections by mistake"
+    },
+    "correctAnswer": "A",
+    "explanation": "In deep networks, multiplying small gradients chain-wise back through layers can shrink the gradient to zero, stalling weights updates in early layers.",
+    "topic": "Neural Networks",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "What is the primary mode of execution in a Jupyter Notebook?",
+    "options": {
+      "A": "Interactive cell-by-cell execution",
+      "B": "Compiling the entire notebook to an executable binary file",
+      "C": "Running commands purely inside a hidden background database server",
+      "D": "Executing scripts sequentially from the command line only"
+    },
+    "correctAnswer": "A",
+    "explanation": "Jupyter Notebooks allow users to partition code into executable blocks (cells) that run interactively, maintaining memory state in-between.",
+    "topic": "Data Workflows",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "What is a 'kernel' in the context of Jupyter Notebooks?",
+    "options": {
+      "A": "The computational engine that executes the code cells in the notebook",
+      "B": "The user interface stylesheet wrapper for the notebook",
+      "C": "The directory containing CSV and database files",
+      "D": "The base Python compiler running inside the local operating system"
+    },
+    "correctAnswer": "A",
+    "explanation": "The kernel is the backend process (e.g. IPython kernel) that receives code from cells, executes it, and returns results to the UI.",
+    "topic": "Data Workflows",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "Which file format is used to save Jupyter Notebooks?",
+    "options": {
+      "A": ".ipynb",
+      "B": ".py",
+      "C": ".json",
+      "D": ".html"
+    },
+    "correctAnswer": "A",
+    "explanation": "Jupyter Notebooks are saved with the .ipynb extension, which internally represents the document structure using JSON format.",
+    "topic": "Data Workflows",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "What is a major challenge when version-controlling Jupyter Notebooks using Git?",
+    "options": {
+      "A": "Cell metadata and output logs create noisy diffs that make code reviews difficult",
+      "B": "Git cannot track text changes inside JSON-based files",
+      "C": "Jupyter files must be converted to plain text before Git commits",
+      "D": "Notebook files can only be committed using terminal shells"
+    },
+    "correctAnswer": "A",
+    "explanation": "Because .ipynb files store execution counts, outputs, and metadata, minor cell runs generate massive diff changes in Git.",
+    "topic": "Data Workflows",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "text": "Which tool is commonly used to automate data science workflows as directed acyclic graphs (DAGs)?",
+    "options": {
+      "A": "Apache Airflow",
+      "B": "Jupyter Lab",
+      "C": "Pandas Profiling",
+      "D": "TensorBoard"
+    },
+    "correctAnswer": "A",
+    "explanation": "Apache Airflow is a popular workflow orchestration tool used to schedule, monitor, and run data pipelines as DAGs.",
+    "topic": "Data Workflows",
+    "difficulty": "HARD"
+  }
+]

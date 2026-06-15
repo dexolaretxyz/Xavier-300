@@ -1,0 +1,562 @@
+[
+  {
+    "certificationSlug": "power-bi",
+    "text": "Which DAX function evaluates an expression in a modified filter context?",
+    "options": {
+      "A": "CALCULATE",
+      "B": "FILTER",
+      "C": "ALL",
+      "D": "RELATED"
+    },
+    "correctAnswer": "A",
+    "explanation": "CALCULATE is the only DAX function that can modify, overwrite, or add to the current filter context during evaluation.",
+    "topic": "DAX Functions",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "What does SUMX do in Power BI?",
+    "options": {
+      "A": "Evaluates an expression for each row of a table and sums the results",
+      "B": "Sums a single column of values directly",
+      "C": "Sums values across multiple tables based on active relationships",
+      "D": "Calculates the running total of a measure"
+    },
+    "correctAnswer": "A",
+    "explanation": "SUMX is an iterator function that evaluates the specified expression for every row of a table, then sums the results.",
+    "topic": "DAX Functions",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "Why would you use FILTER inside CALCULATE instead of a simple boolean filter?",
+    "options": {
+      "A": "To apply complex filter conditions involving measures or multiple columns",
+      "B": "To speed up the query execution time significantly",
+      "C": "To automatically clear all other active filters on the table",
+      "D": "To change the cardinality of the underlying relationship"
+    },
+    "correctAnswer": "A",
+    "explanation": "Simple boolean filters in CALCULATE have restrictions (e.g. cannot reference measures or columns from different tables). FILTER allows complex logic.",
+    "topic": "DAX Functions",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "Which DAX function returns a related value from another table?",
+    "options": {
+      "A": "RELATED",
+      "B": "LOOKUPVALUE",
+      "C": "CALCULATE",
+      "D": "USERELATIONSHIP"
+    },
+    "correctAnswer": "A",
+    "explanation": "RELATED follows the active relationship from the many-side to the one-side to retrieve a corresponding value.",
+    "topic": "DAX Functions",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "How does RANKX determine the rank if there is a tie in values?",
+    "options": {
+      "A": "Depending on the optional 'ties' parameter (Skip or Dense)",
+      "B": "It always assigns the next sequential rank randomly",
+      "C": "It averages the rank values of all tied rows",
+      "D": "It throws a model evaluation runtime error"
+    },
+    "correctAnswer": "A",
+    "explanation": "RANKX supports 'Skip' (leaves gaps in ranking) and 'Dense' (no gaps in ranking) parameters to handle ties.",
+    "topic": "DAX Functions",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "Which schema structure is recommended as the best practice for Power BI data modeling?",
+    "options": {
+      "A": "Star Schema",
+      "B": "Snowflake Schema",
+      "C": "Flat Table Schema",
+      "D": "Circular Dependent Schema"
+    },
+    "correctAnswer": "A",
+    "explanation": "A Star Schema with distinct facts and dimensions is the optimal layout for Power BI usability, performance, and DAX simplicity.",
+    "topic": "Data Modelling",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "What is the danger of using a Many-to-Many relationship direction in Power BI?",
+    "options": {
+      "A": "It can lead to ambiguous filter paths and unexpected data aggregation",
+      "B": "It completely disables the use of DAX time intelligence functions",
+      "C": "It limits the report to a maximum of 1,000 rows of data",
+      "D": "It forces Power BI to convert all values into text"
+    },
+    "correctAnswer": "A",
+    "explanation": "Many-to-many relationships introduce ambiguity in how filters propagate, which can lead to incorrect or misleading report numbers.",
+    "topic": "Data Modelling",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "What is the default relationship cardinality when connecting a unique DimCustomer table to a FactSales table?",
+    "options": {
+      "A": "One-to-Many (1:*)",
+      "B": "Many-to-One (*:1)",
+      "C": "One-to-One (1:1)",
+      "D": "Many-to-Many (*:*)"
+    },
+    "correctAnswer": "A",
+    "explanation": "DimCustomer has unique IDs (One) and FactSales contains multiple transactions per customer (Many), creating a One-to-Many relationship.",
+    "topic": "Data Modelling",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "Which setting controls how filters propagate between tables in a relationship?",
+    "options": {
+      "A": "Cross filter direction",
+      "B": "Cardinality type",
+      "C": "Active status",
+      "D": "Security propagation"
+    },
+    "correctAnswer": "A",
+    "explanation": "Cross filter direction (Single or Both) determines how filters flow from one table to another across relationships.",
+    "topic": "Data Modelling",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "How can you resolve circular dependency relationships in Power BI?",
+    "options": {
+      "A": "Make one of the active relationships inactive and use USERELATIONSHIP in DAX",
+      "B": "Merge all dimension tables into a single flat database view",
+      "C": "Enable bidirectional cross-filtering on all relationships",
+      "D": "Disable direct data modeling and perform calculations in Power Query only"
+    },
+    "correctAnswer": "A",
+    "explanation": "Making relationships inactive removes the circular loop, and you can selectively activate them in measures using USERELATIONSHIP.",
+    "topic": "Data Modelling",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "Where do you perform data cleaning and transformation tasks in Power BI Desktop?",
+    "options": {
+      "A": "Power Query Editor",
+      "B": "Model View tab",
+      "C": "Report Canvas settings",
+      "D": "Service workspace options"
+    },
+    "correctAnswer": "A",
+    "explanation": "Power Query Editor is the built-in ETL tool used to clean, shape, and transform data before loading it into the data model.",
+    "topic": "Power Query Transformations",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "What is 'Query Folding' in Power Query?",
+    "options": {
+      "A": "Translating Power Query steps into a single SQL statement executed by the source database",
+      "B": "Compressing multiple steps into a single combined M language function",
+      "C": "Caching query outputs locally to speed up report rendering time",
+      "D": "Grouping columns together inside the modeling interface"
+    },
+    "correctAnswer": "A",
+    "explanation": "Query folding is the optimization where Power Query pushes transformations back to the source database as a single SQL query.",
+    "topic": "Power Query Transformations",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "Which operation combines two tables by adding rows from one table to another?",
+    "options": {
+      "A": "Append Queries",
+      "B": "Merge Queries",
+      "C": "Group By",
+      "D": "Pivot Columns"
+    },
+    "correctAnswer": "A",
+    "explanation": "Append Queries stacks rows from one or more tables on top of each other, similar to a UNION operation in SQL.",
+    "topic": "Power Query Transformations",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "Which operation is equivalent to a SQL JOIN in Power Query?",
+    "options": {
+      "A": "Merge Queries",
+      "B": "Append Queries",
+      "C": "Transpose",
+      "D": "Unpivot Columns"
+    },
+    "correctAnswer": "A",
+    "explanation": "Merge Queries joins two tables side-by-side based on matching key columns, just like a JOIN statement in SQL.",
+    "topic": "Power Query Transformations",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "What language is used to write formulas and scripts in Power Query?",
+    "options": {
+      "A": "M formula language",
+      "B": "DAX language",
+      "C": "SQL queries",
+      "D": "Python script"
+    },
+    "correctAnswer": "A",
+    "explanation": "Power Query uses the M formula language (informally known as M) to define ETL steps and transformations.",
+    "topic": "Power Query Transformations",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "Which visual is best suited to show relationships between two continuous variables?",
+    "options": {
+      "A": "Scatter chart",
+      "B": "Stacked bar chart",
+      "C": "Treemap",
+      "D": "Card visual"
+    },
+    "correctAnswer": "A",
+    "explanation": "Scatter charts plot pairs of numerical coordinates on both axes, making them ideal for correlation and relationship analysis.",
+    "topic": "Visualisation types",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "When should you use a Treemap visual instead of a Bar chart?",
+    "options": {
+      "A": "To display hierarchical data with large numbers of categories in a nested layout",
+      "B": "To compare two simple metrics side-by-side over a period of time",
+      "C": "To plot geological coordinate data on a map interface",
+      "D": "To show the correlation between two independent metrics"
+    },
+    "correctAnswer": "A",
+    "explanation": "Treemaps use nested rectangles to represent hierarchies and values, making it easy to compare sizes across complex categories.",
+    "topic": "Visualisation types",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "What is the purpose of the Key Influencers visual in Power BI?",
+    "options": {
+      "A": "To run machine learning analyses on factors driving a metric up or down",
+      "B": "To track social media engagement metrics for influencer campaigns",
+      "C": "To create organizational hierarchy trees automatically",
+      "D": "To highlight high-performing cells in a matrix layout"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Key Influencers visual analyzes your data, ranks factors that affect your metric, and displays them as key influencers.",
+    "topic": "Visualisation types",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "Which visual is best for showing composition of a category over time?",
+    "options": {
+      "A": "100% stacked area chart",
+      "B": "Pie chart",
+      "C": "Line chart",
+      "D": "KPI visual"
+    },
+    "correctAnswer": "A",
+    "explanation": "A 100% stacked area chart shows how the parts that make up a whole change over time, maintaining a total height of 100%.",
+    "topic": "Visualisation types",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "What feature enables interactive filtering of other report elements by clicking a chart element?",
+    "options": {
+      "A": "Cross-filtering / Cross-highlighting",
+      "B": "Tooltips",
+      "C": "Bookmarks",
+      "D": "Drillthrough"
+    },
+    "correctAnswer": "A",
+    "explanation": "Clicking a data point in one visual automatically filters or highlights related data in other visuals through cross-filtering.",
+    "topic": "Visualisation types",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "Where is Row-Level Security (RLS) defined in Power BI?",
+    "options": {
+      "A": "Power BI Desktop (roles/rules) and Power BI Service (assigning members)",
+      "B": "Directly in the source SQL Database using security scripts",
+      "C": "In the local computer registry of the report viewer",
+      "D": "Inside the Power Query Editor M code parameters only"
+    },
+    "correctAnswer": "A",
+    "explanation": "Roles and validation rules are configured in Power BI Desktop, but users are assigned to those roles inside the Power BI Service workspace.",
+    "topic": "Row-level security",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "Which DAX function is commonly used to dynamic filter data based on the logged-in user's email in RLS?",
+    "options": {
+      "A": "USERPRINCIPALNAME()",
+      "B": "USERNAME()",
+      "C": "LOOKUPVALUE()",
+      "D": "CALCULATEDMEMBER()"
+    },
+    "correctAnswer": "A",
+    "explanation": "USERPRINCIPALNAME() returns the user principal name (often the email address) of the currently authenticated user in the Power BI service.",
+    "topic": "Row-level security",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "How can you test RLS roles before publishing to the Power BI Service?",
+    "options": {
+      "A": "Use the 'View as' button in the Security ribbon of Power BI Desktop",
+      "B": "Create a second dummy account and log in on a separate browser",
+      "C": "Deploy the report to a temporary workspace and run manual queries",
+      "D": "Temporarily change the values in the fact table to match the test role"
+    },
+    "correctAnswer": "A",
+    "explanation": "The 'View as' feature in Power BI Desktop lets you simulate how the report will appear for specific roles or users.",
+    "topic": "Row-level security",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "What type of RLS uses table-based relationships to assign security dynamically without hardcoding roles?",
+    "options": {
+      "A": "Dynamic RLS",
+      "B": "Static RLS",
+      "C": "Active RLS",
+      "D": "Direct RLS"
+    },
+    "correctAnswer": "A",
+    "explanation": "Dynamic RLS uses a security table containing user emails and access rights, filtering the data dynamically using USERPRINCIPALNAME().",
+    "topic": "Row-level security",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "If a user has 'Admin' workspace permissions, how does Row-Level Security (RLS) affect them?",
+    "options": {
+      "A": "RLS is bypassed, and they can see all data",
+      "B": "RLS is strictly enforced, and they only see allowed rows",
+      "C": "The report fails to load for them due to authorization loop",
+      "D": "They can only see the schema, not the underlying rows"
+    },
+    "correctAnswer": "A",
+    "explanation": "Workspace roles like Admin, Member, or Contributor bypass RLS and can view all data. RLS only applies to users with Viewer access.",
+    "topic": "Row-level security",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "What is the primary way to share a report securely with external partners in Power BI?",
+    "options": {
+      "A": "Publish a Power BI App or share the report direct link to guest users",
+      "B": "Email the original pbix file as an attachment",
+      "C": "Export the report to PDF and host it on a public website",
+      "D": "Host the report inside a personal Microsoft OneDrive folder"
+    },
+    "correctAnswer": "A",
+    "explanation": "Power BI Apps and report sharing allow controlled access for external (B2B guest) users via Microsoft Entra ID authentication.",
+    "topic": "Publishing and sharing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "What must you configure to allow data refresh for reports using local on-premises databases?",
+    "options": {
+      "A": "On-premises data gateway",
+      "B": "XMLA Endpoint access link",
+      "C": "A VPN connection to the Power BI Cloud",
+      "D": "Custom Power Query parameters"
+    },
+    "correctAnswer": "A",
+    "explanation": "An on-premises data gateway acts as a bridge, providing quick and secure data transfer between local data and the Power BI service.",
+    "topic": "Publishing and sharing",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "What is the difference between a Report and a Dashboard in the Power BI Service?",
+    "options": {
+      "A": "A report is from a single dataset; a dashboard is a single-page canvas pinning visuals from multiple reports",
+      "B": "Reports are interactive, but dashboards are strictly static images",
+      "C": "Dashboards can only be built in Desktop, while reports are built in Service",
+      "D": "There is no difference; they are different names for the same asset"
+    },
+    "correctAnswer": "A",
+    "explanation": "Reports are multi-page interactive explorations of a single dataset. Dashboards are single-page displays created only in the Service.",
+    "topic": "Publishing and sharing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "How do you protect reports from being modified by members with Contributor access?",
+    "options": {
+      "A": "Publish the content as a read-only Power BI App",
+      "B": "Set the workspace type to Premium Capacity only",
+      "C": "Change the workspace role of the members to Viewer",
+      "D": "Encrypt the dataset file using a master password"
+    },
+    "correctAnswer": "C",
+    "explanation": "Workspace Contributors can modify reports and datasets. Changing their role to Viewer restricts them to read-only access.",
+    "topic": "Publishing and sharing",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "Which cloud capacity type is required to share reports with free license users in Power BI?",
+    "options": {
+      "A": "Premium Capacity (P or F SKU)",
+      "B": "Pro Capacity",
+      "C": "Shared Capacity",
+      "D": "Personal Capacity"
+    },
+    "correctAnswer": "A",
+    "explanation": "Reports hosted in Premium Capacity workspaces can be shared with and viewed by users who only hold a free Power BI license.",
+    "topic": "Publishing and sharing",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "What is the primary benefit of configuring Incremental Refresh in Power BI?",
+    "options": {
+      "A": "Faster refreshes, lower resource consumption, and ability to load massive datasets",
+      "B": "Automatically updates visuals instantly when source data changes",
+      "C": "Allows the report to bypass Row-Level Security rules",
+      "D": "Converts all date columns to the UTC timezone automatically"
+    },
+    "correctAnswer": "A",
+    "explanation": "Incremental refresh only updates the partition containing new/modified data, reducing resource usage and execution time.",
+    "topic": "Incremental refresh",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "Which parameters are mandatory in Power Query to set up Incremental Refresh?",
+    "options": {
+      "A": "RangeStart and RangeEnd (DateTime type)",
+      "B": "RefreshDate and TodayDate (Date type)",
+      "C": "MinDate and MaxDate (Integer type)",
+      "D": "StartDate and EndDate (Text type)"
+    },
+    "correctAnswer": "A",
+    "explanation": "RangeStart and RangeEnd must be configured as case-sensitive DateTime parameters to filter the data partition in Power Query.",
+    "topic": "Incremental refresh",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "If incremental refresh is configured, where is the initial full load of historical data processed?",
+    "options": {
+      "A": "During the first scheduled refresh in the Power BI Service",
+      "B": "Locally on the user's computer inside Power BI Desktop",
+      "C": "Inside the data gateway configuration interface",
+      "D": "During the query folding translation phase"
+    },
+    "correctAnswer": "A",
+    "explanation": "Power BI Desktop only loads a small preview. The first full load of historical data occurs during the first refresh in the Service.",
+    "topic": "Incremental refresh",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "Which feature must the source database support for incremental refresh to be efficient?",
+    "options": {
+      "A": "Query Folding",
+      "B": "Bidirectional filtering",
+      "C": "Stored Procedures",
+      "D": "JSON serialization"
+    },
+    "correctAnswer": "A",
+    "explanation": "Query folding allows Power BI to push date filters to the source database, retrieving only the required rows for the partition.",
+    "topic": "Incremental refresh",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "Can you download a .pbix file from the Power BI Service after Incremental Refresh has run?",
+    "options": {
+      "A": "No, reports using incremental refresh cannot be downloaded back to desktop",
+      "B": "Yes, but only if the file size is under 50 MB",
+      "C": "Yes, it downloads with all data intact",
+      "D": "Yes, but the historical data partitions are stripped out"
+    },
+    "correctAnswer": "A",
+    "explanation": "Once a dataset is modified by incremental refresh in the Service, it cannot be downloaded back as a .pbix file.",
+    "topic": "Incremental refresh",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "What is a Power BI Dataflow?",
+    "options": {
+      "A": "A reusable self-service data prep service running in the cloud (Power Query Online)",
+      "B": "An automatic flow diagram creator for reports",
+      "C": "A database synchronization service between Azure and AWS",
+      "D": "A workspace migration wizard"
+    },
+    "correctAnswer": "A",
+    "explanation": "Dataflows run Power Query in the cloud, extracting, transforming, and storing data in Azure Data Lake Storage for reuse across datasets.",
+    "topic": "Dataflows and datasets",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "Where is the output data of a Power BI Dataflow stored?",
+    "options": {
+      "A": "Azure Data Lake Storage Gen2",
+      "B": "Local SQL Server database",
+      "C": "OneDrive for Business",
+      "D": "Directly inside the report pbix file"
+    },
+    "correctAnswer": "A",
+    "explanation": "Dataflows output data to Azure Data Lake Storage Gen2 in Common Data Model (CDM) format.",
+    "topic": "Dataflows and datasets",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "What is the benefit of a Shared Dataset in Power BI?",
+    "options": {
+      "A": "It allows multiple reports in different workspaces to build off a single master dataset",
+      "B": "It automatically translates report labels into multiple languages",
+      "C": "It removes the limit on the number of daily scheduled refreshes",
+      "D": "It grants edit access to all guest users in Microsoft Entra"
+    },
+    "correctAnswer": "A",
+    "explanation": "Shared datasets reduce redundancy by letting creators connect reports from different workspaces to a single source of truth.",
+    "topic": "Dataflows and datasets",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "What is the difference between a Dataflow and a Dataset?",
+    "options": {
+      "A": "Dataflows handle ETL (Power Query); Datasets hold the loaded data model, relationships, and DAX measures",
+      "B": "Dataflows are for Desktop; Datasets are only for cloud Service",
+      "C": "Datasets can only connect to SQL databases; Dataflows connect to any source",
+      "D": "There is no difference; they are interchangeable"
+    },
+    "correctAnswer": "A",
+    "explanation": "Dataflows prep and clean data (ETL). Datasets model, establish relationships, define metrics (DAX), and serve report queries.",
+    "topic": "Dataflows and datasets",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "text": "What is a 'Composite Model' in Power BI?",
+    "options": {
+      "A": "A model combining DirectQuery sources and Import tables, or multiple DirectQuery sources",
+      "B": "A report combining local Excel files with text files only",
+      "C": "A dataset containing only dynamic measure columns",
+      "D": "A model configured with both Row-Level Security and Object-Level Security"
+    },
+    "correctAnswer": "A",
+    "explanation": "Composite models allow a report to mix DirectQuery connection to a semantic model with local imports or other database connections.",
+    "topic": "Dataflows and datasets",
+    "difficulty": "HARD"
+  }
+]

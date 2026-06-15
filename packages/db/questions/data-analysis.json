@@ -1,0 +1,562 @@
+[
+  {
+    "certificationSlug": "data-analysis",
+    "text": "Which measure of central tendency is most affected by extreme outliers in a dataset?",
+    "options": {
+      "A": "Mean",
+      "B": "Median",
+      "C": "Mode",
+      "D": "Range"
+    },
+    "correctAnswer": "A",
+    "explanation": "The mean calculates the sum divided by the count. Outliers significantly drag the sum up or down, making the mean heavily skewed.",
+    "topic": "Statistical Concepts",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "What does a high standard deviation indicate about a dataset?",
+    "options": {
+      "A": "The data points are spread widely around the mean",
+      "B": "The data points are clustered closely around the mean",
+      "C": "The dataset contains invalid duplicate records",
+      "D": "The mean is equal to the median in the dataset"
+    },
+    "correctAnswer": "A",
+    "explanation": "Standard deviation measures dispersion. A high value means data points are spread further from the average value (mean).",
+    "topic": "Statistical Concepts",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "In a perfectly symmetrical, normal distribution, which statement is true?",
+    "options": {
+      "A": "Mean = Median = Mode",
+      "B": "Mean > Median > Mode",
+      "C": "Mean < Median < Mode",
+      "D": "Standard Deviation is zero"
+    },
+    "correctAnswer": "A",
+    "explanation": "For a perfectly symmetrical bell curve, the central peak is where the mean, median, and mode all align.",
+    "topic": "Statistical Concepts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "If a distribution has a long tail extending to the right, it is classified as:",
+    "options": {
+      "A": "Positively skewed",
+      "B": "Negatively skewed",
+      "C": "Normally distributed",
+      "D": "Bimodal"
+    },
+    "correctAnswer": "A",
+    "explanation": "Right-tailed distributions are positively skewed because outliers pull the tail (and the mean) to the positive side.",
+    "topic": "Statistical Concepts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "What is the probability of a value falling within one standard deviation of the mean in a normal distribution?",
+    "options": {
+      "A": "Approximately 68%",
+      "B": "Approximately 95%",
+      "C": "Approximately 99.7%",
+      "D": "Exactly 50%"
+    },
+    "correctAnswer": "A",
+    "explanation": "According to the empirical rule (68-95-99.7), about 68% of data falls within +/- 1 standard deviation of the mean.",
+    "topic": "Statistical Concepts",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "What is the primary objective of data cleaning?",
+    "options": {
+      "A": "Identifying and correcting errors, inconsistencies, and missing values in data",
+      "B": "Converting qualitative data into raw visual graphics",
+      "C": "Reducing the file size of database backups",
+      "D": "Running predictive models on historical records"
+    },
+    "correctAnswer": "A",
+    "explanation": "Data cleaning (or cleansing) ensures data quality by fixing errors, removing duplicates, and dealing with missing data.",
+    "topic": "Data Cleaning",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "Which technique is commonly used to handle missing values by filling them in based on other available data?",
+    "options": {
+      "A": "Imputation",
+      "B": "De-duplication",
+      "C": "Normalisation",
+      "D": "Discretisation"
+    },
+    "correctAnswer": "A",
+    "explanation": "Imputation is the process of replacing missing data with substituted values (like mean, median, or predicted values).",
+    "topic": "Data Cleaning",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "How do you handle severe outliers that represent data entry errors?",
+    "options": {
+      "A": "Correct them to the correct value or remove them from the dataset",
+      "B": "Multiply all values by a factor of 10 to reduce the gap",
+      "C": "Ignore them and proceed with modeling directly",
+      "D": "Add them to the test dataset only to check model resilience"
+    },
+    "correctAnswer": "A",
+    "explanation": "If outliers are verified to be errors, they should be corrected or discarded to prevent skewing statistical analyses.",
+    "topic": "Data Cleaning",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "What is 'one-hot encoding' used for during data cleaning?",
+    "options": {
+      "A": "Converting categorical variables into numerical binary columns",
+      "B": "Removing trailing white spaces from string inputs",
+      "C": "Aggregating sales totals across different branches",
+      "D": "Decrypting user password strings before storage"
+    },
+    "correctAnswer": "A",
+    "explanation": "One-hot encoding transforms categories (like colors or states) into binary columns (0 or 1) for ML models to read.",
+    "topic": "Data Cleaning",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "What is the risk of removing all records with any missing fields from a dataset?",
+    "options": {
+      "A": "It can introduce bias and significantly reduce the sample size",
+      "B": "It forces Excel to crash when calculating Pivot tables",
+      "C": "It converts all database values to integer types automatically",
+      "D": "It prevents the use of primary key relationships"
+    },
+    "correctAnswer": "A",
+    "explanation": "Listwise deletion (dropping rows with missing values) reduces the dataset size and can bias results if missingness is not random.",
+    "topic": "Data Cleaning",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "What is a main limitation of the VLOOKUP function in Excel?",
+    "options": {
+      "A": "It can only look up values to the right of the lookup column",
+      "B": "It cannot search for exact matching text strings",
+      "C": "It is limited to a maximum of 100 rows in a sheet",
+      "D": "It only works with integer number values"
+    },
+    "correctAnswer": "A",
+    "explanation": "VLOOKUP searches the leftmost column of a range and returns values to the right. It cannot search to the left.",
+    "topic": "Excel Functions",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "Why is INDEX MATCH preferred over VLOOKUP in large worksheets?",
+    "options": {
+      "A": "It is faster, more flexible, and can search left or right",
+      "B": "It automatically formats the output cells as currency",
+      "C": "It doesn't require the lookup table to have a header row",
+      "D": "It can search multiple sheets simultaneously without links"
+    },
+    "correctAnswer": "A",
+    "explanation": "INDEX MATCH separate the lookup value column from the result column, saving memory and allowing leftwards searches.",
+    "topic": "Excel Functions",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "Which Excel formula sums values in a range that meet a single specific condition?",
+    "options": {
+      "A": "SUMIF",
+      "B": "SUMIFS",
+      "C": "SUMPRODUCT",
+      "D": "COUNTIF"
+    },
+    "correctAnswer": "A",
+    "explanation": "SUMIF sums cells specified by a single criteria. (SUMIFS is used for multiple criteria).",
+    "topic": "Excel Functions",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "Which Excel formula counts the number of cells in a range that meet multiple criteria?",
+    "options": {
+      "A": "COUNTIFS",
+      "B": "COUNTIF",
+      "C": "COUNTA",
+      "D": "SUMIFS"
+    },
+    "correctAnswer": "A",
+    "explanation": "COUNTIFS applies criteria to cells across multiple ranges and counts the number of times all criteria are met.",
+    "topic": "Excel Functions",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "What is the result of using the Excel formula IFERROR(A1/B1, 0) if B1 contains 0?",
+    "options": {
+      "A": "0",
+      "B": "#DIV/0!",
+      "C": "An empty cell",
+      "D": "A popup dialog error"
+    },
+    "correctAnswer": "A",
+    "explanation": "A1/0 results in #DIV/0! error. IFERROR catches this and returns the specified fallback value (0).",
+    "topic": "Excel Functions",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "What is the primary function of a Pivot Table in Excel?",
+    "options": {
+      "A": "To summarize, analyze, explore, and present aggregate data",
+      "B": "To write VBA macros that automate chart creation",
+      "C": "To import data directly from external SQL databases only",
+      "D": "To protect worksheets from unauthorized modification"
+    },
+    "correctAnswer": "A",
+    "explanation": "Pivot tables allow users to quickly aggregate and pivot rows/columns to extract meaningful summaries from raw records.",
+    "topic": "Pivot Tables",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "How do you filter a Pivot Table interactively using a visual button interface?",
+    "options": {
+      "A": "Insert Slicers",
+      "B": "Apply conditional formatting",
+      "C": "Use Group By rows option",
+      "D": "Add Sparklines"
+    },
+    "correctAnswer": "A",
+    "explanation": "Slicers are visual filtering buttons that link directly to Pivot Tables or Pivot Charts for interactive filtering.",
+    "topic": "Pivot Tables",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "What is a 'Calculated Field' in a Pivot Table?",
+    "options": {
+      "A": "A new field created by performing calculations on existing numeric fields",
+      "B": "A cell that counts the total number of non-empty strings",
+      "C": "An external link to a cell in a different worksheet",
+      "D": "A macro-generated total row at the bottom"
+    },
+    "correctAnswer": "A",
+    "explanation": "Calculated Fields perform arithmetic calculations using values from other columns within the Pivot Table.",
+    "topic": "Pivot Tables",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "How do you refresh a Pivot Table after modifying the source data table?",
+    "options": {
+      "A": "Right-click the Pivot Table and select 'Refresh'",
+      "B": "Save and restart Microsoft Excel",
+      "C": "Recreate the entire Pivot Table from scratch",
+      "D": "Double-click the Grand Total cell"
+    },
+    "correctAnswer": "A",
+    "explanation": "Pivot tables do not auto-update when source data changes. You must trigger a Refresh manually or via VBA.",
+    "topic": "Pivot Tables",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "Which area of the Pivot Table fields list is used to specify the numerical aggregates?",
+    "options": {
+      "A": "Values",
+      "B": "Rows",
+      "C": "Columns",
+      "D": "Filters"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Values area calculates and summarizes the numeric columns (e.g. Sum, Average, Count) in the table layout.",
+    "topic": "Pivot Tables",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "Which chart type is best for showing a trend in data over continuous time intervals?",
+    "options": {
+      "A": "Line chart",
+      "B": "Pie chart",
+      "C": "Treemap",
+      "D": "Stacked bar chart"
+    },
+    "correctAnswer": "A",
+    "explanation": "Line charts connect data points chronologically, making them the standard choice for visualizing trends over time.",
+    "topic": "Data Visualisation",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "Why should you avoid using 3D effects on charts like Bar or Pie charts?",
+    "options": {
+      "A": "They distort the perspective and make it difficult to compare values accurately",
+      "B": "They consume too much GPU processing power in modern browsers",
+      "C": "They automatically round up decimal values to integers",
+      "D": "They force the chart colors to turn black and white"
+    },
+    "correctAnswer": "A",
+    "explanation": "3D charts add visual clutter and skew angles, making the comparison of sizes and heights inaccurate for viewers.",
+    "topic": "Data Visualisation",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "When is it appropriate to use a Pie Chart?",
+    "options": {
+      "A": "To show simple part-to-whole comparisons with fewer than 5 categories",
+      "B": "To show the correlation between temperature and sales",
+      "C": "To compare monthly sales across 15 different branches",
+      "D": "To track a stock price trend over a year"
+    },
+    "correctAnswer": "A",
+    "explanation": "Pie charts represent parts of a single whole. They are effective only when categories are few and sum to 100%.",
+    "topic": "Data Visualisation",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "What is the best way to handle overlapping data points in a dense Scatter Plot?",
+    "options": {
+      "A": "Use semi-transparent data markers (reduce opacity)",
+      "B": "Convert the chart type to a 3D bubble chart",
+      "C": "Remove half of the dataset randomly to reduce density",
+      "D": "Make all data markers larger and brighter"
+    },
+    "correctAnswer": "A",
+    "explanation": "Adjusting the opacity of markers reveals density clusters (overplotting) by showing darker areas where points overlap.",
+    "topic": "Data Visualisation",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "What is the primary role of a 'Dual Axis' chart?",
+    "options": {
+      "A": "To plot two metrics with different scales or units on the same chart",
+      "B": "To display a single metric across two different sheets",
+      "C": "To display negative values on a separate quadrant",
+      "D": "To double the speed of rendering visual charts"
+    },
+    "correctAnswer": "A",
+    "explanation": "Dual axis charts have a left and right Y-axis, letting you overlay different measurements (e.g. Sales in USD vs Quantity).",
+    "topic": "Data Visualisation",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "In SQL, which clause is used to filter rows before any groupings are applied?",
+    "options": {
+      "A": "WHERE",
+      "B": "HAVING",
+      "C": "GROUP BY",
+      "D": "ORDER BY"
+    },
+    "correctAnswer": "A",
+    "explanation": "The WHERE clause filters individual rows. HAVING filters grouped rows after the GROUP BY clause is processed.",
+    "topic": "SQL Basics",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "What is the difference between INNER JOIN and LEFT JOIN in SQL?",
+    "options": {
+      "A": "INNER returns matching rows only; LEFT returns all rows from left table and matches from right",
+      "B": "INNER joins tables; LEFT only copies column headers",
+      "C": "LEFT is faster because it does not verify keys",
+      "D": "There is no difference in modern database engines"
+    },
+    "correctAnswer": "A",
+    "explanation": "INNER JOIN filters out rows that do not have matches. LEFT JOIN retains all records from the left (first) table regardless of matches.",
+    "topic": "SQL Basics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "Which SQL aggregate function counts only non-null values in a column?",
+    "options": {
+      "A": "COUNT(column_name)",
+      "B": "COUNT(*)",
+      "C": "SUM(column_name)",
+      "D": "COUNTA(column_name)"
+    },
+    "correctAnswer": "A",
+    "explanation": "COUNT(column_name) ignores NULL values. COUNT(*) counts every row in the table, including rows with NULL fields.",
+    "topic": "SQL Basics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "What does the GROUP BY clause do in SQL?",
+    "options": {
+      "A": "Collapses multiple rows with identical values into summary rows",
+      "B": "Sorts the query output in alphabetical order",
+      "C": "Joins two tables based on a foreign key relationship",
+      "D": "Declares variable scopes within a database query"
+    },
+    "correctAnswer": "A",
+    "explanation": "GROUP BY groups rows that have the same values in specified columns to calculate aggregate metrics (Sum, Average, etc.).",
+    "topic": "SQL Basics",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "Which SQL constraint uniquely identifies each record in a database table?",
+    "options": {
+      "A": "PRIMARY KEY",
+      "B": "FOREIGN KEY",
+      "C": "UNIQUE",
+      "D": "NOT NULL"
+    },
+    "correctAnswer": "A",
+    "explanation": "A PRIMARY KEY constraint enforces unique values and cannot contain NULLs, identifying each row uniquely in a table.",
+    "topic": "SQL Basics",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "What is the difference between 'Descriptive' and 'Inferential' statistics?",
+    "options": {
+      "A": "Descriptive summarizes a sample; Inferential makes predictions about a larger population based on a sample",
+      "B": "Descriptive is qualitative; Inferential is strictly quantitative",
+      "C": "Inferential is only used for data cleaning; Descriptive is for reporting",
+      "D": "There is no difference in mathematical terms"
+    },
+    "correctAnswer": "A",
+    "explanation": "Descriptive statistics describe the features of a sample. Inferential statistics use probability to draw conclusions about populations.",
+    "topic": "Descriptive vs Inferential",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "What is a 'null hypothesis' (H0) in hypothesis testing?",
+    "options": {
+      "A": "A statement proposing that there is no effect or no difference in the population",
+      "B": "A statement proposing that the dataset contains empty database rows",
+      "C": "The hypothesis that the researcher is trying to prove is true",
+      "D": "An invalid hypothesis that results in a division by zero error"
+    },
+    "correctAnswer": "A",
+    "explanation": "The null hypothesis (H0) assumes the default state of no change, no relationship, or no difference between groups.",
+    "topic": "Descriptive vs Inferential",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "What does a p-value of 0.03 indicate if the significance level (alpha) is set to 0.05?",
+    "options": {
+      "A": "Reject the null hypothesis; the result is statistically significant",
+      "B": "Fail to reject the null hypothesis; the result is not significant",
+      "C": "The test contains a 3% rate of corrupted data records",
+      "D": "The hypothesis test must be restarted with a larger sample size"
+    },
+    "correctAnswer": "A",
+    "explanation": "If the p-value is less than or equal to the significance level (p <= 0.05), we reject the null hypothesis as statistically significant.",
+    "topic": "Descriptive vs Inferential",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "Which error type occurs when a researcher rejects a true null hypothesis (false positive)?",
+    "options": {
+      "A": "Type I Error",
+      "B": "Type II Error",
+      "C": "Standard Error",
+      "D": "Sampling Error"
+    },
+    "correctAnswer": "A",
+    "explanation": "A Type I error is a false positive: concluding an effect exists when it actually does not (rejecting a true H0).",
+    "topic": "Descriptive vs Inferential",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "What does 'statistical power' represent in a hypothesis test?",
+    "options": {
+      "A": "The probability of correctly rejecting a false null hypothesis (avoiding Type II error)",
+      "B": "The size of the database server running the statistical scripts",
+      "C": "The number of independent variables inside the analysis model",
+      "D": "The level of skewness present in the normal distribution curve"
+    },
+    "correctAnswer": "A",
+    "explanation": "Statistical power (1 - beta) is the probability that a test will detect an effect or difference that actually exists.",
+    "topic": "Descriptive vs Inferential",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "Which data type is best suited to store decimal numbers representing product prices?",
+    "options": {
+      "A": "Decimal / Numeric",
+      "B": "Float",
+      "C": "Integer",
+      "D": "Varchar"
+    },
+    "correctAnswer": "A",
+    "explanation": "Decimal/Numeric types preserve exact values, avoiding rounding errors inherent in floating-point calculations for financial data.",
+    "topic": "Data Types",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "What is the purpose of Data Validation rules in database design?",
+    "options": {
+      "A": "To restrict the values that can be entered into a column to prevent invalid inputs",
+      "B": "To automatically index columns to speed up query performance",
+      "C": "To encrypt user data values before they are written to disk",
+      "D": "To duplicate database rows across redundant storage units"
+    },
+    "correctAnswer": "A",
+    "explanation": "Data validation enforces constraints (like date ranges or string patterns) to maintain consistency and data accuracy.",
+    "topic": "Data Types",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "Which data scale has a true absolute zero and allows for multiplication and division?",
+    "options": {
+      "A": "Ratio scale",
+      "B": "Interval scale",
+      "C": "Ordinal scale",
+      "D": "Nominal scale"
+    },
+    "correctAnswer": "A",
+    "explanation": "Ratio scale has a true zero (e.g. weight, height) and allows comparison of ratios (e.g. 10kg is twice as heavy as 5kg).",
+    "topic": "Data Types",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "What type of variable is 'Education Level' (e.g. High School, BSc, MSc)?",
+    "options": {
+      "A": "Ordinal variable",
+      "B": "Nominal variable",
+      "C": "Continuous variable",
+      "D": "Discrete variable"
+    },
+    "correctAnswer": "A",
+    "explanation": "Ordinal variables represent qualitative categories that have a natural, logical order or ranking.",
+    "topic": "Data Types",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-analysis",
+    "text": "What does a 'foreign key' constraint enforce?",
+    "options": {
+      "A": "Referential integrity between tables",
+      "B": "Unique values in a single table",
+      "C": "Maximum length of string records",
+      "D": "Automatic query backup schedules"
+    },
+    "correctAnswer": "A",
+    "explanation": "Foreign keys ensure referential integrity by requiring that a value in the child table matches a value in the parent table.",
+    "topic": "Data Types",
+    "difficulty": "MEDIUM"
+  }
+]

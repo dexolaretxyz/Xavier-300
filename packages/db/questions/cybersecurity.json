@@ -1,0 +1,562 @@
+[
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What type of attack involves capturing credentials by tricking users into visiting a fake website that looks legitimate?",
+    "options": {
+      "A": "Phishing",
+      "B": "Man-in-the-Middle",
+      "C": "SQL Injection",
+      "D": "Denial of Service"
+    },
+    "correctAnswer": "A",
+    "explanation": "Phishing is a social engineering attack that uses fraudulent communication (typically email or fake sites) to steal credentials or data.",
+    "topic": "Social Engineering",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "Which social engineering attack targets high-profile executives specifically?",
+    "options": {
+      "A": "Whaling",
+      "B": "Spear Phishing",
+      "C": "Vishing",
+      "D": "Shoulder Surfing"
+    },
+    "correctAnswer": "A",
+    "explanation": "Whaling is a specific type of spear phishing targeted at high-level executives (C-level officers, politicians, etc.).",
+    "topic": "Social Engineering",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What type of attack involves an attacker following an authorized employee into a secured building without scanning a badge?",
+    "options": {
+      "A": "Tailgating",
+      "B": "Dumpster Diving",
+      "C": "Pharming",
+      "D": "Watering Hole"
+    },
+    "correctAnswer": "A",
+    "explanation": "Tailgating (or piggybacking) is a physical security breach where an unauthorized person closely follows an authorized person into a restricted area.",
+    "topic": "Social Engineering",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "Which malware type encrypts a victim's files and demands payment in exchange for the decryption key?",
+    "options": {
+      "A": "Ransomware",
+      "B": "Spyware",
+      "C": "Rootkit",
+      "D": "Adware"
+    },
+    "correctAnswer": "A",
+    "explanation": "Ransomware is malicious software designed to block access to a computer system or encrypt data files until a sum of money is paid.",
+    "topic": "Malware and Attacks",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What is the primary difference between a computer virus and a worm?",
+    "options": {
+      "A": "A worm propagates self-actively across networks without human action; a virus requires a host file and human action to spread",
+      "B": "A virus only targets Windows; worms only target Linux servers",
+      "C": "Worms are harmless; viruses are always destructive",
+      "D": "There is no difference in how they propagate"
+    },
+    "correctAnswer": "A",
+    "explanation": "Worms are standalone programs that replicate and spread across network links self-actively. Viruses require a host executable to run and be shared.",
+    "topic": "Malware and Attacks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What type of attack attempts to make an online service unavailable by overwhelming it with traffic from multiple distributed sources?",
+    "options": {
+      "A": "DDoS (Distributed Denial of Service)",
+      "B": "DoS (Denial of Service)",
+      "C": "Buffer Overflow",
+      "D": "Cross-Site Scripting"
+    },
+    "correctAnswer": "A",
+    "explanation": "DDoS attacks employ botnets (networks of compromised devices) to flood a target server with traffic, causing service disruption.",
+    "topic": "Malware and Attacks",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What security concept is based on three pillars: Confidentiality, Integrity, and Availability?",
+    "options": {
+      "A": "The CIA Triad",
+      "B": "Defense in Depth",
+      "C": "Least Privilege",
+      "D": "AAA Framework"
+    },
+    "correctAnswer": "A",
+    "explanation": "The CIA Triad is the foundational model for information security policies, consisting of Confidentiality, Integrity, and Availability.",
+    "topic": "Network Security Concepts",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "Which security principle states that users should only be granted the minimum permissions necessary to perform their job functions?",
+    "options": {
+      "A": "Least Privilege",
+      "B": "Need to Know",
+      "C": "Separation of Duties",
+      "D": "Implicit Deny"
+    },
+    "correctAnswer": "A",
+    "explanation": "Least Privilege limits user access rights to only what is strictly required to do their work, reducing risk exposures.",
+    "topic": "Network Security Concepts",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What is 'Defense in Depth'?",
+    "options": {
+      "A": "Implementing multiple layers of security controls throughout an IT infrastructure",
+      "B": "Encrypting data using multiple overlapping keys",
+      "C": "Having redundant firewalls at the network perimeter",
+      "D": "Storing backups in multiple geographical regions"
+    },
+    "correctAnswer": "A",
+    "explanation": "Defense in depth uses multiple layers of defense (physical, technical, administrative) so that if one control fails, others are active.",
+    "topic": "Network Security Concepts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What type of key cryptography uses a single shared secret key for both encryption and decryption?",
+    "options": {
+      "A": "Symmetric cryptography",
+      "B": "Asymmetric cryptography",
+      "C": "Hashing algorithm",
+      "D": "Public key infrastructure"
+    },
+    "correctAnswer": "A",
+    "explanation": "Symmetric cryptography uses the same secret key to encrypt and decrypt data (e.g. AES, DES).",
+    "topic": "Cryptography",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "In asymmetric cryptography, if Alice wants to send an encrypted message to Bob that only Bob can read, she encrypts it with:",
+    "options": {
+      "A": "Bob's Public Key",
+      "B": "Bob's Private Key",
+      "C": "Alice's Private Key",
+      "D": "A shared symmetric key"
+    },
+    "correctAnswer": "A",
+    "explanation": "To ensure confidentiality, messages are encrypted with the recipient's public key, and can only be decrypted with the recipient's matching private key.",
+    "topic": "Cryptography",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What is the primary characteristic of a cryptographic hash function?",
+    "options": {
+      "A": "It is a one-way mathematical function; you cannot reverse the hash back to the original text",
+      "B": "It requires a private key to calculate the hash value",
+      "C": "The output size changes based on the length of the input text",
+      "D": "It can be easily decrypted using symmetric keys"
+    },
+    "correctAnswer": "A",
+    "explanation": "Hash functions are one-way. They generate a fixed-size signature (hash) from any input. It is mathematically impossible to reverse the process.",
+    "topic": "Cryptography",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "Which hashing algorithm is widely considered insecure due to collision vulnerabilities?",
+    "options": {
+      "A": "MD5",
+      "B": "SHA-256",
+      "C": "SHA-3",
+      "D": "bcrypt"
+    },
+    "correctAnswer": "A",
+    "explanation": "MD5 (Message Digest 5) has significant cryptographic vulnerabilities, allowing different inputs to produce identical hashes (collisions).",
+    "topic": "Cryptography",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What is 'salting' in the context of password storage?",
+    "options": {
+      "A": "Adding random data to a password before hashing it to prevent dictionary attacks",
+      "B": "Encrypting the password database using multiple keys",
+      "C": "Forcing passwords to contain special characters",
+      "D": "Storing passwords in plain text on an offline server"
+    },
+    "correctAnswer": "A",
+    "explanation": "Salting adds a unique random string to each password before hashing, making precomputed tables (Rainbow tables) useless.",
+    "topic": "Cryptography",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "Which authentication factor is represented by a hardware OTP token?",
+    "options": {
+      "A": "Something you have",
+      "B": "Something you know",
+      "C": "Something you are",
+      "D": "Somewhere you are"
+    },
+    "correctAnswer": "A",
+    "explanation": "Hardware tokens, smart cards, and key fobs are examples of the possession factor ('something you have').",
+    "topic": "Authentication",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What is Multi-Factor Authentication (MFA)?",
+    "options": {
+      "A": "Requiring credentials from two or more distinct authentication factor categories",
+      "B": "Forcing users to change their password two times in a month",
+      "C": "Using both a password and a PIN to log in on a device",
+      "D": "Using multiple backup databases to store credentials"
+    },
+    "correctAnswer": "A",
+    "explanation": "MFA requires factors from different categories (e.g. knowledge: password + possession: token). Using a password and a PIN is only one category (knowledge).",
+    "topic": "Authentication",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "Which protocol is standard for federated identity and single sign-on (SSO) across web applications?",
+    "options": {
+      "A": "SAML (Security Assertion Markup Language)",
+      "B": "LDAP (Lightweight Directory Access Protocol)",
+      "C": "WPA3",
+      "D": "SFTP"
+    },
+    "correctAnswer": "A",
+    "explanation": "SAML and OpenID Connect (OIDC) are XML and JSON based standards used to share authentication tokens between identity providers and service providers.",
+    "topic": "Authentication",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What authentication protocol is commonly used for secure local network directory access (like Active Directory)?",
+    "options": {
+      "A": "Kerberos",
+      "B": "OAuth 2.0",
+      "C": "SAML",
+      "D": "CHAP"
+    },
+    "correctAnswer": "A",
+    "explanation": "Kerberos is a ticket-based authentication protocol used in Windows domains and local directories to authenticate clients to servers.",
+    "topic": "Authentication",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What type of firewall filters traffic based on IP address, port numbers, and protocol, without tracking connection state?",
+    "options": {
+      "A": "Stateless packet filter",
+      "B": "Stateful inspection firewall",
+      "C": "Application proxy firewall",
+      "D": "Web Application Firewall (WAF)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Stateless firewalls filter individual packets using access control lists (ACLs) based on packet headers, without connection state tracking.",
+    "topic": "Firewalls and IDS/IPS",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What is the primary difference between an IDS and an IPS?",
+    "options": {
+      "A": "IDS monitors and alerts only; IPS monitors and actively blocks malicious traffic",
+      "B": "IDS is hardware; IPS is strictly cloud software",
+      "C": "IPS only scans emails; IDS scans all network packets",
+      "D": "There is no functional difference between them"
+    },
+    "correctAnswer": "A",
+    "explanation": "An IDS (Intrusion Detection System) alerts administrators of suspicious activity. An IPS (Intrusion Prevention System) actively drops packets to block attacks.",
+    "topic": "Firewalls and IDS/IPS",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "Which firewall type operates at Layer 7 of the OSI model to protect web servers from SQL injection and XSS?",
+    "options": {
+      "A": "Web Application Firewall (WAF)",
+      "B": "Stateful Inspection Firewall",
+      "C": "Network Address Translation (NAT) gateway",
+      "D": "Router Access Control List (ACL)"
+    },
+    "correctAnswer": "A",
+    "explanation": "WAFs operate at the application layer to inspect HTTP/HTTPS traffic, blocking web application attacks like SQLi and XSS.",
+    "topic": "Firewalls and IDS/IPS",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What is the first step in the NIST incident response lifecycle?",
+    "options": {
+      "A": "Preparation",
+      "B": "Detection and Analysis",
+      "C": "Containment, Eradication, and Recovery",
+      "D": "Post-Incident Activity (Lessons Learned)"
+    },
+    "correctAnswer": "A",
+    "explanation": "The NIST incident response lifecycle begins with Preparation, which involves setting up tools, policies, and training before an incident occurs.",
+    "topic": "Incident Response",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "During which phase of incident response does a security analyst isolate an infected host from the network?",
+    "options": {
+      "A": "Containment",
+      "B": "Eradication",
+      "C": "Recovery",
+      "D": "Detection"
+    },
+    "correctAnswer": "A",
+    "explanation": "Containment isolates compromised systems to prevent the malware or attacker from spreading to other parts of the network.",
+    "topic": "Incident Response",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What is the purpose of a 'lessons learned' meeting after incident recovery?",
+    "options": {
+      "A": "To review the incident, identify what went well or poorly, and update policies",
+      "B": "To determine which employee was responsible for the security breach",
+      "C": "To calculate the total financial cost of the incident to the business",
+      "D": "To reset administrative passwords across all active servers"
+    },
+    "correctAnswer": "A",
+    "explanation": "Post-incident review helps improve incident response capabilities by adjusting security controls and playbooks based on real-world experiences.",
+    "topic": "Incident Response",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What is a 'Chain of Custody' in digital forensics?",
+    "options": {
+      "A": "A chronological document tracking who collected, handled, and stored evidence",
+      "B": "The chain of encrypted servers used to store backup files",
+      "C": "The sequence of active security protocols on a router",
+      "D": "The hierarchy of administrators authorized to access logs"
+    },
+    "correctAnswer": "A",
+    "explanation": "Chain of custody documents evidence handling to prove the integrity and authenticity of evidence in a court of law.",
+    "topic": "Incident Response",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "In risk management, what does ALE (Annualized Loss Expectancy) calculate?",
+    "options": {
+      "A": "SLE (Single Loss Expectancy) multiplied by ARO (Annual Rate of Occurrence)",
+      "B": "The total cost of purchasing insurance divided by 12",
+      "C": "The probability of a server crash occurring in a month",
+      "D": "The financial cost of recovering from a database error"
+    },
+    "correctAnswer": "A",
+    "explanation": "ALE is a quantitative risk assessment calculation: ALE = SLE * ARO, representing the expected financial loss per year for a given risk.",
+    "topic": "Risk Management",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "Which risk response strategy involves buying an insurance policy to cover cyber security losses?",
+    "options": {
+      "A": "Transference",
+      "B": "Mitigation",
+      "C": "Avoidance",
+      "D": "Acceptance"
+    },
+    "correctAnswer": "A",
+    "explanation": "Risk transference shifts the financial risk to a third party, such as an insurance company or outsourced managed service provider.",
+    "topic": "Risk Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What is the role of a Business Impact Analysis (BIA)?",
+    "options": {
+      "A": "To identify critical business processes and determine recovery objectives (RTO/RPO)",
+      "B": "To calculate the annual IT budget allocated for firewall upgrades",
+      "C": "To train employees on how to avoid clicking phishing emails",
+      "D": "To scan the network for active system vulnerabilities"
+    },
+    "correctAnswer": "A",
+    "explanation": "A BIA identifies the operational and financial impacts of disruptions to help define Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO).",
+    "topic": "Risk Management",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What is the difference between RTO and RPO?",
+    "options": {
+      "A": "RTO is target time to restore systems; RPO is maximum tolerable data loss duration",
+      "B": "RTO measures backup speed; RPO measures decryption speed",
+      "C": "RPO is for cloud backups; RTO is only for on-premises systems",
+      "D": "There is no difference; they are interchangeable recovery metrics"
+    },
+    "correctAnswer": "A",
+    "explanation": "Recovery Time Objective (RTO) is how quickly systems must be restored. Recovery Point Objective (RPO) is the point back in time to which data must be restored (data loss threshold).",
+    "topic": "Risk Management",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "Which security model dictates that resources should not trust any user or device by default, even inside the network?",
+    "options": {
+      "A": "Zero Trust Model",
+      "B": "Defense in Depth",
+      "C": "Perimeter Security",
+      "D": "Implicit Trust"
+    },
+    "correctAnswer": "A",
+    "explanation": "Zero Trust operates on the principle of 'never trust, always verify', requiring continuous authentication for all users and devices.",
+    "topic": "Cloud Security",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "Under the Shared Responsibility Model in cloud computing, who is responsible for securing the physical cloud datacenter infrastructure?",
+    "options": {
+      "A": "The Cloud Service Provider (CSP)",
+      "B": "The customer enterprise",
+      "C": "The local government security agencies",
+      "D": "Both CSP and customer share physical security duties equally"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Cloud Service Provider (e.g. AWS, Azure, Google Cloud) is always responsible for the physical security of the cloud datacenters.",
+    "topic": "Cloud Security",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What type of tool acts as a gatekeeper, monitoring and enforcing security policies between cloud consumers and cloud providers?",
+    "options": {
+      "A": "Cloud Access Security Broker (CASB)",
+      "B": "Virtual Private Network (VPN)",
+      "C": "Intrusion Prevention System (IPS)",
+      "D": "Active Directory Domain Controller"
+    },
+    "correctAnswer": "A",
+    "explanation": "A CASB is a software tool or service placed between an organization's on-premises infrastructure and cloud provider's infrastructure to enforce security policies.",
+    "topic": "Cloud Security",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What is the primary danger of 'Shadow IT' in cloud deployments?",
+    "options": {
+      "A": "Unmonitored cloud services introduced without IT approval create security gaps",
+      "B": "It increases the cost of licensing local operating systems",
+      "C": "It corrupts index records inside active SQL databases",
+      "D": "It prevents developers from using command line tools"
+    },
+    "correctAnswer": "A",
+    "explanation": "Shadow IT refers to systems built and used within organizations without organizational approval, leading to unpatched, unmonitored security risks.",
+    "topic": "Cloud Security",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What is the difference between a Vulnerability Scan and a Penetration Test?",
+    "options": {
+      "A": "Vulnerability scan is automated and identifies known issues; Pen test actively exploits them manually",
+      "B": "Pen test is automated; Vulnerability scan is strictly manual",
+      "C": "Vulnerability scan deletes malware; Pen test only alerts",
+      "D": "There is no difference; they are alternative names for the same task"
+    },
+    "correctAnswer": "A",
+    "explanation": "Vulnerability scans are automated checks for known security gaps. Penetration tests are active, manual attempts to break into systems.",
+    "topic": "Vulnerability Scanning",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "In a penetration test, what does a 'Black Box' assessment mean?",
+    "options": {
+      "A": "The tester has zero prior knowledge of the target system's infrastructure or code",
+      "B": "The tester has complete administrative access and source code access",
+      "C": "The test is conducted strictly on offline physical backups",
+      "D": "The assessment is focused entirely on network hardware routers"
+    },
+    "correctAnswer": "A",
+    "explanation": "Black box testing simulates an external attack, where the pentester starts with no documentation or internal knowledge of the target.",
+    "topic": "Vulnerability Scanning",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What type of pentest team simulates the attacker (offensive security)?",
+    "options": {
+      "A": "Red Team",
+      "B": "Blue Team",
+      "C": "White Team",
+      "D": "Purple Team"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Red Team plays the offensive role, attempting to breach systems. The Blue Team acts defensively to protect resources.",
+    "topic": "Vulnerability Scanning",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What is 'privilege escalation' in a penetration test?",
+    "options": {
+      "A": "Gaining higher level permissions (like root or admin) from a low-privilege user account",
+      "B": "Creating a duplicate backup copy of user credential tables",
+      "C": "Bypassing network firewalls to access local intranet pages",
+      "D": "Adding more processors to speed up the brute-force cracking script"
+    },
+    "correctAnswer": "A",
+    "explanation": "Privilege escalation is the act of exploiting bugs or misconfigurations to gain higher access levels (vertical or horizontal) than originally authorized.",
+    "topic": "Vulnerability Scanning",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What is the CVSS (Common Vulnerability Scoring System) used for?",
+    "options": {
+      "A": "To measure and rank the severity of computer system vulnerabilities (scale 0-10)",
+      "B": "To scan active open ports on local network routers",
+      "C": "To encrypt files using public-key cryptography algorithms",
+      "D": "To monitor network throughput and bandwidth capacity"
+    },
+    "correctAnswer": "A",
+    "explanation": "CVSS provides a standardized way to rate the severity of security vulnerabilities on a scale from 0.0 (None) to 10.0 (Critical).",
+    "topic": "Vulnerability Scanning",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "Which port scanning tool is widely used to discover hosts and services on a computer network?",
+    "options": {
+      "A": "Nmap",
+      "B": "Wireshark",
+      "C": "Metasploit",
+      "D": "Burp Suite"
+    },
+    "correctAnswer": "A",
+    "explanation": "Nmap (Network Mapper) is the industry-standard free tool used for network discovery and vulnerability scanning.",
+    "topic": "Vulnerability Scanning",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "text": "What protocol secures communication over the internet by encrypting HTTP traffic?",
+    "options": {
+      "A": "HTTPS (using TLS)",
+      "B": "HTTP 2.0",
+      "C": "IPsec",
+      "D": "SSH"
+    },
+    "correctAnswer": "A",
+    "explanation": "HTTPS encrypts HTTP requests and responses using Transport Layer Security (TLS) to ensure privacy and data integrity.",
+    "topic": "Network Security Concepts",
+    "difficulty": "EASY"
+  }
+]

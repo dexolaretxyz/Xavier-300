@@ -1,0 +1,562 @@
+[
+  {
+    "certificationSlug": "excel",
+    "text": "Which Excel function is the modern replacement for VLOOKUP, allowing for leftwards searches and exact matching by default?",
+    "options": {
+      "A": "XLOOKUP",
+      "B": "INDEX",
+      "C": "VLOOKUP2",
+      "D": "LOOKUP"
+    },
+    "correctAnswer": "A",
+    "explanation": "XLOOKUP is the modern lookup function that replaces VLOOKUP and HLOOKUP, supporting leftwards searches, exact matching by default, and wildcard options.",
+    "topic": "Advanced Formulas",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "What is the purpose of the Excel function IFERROR?",
+    "options": {
+      "A": "It catches formula errors and returns a specified fallback value instead of the error code",
+      "B": "It automatically highlights duplicate cells in a worksheet",
+      "C": "It checks if the sheet contains blank formula inputs",
+      "D": "It throws a warning popup to alert the user during data entry"
+    },
+    "correctAnswer": "A",
+    "explanation": "IFERROR evaluates a formula; if it results in an error (e.g. #DIV/0!, #N/A), it returns a value you specify, preventing messy error tags.",
+    "topic": "Advanced Formulas",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "Which function returns a value from a list based on a specified index position?",
+    "options": {
+      "A": "CHOOSE",
+      "B": "INDEX",
+      "C": "MATCH",
+      "D": "VLOOKUP"
+    },
+    "correctAnswer": "A",
+    "explanation": "CHOOSE(index_num, value1, value2, ...) returns a specific value from the list argument based on the position index_num.",
+    "topic": "Advanced Formulas",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "What is the difference between XLOOKUP and VLOOKUP when a lookup value is not found?",
+    "options": {
+      "A": "XLOOKUP has a built-in 'if_not_found' argument; VLOOKUP requires wrapping with IFERROR",
+      "B": "VLOOKUP returns 0; XLOOKUP crashes Excel",
+      "C": "XLOOKUP only works on text; VLOOKUP only works on numbers",
+      "D": "There is no difference; both return #N/A without alternatives"
+    },
+    "correctAnswer": "A",
+    "explanation": "XLOOKUP includes a fourth optional parameter (if_not_found) that specifies what to return if no match is found, eliminating extra wrapper functions.",
+    "topic": "Advanced Formulas",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "Which formula combines INDEX and MATCH to find a value at the intersection of a specific row and column?",
+    "options": {
+      "A": "INDEX(range, MATCH(), MATCH())",
+      "B": "INDEX(MATCH(), range)",
+      "C": "MATCH(INDEX(), range)",
+      "D": "INDEX(range, MATCH())"
+    },
+    "correctAnswer": "A",
+    "explanation": "The syntax INDEX(array, row_num, column_num) uses one MATCH function for row_num and a second MATCH for column_num to perform a two-way lookup.",
+    "topic": "Advanced Formulas",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "What feature restricts the values that a user can input into a cell (e.g. integer between 1 and 10)?",
+    "options": {
+      "A": "Data Validation",
+      "B": "Conditional Formatting",
+      "C": "Cell Locking",
+      "D": "AutoFilter"
+    },
+    "correctAnswer": "A",
+    "explanation": "Data Validation limits cell inputs based on rules you define, such as numbers, dates, or items from a list.",
+    "topic": "Data Validation",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "How can you automatically change the fill color of a cell to red if its value is less than 50?",
+    "options": {
+      "A": "Conditional Formatting",
+      "B": "Data Validation",
+      "C": "Form Control Buttons",
+      "D": "Cell Styles"
+    },
+    "correctAnswer": "A",
+    "explanation": "Conditional Formatting dynamically changes a cell's appearance (font color, fill, border) based on rules evaluated against its value.",
+    "topic": "Data Validation",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "How do you create a drop-down list of options in a cell?",
+    "options": {
+      "A": "Data Validation -> Allow: List -> Source: Select range of options",
+      "B": "Insert -> Dropdown visual list element",
+      "C": "Format Cells -> Protection -> Allow dropdown options",
+      "D": "Developer tab -> Insert combo box control"
+    },
+    "correctAnswer": "A",
+    "explanation": "Setting Data Validation to 'List' and providing a comma-separated text or cell range source creates an in-cell drop-down arrow.",
+    "topic": "Data Validation",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "What does a green triangle in the top-left corner of an Excel cell indicate?",
+    "options": {
+      "A": "An error checking warning (e.g. number stored as text, formula omission)",
+      "B": "The cell is locked and protected from edits",
+      "C": "The cell is actively linked to another worksheet",
+      "D": "A macro is running on the cell in the background"
+    },
+    "correctAnswer": "A",
+    "explanation": "Excel places a green triangle in a cell to warn of potential errors, like a formula that differs from adjacent ones or numeric data formatted as text.",
+    "topic": "Data Validation",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "Which conditional formatting type displays horizontal bars inside cells representing their values relative to other cells?",
+    "options": {
+      "A": "Data Bars",
+      "B": "Color Scales",
+      "C": "Icon Sets",
+      "D": "Sparklines"
+    },
+    "correctAnswer": "A",
+    "explanation": "Data Bars are inline formatting visualizers where the length of the bar represents the cell's numeric value relative to other cells in the range.",
+    "topic": "Data Validation",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "What are Sparklines in Excel?",
+    "options": {
+      "A": "Miniature charts placed inside a single cell representing a row or column of data",
+      "B": "Flashing borders around cells that contain formula errors",
+      "C": "Lines connecting related shapes in a flow diagram",
+      "D": "Formulas that dynamically filter data using search keywords"
+    },
+    "correctAnswer": "A",
+    "explanation": "Sparklines are tiny, simple charts embedded in a cell to show trends or patterns in adjacent numerical data.",
+    "topic": "Charts and Sparklines",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "Which chart type is best for showing a comparison of values across categories in a horizontal layout?",
+    "options": {
+      "A": "Bar chart",
+      "B": "Column chart",
+      "C": "Line chart",
+      "D": "Pie chart"
+    },
+    "correctAnswer": "A",
+    "explanation": "Bar charts are oriented horizontally, whereas Column charts are oriented vertically. Horizontal bar charts are ideal when labels are long.",
+    "topic": "Charts and Sparklines",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "What is the purpose of adding a 'Trendline' to an Excel scatter chart?",
+    "options": {
+      "A": "To show the general direction or pattern of the data points mathematically",
+      "B": "To connect the dots sequentially using a zig-zag line path",
+      "C": "To highlight the highest and lowest points on the visual",
+      "D": "To divide the chart area into separate quadrants"
+    },
+    "correctAnswer": "A",
+    "explanation": "Trendlines visualize data trends and can calculate regression equations (linear, exponential, etc.) across scatter or line plots.",
+    "topic": "Charts and Sparklines",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "Which element acts as a visual map of the colors and markers used in a chart?",
+    "options": {
+      "A": "Legend",
+      "B": "Data Label",
+      "C": "Axis Title",
+      "D": "Gridline"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Legend lists the labels and key indicators representing different data series on the chart.",
+    "topic": "Charts and Sparklines",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "How do you add a secondary axis to a chart in Excel?",
+    "options": {
+      "A": "Change Chart Type -> Combo -> Check 'Secondary Axis' box for a series",
+      "B": "Double-click the chart background and select 'Duplicate Y-Axis'",
+      "C": "Insert a second separate chart directly on top of the first one",
+      "D": "Drag the numerical field to the Columns area"
+    },
+    "correctAnswer": "A",
+    "explanation": "Combo charts support plotting a series on a secondary Y-axis, which is necessary when metrics have different ranges (e.g. counts vs percentages).",
+    "topic": "Charts and Sparklines",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "What is a 'structured reference' in Excel?",
+    "options": {
+      "A": "Referencing data using table and column names instead of cell coordinates (e.g. Table1[Sales])",
+      "B": "A formula that is locked using the dollar sign absolute indicator ($A$1)",
+      "C": "An external link to cells in a closed workbook file",
+      "D": "A macro script that automatically sorts rows"
+    },
+    "correctAnswer": "A",
+    "explanation": "Structured references use the table name and column headers to make formulas readable and self-adjusting as rows are added.",
+    "topic": "Tables",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "How do you quickly format a range of cells as an official Excel Table?",
+    "options": {
+      "A": "Home -> Format as Table (or press Ctrl + T)",
+      "B": "Insert -> Border styles -> All borders option",
+      "C": "Developer -> Record Macro -> Convert Range",
+      "D": "Data -> Data Tools -> Table layout"
+    },
+    "correctAnswer": "A",
+    "explanation": "Ctrl + T (or Home -> Format as Table) converts a data range into a table with active filtering, structured references, and banded rows.",
+    "topic": "Tables",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "What happens to a structured reference formula like SUM(Sales[Amount]) when a new row is added to the table?",
+    "options": {
+      "A": "The formula automatically updates to include the new row value",
+      "B": "The formula breaks and returns a #REF! error",
+      "C": "The user must edit the range manually in the formula bar",
+      "D": "Excel creates a duplicate formula cell automatically"
+    },
+    "correctAnswer": "A",
+    "explanation": "Excel tables are dynamic; structured references automatically expand or shrink to include new rows added to columns.",
+    "topic": "Tables",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "Which table feature adds an automatic sum, average, or count row at the bottom of the table?",
+    "options": {
+      "A": "Total Row",
+      "B": "Aggregate Row",
+      "C": "Calculated Column",
+      "D": "Grand Total layout"
+    },
+    "correctAnswer": "A",
+    "explanation": "Enabling the 'Total Row' in Table Design adds a row at the bottom with dropdown menus to choose aggregation functions for each column.",
+    "topic": "Tables",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "What is the difference between filtering a table and sorting a table?",
+    "options": {
+      "A": "Filtering hides rows that do not meet criteria; sorting changes the display order of rows",
+      "B": "Sorting deletes data; filtering only duplicates cells",
+      "C": "Filtering is temporary; sorting is a permanent action that cannot be undone",
+      "D": "There is no difference; they perform the same actions"
+    },
+    "correctAnswer": "A",
+    "explanation": "Sorting rearranges data alphabetically or numerically. Filtering hides rows based on criteria without altering row order.",
+    "topic": "Tables",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "What language is used to write and execute macros in Microsoft Excel?",
+    "options": {
+      "A": "VBA (Visual Basic for Applications)",
+      "B": "JavaScript script",
+      "C": "M formula language",
+      "D": "SQL query scripts"
+    },
+    "correctAnswer": "A",
+    "explanation": "Excel macros are written and stored in the VBA programming language, managed using the built-in VBA Editor.",
+    "topic": "Macros Basics",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "How do you create a simple macro without writing code manually?",
+    "options": {
+      "A": "Use the 'Record Macro' button in the Developer ribbon",
+      "B": "Write Excel formulas in a text file and rename it",
+      "C": "Link Excel to an external database script",
+      "D": "Double-click the cells while holding the Alt key"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Macro Recorder captures mouse clicks and keystrokes, translating them into VBA code automatically.",
+    "topic": "Macros Basics",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "What file extension must you use to save an Excel workbook that contains macros?",
+    "options": {
+      "A": ".xlsm",
+      "B": ".xlsx",
+      "C": ".xlsb",
+      "D": ".csv"
+    },
+    "correctAnswer": "A",
+    "explanation": "The standard .xlsx format strips out macros. To preserve macros, you must save the workbook as Excel Macro-Enabled Workbook (.xlsm).",
+    "topic": "Macros Basics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "Which tab in Excel contains macro commands, XML options, and Form Controls?",
+    "options": {
+      "A": "Developer",
+      "B": "Data",
+      "C": "View",
+      "D": "Insert"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Developer tab is hidden by default and houses VBA, Macros, Add-ins, and form controls. It can be enabled in options.",
+    "topic": "Macros Basics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "What is the danger of enabling all macros in Excel security settings?",
+    "options": {
+      "A": "Malicious code within external workbooks could execute automatically, compromising security",
+      "B": "Excel will crash immediately due to memory overflow errors",
+      "C": "It prevents the use of basic formulas like SUM and AVERAGE",
+      "D": "It permanently encrypts the workbook using a random key"
+    },
+    "correctAnswer": "A",
+    "explanation": "Macros have full access to your operating system. Running unverified macros can lead to malware infection or data theft.",
+    "topic": "Macros Basics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "Which What-If Analysis tool is best when you know the desired output of a formula but not the input value required?",
+    "options": {
+      "A": "Goal Seek",
+      "B": "Scenario Manager",
+      "C": "Data Table",
+      "D": "Solver Add-in"
+    },
+    "correctAnswer": "A",
+    "explanation": "Goal Seek is a built-in tool that adjusts a single input cell until a dependent formula cell reaches a target value.",
+    "topic": "What-if Analysis",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "What What-If Analysis tool allows you to save and switch between multiple sets of input values in a worksheet?",
+    "options": {
+      "A": "Scenario Manager",
+      "B": "Goal Seek",
+      "C": "Data Table",
+      "D": "Solver"
+    },
+    "correctAnswer": "A",
+    "explanation": "Scenario Manager allows users to store multiple scenarios (e.g. Best Case, Worst Case) and swap inputs with a click.",
+    "topic": "What-if Analysis",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "What is the difference between Goal Seek and the Solver add-in?",
+    "options": {
+      "A": "Goal Seek changes only one input variable; Solver can optimize multiple input variables with constraints",
+      "B": "Solver is for charts; Goal Seek is only for formulas",
+      "C": "Goal Seek is an external download; Solver is built-in by default",
+      "D": "There is no difference; Solver is the newer name for Goal Seek"
+    },
+    "correctAnswer": "A",
+    "explanation": "Goal Seek solves single-variable equations. Solver is a linear optimization tool that handles complex constraints and multiple variables.",
+    "topic": "What-if Analysis",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "How do you enable the Solver add-in in Excel?",
+    "options": {
+      "A": "File -> Options -> Add-ins -> Manage: Excel Add-ins -> Check 'Solver Add-in'",
+      "B": "Insert -> Chart tools -> Select Solver icon",
+      "C": "Right-click the formula bar and select 'Enable Solver'",
+      "D": "Download the solver.exe file from the Windows Store"
+    },
+    "correctAnswer": "A",
+    "explanation": "Solver is packaged with Excel but inactive by default. It must be turned on in the Excel Add-ins management window.",
+    "topic": "What-if Analysis",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "Which What-If analysis tool displays the results of changing one or two inputs directly in a grid layout?",
+    "options": {
+      "A": "Data Table",
+      "B": "Scenario Manager",
+      "C": "Goal Seek",
+      "D": "Solver"
+    },
+    "correctAnswer": "A",
+    "explanation": "A Data Table calculates a formula range for values listed in rows/columns, plotting results in a matrix view.",
+    "topic": "What-if Analysis",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "What does a cell containing '###' indicate in Excel?",
+    "options": {
+      "A": "The column is too narrow to display the formatted number value",
+      "B": "The cell contains a division by zero error formula",
+      "C": "The cell is locked and protected from edits",
+      "D": "The formula contains invalid circular reference links"
+    },
+    "correctAnswer": "A",
+    "explanation": "When numeric or date values exceed the column width, Excel prints '###'. Double-clicking the border column auto-fits it.",
+    "topic": "Sorting and Filtering",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "How can you sort a list of dates chronologically from oldest to newest?",
+    "options": {
+      "A": "Sort & Filter -> Sort Oldest to Newest",
+      "B": "Data Validation -> Date sorting order",
+      "C": "Home -> Conditional Formatting -> Chronological order",
+      "D": "Developer -> Custom Sort -> Date format only"
+    },
+    "correctAnswer": "A",
+    "explanation": "Sort & Filter options detect date data types, offering oldest-to-newest or newest-to-oldest chronological sorts.",
+    "topic": "Sorting and Filtering",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "What is a 'Custom Sort' in Excel?",
+    "options": {
+      "A": "Sorting data based on a custom list (e.g. High, Medium, Low) instead of alphabetical order",
+      "B": "A macro script that sorts rows randomly",
+      "C": "Sorting cells by their text length counts",
+      "D": "A filter that only displays colored cells"
+    },
+    "correctAnswer": "A",
+    "explanation": "Custom Sort allows sorting by custom lists (like sizes: S, M, L, XL) or sorting multiple levels (e.g. by Department, then Surname).",
+    "topic": "Sorting and Filtering",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "What feature enables filtering data columns based on text parameters (e.g. 'Contains', 'Begins With')?",
+    "options": {
+      "A": "Text Filters",
+      "B": "Custom Sort",
+      "C": "Data Validation rules",
+      "D": "Cell styles"
+    },
+    "correctAnswer": "A",
+    "explanation": "Clicking the filter arrow on a text column opens Text Filters options to search containing, matching, or starting characters.",
+    "topic": "Sorting and Filtering",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "Which wildcard character represents any number of characters in Excel filter searches?",
+    "options": {
+      "A": "Asterisk (*)",
+      "B": "Question mark (?)",
+      "C": "Tilde (~)",
+      "D": "Ampersand (&)"
+    },
+    "correctAnswer": "A",
+    "explanation": "The asterisk (*) acts as a wildcard representing zero or more characters in lookups and search filters.",
+    "topic": "Sorting and Filtering",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "How do you prevent users from editing specific cells while allowing edits in others?",
+    "options": {
+      "A": "Unlock allowed cells, then protect the worksheet",
+      "B": "Lock the allowed cells, then save the file",
+      "C": "Apply conditional formatting to block input focus",
+      "D": "Set Data Validation on all cells to allow nothing"
+    },
+    "correctAnswer": "A",
+    "explanation": "All cells are locked by default. You must select allowed cells, uncheck 'Locked' in Format Cells -> Protection, then enable Sheet Protection.",
+    "topic": "Protecting Worksheets",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "What is the difference between Protecting a Worksheet and Protecting a Workbook?",
+    "options": {
+      "A": "Worksheet protection locks cells; Workbook protection locks structure (preventing adding/deleting sheets)",
+      "B": "Workbook protection is paid; Worksheet protection is free",
+      "C": "Protecting a workbook converts the file into a read-only PDF format",
+      "D": "There is no difference; they are duplicate terms"
+    },
+    "correctAnswer": "A",
+    "explanation": "Worksheet protection restricts cell edits. Workbook protection prevents structural changes like inserting, deleting, or renaming tabs.",
+    "topic": "Protecting Worksheets",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "How do you encrypt an Excel file with a password so it cannot be opened without authorization?",
+    "options": {
+      "A": "File -> Info -> Protect Workbook -> Encrypt with Password",
+      "B": "Review -> Protect Sheet -> Input Password option",
+      "C": "Format Cells -> Protection -> Check Encrypt",
+      "D": "Save As -> CSV format -> Select Encryption keys"
+    },
+    "correctAnswer": "A",
+    "explanation": "Encryption uses password protection to encrypt the entire file container, blocking unauthenticated reading/opening of the file.",
+    "topic": "Protecting Worksheets",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "Where is the option to protect a sheet located in the default Excel ribbons?",
+    "options": {
+      "A": "Review tab",
+      "B": "View tab",
+      "C": "Formulas tab",
+      "D": "Insert tab"
+    },
+    "correctAnswer": "A",
+    "explanation": "The 'Protect Sheet' and 'Protect Workbook' commands are located in the Protect group on the Review tab.",
+    "topic": "Protecting Worksheets",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "text": "What does checking the 'Lock Cell' box in Format Cells -> Protection do if the worksheet is NOT protected?",
+    "options": {
+      "A": "Nothing; cell locks are only active when sheet protection is enabled",
+      "B": "It prevents edits immediately",
+      "C": "It encrypts the cell's contents",
+      "D": "It turns the background color of the cell gray"
+    },
+    "correctAnswer": "A",
+    "explanation": "Locking or hiding cells has no effect until you actively protect the worksheet (Review -> Protect Sheet).",
+    "topic": "Protecting Worksheets",
+    "difficulty": "MEDIUM"
+  }
+]

@@ -1,0 +1,562 @@
+[
+  {
+    "certificationSlug": "devops",
+    "text": "What is the primary goal of Continuous Integration (CI) in DevOps pipelines?",
+    "options": {
+      "A": "Automatically building and testing code changes merged into a shared repository",
+      "B": "Deploying the production server code to multiple clouds",
+      "C": "Writing software documentation automatically using code parsers",
+      "D": "Monitoring server CPU temperatures in real-time"
+    },
+    "correctAnswer": "A",
+    "explanation": "CI focuses on automatically compiling, building, and running tests on new commits to catch bugs early in development.",
+    "topic": "CI/CD Pipelines",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is the difference between Continuous Delivery and Continuous Deployment?",
+    "options": {
+      "A": "Delivery requires manual approval to deploy to production; Deployment pushes code changes to production automatically",
+      "B": "Deployment is for Docker; Delivery is only for legacy virtual machines",
+      "C": "Continuous Delivery is slower because it builds code on local servers",
+      "D": "There is no difference in modern DevOps automation terminology"
+    },
+    "correctAnswer": "A",
+    "explanation": "Continuous Delivery prepares the build for release (allowing manual gates). Continuous Deployment automates the entire release directly to production.",
+    "topic": "CI/CD Pipelines",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "Which pipeline element triggers a build automatically whenever a developer pushes a commit to the main branch?",
+    "options": {
+      "A": "Webhook / Trigger",
+      "B": "Cron Schedule",
+      "C": "Artifact repository link",
+      "D": "Docker agent controller"
+    },
+    "correctAnswer": "A",
+    "explanation": "Webhooks link Git hosts to CI servers, sending a webhook notification that triggers builds upon code pushes.",
+    "topic": "CI/CD Pipelines",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is a 'build artifact' in CI/CD terms?",
+    "options": {
+      "A": "The compiled, ready-to-deploy output package of a build pipeline (e.g. zip, jar, docker image)",
+      "B": "A piece of legacy code that is no longer used by the application",
+      "C": "An error log indicating that the unit tests failed",
+      "D": "The configuration file defining database credentials"
+    },
+    "correctAnswer": "A",
+    "explanation": "Artifacts are the compiled, packaged output files generated during build steps, saved for testing or production deployment.",
+    "topic": "CI/CD Pipelines",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "Which git command is used to record changes to the local repository history?",
+    "options": {
+      "A": "git commit",
+      "B": "git add",
+      "C": "git push",
+      "D": "git clone"
+    },
+    "correctAnswer": "A",
+    "explanation": "git commit saves your staged snapshots to the local commit history. git add stages them first; git push uploads them to remote.",
+    "topic": "Version Control",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What does 'git merge --no-ff' do?",
+    "options": {
+      "A": "Forces Git to create a merge commit even if a fast-forward merge is possible",
+      "B": "Disables merge conflict detection during branch merges",
+      "C": "Merges changes directly into the remote repository without committing locally",
+      "D": "Cancels the merge operation and resets the working tree"
+    },
+    "correctAnswer": "A",
+    "explanation": "The --no-ff (no fast-forward) flag creates a merge commit, preserving the historical existence of the feature branch.",
+    "topic": "Version Control",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is 'git rebase' used for?",
+    "options": {
+      "A": "Applying commits from one branch on top of another to maintain a linear history",
+      "B": "Reverting all committed changes back to the origin state",
+      "C": "Deleting history logs to reduce the size of the repository folder",
+      "D": "Merging multiple separate repositories into a monorepo structure"
+    },
+    "correctAnswer": "A",
+    "explanation": "Rebase rewrites commits by moving the branch starting point (base) to a new commit, creating a clean linear path.",
+    "topic": "Version Control",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is the primary difference between a Docker image and a Docker container?",
+    "options": {
+      "A": "An image is a read-only template; a container is a running, writable instance of that image",
+      "B": "Images are hosted in the cloud; containers only run on local machines",
+      "C": "Containers are compiled; images are written in HTML",
+      "D": "There is no difference; they are interchangeable terms"
+    },
+    "correctAnswer": "A",
+    "explanation": "An image contains the filesystem and configurations. A container is the isolated execution environment instantiated from that image.",
+    "topic": "Docker",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "In a Dockerfile, which instruction specifies the command that runs by default when the container starts?",
+    "options": {
+      "A": "CMD",
+      "B": "RUN",
+      "C": "FROM",
+      "D": "COPY"
+    },
+    "correctAnswer": "A",
+    "explanation": "CMD sets the default executable command for the container. RUN executes commands during the image build phase.",
+    "topic": "Docker",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "Why are multi-stage builds recommended in Dockerfile configurations?",
+    "options": {
+      "A": "They reduce the final container image size by stripping out build-time dependencies",
+      "B": "They allow the container to run on both Linux and Windows concurrently",
+      "C": "They double the speed of container startups in cloud clusters",
+      "D": "They automatically encrypt the container storage filesystem"
+    },
+    "correctAnswer": "A",
+    "explanation": "Multi-stage builds let you compile binaries in early stages, copying only the output binary to the final stage, excluding SDKs/source code.",
+    "topic": "Docker",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is the primary role of Kubernetes in DevOps environments?",
+    "options": {
+      "A": "To automate the deployment, scaling, and management of containerized applications",
+      "B": "To write code files using terminal text editors",
+      "C": "To compile TypeScript code to JavaScript",
+      "D": "To monitor network bandwidth speeds at the office router"
+    },
+    "correctAnswer": "A",
+    "explanation": "Kubernetes is an open-source container orchestration platform that coordinates cluster nodes and manages application lifecycles.",
+    "topic": "Kubernetes",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is the smallest deployable unit of compute in a Kubernetes cluster?",
+    "options": {
+      "A": "Pod",
+      "B": "Container",
+      "C": "Service",
+      "D": "Node"
+    },
+    "correctAnswer": "A",
+    "explanation": "A Pod represents a single instance of a running process in your cluster, hosting one or more tightly coupled containers.",
+    "topic": "Kubernetes",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "Which Kubernetes resource exposes a set of pods as a network service with a stable IP and DNS name?",
+    "options": {
+      "A": "Service",
+      "B": "Deployment",
+      "C": "ConfigMap",
+      "D": "ReplicaSet"
+    },
+    "correctAnswer": "A",
+    "explanation": "Kubernetes Services handle internal and external load balancing, keeping routing endpoints stable even as pods are recreated.",
+    "topic": "Kubernetes",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is the function of the Kubernetes 'kubelet' agent?",
+    "options": {
+      "A": "It runs on each node to ensure containers are running in their assigned pods",
+      "B": "It coordinates the scheduling of pods across the master node",
+      "C": "It stores the configuration data and state of the cluster (etcd)",
+      "D": "It serves the API endpoints to external CLI clients"
+    },
+    "correctAnswer": "A",
+    "explanation": "The kubelet is the node agent that communicates with the control plane, monitoring container lifecycles on the host.",
+    "topic": "Kubernetes",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is Infrastructure as Code (IaC)?",
+    "options": {
+      "A": "Managing and provisioning infrastructure using machine-readable definition files",
+      "B": "Writing code comments that explain server layouts",
+      "C": "Storing database passwords inside the application code repository",
+      "D": "Hosting virtual machines inside on-premises datacenters"
+    },
+    "correctAnswer": "A",
+    "explanation": "IaC allows teams to configure networks, servers, and storage declaratively in code, automating environment creation.",
+    "topic": "Infrastructure as Code",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "Which command initializes a new or existing Terraform working directory by downloading provider plugins?",
+    "options": {
+      "A": "terraform init",
+      "B": "terraform plan",
+      "C": "terraform apply",
+      "D": "terraform workspace"
+    },
+    "correctAnswer": "A",
+    "explanation": "terraform init scans code files, configures backend state tracking, and downloads required cloud provider binaries.",
+    "topic": "Infrastructure as Code",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is the purpose of the 'terraform.tfstate' file?",
+    "options": {
+      "A": "It maps real-world resources to your configuration files to track state",
+      "B": "It contains the temporary variables used during plans",
+      "C": "It acts as a backup copy of the cloud provider account credentials",
+      "D": "It compiles the Terraform code to binary machine code"
+    },
+    "correctAnswer": "A",
+    "explanation": "The tfstate file records metadata and actual resource IDs to determine changes between code configs and real cloud setups.",
+    "topic": "Infrastructure as Code",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "Which Terraform command shows the actions that will be taken to reach the desired configuration state?",
+    "options": {
+      "A": "terraform plan",
+      "B": "terraform apply",
+      "C": "terraform validate",
+      "D": "terraform refresh"
+    },
+    "correctAnswer": "A",
+    "explanation": "terraform plan executes a dry run, reading actual cloud state and outlining what resources will be created, updated, or deleted.",
+    "topic": "Infrastructure as Code",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What does it mean that Terraform is a 'declarative' IaC tool?",
+    "options": {
+      "A": "You define the desired end-state of the infrastructure, and the tool figures out how to build it",
+      "B": "You write step-by-step scripts detailing each API command to execute",
+      "C": "It requires declaring all variables before they can be used in configurations",
+      "D": "The infrastructure can only be deployed in a public cloud"
+    },
+    "correctAnswer": "A",
+    "explanation": "Declarative tools abstract the execution steps. You declare what you want, and the engine determines the dependencies and API calls.",
+    "topic": "Infrastructure as Code",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is the difference between Monitoring and Logging?",
+    "options": {
+      "A": "Monitoring tracks quantitative performance metrics; Logging records discrete event details",
+      "B": "Logging is automated; Monitoring is strictly manual checking",
+      "C": "Monitoring is only used for cloud databases; Logging is for routers",
+      "D": "There is no difference; they are duplicate terms"
+    },
+    "correctAnswer": "A",
+    "explanation": "Monitoring collects numerical stats (CPU, RAM, API speed) to identify health. Logging records text traces (errors, actions) to debug issues.",
+    "topic": "Monitoring and Logging",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "Which tool is commonly used to collect, store, and visualize metrics from target servers in real-time?",
+    "options": {
+      "A": "Prometheus + Grafana",
+      "B": "Elasticsearch + Logstash",
+      "C": "Terraform + Vault",
+      "D": "Ansible + Jenkins"
+    },
+    "correctAnswer": "A",
+    "explanation": "Prometheus pulls and stores time-series metrics, while Grafana overlays dashboards to visualize those metrics in real-time.",
+    "topic": "Monitoring and Logging",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What does the 'ELK stack' stand for in log management?",
+    "options": {
+      "A": "Elasticsearch, Logstash, Kibana",
+      "B": "Encryption, Logging, Key Vault",
+      "C": "Enterprise Linux Kernel",
+      "D": "Event Logging Kernel"
+    },
+    "correctAnswer": "A",
+    "explanation": "ELK combines Elasticsearch (search engine), Logstash (log ingestion/clean), and Kibana (dashboard visualization) for logs.",
+    "topic": "Monitoring and Logging",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "Which monitoring concept refers to measuring the time it takes to service a request?",
+    "options": {
+      "A": "Latency",
+      "B": "Throughput",
+      "C": "Saturation",
+      "D": "Availability"
+    },
+    "correctAnswer": "A",
+    "explanation": "Latency is the round-trip time required to complete a network request or execute a compute transaction.",
+    "topic": "Monitoring and Logging",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is the role of an 'alerting threshold' in monitoring systems?",
+    "options": {
+      "A": "To trigger notifications automatically when a metric exceeds a safe limit (e.g. CPU > 90%)",
+      "B": "To limit the number of logs written to disk to save space",
+      "C": "To automatically turn off servers during weekends to save costs",
+      "D": "To encrypt metric communication channels using TLS"
+    },
+    "correctAnswer": "A",
+    "explanation": "Alerting rules evaluate metrics against bounds, notifying administrators (via slack, email, etc.) before outages occur.",
+    "topic": "Monitoring and Logging",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is a 'Blue-Green' deployment?",
+    "options": {
+      "A": "Using two identical environments, one live (blue) and one staging (green), to switch traffic instantly",
+      "B": "Deploying the database to AWS (blue) and the web server to Azure (green)",
+      "C": "Upgrading the operating systems of half the servers in a cluster at a time",
+      "D": "Encrypting network connections between different geographical zones"
+    },
+    "correctAnswer": "A",
+    "explanation": "Blue-green deployment minimizes risk and downtime by routing traffic to the idle environment once it is verified to work.",
+    "topic": "Deployment Strategies",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is a 'Canary' deployment?",
+    "options": {
+      "A": "Releasing a software update to a small percentage of users before rolling it out to everyone",
+      "B": "Deploying code updates only to developers' personal laptops for testing",
+      "C": "Testing application security by running automated pen-test scripts",
+      "D": "Hosting virtual machines inside on-premises datacenters"
+    },
+    "correctAnswer": "A",
+    "explanation": "Canary deployments roll out changes incrementally to a small subset of servers or users to detect bugs early under real production load.",
+    "topic": "Deployment Strategies",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is the benefit of using a Rolling Deployment strategy?",
+    "options": {
+      "A": "It updates server instances in batches, maintaining service availability without needing duplicate capacity",
+      "B": "It rolls back the database state to the beginning of the day automatically",
+      "C": "It compiles code files directly on the production host",
+      "D": "It forces all users to log out before applying updates"
+    },
+    "correctAnswer": "A",
+    "explanation": "Rolling updates replace old instances with new ones in batches, keeping some active servers alive to serve requests during updates.",
+    "topic": "Deployment Strategies",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is a 'Rollback' in deployment pipelines?",
+    "options": {
+      "A": "Reverting to the previous stable software version after a new deployment fails",
+      "B": "Deleting the git repository and cloning it again",
+      "C": "Compiling the code into a smaller compressed file",
+      "D": "Rebooting the database physical server host"
+    },
+    "correctAnswer": "A",
+    "explanation": "Rollback is the recovery step of redeploying the previous working artifact or switching traffic back to the stable environment.",
+    "topic": "Deployment Strategies",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is 'Immutable Infrastructure'?",
+    "options": {
+      "A": "Servers are never modified after creation; updates require deploying new server instances",
+      "B": "Virtual machines that are locked and cannot be deleted",
+      "C": "Databases that only support read actions without updates",
+      "D": "Infrastructure that is hosted purely on on-premises hardware"
+    },
+    "correctAnswer": "A",
+    "explanation": "Immutable infrastructure avoids configuration drift. You don't patch running servers; you build a new image and replace them completely.",
+    "topic": "Deployment Strategies",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is a Microservices Architecture?",
+    "options": {
+      "A": "Decomposing an application into small, independent services that communicate via APIs",
+      "B": "Building the entire website inside a single code file",
+      "C": "Running virtual machines on micro-sized CPU capacities",
+      "D": "Using NoSQL databases to store all application data"
+    },
+    "correctAnswer": "A",
+    "explanation": "Microservices split monolothic apps into modular components, allowing teams to develop, test, and deploy services independently.",
+    "topic": "Architecture",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "Which tool is standard for service discovery and key-value configuration in microservices clusters?",
+    "options": {
+      "A": "Consul",
+      "B": "Jenkins",
+      "C": "Docker Desktop",
+      "D": "SonarQube"
+    },
+    "correctAnswer": "A",
+    "explanation": "HashiCorp Consul provides service registry, health checks, and dynamic configuration keys for microservices networks.",
+    "topic": "Architecture",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is the purpose of an API Gateway in microservices?",
+    "options": {
+      "A": "It acts as a single entry point, routing client requests to internal services",
+      "B": "It compiles Python source code into machine code",
+      "C": "It backs up database records across multiple datacenters",
+      "D": "It restricts database connections to local connections only"
+    },
+    "correctAnswer": "A",
+    "explanation": "API Gateways handle routing, request aggregation, authentication, and rate limiting, protecting the internal microservices network.",
+    "topic": "Architecture",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is 'configuration drift'?",
+    "options": {
+      "A": "The gradual accumulation of undocumented manual changes on running servers",
+      "B": "Moving the database files from on-premises to cloud storage",
+      "C": "The time delay between pushing code and pipeline execution",
+      "D": "Updating the values in the application configuration file"
+    },
+    "correctAnswer": "A",
+    "explanation": "Drift happens when ad-hoc manual hotfixes on live servers cause their state to mismatch the definition files (IaC).",
+    "topic": "Infrastructure as Code",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "Which deployment model is hosted entirely on a cloud provider's shared public infrastructure?",
+    "options": {
+      "A": "Public Cloud",
+      "B": "Private Cloud",
+      "C": "On-Premises",
+      "D": "Hybrid Cloud"
+    },
+    "correctAnswer": "A",
+    "explanation": "Public cloud (multi-tenant) runs on resources owned and operated by third-party cloud providers, shared with other organizations.",
+    "topic": "Architecture",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "In Scrum methodology, what is a 'Sprint'?",
+    "options": {
+      "A": "A fixed-length period (1-4 weeks) during which specific work must be completed",
+      "B": "A daily status meeting that lasts exactly 15 minutes",
+      "C": "A rapid code deployment to hotfix a critical production bug",
+      "D": "The list of feature requests waiting to be prioritized"
+    },
+    "correctAnswer": "A",
+    "explanation": "Sprints are the core heartbeat of Scrum. They are timeboxed intervals where developers complete tasks from the sprint backlog.",
+    "topic": "Agile Methodology",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is the purpose of the Daily Standup meeting?",
+    "options": {
+      "A": "To synchronize work, share progress, and identify blocking impediments",
+      "B": "To demo the completed software product features to clients",
+      "C": "To write code reviews for recent commits collectively",
+      "D": "To assign new tasks to team members for the month"
+    },
+    "correctAnswer": "A",
+    "explanation": "Daily Standups are 15-minute sync meetings where members state what they did yesterday, what they will do today, and any blockers.",
+    "topic": "Agile Methodology",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "Who is responsible for maintaining and prioritizing the Product Backlog in Scrum?",
+    "options": {
+      "A": "Product Owner",
+      "B": "Scrum Master",
+      "C": "Development Lead",
+      "D": "System Administrator"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Product Owner represents business and customer needs, keeping the product backlog sorted and prioritized.",
+    "topic": "Agile Methodology",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is the role of the Scrum Master?",
+    "options": {
+      "A": "To facilitate Scrum processes, coach the team, and remove impediments",
+      "B": "To write the architectural code specifications for the developers",
+      "C": "To manage the budget and report directly to corporate executives",
+      "D": "To test the application code for security vulnerabilities"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Scrum Master is a servant-leader who protects the team's focus, removes blockers, and ensures Scrum practices are followed.",
+    "topic": "Agile Methodology",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What is a Sprint Retrospective?",
+    "options": {
+      "A": "A meeting at the end of a sprint to reflect on the process and plan improvements",
+      "B": "A code inspection meeting to analyze recent merges",
+      "C": "A database synchronization step run before new deployments",
+      "D": "A test run of the application in a staging sandbox"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Retrospective focuses on continuous improvement: identifying what went well, what went wrong, and actions to improve the next sprint.",
+    "topic": "Agile Methodology",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "devops",
+    "text": "What Agile artifact represents a visual board showing workflow states like To Do, In Progress, and Done?",
+    "options": {
+      "A": "Kanban Board",
+      "B": "Product Backlog",
+      "C": "Sprint Burn-down chart",
+      "D": "Gantt Chart"
+    },
+    "correctAnswer": "A",
+    "explanation": "Kanban boards use columns and cards to represent workflow steps, visualizing tasks and managing work-in-progress (WIP).",
+    "topic": "Agile Methodology",
+    "difficulty": "EASY"
+  }
+]
