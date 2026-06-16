@@ -17,6 +17,7 @@ async function main() {
     { name: 'Full Stack Web Dev', slug: 'full-stack-web-dev', description: 'Front-end and back-end development', priority: 2, iconMark: 'code' },
     { name: 'Project Management', slug: 'project-management', description: 'Agile, Scrum, and PMP', priority: 1, iconMark: 'kanban' },
     { name: 'Microsoft Power BI', slug: 'microsoft-power-bi', description: 'Power BI Data Analyst (PL-300)', priority: 1, iconMark: 'bar-chart' },
+    { name: 'Nigerian Professional Exams', slug: 'nigerian-professional-exams', description: 'Nigerian national professional qualifying examinations for healthcare and other regulated professions', priority: 1, iconMark: 'shield-check' }
   ];
 
   for (const domain of domains) {
@@ -63,6 +64,9 @@ async function main() {
     { domainSlug: 'project-management', name: 'PMP', slug: 'pmp', description: 'Project Management Professional', difficulty: Difficulty.HARD },
     { domainSlug: 'project-management', name: 'CAPM', slug: 'capm', description: 'Certified Associate in Project Management', difficulty: Difficulty.MEDIUM },
     { domainSlug: 'project-management', name: 'PMI-ACP', slug: 'pmi-acp', description: 'PMI Agile Certified Practitioner', difficulty: Difficulty.MEDIUM },
+    { domainSlug: 'nigerian-professional-exams', name: 'CHEW Qualifying Exam — Objective', slug: 'chew-objective', description: 'Community Health Extension Worker National Professional Qualifying Examination — Objective (Multiple Choice) Section', difficulty: Difficulty.MEDIUM },
+    { domainSlug: 'nigerian-professional-exams', name: 'CHEW Qualifying Exam — Theory', slug: 'chew-theory', description: 'Community Health Extension Worker National Professional Qualifying Examination — Theory Section Practice', difficulty: Difficulty.MEDIUM },
+    { domainSlug: 'nigerian-professional-exams', name: 'CHEW Qualifying Exam — Practical', slug: 'chew-practical', description: 'Community Health Extension Worker National Professional Qualifying Examination — Practical Session Practice', difficulty: Difficulty.HARD }
   ];
 
   for (const cert of certifications) {

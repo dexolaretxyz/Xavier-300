@@ -1,0 +1,562 @@
+[
+  {
+    "certificationSlug": "chew-practical",
+    "text": "When measuring the length of an infant under 2 years of age versus a child over 2 years, what correct practical techniques must you use?",
+    "options": {
+      "A": "Measure both standing up against a wall",
+      "B": "Measure the infant lying down (recumbent length) using an infantometer; measure the child over 2 years standing up (stature) using a stadiometer",
+      "C": "Measure both lying down on a standard exam table",
+      "D": "Estimate both by using a flexible tape measure from head to heel while they sit"
+    },
+    "correctAnswer": "B",
+    "explanation": "For children under 2 years, length must be measured in the recumbent position (lying down) with an infantometer (requiring two people: one to hold the head against the headboard, the other to straighten the knees and slide the footboard). Children 2 years and older are measured standing up (stature) to get accurate growth plotting.",
+    "topic": "Child Health",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "When using a MUAC tape to screen a child aged 12-59 months, what do the tape measurements of red, yellow, and green colors indicate?",
+    "options": {
+      "A": "Red: normal; Yellow: mildly thin; Green: obese",
+      "B": "Red: Severe Acute Malnutrition (MUAC < 11.5 cm); Yellow: Moderate Acute Malnutrition (MUAC 11.5 to 12.5 cm); Green: Well-nourished (MUAC > 12.5 cm)",
+      "C": "Red: high blood pressure; Yellow: fever; Green: healthy",
+      "D": "Red: high risk of malaria; Yellow: parasite carrier; Green: malaria-free"
+    },
+    "correctAnswer": "B",
+    "explanation": "The MUAC tape is color-coded. Red (< 11.5 cm) indicates Severe Acute Malnutrition (SAM) and requires immediate enrollment in outpatient therapeutic program (OTP). Yellow (11.5 cm - 12.5 cm) indicates Moderate Acute Malnutrition (MAM) requiring supplementary feeding. Green (> 12.5 cm) indicates the child is well-nourished.",
+    "topic": "Nutrition",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "What is the correct step-by-step procedure for preparing one liter of Oral Rehydration Salts (ORS) solution at home?",
+    "options": {
+      "A": "Dissolve 1 sachet of ORS in 2 liters of water, boil for 10 minutes, and drink hot",
+      "B": "Wash hands, pour exactly 1 liter of clean water into a clean container, empty the entire contents of 1 sachet of ORS into the water, stir until completely dissolved, and use within 24 hours",
+      "C": "Mix 1 sachet of ORS with 1 cup of boiling water, add 2 spoons of sugar, and drink slowly",
+      "D": "Add 1 sachet of ORS directly into a child's porridge without water"
+    },
+    "correctAnswer": "B",
+    "explanation": "ORS preparation requires clean hands and exact proportions to ensure correct osmolarity. Emptying the full sachet in exactly 1 liter of clean water (boiled and cooled is best) and stirring ensures the correct concentration of salts. The solution must be covered and discarded after 24 hours as bacteria can grow in it.",
+    "topic": "Child Health",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "When packing a vaccine carrier for a community outreach session, how should you prepare and arrange the ice packs to prevent freezing freeze-sensitive vaccines?",
+    "options": {
+      "A": "Place frozen ice packs straight from the freezer directly into the carrier next to the vaccines",
+      "B": "Take ice packs from the freezer, allow them to sit at room temperature until water sloshes inside (conditioning), dry them, and place them in the carrier, placing freeze-sensitive vaccines in the center away from direct contact",
+      "C": "Use warm water packs instead of ice packs to keep vaccines cozy",
+      "D": "Put the vaccines in the freezer compartment overnight and skip the ice packs"
+    },
+    "correctAnswer": "B",
+    "explanation": "Direct contact with frozen ice packs can freeze and destroy vaccines like Pentavalent, PCV, HepB, and IPV. Conditioning ice packs (allowing them to sweat and melt slightly until ice slides) warms the surface to 0°C, preventing accidental freezing of the vaccines.",
+    "topic": "Cold Chain Management",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "How is the Symphysis-Fundal Height (SFH) measured in a pregnant woman at the ANC clinic?",
+    "options": {
+      "A": "Using a flexible tape measure from the umbilicus to the breastbone",
+      "B": "Using a tape measure to measure the waist circumference at the level of the navel",
+      "C": "Using a non-elastic tape measure from the upper border of the pubic symphysis to the highest point of the uterine fundus, following the curve of the abdomen",
+      "D": "Using a wooden ruler from the hip bone to the knee joint"
+    },
+    "correctAnswer": "C",
+    "explanation": "Measuring SFH is a tool to monitor fetal growth. The woman empties her bladder and lies flat. The health worker palpates the uterus to find the fundus. A non-elastic tape measure is placed at the upper border of the pubic symphysis and stretched along the midline to the top of the fundus.",
+    "topic": "Maternal Health",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "What is the correct practical guideline for selecting and positioning a blood pressure cuff on a patient's arm?",
+    "options": {
+      "A": "Use the same size cuff for everyone and place it over a thick sweater",
+      "B": "Choose a cuff with a bladder length that encircles 80% of the arm circumference and width that is 40% of the arm circumference; place the lower edge 2-3 cm above the elbow crease with the bladder over the brachial artery",
+      "C": "Tie the cuff as tightly as possible around the wrist",
+      "D": "Position the cuff over the forearm and listen to the pulse at the wrist"
+    },
+    "correctAnswer": "B",
+    "explanation": "Using a cuff that is too small gives a falsely high reading, while a cuff that is too large gives a falsely low reading. Correct placement 2-3 cm above the antecubital fossa allows space to place the stethoscope diaphragm over the brachial artery to hear Korotkoff sounds clearly.",
+    "topic": "Vital Signs",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "What is the correct first-line procedure for assisting a conscious adult who is choking and unable to speak or breathe?",
+    "options": {
+      "A": "Give 5 back blows followed by 5 abdominal thrusts (Heimlich maneuver) repeatedly until the object is expelled or the person becomes unconscious",
+      "B": "Give them a glass of water to drink immediately",
+      "C": "Force them to lie down and compress their chest",
+      "D": "Perform a blind finger sweep inside the throat immediately"
+    },
+    "correctAnswer": "A",
+    "explanation": "For a conscious adult with severe airway obstruction (cannot speak, cough, or breathe), the first responder should deliver up to 5 back blows between the shoulder blades, followed by 5 abdominal thrusts (Heimlich maneuver) in an upward/inward direction, to create artificial cough pressure and expel the foreign body.",
+    "topic": "First Aid",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "How should you prepare a 1% stock chlorine solution using dry calcium hypochlorite (HTH) powder containing 65-70% active chlorine?",
+    "options": {
+      "A": "Dissolve 1 tablespoon of HTH powder in 10 liters of water",
+      "B": "Dissolve approximately 15 grams (about 1 level tablespoon) of HTH powder in 1 liter of clean water, mix well, and let it settle for 30 minutes",
+      "C": "Mix HTH powder and boiling water in equal parts",
+      "D": "Add HTH powder directly into the village well without measuring"
+    },
+    "correctAnswer": "B",
+    "explanation": "To prepare 1% chlorine solution from HTH powder (65% chlorine), you mix 15g (about 1 level tablespoon) of the powder in 1 liter of clean water. This 1% stock solution can then be used to dilute further for handwashing (0.05%) or disinfection (0.5%).",
+    "topic": "Environmental Health",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "When inspecting a Vaccine Vial Monitor (VVM) on a vaccine vial, how do you determine if the vaccine is safe to use?",
+    "options": {
+      "A": "The vaccine is safe to use if the inner square is darker than the outer circle",
+      "B": "The vaccine is safe to use if the inner square is lighter than the outer circle, and the expiry date has not passed",
+      "C": "The vaccine is safe to use if the VVM label has peeled off",
+      "D": "The vaccine is safe to use if the inner square has completely disappeared"
+    },
+    "correctAnswer": "B",
+    "explanation": "A VVM is usable in Stage 1 (inner square is white/light) and Stage 2 (inner square is still lighter than outer circle). Once the inner square matches the outer circle (Stage 3) or becomes darker (Stage 4), the vaccine must be discarded.",
+    "topic": "Cold Chain Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "What is the correct procedure for splinting a suspected fracture of the forearm?",
+    "options": {
+      "A": "Straighten the bone forcefully, wrap a tight bandage around the fracture site, and leave the arm hanging down",
+      "B": "Check the distal pulse, apply a padded splint that extends beyond the wrist and the elbow joints, tie it securely but not too tightly, recheck the distal pulse, and apply a sling",
+      "C": "Apply a cold compress directly and instruct the patient to bend their elbow frequently",
+      "D": "Wrap the arm in hot leaves and massage the fracture site vigorously"
+    },
+    "correctAnswer": "B",
+    "explanation": "Splinting must immobilize the joints above and below the fracture to prevent bone movement. Checking the distal pulse (radial pulse) before and after ensures the splint or ties are not constricting blood flow. The sling supports the arm in a comfortable position.",
+    "topic": "First Aid",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "When plotting cervical dilation on a labor ward Partograph, what does it mean if the cervix dilation line crosses to the right of the Alert Line?",
+    "options": {
+      "A": "Labor is progressing faster than normal and delivery is imminent",
+      "B": "Labor is prolonged or slow, indicating a need to refer the mother to a hospital or consult a medical officer",
+      "C": "The mother is in false labor and should be discharged home",
+      "D": "The fetal head has engaged in the pelvis"
+    },
+    "correctAnswer": "B",
+    "explanation": "The Alert Line on the partograph represents the rate of dilation of 1 cm per hour in active labor. If the plotting moves to the right of this line, it indicates slow progress. It is a warning to transfer the patient from a primary health center to a referral facility (before reaching the Action Line).",
+    "topic": "Maternal Health",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "What is the correct technique for counting the respiratory rate of a child under five to check for fast breathing?",
+    "options": {
+      "A": "Count the child's breaths for 15 seconds and multiply by 4 while the child is crying",
+      "B": "Ensure the child is quiet and calm, lift the child's shirt to see the chest/abdomen movement, and count the breaths for one full minute using a timer/stopwatch",
+      "C": "Place your hand over the child's mouth to feel the breath flow for 30 seconds",
+      "D": "Use a stethoscope to count the heart rate and divide by 3"
+    },
+    "correctAnswer": "B",
+    "explanation": "Under IMCI, respiratory rate must be counted for a full 60 seconds because children have irregular breathing patterns. The child must be calm (not crying, feeding, or agitated), and the chest or abdomen must be visible to count each rise and fall as one breath.",
+    "topic": "Child Health",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "When plotting a child's weight on a Growth Monitoring Chart, what is the correct action if you observe a downward growth curve over two consecutive months?",
+    "options": {
+      "A": "Do nothing, as weight fluctuations are normal in growing children",
+      "B": "Give the mother high-dose antibiotics and ask her to return in six months",
+      "C": "Assess the child for illness and feeding problems, counsel the mother on nutrition and hygiene, and schedule a follow-up in 14 days",
+      "D": "Immediately refer the child for blood transfusions"
+    },
+    "correctAnswer": "C",
+    "explanation": "A downward growth curve indicates weight loss, which is a dangerous sign of severe growth faltering. It requires immediate assessment for underlying diseases (malaria, TB, diarrhea) or feeding errors, targeted maternal counseling, and close follow-up.",
+    "topic": "Child Health",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "What is the correct protocol for disposing of a syringe and needle after administering a vaccine?",
+    "options": {
+      "A": "Recap the needle, detach it from the barrel, and throw both in the trash can",
+      "B": "Drop the needle and syringe assembled immediately into a puncture-proof safety box without recapping the needle",
+      "C": "Wash the needle with soap and water so it can be reused in the next outreach session",
+      "D": "Bend the needle manually to make it safe, then throw it in the open pit latrine"
+    },
+    "correctAnswer": "B",
+    "explanation": "After injection, the needle must never be recapped, bent, or cut. The syringe and needle must be dropped as a single unit directly into a safety box. This minimizes needle handling and prevents needle-stick injuries.",
+    "topic": "Immunization",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "How should you measure a child's axillary temperature using a digital thermometer?",
+    "options": {
+      "A": "Place the thermometer tip in the child's mouth for 10 seconds",
+      "B": "Dry the armpit with a tissue, place the metal tip of the thermometer in the center of the armpit, hold the child's arm firmly against the side of the body, and read after it beeps",
+      "C": "Dip the thermometer in hot water first to calibrate it",
+      "D": "Place the thermometer on the child's forehead and hold it for 5 minutes"
+    },
+    "correctAnswer": "B",
+    "explanation": "For safety and hygiene, axillary (armpit) measurement is preferred in children. The armpit must be dry to prevent evaporative cooling affecting the reading. Placing the tip in the center and keeping the arm tight ensures maximum contact with blood vessels.",
+    "topic": "Vital Signs",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "When conducting a home visit to a household in your ward, what is the first step you should take upon arrival?",
+    "options": {
+      "A": "Begin inspecting the latrine and kitchen without speaking to anyone",
+      "B": "Greet the household head or members warmly, introduce yourself and your facility, explain the purpose of the visit, and ask for permission to enter and discuss",
+      "C": "Demand that all children be brought out for vaccination immediately",
+      "D": "Open the health register and start writing down the names of family members"
+    },
+    "correctAnswer": "B",
+    "explanation": "Building rapport and gaining trust is essential for home visits. Gaining permission, showing respect, and explaining the health education goals ensures community cooperation and accurate household health assessments.",
+    "topic": "Home Visits",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "What is the correct first aid management for a child who has just sustained a fresh second-degree burn on their hand from hot water?",
+    "options": {
+      "A": "Apply raw egg yolk, butter, or engine oil to the burn to soothe the skin",
+      "B": "Hold the burned hand under cool, clean, gently running water for 10-20 minutes, then cover it loosely with a clean, sterile, dry non-stick dressing",
+      "C": "Prick the blisters with a sterile pin to drain the fluid, then wrap tightly with a crepe bandage",
+      "D": "Immerse the hand in ice-cold water for 2 hours"
+    },
+    "correctAnswer": "B",
+    "explanation": "Cooling the burn with running water limits tissue damage and relieves pain. Oils or grease trap heat and introduce bacteria. Blisters protect the underlying skin from infection and must never be broken.",
+    "topic": "First Aid",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "What is the correct procedure for performing a Malaria Rapid Diagnostic Test (RDT) at the clinic?",
+    "options": {
+      "A": "Prick the finger, smear blood on a slide, and look under a microscope immediately",
+      "B": "Wash hands, wear gloves, disinfect finger, prick with lancet, collect blood with capillary tube, transfer to sample well, add buffer drops to buffer well, and read results exactly at the specified time (usually 15-20 minutes)",
+      "C": "Mix blood and buffer in a cup and wait for it to change color",
+      "D": "Apply blood directly to the buffer bottle and check for sediment"
+    },
+    "correctAnswer": "B",
+    "explanation": "RDTs require strict adherence to the manufacturer's steps: using correct blood volume (capillary tube), adding the buffer to the correct well, and reading at the specified window. Reading too early can yield false negatives; reading too late (after 20 mins) can show false positive lines.",
+    "topic": "Malaria Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "When demonstrating the correct use of a male condom during a family planning counseling session, what key steps must you highlight?",
+    "options": {
+      "A": "Open the pack with scissors, unroll the condom before putting it on, and wash it for reuse",
+      "B": "Check the expiry date, check the air bubble, open the pack carefully with fingers (no teeth/scissors), pinch the condom tip to expel air, roll it down the erect penis, and remove it immediately after ejaculation holding the rim",
+      "C": "Apply oil-based lubricants like vaseline to the condom before insertion",
+      "D": "Wear two condoms at the same time to double the protection"
+    },
+    "correctAnswer": "B",
+    "explanation": "Pinching the tip leaves a space for semen, preventing the condom from bursting. Avoiding sharp tools (scissors/teeth) prevents tearing the latex. Oil-based lubricants weaken latex, leading to rupture (only water-based lubricants should be used). Holding the rim during withdrawal prevents slippage.",
+    "topic": "Family Planning",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "Where is the most reliable site to palpate the pulse in an infant under 12 months during an emergency resuscitation?",
+    "options": {
+      "A": "Radial pulse (wrist)",
+      "B": "Brachial artery (inner upper arm) or femoral artery (groin)",
+      "C": "Carotid artery (neck)",
+      "D": "Temporal artery (forehead)"
+    },
+    "correctAnswer": "B",
+    "explanation": "Infants have short, chubby necks making the carotid difficult to feel, and their radial artery is small and weak. The brachial artery on the inside of the upper arm, between the elbow and shoulder, is the easiest and most reliable site to assess pulse in infants.",
+    "topic": "Vital Signs",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "What instructions should you give to a patient with a chronic cough to collect a proper sputum sample for TB testing?",
+    "options": {
+      "A": "Spit saliva from the front of the mouth into the container after eating",
+      "B": "Rinse mouth with water, take two deep breaths, cough deeply from the chest, spit the coughed-up sputum (not saliva) into the sterile container, and close the lid tightly",
+      "C": "Cough directly onto a dry piece of paper and fold it",
+      "D": "Swallow some warm water, then cough into a plastic bag"
+    },
+    "correctAnswer": "B",
+    "explanation": "Saliva contains no alveolar macrophages or bacteria from the lungs, leading to false negative results. Rinsing the mouth removes food particles. Deep coughing brings up sputum from the lungs, which is required for microscopy or GeneXpert tests.",
+    "topic": "Communicable Diseases",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "For an infant under 12 months, what is the recommended site and needle angle for administering an intramuscular (IM) injection?",
+    "options": {
+      "A": "Gluteal muscle (buttock) at a 45-degree angle",
+      "B": "Anterolateral aspect of the thigh (vastus lateralis muscle) at a 90-degree angle",
+      "C": "Deltoid muscle (upper arm) at a 15-degree angle",
+      "D": "Abdominal wall at a 90-degree angle"
+    },
+    "correctAnswer": "B",
+    "explanation": "In infants under 12 months, the gluteal muscle is underdeveloped, and injecting there carries a high risk of sciatic nerve injury. The vastus lateralis (outer thigh) is the largest muscle mass at this age. A 90-degree angle ensures the needle penetrates deep into the muscle tissue.",
+    "topic": "Immunization",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "What is the correct sequence of steps for hygienic handwashing before performing clinical procedures?",
+    "options": {
+      "A": "Wet hands, apply soap, rub palms together, rub backs of hands, interlace fingers, rub knuckles, clean thumbs, clean fingernails, rinse with running water, and dry with a clean towel or air dry",
+      "B": "Dip hands in a bowl of standing water, apply alcohol gel, and dry with a shirt",
+      "C": "Wash hands with hot water for 3 seconds, then apply disinfectant powder",
+      "D": "Scrub hands with a hard brush and bleach for 10 minutes"
+    },
+    "correctAnswer": "A",
+    "explanation": "Effective handwashing takes 40-60 seconds and must cover all hand surfaces (palms, backs, fingers, knuckles, thumbs, fingertips) using running water and soap to physically remove pathogens before any invasive or clean procedure.",
+    "topic": "Maternal Health",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "How is a simple 'tippy tap' constructed to promote handwashing with running water in a rural household with no plumbing?",
+    "options": {
+      "A": "By building a concrete water tank with metal pipes and taps",
+      "B": "By suspending a plastic container (e.g., a 5-liter jerrycan) with a small hole from a wooden frame, connecting it to a foot pedal using string, and placing soap nearby",
+      "C": "By digging a shallow hole in the ground and filling it with soapy water",
+      "D": "By setting up a pump connected to a deep borehole"
+    },
+    "correctAnswer": "B",
+    "explanation": "A tippy tap is a low-cost, hygienic handwashing device. It uses a plastic container tipped by a foot pedal, which avoids touching a tap with dirty hands, conserving water while providing running water for hygiene.",
+    "topic": "Environmental Health",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "How do you perform an 'appetite test' for a child suspected of having Severe Acute Malnutrition (SAM)?",
+    "options": {
+      "A": "Offer the child a plate of hot local soup and see if they finish it in 5 minutes",
+      "B": "Seat the child and mother in a quiet area, give the mother a sachet of Ready-to-Use Therapeutic Food (RUTF), ask her to offer it to the child, and observe if the child actively and eagerly eats it",
+      "C": "Force-feed the child using a syringe and check for vomiting",
+      "D": "Leave the child alone with dry biscuits for 3 hours"
+    },
+    "correctAnswer": "B",
+    "explanation": "The appetite test determines if a child with SAM has medical complications. A child who passes the appetite test (eagerly eats RUTF) can be managed at home (OTP). A child who fails the test (refuses or eats very little) has a severe metabolic complication and must be admitted to an inpatient stabilization center.",
+    "topic": "Nutrition",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "When counseling a client on family planning, what does each letter of the 'GATHER' counseling model represent?",
+    "options": {
+      "A": "Give, Ask, Take, Help, Evaluate, Refer",
+      "B": "Greet the client, Ask about needs, Tell them about options, Help them choose, Explain how to use, Return for follow-up",
+      "C": "Gather family, Argue choices, Test client, Have dinner, End meeting, Report",
+      "D": "Greet, Assess, Treat, Heal, Educate, Record"
+    },
+    "correctAnswer": "B",
+    "explanation": "The GATHER model is a step-by-step communication framework. Greet: build rapport. Ask: understand needs. Tell: explain methods. Help: assist in decision making. Explain: teach correct usage. Return: schedule follow-up.",
+    "topic": "Family Planning",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "When filling out the IDSR case reporting form (IDSR 002) for a suspected measles case, which details are mandatory to document?",
+    "options": {
+      "A": "Patient's political party, school grade, and father's occupation",
+      "B": "Patient's name, age, sex, address, date of onset of symptoms, immunization status, date of reporting, and clinical signs",
+      "C": "Patient's height, weight, and blood group",
+      "D": "The hospital budget code and cost of drugs"
+    },
+    "correctAnswer": "B",
+    "explanation": "IDSR form 002 captures epidemiological data necessary to track outbreaks: patient identification, geographic location (to identify clusters), date of onset (to build epidemic curves), and vaccination history (to evaluate program efficacy).",
+    "topic": "Disease Surveillance",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "What is the correct procedure for administering Oral Polio Vaccine (OPV) to a child?",
+    "options": {
+      "A": "Inject 0.5 ml into the child's upper arm muscle",
+      "B": "Mix vaccine with water and ask the child to drink it from a cup",
+      "C": "Gently squeeze the child's cheeks to open their mouth, tilt their head back slightly, hold the dropper vertically above the mouth without touching the lips, squeeze exactly 2 drops onto the tongue, and ensure it is swallowed",
+      "D": "Apply the vaccine drops directly onto the child's gums using a cotton swab"
+    },
+    "correctAnswer": "C",
+    "explanation": "OPV is given as 2 oral drops. The dropper must never touch the child's mouth or saliva, as this contaminates the vial. Squeezing the cheeks and tilting the head ensures the vaccine drops land on the tongue and are swallowed.",
+    "topic": "Immunization",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "How should vaccines be arranged inside a top-opening vaccine refrigerator (SDD or ice-lined refrigerator) to protect them from damage?",
+    "options": {
+      "A": "Store all vaccines mixed together at the bottom of the refrigerator",
+      "B": "Place heat-sensitive vaccines (OPV, Measles) on top or near the coldest sections; place freeze-sensitive vaccines (Pentavalent, PCV, IPV, Td) in the baskets away from the bottom or evaporator walls to prevent freezing",
+      "C": "Keep freeze-sensitive vaccines frozen at the bottom and let OPV remain on the shelves",
+      "D": "Remove all vaccines from their cardboard packaging and stack them directly against the cooling plate"
+    },
+    "correctAnswer": "B",
+    "explanation": "Top-opening refrigerators have colder temperatures near the bottom and walls. Freeze-sensitive vaccines will freeze and be destroyed if placed in contact with these cold zones. They must be stored in baskets, keeping OPV and Measles in the colder parts since they withstand freezing.",
+    "topic": "Cold Chain Management",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "What is the correct practical first aid response for a patient experiencing a nosebleed (epistaxis)?",
+    "options": {
+      "A": "Have the patient lie flat on their back and blow their nose forcefully",
+      "B": "Have the patient sit up, lean forward slightly, pinch the soft lower part of the nose for 10 minutes, breathe through the mouth, and apply a cold compress to the forehead",
+      "C": "Tilt the patient's head far back and stuff dry cotton wool deep into both nostrils",
+      "D": "Instruct the patient to drink hot tea immediately to stop the bleeding"
+    },
+    "correctAnswer": "B",
+    "explanation": "Leaning forward prevents blood from draining down the throat, which can cause gagging, vomiting, or airway irritation. Pinching the soft part of the nose applies direct pressure to the Kiesselbach's plexus (the primary bleeding site on the nasal septum).",
+    "topic": "First Aid",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "What is the correct clinical procedure for checking a child for bilateral pitting pedal edema?",
+    "options": {
+      "A": "Pinch the skin on the child's abdomen and count the retraction time",
+      "B": "Press your thumbs gently on the tops of both feet for at least 3 seconds, release, and check if a visible indentation (pit) remains in both feet",
+      "C": "Measure the ankle circumference with a MUAC tape",
+      "D": "Lift the child's legs above their head for 1 minute and look for redness"
+    },
+    "correctAnswer": "B",
+    "explanation": "Pitting pedal edema is a cardinal sign of kwashiorkor. It must be bilateral (present in both feet). Pressing the thumb on the dorsum of the foot for 3 seconds expresses interstitial fluid; if a pit remains after thumb release, edema is positive.",
+    "topic": "Nutrition",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "Which of the following clinical findings indicates that an adult patient is entering hypovolemic shock?",
+    "options": {
+      "A": "A slow strong pulse, warm pink skin, and high blood pressure",
+      "B": "A rapid and weak (thready) pulse, cold clammy skin, fast breathing, low blood pressure, and confusion or lethargy",
+      "C": "High fever, shivering, and a skin rash",
+      "D": "Severe headache, stiffness of the neck, and vomiting"
+    },
+    "correctAnswer": "B",
+    "explanation": "Shock is systemic hypoperfusion. The body compensates for low volume by constricting blood vessels (cold, clammy skin) and increasing heart rate (tachycardia, but weak/thready due to low volume). Hypotension occurs when compensatory mechanisms fail, leading to brain hypoxia (confusion/lethargy).",
+    "topic": "Vital Signs",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "How should you prepare and administer a 20 mg Zinc sulfate tablet for a 4-month-old infant with diarrhea?",
+    "options": {
+      "A": "Give the infant a whole tablet to swallow dry",
+      "B": "Dissolve half a tablet (10 mg) in a teaspoon of clean water or breast milk, administer it daily for 10-14 days, and instruct the mother to give the full dose even if diarrhea stops",
+      "C": "Dissolve 2 tablets in a bottle of formula and feed it over 24 hours",
+      "D": "Crush the tablet and mix it in a large bowl of solid food"
+    },
+    "correctAnswer": "B",
+    "explanation": "Infants under 6 months require 10 mg of Zinc daily, while children 6-59 months require 20 mg (1 whole tablet). Dissolving the soluble tablet in a small amount of liquid (breast milk/water) ensures the infant can swallow it easily without choking. The course must be completed (10-14 days) to build mucosal immunity.",
+    "topic": "Child Health",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "What is the correct procedure for administering a Vitamin A capsule to a 9-month-old child?",
+    "options": {
+      "A": "Place the whole capsule in the child's mouth and ask them to chew it",
+      "B": "Wash hands, cut the nipple of a 100,000 IU blue capsule with clean scissors, squeeze the liquid contents directly into the child's mouth, and dispose of the empty gelatin shell",
+      "C": "Dissolve the capsule in hot milk and feed it using a spoon",
+      "D": "Rub the liquid onto the child's chest and neck"
+    },
+    "correctAnswer": "B",
+    "explanation": "Young children cannot swallow gelatin capsules and are at high risk of choking. The correct method is to cut the capsule tip (using scissors or a clean blade) and squeeze the oil droplet directly onto the tongue. Squeezing ensures the full dose is given; the shell is discarded.",
+    "topic": "Nutrition",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "How should you instruct a client to check for the presence of their Intrauterine Contraceptive Device (IUCD) strings at home?",
+    "options": {
+      "A": "Perform a pregnancy test monthly",
+      "B": "Wash hands, squat, insert the middle finger into the vagina until reaching the cervix, and feel for the thin nylon strings protruding from the cervical opening, without pulling them",
+      "C": "Pull hard on any vaginal thread they find to see if it is loose",
+      "D": "Examine the abdomen under a bright light for any marks"
+    },
+    "correctAnswer": "B",
+    "explanation": "IUCD strings hang slightly from the cervix. Clients should check strings monthly (after menstruation) to ensure the device is in place. If strings are missing, too long, or the plastic tip of the IUD is felt, the device may have dislodged, requiring clinic follow-up.",
+    "topic": "Family Planning",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "When performing CPR on an infant (under 1 year) by a single rescuer, what is the correct compression technique?",
+    "options": {
+      "A": "Use the heel of one hand on the center of the chest, compressing 2 inches deep",
+      "B": "Place two fingers on the breastbone just below the nipple line, and compress the chest by about 1.5 inches (4 cm) at a rate of 100-120 compressions per minute",
+      "C": "Use both hands to press heavily on the ribs",
+      "D": "Compress the stomach region using the palm"
+    },
+    "correctAnswer": "B",
+    "explanation": "An infant's chest is fragile. Single rescuers should use the two-finger technique (middle and ring finger) on the lower half of the breastbone. For two rescuers, the two thumb-encircling hands technique is preferred. Compression depth is 1/3 of the chest depth (approx 1.5 inches).",
+    "topic": "First Aid",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "How do you demonstrate Solar Water Disinfection (SODIS) to household members during a home visit?",
+    "options": {
+      "A": "Fill a black metal pot with dirty water and leave it under a tree for 1 hour",
+      "B": "Fill a clean, transparent plastic PET bottle with water, shake it to oxygenate, seal it, place it horizontally on a dark metal sheet in direct sunlight for at least 6 hours (or 2 days if cloudy), and drink from it directly",
+      "C": "Hang a glass bottle of water from a roof during a rainy day",
+      "D": "Boil water in a transparent bottle over a fire"
+    },
+    "correctAnswer": "B",
+    "explanation": "SODIS uses solar UV-A radiation and heat to destroy pathogens (bacteria, viruses, parasites) in water. Clear PET bottles let UV rays pass. Shaking oxygenates the water, which helps UV rays produce reactive oxygen species that kill microbes. Placing it on a metal roof/sheet increases temperature.",
+    "topic": "Environmental Health",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "What is the correct current guidelines for care of the newborn's umbilical cord stump immediately after delivery?",
+    "options": {
+      "A": "Apply toothpaste, cow dung, or ash to the cord to dry it quickly",
+      "B": "Apply 4% Chlorhexidine gel (delivering 7.1% Chlorhexidine digluconate) to the cord stump daily for the first week, and keep the cord clean, dry, and outside the diaper",
+      "C": "Tie a tight bandage over the umbilicus and leave it for 2 weeks without cleaning",
+      "D": "Wash the cord stump with soap and water three times a day"
+    },
+    "correctAnswer": "B",
+    "explanation": "In low-resource settings, WHO and national guidelines recommend applying 4% chlorhexidine gel to the umbilical cord stump daily to prevent neonatal sepsis and cord infections (omphalitis). Traditional applications (dung, ash, oil) contain pathogens and must be avoided.",
+    "topic": "Maternal Health",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "When giving a health talk to mothers at an infant welfare clinic, how should you effectively handle and present a health education flipchart?",
+    "options": {
+      "A": "Place the flipchart on the floor and stand behind the mothers",
+      "B": "Hold the flipchart at chest level facing the mothers, make eye contact, speak clearly in the local language, use the illustrations on the front to explain points, and use the text on the back as a guide",
+      "C": "Read the text on the flipchart word-for-word without looking at the audience",
+      "D": "Pass the flipchart around the room for the mothers to read themselves while you leave"
+    },
+    "correctAnswer": "B",
+    "explanation": "Visual aids are tools to support communication, not replace it. Holding the chart at chest level keeps it visible. Facing the audience maintains connection and enables checking for understanding. Flipcharts usually have pictures on the client's side and reference text on the worker's side.",
+    "topic": "Health Education",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "text": "When using a Pinard stethoscope to listen to the Fetal Heart Rate (FHR), what is the correct procedure to ensure you are not counting the maternal heart rate?",
+    "options": {
+      "A": "Ask the mother to hold her breath while you listen to the abdomen",
+      "B": "Palpate the mother's radial pulse at the wrist with your hand while simultaneously listening to the fetal heart tones through the Pinard stethoscope; if the rates are different, you are hearing the fetus",
+      "C": "Count the FHR for 5 seconds and multiply by 12",
+      "D": "Place the Pinard stethoscope over the mother's chest first to calibrate"
+    },
+    "correctAnswer": "B",
+    "explanation": "Fetal heart rate is usually faster (110-160 bpm) than maternal heart rate (60-100 bpm). However, maternal tachycardia can occur. Simultaneously feeling the maternal radial pulse ensures that the rhythm you hear through the Pinard stethoscope is independent and belongs to the fetus.",
+    "topic": "Maternal Health",
+    "difficulty": "HARD"
+  }
+]

@@ -1,0 +1,562 @@
+[
+  {
+    "certificationSlug": "chew-objective",
+    "text": "In which year was the historic Alma-Ata Declaration on Primary Health Care (PHC) adopted?",
+    "options": {
+      "A": "1978",
+      "B": "1988",
+      "C": "1998",
+      "D": "2008"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Alma-Ata Declaration was adopted at the International Conference on Primary Health Care in Alma-Ata, Kazakhstan, in September 1978. It identified Primary Health Care as the key to attaining the goal of Health for All.",
+    "topic": "Primary Healthcare",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "What is the recommended duration for exclusive breastfeeding of an infant?",
+    "options": {
+      "A": "First 3 months",
+      "B": "First 6 months",
+      "C": "First 9 months",
+      "D": "First 12 months"
+    },
+    "correctAnswer": "B",
+    "explanation": "The World Health Organization (WHO) and UNICEF recommend exclusive breastfeeding for the first 6 months of life to achieve optimal growth, development, and health. Thereafter, infants should receive nutritionally adequate and safe complementary foods while continuing to breastfeed up to 2 years or beyond.",
+    "topic": "Maternal and Child Health",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "Which route is used to administer the Bacillus Calmette-Guérin (BCG) vaccine?",
+    "options": {
+      "A": "Intramuscular (IM)",
+      "B": "Subcutaneous (SC)",
+      "C": "Intradermal (ID)",
+      "D": "Oral"
+    },
+    "correctAnswer": "C",
+    "explanation": "The BCG vaccine, which protects against tuberculosis, is administered via the intradermal (ID) route, typically in the upper left arm, to ensure a localized cellular immune response.",
+    "topic": "Immunization",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "At the health facility level, what is the standard temperature range for storing routine vaccines in a vaccine refrigerator?",
+    "options": {
+      "A": "-5°C to 0°C",
+      "B": "+2°C to +8°C",
+      "C": "+10°C to +15°C",
+      "D": "-15°C to -25°C"
+    },
+    "correctAnswer": "B",
+    "explanation": "Routine vaccines at the health facility level must be stored in a vaccine refrigerator within a temperature range of +2°C to +8°C to maintain their potency without freezing freeze-sensitive vaccines.",
+    "topic": "Cold Chain Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "What does the acronym MUAC stand for in the context of child nutrition assessment?",
+    "options": {
+      "A": "Mid-Upper Arm Circumference",
+      "B": "Mean Upper Arm Caliper",
+      "C": "Muscle Under-nutrition Assessment Chart",
+      "D": "Maternal-Infant Under-nutrition Advisory Committee"
+    },
+    "correctAnswer": "A",
+    "explanation": "MUAC stands for Mid-Upper Arm Circumference. It is a rapid, simple, and reliable tool used to assess muscle wasting and screen for acute malnutrition in children aged 6 to 59 months.",
+    "topic": "Child Health",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "Which of the following is recommended as the first-line treatment for uncomplicated Plasmodium falciparum malaria in West Africa?",
+    "options": {
+      "A": "Chloroquine",
+      "B": "Sulfadoxine-Pyrimethamine (SP)",
+      "C": "Artemisinin-based Combination Therapy (ACT)",
+      "D": "Quinine injection"
+    },
+    "correctAnswer": "C",
+    "explanation": "Due to widespread resistance to chloroquine, Artemisinin-based Combination Therapy (ACT), such as Artemether-Lumefantrine or Artesunate-Amodiaquine, is the global first-line standard for treating uncomplicated Plasmodium falciparum malaria.",
+    "topic": "Malaria Management",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "Under the Alma-Ata Declaration, which of the following is considered a core component of Primary Health Care (PHC)?",
+    "options": {
+      "A": "Provision of advanced tertiary neurosurgery",
+      "B": "Immunization against major infectious diseases",
+      "C": "Establishment of private medical research institutes",
+      "D": "Importation of expensive diagnostic imaging technologies"
+    },
+    "correctAnswer": "B",
+    "explanation": "The Alma-Ata declaration lists immunization against major infectious diseases, maternal and child health care, promotion of food supply and proper nutrition, safe water supply, and basic sanitation as core components of PHC.",
+    "topic": "Primary Healthcare",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "According to the updated 2016 WHO antenatal care model, how many maternal health contacts are recommended during a normal pregnancy?",
+    "options": {
+      "A": "At least 4 contacts",
+      "B": "At least 6 contacts",
+      "C": "At least 8 contacts",
+      "D": "At least 12 contacts"
+    },
+    "correctAnswer": "C",
+    "explanation": "The WHO 2016 antenatal care model recommends a minimum of 8 contacts (previously 4 visits in the focused ANC model) to reduce perinatal mortality and improve women's experience of care.",
+    "topic": "Maternal Health",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "Which organ system is primarily targeted and damaged by the Rabies virus?",
+    "options": {
+      "A": "Cardiovascular system",
+      "B": "Central nervous system",
+      "C": "Gastrointestinal tract",
+      "D": "Respiratory system"
+    },
+    "correctAnswer": "B",
+    "explanation": "Rabies is a neurotropic virus that enters the peripheral nervous system and travels to the central nervous system (brain and spinal cord), causing acute encephalitis, which is almost fatal once symptoms appear.",
+    "topic": "Communicable Diseases",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "What is the causative organism of pulmonary tuberculosis?",
+    "options": {
+      "A": "Streptococcus pneumoniae",
+      "B": "Mycobacterium tuberculosis",
+      "C": "Bordetella pertussis",
+      "D": "Haemophilus influenzae"
+    },
+    "correctAnswer": "B",
+    "explanation": "Tuberculosis is caused by the bacterium Mycobacterium tuberculosis, an acid-fast bacillus primarily transmitted via airborne droplets from individuals with active pulmonary TB.",
+    "topic": "Communicable Diseases",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "Through which route is the Rotavirus vaccine administered to infants?",
+    "options": {
+      "A": "Subcutaneous injection",
+      "B": "Intramuscular injection",
+      "C": "Oral drops",
+      "D": "Intradermal injection"
+    },
+    "correctAnswer": "C",
+    "explanation": "The Rotavirus vaccine, which protects infants against severe dehydrating diarrhea caused by rotavirus, is a live attenuated vaccine administered orally.",
+    "topic": "Immunization",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "What is the primary function of a partograph in labor ward management?",
+    "options": {
+      "A": "To estimate the gestational age of the fetus",
+      "B": "To record the child's immunization status post-delivery",
+      "C": "To monitor the progress of labor and detect prolonged or obstructed labor",
+      "D": "To calculate the maternal nutritional index"
+    },
+    "correctAnswer": "C",
+    "explanation": "A partograph is a graphical tool used to record maternal and fetal vital signs, cervical dilation, and descent of the fetal head during active labor, allowing early identification of prolonged or obstructed labor.",
+    "topic": "Maternal Health",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "What is the normal respiratory rate range for a healthy newborn baby at rest?",
+    "options": {
+      "A": "12 to 20 breaths per minute",
+      "B": "20 to 30 breaths per minute",
+      "C": "30 to 60 breaths per minute",
+      "D": "60 to 90 breaths per minute"
+    },
+    "correctAnswer": "C",
+    "explanation": "A healthy newborn's normal respiratory rate ranges between 30 and 60 breaths per minute. A rate of 60 or more is considered fast breathing (tachypnea) in newborns.",
+    "topic": "Child Health",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "Which mosquito species acts as the primary vector for transmission of the Yellow Fever virus?",
+    "options": {
+      "A": "Anopheles gambiae",
+      "B": "Aedes aegypti",
+      "C": "Culex quinquefasciatus",
+      "D": "Mansonia africana"
+    },
+    "correctAnswer": "B",
+    "explanation": "Yellow fever is transmitted to humans primarily through the bite of infected female mosquitoes of the Aedes aegypti species in urban cycles, and Haemagogus/Sabethes species in jungle cycles.",
+    "topic": "Communicable Diseases",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "To disinfect surfaces contaminated with blood or body fluids during a cholera outbreak, what concentration of chlorine solution is recommended?",
+    "options": {
+      "A": "0.05%",
+      "B": "0.5%",
+      "C": "2.0%",
+      "D": "5.0%"
+    },
+    "correctAnswer": "B",
+    "explanation": "For disinfecting surfaces, beds, toilets, and vomit/excreta spills, a strong chlorine solution of 0.5% is recommended. A milder solution of 0.05% is used for washing bare hands.",
+    "topic": "Environmental Health",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "What does ORS stand for in the management of diarrhea?",
+    "options": {
+      "A": "Oral Rehydration Salts",
+      "B": "Oral Recovery Solution",
+      "C": "Osmotic Rehydration Syrup",
+      "D": "Organized Rehydration System"
+    },
+    "correctAnswer": "A",
+    "explanation": "ORS stands for Oral Rehydration Salts. It is a mixture of dry salts (glucose, sodium chloride, trisodium citrate, and potassium chloride) dissolved in clean water to prevent or treat dehydration caused by diarrhea.",
+    "topic": "Child Health",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "Which vitamin is routinely administered to infants immediately after birth to prevent hemorrhagic disease of the newborn?",
+    "options": {
+      "A": "Vitamin A",
+      "B": "Vitamin D",
+      "C": "Vitamin K",
+      "D": "Vitamin C"
+    },
+    "correctAnswer": "C",
+    "explanation": "Newborns have low levels of Vitamin K, which is essential for blood clotting. Sparing or delayed synthesis can lead to bleeding; hence, a single intramuscular dose of Vitamin K is given at birth to prevent hemorrhagic disease.",
+    "topic": "Maternal and Child Health",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "In family planning, what does the acronym LARC stand for?",
+    "options": {
+      "A": "Late-Acting Reproductive Control",
+      "B": "Long-Acting Reversible Contraception",
+      "C": "Level-A Restricted Contraceptives",
+      "D": "Local Association for Reproductive Care"
+    },
+    "correctAnswer": "B",
+    "explanation": "LARC stands for Long-Acting Reversible Contraception. It includes highly effective family planning methods that last for years (like Intrauterine Devices - IUDs and hormonal implants) and do not require daily or monthly user adherence.",
+    "topic": "Family Planning",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "Which animal is the reservoir host for the virus that causes Lassa fever?",
+    "options": {
+      "A": "Anopheles mosquito",
+      "B": "Mastomys rat (multimammate mouse)",
+      "C": "Fruit bat",
+      "D": "Domestic pig"
+    },
+    "correctAnswer": "B",
+    "explanation": "The multimammate rat (Mastomys natalensis) is the natural reservoir host of Lassa virus. Humans contract the virus through exposure to food or household items contaminated with infected rat urine or feces.",
+    "topic": "Communicable Diseases",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "At what age is the first dose of the Measles vaccine routinely scheduled in the national immunization program of most West African countries?",
+    "options": {
+      "A": "At birth",
+      "B": "6 weeks",
+      "C": "6 months",
+      "D": "9 months"
+    },
+    "correctAnswer": "D",
+    "explanation": "In most developing countries, the first dose of the measles vaccine is administered subcutaneously at 9 months of age, as maternal antibodies decline by this period, leaving the child susceptible.",
+    "topic": "Immunization",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "Which NHMIS tool is utilized by health facility officers to summarize monthly service data before reporting to the Local Government Area (LGA) level?",
+    "options": {
+      "A": "Form 001 (Monthly Summary Form)",
+      "B": "Register 002 (Child Register)",
+      "C": "Referral Card",
+      "D": "Daily Tally Sheet"
+    },
+    "correctAnswer": "A",
+    "explanation": "The National Health Management Information System (NHMIS) Form 001 is the official monthly summary form used at the primary healthcare facility level to compile monthly data across services and report it to the LGA.",
+    "topic": "Health Management Information System",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "According to IMCI guidelines, which clinical sign classifies a child with diarrhea as having severe dehydration?",
+    "options": {
+      "A": "Sunken eyes and drinking eagerly",
+      "B": "Restlessness or irritability",
+      "C": "Skin pinch goes back very slowly (more than 2 seconds)",
+      "D": "Temperature above 38.5°C"
+    },
+    "correctAnswer": "C",
+    "explanation": "Under IMCI, a child is classified with severe dehydration if they have at least two of the following signs: lethargy or unconsciousness, sunken eyes, inability to drink or drinking poorly, or a skin pinch that retracts very slowly (> 2 seconds).",
+    "topic": "Child Health",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "A deficiency of which nutrient is the primary cause of endemic goiter in communities?",
+    "options": {
+      "A": "Vitamin A",
+      "B": "Iron",
+      "C": "Iodine",
+      "D": "Calcium"
+    },
+    "correctAnswer": "C",
+    "explanation": "Goiter (enlargement of the thyroid gland) is primarily caused by dietary iodine deficiency, which impairs the synthesis of thyroid hormones and leads to thyroid gland hypertrophy.",
+    "topic": "Nutrition",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "What is the primary mechanism of action of Combined Oral Contraceptive (COC) pills?",
+    "options": {
+      "A": "Causing localized inflammation in the uterine lining",
+      "B": "Preventing the release of an egg (inhibiting ovulation)",
+      "C": "Creating a physical barrier inside the fallopian tubes",
+      "D": "Killing sperm upon entering the vagina"
+    },
+    "correctAnswer": "B",
+    "explanation": "Combined Oral Contraceptive pills contain estrogen and progestogen, which act on the pituitary gland to suppress the secretion of LH and FSH, thereby preventing ovulation. They also thicken cervical mucus to block sperm.",
+    "topic": "Family Planning",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "Which of the following vaccines is highly freeze-sensitive and must never be exposed to freezing temperatures?",
+    "options": {
+      "A": "Oral Polio Vaccine (OPV)",
+      "B": "Measles vaccine",
+      "C": "Pentavalent vaccine",
+      "D": "BCG vaccine"
+    },
+    "correctAnswer": "C",
+    "explanation": "The Pentavalent vaccine (DPT-HepB-Hib) contains aluminum adjuvant which precipitates and loses potency if frozen. It is highly freeze-sensitive and must be stored between +2°C and +8°C, never in the freezer.",
+    "topic": "Cold Chain Management",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "What is the correct dose of Vitamin A capsule given to an infant aged 6 to 11 months for routine supplementation?",
+    "options": {
+      "A": "50,000 IU (Blue capsule)",
+      "B": "100,000 IU (Blue capsule)",
+      "C": "200,000 IU (Red capsule)",
+      "D": "300,000 IU (Red capsule)"
+    },
+    "correctAnswer": "B",
+    "explanation": "Infants aged 6-11 months should receive a single dose of 100,000 International Units (IU) of Vitamin A (typically a blue capsule), while children aged 12-59 months receive 200,000 IU (red capsule) every 6 months.",
+    "topic": "Nutrition",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "Which of the following diseases is classified as a classic water-borne disease?",
+    "options": {
+      "A": "Tuberculosis",
+      "B": "Cholera",
+      "C": "Measles",
+      "D": "Malaria"
+    },
+    "correctAnswer": "B",
+    "explanation": "Cholera is a water-borne disease caused by ingesting water or food contaminated with the bacterium Vibrio cholerae. Tuberculosis and measles are airborne, and malaria is vector-borne.",
+    "topic": "Environmental Health",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "What is the standard treatment duration for drug-susceptible pulmonary tuberculosis using the DOTS regimen?",
+    "options": {
+      "A": "3 months",
+      "B": "6 months",
+      "C": "9 months",
+      "D": "12 months"
+    },
+    "correctAnswer": "B",
+    "explanation": "Standard short-course chemotherapy for drug-susceptible tuberculosis lasts for 6 months (2 months intensive phase with HRZE, and 4 months continuation phase with HR) under Directly Observed Treatment Short-course (DOTS).",
+    "topic": "Communicable Diseases",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "In obstetrics, what does the term 'parity' represent?",
+    "options": {
+      "A": "The total number of times a woman has been pregnant",
+      "B": "The number of live births currently living",
+      "C": "The number of pregnancies carried to viable gestational age (usually 28 weeks in West Africa)",
+      "D": "The interval in years between consecutive pregnancies"
+    },
+    "correctAnswer": "C",
+    "explanation": "Parity is the number of pregnancies that have reached the age of viability (28 weeks gestation in West Africa, 20-24 weeks in some other regions), regardless of whether the child was born alive or dead.",
+    "topic": "Maternal Health",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "What is the most effective first aid action to control severe external bleeding from a limb wound?",
+    "options": {
+      "A": "Apply a tight tourniquet immediately",
+      "B": "Apply direct pressure onto the wound using a clean dressing",
+      "C": "Pour cold water on the wound to constrict blood vessels",
+      "D": "Apply local herbal paste to promote clotting"
+    },
+    "correctAnswer": "B",
+    "explanation": "Applying firm, direct pressure over the bleeding site using a clean cloth or sterile dressing is the gold standard first-line measure to control bleeding. Tourniquets are reserved for catastrophic hemorrhage when direct pressure fails.",
+    "topic": "First Aid",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "What is considered a normal blood pressure reading for a healthy adult at rest?",
+    "options": {
+      "A": "90/60 mmHg",
+      "B": "115/75 mmHg",
+      "C": "135/85 mmHg",
+      "D": "150/95 mmHg"
+    },
+    "correctAnswer": "B",
+    "explanation": "A blood pressure reading below 120/80 mmHg (e.g. 115/75 mmHg) is classified as normal for a healthy adult at rest. 130-139/80-89 is Stage 1 hypertension.",
+    "topic": "Vital Signs",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "Which vaccine is administered to girls to prevent cervical cancer in later life?",
+    "options": {
+      "A": "Hepatitis B vaccine",
+      "B": "Human Papillomavirus (HPV) vaccine",
+      "C": "MMR vaccine",
+      "D": "Tetanus Toxoid vaccine"
+    },
+    "correctAnswer": "B",
+    "explanation": "The Human Papillomavirus (HPV) vaccine protects against the strains of HPV that cause the majority of cervical cancers. It is ideally administered to girls aged 9-14 years before exposure to the virus.",
+    "topic": "Immunization",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "Which of the following is a key component of Active Management of the Third Stage of Labor (AMTSL)?",
+    "options": {
+      "A": "Routine episiotomy",
+      "B": "Administration of a uterotonic drug (e.g., Oxytocin) within 1 minute of birth",
+      "C": "Immediate manual removal of the placenta",
+      "D": "Encouraging the mother to push forcefully before uterine contraction"
+    },
+    "correctAnswer": "B",
+    "explanation": "AMTSL components include: administration of a uterotonic (Oxytocin is preferred) within one minute of delivery of the baby, controlled cord traction (CCT), and uterine massage after placenta delivery to prevent postpartum hemorrhage.",
+    "topic": "Maternal Health",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "How soon after birth should breastfeeding ideally be initiated in a healthy newborn?",
+    "options": {
+      "A": "Within 1 hour of birth",
+      "B": "Within 6 hours of birth",
+      "C": "After the mother has slept for 12 hours",
+      "D": "Immediately after the first bath"
+    },
+    "correctAnswer": "A",
+    "explanation": "Early initiation of breastfeeding (within the first hour of birth) stimulates breast milk production, promotes uterine contractions to prevent postpartum bleeding, and ensures the baby receives colostrum.",
+    "topic": "Nutrition",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "On a child growth monitoring chart, a horizontal or flat line indicating no weight gain over two consecutive months signifies what?",
+    "options": {
+      "A": "Normal growth stabilization",
+      "B": "Growth faltering (need for urgent nutritional assessment)",
+      "C": "The child is outgrowing the chart scale",
+      "D": "Successful dietary adaptation"
+    },
+    "correctAnswer": "B",
+    "explanation": "A flat or horizontal growth curve means the child did not gain weight. This indicates growth faltering, which is an early sign of malnutrition or underlying illness requiring prompt health assessment and education.",
+    "topic": "Child Health",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "How is tetanus typically transmitted to humans?",
+    "options": {
+      "A": "Inhalation of airborne respiratory droplets",
+      "B": "Bite of an infected female blackfly",
+      "C": "Contamination of cuts or wounds with Clostridium tetani spores",
+      "D": "Ingestion of contaminated dairy products"
+    },
+    "correctAnswer": "C",
+    "explanation": "Tetanus is caused by Clostridium tetani spores entering the body through broken skin, typically via dirty wounds, punctures, burns, or animal bites. It is not transmitted from person to person.",
+    "topic": "Communicable Diseases",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "Which classification of burns is characterized by blisters, severe pain, and destruction of both the epidermis and parts of the dermis?",
+    "options": {
+      "A": "First-degree (Superficial) burn",
+      "B": "Second-degree (Partial thickness) burn",
+      "C": "Third-degree (Full thickness) burn",
+      "D": "Fourth-degree burn"
+    },
+    "correctAnswer": "B",
+    "explanation": "Second-degree burns involve the epidermis and upper layers of the dermis. They present with redness, blisters, swelling, and are highly painful because nerve endings are exposed but intact.",
+    "topic": "First Aid",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "What is the minimum administrative unit that a Community Health Extension Worker (CHEW) is primary designed to oversee and provide services for?",
+    "options": {
+      "A": "A whole State Ministry of Health",
+      "B": "A Tertiary teaching hospital",
+      "C": "A political ward (providing community and facility services)",
+      "D": "The national disease control center"
+    },
+    "correctAnswer": "C",
+    "explanation": "CHEWs are trained to work in primary health posts, primary health clinics, and comprehensive health centers, providing services directly at the political ward level (including household and facility-based care).",
+    "topic": "Primary Healthcare",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "Which family planning method is classified as a barrier method that also offers dual protection against STIs and pregnancy?",
+    "options": {
+      "A": "Intrauterine Device (IUD)",
+      "B": "Progestogen-only Implant",
+      "C": "Male Condom",
+      "D": "Injectable Depo-Provera"
+    },
+    "correctAnswer": "C",
+    "explanation": "Male and female condoms are barrier contraceptive methods that prevent contact with semen and vaginal fluids, thus offering 'dual protection' against both unplanned pregnancy and sexually transmitted infections (including HIV).",
+    "topic": "Family Planning",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "text": "What is the primary medication regimen used to prevent Mother-to-Child Transmission (PMTCT) of HIV during labor and delivery?",
+    "options": {
+      "A": "Broad-spectrum antibiotics",
+      "B": "Antiretroviral therapy (ART) for the mother and post-exposure prophylaxis for the baby",
+      "C": "High-dose Vitamin A therapy",
+      "D": "Antimalarial chemoprophylaxis"
+    },
+    "correctAnswer": "B",
+    "explanation": "PMTCT involves placing the HIV-positive pregnant mother on lifelong Antiretroviral Therapy (ART) to suppress viral load, and administering prophylactic antiretroviral syrups (like Nevirapine) to the baby after birth.",
+    "topic": "Communicable Diseases",
+    "difficulty": "MEDIUM"
+  }
+]

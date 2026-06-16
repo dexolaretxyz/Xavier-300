@@ -28,6 +28,7 @@ async function main() {
     { name: 'DevOps', slug: 'devops', description: 'CI/CD, Docker, Kubernetes, and cloud deployments', priority: 3, iconMark: 'infinity' },
     { name: 'Full Stack Web Dev', slug: 'fullstack', description: 'HTML5, CSS, React, Node.js, and web security', priority: 2, iconMark: 'code' },
     { name: 'Project Management', slug: 'project-management', description: 'Project lifecycle, Agile/Waterfall, and PMP/CAPM', priority: 1, iconMark: 'kanban' },
+    { name: 'Nigerian Professional Exams', slug: 'nigerian-professional-exams', description: 'Nigerian national professional qualifying examinations for healthcare and other regulated professions', priority: 1, iconMark: 'shield-check' }
   ];
 
   for (const dom of domains) {
@@ -47,6 +48,9 @@ async function main() {
     { slug: 'devops', domainSlug: 'devops', name: 'DevOps (AWS/Azure DevOps)', description: 'CI/CD, containers, and orchestration practice exam', difficulty: Difficulty.HARD },
     { slug: 'fullstack', domainSlug: 'fullstack', name: 'Full Stack Web Development (Meta/AWS)', description: 'Mock exam covering frontend, backend, and web security', difficulty: Difficulty.MEDIUM },
     { slug: 'project-management', domainSlug: 'project-management', name: 'Project Management (PMP/CAPM)', description: 'Practice exam covering PMBOK and Agile frameworks', difficulty: Difficulty.HARD },
+    { slug: 'chew-objective', domainSlug: 'nigerian-professional-exams', name: 'CHEW Qualifying Exam — Objective', description: 'Community Health Extension Worker National Professional Qualifying Examination — Objective (Multiple Choice) Section', difficulty: Difficulty.MEDIUM },
+    { slug: 'chew-theory', domainSlug: 'nigerian-professional-exams', name: 'CHEW Qualifying Exam — Theory', description: 'Community Health Extension Worker National Professional Qualifying Examination — Theory Section Practice', difficulty: Difficulty.MEDIUM },
+    { slug: 'chew-practical', domainSlug: 'nigerian-professional-exams', name: 'CHEW Qualifying Exam — Practical', description: 'Community Health Extension Worker National Professional Qualifying Examination — Practical Session Practice', difficulty: Difficulty.HARD }
   ];
 
   for (const cert of certifications) {

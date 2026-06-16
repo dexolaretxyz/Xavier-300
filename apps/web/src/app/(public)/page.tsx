@@ -26,6 +26,7 @@ export default function LandingPage() {
     { name: "Full Stack Web Dev", count: 14, icon: <Code2 size={32} />, slug: "fullstack" },
     { name: "Project Management", count: 7, icon: <GanttChartSquare size={32} />, slug: "project-management" },
     { name: "Microsoft Power BI", count: 6, icon: <PieChart size={32} />, slug: "power-bi" },
+    { name: "Nigerian Professional Exams", count: 3, icon: <ShieldCheck size={32} />, slug: "nigerian-professional-exams", description: "CHEW & Healthcare Qualifying Exams" },
   ];
 
   const steps = [
@@ -108,6 +109,11 @@ export default function LandingPage() {
                   <h3 className="font-ui font-semibold text-lg text-[var(--text-primary)] uppercase tracking-wide mb-2">
                     {domain.name}
                   </h3>
+                  {domain.description && (
+                    <p className="font-ui text-sm text-[var(--text-secondary)] mb-4">
+                      {domain.description}
+                    </p>
+                  )}
                   <p className="font-ui text-sm text-[var(--text-muted)] mt-auto">
                     {domain.count} Certifications
                   </p>
