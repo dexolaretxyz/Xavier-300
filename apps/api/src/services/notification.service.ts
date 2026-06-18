@@ -1,5 +1,5 @@
 import webpush from 'web-push';
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 import prisma from '../lib/db';
 import { Prisma } from '@prisma/client';
 
@@ -22,18 +22,22 @@ const initWebPush = () => {
 
 const isPushConfigured = initWebPush();
 
-let resendClient: any = null;
+function createTransporter() {
+  const gmailUser = process.env.GMAIL_USER;
+  const gmailPass = process.env.GMAIL_APP_PASSWORD;
 
-function getResendClient() {
-  if (!resendClient) {
-    const apiKey = process.env.RESEND_API_KEY;
-    if (!apiKey) {
-      console.warn('RESEND_API_KEY not set - email notifications disabled');
-      return null;
-    }
-    resendClient = new Resend(apiKey);
+  if (!gmailUser || !gmailPass) {
+    console.warn('[EMAIL] GMAIL_USER or GMAIL_APP_PASSWORD not set — emails will not be sent.');
+    return null;
   }
-  return resendClient;
+
+  return nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: gmailUser,
+      pass: gmailPass,
+    },
+  });
 }
 
 export const notificationService = {
@@ -85,28 +89,37 @@ export const notificationService = {
    */
   async sendEmailNotification(email: string, subject: string, content: string) {
     try {
-      const client = getResendClient();
-      if (!client) {
+      const transporter = createTransporter();
+      const fromEmail = process.env.GMAIL_USER || 'no-reply@xavier300';
+      if (!transporter) {
         console.log(`[MOCK EMAIL to ${email}] ${subject}: ${content}`);
         return true;
       }
 
-      await client.emails.send({
-        from: process.env.EMAIL_FROM || 'noreply@xavier300.com.ng',
+      await transporter.sendMail({
+        from: `Xavier 300 <${fromEmail}>`,
         to: email,
         subject: subject,
         html: `
-          <div style="font-family: sans-serif; max-w: 600px; margin: 0 auto;">
-            <h2>${subject}</h2>
-            <p>${content}</p>
-            <br/>
-            <p>Best regards,<br/>The Xavier 300 Team</p>
+          <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden;">
+            <div style="background: #1a1a18; padding: 24px; text-align: center; color: white;">
+              <h2 style="margin: 0; font-size: 20px;">${subject}</h2>
+            </div>
+            <div style="padding: 24px;">
+              <p>${content}</p>
+              <br/>
+              <p>Best regards,<br/>The Xavier 300 Team</p>
+            </div>
+            <div style="background: #f9fafb; padding: 12px; text-align: center; border-top: 1px solid #e5e7eb; font-size: 12px; color: #9ca3af;">
+              © ${new Date().getFullYear()} Xavier 300. All rights reserved.
+            </div>
           </div>
         `
       });
+      console.log(`[EMAIL OK] Notification sent to ${email}`);
       return true;
-    } catch (error) {
-      console.error('Error sending fallback email:', error);
+    } catch (error: any) {
+      console.error('[EMAIL ERROR] Failed to send fallback email:', error?.message || error);
       return false;
     }
   },
