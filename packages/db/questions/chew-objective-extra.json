@@ -1,0 +1,902 @@
+[
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the definition of 'incidence rate' in epidemiology?",
+    "options": {
+      "A": "The total number of existing cases of a disease in a population at a specific point in time.",
+      "B": "The number of new cases of a disease that develop in a population during a specified period of time.",
+      "C": "The percentage of deaths among all diagnosed cases of a disease.",
+      "D": "The speed at which a disease spreads through airborne droplets."
+    },
+    "correctAnswer": "B",
+    "explanation": "Incidence rate measures the rate at which new cases of a disease occur in a population over a given period, whereas prevalence measures existing cases (both new and old).",
+    "topic": "Epidemiology and disease control",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following best describes the epidemiological triad?",
+    "options": {
+      "A": "Host, Agent, and Environment.",
+      "B": "Doctor, Nurse, and Patient.",
+      "C": "Prevention, Treatment, and Rehabilitation.",
+      "D": "Incidence, Prevalence, and Mortality."
+    },
+    "correctAnswer": "A",
+    "explanation": "The epidemiological triad consists of the host (the organism hosting the disease), the agent (the cause of the disease), and the environment (external factors that allow transmission).",
+    "topic": "Epidemiology and disease control",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "In epidemiological surveillance, what is a 'passive surveillance system'?",
+    "options": {
+      "A": "A system where health authorities actively visit communities to search for cases.",
+      "B": "A system where health facilities routinely report disease data to higher levels based on standard case definitions.",
+      "C": "A system that only tracks diseases when patients die.",
+      "D": "A system that uses satellite imaging to track vector breeding sites."
+    },
+    "correctAnswer": "B",
+    "explanation": "Passive surveillance relies on health workers at facilities sending regular reports of cases to central databases without active prompts or field searches by epidemiologists.",
+    "topic": "Epidemiology and disease control",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the primary purpose of quarantine in communicable disease control?",
+    "options": {
+      "A": "To treat infected individuals in isolation.",
+      "B": "To restrict the movement of healthy persons who have been exposed to a communicable disease to see if they become ill.",
+      "C": "To vaccinate a community during an active outbreak.",
+      "D": "To sanitize public areas using chemical disinfectants."
+    },
+    "correctAnswer": "B",
+    "explanation": "Quarantine is for restricting the movement of asymptomatic individuals who were exposed to an infectious agent to see if they develop the disease. Isolation is for individuals who are already sick.",
+    "topic": "Epidemiology and disease control",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following is an example of primary prevention of a disease?",
+    "options": {
+      "A": "Administering insulin to a diabetic patient to prevent complications.",
+      "B": "Screening women for cervical cancer using visual inspection with acetic acid (VIA).",
+      "C": "Vaccinating a child with the Pentavalent vaccine to prevent diphtheria, pertussis, tetanus, Hep B, and Hib.",
+      "D": "Providing physical therapy to a patient recovering from a stroke."
+    },
+    "correctAnswer": "C",
+    "explanation": "Primary prevention aims to prevent disease or injury before it occurs, such as through immunization. Secondary prevention involves screening and early detection, while tertiary prevention focuses on rehabilitation and managing complications.",
+    "topic": "Epidemiology and disease control",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is a 'fomite' in the context of infectious disease transmission?",
+    "options": {
+      "A": "An insect vector that carries a pathogen in its salivary glands.",
+      "B": "An inanimate object or surface that can become contaminated with pathogens and transmit them to a new host.",
+      "C": "A person who carries a pathogen without showing any symptoms of illness.",
+      "D": "The genetic material of a virus that allows it to replicate."
+    },
+    "correctAnswer": "B",
+    "explanation": "Fomites are non-living objects (like doorknobs, bedding, or medical instruments) that can transfer pathogens from one person to another.",
+    "topic": "Epidemiology and disease control",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the primary tool used by community health workers to record daily outpatient consultations at a primary health care clinic?",
+    "options": {
+      "A": "The NHMIS Daily Outpatient Register (MSF 007).",
+      "B": "The Ward Development Committee Minute Book.",
+      "C": "The Referral Slip Booklet.",
+      "D": "The Vaccine Inventory Ledger."
+    },
+    "correctAnswer": "A",
+    "explanation": "The National Health Management Information System (NHMIS) Daily Outpatient Register is the standard tool in primary health care facilities for recording patient consultation details on a daily basis.",
+    "topic": "Health statistics and data collection",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What does 'crude birth rate' measure?",
+    "options": {
+      "A": "The number of live births per 1,000 women of childbearing age in a year.",
+      "B": "The number of live births per 1,000 population in a given year.",
+      "C": "The average number of children a woman will have in her lifetime.",
+      "D": "The total number of births including stillbirths divided by the number of marriages."
+    },
+    "correctAnswer": "B",
+    "explanation": "The crude birth rate is calculated as the number of live births in a year divided by the total mid-year population, multiplied by 1,000.",
+    "topic": "Health statistics and data collection",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "When collecting health data, what is the meaning of 'data completeness'?",
+    "options": {
+      "A": "Ensuring all required data fields in a register or report are filled in with no missing values.",
+      "B": "Making sure the data is submitted on or before the monthly deadline.",
+      "C": "Ensuring that the data collected matches the exact clinical diagnosis.",
+      "D": "Collecting data from every single household in the country."
+    },
+    "correctAnswer": "A",
+    "explanation": "Data completeness refers to the extent to which all expected data points are recorded and available, meaning there are no blank spaces or missing variables in reports.",
+    "topic": "Health statistics and data collection",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "In health statistics, what does the 'case fatality rate' (CFR) indicate?",
+    "options": {
+      "A": "The proportion of a population that dies from a specific disease over a year.",
+      "B": "The proportion of people diagnosed with a specific disease who die from that disease.",
+      "C": "The number of deaths in a hospital divided by the number of doctors.",
+      "D": "The total number of deaths from all causes in a population."
+    },
+    "correctAnswer": "B",
+    "explanation": "The case fatality rate measures the severity of a disease by calculating the percentage of individuals diagnosed with a specific disease who die from it.",
+    "topic": "Health statistics and data collection",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which statistical measure represents the middle value in a distribution of patient ages when arranged in order?",
+    "options": {
+      "A": "Mean.",
+      "B": "Median.",
+      "C": "Mode.",
+      "D": "Range."
+    },
+    "correctAnswer": "B",
+    "explanation": "The median is the middle value in a sorted list of numbers, dividing the dataset into two equal halves.",
+    "topic": "Health statistics and data collection",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Why is it critical to submit monthly NHMIS reports by the designated deadline (usually the 14th of the following month)?",
+    "options": {
+      "A": "To avoid paying personal fines to the local government health department.",
+      "B": "To ensure timely data aggregation at LGA, State, and National levels for prompt health planning and outbreak response.",
+      "C": "To allow the health facility to close early for the rest of the month.",
+      "D": "To prove that the health clinic is generating a profit from drugs."
+    },
+    "correctAnswer": "B",
+    "explanation": "Timely submission of data is essential for active health surveillance, resource planning, and detecting disease trends or outbreaks before they spread.",
+    "topic": "Health statistics and data collection",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following is a key reason for integrating traditional medicine practices with primary healthcare?",
+    "options": {
+      "A": "To phase out modern pharmaceutical drugs entirely in rural areas.",
+      "B": "To utilize culturally acceptable and accessible community resources to improve health coverage while ensuring safety.",
+      "C": "To license traditional healers to perform major surgical operations at home.",
+      "D": "To increase the sales of imported traditional herbs."
+    },
+    "correctAnswer": "B",
+    "explanation": "Integration aims to build collaboration with traditional medicine practitioners, enabling safe referral pathways, culturally sensitive health education, and harnessing useful traditional knowledge while discouraging harmful practices.",
+    "topic": "Traditional medicine and integration",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the correct attitude of a community health worker when a patient discloses they are taking a traditional herbal mixture for high blood pressure?",
+    "options": {
+      "A": "Verbally abuse the patient and refuse to treat them at the clinic.",
+      "B": "Respectfully listen, explain the potential risks of unregulated mixtures, and advise the patient to prioritize validated medical treatment and monitor their blood pressure closely.",
+      "C": "Recommend that they double the dosage of the herbal mixture to get faster results.",
+      "D": "Report the patient to the local police for using illegal drugs."
+    },
+    "correctAnswer": "B",
+    "explanation": "A health worker must remain professional and empathetic. They should educate the patient on the lack of standardized dosing and potential toxicities of herbal mixtures, emphasizing the importance of standard anti-hypertensive therapy.",
+    "topic": "Traditional medicine and integration",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which traditional birth practice is classified as harmful and must be actively discouraged by health workers?",
+    "options": {
+      "A": "Having a relative present during labor for emotional support.",
+      "B": "Applying warm compresses to the mother's back to ease pain.",
+      "C": "Massaging the abdomen vigorously or applying cow dung to the newborn's umbilical cord stump to dry it.",
+      "D": "Encouraging the mother to walk around during early labor."
+    },
+    "correctAnswer": "C",
+    "explanation": "Applying substances like cow dung, ash, or native oils to the umbilical cord stump is highly harmful as it can introduce Clostridium tetani, leading to fatal neonatal tetanus. Abdominal massage can cause uterine rupture or placental abruption.",
+    "topic": "Traditional medicine and integration",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "How can Traditional Birth Attendants (TBAs) be safely integrated into primary maternal healthcare?",
+    "options": {
+      "A": "By training them to perform episiotomies and forceps deliveries at home.",
+      "B": "By training them to recognize obstetric danger signs early and incentivizing them to refer and accompany pregnant women to health facilities for delivery.",
+      "C": "By allowing them to run labor wards in primary health centers unsupervised.",
+      "D": "By supplying them with obstetric drugs to manage postpartum hemorrhage."
+    },
+    "correctAnswer": "B",
+    "explanation": "Safely integrating TBAs involves shifting their role from conducting deliveries to serving as birth companions, community educators, and promoters of skilled facility-based delivery.",
+    "topic": "Traditional medicine and integration",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is a key challenge associated with unregulated traditional herbal preparations?",
+    "options": {
+      "A": "They are always more expensive than modern drugs.",
+      "B": "The lack of standardized active ingredient concentration, dosage guidelines, and scientific validation of safety.",
+      "C": "They are not allowed to be sold in local markets.",
+      "D": "They only work for children and have no effect on adults."
+    },
+    "correctAnswer": "B",
+    "explanation": "Traditional herbal mixtures often lack quality control, leading to variable concentrations of active components, risk of contamination, and potential toxicity, particularly renal and hepatic failure.",
+    "topic": "Traditional medicine and integration",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "When a patient presents with jaundice, and mentions they took a native root brew for malaria, which organ should the health worker suspect may be damaged by herbal toxicity?",
+    "options": {
+      "A": "Brain.",
+      "B": "Liver.",
+      "C": "Lungs.",
+      "D": "Pancreas."
+    },
+    "correctAnswer": "B",
+    "explanation": "The liver is the primary organ responsible for metabolizing foreign substances (xenobiotics), including herbal toxins. Liver injury can impair bilirubin conjugation and excretion, leading to jaundice.",
+    "topic": "Traditional medicine and integration",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the most common reason for accidental injuries and fractures among elderly patients in the community?",
+    "options": {
+      "A": "Excessive athletic exercise.",
+      "B": "Falls due to poor balance, muscle weakness, visual impairment, or environmental hazards.",
+      "C": "Interpersonal violence in the household.",
+      "D": "Improper use of heavy farm machinery."
+    },
+    "correctAnswer": "B",
+    "explanation": "Falls are a major cause of morbidity and mortality in the elderly. Age-related changes in vision, gait, balance, and reflexes, combined with home hazards (slippery floors, poor lighting), increase fall risk.",
+    "topic": "Geriatric and elderly care in PHC",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following is a typical symptom of dementia in an elderly person?",
+    "options": {
+      "A": "Sudden onset of high fever and productive cough.",
+      "B": "Gradual, progressive loss of memory, confusion, and difficulty performing daily activities.",
+      "C": "Sudden onset of weakness on one side of the body.",
+      "D": "Severe joint pain and swelling in the knees."
+    },
+    "correctAnswer": "B",
+    "explanation": "Dementia is a chronic, progressive syndrome characterized by cognitive decline that interferes with daily functioning, including memory loss, disorientation, and personality changes.",
+    "topic": "Geriatric and elderly care in PHC",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the correct dietary recommendation for an elderly patient with hypertension and osteoarthritis?",
+    "options": {
+      "A": "Increase intake of processed meats and carbonated drinks.",
+      "B": "A diet low in sodium (salt), high in calcium and vitamin D, with plenty of vegetables, fruits, and lean proteins.",
+      "C": "Avoid all liquids after 2 PM to prevent kidney strain.",
+      "D": "Consume high levels of refined sugar to maintain energy levels."
+    },
+    "correctAnswer": "B",
+    "explanation": "Restricting salt helps manage blood pressure. Calcium and Vitamin D support bone density and joint health, which is crucial for managing osteoarthritis and preventing osteoporosis-related fractures.",
+    "topic": "Geriatric and elderly care in PHC",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Why are elderly patients more susceptible to hypothermia in cold weather?",
+    "options": {
+      "A": "They have a higher metabolic rate than younger adults.",
+      "B": "They have reduced subcutaneous fat, impaired shivering response, and decreased vasoconstrictor capacity.",
+      "C": "They sweat more excessively in response to cold.",
+      "D": "They do not feel temperature changes at all."
+    },
+    "correctAnswer": "B",
+    "explanation": "Aging reduces the body's thermoregulatory efficiency. Thinning of the skin and subcutaneous fat layer, reduced muscle mass (less heat generation through shivering), and diminished peripheral blood circulation make it harder for the elderly to conserve heat.",
+    "topic": "Geriatric and elderly care in PHC",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is 'polypharmacy' in geriatric care, and why is it a concern?",
+    "options": {
+      "A": "The practice of buying medicines from multiple pharmacies to compare prices.",
+      "B": "The simultaneous use of multiple medications by a patient, which increases the risk of drug interactions, side effects, and non-compliance.",
+      "C": "The manufacturing of generic drugs specifically for older people.",
+      "D": "Using traditional herbs and modern drugs at the exact same time."
+    },
+    "correctAnswer": "B",
+    "explanation": "Polypharmacy is common in the elderly due to multiple co-morbidities. It poses a high risk because age-related changes in liver and kidney function alter drug metabolism and excretion, increasing drug toxicity risk.",
+    "topic": "Geriatric and elderly care in PHC",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "When assessing an elderly patient who has become socially withdrawn and expresses feelings of worthlessness, what condition should the health worker screen for?",
+    "options": {
+      "A": "Tuberculosis.",
+      "B": "Depression.",
+      "C": "Parkinson's disease.",
+      "D": "Diabetes mellitus."
+    },
+    "correctAnswer": "B",
+    "explanation": "Depression is common but underdiagnosed in the elderly. Symptoms include persistent sadness, social withdrawal, loss of interest in activities, feelings of worthlessness, and sleep disturbances.",
+    "topic": "Geriatric and elderly care in PHC",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the first step in providing Mental Health First Aid to a person who is experiencing a panic attack?",
+    "options": {
+      "A": "Shake them vigorously and tell them to pull themselves together.",
+      "B": "Stay calm, introduce yourself, move them to a quiet space, and encourage them to take slow, deep breaths.",
+      "C": "Give them a sedative injection immediately without authorization.",
+      "D": "Leave them alone in a locked room until they calm down."
+    },
+    "correctAnswer": "B",
+    "explanation": "During a panic attack, the responder should provide a calm, reassuring presence, reduce sensory overload (move to a quiet spot), and guide them through deep breathing exercises to help regulate their nervous system.",
+    "topic": "Mental health first aid",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "If a person in the community expresses plans to end their life, what is the most appropriate immediate action for a health worker?",
+    "options": {
+      "A": "Keep it a secret to avoid embarrassing the person's family.",
+      "B": "Take the threat seriously, do not leave them alone, remove immediate means of self-harm, and arrange for urgent professional mental health assessment.",
+      "C": "Tell them that suicide is a sin and they should pray about it.",
+      "D": "Ignore it, as people who talk about suicide rarely carry it out."
+    },
+    "correctAnswer": "B",
+    "explanation": "Any expression of suicidal intent must be treated as a medical emergency. The primary concern is safety, which requires immediate supervision, securing the environment, and referral to psychiatric or medical care.",
+    "topic": "Mental health first aid",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following is a common physical sign of severe anxiety?",
+    "options": {
+      "A": "Bradycardia (very slow heart rate) and dry skin.",
+      "B": "Rapid heart rate (palpitations), sweating, trembling, and shortness of breath.",
+      "C": "Joint swelling and skin rash.",
+      "D": "High fever and blood in the stool."
+    },
+    "correctAnswer": "B",
+    "explanation": "Severe anxiety triggers the sympathetic nervous system ('fight-or-flight' response), causing physical symptoms like tachycardia, diaphoresis, tremors, hyperventilation, and dizziness.",
+    "topic": "Mental health first aid",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What does the acronym 'ALGEE' stand for in Mental Health First Aid?",
+    "options": {
+      "A": "Assess risk, Listen non-judgmentally, Give reassurance, Encourage professional help, Encourage self-help.",
+      "B": "Administer drugs, Lock door, Give food, Examine body, Exit room.",
+      "C": "Ask name, Locate family, Go to clinic, Exclude visitors, Educate community.",
+      "D": "Analyze mind, Lead groups, Guide therapy, Establish contact, Evacuate."
+    },
+    "correctAnswer": "A",
+    "explanation": "ALGEE is the five-step action plan for Mental Health First Aid: Assess for risk of suicide or harm, Listen non-judgmentally, Give reassurance and information, Encourage appropriate professional help, and Encourage self-help and other support strategies.",
+    "topic": "Mental health first aid",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "When interacting with a person who is actively experiencing auditory hallucinations (hearing voices), what is the best communication approach?",
+    "options": {
+      "A": "Argue with them and prove that the voices are not real.",
+      "B": "Acknowledge that the voices are real to them, but state calmly that you do not hear them, and focus on keeping them safe and grounded.",
+      "C": "Pretend that you can also hear the voices to gain their trust.",
+      "D": "Tell them they are crazy and need to be tied up."
+    },
+    "correctAnswer": "B",
+    "explanation": "Agreeing with the hallucination validates a false reality, while arguing can cause distress and hostility. Acknowledging their experience while presenting your reality calmly helps maintain rapport and safety.",
+    "topic": "Mental health first aid",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the primary goal of psychological first aid (PFA) after a community disaster?",
+    "options": {
+      "A": "To provide deep psychotherapeutic counseling to resolve childhood trauma.",
+      "B": "To deliver basic humane, supportive, and practical assistance to people experiencing acute stress.",
+      "C": "To distribute psychiatric medications to all affected survivors.",
+      "D": "To conduct diagnostic testing for mental illnesses."
+    },
+    "correctAnswer": "B",
+    "explanation": "PFA focuses on practical support: safety, connection to resources, calming, and helping survivors address immediate basic needs in a non-intrusive manner.",
+    "topic": "Mental health first aid",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the definition of 'tolerance' in substance use disorder?",
+    "options": {
+      "A": "The ability to stop using a drug whenever one wants.",
+      "B": "A state where a person requires larger doses of a substance to achieve the same effect that was previously produced by smaller doses.",
+      "C": "The social acceptance of drug users in the community.",
+      "D": "The toxic damage caused to the kidneys by drug accumulation."
+    },
+    "correctAnswer": "B",
+    "explanation": "Tolerance occurs due to neuroadaptation, where the body's response to a drug decreases over time with chronic use, requiring escalating doses to obtain the desired psychoactive effect.",
+    "topic": "Substance abuse awareness",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following is a common physical sign of opioid (e.g., heroin, codeine) overdose?",
+    "options": {
+      "A": "Dilated pupils, rapid heart rate, and high blood pressure.",
+      "B": "Pinpoint (constricted) pupils, slow and shallow breathing (respiratory depression), and loss of consciousness.",
+      "C": "Severe itching, hyperactive behavior, and high fever.",
+      "D": "Profuse sweating, diarrhea, and abdominal cramps."
+    },
+    "correctAnswer": "B",
+    "explanation": "The classic triad of opioid overdose is respiratory depression, pinpoint pupils, and depressed level of consciousness. This is a life-threatening emergency requiring airway support and administration of Naloxone.",
+    "topic": "Substance abuse awareness",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "During alcohol withdrawal, what is 'delirium tremens' (DTs)?",
+    "options": {
+      "A": "A mild hangover that resolves with drinking water.",
+      "B": "A severe, life-threatening manifestation of alcohol withdrawal characterized by confusion, rapid heartbeat, high blood pressure, sweating, and hallucinations.",
+      "C": "The loss of memory regarding events during intoxication.",
+      "D": "A type of chronic liver disease caused by alcohol abuse."
+    },
+    "correctAnswer": "B",
+    "explanation": "Delirium Tremens is a medical emergency that can occur 48-96 hours after cessation of heavy drinking. It is characterized by severe autonomic hyperactivity and altered mental status, carrying a high mortality risk if untreated.",
+    "topic": "Substance abuse awareness",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is a key role of a community health worker in preventing substance abuse among youth?",
+    "options": {
+      "A": "Arresting youth suspected of buying illicit drugs.",
+      "B": "Providing accurate, non-judgmental health education on the risks of drug use, identifying early signs of substance abuse, and facilitating referrals to counseling programs.",
+      "C": "Conducting drug testing on students in school classrooms.",
+      "D": "Restricting youth from participating in community sports."
+    },
+    "correctAnswer": "B",
+    "explanation": "Health workers focus on prevention and early intervention. This includes health education, strengthening coping skills, reducing stigma to encourage self-referral, and helping families access rehabilitation services.",
+    "topic": "Substance abuse awareness",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "How does chronic abuse of cannabis (marijuana) typically affect cognitive function in adolescents?",
+    "options": {
+      "A": "It improves long-term memory and logical reasoning.",
+      "B": "It can impair memory, attention, learning ability, and increase the risk of developing psychotic disorders.",
+      "C": "It has no effect on brain development or function.",
+      "D": "It temporarily increases the intelligence quotient (IQ)."
+    },
+    "correctAnswer": "B",
+    "explanation": "Adolescent brain development is highly sensitive to THC. Chronic use is associated with structural changes in the brain, cognitive deficits, poorer academic performance, and a higher risk of triggering latent schizophrenia or other psychoses.",
+    "topic": "Substance abuse awareness",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following symptoms is a hallmark of physical dependence on a substance?",
+    "options": {
+      "A": "Using the substance only at social gatherings.",
+      "B": "The onset of unpleasant physical symptoms (withdrawal) when the substance use is stopped or reduced.",
+      "C": "The ability to easily control the quantity of substance consumed.",
+      "D": "An increase in physical fitness and stamina."
+    },
+    "correctAnswer": "B",
+    "explanation": "Physical dependence is marked by the occurrence of a specific withdrawal syndrome (e.g., tremors, sweating, nausea, anxiety) when the drug is cleared from the body's tissues.",
+    "topic": "Substance abuse awareness",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the core principle of Community-Based Rehabilitation (CBR) for people with disabilities?",
+    "options": {
+      "A": "Isolating individuals with disabilities in specialized remote institutions.",
+      "B": "Maximizing the integration, equalization of opportunities, and active participation of people with disabilities within their own communities.",
+      "C": "Providing monthly cash payments so they do not have to work.",
+      "D": "Expecting family members to perform all activities of daily living for them."
+    },
+    "correctAnswer": "B",
+    "explanation": "CBR is a strategy within general community development for the rehabilitation, equalization of opportunities, and social inclusion of all people with disabilities, utilizing local community resources.",
+    "topic": "Disability and rehabilitation",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following is a primary prevention measure for congenital physical disabilities?",
+    "options": {
+      "A": "Providing crutches to a child with a limb deformity.",
+      "B": "Ensuring pregnant women receive adequate folic acid supplementation and routine immunizations like Rubella.",
+      "C": "Correcting a clubfoot through orthopedic surgery.",
+      "D": "Enrolling a child with Down syndrome in a special education class."
+    },
+    "correctAnswer": "B",
+    "explanation": "Primary prevention targets the cause of congenital anomalies before they occur. Folic acid prevents neural tube defects (like spina bifida), and rubella vaccination prevents Congenital Rubella Syndrome.",
+    "topic": "Disability and rehabilitation",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the difference between an 'impairment' and a 'disability' under WHO definitions?",
+    "options": {
+      "A": "An impairment is a loss or abnormality of physiological or anatomical structure; a disability is a restriction in performing activities due to that impairment.",
+      "B": "Impairment only affects mental health; disability only affects physical limbs.",
+      "C": "There is no difference; they are clinical synonyms.",
+      "D": "Disability is temporary; impairment is always permanent."
+    },
+    "correctAnswer": "A",
+    "explanation": "Impairment is the biological/anatomical loss (e.g., a severed optic nerve), while disability is the functional limitation in performing activities (e.g., inability to read standard print).",
+    "topic": "Disability and rehabilitation",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "How should a community health worker assist a family with a child who has cerebral palsy?",
+    "options": {
+      "A": "Advise the parents to hide the child at home to avoid community stigma.",
+      "B": "Teach the family simple, daily range-of-motion exercises, encourage inclusive play, and refer the child to physical therapy services.",
+      "C": "Tell the family that the child will never be able to learn anything.",
+      "D": "Prescribe high-dose muscle relaxant injections for the child at home."
+    },
+    "correctAnswer": "B",
+    "explanation": "Cerebral palsy requires supportive and rehabilitative care. Educating parents on home exercises, supporting adaptive feeding, promoting social inclusion, and coordinating with professional physical therapists optimizes the child's development.",
+    "topic": "Disability and rehabilitation",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is a key design feature of an accessible primary health care facility for people with mobility impairments?",
+    "options": {
+      "A": "High staircases with decorative railings.",
+      "B": "Smooth ramps with a gentle slope and wide doorways that accommodate wheelchairs.",
+      "C": "Heavy double doors that require strength to open.",
+      "D": "Elevators with touch screens but no braille options."
+    },
+    "correctAnswer": "B",
+    "explanation": "Physical accessibility requires removing structural barriers, allowing wheelchair users or individuals with walking aids to enter, navigate, and use facility services independently.",
+    "topic": "Disability and rehabilitation",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following is the most appropriate way to interact with a patient who is deaf or hard of hearing?",
+    "options": {
+      "A": "Shout loudly directly into their ear.",
+      "B": "Face the patient directly, speak clearly at a normal pace, and use written notes or a sign language interpreter if needed.",
+      "C": "Speak to their companion only and ignore the patient.",
+      "D": "Exaggerate your mouth movements when speaking."
+    },
+    "correctAnswer": "B",
+    "explanation": "Facing the patient allows them to read lips and observe facial expressions. Shouting distorts the sound and lip shape, which makes communication harder. Respectful communication involves addressing the patient directly.",
+    "topic": "Disability and rehabilitation",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the primary cause of dental caries (tooth decay)?",
+    "options": {
+      "A": "Genetic defects in the jawbone.",
+      "B": "Bacterial fermentation of dietary sugars on the teeth, producing acids that demineralize the enamel.",
+      "C": "Drinking water that is too cold.",
+      "D": "Chewing on hard bones during meals."
+    },
+    "correctAnswer": "B",
+    "explanation": "Bacteria in dental plaque (especially Streptococcus mutans) metabolize refined carbohydrates/sugars, producing acid as a byproduct. This acid slowly dissolves the calcium phosphate structure of the tooth enamel.",
+    "topic": "Oral health basics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following is a clinical sign of gingivitis (gum disease)?",
+    "options": {
+      "A": "Hard, painless white patches on the tongue.",
+      "B": "Swollen, red, and tender gums that bleed easily during brushing.",
+      "C": "Loose teeth with visible bone exposure.",
+      "D": "Cracks at the corners of the mouth."
+    },
+    "correctAnswer": "B",
+    "explanation": "Gingivitis is early gum inflammation caused by plaque buildup. It presents with erythema, edema, and bleeding of the gingival margins. If untreated, it can progress to periodontitis.",
+    "topic": "Oral health basics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the recommended concentration of fluoride in toothpaste for effective prevention of dental caries in school-aged children and adults?",
+    "options": {
+      "A": "Less than 100 parts per million (ppm).",
+      "B": "Between 1,000 and 1,500 parts per million (ppm).",
+      "C": "Over 10,000 parts per million (ppm).",
+      "D": "Toothpaste should contain zero fluoride."
+    },
+    "correctAnswer": "B",
+    "explanation": "Standard fluoride concentrations of 1,000 to 1,500 ppm in toothpaste help remineralize enamel, make teeth more resistant to acid attacks, and inhibit bacterial acid production.",
+    "topic": "Oral health basics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "How should a community health worker manage a child who presents with a 'gum boil' (dental abscess) and facial swelling?",
+    "options": {
+      "A": "Advise the mother to squeeze the swelling to drain the pus at home.",
+      "B": "Prescribe pain relievers and refer the child immediately to a dental clinic or medical officer for treatment.",
+      "C": "Suggest the child chew on local ginger roots to dissolve the abscess.",
+      "D": "Apply a hot compress directly to the swollen cheek and send them home."
+    },
+    "correctAnswer": "B",
+    "explanation": "A dental abscess is a localized collection of pus originating from dental infection. It can spread into facial spaces (cellulitis), risking airway compromise. It requires antibiotic therapy and dental intervention (extraction or root canal).",
+    "topic": "Oral health basics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which oral hygiene instruction is most important for preventing dental plaque buildup?",
+    "options": {
+      "A": "Rinsing the mouth with plain water once a day.",
+      "B": "Brushing the teeth thoroughly twice daily (morning and night before bed) using a soft-bristled toothbrush and fluoride toothpaste.",
+      "C": "Using a toothpick to vigorously scrape the teeth after every snack.",
+      "D": "Chewing sugarcane daily to strengthen the gums."
+    },
+    "correctAnswer": "B",
+    "explanation": "Twice-daily brushing removes plaque, a sticky film of bacteria. Brushing before bed is particularly important because salivary flow (which protects teeth) decreases during sleep.",
+    "topic": "Oral health basics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the oral health condition known as 'thrush,' and what causes it?",
+    "options": {
+      "A": "Chronic ulcers caused by lack of vitamin C.",
+      "B": "A fungal infection of the mouth caused by Candida albicans, presenting as white patches on the tongue and oral mucosa.",
+      "C": "Demineralization of teeth due to highly acidic fruits.",
+      "D": "Inflammation of the salivary glands caused by a virus."
+    },
+    "correctAnswer": "B",
+    "explanation": "Oral thrush is a candidiasis infection. It is common in infants, the elderly, or immunocompromised individuals (like those with HIV or using inhaled steroids), presenting with creamy white, scrapable lesions.",
+    "topic": "Oral health basics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the causative organism of trachoma, a leading infectious cause of blindness?",
+    "options": {
+      "A": "Neisseria gonorrhoeae.",
+      "B": "Chlamydia trachomatis.",
+      "C": "Staphylococcus aureus.",
+      "D": "Pseudomonas aeruginosa."
+    },
+    "correctAnswer": "B",
+    "explanation": "Trachoma is caused by infection with Chlamydia trachomatis bacteria (serotypes A, B, Ba, and C). Repeated infections lead to scarring of the inner eyelid, turning the eyelashes inward (trichiasis).",
+    "topic": "Eye health and trachoma",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What does the WHO-recommended 'SAFE' strategy for trachoma control stand for?",
+    "options": {
+      "A": "Surgery, Antibiotics, Facial cleanliness, Environmental improvement.",
+      "B": "Screen everyone, Administer drops, Find cases, Evacuate village.",
+      "C": "Sterile instruments, Active surveillance, Free spectacles, Eye drops.",
+      "D": "Safety first, Avoid dust, Fly control, Early referral."
+    },
+    "correctAnswer": "A",
+    "explanation": "The SAFE strategy stands for: Surgery to correct trichiasis, Antibiotics (Azithromycin) to clear infection, Facial cleanliness to reduce transmission, and Environmental improvements (water, sanitation, fly control) to reduce the vector population.",
+    "topic": "Eye health and trachoma",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the primary vector responsible for transmitting Chlamydia trachomatis from eye to eye in endemic communities?",
+    "options": {
+      "A": "Anopheles mosquito.",
+      "B": "Musca sorbens (eye-seeking fly).",
+      "C": "Xenopsylla cheopis (oriental rat flea).",
+      "D": "Glossina (tsetse fly)."
+    },
+    "correctAnswer": "B",
+    "explanation": "Musca sorbens, which breeds in human feces, is attracted to eyes and faces. It transfers discharge containing the bacteria from the eyes of infected children to healthy individuals.",
+    "topic": "Eye health and trachoma",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following is a classic symptom of cataract, a common age-related eye condition?",
+    "options": {
+      "A": "Sudden onset of severe eye pain and redness.",
+      "B": "Gradual, painless loss of vision with cloudy or blurry eyesight.",
+      "C": "Profuse watery discharge and itching in both eyes.",
+      "D": "Inability to see objects on the sides (loss of peripheral vision)."
+    },
+    "correctAnswer": "B",
+    "explanation": "Cataracts involve gradual opacification of the lens, blocking light from reaching the retina. It is painless and progressive, typically affecting older adults, and is corrected by surgery.",
+    "topic": "Eye health and trachoma",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "How should a health worker manage a child who has foreign matter (like sand or dust) in their eye?",
+    "options": {
+      "A": "Rub the eye vigorously with a dry cloth.",
+      "B": "Flush the eye gently with clean, flowing water or normal saline, and advise them not to rub the eye. Refer if the object remains.",
+      "C": "Apply a drop of local herbal juice to wash it out.",
+      "D": "Use a sharp needle or toothpick to lift the particle out."
+    },
+    "correctAnswer": "B",
+    "explanation": "Rubbing the eye can cause corneal abrasions. Flushing with water removes loose debris. If a foreign body is embedded, it must be referred to prevent ocular trauma or infection.",
+    "topic": "Eye health and trachoma",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the clinical sign called 'trichiasis' in the progression of trachoma?",
+    "options": {
+      "A": "The swelling of the tear duct causing constant tearing.",
+      "B": "The inward turning of the eyelashes, causing them to rub against the eyeball and scratch the cornea.",
+      "C": "The clouding of the cornea due to vitamin A deficiency.",
+      "D": "The development of yellow spots on the sclera."
+    },
+    "correctAnswer": "B",
+    "explanation": "Chronic inflammation leads to scarring of the conjunctiva lining the eyelid. The scar tissue contracts, pulling the eyelid margin inward (entropion), which causes the eyelashes to scratch the cornea (trichiasis), leading to blindness.",
+    "topic": "Eye health and trachoma",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which mosquito genus is the vector for transmission of lymphatic filariasis (elephantiasis) and malaria?",
+    "options": {
+      "A": "Aedes (for filariasis) and Culex (for malaria).",
+      "B": "Culex, Anopheles, and Aedes (all can transmit filariasis; Anopheles transmits malaria).",
+      "C": "Glossina and Simulium.",
+      "D": "Phlebotomus sandflies."
+    },
+    "correctAnswer": "B",
+    "explanation": "Malaria is transmitted exclusively by female Anopheles mosquitoes. Lymphatic filariasis can be transmitted by Culex, Anopheles, and Aedes mosquitoes depending on the region.",
+    "topic": "Vector control (mosquito, rodent)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the primary environmental management action to reduce Aedes mosquito breeding sites, which transmit Dengue and Yellow Fever?",
+    "options": {
+      "A": "Spraying DDT in deep swamps.",
+      "B": "Eliminating standing water in small artificial containers around homes (e.g., discarded tires, tin cans, open drums).",
+      "C": "Clearing tall grasses along river banks.",
+      "D": "Adding chlorine to local swimming pools."
+    },
+    "correctAnswer": "B",
+    "explanation": "Aedes mosquitoes (like Aedes aegypti) are 'container breeders' that lay eggs in clean, stagnant water inside artificial containers close to human dwellings.",
+    "topic": "Vector control (mosquito, rodent)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "How do Insecticide-Treated Nets (ITNs) or Long-Lasting Insecticidal Nets (LLINs) protect households from malaria?",
+    "options": {
+      "A": "They create a physical barrier and chemically repel or kill mosquitoes that land on the net.",
+      "B": "They filter out malaria parasites from the air.",
+      "C": "They kill larvae in nearby breeding sites through evaporating fumes.",
+      "D": "They prevent bedbugs and lice from entering the bedroom."
+    },
+    "correctAnswer": "A",
+    "explanation": "LLINs work by providing a physical barrier that prevents mosquitoes from biting sleeping individuals, combined with pyrethroid insecticides that kill mosquitoes on contact or repel them from the sleeping area.",
+    "topic": "Vector control (mosquito, rodent)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which rodent-borne disease is transmitted to humans through contact with food or water contaminated with the urine or feces of infected rats (specifically Mastomys natalensis)?",
+    "options": {
+      "A": "Yellow Fever.",
+      "B": "Lassa Fever.",
+      "C": "Onchocerciasis.",
+      "D": "Schistosomiasis."
+    },
+    "correctAnswer": "B",
+    "explanation": "Lassa virus is transmitted by the multimammate rat (Mastomys natalensis). Infection occurs through ingestion of food contaminated with rat excreta, inhalation of aerosols, or direct contact with open wounds.",
+    "topic": "Vector control (mosquito, rodent)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is a key rodent control measure in rural households to prevent the spread of Lassa fever?",
+    "options": {
+      "A": "Storing food grains in open wooden boxes on the floor.",
+      "B": "Storing all food items in covered, rodent-proof containers, practicing proper waste disposal, and using traps or cats to keep rats away from the house.",
+      "C": "Spraying household insecticide aerosols in the kitchen daily.",
+      "D": "Sweeping rodent droppings without wearing a face mask."
+    },
+    "correctAnswer": "B",
+    "explanation": "Preventing access to food sources discourages rodent nesting. Rodent-proof storage (metal or thick plastic containers) and environmental hygiene starve rodents and reduce contact, preventing Lassa transmission.",
+    "topic": "Vector control (mosquito, rodent)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is 'larviciding' in vector control?",
+    "options": {
+      "A": "The application of chemicals or biological agents to water bodies to kill mosquito larvae before they emerge as adults.",
+      "B": "The spraying of insecticides on indoor walls to kill adult mosquitoes.",
+      "C": "The use of insect repellents on human skin.",
+      "D": "The immunization of children against larval infections."
+    },
+    "correctAnswer": "A",
+    "explanation": "Larviciding targets the aquatic larval stage of the mosquito life cycle. By applying larvicides (like Bacillus thuringiensis israelensis or chemical regulators) to breeding sites, the development of adult vectors is prevented.",
+    "topic": "Vector control (mosquito, rodent)",
+    "difficulty": "MEDIUM"
+  }
+]

@@ -64,18 +64,20 @@ async function main() {
     { domainSlug: 'project-management', name: 'PMP', slug: 'pmp', description: 'Project Management Professional', difficulty: Difficulty.HARD },
     { domainSlug: 'project-management', name: 'CAPM', slug: 'capm', description: 'Certified Associate in Project Management', difficulty: Difficulty.MEDIUM },
     { domainSlug: 'project-management', name: 'PMI-ACP', slug: 'pmi-acp', description: 'PMI Agile Certified Practitioner', difficulty: Difficulty.MEDIUM },
-    { domainSlug: 'nigerian-professional-exams', name: 'CHEW Qualifying Exam — Objective', slug: 'chew-objective', description: 'Community Health Extension Worker National Professional Qualifying Examination — Objective (Multiple Choice) Section', difficulty: Difficulty.MEDIUM },
+    { domainSlug: 'nigerian-professional-exams', name: 'CHEW Qualifying Exam — Objective', slug: 'chew-objective', description: 'Community Health Extension Worker National Professional Qualifying Examination — Objective (Multiple Choice) Section', difficulty: Difficulty.MEDIUM, questionCount: 60 },
     { domainSlug: 'nigerian-professional-exams', name: 'CHEW Qualifying Exam — Theory', slug: 'chew-theory', description: 'Community Health Extension Worker National Professional Qualifying Examination — Theory Section Practice', difficulty: Difficulty.MEDIUM },
     { domainSlug: 'nigerian-professional-exams', name: 'CHEW Qualifying Exam — Practical', slug: 'chew-practical', description: 'Community Health Extension Worker National Professional Qualifying Examination — Practical Session Practice', difficulty: Difficulty.HARD }
   ];
 
-  for (const cert of certifications) {
+  for (const cert of certifications as any[]) {
     const domainId = domainMap.get(cert.domainSlug);
     if (!domainId) continue;
 
     await prisma.certification.upsert({
       where: { slug: cert.slug },
-      update: {},
+      update: {
+        questionCount: cert.questionCount || 40,
+      },
       create: {
         name: cert.name,
         slug: cert.slug,
@@ -83,7 +85,7 @@ async function main() {
         domainId: domainId,
         difficulty: cert.difficulty,
         examDuration: 30,
-        questionCount: 40,
+        questionCount: cert.questionCount || 40,
       },
     });
   }

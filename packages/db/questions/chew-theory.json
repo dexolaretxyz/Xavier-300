@@ -1,562 +1,512 @@
 [
   {
     "certificationSlug": "chew-theory",
-    "text": "What was the principal target of the 'Health for All' strategy outlined in the 1978 Alma-Ata Declaration?",
-    "options": {
-      "A": "To eradicate all genetic diseases from the world by the year 2020",
-      "B": "To achieve a level of health that permits all people to lead socially and economically productive lives by the year 2000",
-      "C": "To build a tertiary referral hospital in every town in developing countries",
-      "D": "To ensure free medical surgery for all children under five globally"
-    },
-    "correctAnswer": "B",
-    "explanation": "The principal target of 'Health for All by the Year 2000' was to achieve a level of health that would enable all citizens of the world to lead socially and economically productive lives through primary healthcare.",
-    "topic": "Primary Healthcare",
-    "difficulty": "MEDIUM"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "Which clinical indicators are used under IMCI guidelines to classify a child under five as having Severe Acute Malnutrition (SAM)?",
-    "options": {
-      "A": "Weight-for-age below the median and skin rash",
-      "B": "MUAC of less than 11.5 cm or presence of bilateral pitting pedal edema",
-      "C": "Height-for-age below the median and dry skin",
-      "D": "A bulging fontanelle and high fever"
-    },
-    "correctAnswer": "B",
-    "explanation": "A child aged 6-59 months is diagnosed with Severe Acute Malnutrition (SAM) if they have a Mid-Upper Arm Circumference (MUAC) of less than 11.5 cm, OR have bilateral pitting pedal edema (signs of kwashiorkor), or are severely wasted.",
+    "questionType": "THEORY",
+    "text": "Explain the physiological mechanism, preparation, and administration guidelines for Oral Rehydration Salts (ORS) and Zinc supplementation in managing acute watery diarrhea in children under five.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Acute watery diarrhea leads to rapid depletion of water and essential electrolytes, which can trigger life-threatening hypovolemic shock in young children. Oral Rehydration Salts (ORS) function through the sodium-glucose co-transport mechanism in the intestinal mucosa. Even during severe diarrhea, the active absorption of sodium coupled with glucose remains intact. As sodium is absorbed, it draws water back into the body's circulation by osmotic pressure, thereby reversing dehydration. Zinc supplementation acts as an essential cofactor in cellular repair and immune function. It regenerates the damaged brush border enzymes of the intestinal mucosa, reduces intestinal permeability, and enhances cellular immunity. This significantly shortens the duration and severity of the diarrheal episode and provides mucosal protection that prevents recurrent diarrhea for the following 2 to 3 months. Preparation requires washing hands, dissolving one full sachet of ORS in exactly one liter of clean water, and stirring until dissolved. Zinc is administered as 10 mg daily for infants under six months, and 20 mg daily for children aged 6 to 59 months, continued for 10 to 14 days.",
     "topic": "Child Health",
-    "difficulty": "MEDIUM"
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Explain the sodium-glucose co-transport mechanism where sodium and glucose absorption facilitates passive water reabsorption.",
+      "Specify correct preparation steps including handwashing, using clean containers, and dissolving one sachet in exactly one liter of water.",
+      "State the dosing for Zinc: 10 mg daily for infants under 6 months and 20 mg daily for children 6-59 months.",
+      "Emphasize the duration of Zinc treatment (10 to 14 days) and its role in reducing diarrhea severity and preventing recurrence.",
+      "Detail instructions to discard prepared ORS solution after 24 hours to prevent bacterial contamination."
+    ]
   },
   {
     "certificationSlug": "chew-theory",
-    "text": "What is the difference between Antepartum Hemorrhage (APH) and Postpartum Hemorrhage (PPH)?",
-    "options": {
-      "A": "APH is bleeding from the birth canal before 12 weeks of pregnancy; PPH is bleeding after 24 weeks",
-      "B": "APH is bleeding from the birth canal from 28 weeks of pregnancy until the birth of the baby; PPH is bleeding of 500ml or more after delivery",
-      "C": "APH is bleeding from the nose during pregnancy; PPH is bleeding from the uterus",
-      "D": "APH occurs only in primigravida mothers; PPH occurs only in multigravida mothers"
-    },
-    "correctAnswer": "B",
-    "explanation": "Antepartum Hemorrhage (APH) is bleeding from or into the genital tract after 28 weeks of gestation up to the delivery of the baby. Postpartum Hemorrhage (PPH) is the loss of 500 ml or more of blood (or 1000 ml for cesarean) from the genital tract after childbirth.",
-    "topic": "Maternal Health",
-    "difficulty": "MEDIUM"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "What is the physiological significance of the Vaccine Vial Monitor (VVM) on a vaccine vial?",
-    "options": {
-      "A": "It measures the volume of vaccine left in the vial",
-      "B": "It is a chemical indicator that changes color to show cumulative exposure to heat over time",
-      "C": "It measures the expiry date of the glass vial material",
-      "D": "It detects bacterial contamination inside the vaccine suspension"
-    },
-    "correctAnswer": "B",
-    "explanation": "The VVM is a heat-sensitive label placed on vaccine vials. It changes color gradually when exposed to heat, reflecting cumulative heat exposure and indicating whether the vaccine has exceeded its safe limit.",
-    "topic": "Cold Chain Management",
-    "difficulty": "MEDIUM"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "In tuberculosis management, what is the primary purpose of the Directly Observed Treatment Short-course (DOTS) strategy?",
-    "options": {
-      "A": "To isolate patients in sanatoriums until they are cured",
-      "B": "To ensure patients swallow their prescribed anti-TB medications under the direct observation of a health worker or trained supervisor",
-      "C": "To provide free food supplements to patients' families",
-      "D": "To verify the diagnosis of TB using chest X-rays monthly"
-    },
-    "correctAnswer": "B",
-    "explanation": "The DOTS strategy requires a trained health worker or community treatment partner to directly observe the patient swallowing each dose of medication. This ensures treatment compliance, prevents default, and halts the development of drug-resistant tuberculosis.",
-    "topic": "Communicable Diseases",
-    "difficulty": "MEDIUM"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "Which of the following describes the core principle of community mobilization in primary healthcare?",
-    "options": {
-      "A": "Giving orders to community members about health behaviors",
-      "B": "Empowering community members to identify their own health needs, plan, and take action to solve them",
-      "C": "Paying community members cash to attend clinic services",
-      "D": "Building large private clinics funded by external donor agencies"
-    },
-    "correctAnswer": "B",
-    "explanation": "Community mobilization is a capacity-building process through which community individuals, groups, or organizations plan, carry out, and evaluate activities on a participatory basis to improve their health and sanitation.",
-    "topic": "Primary Healthcare",
-    "difficulty": "MEDIUM"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "What clinical triad characterizes pre-eclampsia in a pregnant woman?",
-    "options": {
-      "A": "Fever, vaginal discharge, and lower abdominal pain",
-      "B": "New-onset hypertension after 20 weeks of gestation, proteinuria, and/or maternal organ dysfunction",
-      "C": "Hypotension, bradycardia, and skin rash",
-      "D": "Glycosuria, polyuria, and lifestyle indicators"
-    },
-    "correctAnswer": "B",
-    "explanation": "Pre-eclampsia is a multi-system pregnancy disorder characterized by new-onset hypertension (BP >= 140/90 mmHg) presenting after 20 weeks of gestation, accompanied by significant protein in the urine (proteinuria) or other organ dysfunctions.",
-    "topic": "Maternal Health",
-    "difficulty": "MEDIUM"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "What is the primary danger of severe dehydration caused by acute watery diarrhea in a child?",
-    "options": {
-      "A": "Chronic vitamin deficiency",
-      "B": "Loss of body water and essential electrolytes leading to hypovolemic shock and death",
-      "C": "Destruction of intestinal microflora permanently",
-      "D": "Development of chronic respiratory failure"
-    },
-    "correctAnswer": "B",
-    "explanation": "Watery diarrhea causes rapid loss of fluids and key electrolytes (sodium, potassium, bicarbonate). If not replaced, it leads to severe hypovolemia, decreased tissue perfusion, organ failure, hypovolemic shock, and death.",
-    "topic": "Child Health",
-    "difficulty": "MEDIUM"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "Within what maximum timeframe should Emergency Contraceptive Pills (ECPs) be taken after unprotected sexual intercourse to be effective?",
-    "options": {
-      "A": "Within 24 hours only",
-      "B": "Within 72 to 120 hours (3 to 5 days) depending on the type of pill",
-      "C": "Within 2 weeks",
-      "D": "Only after the first missed menstrual period"
-    },
-    "correctAnswer": "B",
-    "explanation": "Emergency contraceptive pills (such as Levonorgestrel or Ulipristal Acetate) are most effective the sooner they are taken. Levonorgestrel is effective up to 72 hours (3 days), while Ulipristal acetate is effective up to 120 hours (5 days).",
-    "topic": "Family Planning",
-    "difficulty": "MEDIUM"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "Why is an unconscious, breathing casualty placed in the recovery position during first aid?",
-    "options": {
-      "A": "To reduce blood flow to the brain and prevent fits",
-      "B": "To keep the airway open, prevent the tongue from falling back, and allow fluids to drain from the mouth",
-      "C": "To keep the body warm during hypothermia",
-      "D": "To facilitate chest compressions if they stop breathing"
-    },
-    "correctAnswer": "B",
-    "explanation": "The recovery position is a lateral recumbent position that uses gravity to keep the tongue from blocking the epiglottis. It also allows vomit or saliva to drain freely, preventing pulmonary aspiration.",
-    "topic": "First Aid",
-    "difficulty": "MEDIUM"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "Why must used needles never be recapped before disposal in a safety box?",
-    "options": {
-      "A": "It compromises the sterility of the needle for future use",
-      "B": "Recapping is the leading cause of accidental needle-stick injuries among health workers, risking transmission of blood-borne pathogens",
-      "C": "The plastic cap makes the safety box fill up too quickly",
-      "D": "It prevents the needle from melting during incineration"
-    },
-    "correctAnswer": "B",
-    "explanation": "Recapping needles using two hands poses a high risk of the needle slipping and puncturing the worker's finger. This exposes them to pathogens like HIV, Hepatitis B, and Hepatitis C. Always drop needles directly into the safety box.",
-    "topic": "Environmental Health",
-    "difficulty": "MEDIUM"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "In disease surveillance, what is the meaning of an 'alert threshold' for an epidemic-prone disease?",
-    "options": {
-      "A": "The point at which all clinics in the country are shut down",
-      "B": "The level of disease occurrence or single case that triggers an immediate investigation and preliminary active response",
-      "C": "The maximum number of deaths allowed before reporting",
-      "D": "The percentage of vaccine coverage in the community"
-    },
-    "correctAnswer": "B",
-    "explanation": "An alert threshold is the pre-defined number of cases (sometimes a single case of a highly dangerous disease like cholera, yellow fever, or Lassa fever) that warns health authorities to investigate, collect samples, and prepare for a potential outbreak.",
-    "topic": "Disease Surveillance",
-    "difficulty": "HARD"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "What is the primary rationale for administering Tetanus Toxoid (TT) or Tetanus-Diphtheria (Td) vaccine to pregnant women?",
-    "options": {
-      "A": "To protect the mother from wound infections during gardening",
-      "B": "To allow the mother to pass protective antibodies to the fetus, preventing neonatal tetanus after birth",
-      "C": "To prevent congenital malformations in the early fetus",
-      "D": "To reduce the risk of maternal malaria infection"
-    },
-    "correctAnswer": "B",
-    "explanation": "Vaccinating pregnant women with Tetanus Toxoid stimulates maternal IgG antibodies, which cross the placenta to the fetus. This passive immunity protects the newborn from neonatal tetanus, a fatal infection that can occur via an unsterile umbilical cord cut.",
-    "topic": "Immunization",
-    "difficulty": "MEDIUM"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "Under IMCI guidelines, why is oral zinc supplementation prescribed alongside ORS for children with diarrhea?",
-    "options": {
-      "A": "It sweetens the taste of ORS to make it easier to swallow",
-      "B": "It acts as a mild sedative to help the sick child sleep",
-      "C": "It reduces the duration and severity of the diarrhea episode and prevents recurrence for the next 2 to 3 months",
-      "D": "It kills the bacterial pathogens directly in the stomach"
-    },
-    "correctAnswer": "C",
-    "explanation": "Zinc is an essential micronutrient lost during diarrhea. Supplementing zinc (20mg daily for 10-14 days; 10mg for infants under 6 months) helps repair the intestinal mucosa, reduces the severity and duration of diarrhea, and boosts immunity to prevent subsequent episodes.",
-    "topic": "Child Health",
-    "difficulty": "MEDIUM"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "What is the protocol for administering Intermittent Preventive Treatment of malaria in pregnancy (IPTp) using Sulfadoxine-Pyrimethamine (SP)?",
-    "options": {
-      "A": "Daily doses starting from the first trimester until delivery",
-      "B": "Single doses given at monthly intervals starting at quickening (second trimester), with at least 3 doses before delivery",
-      "C": "Only given if the pregnant woman tests positive for malaria",
-      "D": "Administered weekly in the third trimester only"
-    },
-    "correctAnswer": "B",
-    "explanation": "WHO recommends IPTp-SP for all pregnant women in moderate-to-high malaria transmission areas. It is given as a DOT (Directly Observed Therapy) at each scheduled ANC visit starting at quickening (second trimester), at least 1 month apart, for a minimum of 3 doses.",
-    "topic": "Malaria Management",
-    "difficulty": "HARD"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "What is the primary objective of conducting a community diagnosis in primary healthcare?",
-    "options": {
-      "A": "To prescribe individual clinical medications to all villagers",
-      "B": "To identify the collective health status, problems, resources, and felt needs of the community to plan interventions",
-      "C": "To punish community members who do not practice hygiene",
-      "D": "To determine the budget requirements of the state hospital"
-    },
-    "correctAnswer": "B",
-    "explanation": "Community diagnosis is a comprehensive profile of a community's health status, including environmental, social, and economic factors, as well as resources. This helps health workers prioritize health problems and design targeted community-based interventions.",
+    "questionType": "THEORY",
+    "text": "Describe the process of conducting a community diagnosis within a designated ward, highlighting data collection methods and how findings guide health interventions.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A community diagnosis is a comprehensive profile of a community's health status, environmental sanitation, socio-economic factors, and resources. The goal is to identify and prioritize health needs, enabling the design of targeted community health interventions. The process begins with community entry, where the health worker establishes rapport with traditional, religious, and political leaders to gain consent and foster participation. Data collection is carried out using multiple qualitative and quantitative methods: reviewing existing clinic registers (secondary data), conducting household surveys, administering questionnaires, mapping the physical layout, performing key informant interviews (with teachers, healers, leaders), and hosting focus group discussions (with women, youth, elders). Once the data is gathered, it is analyzed to identify key health problems, such as high rates of malaria, poor vaccination coverage, or lack of clean water. These findings are presented back to the community during a town hall meeting. Together with community representatives, like the Ward Development Committee, the health worker prioritizes the problems based on severity, feasibility, and local resources, leading to the co-creation of a community health action plan.",
     "topic": "Community Health",
-    "difficulty": "MEDIUM"
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Define community diagnosis as identifying the collective health needs, resources, and priorities of a community.",
+      "Outline the community entry phase, including securing permissions from traditional leaders and building rapport.",
+      "List at least three data collection methods (e.g., surveys, key informant interviews, focus groups, register reviews).",
+      "Describe the process of analyzing data to identify prevalent health problems (e.g., sanitation, maternal mortality, disease outbreaks).",
+      "Explain the collaborative prioritization of needs with community representatives to develop a shared action plan."
+    ]
   },
   {
     "certificationSlug": "chew-theory",
-    "text": "How do the clinical presentations of Kwashiorkor and Marasmus differ?",
-    "options": {
-      "A": "Kwashiorkor presents with severe muscle wasting and no edema; Marasmus presents with bilateral pitting edema",
-      "B": "Kwashiorkor presents with bilateral pitting edema, swollen belly, and skin/hair changes; Marasmus presents with severe muscle wasting and an 'old-man' face without edema",
-      "C": "Kwashiorkor is caused by lack of vitamins; Marasmus is caused by lack of calcium",
-      "D": "Kwashiorkor is only seen in adults; Marasmus is only seen in infants"
-    },
-    "correctAnswer": "B",
-    "explanation": "Kwashiorkor (edematous malnutrition) is characterized by protein deficiency, leading to fluid retention (edema), skin lesions (flaky paint dermatosis), and sparse reddish hair. Marasmus is severe calorie deficiency leading to extreme wasting of fat and muscle, giving a wrinkled 'old-man' appearance.",
-    "topic": "Nutrition",
-    "difficulty": "MEDIUM"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "What is the primary treatment objective for a casualty suffering from heat stroke?",
-    "options": {
-      "A": "To administer warm fluids immediately to prevent shivering",
-      "B": "To rapidly lower the core body temperature using cooling techniques to prevent brain and organ damage",
-      "C": "To administer oral pain relievers and antibiotics",
-      "D": "To induce vomiting to clear potential toxins"
-    },
-    "correctAnswer": "B",
-    "explanation": "Heat stroke is a life-threatening medical emergency where the body's temperature regulation mechanism fails (core temp > 40°C). The primary objective is to cool the body rapidly (using water spray, fan, ice packs in armpit/groin) to protect the brain and internal organs.",
-    "topic": "First Aid",
-    "difficulty": "MEDIUM"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "What is the primary mode of transmission of Vibrio cholerae?",
-    "options": {
-      "A": "Through the bite of infected tsetse flies",
-      "B": "Inhalation of airborne dust particles",
-      "C": "Fecal-oral route via ingestion of food or water contaminated with feces of an infected person",
-      "D": "Direct contact with blood or body fluids of a patient"
-    },
-    "correctAnswer": "C",
-    "explanation": "Cholera is transmitted via the fecal-oral route. This occurs when feces from an infected person contaminate drinking water reservoirs, well water, or food crops, which are subsequently ingested by others due to poor sanitation.",
-    "topic": "Communicable Diseases",
-    "difficulty": "EASY"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "What does a visible permanent scar on the left upper arm of an infant following a BCG vaccine indicate?",
-    "options": {
-      "A": "An allergic reaction requiring antihistamine treatment",
-      "B": "Successful intradermal vaccination and development of local cell-mediated immunity against tuberculosis",
-      "C": "Poor injection technique by the health worker",
-      "D": "The child has active pulmonary tuberculosis"
-    },
-    "correctAnswer": "B",
-    "explanation": "The BCG vaccine normally causes a small red papule that forms an ulcer and heals over several weeks, leaving a small, flat scar. This scar indicates correct intradermal administration and normal immune response. Its absence does not necessarily mean the vaccine failed, but the scar is a positive indicator.",
-    "topic": "Immunization",
-    "difficulty": "MEDIUM"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "What is the purpose of establishing a Ward Development Committee (WDC) in the Primary Health Care system?",
-    "options": {
-      "A": "To act as a political campaign team for local ward counselors",
-      "B": "To serve as a community-based governance body to promote community participation, ownership, and management of local health resources",
-      "C": "To enforce legal fines on villagers who refuse vaccination",
-      "D": "To distribute commercial pharmaceuticals for profit"
-    },
-    "correctAnswer": "B",
-    "explanation": "The WDC is a key structure in PHC representing the community. It consists of local leaders, women, and youth representatives. It ensures community involvement in health decisions, assists in clinic maintenance, mobilization, and bridges the community-facility gap.",
-    "topic": "Primary Healthcare",
-    "difficulty": "HARD"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "Which three criteria must be met for the Lactational Amenorrhea Method (LAM) to be highly effective as a family planning method?",
-    "options": {
-      "A": "Mother is breastfeeding once a day, baby is under 12 months, and menstrual periods have returned",
-      "B": "Mother is exclusively breastfeeding (day and night), baby is under 6 months, and mother's menstrual periods have not returned",
-      "C": "Mother is using formula milk, baby is under 3 months, and bleeding has stopped",
-      "D": "Mother is pumping breast milk, baby is over 6 months, and mother is taking oral pills"
-    },
-    "correctAnswer": "B",
-    "explanation": "LAM is a highly effective temporary family planning method. It works only if: 1. The mother's monthly bleeding has not returned. 2. The baby is exclusively breastfed (no other foods or liquids, fed on demand day and night). 3. The baby is less than 6 months old.",
-    "topic": "Family Planning",
-    "difficulty": "MEDIUM"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "Which of the following represents a list of critical danger signs in pregnancy that require immediate referral to a comprehensive facility?",
-    "options": {
-      "A": "Mild morning sickness, frequent urination, and slight backache",
-      "B": "Vaginal bleeding, severe headache with blurred vision, convulsions, high fever, and severe abdominal pain",
-      "C": "Increased appetite, mild ankle swelling at the end of the day, and fatigue",
-      "D": "Braxton Hicks contractions and breast enlargement"
-    },
-    "correctAnswer": "B",
-    "explanation": "Critical danger signs indicate life-threatening complications (like placenta previa, pre-eclampsia, eclampsia, severe sepsis, or ectopic pregnancy). They require urgent clinical intervention and cannot be managed at lower-level PHC facilities.",
+    "questionType": "THEORY",
+    "text": "Discuss the prevention and management of Neonatal Tetanus, explaining how maternal immunization protects the newborn.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Neonatal tetanus is a highly fatal disease caused by the contamination of the umbilical cord stump with Clostridium tetani spores, usually due to unsterile delivery practices or applying harmful substances (like ash or dung) to the cord. Prevention relies on two key pillars: hygienic delivery conditions ('clean hands, clean delivery surface, clean cord cut/tie') and maternal immunization. When a pregnant woman is vaccinated with Tetanus Toxoid (TT) or Tetanus-Diphtheria (Td) vaccine, her immune system produces specific anti-tetanus immunoglobulin G (IgG) antibodies. These antibodies cross the placenta via active transport, entering the fetal bloodstream. This passive immunity protects the newborn during the first few months of life, when they are most vulnerable to cord infections. Under the national immunization schedule, a pregnant woman should receive at least two doses of TT/Td, with the first dose given at first contact and the second dose at least 4 weeks later. If the newborn develops tetanus, management is a critical emergency. It requires placing the infant in a quiet, dark room to prevent muscle spasms triggered by light or noise, administering anti-tetanus immunoglobulin or antitoxin, starting intravenous antibiotics (such as Metronidazole or Penicillin), maintaining airway patency, and initiating tube feeding.",
     "topic": "Maternal Health",
-    "difficulty": "MEDIUM"
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Identify Clostridium tetani contamination of the umbilical cord stump as the cause of neonatal tetanus.",
+      "Explain the mechanism of transplacental transfer of maternal IgG antibodies to the fetus to provide passive immunity.",
+      "Outline the TT/Td immunization schedule for pregnant women (first dose at contact, second dose at least 4 weeks later).",
+      "List clean delivery practices (clean hands, clean surface, clean cord cutting and care) as vital preventive measures.",
+      "Describe immediate clinical management steps: minimize sensory stimuli, administer antitoxin/immunoglobulin, and provide antibiotic therapy."
+    ]
   },
   {
     "certificationSlug": "chew-theory",
-    "text": "Under IMCI guidelines, which clinical signs suggest neonatal sepsis in an infant under 2 months of age?",
-    "options": {
-      "A": "Frequent crying and passing soft stool twice a day",
-      "B": "Poor feeding/sucking, lethargy or unconsciousness, convulsions, fast breathing (>= 60 breaths/min), and high or low temperature",
-      "C": "Normal skin color and sleeping 16 hours a day",
-      "D": "Mild physiological jaundice appearing on day 3"
-    },
-    "correctAnswer": "B",
-    "explanation": "Young infants (under 2 months) have subtle signs of infection. IMCI lists signs of possible serious bacterial infection (sepsis) as: convulsion, fast breathing (>=60 breaths/min), severe chest indrawing, nasal flaring, grunting, high temperature (>37.5°C) or hypothermia (<35.5°C), poor feeding, or movement only when stimulated.",
-    "topic": "Child Health",
-    "difficulty": "HARD"
+    "questionType": "THEORY",
+    "text": "Describe the Directly Observed Treatment Short-course (DOTS) strategy for tuberculosis, detailing the role of the CHEW and the significance of treatment compliance.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "The Directly Observed Treatment Short-course (DOTS) is a globally recognized public health strategy designed to control and cure tuberculosis. The core component of DOTS is directly observing the patient swallow their anti-TB medications. This observation is done by a trained health worker, such as a Community Health Extension Worker (CHEW), or a designated community treatment partner. The primary purpose of this direct observation is to guarantee strict treatment compliance, preventing patients from skipping doses or stopping treatment prematurely when symptoms improve. Poor compliance is dangerous because it leads to treatment failure, persistent transmission of TB in the community, and the development of Drug-Resistant Tuberculosis (DR-TB or MDR-TB), which is much harder and more expensive to treat. The CHEW's role in DOTS includes screening symptomatic patients, collecting sputum samples for testing (microscopy or GeneXpert), counseling the patient and their family to reduce stigma, dispensing medications, documenting dose adherence in the TB register, performing home visits to trace contacts, and immediately tracking down patients who miss their scheduled visits (defaulters).",
+    "topic": "Communicable Diseases",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Define the DOTS strategy as direct observation of medication ingestion by a health worker or trained partner.",
+      "Explain that strict compliance prevents the development of Drug-Resistant Tuberculosis (DR-TB) and treatment default.",
+      "Describe the risk of persistent transmission and high mortality associated with incomplete TB treatment.",
+      "Detail the role of the CHEW in screening, diagnostic referral, counseling, and recording daily medication compliance.",
+      "Explain contact tracing and defaulter tracing protocols when a patient misses a scheduled clinic appointment."
+    ]
   },
   {
     "certificationSlug": "chew-theory",
-    "text": "Why is colostrum (the first yellow breast milk produced after delivery) highly beneficial for the newborn?",
-    "options": {
-      "A": "It has high sugar content to keep the baby sleeping",
-      "B": "It is rich in protein, Vitamin A, and maternal antibodies (especially IgA), acting as a natural vaccine and mild laxative",
-      "C": "It is easier to digest because it contains no proteins",
-      "D": "It prevents the baby from developing neonatal jaundice"
-    },
-    "correctAnswer": "B",
-    "explanation": "Colostrum is thin, yellow, and concentrated. It contains high levels of immunoglobulins (antibodies, especially secretory IgA) that coat the baby's immature gut, protecting against pathogens. It also has a mild laxative effect that helps clear meconium.",
+    "questionType": "THEORY",
+    "text": "Explain the WHO Medical Eligibility Criteria (MEC) framework for contraceptive use, defining categories 1 through 4 and providing clinical examples for each.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "The WHO Medical Eligibility Criteria (MEC) for Contraceptive Use is a clinical framework designed to guide health workers in safely prescribing contraceptive methods to individuals based on their personal medical conditions. The framework is divided into four categories. Category 1 represents conditions for which there is no restriction on the use of the contraceptive method. An example is using a copper Intrauterine Device (IUD) in a woman with a history of hypertension. Category 2 represents conditions where the advantages of using the method generally outweigh the theoretical or proven risks. An example is using Combined Oral Contraceptives (COCs) in a woman who is breastfeeding between 6 months and 2 years postpartum. Category 3 represents conditions where the theoretical or proven risks generally outweigh the advantages of using the method, meaning it should not be used unless other more appropriate methods are unavailable or unacceptable. An example is using COCs in a woman with controlled hypertension. Category 4 represents conditions that present an unacceptable health risk if the contraceptive method is used, representing an absolute contraindication. An example is prescribing estrogen-containing COCs to a woman with active deep vein thrombosis (DVT) or a history of breast cancer.",
+    "topic": "Family Planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Define WHO MEC Category 1: No restriction on contraceptive use, with a valid clinical example.",
+      "Define WHO MEC Category 2: Advantages outweigh theoretical or proven risks, with a valid clinical example.",
+      "Define WHO MEC Category 3: Theoretical or proven risks outweigh advantages; requires careful clinical judgment.",
+      "Define WHO MEC Category 4: Unacceptable health risk (absolute contraindication), with a valid clinical example.",
+      "Explain how health workers use this framework to customize family planning choice based on patient co-morbidities."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Detail the cold chain system for vaccine storage at a primary healthcare facility, explaining how heat-sensitive and freeze-sensitive vaccines are protected.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "The cold chain is a continuous temperature-controlled supply chain designed to preserve the potency of vaccines from the point of manufacture to the point of administration. At a primary healthcare facility, maintaining the cold chain is critical because exposure to temperatures outside the recommended range can permanently damage vaccines. The standard storage temperature for most routine vaccines in a primary healthcare facility refrigerator is between +2°C and +8°C. Vaccines are classified based on their sensitivity to temperature extremes. Heat-sensitive vaccines, such as Oral Polio Vaccine (OPV) and Measles vaccine, are highly vulnerable to warm temperatures. They must be stored in the coldest part of the refrigerator, usually the upper section, and kept frozen in deep freezers at the regional level. Freeze-sensitive vaccines, including Pentavalent, Pneumococcal Conjugate Vaccine (PCV), Hepatitis B, Inactivated Polio Vaccine (IPV), and Tetanus-Diphtheria (Td), contain aluminum adjuvants that aggregate and freeze at or below 0°C. Freezing permanently destroys their immunogenicity. These must be stored in the middle or lower baskets of the refrigerator, ensuring they never touch the cold evaporator plate or walls. Health workers monitor the temperature twice daily using a thermometer and verify vaccine safety using Vaccine Vial Monitors (VVMs).",
+    "topic": "Cold Chain Management",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "State the standard storage temperature range for facility-level refrigerators as +2°C to +8°C.",
+      "Identify OPV and Measles as heat-sensitive vaccines and explain their storage placement.",
+      "Identify Pentavalent, PCV, IPV, and Td as freeze-sensitive vaccines, noting that freezing permanently destroys their efficacy.",
+      "Explain the positioning of vaccines within the refrigerator to avoid contact with cold walls and cooling plates.",
+      "Detail temperature monitoring protocols, including twice-daily temperature logs and checking Vaccine Vial Monitors (VVM)."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the clinical presentation, classification, and management of Severe Acute Malnutrition (SAM) in children aged 6 to 59 months under IMCI guidelines.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Under the Integrated Management of Childhood Illness (IMCI) guidelines, Severe Acute Malnutrition (SAM) is diagnosed in children aged 6 to 59 months using specific anthropometric and clinical criteria: a Mid-Upper Arm Circumference (MUAC) of less than 11.5 cm, a weight-for-height Z-score below -3 standard deviations, or the presence of bilateral pitting pedal edema. Clinical presentation varies between marasmus (characterized by severe wasting of muscle and subcutaneous fat, giving a wrinkled 'old-man' face, loose skin folds, and prominent ribs) and kwashiorkor (characterized by fluid retention leading to bilateral pitting edema of the feet, legs, hands, and face, abdominal distension, dry skin lesions, and thin, reddish hair). Management depends on whether the child has medical complications. The health worker performs an 'appetite test' using Ready-to-Use Therapeutic Food (RUTF). If the child passes the test (shows a good appetite, is alert, and has no systemic complications like high fever, severe vomiting, severe dehydration, or severe anemia), they are classified as having uncomplicated SAM and managed in the Outpatient Therapeutic Program (OTP) with RUTF, routine antibiotics (Amoxicillin), deworming (Albendazole), and vitamin A. If the child fails the appetite test or has medical complications, they are classified as complicated SAM and referred for inpatient stabilization.",
     "topic": "Nutrition",
-    "difficulty": "MEDIUM"
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "List the diagnostic criteria for SAM: MUAC < 11.5 cm, weight-for-height Z-score < -3, or bilateral pitting pedal edema.",
+      "Differentiate between the clinical features of marasmus (wasting, loose skin) and kwashiorkor (edema, skin/hair changes).",
+      "Explain the purpose and execution of the appetite test using RUTF to determine treatment pathways.",
+      "Outline outpatient management for uncomplicated SAM: RUTF, oral antibiotics, deworming, and nutritional counseling.",
+      "Identify the criteria for inpatient referral of complicated SAM (failed appetite test, severe edema, systemic infection)."
+    ]
   },
   {
     "certificationSlug": "chew-theory",
-    "text": "What is the difference between an epidemic and an endemic disease?",
-    "options": {
-      "A": "An epidemic occurs globally; an endemic disease is restricted to monkeys",
-      "B": "An epidemic is a sudden increase in cases of a disease above what is normally expected in a population; an endemic disease is constantly present at a baseline level in a geographic area",
-      "C": "An epidemic is a disease that only affects children; an endemic disease affects adults",
-      "D": "There is no difference; the terms are used interchangeably"
-    },
-    "correctAnswer": "B",
-    "explanation": "Endemic refers to the constant presence or usual prevalence of a disease in a population or geographic area (e.g. malaria in Nigeria). Epidemic refers to an outbreak where cases suddenly spike far beyond normal baseline levels in a community or region.",
-    "topic": "Disease Surveillance",
-    "difficulty": "MEDIUM"
+    "questionType": "THEORY",
+    "text": "Discuss the transmission, clinical features, and community prevention strategies for Lassa Fever, emphasizing the role of the Mastomys rat vector.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Lassa Fever is a viral hemorrhagic fever endemic to West Africa, caused by the Lassa virus. The primary reservoir host is the multimammate rat (Mastomys natalensis), which lives in close proximity to human settlements. Transmission occurs through the fecal-oral route when food, water, or household items are contaminated with the urine, saliva, or feces of infected rats. It can also occur through inhaling aerosols generated during sweeping contaminated areas, or direct contact with open wounds. Secondary human-to-human transmission is common in healthcare settings and households through contact with blood, vomit, or bodily fluids of an infected person. Clinical features begin with non-specific symptoms: high fever, sore throat, back pain, headache, cough, abdominal pain, and vomiting. In severe cases, it progresses to facial swelling, mucosal bleeding (from the nose, mouth, or gums), and cardiovascular shock. Community prevention relies heavily on rodent control and environmental hygiene: storing grains and all food in metal, rodent-proof containers, avoiding drying food items on the ground along roadsides, keeping household surroundings clean to discourage nesting, disposing of waste properly, setting rat traps, and washing hands frequently. Healthcare workers must apply strict Infection Prevention and Control (IPC) measures.",
+    "topic": "Communicable Diseases",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Identify the Mastomys natalensis (multimammate rat) as the primary reservoir vector for Lassa virus.",
+      "Explain the primary transmission routes (contamination of food/water with rat excreta) and secondary route (human-to-human blood/fluid contact).",
+      "List key clinical symptoms, including high fever, sore throat, bleeding from mucosal membranes, and facial swelling.",
+      "Detail community preventive actions: rodent-proof food storage, cleaning home environments, and avoiding drying crops on the ground.",
+      "Mention infection control protocols for health workers (using PPE, avoiding direct fluid contact, and rapid case reporting)."
+    ]
   },
   {
     "certificationSlug": "chew-theory",
-    "text": "What is meant by 'safe water chain' in environmental sanitation?",
-    "options": {
-      "A": "A system of pipes connecting a dam to the house",
-      "B": "Ensuring water is protected from contamination at every step: source, transport, storage, and retrieval/handling",
-      "C": "Adding chlorine tablets to water filters once a year",
-      "D": "Using steel containers to carry water rather than plastic buckets"
-    },
-    "correctAnswer": "B",
-    "explanation": "The safe water chain emphasizes that clean water at the source can easily become contaminated during transport (dirty containers), storage (open buckets), or retrieval (dipping dirty cups). All steps must remain clean and sealed to prevent diarrheal diseases.",
-    "topic": "Environmental Health",
-    "difficulty": "MEDIUM"
+    "questionType": "THEORY",
+    "text": "Explain the structure and clinical utility of a Partograph in monitoring labor progression, defining the Alert and Action lines and the criteria for referral.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A partograph is a standardized graphical record used to monitor the progress of labor and facilitate the early detection of complications, such as prolonged or obstructed labor. It provides a visual representation of key maternal and fetal parameters over time. Fetal status is monitored through heart rate, amniotic fluid state, and molding of the skull bones. Maternal status is tracked through blood pressure, pulse, temperature, and urine output. The progress of labor is measured by cervical dilation (in centimeters) plotted against time (in hours), and the descent of the fetal head. The partograph features two critical reference lines during the active phase of labor (from 4 cm to 10 cm dilation). The Alert Line is a diagonal line representing the average dilation rate of 1 cm per hour. Plotted cervix dilations should stay on or to the left of this line. The Action Line is parallel to and exactly 4 hours to the right of the Alert Line. If the cervical dilation curve crosses to the right of the Alert Line, it indicates slow labor progress (dystocia). This serves as a warning for the CHEW to prepare for transfer or consult a medical officer. If the curve reaches the Action Line, it indicates a critical delay requiring immediate intervention, such as vacuum extraction, cesarean section, or augmentation.",
+    "topic": "Maternal Health",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Define the partograph as a graphic tool used to monitor maternal/fetal well-being and labor progress over time.",
+      "List the key parameters monitored: fetal heart rate, cervical dilation, descent of the head, contractions, and maternal vitals.",
+      "Explain the Alert Line as representing 1 cm/hour dilation, indicating normal progress when dilations are plotted to its left.",
+      "Explain the Action Line as situated 4 hours to the right of the Alert Line, marking the threshold for critical intervention.",
+      "Identify the clinical response: crossing the Alert Line indicates need for referral preparation; reaching the Action Line requires urgent action."
+    ]
   },
   {
     "certificationSlug": "chew-theory",
-    "text": "Which of the following lists key modifiable risk factors for developing Type 2 Diabetes and Hypertension?",
-    "options": {
-      "A": "Genetics, blood type, and height",
-      "B": "Unhealthy diet, physical inactivity, tobacco use, and harmful alcohol use",
-      "C": "Air pollution and water hardness",
-      "D": "Lack of routine vaccinations in childhood"
-    },
-    "correctAnswer": "B",
-    "explanation": "Type 2 Diabetes and Hypertension are non-communicable lifestyle diseases. Modifiable risk factors are behaviors that individuals can change, including eating foods high in fat and salt, lack of exercise, smoking, and excessive drinking.",
+    "questionType": "THEORY",
+    "text": "Describe the immediate first aid management of a patient who has ingested a chemical poison, detailing contraindications and safe referral procedures.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "The first aid management of chemical poisoning depends on the type of substance ingested and the patient's level of consciousness. The primary objective is to maintain airway, breathing, and circulation (ABCs) while minimizing further absorption of the toxin. If the patient is conscious and has ingested a non-corrosive chemical, administering clean water to dilute the poison may be appropriate, and the container of the poison must be secured for identification. Inducing vomiting is strictly contraindicated, especially if the substance is a corrosive chemical (strong acids or alkalis) or a petroleum product (kerosene, gasoline). Ingestion of corrosives damages the esophagus; inducing vomiting causes a second pass of the chemical, worsening tissue burns and risking esophageal perforation. For petroleum products, vomiting carries a very high risk of aspiration into the lungs, leading to chemical pneumonitis, which is frequently fatal. If the patient is unconscious but breathing, they must be placed in the recovery position to keep the airway clear and prevent aspiration of saliva or stomach contents. The patient should be kept warm and transferred immediately to a referral facility with the poison container or label, and without giving anything by mouth.",
+    "topic": "First Aid",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "State that maintaining the ABCs (Airway, Breathing, Circulation) is the first priority in poisoning management.",
+      "Explain the contraindication of inducing vomiting for corrosive substances due to risk of repeat esophageal chemical burns.",
+      "Explain the contraindication of inducing vomiting for petroleum/hydrocarbon products due to risk of fatal chemical aspiration/pneumonitis.",
+      "Describe the use of the recovery position for an unconscious breathing patient to prevent aspiration.",
+      "Emphasize the protocol for rapid referral: keep the patient NPO (nothing by mouth), bring the chemical container, and transfer quickly."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Discuss the risk factors, screening procedures, and primary care management of Essential Hypertension in adult patients.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Essential hypertension is persistent high blood pressure with no identifiable secondary cause. It is a major risk factor for cardiovascular disease, stroke, and kidney failure. Modifiable risk factors include an unhealthy diet high in sodium and low in potassium, physical inactivity, tobacco use, harmful use of alcohol, obesity, and chronic stress. Non-modifiable risk factors include genetics, family history, advanced age, and co-existing conditions like diabetes. Screening in primary care requires checking blood pressure (BP) using a calibrated sphygmomanometer and an appropriately sized cuff on a relaxed, seated patient. Hypertension is diagnosed when a patient has a systolic BP of 140 mmHg or higher, or a diastolic BP of 90 mmHg or higher, on at least two separate clinic visits. Management at the PHC level involves lifestyle modifications and pharmacological treatment. Lifestyle counseling focuses on reducing dietary salt, increasing fruit and vegetable intake, engaging in moderate exercise for 30 minutes daily, weight reduction, and smoking cessation. First-line medications prescribed under medical supervision include calcium channel blockers (Amlodipine), thiazide-like diuretics, or ACE inhibitors. The CHEW monitors adherence, checks for target organ damage, and refers patients who have persistently uncontrolled BP.",
     "topic": "Non-Communicable Diseases",
-    "difficulty": "EASY"
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Distinguish between modifiable risk factors (diet, salt, alcohol, lack of exercise) and non-modifiable risk factors (age, genetics).",
+      "State the diagnostic threshold for hypertension: BP >= 140/90 mmHg on two separate clinic assessments.",
+      "Describe blood pressure measurement requirements: seated patient, rested, arm at heart level, and correct cuff size.",
+      "Outline lifestyle interventions: low-sodium diet, regular aerobic exercise, smoking cessation, and weight control.",
+      "Name common first-line drug classes (calcium channel blockers, diuretics) and the role of the CHEW in monitoring compliance."
+    ]
   },
   {
     "certificationSlug": "chew-theory",
-    "text": "What is the correct first aid management for a casualty with a suspected venomous snakebite on the leg?",
-    "options": {
-      "A": "Cut the wound with a razor blade, suck out the venom, and apply a tight tourniquet",
-      "B": "Keep the patient calm, immobilize the limb using a splint at or slightly below heart level, clean the wound, and transfer to a facility for antivenom",
-      "C": "Apply ice directly to the bite and make the patient run to generate heat",
-      "D": "Pour kerosene on the bite and squeeze the leg hard"
-    },
-    "correctAnswer": "B",
-    "explanation": "Do not cut, suck, or apply tight tourniquets, as these increase local tissue damage, infection risk, and can cause systemic toxicity when released. Immobilization minimizes lymphatic spread of venom. Calmness slows heart rate, delaying systemic venom absorption.",
+    "questionType": "THEORY",
+    "text": "Outline the steps of community mobilization to execute a local sanitation project, such as building Ventilated Improved Pit (VIP) latrines.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Community mobilization is a capacity-building process through which community members identify, plan, and execute solutions for their collective health problems. Mobilizing a community to construct VIP latrines involves several structured steps. First, community entry: the health worker meets with traditional leaders and elders to discuss the sanitation needs of the village and obtain support. Second, organizing: the health worker helps establish or strengthen a Ward Development Committee (WDC) or a specific sanitation committee containing diverse representatives, including women and youth. Third, community diagnosis and consensus building: a participatory community appraisal is conducted where members map open defecation areas and relate them to local diarrheal outbreaks. This builds a shared sense of urgency. Fourth, planning: the committee designs the VIP latrine project, determining resource contributions (such as local labor and sand from the community, and cement or pipes from donors/LGA). Fifth, implementation: construction begins, utilizing local masons. The CHEW provides technical guidance on VIP design: ensuring a vent pipe with a fly screen is installed to eliminate odor and trap flies. Finally, monitoring and sustainability: the committee sets rules for maintenance and educates households on hygiene to ensure long-term utilization of the latrines.",
+    "topic": "Community Health",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Explain the community entry step to engage traditional leaders and get administrative endorsement.",
+      "Describe the formation of a representative sanitation committee or utilization of the Ward Development Committee (WDC).",
+      "Describe the use of participatory appraisal (mapping sanitation/diseases) to motivate collective action.",
+      "Outline the resource-sharing plan (community provides labor/materials, external sources provide technical inputs).",
+      "Mention the installation of technical elements (vent pipe and fly screen) as critical components of the VIP latrine project."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the pathophysiology, clinical presentation, and emergency first aid management of Heat Stroke.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Heat stroke is a life-threatening medical emergency characterized by a failure of the body's thermoregulatory mechanisms, leading to an extreme elevation of core body temperature, typically exceeding 40°C (104°F). Pathophysiologically, when environmental heat and physical exertion overwhelm the body's cooling capacity (evaporative cooling through sweat), heat accumulates. This causes systemic inflammatory responses, cellular damage, and central nervous system dysfunction. Clinical presentation includes an altered mental state (confusion, agitation, slurred speech, delirium, seizures, or coma), hot and dry skin (classic heat stroke) or sometimes profuse sweating (exertional heat stroke), rapid and strong pulse that becomes weak, rapid breathing, headache, dizziness, and nausea. Emergency first aid must be initiated immediately to prevent permanent brain, kidney, and muscle damage. The responder must call for medical evacuation, move the casualty to a cool, shaded area, and strip their outer clothing. Active cooling must begin immediately: spraying or dousing the patient with cool water while fanning them, placing ice packs in areas with large superficial blood vessels (the groin, armpits, and neck), and monitoring their mental status. If the patient is conscious and able to swallow, offer cool water. Do not give fever-reducing medications like aspirin or paracetamol, as they do not work on environmental heat stroke and can worsen liver or kidney damage.",
     "topic": "First Aid",
-    "difficulty": "MEDIUM"
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Explain the pathophysiology: thermoregulatory failure causing core body temperature to rise above 40°C.",
+      "Identify key clinical features: altered mental status (confusion/coma), hot dry skin (or sweat), rapid pulse, and hyperthermia.",
+      "Detail immediate cooling interventions: move to shade, remove clothing, spray with water, fan, and apply ice packs to axillae/groin.",
+      "Contraindicate antipyretics (aspirin, paracetamol) explaining they are ineffective for environmental hyperthermia and toxic to organs.",
+      "State the necessity of urgent medical evacuation while cooling measures continue during transport."
+    ]
   },
   {
     "certificationSlug": "chew-theory",
-    "text": "What is the role of a Community Health Extension Worker (CHEW) in integrated disease surveillance?",
-    "options": {
-      "A": "To treat patients in high-end private hospitals",
-      "B": "To monitor, identify, record, and immediately report cases of epidemic-prone diseases within the community and clinic, and participate in control measures",
-      "C": "To develop new vaccines in laboratory settings",
-      "D": "To quarantine whole villages without permission"
-    },
-    "correctAnswer": "B",
-    "explanation": "CHEWs are the front line of surveillance. They use case definitions to detect reportable diseases (like cholera, measles, yellow fever) during clinic consultations and home visits, log them in registers, report to the LGA disease surveillance officer, and educate communities.",
-    "topic": "Disease Surveillance",
-    "difficulty": "MEDIUM"
+    "questionType": "THEORY",
+    "text": "Describe the primary healthcare strategies used to Prevent Mother-to-Child Transmission (PMTCT) of HIV during pregnancy, labor, and delivery.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Mother-to-Child Transmission (MTCT) of HIV can occur during pregnancy (across the placenta), during labor and delivery (through contact with maternal blood and vaginal fluids), or during breastfeeding (through breast milk). Primary healthcare clinics implement a comprehensive package of PMTCT services. The first strategy is universal opt-out HIV counseling and testing for all pregnant women at their first Antenatal Care (ANC) visit. If a woman tests positive, she is immediately initiated on Life-long Antiretroviral Therapy (ART), typically a fixed-dose combination of Tenofovir, Lamivudine, and Dolutegravir (TLD). ART suppresses maternal viral load to undetectable levels, reducing transmission risk to near zero. During labor and delivery, skilled birth attendants ensure safe delivery practices by avoiding routine artificial rupture of membranes, minimizing vaginal examinations, and avoiding episiotomies or instrumental deliveries unless absolutely indicated, to reduce fetal exposure to maternal blood. After birth, the newborn is given infant ARV prophylaxis (Nevirapine syrup daily) for 6 weeks. The mother is counseled on infant feeding: in resource-limited settings, exclusive breastfeeding for the first 6 months is recommended, provided the mother is fully adherent to ART, followed by gradual introduction of complementary foods, and stopping breastfeeding at 12 months.",
+    "topic": "Maternal Health",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Identify the three phases of mother-to-child transmission: pregnancy (placental), labor/delivery (fluids), and breastfeeding (milk).",
+      "Highlight the 'opt-out' HIV screening strategy for all pregnant women attending their first ANC clinic.",
+      "Explain that immediate initiation of maternal ART suppresses viral load, which prevents transmission to the fetus.",
+      "Detail safe labor practices: avoid unnecessary rupture of membranes, limit vaginal exams, and minimize episiotomies.",
+      "Specify post-delivery interventions: infant ARV prophylaxis (Nevirapine for 6 weeks) and counseling on exclusive breastfeeding with maternal ART."
+    ]
   },
   {
     "certificationSlug": "chew-theory",
-    "text": "What four core symptoms are used to screen a patient for active tuberculosis in primary healthcare?",
-    "options": {
-      "A": "Diarrhea, vomiting, headache, and joint pain",
-      "B": "Cough lasting 2 weeks or more, fever, night sweats, and unexplained weight loss",
-      "C": "Skin rash, blood in urine, neck stiffness, and photophobia",
-      "D": "Chest pain, swollen legs, high blood pressure, and dizziness"
-    },
-    "correctAnswer": "B",
-    "explanation": "These four cardinal symptoms are highly sensitive for identifying individuals who may have active pulmonary tuberculosis. A patient presenting with any of these should be referred for sputum examination (GeneXpert or AFB microscopy).",
+    "questionType": "THEORY",
+    "text": "Discuss the clinical presentation, transmission, and primary health care management of Cholera, detailing how to set up an oral rehydration corner.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Cholera is a severe, acute diarrheal disease caused by the bacterium Vibrio cholerae. It is transmitted via the fecal-oral route through ingestion of water or food contaminated with the feces of an infected person. Clinical presentation is characterized by sudden onset of painless, profuse watery diarrhea described as 'rice-water stools,' severe vomiting, muscle cramps, and rapid development of dehydration. Management focuses on rapid fluid replacement. Primary health care facilities manage mild to moderate cases in an Oral Rehydration Therapy (ORT) corner. An ORT corner is a dedicated, well-ventilated space equipped with a clean table, chairs, a functional weighing scale, clean drinking water, ORS packets, measuring jars, cups, spoons, and waste disposal bins. It must be staffed by a trained health worker who prepares ORS, monitors the patients' intake and output, and assesses dehydration status every 4 hours. Mild dehydration is treated with 75 ml/kg of ORS over 4 hours. Zinc tablets are administered to children. Severe dehydration (characterized by lethargy, sunken eyes, skin pinch retracting very slowly, and weak pulse) requires immediate intravenous fluid resuscitation using Ringer's Lactate, followed by antibiotic therapy (such as Azithromycin or Doxycycline) to shorten the illness and reduce bacterial shedding.",
     "topic": "Communicable Diseases",
-    "difficulty": "MEDIUM"
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Identify Vibrio cholerae and fecal-oral contamination of water/food as the cause and route of transmission.",
+      "Describe the classic clinical signs: sudden profuse 'rice-water' stools, vomiting, and rapid onset of dehydration.",
+      "List the essential components of an ORT corner (clean water, ORS, cups, spoons, patient tracking sheet, waste bins).",
+      "Detail dehydration management: ORS for mild/moderate cases, and rapid IV Ringer's Lactate for severe cases.",
+      "Mention auxiliary therapies: Zinc supplementation for children and antibiotics to reduce duration and shedding."
+    ]
   },
   {
     "certificationSlug": "chew-theory",
-    "text": "What is the difference between WHO Medical Eligibility Criteria (MEC) Category 1 and Category 4 for contraceptive use?",
-    "options": {
-      "A": "Category 1 means the method is too expensive; Category 4 is free",
-      "B": "Category 1 represents no restriction for the use of the contraceptive method; Category 4 represents an unacceptable health risk where the method must not be used",
-      "C": "Category 1 is only for teenagers; Category 4 is for postmenopausal women",
-      "D": "Category 1 requires surgery; Category 4 is an oral medication"
-    },
-    "correctAnswer": "B",
-    "explanation": "The WHO MEC categories guide safe prescribing. Category 1: A condition for which there is no restriction on the use of the contraceptive method. Category 4: A condition that represents an unacceptable health risk if the contraceptive method is used (e.g. estrogen-containing pills in a woman with history of deep vein thrombosis).",
-    "topic": "Family Planning",
-    "difficulty": "HARD"
+    "questionType": "THEORY",
+    "text": "Explain the role, composition, and functions of a Ward Development Committee (WDC) in the governance of Primary Health Care.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "The Ward Development Committee (WDC) is a community-based governance structure designed to promote community participation, ownership, and management of primary health care services at the ward level. It serves as a vital bridge between community members and the formal healthcare system. The composition of the WDC is designed to be highly representative of the community. It includes traditional rulers, religious leaders, representatives of local trade associations, women groups, youth leaders, representatives of non-governmental organizations, and the officer-in-charge of the primary health center in the ward, who serves as the technical adviser. The functions of the WDC include: mobilizing community members to utilize healthcare services (such as immunizations, antenatal care, and family planning); identifying local health problems and prioritizing them for action; organizing community contributions (labor, materials, or funds) to maintain clinic facilities; monitoring the performance of health workers to ensure accountability; and advocating to local government authorities for health resources. By involving community leaders directly in health governance, the WDC ensures that health services are culturally acceptable, responsive to local needs, and sustainable.",
+    "topic": "Primary Healthcare",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Define the WDC as a community governance body designed to foster ownership and participation in local primary healthcare.",
+      "List the diverse composition of the committee: traditional, religious, women, youth, and the clinic OIC.",
+      "State the primary function of mobilization (e.g., immunizations, maternal health campaigns, environmental sanitation).",
+      "Describe the role in facility maintenance, resource contribution, and administrative accountability of health staff.",
+      "Explain its advocacy role in bridging the gap between local community needs and local government health departments."
+    ]
   },
   {
     "certificationSlug": "chew-theory",
-    "text": "What is meant by 'involution of the uterus' in postpartum care?",
-    "options": {
-      "A": "The enlargement of the uterus during early pregnancy",
-      "B": "The process by which the uterus returns to its normal non-pregnant size and position after childbirth",
-      "C": "The abnormal tilt of the uterus causing pelvic pain",
-      "D": "The surgical removal of the uterus due to severe hemorrhage"
-    },
-    "correctAnswer": "B",
-    "explanation": "Uterine involution is the physiological process where the postpartum uterus contracts and shrinks back from about 1 kg immediately after delivery to its non-pregnant weight of ~60 g by 6 weeks postpartum, driven by uterine contractions.",
+    "questionType": "THEORY",
+    "text": "Differentiate between endemic, epidemic, and pandemic diseases, providing a relevant West African example for each.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "In epidemiology, diseases are classified based on their patterns of occurrence, geographic spread, and population impact. An endemic disease is constantly present at a relatively stable, baseline level within a specific geographic area or population. Transmission occurs regularly without external imports. A relevant example in West Africa is malaria, which is endemic due to constant transmission by local Anopheles mosquitoes in warm, humid climates. An epidemic is a sudden, rapid increase in the number of cases of a disease far above what is normally expected in a specific population or region within a short period. An example is a seasonal Cholera outbreak in urban slums during the rainy season, or a Lassa fever spike during the dry season due to rodent movement. A pandemic is an epidemic that has spread over several countries or continents, usually affecting a large number of people globally. A relevant example is the COVID-19 pandemic, which originated in one region and spread across the entire globe, including West Africa, or the historical Influenza pandemics. Understanding these differences allows public health authorities to apply appropriate surveillance, quarantine, vaccine distribution, and environmental containment protocols.",
+    "topic": "Epidemiology and disease control",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Define endemic disease as constant presence at baseline levels in a specific area, citing malaria in West Africa.",
+      "Define epidemic as a sudden spike in cases exceeding normal baseline levels in a community, citing cholera or meningitis outbreaks.",
+      "Define pandemic as an epidemic that has crossed international boundaries to affect multiple continents, citing COVID-19 or Influenza.",
+      "Explain that classification depends on geographic spread and disease frequency, not just disease severity.",
+      "Describe how surveillance responses differ (e.g., routine control for endemics, rapid containment for epidemics, global coordination for pandemics)."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Detail the clinical technique, equipment, and physiological importance of measuring Symphysis-Fundal Height (SFH) during antenatal care.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Symphysis-Fundal Height (SFH) measurement is a simple, cost-effective screening tool used during routine Antenatal Care (ANC) starting from 20 weeks of gestation to monitor fetal growth and estimate gestational age. The equipment required is a non-elastic, flexible measuring tape. The clinical technique must follow standard steps to ensure accuracy: the pregnant woman should empty her bladder, as a full bladder can push the uterus upward, giving a falsely high reading. She lies in a supine position with her knees slightly bent. The health worker stands on her right side, palpates the abdomen to locate the upper border of the pubic symphysis, and holds the zero mark of the tape measure at this point. Using the other hand, the health worker palpates the upper border of the uterine fundus. The tape is laid along the midline of the abdomen, following the contour of the uterus, up to the fundus. Physiologically, between 20 and 36 weeks, the SFH in centimeters corresponds closely (+/- 2 cm) to the gestational age in weeks (e.g., at 28 weeks, the SFH should be 26-30 cm). A reading significantly smaller than expected suggests intrauterine growth restriction (IUGR), oligohydramnios, or incorrect dates. A reading significantly larger suggests multiple gestations, polyhydramnios, macrosomia, or uterine fibroids, requiring ultrasound referral.",
     "topic": "Maternal Health",
-    "difficulty": "MEDIUM"
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "State the timing (from 20 weeks gestation) and equipment (non-elastic flexible measuring tape) for SFH measurement.",
+      "Describe patient preparation: emptying the bladder and lying supine with slightly flexed knees.",
+      "Detail the landmarks: from the upper border of the pubic symphysis to the highest point of the uterine fundus.",
+      "Explain the physiological rule: SFH in centimeters matches gestational age in weeks (+/- 2 cm) between 20-36 weeks.",
+      "List implications of abnormal readings: smaller values suggest IUGR or oligohydramnios; larger values suggest twins or polyhydramnios."
+    ]
   },
   {
     "certificationSlug": "chew-theory",
-    "text": "How do Oral Polio Vaccine (OPV) and Inactivated Polio Vaccine (IPV) differ in terms of administration and immunization mechanism?",
-    "options": {
-      "A": "OPV is injected and contains live virus; IPV is oral and contains dead virus",
-      "B": "OPV is administered orally (live attenuated virus, producing gut immunity); IPV is administered via intramuscular injection (inactivated virus, producing systemic blood immunity)",
-      "C": "OPV is given at 9 months; IPV is given only at birth",
-      "D": "OPV is for adults; IPV is for infants only"
-    },
-    "correctAnswer": "B",
-    "explanation": "OPV is given as oral drops, replicating in the intestine to induce mucosal IgA antibodies (gut immunity), which prevents transmission. IPV is an injection of killed virus that stimulates blood IgG antibodies, preventing paralysis but not gut replication.",
+    "questionType": "THEORY",
+    "text": "Discuss the National Program on Immunization (NPI) schedule for an infant from birth to 9 months, listing vaccines, ages of administration, and routes.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "The National Program on Immunization (NPI) schedule in Nigeria is designed to protect infants from major vaccine-preventable childhood killer diseases. At birth, the infant receives three vaccines: BCG (Bacillus Calmette-Guérin) administered intradermally in the left upper arm to protect against tuberculosis; OPV-0 (Oral Polio Vaccine) given as 2 drops orally; and Hepatitis B vaccine (HepB-0) given intramuscularly (IM) in the anterolateral thigh to prevent early viral infection. At 6 weeks, the child receives: Pentavalent-1 (Diphtheria, Pertussis, Tetanus, Hep B, Hib) given IM in the left thigh; PCV-1 (Pneumococcal Conjugate Vaccine) given IM in the right thigh; OPV-1 given orally; and Rotavirus-1 vaccine given orally. At 10 weeks, the infant receives: Pentavalent-2 (IM, left thigh); PCV-2 (IM, right thigh); OPV-2 (oral); and Rotavirus-2 (oral). At 14 weeks, they receive: Pentavalent-3 (IM, left thigh); PCV-3 (IM, right thigh); OPV-3 (oral); and IPV (Inactivated Polio Vaccine) administered IM or intradermally. At 9 months, the infant receives: Measles-1 vaccine administered subcutaneously (SC) in the left upper arm; and Yellow Fever vaccine administered SC in the right upper arm. Vitamin A is also administered orally starting at 6 months.",
     "topic": "Immunization",
-    "difficulty": "HARD"
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "State birth vaccines: BCG (intradermal), OPV-0 (oral), and HepB-0 (intramuscular).",
+      "Detail the 6-week vaccines: Pentavalent-1 (IM), PCV-1 (IM), OPV-1 (oral), and Rotavirus-1 (oral).",
+      "Detail the 10-week and 14-week vaccines, noting routes and the addition of IPV at 14 weeks.",
+      "Identify the 9-month vaccines: Measles-1 (subcutaneous) and Yellow Fever (subcutaneous).",
+      "Explain the significance of correct route selection (IM in thigh for infants, subcutaneous for measles/yellow fever, oral for OPV/rotavirus)."
+    ]
   },
   {
     "certificationSlug": "chew-theory",
-    "text": "What is the primary design improvement of a Ventilated Improved Pit (VIP) latrine over a standard pit latrine?",
-    "options": {
-      "A": "It uses flushing water to clear waste",
-      "B": "It has a vertical vent pipe with a fly-screen mesh at the top to draw away odors and trap flies in the pipe",
-      "C": "It is built using expensive stainless steel components",
-      "D": "It requires a mechanical pump to extract odor"
-    },
-    "correctAnswer": "B",
-    "explanation": "The VIP latrine utilizes a vent pipe painted black to absorb heat, creating an updraft that sucks air from the pit and out the top, eliminating odor. The screen mesh at the top prevents flies from escaping; they are attracted to the light at the top of the pipe, enter it, and die of dehydration.",
-    "topic": "Environmental Health",
-    "difficulty": "MEDIUM"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "In the Integrated Disease Surveillance and Response (IDSR) framework, how quickly should immediately reportable diseases (e.g., cholera, measles, Lassa fever) be reported to the LGA level?",
-    "options": {
-      "A": "Within 24 hours of case detection",
-      "B": "Within 1 week",
-      "C": "At the end of the monthly reporting cycle",
-      "D": "Only if a major outbreak occurs"
-    },
-    "correctAnswer": "A",
-    "explanation": "Immediately reportable diseases are epidemic-prone or targeted for eradication. Case detection must trigger immediate notification (within 24 hours) via telephone, SMS, or IDSR Form 002 to enable rapid contact tracing and epidemic control.",
-    "topic": "Disease Surveillance",
-    "difficulty": "MEDIUM"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "What is the core premise of the Health Belief Model (HBM) used in health education?",
-    "options": {
-      "A": "People will change behavior only if they are paid to do so",
-      "B": "A person's health behavior depends on their perception of susceptibility, severity of the illness, benefits of action, barriers, and cues to action",
-      "C": "Health beliefs are entirely determined by genetic inheritance",
-      "D": "Education has no influence on cultural beliefs"
-    },
-    "correctAnswer": "B",
-    "explanation": "The Health Belief Model is a psychological health behavior model. It posits that people are likely to adopt a healthy behavior if they believe they are at risk (susceptibility), that the illness has serious consequences (severity), that the behavior works (benefits), and that they can overcome obstacles (barriers).",
-    "topic": "Health Education",
-    "difficulty": "HARD"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "At what age should complementary feeding be introduced, and what are the essential attributes of complementary foods?",
-    "options": {
-      "A": "At 3 months; foods must be highly liquid and sugary",
-      "B": "At 6 months; foods must be timely, adequate, safe, and appropriately fed in terms of texture and frequency",
-      "C": "At 12 months; foods must contain only dairy products",
-      "D": "At 9 months; foods should consist only of plain water and mashed yams"
-    },
-    "correctAnswer": "B",
-    "explanation": "At 6 months, breast milk alone is no longer sufficient to meet the nutritional demands of the growing infant. Complementary feeding must begin: timely (at 6 months), adequate (providing energy, protein, micronutrients), safe (hygienically prepared), and appropriate (correct texture/portions).",
-    "topic": "Nutrition",
-    "difficulty": "MEDIUM"
-  },
-  {
-    "certificationSlug": "chew-theory",
-    "text": "What is the standard chest compression to ventilation ratio for performing Cardiopulmonary Resuscitation (CPR) on an adult by a single rescuer?",
-    "options": {
-      "A": "15 compressions to 2 ventilations",
-      "B": "30 compressions to 2 ventilations",
-      "C": "30 compressions to 5 ventilations",
-      "D": "10 compressions to 1 ventilation"
-    },
-    "correctAnswer": "B",
-    "explanation": "For an adult casualty in cardiac arrest, a single rescuer (and dual rescuers) should perform cycles of 30 chest compressions (at a depth of 2-2.4 inches and rate of 100-120 compressions per minute) followed by 2 rescue breaths.",
+    "questionType": "THEORY",
+    "text": "Describe the first aid management of a suspected venomous snakebite on a patient's leg, emphasizing correct actions, harmful practices to avoid, and referral.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "First aid for a suspected venomous snakebite focuses on keeping the patient calm, slowing the systemic absorption of venom, preventing local complications, and arranging rapid transport to a medical facility that stocks antivenom. The first step is to reassure the patient, as anxiety increases heart rate, which speeds up venom circulation. The casualty should lie down, and the bitten leg must be immobilized using a splint and bandage, kept at or slightly below the level of the heart to minimize lymphatic flow. Remove any tight rings, anklets, or clothing from the limb before swelling starts. Wash the bite gently with clean water and soap, and cover it with a clean, dry, loose dressing. Several traditional practices are highly harmful and must be avoided: do not cut the bite wound with razor blades, as this causes severe tissue damage, bleeding, and infection; do not attempt to suck out the venom, which is ineffective and exposes the responder to toxins; and do not apply a tight tourniquet, which blocks blood flow and can lead to gangrene and amputation. Do not apply ice or native herbal pastes. Arrange immediate transfer of the patient to a hospital, keeping the leg immobilized during transport.",
     "topic": "First Aid",
-    "difficulty": "MEDIUM"
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Explain the rationale of patient immobilization and keeping the limb at/below heart level to slow venom spread.",
+      "List harmful practices to avoid: cutting the wound, sucking venom, and applying tight arterial tourniquets.",
+      "State the risk of gangrene/amputation from tourniquets and severe tissue infection from cutting the bite.",
+      "Describe correct local care: gentle washing, removing constrictive jewelry, and applying a loose sterile dressing.",
+      "Emphasize immediate transfer to a health facility equipped with snake antivenom."
+    ]
   },
   {
     "certificationSlug": "chew-theory",
-    "text": "What are the three core components of Kangaroo Mother Care (KMC) for low-birthweight and preterm infants?",
-    "options": {
-      "A": "Keeping the baby in an incubator, using formula milk, and strict visiting hours",
-      "B": "Continuous skin-to-skin contact, exclusive breastfeeding, and early discharge from the facility with close follow-up",
-      "C": "Injecting antibiotics daily, using cotton wraps, and feeding sugar water",
-      "D": "Giving the infant warm baths, swaddling tightly, and separating from the mother"
-    },
-    "correctAnswer": "B",
-    "explanation": "Kangaroo Mother Care is an evidence-based method for preterm/LBW infants. Its core features are: 1. Kangaroo position (continuous, prolonged skin-to-skin contact against the mother's chest). 2. Kangaroo nutrition (exclusive breastfeeding). 3. Early discharge with support and monitoring.",
+    "questionType": "THEORY",
+    "text": "Discuss the clinical presentation, assessment, and management of Pneumonia in children under five under IMCI guidelines.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Under the Integrated Management of Childhood Illness (IMCI) guidelines, pneumonia is classified based on clinical signs of respiratory distress. A child presenting with cough or difficult breathing is assessed by counting their respiratory rate for one full minute while they are calm. The child is classified as having Pneumonia if they have fast breathing. Fast breathing thresholds are: 50 breaths per minute or more for infants aged 2 to 11 months; and 40 breaths per minute or more for children aged 12 to 59 months. The child is classified as having Severe Pneumonia or Very Severe Disease if they present with any general danger sign (inability to drink or breastfeed, lethargy or unconsciousness, convulsions, or vomiting everything) or chest indrawing (the lower chest wall goes in when the child breathes in). Management of Pneumonia at the primary health care level involves prescribing oral Amoxicillin (first-line antibiotic) for 5 days, counseling the mother on feeding, home care, and identifying worsening signs, and scheduling a follow-up visit in 3 days. Severe Pneumonia cannot be managed at the PHC clinic; the child must receive a pre-referral dose of intramuscular Ampicillin or Ceftriaxone, and be referred urgently to a hospital.",
+    "topic": "Child Health",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "State the respiratory rate thresholds for fast breathing: >=50 breaths/min for 2-11 months; >=40 breaths/min for 12-59 months.",
+      "Define chest indrawing and identify it as a sign of severe respiratory distress.",
+      "List IMCI general danger signs (lethargy, convulsing, inability to feed, vomiting everything) indicating very severe disease.",
+      "Detail management for Pneumonia: 5-day course of oral Amoxicillin and follow-up in 3 days.",
+      "Detail pre-referral steps for Severe Pneumonia: IM antibiotic dose (Ampicillin/Ceftriaxone) and urgent hospital transfer."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Explain the Lactational Amenorrhea Method (LAM) of family planning, detailing the three strict criteria required for its clinical effectiveness.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "The Lactational Amenorrhea Method (LAM) is a temporary, natural postpartum family planning method that relies on the physiological suppression of ovulation caused by breastfeeding. When an infant breastfeeds, the physical stimulation of the nipple triggers signals to the mother's brain, suppressing the release of Gonadotropin-Releasing Hormone (GnRH). This, in turn, inhibits the secretion of Luteinizing Hormone (LH) and Follicle-Stimulating Hormone (FSH), preventing follicular development and ovulation. For LAM to be highly effective (providing about 98% protection against pregnancy), three strict criteria must be met simultaneously: 1. The mother's monthly bleeding or menstrual period must not have returned (amenorrhea). Any bleeding after 56 days postpartum is considered a warning sign that fertility may have returned. 2. The mother must practice exclusive or near-exclusive breastfeeding day and night. The baby must receive no other food or liquids (including water), and the intervals between feeds should not exceed 4 hours during the day and 6 hours at night. 3. The baby must be less than 6 months old. Once any of these three conditions is no longer met, the mother must immediately transition to another reliable family planning method.",
+    "topic": "Family Planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Explain the physiological mechanism: nipple stimulation suppresses ovulation by inhibiting LH, FSH, and GnRH release.",
+      "State Criterion 1: The mother's menstrual period has not returned postpartum (amenorrhea).",
+      "State Criterion 2: The mother is exclusively breastfeeding on demand (intervals <= 4 hours day, <= 6 hours night).",
+      "State Criterion 3: The infant is less than 6 months old.",
+      "Emphasize that the failure of any one criterion requires immediate initiation of a complementary contraceptive method."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the clinical management of Postpartum Hemorrhage (PPH) at a primary health care level, including Active Management of the Third Stage of Labor (AMTSL).",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Postpartum Hemorrhage (PPH) is the loss of 500 ml or more of blood from the genital tract after vaginal delivery, representing a leading cause of maternal mortality. Prevention relies on Active Management of the Third Stage of Labor (AMTSL), performed immediately after delivery of the baby. AMTSL consists of three steps: 1. Administration of a uterotonic drug (usually 10 units of intramuscular Oxytocin) within 1 minute of birth, after confirming there is no second baby. 2. Controlled Cord Traction (CCT) with counter-traction on the uterus to facilitate placental delivery. 3. Uterine massage immediately after placental delivery, repeated every 15 minutes for the first 2 hours. If PPH occurs, immediate management must begin: call for help, monitor vitals, assess the cause using the '4 Ts' (Tone, Tissue, Trauma, Thrombin). The most common cause is uterine atony (Tone). Treatment includes: vigorous bimanual uterine compression, administering additional uterotonics (misoprostol orally/rectally, or ergometrine IM), inserting a large-bore IV line to run intravenous fluids (Normal Saline or Ringer's Lactate), checking the placenta for completeness (Tissue), examining for vaginal tears requiring repair (Trauma), and preparing for transfer using a Non-pneumatic Anti-Shock Garment (NASG) if available.",
     "topic": "Maternal Health",
-    "difficulty": "MEDIUM"
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Define PPH as blood loss >= 500 ml following vaginal delivery, and identify uterine atony as the leading cause.",
+      "Detail the three components of AMTSL: uterotonic administration (Oxytocin), Controlled Cord Traction (CCT), and uterine massage.",
+      "Explain the '4 Ts' assessment framework (Tone, Tissue, Trauma, Thrombin) to locate the cause of bleeding.",
+      "Describe immediate therapeutic steps: bimanual uterine massage, secondary uterotonics (Misoprostol), and IV fluid resuscitation.",
+      "Mention stabilization and referral protocols, including the use of the Non-pneumatic Anti-Shock Garment (NASG)."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Discuss vector control strategies for malaria management, highlighting chemical, biological, and environmental measures.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Vector control is a key component of malaria prevention and elimination strategies, aimed at reducing transmission by targeting female Anopheles mosquitoes. Effective vector control uses a combination of three approaches: chemical, biological, and environmental. Chemical measures involve the use of insecticides. This includes distributing Long-Lasting Insecticidal Nets (LLINs) which provide a physical barrier and kill mosquitoes on contact, and Indoor Residual Spraying (IRS), where insecticides are applied to the indoor walls of houses where mosquitoes rest after feeding. Chemical larvicides can also be applied to standing water. Biological measures use natural predators or pathogens to suppress mosquito populations. This includes introducing larvivorous fish (like Gambusia) to water bodies to feed on mosquito larvae, or applying biological toxins like Bacillus thuringiensis israelensis (Bti), which specifically kills larvae without harming other aquatic life. Environmental measures (environmental management) focus on destroying breeding sites. This involves draining stagnant water pools, filling potholes, clearing tall vegetation around residential areas where adult mosquitoes rest, and promoting proper household drainage. By combining these methods, communities can reduce mosquito density and human-vector contact.",
+    "topic": "Vector control (mosquito, rodent)",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Identify the female Anopheles mosquito as the malaria vector and state the goal of interrupting its life cycle.",
+      "Describe chemical strategies: distribution of LLINs and application of Indoor Residual Spraying (IRS).",
+      "Describe biological strategies: introduction of larvivorous fish and biological toxins like Bti.",
+      "Describe environmental strategies: draining stagnant water, clearing vegetation, and filling breeding pools.",
+      "Explain that integrated vector management (combining multiple methods) is the most effective containment strategy."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Explain the clinical manifestations, long-term health consequences, and public health interventions for Vitamin A Deficiency (VAD) in children.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Vitamin A is an essential fat-soluble micronutrient vital for vision, immune function, and cellular growth. Vitamin A Deficiency (VAD) is a major public health problem in developing countries, particularly affecting children under five. The earliest clinical manifestation of VAD is night blindness (nyctalopia), where the child has difficulty seeing in dim light or darkness. As deficiency worsens, it leads to xerophthalmia, a progressive eye condition. This starts with conjunctival xerosis (dryness of the eye membrane), progresses to Bitot's spots (foamy, triangular patches on the sclera), then to corneal xerosis (dryness of the cornea), and finally to keratomalacia (softening and perforation of the cornea), leading to permanent blindness. VAD also severely compromises the immune system, leading to high morbidity and mortality from common infections like measles, diarrhea, and pneumonia. Public health interventions include: routine high-dose Vitamin A supplementation administered every 6 months to children aged 6 to 59 months (100,000 IU for infants 6-11 months, and 200,000 IU for children 12-59 months); dietary diversification promoting foods rich in Vitamin A (palm oil, carrots, sweet potatoes, eggs, liver); food fortification of staple items like flour and cooking oil; and promoting breastfeeding.",
+    "topic": "Nutrition",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Explain the role of Vitamin A in ocular health (retinal function) and immune system maintenance.",
+      "Outline the progression of xerophthalmia: night blindness, Bitot's spots, corneal dryness, and keratomalacia.",
+      "State the risk of increased severity and death from measles, diarrhea, and pneumonia due to immune suppression.",
+      "State the supplementation doses: 100,000 IU (blue capsule) for 6-11 months, and 200,000 IU (red capsule) for 12-59 months every 6 months.",
+      "List food sources and fortification strategies (red palm oil, leafy greens, fortified flour/cooking oil) as dietary interventions."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the emergency first aid management of a patient experiencing an active tonic-clonic seizure, outlining safety precautions and post-ictal care.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A tonic-clonic (grand mal) seizure is characterized by loss of consciousness, muscle rigidity (tonic phase), and violent muscle contractions (clonic phase). The primary goal of first aid is to protect the patient from physical injury during the fit. The responder must remain calm, time the seizure, and clear the area of any sharp or hard objects. Gently place something soft (like a folded jacket) under the patient's head to prevent skull trauma. Loosen tight clothing around the neck, such as collars or ties, to facilitate breathing. Do not attempt to restrain the patient or stop their movements, as this can cause muscle tears or bone fractures. A critical safety rule is: never put anything in the patient's mouth (such as spoons, sticks, or fingers). Contrary to popular myth, patients cannot swallow their tongue, and forcing objects into the mouth can break teeth, block the airway, or cause severe bites to the responder. Once the shaking stops, the patient enters the post-ictal phase, characterized by drowsiness, confusion, and deep sleep. The responder must place the patient in the recovery position to keep the airway open and allow saliva to drain. Monitor breathing and stay with the patient until they are fully conscious. Refer immediately if the seizure lasts longer than 5 minutes or if a second seizure starts.",
+    "topic": "First Aid",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "State the primary goal: protect the patient from physical trauma without attempting to restrain their movements.",
+      "Contraindicate inserting any object (spoons, sticks) into the patient's mouth, explaining the respiratory and dental risks.",
+      "Describe physical safety steps: place soft padding under the head, loosen neck collars, and remove surrounding hazards.",
+      "Explain post-ictal care: place the patient in the recovery position to prevent airway obstruction by the tongue or fluids.",
+      "Define referral criteria: seizure lasting > 5 minutes (status epilepticus), respiratory failure, or serial fits."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Explain the prevention, transmission, and clinical components of the SAFE strategy for controlling Trachoma.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Trachoma is the world's leading infectious cause of blindness, caused by the bacterium Chlamydia trachomatis. It is transmitted in communities through direct contact with eye and nose discharge from infected persons, contact with contaminated fomites (such as shared towels or clothing), and mechanically by eye-seeking flies (Musca sorbens) that breed in human feces. Repeated childhood infections lead to chronic inflammation of the conjunctiva lining the upper eyelid, resulting in scarring. The scar tissue contracts, pulling the eyelid margin inward (entropion) and causing the eyelashes to rub against the cornea (trichiasis). This constant friction scratches and opacifies the cornea, leading to permanent blindness. To control and eliminate trachoma, the World Health Organization recommends the SAFE strategy, which stands for: 1. Surgery: to correct trichiasis (eyelash rubbing) and prevent further corneal scarring. 2. Antibiotics: mass distribution of oral Azithromycin (or Tetracycline eye ointment) to the entire community to clear infection and reduce the reservoir. 3. Facial cleanliness: promoting daily washing of children's faces with soap and water to remove secretions that attract flies. 4. Environmental improvements: improving access to clean water, constructing household latrines to reduce fly-breeding sites, and managing animal manure.",
+    "topic": "Eye health and trachoma",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Identify Chlamydia trachomatis and transmission via contact with eye discharge, fomites, and Musca sorbens flies.",
+      "Explain the pathophysiology: chronic scarring causes the eyelashes to turn inward (trichiasis), scratching the cornea.",
+      "State the 'S' and 'A' of the SAFE strategy: Surgery for trichiasis and mass Antibiotic treatment (Azithromycin).",
+      "State the 'F' and 'E' of the SAFE strategy: Facial cleanliness and Environmental sanitation (latrines, water access).",
+      "Explain how fly control and proper waste/feces management reduces transmission vectors."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Outline the immediate management protocol for a health worker who sustains an accidental needle-stick injury, including Post-Exposure Prophylaxis (PEP).",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "An accidental needle-stick injury exposes health workers to blood-borne pathogens, including Human Immunodeficiency Virus (HIV), Hepatitis B Virus (HBV), and Hepatitis C Virus (HCV). Immediate management must be initiated within minutes of the injury. The first step is to encourage bleeding from the wound by rinsing it under clean, running water. Wash the area thoroughly with soap and water. Do not squeeze, scrub, or rub the wound aggressively, and do not apply harsh disinfectants like bleach or iodine, as this can cause tissue inflammation that increases viral uptake. Next, report the incident immediately to the facility supervisor or safety officer to initiate reporting and assessment. The source patient (if known) and the injured health worker should be screened for HIV, HBV, and HCV after counseling. If the source patient is HIV-positive or their status is unknown, the worker should be started on Post-Exposure Prophylaxis (PEP) within 72 hours (ideally within 1 to 2 hours) of exposure. The standard HIV PEP regimen is a 28-day course of three antiretroviral drugs (typically Dolutegravir combined with Tenofovir and Lamivudine). If the worker is not vaccinated against Hepatitis B, they should receive the HBV vaccine series and Hepatitis B Immunoglobulin (HBIG) if the source is positive.",
+    "topic": "Environmental Health",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Detail immediate local wound care: wash under running water with soap, avoid squeezing, scrubbing, or using bleach.",
+      "State the maximum window to initiate HIV PEP as 72 hours, emphasizing that earlier administration (1-2 hours) is most effective.",
+      "Identify the standard PEP regimen: a 28-day course of triple antiretroviral therapy (e.g., Dolutegravir + Tenofovir + Lamivudine).",
+      "Detail testing requirements: baseline and follow-up screening for HIV, HBV, and HCV for both the worker and source patient.",
+      "Address Hepatitis B intervention: administer HBV vaccine booster and Hepatitis B Immunoglobulin (HBIG) if unvaccinated/indicated."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the health education strategies a CHEW should use to address vaccine hesitancy and increase immunization coverage in a community.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Vaccine hesitancy is a complex issue driven by misinformation, cultural beliefs, fear of side effects, and lack of trust in health services. To address this and improve immunization coverage, a CHEW must employ targeted health education and community engagement strategies. First, the CHEW should engage traditional, religious, and opinion leaders. Mobilizing these key figures first builds trust and credibility, as community members look to them for guidance. Second, conduct interpersonal communication (IPC) and counseling. Rather than lecturing, the CHEW should listen to mothers' concerns non-judgmentally, validate their fears, and provide clear, simple explanations in the local language about how vaccines work, their safety profiles, and common mild side effects (like mild fever or swelling). Third, organize community dialogue sessions and town hall meetings. These forums allow open discussion to dispel myths, such as the misconception that vaccines cause infertility. Fourth, leverage local community channels: using town announcers, playing health educational jingles, and distributing visual posters. Finally, improve vaccine service delivery by making immunization clinics welcoming, reducing waiting times, organizing mobile outreach sessions for remote settlements, and using tracking systems (like default registers or neonatal tracking cards) to follow up on children who miss their doses.",
+    "topic": "Health Education",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Identify key drivers of vaccine hesitancy: misinformation, cultural fears, and mistrust of healthcare programs.",
+      "Describe the engagement of traditional and religious leaders to serve as advocates and build community trust.",
+      "Detail interpersonal communication techniques: active listening, empathy, local language use, and clarifying side effects.",
+      "Explain the use of community dialogues/town halls to directly address and debunk immunization myths.",
+      "Describe service delivery improvements: mobile outreaches, welcoming clinic environment, and default tracking systems."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Discuss the primary health care assessment and support plan for an elderly patient presenting with chronic knee pain (osteoarthritis) and early cognitive decline.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Caring for an elderly patient with co-existing physical and cognitive impairments requires a holistic, patient-centered approach that optimizes functional independence and ensures safety. For the chronic knee pain, which is characteristic of osteoarthritis, the CHEW's assessment includes evaluating pain severity, joint range of motion, and impact on mobility. The support plan focus is on non-pharmacological management: advising on low-impact exercise (like walking) to maintain muscle strength and joint mobility, applying warm compresses, encouraging weight management to reduce stress on the joints, and recommending walking aids (like a cane) to prevent falls. Pharmacological management should start with safe analgesics like Paracetamol, avoiding long-term use of NSAIDs (like Ibuprofen or Diclofenac) due to high risks of gastric ulcers and kidney impairment in the elderly. For the early cognitive decline (dementia), the CHEW assesses memory, disorientation, and ability to perform activities of daily living (ADLs). The support plan includes educating the family on creating a structured, safe home environment to prevent falls and wandering, using memory aids, and dividing tasks into simple steps. The CHEW screens for polypharmacy to ensure no medications are worsening confusion, and coordinates community support.",
+    "topic": "Geriatric and elderly care in PHC",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Detail assessment for osteoarthritis: evaluate pain levels, joint movement, and impact on mobility/activities.",
+      "Outline non-pharmacological knee care: low-impact exercises, warm compresses, weight reduction, and walking aids.",
+      "Highlight drug safety: recommend Paracetamol as first-line and warn against long-term NSAID use in the elderly.",
+      "Detail cognitive support: educate family on safety modifications (lighting, removing clutter) and structured routines.",
+      "Address systemic issues: check for polypharmacy and ensure regular follow-up for safety and caregiver support."
+    ]
   }
 ]

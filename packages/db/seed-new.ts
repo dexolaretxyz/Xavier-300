@@ -48,12 +48,12 @@ async function main() {
     { slug: 'devops', domainSlug: 'devops', name: 'DevOps (AWS/Azure DevOps)', description: 'CI/CD, containers, and orchestration practice exam', difficulty: Difficulty.HARD },
     { slug: 'fullstack', domainSlug: 'fullstack', name: 'Full Stack Web Development (Meta/AWS)', description: 'Mock exam covering frontend, backend, and web security', difficulty: Difficulty.MEDIUM },
     { slug: 'project-management', domainSlug: 'project-management', name: 'Project Management (PMP/CAPM)', description: 'Practice exam covering PMBOK and Agile frameworks', difficulty: Difficulty.HARD },
-    { slug: 'chew-objective', domainSlug: 'nigerian-professional-exams', name: 'CHEW Qualifying Exam — Objective', description: 'Community Health Extension Worker National Professional Qualifying Examination — Objective (Multiple Choice) Section', difficulty: Difficulty.MEDIUM },
+    { slug: 'chew-objective', domainSlug: 'nigerian-professional-exams', name: 'CHEW Qualifying Exam — Objective', description: 'Community Health Extension Worker National Professional Qualifying Examination — Objective (Multiple Choice) Section', difficulty: Difficulty.MEDIUM, questionCount: 60 },
     { slug: 'chew-theory', domainSlug: 'nigerian-professional-exams', name: 'CHEW Qualifying Exam — Theory', description: 'Community Health Extension Worker National Professional Qualifying Examination — Theory Section Practice', difficulty: Difficulty.MEDIUM },
     { slug: 'chew-practical', domainSlug: 'nigerian-professional-exams', name: 'CHEW Qualifying Exam — Practical', description: 'Community Health Extension Worker National Professional Qualifying Examination — Practical Session Practice', difficulty: Difficulty.HARD }
   ];
 
-  for (const cert of certifications) {
+  for (const cert of certifications as any[]) {
     const domainId = domainMap.get(cert.domainSlug);
     if (!domainId) continue;
     await prisma.certification.create({
@@ -64,7 +64,7 @@ async function main() {
         difficulty: cert.difficulty,
         domainId: domainId,
         examDuration: 30,
-        questionCount: 40
+        questionCount: cert.questionCount || 40
       }
     });
   }
