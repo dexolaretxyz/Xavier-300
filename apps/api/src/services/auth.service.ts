@@ -46,18 +46,41 @@ export const authService = {
     try {
       const client = getResendClient();
       if (!client) {
-        console.warn('Email not sent - Resend not configured');
+        console.warn(`[EMAIL SKIP] Resend not configured. OTP for ${email}: ${otp}`);
         return;
       }
-      await client.emails.send({
+      const result = await client.emails.send({
         from: `Xavier 300 <${fromEmail}>`,
         to: email,
-        subject: 'Verify your Xavier 300 Account',
-        html: `<p>Welcome to Xavier 300!</p><p>Your verification code is: <strong>${otp}</strong></p><p>This code expires in 15 minutes.</p>`,
+        subject: 'Your Xavier 300 Verification Code',
+        html: `
+          <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 560px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e5e7eb;">
+            <div style="background: #1a1a18; padding: 32px 40px; text-align: center;">
+              <div style="display: inline-block; width: 40px; height: 40px; background: #f97316; border-radius: 8px; line-height: 40px; font-size: 22px; font-weight: 900; color: white; margin-bottom: 16px;">X</div>
+              <h1 style="color: #ffffff; font-size: 22px; margin: 0; letter-spacing: -0.5px;">Xavier 300</h1>
+            </div>
+            <div style="padding: 40px;">
+              <h2 style="color: #111827; font-size: 20px; margin: 0 0 8px;">Verify your email address</h2>
+              <p style="color: #6b7280; font-size: 15px; margin: 0 0 32px; line-height: 1.6;">
+                Use the code below to verify your Xavier 300 account. This code is valid for <strong>15 minutes</strong>.
+              </p>
+              <div style="background: #f9fafb; border: 2px dashed #e5e7eb; border-radius: 12px; padding: 24px; text-align: center; margin-bottom: 32px;">
+                <div style="font-size: 42px; font-weight: 900; letter-spacing: 10px; color: #f97316; font-family: monospace;">${otp}</div>
+              </div>
+              <p style="color: #9ca3af; font-size: 13px; margin: 0;">
+                If you did not create a Xavier 300 account, you can safely ignore this email.
+              </p>
+            </div>
+            <div style="background: #f9fafb; border-top: 1px solid #e5e7eb; padding: 20px 40px; text-align: center;">
+              <p style="color: #9ca3af; font-size: 12px; margin: 0;">© ${new Date().getFullYear()} Xavier 300. Nigeria's #1 Tech Certification Platform.</p>
+            </div>
+          </div>
+        `,
       });
-    } catch (error) {
-      console.error('Error sending email:', error);
-      throw new Error(`Failed to send verification email: ${error}`);
+      console.log(`[EMAIL OK] Verification email sent to ${email}. Resend ID: ${(result as any)?.data?.id || 'unknown'}`);
+    } catch (error: any) {
+      console.error(`[EMAIL ERROR] Failed to send verification email to ${email}:`, error?.message || error);
+      throw new Error(`Failed to send verification email: ${error?.message || error}`);
     }
   },
 
