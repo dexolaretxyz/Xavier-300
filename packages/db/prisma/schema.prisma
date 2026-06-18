@@ -99,6 +99,12 @@ model Question {
   contributedById String?
   contributedBy   User?        @relation(fields: [contributedById], references: [id])
   createdAt       DateTime     @default(now())
+
+  // UPGRADE 2 & 3 changes
+  questionType    QuestionType @default(MCQ)
+  markingGuide    Json?
+  imageUrl        String?
+  imageAlt        String?
 }
 
 enum QuestionSource {
@@ -111,6 +117,12 @@ enum QuestionStatus {
   PENDING_REVIEW
   APPROVED
   REJECTED
+}
+
+enum QuestionType {
+  MCQ
+  THEORY
+  PRACTICAL
 }
 
 model ExamAttempt {
@@ -132,6 +144,10 @@ model ExamAttempt {
   aiRecommendations Json?      // [ { topic, recommendation } ]
   attemptNumber   Int          // 1, 2, or 3 for that day
   createdAt       DateTime     @default(now())
+
+  // UPGRADE 2 changes
+  theoryAnswers   Json?        // { questionId: "student written answer" }
+  theoryScores    Json?        // { questionId: { score: 7, maxScore: 10, feedback: "..." } }
 }
 
 enum AttemptStatus {

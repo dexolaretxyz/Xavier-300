@@ -1,7 +1,17 @@
 import jwt from 'jsonwebtoken';
 import prisma from '../lib/db';
+import crypto from 'crypto';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'fallback_secret_do_not_use_in_prod';
+
+function cryptoShuffle<T>(array: T[]): T[] {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = crypto.randomInt(0, i + 1);
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
 
 export const examService = {
   // 1. Get random approved questions for the exam
@@ -23,13 +33,9 @@ export const examService = {
       throw new Error(`Not enough approved questions. Found ${allQuestions.length}, required ${count}.`);
     }
 
-    // Fisher-Yates shuffle
-    for (let i = allQuestions.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]];
-    }
-
-    const selectedIds = allQuestions.slice(0, count).map(q => q.id);
+    // Shuffle using cryptoShuffle
+    const shuffledAll = cryptoShuffle(allQuestions);
+    const selectedIds = shuffledAll.slice(0, count).map(q => q.id);
 
     const questions = await prisma.question.findMany({
       where: {
@@ -37,27 +43,28 @@ export const examService = {
       }
     });
 
-    return questions;
+    // Postgres findMany order is not guaranteed. We shuffle the final array to match random order.
+    return cryptoShuffle(questions);
   },
 
   // 2. Shuffle options (A,B,C,D) and remap the correct answer
   shuffleOptions(question: any) {
+    if (question.questionType === 'THEORY') {
+      return question; // Theory questions don't have option choices to shuffle
+    }
     const optionsObj = question.options as Record<string, string>;
     const correctAnswerLetter = question.correctAnswer as string;
     const correctText = optionsObj[correctAnswerLetter];
 
     const entries = Object.entries(optionsObj);
-    // Fisher-Yates shuffle on entries
-    for (let i = entries.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [entries[i], entries[j]] = [entries[j], entries[i]];
-    }
+    // Shuffle entries using cryptoShuffle
+    const shuffledEntries = cryptoShuffle(entries);
 
     const labels = ['A', 'B', 'C', 'D'];
     const newOptions: Record<string, string> = {};
     let newCorrectAnswer = '';
 
-    entries.forEach(([oldKey, text], index) => {
+    shuffledEntries.forEach(([oldKey, text], index) => {
       const newLabel = labels[index];
       newOptions[newLabel] = text as string;
       if (text === correctText) {

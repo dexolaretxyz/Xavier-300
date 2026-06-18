@@ -45,13 +45,18 @@ export default function ExamLobbyPage() {
 
       // 2. Call API to start session
       const { data } = await api.post('/api/exams/start', { certId: cert.id });
-      const { attemptId, sessionToken, questions, examDuration } = data.data;
+      const { attemptId, sessionToken, questions, examDuration, questionType } = data.data;
 
       // 3. Initialize Zustand store
       initializeSession(attemptId, sessionToken, questions, examDuration);
 
-      // 4. Navigate to session
-      router.push(`/exam/${attemptId}/session`);
+      // 4. Navigate to correct session type
+      if (questionType === 'THEORY') {
+        router.push(`/exam/${attemptId}/theory-session`);
+      } else {
+        // MCQ and PRACTICAL both use the standard session page
+        router.push(`/exam/${attemptId}/session`);
+      }
     } catch (err: any) {
       console.error(err);
       setError(err.response?.data?.error?.message || 'Failed to start exam. Please try again.');
