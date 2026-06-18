@@ -1,0 +1,1202 @@
+[
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "During prenatal care, which of the following is the primary reason for administering Tetanus Toxoid (TT) vaccine to a pregnant woman?",
+    "options": {
+      "A": "To protect the mother against malaria",
+      "B": "To prevent neonatal tetanus in the newborn",
+      "C": "To increase the birth weight of the baby",
+      "D": "To treat maternal urinary tract infections"
+    },
+    "correctAnswer": "B",
+    "explanation": "Administering Tetanus Toxoid (TT) or Tetanus-diphtheria (Td) vaccine during pregnancy stimulates maternal antibody production. These antibodies cross the placenta to provide passive immunity to the fetus, protecting the newborn from neonatal tetanus, which is highly fatal and often contracted through unhygienic umbilical cord cutting practices.",
+    "topic": "Maternal health and prenatal care",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following clinical findings is a key diagnostic criterion for pre-eclampsia during pregnancy?",
+    "options": {
+      "A": "Persistent proteinuria and new-onset hypertension after 20 weeks of gestation",
+      "B": "Glycosuria and low blood pressure",
+      "C": "Vaginal bleeding and abdominal pain in the first trimester",
+      "D": "Edema of the feet without elevated blood pressure"
+    },
+    "correctAnswer": "A",
+    "explanation": "Pre-eclampsia is diagnosed by the onset of hypertension (systolic BP >= 140 mmHg or diastolic BP >= 90 mmHg) on two occasions at least 4 hours apart after 20 weeks of gestation, accompanied by proteinuria (>= 300 mg per 24 hours or >= 1+ on dipstick). If proteinuria is absent, other systemic signs like thrombocytopenia or renal insufficiency must be present.",
+    "topic": "Maternal health and prenatal care",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the recommended daily dosage of folic acid for pregnant women starting from pre-conception or early pregnancy to prevent neural tube defects?",
+    "options": {
+      "A": "0.4 mg",
+      "B": "4.0 mg",
+      "C": "40 mg",
+      "D": "100 mg"
+    },
+    "correctAnswer": "A",
+    "explanation": "The standard recommendation for the prevention of neural tube defects (like spina bifida) in low-risk pregnant women is 0.4 mg (400 mcg) of folic acid daily. This should ideally start at least one month before conception and continue through the first 12 weeks of pregnancy. Women with high risk (e.g. prior neural tube defect pregnancy) require 5.0 mg daily.",
+    "topic": "Maternal health and prenatal care",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following parameters is plotted on the Y-axis of the labor progress section of a standard WHO modified partograph?",
+    "options": {
+      "A": "Fetal heart rate in beats per minute",
+      "B": "Duration of labor in hours",
+      "C": "Cervical dilation in centimeters",
+      "D": "Maternal blood pressure"
+    },
+    "correctAnswer": "C",
+    "explanation": "On a standard WHO modified partograph, cervical dilation (measured in centimeters from 0 to 10) is plotted on the Y-axis, while time in hours is plotted on the X-axis. This allows for visual tracking of the active phase of labor relative to the alert and action lines.",
+    "topic": "Maternal health and prenatal care",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the primary objective of focused antenatal care (FANC) compared to traditional antenatal care models?",
+    "options": {
+      "A": "To maximize the number of visits to at least 15 per pregnancy",
+      "B": "To provide targeted, high-quality, evidence-based care during fewer but more meaningful visits",
+      "C": "To ensure every birth is done via Caesarean section",
+      "D": "To prescribe broad-spectrum antibiotics to all pregnant women"
+    },
+    "correctAnswer": "B",
+    "explanation": "Focused Antenatal Care (FANC) emphasizes quality of care over quantity of visits. It targets specific evidence-based interventions at critical times during pregnancy (historically 4 visits, now updated to 8 contacts under the 2016 WHO guidelines) to identify and manage complications, promote health, and prepare for delivery.",
+    "topic": "Maternal health and prenatal care",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following is considered a major danger sign during the third trimester of pregnancy that requires immediate referral to a secondary health facility?",
+    "options": {
+      "A": "Mild swelling of the ankles at the end of the day",
+      "B": "Sudden onset of severe headache, blurred vision, and epigastric pain",
+      "C": "Frequent urination during the night",
+      "D": "Mild low back pain relieved by rest"
+    },
+    "correctAnswer": "B",
+    "explanation": "Sudden severe headache, visual disturbances (blurred vision), and epigastric pain are critical warning signs of severe pre-eclampsia or impending eclampsia. These symptoms indicate central nervous system irritability and liver involvement, which are life-threatening obstetric emergencies.",
+    "topic": "Maternal health and prenatal care",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the first-line drug of choice for managing and preventing convulsions in a pregnant woman with eclampsia?",
+    "options": {
+      "A": "Diazepam",
+      "B": "Magnesium sulfate",
+      "C": "Phenobarbital",
+      "D": "Chlorpromazine"
+    },
+    "correctAnswer": "B",
+    "explanation": "Magnesium sulfate is the drug of choice for the prevention and treatment of convulsions in women with pre-eclampsia and eclampsia. It is more effective than diazepam and phenytoin, does not depress the central nervous system of the mother or fetus, and leads to better overall maternal and neonatal outcomes.",
+    "topic": "Maternal health and prenatal care",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "How is 'postpartum hemorrhage' (PPH) traditionally defined after a vaginal delivery?",
+    "options": {
+      "A": "Loss of 100 mL or more of blood within 24 hours of delivery",
+      "B": "Loss of 500 mL or more of blood within 24 hours of delivery",
+      "C": "Loss of 1000 mL or more of blood within 48 hours of delivery",
+      "D": "Any vaginal bleeding that occurs after the first week of delivery"
+    },
+    "correctAnswer": "B",
+    "explanation": "Postpartum hemorrhage (PPH) is traditionally defined as a blood loss of 500 mL or more within 24 hours after a vaginal birth, or 1000 mL or more after a Caesarean section. It is the leading cause of maternal mortality in low-income settings.",
+    "topic": "Maternal health and prenatal care",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which indicator is most sensitive and practical for detecting acute malnutrition (wasting) in a child aged 12 months during a community screening?",
+    "options": {
+      "A": "Height-for-age index",
+      "B": "Mid-Upper Arm Circumference (MUAC) measuring less than 11.5 cm",
+      "C": "Weight-for-age index showing standard deviation",
+      "D": "Head circumference-for-age index"
+    },
+    "correctAnswer": "B",
+    "explanation": "A MUAC of less than 11.5 cm (115 mm) in children aged 6 to 59 months is a diagnostic indicator for Severe Acute Malnutrition (SAM). It is highly sensitive, simple, rapid, and does not require complex equipment, making it ideal for community screenings.",
+    "topic": "Child nutrition and growth monitoring",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "At what age should complementary feeding be introduced to an infant in addition to breast milk?",
+    "options": {
+      "A": "At 3 months of age",
+      "B": "At 4 months of age",
+      "C": "At 6 months of age",
+      "D": "At 12 months of age"
+    },
+    "correctAnswer": "C",
+    "explanation": "Complementary feeding should start at 6 months of age (180 days) because breast milk alone is no longer sufficient to meet the energy and nutrient requirements of the growing infant. Breastfeeding should continue alongside complementary foods up to 2 years or beyond.",
+    "topic": "Child nutrition and growth monitoring",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which clinical sign is uniquely characteristic of Kwashiorkor (edematous malnutrition) but absent in Marasmus (non-edematous malnutrition)?",
+    "options": {
+      "A": "Severe muscle wasting and a 'senile' or old-man face",
+      "B": "Bilateral pitting edema of the lower limbs",
+      "C": "Loss of subcutaneous fat",
+      "D": "Normal skin and hair texture"
+    },
+    "correctAnswer": "B",
+    "explanation": "Bilateral pitting edema (starting in the feet and legs and progressing upwards) is the key diagnostic feature of Kwashiorkor. It is caused by severe protein deficiency, electrolyte imbalances, and fluid retention, whereas Marasmus represents general starvation without edema.",
+    "topic": "Child nutrition and growth monitoring",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "On a child's Road-to-Health chart, what does a downward-sloping weight curve indicate?",
+    "options": {
+      "A": "The child is losing weight, indicating a severe health or nutritional problem",
+      "B": "The child is growing normally and becoming leaner",
+      "C": "The child has reached their maximum genetically determined height",
+      "D": "The scale used for weighing was not calibrated"
+    },
+    "correctAnswer": "A",
+    "explanation": "A downward-sloping curve on a growth chart indicates weight loss. This is a critical danger sign that requires immediate assessment to find the underlying cause, which could be an acute infection (e.g., diarrhea, malaria) or severe food insecurity.",
+    "topic": "Child nutrition and growth monitoring",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the primary therapeutic food used in community-based outpatient therapeutic programs (OTP) for the treatment of Severe Acute Malnutrition (SAM) without complications?",
+    "options": {
+      "A": "Infant formula milk",
+      "B": "Ready-to-Use Therapeutic Food (RUTF)",
+      "C": "Sweetened condensed milk",
+      "D": "Boiled cornmeal and water slurry"
+    },
+    "correctAnswer": "B",
+    "explanation": "Ready-to-Use Therapeutic Food (RUTF) is a lipid-rich paste (usually peanut-based, mixed with milk powder, sugar, vitamins, and minerals) designed for the home-based management of Severe Acute Malnutrition (SAM) in children without medical complications. It does not require water for preparation, reducing infection risk.",
+    "topic": "Child nutrition and growth monitoring",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which micronutrient deficiency is the leading cause of preventable childhood blindness worldwide?",
+    "options": {
+      "A": "Vitamin D deficiency",
+      "B": "Vitamin A deficiency",
+      "C": "Iron deficiency",
+      "D": "Vitamin C deficiency"
+    },
+    "correctAnswer": "B",
+    "explanation": "Vitamin A deficiency is the leading cause of preventable childhood blindness. It also significantly weakens the immune system, increasing the risk of death from common childhood infections such as measles and diarrheal disease.",
+    "topic": "Child nutrition and growth monitoring",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "How often should growth monitoring (weighing and plotting) ideally be done for an infant under one year of age?",
+    "options": {
+      "A": "Every week",
+      "B": "Once every month",
+      "C": "Every three months",
+      "D": "Only when the child falls sick"
+    },
+    "correctAnswer": "B",
+    "explanation": "Growth monitoring should be conducted monthly during the first year of life. Regular monthly weighing and plotting on the growth chart allow for early detection of growth faltering before the child becomes clinically malnourished.",
+    "topic": "Child nutrition and growth monitoring",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following describes the child nutritional status classification of 'stunting'?",
+    "options": {
+      "A": "Low weight-for-height",
+      "B": "Low height-for-age",
+      "C": "Low weight-for-age",
+      "D": "High weight-for-height"
+    },
+    "correctAnswer": "B",
+    "explanation": "Stunting is defined as low height-for-age, which reflects chronic or recurrent undernutrition and is often associated with long-term poor socioeconomic conditions, maternal health and nutrition, frequent illness, and inappropriate infant feeding.",
+    "topic": "Child nutrition and growth monitoring",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the minimum recommended distance that a pit latrine should be located from a shallow water well to prevent contamination?",
+    "options": {
+      "A": "5 meters",
+      "B": "10 meters",
+      "C": "30 meters",
+      "D": "100 meters"
+    },
+    "correctAnswer": "C",
+    "explanation": "To prevent pathogens and chemical contaminants from leaching into drinking water sources, pit latrines and other waste disposal sites must be located at least 30 meters (approx. 100 feet) away from water wells, and ideally downhill from them.",
+    "topic": "Water sanitation and hygiene (WASH)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which method is the simplest, most effective, and lowest cost for disinfecting small quantities of drinking water at the household level in rural communities?",
+    "options": {
+      "A": "Boiling water for at least 1 minute",
+      "B": "Passing water through a clean cotton cloth",
+      "C": "Letting the water settle for 24 hours",
+      "D": "Adding salt and sugar to the water"
+    },
+    "correctAnswer": "A",
+    "explanation": "Boiling water is the gold standard for household water treatment. Bringing water to a rolling boil for at least 1 minute (or longer at high altitudes) kills all bacteria, viruses, and parasites that cause diarrheal diseases, making it safe for drinking.",
+    "topic": "Water sanitation and hygiene (WASH)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "In the SODIS (Solar Water Disinfection) method, what is the minimum duration that water-filled PET plastic bottles must be exposed to direct sunlight on a sunny day?",
+    "options": {
+      "A": "30 minutes",
+      "B": "2 hours",
+      "C": "6 hours",
+      "D": "24 hours"
+    },
+    "correctAnswer": "C",
+    "explanation": "SODIS requires exposing contaminated water in clear PET plastic bottles to direct sunlight for a minimum of 6 hours. The UV-A radiation and thermal heat work together to destroy pathogens. If the sky is cloudy, 2 days of exposure are required.",
+    "topic": "Water sanitation and hygiene (WASH)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the primary transmission route for pathogens causing cholera, typhoid, and dysentery?",
+    "options": {
+      "A": "Airborne droplet route",
+      "B": "Fecal-oral route",
+      "C": "Vector-borne route",
+      "D": "Direct skin penetration"
+    },
+    "correctAnswer": "B",
+    "explanation": "Cholera, typhoid, and bacillary dysentery are transmitted via the fecal-oral route. This occurs when pathogens from the feces of an infected person are ingested through contaminated water, food, or hands due to poor hygiene.",
+    "topic": "Water sanitation and hygiene (WASH)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following is the key behavioral objective of the Community-Led Total Sanitation (CLTS) approach?",
+    "options": {
+      "A": "Building free concrete latrines for every household in the village",
+      "B": "Eliminating open defecation (OD) through community-wide behavioral change",
+      "C": "Distributing water purification tablets to schools",
+      "D": "Drilling handpump boreholes in every ward"
+    },
+    "correctAnswer": "B",
+    "explanation": "CLTS is an innovative methodology for mobilizing communities to completely eliminate open defecation (OD). It focuses on triggering a collective sense of disgust and shame, leading to community-led construction and use of latrines without external subsidies.",
+    "topic": "Water sanitation and hygiene (WASH)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the correct contact time required for chlorine to disinfect drinking water after adding a chlorine solution (such as sodium hypochlorite) before it is safe to drink?",
+    "options": {
+      "A": "5 minutes",
+      "B": "30 minutes",
+      "C": "2 hours",
+      "D": "12 hours"
+    },
+    "correctAnswer": "B",
+    "explanation": "After adding chlorine to water, it must be left to stand for at least 30 minutes of contact time. This ensures that the chlorine destroys harmful pathogenic microorganisms before consumption.",
+    "topic": "Water sanitation and hygiene (WASH)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "In a rural community setting, what is a 'tippy tap'?",
+    "options": {
+      "A": "A simple, hands-free handwashing device made from local materials",
+      "B": "A type of water pump used for drawing water from deep wells",
+      "C": "A valve used to control the flow of municipal water lines",
+      "D": "A diagnostic tool for checking water turbidity"
+    },
+    "correctAnswer": "A",
+    "explanation": "A tippy tap is a low-cost, hands-free handwashing station constructed using a plastic container suspended from a wooden frame. It is operated by a foot pedal, which reduces the risk of cross-contamination from touching taps.",
+    "topic": "Water sanitation and hygiene (WASH)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "According to WHO guidelines, what is the target range of free residual chlorine that should be maintained in treated drinking water at the point of delivery?",
+    "options": {
+      "A": "0.01 to 0.05 mg/L",
+      "B": "0.2 to 0.5 mg/L",
+      "C": "2.0 to 5.0 mg/L",
+      "D": "10 to 15 mg/L"
+    },
+    "correctAnswer": "B",
+    "explanation": "To protect drinking water from recontamination during transport and storage, the free residual chlorine at the point of delivery should be between 0.2 and 0.5 mg/L (milligrams per liter).",
+    "topic": "Water sanitation and hygiene (WASH)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "At what age is the third dose of the Pentavalent vaccine (Penta 3) scheduled in the routine infant immunization program?",
+    "options": {
+      "A": "6 weeks",
+      "B": "10 weeks",
+      "C": "14 weeks",
+      "D": "9 months"
+    },
+    "correctAnswer": "C",
+    "explanation": "The routine Pentavalent (DPT-HepB-Hib) vaccine schedule is at 6 weeks (Penta 1), 10 weeks (Penta 2), and 14 weeks (Penta 3) of age. Keeping to this schedule ensures maximum protection against diphtheria, pertussis, tetanus, hepatitis B, and Haemophilus influenzae type b.",
+    "topic": "Immunization schedules and cold chain management",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which tool is used to monitor if a vaccine has been exposed to damaging heat over time during transport or storage?",
+    "options": {
+      "A": "Dial thermometer",
+      "B": "Vaccine Vial Monitor (VVM)",
+      "C": "Freeze indicator card",
+      "D": "Partograph"
+    },
+    "correctAnswer": "B",
+    "explanation": "A Vaccine Vial Monitor (VVM) is a chemical indicator label printed directly onto vaccine vials. It changes color when exposed to heat over time, indicating whether the vaccine has reached its limit of heat exposure and must be discarded.",
+    "topic": "Immunization schedules and cold chain management",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following vaccines must be kept frozen at -15°C to -25°C at national and regional cold stores to maintain its long-term potency?",
+    "options": {
+      "A": "Tetanus Toxoid (TT)",
+      "B": "Oral Polio Vaccine (OPV)",
+      "C": "Hepatitis B vaccine",
+      "D": "Pneumococcal Conjugate Vaccine (PCV)"
+    },
+    "correctAnswer": "B",
+    "explanation": "Oral Polio Vaccine (OPV) is highly heat-sensitive and is stored in a frozen state (-15°C to -25°C) at higher levels of the cold chain (national/regional stores). At the clinic level, it can be kept at +2°C to +8°C for a limited period.",
+    "topic": "Immunization schedules and cold chain management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "A health worker performs a 'shake test' on a vial of Tetanus Toxoid vaccine. What is the health worker trying to determine?",
+    "options": {
+      "A": "If the vaccine has been contaminated by bacteria",
+      "B": "If the vaccine has been damaged by exposure to freezing temperatures",
+      "C": "If the active antigen has precipitated out of solution",
+      "D": "If the vaccine's shelf life has expired"
+    },
+    "correctAnswer": "B",
+    "explanation": "The shake test is used to determine if a freeze-sensitive vaccine (like TT, Pentavalent, HepB, or PCV) has been damaged by freezing. If it has been frozen, the structure of the adjuvant is destroyed, causing it to settle rapidly after shaking compared to a control vial.",
+    "topic": "Immunization schedules and cold chain management",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the correct site and route of administration for the Pneumococcal Conjugate Vaccine (PCV) in an infant?",
+    "options": {
+      "A": "Upper left arm, intradermal",
+      "B": "Anterolateral aspect of the mid-thigh, intramuscular",
+      "C": "Deltoid muscle of the shoulder, subcutaneous",
+      "D": "Oral drops"
+    },
+    "correctAnswer": "B",
+    "explanation": "PCV is administered via intramuscular (IM) injection in the anterolateral aspect of the mid-thigh (usually the right thigh, to differentiate it from Pentavalent given in the left thigh).",
+    "topic": "Immunization schedules and cold chain management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following vaccines is administered at birth as part of the routine immunization schedule?",
+    "options": {
+      "A": "BCG, Oral Polio Vaccine (OPV 0), and Hepatitis B (HepB 0)",
+      "B": "Pentavalent 1 and PCV 1",
+      "C": "Measles and Yellow Fever",
+      "D": "Rotavirus and IPV"
+    },
+    "correctAnswer": "A",
+    "explanation": "At birth, the newborn should receive three vaccines: Bacillus Calmette-Guérin (BCG) for tuberculosis, Oral Polio Vaccine birth dose (OPV 0), and Hepatitis B birth dose (HepB 0). These provide early protective coverage.",
+    "topic": "Immunization schedules and cold chain management",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "How often should a vaccine refrigerator's temperature be checked and recorded on the temperature log sheet?",
+    "options": {
+      "A": "Once a week",
+      "B": "Twice daily (morning and afternoon)",
+      "C": "Every hour during operating hours",
+      "D": "Only when new vaccines arrive"
+    },
+    "correctAnswer": "B",
+    "explanation": "To ensure the cold chain is maintained, the temperature of the vaccine refrigerator must be checked and recorded twice daily (once in the morning and once in the afternoon/evening), including on weekends and holidays.",
+    "topic": "Immunization schedules and cold chain management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "In cold chain equipment, what is the purpose of placing conditioned ice packs in a vaccine carrier?",
+    "options": {
+      "A": "To freeze the vaccines to keep them fresh",
+      "B": "To maintain a temperature of +2°C to +8°C during transport",
+      "C": "To disinfect the vaccine vials",
+      "D": "To prevent the vaccine carrier from tipping over"
+    },
+    "correctAnswer": "B",
+    "explanation": "Conditioned ice packs (warmed up until water is heard sloshing inside) are used in vaccine carriers to maintain a safe temperature of +2°C to +8°C during field distribution, without risking freezing the freeze-sensitive vaccines.",
+    "topic": "Immunization schedules and cold chain management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "A mother brings a 10-month-old child with diarrhea to the clinic. She reports the child is passing watery stools but has no signs of dehydration. What is the recommended treatment plan according to IMCI guidelines?",
+    "options": {
+      "A": "Plan A: Home treatment with oral rehydration therapy (ORS), zinc, and continued feeding",
+      "B": "Plan B: In-clinic rehydration using ORS over a 4-hour period",
+      "C": "Plan C: Immediate intravenous (IV) fluids in the emergency ward",
+      "D": "Administer high-dose anti-diarrheal medications and antibiotics"
+    },
+    "correctAnswer": "A",
+    "explanation": "According to IMCI, Plan A is for children with diarrhea but no dehydration. It involves home management: extra fluids (ORS, clean water, or gruel), zinc supplementation (20 mg daily for 10-14 days), continued feeding, and counseling on when to return.",
+    "topic": "First aid and home management of diarrhea",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the correct volume of clean water required to dissolve one standard packet of Oral Rehydration Salts (ORS) designed for children?",
+    "options": {
+      "A": "250 mL (1 cup)",
+      "B": "500 mL (2 cups)",
+      "C": "1 Liter",
+      "D": "5 Liters"
+    },
+    "correctAnswer": "C",
+    "explanation": "A standard packet of WHO-recommended low-osmolarity Oral Rehydration Salts (ORS) is formulated to be dissolved in exactly 1 Liter of clean water. Using too little or too much water can alter the osmolarity and be harmful to the child.",
+    "topic": "First aid and home management of diarrhea",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the therapeutic reason for administering Zinc supplementation alongside ORS in a child with acute diarrhea?",
+    "options": {
+      "A": "To kill the bacteria causing the diarrhea",
+      "B": "To reduce the duration and severity of the diarrhea episode and prevent future episodes",
+      "C": "To color the stool so the mother knows the drug is working",
+      "D": "To induce sleep and rest in the child"
+    },
+    "correctAnswer": "B",
+    "explanation": "Zinc supplementation (10 mg daily for infants under 6 months, 20 mg daily for children 6 months and older, for 10-14 days) shortens the duration and severity of diarrhea episodes and reduces the likelihood of new episodes in the following 2-3 months.",
+    "topic": "First aid and home management of diarrhea",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Under what circumstance should a child with acute diarrhea be prescribed antibiotics?",
+    "options": {
+      "A": "Every time the child has watery diarrhea",
+      "B": "If there is blood in the stool (dysentery) or suspected cholera with severe dehydration",
+      "C": "If the child is crying and has a mild fever",
+      "D": "Only if the mother requests them"
+    },
+    "correctAnswer": "B",
+    "explanation": "Antibiotics should not be given routinely for watery diarrhea. They are indicated only for children with bloody diarrhea (dysentery, which suggests shigellosis) or severe cases of suspected cholera.",
+    "topic": "First aid and home management of diarrhea",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following is the correct first aid management for a child who has swallowed a chemical poison (such as kerosene or liquid detergent)?",
+    "options": {
+      "A": "Force the child to vomit by sticking a finger down their throat",
+      "B": "Give the child plenty of salt water to induce vomiting",
+      "C": "Do not induce vomiting; keep the child calm and transport immediately to a health facility",
+      "D": "Force the child to drink raw eggs and palm oil"
+    },
+    "correctAnswer": "C",
+    "explanation": "Ingesting corrosive chemicals or hydrocarbons like kerosene poses a high risk of aspiration pneumonia if the child vomits. Therefore, vomiting must NEVER be induced. The child should be taken immediately to a health facility.",
+    "topic": "First aid and home management of diarrhea",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the recommended compression-to-ventilation ratio for performing cardiopulmonary resuscitation (CPR) on an infant or child by a single rescuer?",
+    "options": {
+      "A": "15 compressions to 2 breaths",
+      "B": "30 compressions to 2 breaths",
+      "C": "5 compressions to 1 breath",
+      "D": "50 compressions to 5 breaths"
+    },
+    "correctAnswer": "B",
+    "explanation": "For a single rescuer performing CPR on an infant or child, the standard ratio is 30 chest compressions followed by 2 rescue breaths (30:2). If there are two healthcare professionals, the ratio changes to 15:2.",
+    "topic": "First aid and home management of diarrhea",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following is a sign of 'some dehydration' in a child presenting with diarrhea?",
+    "options": {
+      "A": "The child is lethargic or unconscious",
+      "B": "The child is restless, irritable, and drinks eagerly when offered water",
+      "C": "The skin pinch goes back very slowly (more than 2 seconds)",
+      "D": "The child is unable to drink at all"
+    },
+    "correctAnswer": "B",
+    "explanation": "Signs of 'some dehydration' under IMCI include being restless or irritable, having sunken eyes, and drinking eagerly or thirstily. Skin pinch goes back slowly (less than 2 seconds).",
+    "topic": "First aid and home management of diarrhea",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the first and most critical action when providing first aid to a casualty who is bleeding heavily from an open wound?",
+    "options": {
+      "A": "Wash the wound with antiseptic liquid",
+      "B": "Apply direct pressure to the wound with a clean cloth",
+      "C": "Give the casualty water to drink",
+      "D": "Check the casualty's pupil dilation"
+    },
+    "correctAnswer": "B",
+    "explanation": "The priority in external hemorrhage is to stop blood loss. Applying direct pressure onto the wound using a clean dressing or cloth is the most immediate and effective action to achieve hemostasis.",
+    "topic": "First aid and home management of diarrhea",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following family planning methods is classified as a Long-Acting Reversible Contraceptive (LARC)?",
+    "options": {
+      "A": "Combined Oral Contraceptive (COC) pill",
+      "B": "Copper Intrauterine Device (IUD)",
+      "C": "Male latex condom",
+      "D": "Emergency Contraceptive pill (ECP)"
+    },
+    "correctAnswer": "B",
+    "explanation": "Long-Acting Reversible Contraception (LARC) includes methods like Copper IUDs and hormonal implants, which provide highly effective, worry-free contraception for 3 to 10 years without requiring daily action.",
+    "topic": "Family planning methods and counseling",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the primary mechanism by which the emergency contraceptive pill (levonorgestrel 1.5 mg) prevents pregnancy?",
+    "options": {
+      "A": "It causes an early abortion of an implanted embryo",
+      "B": "It blocks the fallopian tubes to prevent fertilisation",
+      "C": "It delays or inhibits ovulation if taken before the LH surge",
+      "D": "It acts as a spermicide within the vaginal canal"
+    },
+    "correctAnswer": "C",
+    "explanation": "Levonorgestrel emergency contraceptive pills work primarily by preventing or delaying ovulation. They do not cause abortion and are ineffective once fertilization and implantation have occurred.",
+    "topic": "Family planning methods and counseling",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "In family planning counseling, what does the acronym 'GATHER' stand for?",
+    "options": {
+      "A": "Greet, Ask, Tell, Help, Explain, Return",
+      "B": "Give, Assessment, Treatment, Health, Education, Referral",
+      "C": "Guide, Analyze, Test, Hygiene, Evaluate, Report",
+      "D": "General, Antenatal, Treatment, Hygiene, Evaluation, Record"
+    },
+    "correctAnswer": "A",
+    "explanation": "The GATHER framework is a widely used counseling tool: Greet the client, Ask about their needs, Tell them about choices, Help them choose, Explain how to use the method, and plan their Return visit.",
+    "topic": "Family planning methods and counseling",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which family planning method is ideal for a breastfeeding mother who is 6 weeks postpartum and wants a hormonal method that will not affect breast milk production?",
+    "options": {
+      "A": "Combined Oral Contraceptive (COC) pills",
+      "B": "Progestogen-Only Pills (POPs) or Progestogen Implants",
+      "C": "Combined injectable contraceptives",
+      "D": "Vaginal contraceptive ring"
+    },
+    "correctAnswer": "B",
+    "explanation": "Progestogen-only methods (like POPs, DMPA injections, or implants) do not affect breast milk production or quality. Combined contraceptives containing estrogen can reduce the quantity of breast milk and are not recommended for breastfeeding mothers before 6 months postpartum.",
+    "topic": "Family planning methods and counseling",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the lifespan and typical contraceptive effectiveness duration of the Jadelle hormonal implant system?",
+    "options": {
+      "A": "3 years",
+      "B": "5 years",
+      "C": "7 years",
+      "D": "10 years"
+    },
+    "correctAnswer": "B",
+    "explanation": "Jadelle is a two-rod subdermal implant system containing levonorgestrel that is approved to prevent pregnancy for up to 5 years. Implanon NXT (one rod) is effective for 3 years.",
+    "topic": "Family planning methods and counseling",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Under the Lactational Amenorrhea Method (LAM) of family planning, which of the following is a mandatory condition for the method to be effective?",
+    "options": {
+      "A": "The child must be older than 9 months",
+      "B": "The mother must be experiencing light menstrual periods",
+      "C": "The mother must be exclusively breastfeeding day and night, and remain amenorrheic",
+      "D": "The mother must supplement breast milk with infant formula"
+    },
+    "correctAnswer": "C",
+    "explanation": "LAM is highly effective only if three criteria are met: 1) the mother's menstrual periods have not returned (amenorrhea), 2) the baby is exclusively breastfed on demand (day and night, no other food or drink), and 3) the baby is less than 6 months old.",
+    "topic": "Family planning methods and counseling",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following is a common, non-harmful side effect of the Copper Intrauterine Device (IUD) that clients should be counseled about?",
+    "options": {
+      "A": "Sudden onset of severe abdominal pain and fever",
+      "B": "Longer, heavier menstrual periods and mild cramping during the first few months",
+      "C": "Development of facial acne and weight gain",
+      "D": "Absence of menstruation (amenorrhea)"
+    },
+    "correctAnswer": "B",
+    "explanation": "The Copper IUD commonly causes heavier, longer menstrual bleeding and increased cramping, especially during the first 3-6 months. This is non-harmful, but clients must be counseled to prevent discontinuation.",
+    "topic": "Family planning methods and counseling",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which contraceptive method is considered permanent and involves the surgical cutting or tying of the vas deferens in men?",
+    "options": {
+      "A": "Tubal ligation",
+      "B": "Vasectomy",
+      "C": "Male circumcision",
+      "D": "Coitus interruptus"
+    },
+    "correctAnswer": "B",
+    "explanation": "Vasectomy is a permanent, safe, and simple surgical procedure for male sterilization where the vas deferens are cut, tied, or sealed to prevent sperm from entering the seminal fluid.",
+    "topic": "Family planning methods and counseling",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following drugs is classified as an analgesic and antipyretic, and is safe for reducing fever in a child with suspected malaria?",
+    "options": {
+      "A": "Aspirin",
+      "B": "Paracetamol (Acetaminophen)",
+      "C": "Ibuprofen",
+      "D": "Diclofenac sodium"
+    },
+    "correctAnswer": "B",
+    "explanation": "Paracetamol is the safest first-line analgesic and antipyretic for children. Aspirin should be avoided in children due to the risk of Reye's syndrome.",
+    "topic": "Basic pharmacology and essential drug list",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the primary therapeutic class and use of Artemether-Lumefantrine?",
+    "options": {
+      "A": "Antibiotic used to treat typhoid fever",
+      "B": "Antimalarial used to treat uncomplicated malaria",
+      "C": "Antifungal used to treat ringworm",
+      "D": "Antiretroviral used to manage HIV infection"
+    },
+    "correctAnswer": "B",
+    "explanation": "Artemether-Lumefantrine is an Artemisinin-based Combination Therapy (ACT) used as the first-line medication for the treatment of uncomplicated Plasmodium falciparum malaria.",
+    "topic": "Basic pharmacology and essential drug list",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which drug from the Essential Medicines List is administered orally to newborns within 24 hours of birth to prevent hemorrhagic disease of the newborn if intramuscular Vitamin K is unavailable?",
+    "options": {
+      "A": "Vitamin A drops",
+      "B": "Oral Vitamin K (Phytomenadione)",
+      "C": "Ferrous sulfate drops",
+      "D": "Folic acid syrup"
+    },
+    "correctAnswer": "B",
+    "explanation": "Oral Vitamin K (Phytomenadione) is used as an alternative regimen (administered in multiple doses) to prevent Vitamin K deficiency bleeding if the standard intramuscular injection is unavailable.",
+    "topic": "Basic pharmacology and essential drug list",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the primary mechanism of action of oral rehydration salts (ORS) in treating dehydration?",
+    "options": {
+      "A": "Sodium-coupled glucose transport across the intestinal mucosa enhances water absorption",
+      "B": "It acts as an astringent to dry up the liquid in the bowel",
+      "C": "It directly kills rotavirus particles inside the gut",
+      "D": "It slows down intestinal peristalsis to reduce bowel movements"
+    },
+    "correctAnswer": "A",
+    "explanation": "ORS utilizes the sodium-glucose cotransport mechanism in the brush border of the intestinal lumen. Glucose absorption actively drives sodium absorption, which in turn draws water into the blood vessels by osmosis, even during diarrhea.",
+    "topic": "Basic pharmacology and essential drug list",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following antibiotic classes is Cotrimoxazole classified under, and what are its two active ingredients?",
+    "options": {
+      "A": "Penicillins; Amoxicillin and Clavulanic acid",
+      "B": "Sulfonamide and Trimethoprim; Sulfamethoxazole and Trimethoprim",
+      "C": "Macrolides; Erythromycin and Azithromycin",
+      "D": "Aminoglycosides; Gentamicin and Streptomycin"
+    },
+    "correctAnswer": "B",
+    "explanation": "Cotrimoxazole is a combination antibiotic consisting of Sulfamethoxazole and Trimethoprim (in a 5:1 ratio). It is used for treating urinary tract infections, respiratory infections, and as prophylaxis in HIV patients.",
+    "topic": "Basic pharmacology and essential drug list",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Why is the use of tetracycline contraindicated in children under 8 years of age and pregnant women?",
+    "options": {
+      "A": "It causes severe acute liver failure",
+      "B": "It leads to permanent staining and discoloration of developing teeth and delays bone growth",
+      "C": "It causes sudden loss of hearing (ototoxicity)",
+      "D": "It induces severe allergic bronchospasms"
+    },
+    "correctAnswer": "B",
+    "explanation": "Tetracycline binds to calcium in developing bones and teeth, leading to permanent brown/yellow discoloration of teeth, enamel hypoplasia, and temporary suppression of bone growth in fetuses and young children.",
+    "topic": "Basic pharmacology and essential drug list",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following describes the correct storage condition for insulin vials currently in use at a primary health center?",
+    "options": {
+      "A": "Stored in a freezer at -20°C",
+      "B": "Stored in a refrigerator at +2°C to +8°C, and never frozen",
+      "C": "Stored in direct sunlight on the dispensing table",
+      "D": "Stored in a dry box with silica gel packets"
+    },
+    "correctAnswer": "B",
+    "explanation": "Insulin must be stored in a refrigerator (+2°C to +8°C) to maintain its potency. Freezing destroys the protein structure of insulin, rendering it inactive.",
+    "topic": "Basic pharmacology and essential drug list",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the primary indication for prescribing Oral Rehydration Salts (ORS) and Zinc sulfate together in a primary care setting?",
+    "options": {
+      "A": "Acute respiratory tract infections",
+      "B": "Acute watery diarrhea in children",
+      "C": "Mild to moderate hypertension",
+      "D": "Iron deficiency anemia"
+    },
+    "correctAnswer": "B",
+    "explanation": "The combination of ORS and Zinc sulfate is the WHO-recommended standard treatment for acute watery diarrhea in children to manage dehydration and reduce the duration and severity of the episode.",
+    "topic": "Basic pharmacology and essential drug list",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which method is the primary vector control measure recommended by WHO to protect individuals against malaria in endemic areas?",
+    "options": {
+      "A": "Routine spraying of DDT in open water bodies",
+      "B": "Sleeping under Long-Lasting Insecticide-Treated Nets (LLINs)",
+      "C": "Taking daily chloroquine tablets",
+      "D": "Wearing bright yellow clothing at night"
+    },
+    "correctAnswer": "B",
+    "explanation": "Long-Lasting Insecticide-Treated Nets (LLINs) provide a physical barrier and chemical repellent that kills malaria-carrying female Anopheles mosquitoes, significantly reducing transmission when used consistently.",
+    "topic": "Control of communicable diseases (Malaria, TB, HIV)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "A patient diagnosed with pulmonary tuberculosis is placed on Directly Observed Treatment Short-course (DOTS). What is the primary purpose of DOTS?",
+    "options": {
+      "A": "To isolate the patient in a hospital facility for 6 months",
+      "B": "To ensure treatment adherence and prevent the development of drug-resistant TB",
+      "C": "To provide the patient with free daily meals",
+      "D": "To monitor the patient's liver enzymes every week"
+    },
+    "correctAnswer": "B",
+    "explanation": "DOTS involves a trained health worker or community helper observing the patient swallow every dose of TB medication. This ensures compliance, completes the treatment, cures the patient, and prevents multi-drug resistant TB (MDR-TB).",
+    "topic": "Control of communicable diseases (Malaria, TB, HIV)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following is the standard post-exposure prophylaxis (PEP) protocol for a healthcare worker after an accidental needlestick injury from an HIV-positive source?",
+    "options": {
+      "A": "Start a 28-day course of antiretroviral therapy (ART) within 72 hours of exposure",
+      "B": "Take a single dose of nevirapine immediately",
+      "C": "Wash the wound with bleach and wait for HIV test results in 3 months",
+      "D": "Receive a tetanus toxoid booster injection"
+    },
+    "correctAnswer": "A",
+    "explanation": "PEP should be initiated as soon as possible, ideally within 2 hours and no later than 72 hours after exposure, and continued for 28 days using a recommended three-drug antiretroviral regimen.",
+    "topic": "Control of communicable diseases (Malaria, TB, HIV)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "In the context of malaria prevention, what does 'Intermittent Preventive Treatment in pregnancy' (IPTp) involve?",
+    "options": {
+      "A": "Administering artesunate injections to all pregnant women every month",
+      "B": "Providing Sulfadoxine-Pyrimethamine (SP) starting in the second trimester at least 1 month apart",
+      "C": "Screening pregnant women for malaria at every antenatal contact and treating only if positive",
+      "D": "Spraying the pregnant woman's home with insecticides every week"
+    },
+    "correctAnswer": "B",
+    "explanation": "IPTp-SP involves administering full therapeutic doses of Sulfadoxine-Pyrimethamine to pregnant women under direct observation during routine antenatal visits, starting in the second trimester (at or after 13 weeks), spaced at least one month apart.",
+    "topic": "Control of communicable diseases (Malaria, TB, HIV)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following clinical signs in an adult patient is highly suggestive of active pulmonary tuberculosis?",
+    "options": {
+      "A": "Acute dry cough lasting for 2 days",
+      "B": "Chronic cough lasting for 2 weeks or more, night sweats, and unexplained weight loss",
+      "C": "Sudden onset of high fever, rash, and joint pain",
+      "D": "Difficulty breathing with wheezing sounds"
+    },
+    "correctAnswer": "B",
+    "explanation": "A persistent productive cough lasting for 2 weeks or more, accompanied by systemic symptoms like night sweats, weight loss, hemoptysis (coughing blood), and low-grade fever, is highly suspicious for active pulmonary TB.",
+    "topic": "Control of communicable diseases (Malaria, TB, HIV)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the primary mode of transmission of the Human Immunodeficiency Virus (HIV) globally?",
+    "options": {
+      "A": "Bite of infected mosquitoes",
+      "B": "Unprotected heterosexual intercourse",
+      "C": "Inhalation of airborne droplets",
+      "D": "Sharing cups or eating utensils"
+    },
+    "correctAnswer": "B",
+    "explanation": "Unprotected sexual contact (particularly heterosexual intercourse in sub-Saharan Africa) remains the primary mode of HIV transmission globally, followed by vertical transmission (mother-to-child) and contaminated needles.",
+    "topic": "Control of communicable diseases (Malaria, TB, HIV)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which test is standard for confirming HIV infection in infants under 18 months of age?",
+    "options": {
+      "A": "HIV rapid antibody test (e.g., Determine)",
+      "B": "Polymerase Chain Reaction (PCR) for viral DNA/RNA",
+      "C": "Western Blot test",
+      "D": "CD4 cell count"
+    },
+    "correctAnswer": "B",
+    "explanation": "Maternal HIV antibodies persist in the infant's bloodstream up to 18 months, making antibody tests unreliable. Virological testing via PCR (Polymerase Chain Reaction) is required to diagnose active infection in infants.",
+    "topic": "Control of communicable diseases (Malaria, TB, HIV)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following opportunistic infections is the leading cause of death among people living with HIV/AIDS globally?",
+    "options": {
+      "A": "Cryptococcal meningitis",
+      "B": "Tuberculosis (TB)",
+      "C": "Pneumocystis jirovecii pneumonia (PCP)",
+      "D": "Kaposi's sarcoma"
+    },
+    "correctAnswer": "B",
+    "explanation": "Tuberculosis is the most common opportunistic infection and the leading cause of death among people living with HIV, accounting for about one-third of all AIDS-related deaths.",
+    "topic": "Control of communicable diseases (Malaria, TB, HIV)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following risk factors is the primary modifiable contributor to the development of type 2 diabetes mellitus?",
+    "options": {
+      "A": "Genetic predisposition",
+      "B": "Physical inactivity and unhealthy diet leading to obesity",
+      "C": "Advanced chronological age",
+      "D": "High intake of dietary sodium"
+    },
+    "correctAnswer": "B",
+    "explanation": "While genetics play a role, lifestyle factors such as an unhealthy diet (high in processed sugars and saturated fats) and physical inactivity, which lead to overweight and obesity, are the primary modifiable risk factors for type 2 diabetes.",
+    "topic": "Non-communicable diseases and lifestyle education",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the diagnostic threshold for fasting blood glucose that indicates diabetes mellitus?",
+    "options": {
+      "A": ">= 3.9 mmol/L (70 mg/dL)",
+      "B": ">= 5.6 mmol/L (100 mg/dL)",
+      "C": ">= 7.0 mmol/L (126 mg/dL)",
+      "D": ">= 11.1 mmol/L (200 mg/dL)"
+    },
+    "correctAnswer": "C",
+    "explanation": "A fasting plasma glucose level of 7.0 mmol/L (126 mg/dL) or higher on two separate occasions is diagnostic for diabetes. Normal fasting glucose is below 5.6 mmol/L (100 mg/dL).",
+    "topic": "Non-communicable diseases and lifestyle education",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following lifestyle modifications is most effective for lowering blood pressure in a hypertensive patient?",
+    "options": {
+      "A": "Increasing intake of red meat and dairy products",
+      "B": "Reducing dietary sodium (salt) intake and engaging in regular aerobic exercise",
+      "C": "Sleeping more than 12 hours a day",
+      "D": "Consuming moderate amounts of alcoholic beverages daily"
+    },
+    "correctAnswer": "B",
+    "explanation": "Reducing salt intake (to less than 5g per day) and engaging in at least 150 minutes of moderate-intensity physical activity per week are highly effective non-pharmacological interventions to reduce blood pressure.",
+    "topic": "Non-communicable diseases and lifestyle education",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which non-communicable disease is characterized by chronic inflammation of the airways, bronchospasm, and symptoms of wheezing, chest tightness, and cough?",
+    "options": {
+      "A": "Pulmonary tuberculosis",
+      "B": "Bronchial asthma",
+      "C": "Hypertensive heart disease",
+      "D": "Chronic kidney disease"
+    },
+    "correctAnswer": "B",
+    "explanation": "Asthma is a chronic non-communicable disease of the lungs characterized by hyper-responsive airways, inflammation, and reversible airflow obstruction, presenting with wheezing and shortness of breath.",
+    "topic": "Non-communicable diseases and lifestyle education",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is a normal range for Body Mass Index (BMI) in a healthy adult?",
+    "options": {
+      "A": "15.0 to 18.4 kg/m²",
+      "B": "18.5 to 24.9 kg/m²",
+      "C": "25.0 to 29.9 kg/m²",
+      "D": "30.0 to 35.0 kg/m²"
+    },
+    "correctAnswer": "B",
+    "explanation": "A BMI between 18.5 and 24.9 kg/m² is classified as normal weight. Under 18.5 is underweight, 25.0-29.9 is overweight, and 30.0 or above is obese.",
+    "topic": "Non-communicable diseases and lifestyle education",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following is a key educational message for preventing chronic kidney disease (CKD) in the community?",
+    "options": {
+      "A": "Encourage self-medication with herbal remedies and pain relievers",
+      "B": "Promote regular screening for hypertension and diabetes, and avoid abuse of NSAIDs",
+      "C": "Advise reducing daily water consumption to rest the kidneys",
+      "D": "Promote a diet high in animal proteins and salt"
+    },
+    "correctAnswer": "B",
+    "explanation": "Hypertension and diabetes are the leading causes of chronic kidney disease. Avoiding the abuse of over-the-counter painkillers (like NSAIDs: ibuprofen, diclofenac) and herbal mixtures, which are nephrotoxic, is critical for kidney health.",
+    "topic": "Non-communicable diseases and lifestyle education",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "In screening for cervical cancer at the primary healthcare level, what does the 'VIA' method stand for?",
+    "options": {
+      "A": "Vaginal Inspection with Alcohol",
+      "B": "Visual Inspection with Acetic acid",
+      "C": "Virus Identification Assay",
+      "D": "Vaginal Infection Assessment"
+    },
+    "correctAnswer": "B",
+    "explanation": "Visual Inspection with Acetic Acid (VIA) is a low-cost, effective screening method for cervical cancer in low-resource settings. Acetic acid (dilute vinegar) is applied to the cervix, and the health worker looks for aceto-white lesions indicating precancerous changes.",
+    "topic": "Non-communicable diseases and lifestyle education",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the primary risk factor associated with the development of Chronic Obstructive Pulmonary Disease (COPD) and lung cancer?",
+    "options": {
+      "A": "Consumption of deep-fried foods",
+      "B": "Tobacco smoking (including exposure to secondhand smoke)",
+      "C": "Lack of physical exercise",
+      "D": "Drinking untreated well water"
+    },
+    "correctAnswer": "B",
+    "explanation": "Tobacco use, including active smoking and exposure to secondhand tobacco smoke, is the leading cause of Chronic Obrustive Pulmonary Disease (COPD) and lung cancer globally.",
+    "topic": "Non-communicable diseases and lifestyle education",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "In community mobilization, who is a 'key informant'?",
+    "options": {
+      "A": "An external researcher who gathers data about the community",
+      "B": "An influential community member who possesses deep knowledge, trust, and influence within the community",
+      "C": "A government official who provides funding to the local clinic",
+      "D": "A child who reports on household hygiene behaviors"
+    },
+    "correctAnswer": "B",
+    "explanation": "Key informants are individuals who are respected, knowledgeable, and influential in the community (e.g., traditional leaders, religious leaders, local teachers). Working with them is essential for community entry and gaining trust.",
+    "topic": "Community mobilization and health education methods",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which health education method is most effective for demonstrating the preparation of Salt-Sugar Solution (SSS) to mothers at a clinic?",
+    "options": {
+      "A": "Lecturing with a chalkboard",
+      "B": "Distributing printed pamphlets",
+      "C": "Practical demonstration and return-demonstration",
+      "D": "Playing a radio jingle"
+    },
+    "correctAnswer": "C",
+    "explanation": "A practical demonstration followed by a return-demonstration by the mothers is the most effective method for teaching practical skills. It allows participants to see the correct process and practice it to build confidence and accuracy.",
+    "topic": "Community mobilization and health education methods",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the first step in planning a community health education program?",
+    "options": {
+      "A": "Securing financial resources and writing budgets",
+      "B": "Conducting a community needs assessment to identify health problems",
+      "C": "Selecting the teaching materials and printing posters",
+      "D": "Evaluating the success of the health interventions"
+    },
+    "correctAnswer": "B",
+    "explanation": "Before designing any intervention, a needs assessment must be conducted to identify the community's actual health needs, priorities, cultural beliefs, and resources. This ensures the program is relevant and culturally acceptable.",
+    "topic": "Community mobilization and health education methods",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following describes the 'advocacy' component of health communication?",
+    "options": {
+      "A": "Educating individual patients on how to take their medications",
+      "B": "Influencing decision-makers and policy-makers to support health policies or allocate resources",
+      "C": "Treating sick individuals at the outpatient clinic",
+      "D": "Reporting disease surveillance data to the LGA"
+    },
+    "correctAnswer": "B",
+    "explanation": "Advocacy is a strategic communication process directed at decision-makers, community leaders, or policy-makers to gain commitment, support, policy change, or resources for a health program.",
+    "topic": "Community mobilization and health education methods",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "What is the primary role of a Ward Health Development Committee (WHDC) in primary healthcare?",
+    "options": {
+      "A": "To audit the state ministry's financial records",
+      "B": "To promote community participation, ownership, and management of local health services",
+      "C": "To prescribe medications in the absence of doctors",
+      "D": "To construct roads and electricity networks in the ward"
+    },
+    "correctAnswer": "B",
+    "explanation": "The WHDC is a community-based structure that fosters community ownership and active participation in the planning, implementation, and evaluation of local primary healthcare services.",
+    "topic": "Community mobilization and health education methods",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following is a barrier to effective health communication in a rural community?",
+    "options": {
+      "A": "Using local languages and dialects for radio broadcasts",
+      "B": "Using complex medical jargon and ignoring cultural beliefs",
+      "C": "Involving community elders in the design of posters",
+      "D": "Providing interactive discussion sessions"
+    },
+    "correctAnswer": "B",
+    "explanation": "Using medical jargon, complex language, or failing to respect local cultural norms and beliefs acts as a significant barrier to communication, leading to misunderstandings or rejection of the health message.",
+    "topic": "Community mobilization and health education methods",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "In health education, what does 'peer education' refer to?",
+    "options": {
+      "A": "Teachers instructing students in a classroom setting",
+      "B": "Trained individuals of similar age, status, or background educating their equals",
+      "C": "Doctors training nurses at a seminar",
+      "D": "Parents teaching their children at home"
+    },
+    "correctAnswer": "B",
+    "explanation": "Peer education involves training members of a specific target group (e.g., teenagers, sex workers, mothers) to educate others of the same age, social group, or background. Peers share a common language and experience, making the messages highly credible.",
+    "topic": "Community mobilization and health education methods",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "chew-objective",
+    "questionType": "MCQ",
+    "text": "Which of the following evaluation methods is used to assess changes in community knowledge, attitudes, and practices (KAP) after a health campaign?",
+    "options": {
+      "A": "A baseline and endline KAP survey",
+      "B": "Checking the daily vaccine refrigerator temperature log",
+      "C": "Monitoring the clinic's pharmaceutical stock levels",
+      "D": "Counting the number of pamphlets printed"
+    },
+    "correctAnswer": "A",
+    "explanation": "A Knowledge, Attitudes, and Practices (KAP) survey conducted before (baseline) and after (endline) the health campaign is the standard method to measure behavioral changes and educational impact in the target population.",
+    "topic": "Community mobilization and health education methods",
+    "difficulty": "HARD"
+  }
+]

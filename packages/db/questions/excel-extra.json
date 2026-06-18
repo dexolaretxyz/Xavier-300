@@ -1,0 +1,1202 @@
+[
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "By default, how does the XLOOKUP function perform a search, and what is its default behavior if no match is found?",
+    "options": {
+      "A": "It performs an exact match search starting from the first item, and returns #N/A if no match is found.",
+      "B": "It performs an approximate match search, returning the next smaller item, and returns 0 if no match is found.",
+      "C": "It performs an exact match search starting from the last item, and returns a blank cell if no match is found.",
+      "D": "It performs a wildcard search, and returns #VALUE! if no match is found."
+    },
+    "correctAnswer": "A",
+    "explanation": "By default, XLOOKUP searches for an exact match starting from the first item (top-to-bottom or left-to-right depending on layout). If no match is found, it returns the #N/A error unless the optional 'if_not_found' fourth argument is configured.",
+    "topic": "Advanced Formulas",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "Which of the following INDEX and MATCH nested formulas correctly performs a two-way (row and column) lookup in a range where A2:A10 contains row labels, B1:F1 contains column labels, and B2:F10 contains the data?",
+    "options": {
+      "A": "=INDEX(B2:F10, MATCH(\"RowValue\", A2:A10, 0), MATCH(\"ColValue\", B1:F1, 0))",
+      "B": "=MATCH(INDEX(B2:F10), MATCH(\"RowValue\", A2:A10, 0), MATCH(\"ColValue\", B1:F1, 0))",
+      "C": "=INDEX(B2:F10, MATCH(\"ColValue\", B1:F1, 0), MATCH(\"RowValue\", A2:A10, 0))",
+      "D": "=INDEX(A2:F10, MATCH(\"RowValue\", B1:F1, 0), MATCH(\"ColValue\", A2:A10, 0))"
+    },
+    "correctAnswer": "A",
+    "explanation": "The standard syntax for a two-way lookup is INDEX(data_range, row_num, column_num). The first MATCH function finds the row index within the vertical label range A2:A10, and the second MATCH finds the column index within the horizontal label range B1:F1.",
+    "topic": "Advanced Formulas",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "You need to perform a lookup where the search key is in column C and the value you want to retrieve is in column A. Which of the following formulas is valid and most efficient for this leftward lookup without rearranging columns?",
+    "options": {
+      "A": "=INDEX(A1:A100, MATCH(\"SearchKey\", C1:C100, 0))",
+      "B": "=VLOOKUP(\"SearchKey\", A1:C100, -2, FALSE)",
+      "C": "=VLOOKUP(\"SearchKey\", C1:A100, 1, FALSE)",
+      "D": "=LOOKUP(\"SearchKey\", A1:A100, C1:C100)"
+    },
+    "correctAnswer": "A",
+    "explanation": "INDEX and MATCH can easily look up values to the left because the lookup range (passed to MATCH) and return range (passed to INDEX) are specified independently. VLOOKUP cannot look to the left of its key column, and negative column indices are invalid.",
+    "topic": "Advanced Formulas",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What is the primary difference in how nested IF functions and the IFS function are evaluated by Excel?",
+    "options": {
+      "A": "IFS evaluates all conditions and returns a value only if all are true, whereas nested IFs evaluate sequentially and stop at the first true condition.",
+      "B": "IFS evaluates conditions sequentially and returns the value of the first true condition, avoiding the need for deep nesting, but does not support a default fallback without an explicit TRUE condition.",
+      "C": "Nested IF functions are calculated faster by Excel's modern calculation engine than the IFS function.",
+      "D": "IFS can only evaluate mathematical ranges, while nested IF functions can evaluate text values."
+    },
+    "correctAnswer": "B",
+    "explanation": "The IFS function checks conditions in the order specified and returns the value corresponding to the first TRUE condition. Unlike nested IFs, which can use the final 'value_if_false' parameter as a catch-all, IFS requires you to explicitly add a final pair like TRUE, 'DefaultValue' to act as a fallback.",
+    "topic": "Advanced Formulas",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "Which of the following XLOOKUP formulas performs a wildcard search to find the first product code that begins with the letters 'PROD' in a list located in A2:A100, returning the price from B2:B100?",
+    "options": {
+      "A": "=XLOOKUP(\"PROD*\", A2:A100, B2:B100, \"Not Found\", 2)",
+      "B": "=XLOOKUP(\"PROD?\", A2:A100, B2:B100, \"Not Found\", 1)",
+      "C": "=XLOOKUP(\"PROD*\", A2:A100, B2:B100, \"Not Found\", 0)",
+      "D": "=XLOOKUP(\"PROD*\", A2:A100, B2:B100, \"Not Found\", -1)"
+    },
+    "correctAnswer": "A",
+    "explanation": "To perform a wildcard lookup with XLOOKUP, you must set the fifth argument (match_mode) to 2. The asterisk (*) wildcard represents any sequence of characters, so 'PROD*' matches any string starting with 'PROD'.",
+    "topic": "Advanced Formulas",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "When looking up data in a large range, what are the performance and lookup behavior implications of using XLOOKUP with search_mode set to 2 (binary search)?",
+    "options": {
+      "A": "Binary search requires the lookup range to be sorted in ascending order; it is significantly faster than a linear search on large datasets.",
+      "B": "Binary search searches from the bottom to the top of the range and is slower than linear search.",
+      "C": "Binary search does not require sorting and is always twice as fast as exact match search.",
+      "D": "Binary search finds matches based on text length and returns the average value of duplicates."
+    },
+    "correctAnswer": "A",
+    "explanation": "Setting search_mode to 2 (binary search on sorted ascending data) or -2 (sorted descending) enables a binary search algorithm. This executes in O(log n) time, which is much faster than the default linear search O(n) for large arrays, but it requires the data to be strictly sorted.",
+    "topic": "Advanced Formulas",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "How does the SWITCH function evaluate values compared to the IFS function?",
+    "options": {
+      "A": "SWITCH evaluates a single expression against multiple values for an exact match, whereas IFS can evaluate different logical expressions for each condition.",
+      "B": "SWITCH can evaluate wildcards and ranges, whereas IFS only matches exact values.",
+      "C": "SWITCH requires nested brackets for each logical test, while IFS is flat.",
+      "D": "SWITCH is designed only for date values, while IFS is for numerical values."
+    },
+    "correctAnswer": "A",
+    "explanation": "SWITCH evaluates one target expression (first argument) against a list of values and returns the result of the first matching value. IFS evaluates separate, independent logical tests for each parameter pair.",
+    "topic": "Advanced Formulas",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "Suppose you have a formula that could return #N/A, #DIV/0!, or #VALUE! errors. If you want to display the message 'Missing Data' ONLY when the error is #N/A (specifically due to a lookup failure), and let other errors display normally, which function should you wrap your formula in?",
+    "options": {
+      "A": "IFERROR",
+      "B": "IFNA",
+      "C": "ISERR",
+      "D": "ISNA"
+    },
+    "correctAnswer": "B",
+    "explanation": "IFNA specifically catches the #N/A error (common in lookup formulas) and returns the specified fallback. If any other error occurs (like #DIV/0! or #VALUE!), it passes through. IFERROR would catch all errors indiscriminately.",
+    "topic": "Advanced Formulas",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What is the result of the formula =IF({TRUE, FALSE}, \"Yes\", \"No\") in a modern Dynamic Array version of Excel?",
+    "options": {
+      "A": "A spilled horizontal array: {\"Yes\", \"No\"}",
+      "B": "A spilled vertical array: {\"Yes\"; \"No\"}",
+      "C": "A single cell containing the value 'Yes'",
+      "D": "A #VALUE! error because the logical test is an array"
+    },
+    "correctAnswer": "A",
+    "explanation": "In modern dynamic array Excel, passing an array literal of boolean values {TRUE, FALSE} to the logical test of an IF function returns a spilled array of the same orientation. Since comma (,) separates columns, a two-column horizontal array {\"Yes\", \"No\"} is spilled.",
+    "topic": "Advanced Formulas",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "You are performing a multi-criteria lookup using INDEX and MATCH where you match conditions on two columns: Column A (Region) must match 'East' and Column B (Product) must match 'Widgets'. Which of the following formulas correctly implements this lookup?",
+    "options": {
+      "A": "=INDEX(C2:C100, MATCH(1, (A2:A100=\"East\") * (B2:B100=\"Widgets\"), 0))",
+      "B": "=INDEX(C2:C100, MATCH(\"East\" & \"Widgets\", A2:A100 & B2:B100, 0))",
+      "C": "Both A and B are syntactically valid formulas for this multi-criteria lookup.",
+      "D": "=INDEX(C2:C100, MATCH(1, AND(A2:A100=\"East\", B2:B100=\"Widgets\"), 0))"
+    },
+    "correctAnswer": "C",
+    "explanation": "Both A and B are valid. The array multiplication formula (Option A) evaluates conditions to boolean arrays, multiplies them (acting as AND logic returning 1 or 0), and matches 1. The concatenation formula (Option B) concatenates the criteria and columns, matching the combined string. Option D fails because the AND function aggregates arrays to a single value.",
+    "topic": "Advanced Formulas",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "If you move or reorganize fields in a Pivot Table, a hardcoded cell reference pointing to a cell inside the Pivot Table may return the wrong value. Which Excel function allows you to retrieve summary data from a Pivot Table reliably regardless of its visual layout?",
+    "options": {
+      "A": "GETPIVOTDATA",
+      "B": "PIVOTLOOKUP",
+      "C": "INDEX",
+      "D": "CUBEVALUE"
+    },
+    "correctAnswer": "A",
+    "explanation": "GETPIVOTDATA retrieves summary data from a Pivot Table based on the structure of the data rather than its physical cell position. This ensures the correct value is returned even if the Pivot Table layout is changed.",
+    "topic": "Pivot Tables and Pivot Charts",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What is a primary operational distinction between a 'Calculated Field' and a 'Calculated Item' in an Excel Pivot Table?",
+    "options": {
+      "A": "A Calculated Field creates a new column in the Pivot Table using mathematical formulas on existing fields, whereas a Calculated Item creates a new row within an existing field using formulas on items in that field.",
+      "B": "A Calculated Field is written in VBA, while a Calculated Item is written in standard Excel formulas.",
+      "C": "Calculated Fields only work with text data, while Calculated Items only work with numeric values.",
+      "D": "Calculated Fields can be filtered using slicers, whereas Calculated Items cannot be filtered."
+    },
+    "correctAnswer": "A",
+    "explanation": "Calculated Fields operate on the sum of data in existing fields and appear as new columns (data fields). Calculated Items operate on individual items (members) within a row or column field and appear as new rows/columns within that specific field's grouping.",
+    "topic": "Pivot Tables and Pivot Charts",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "You have two Pivot Tables on the same sheet created from the same Data Model. You want a single Slicer to control both Pivot Tables. How can you achieve this?",
+    "options": {
+      "A": "Right-click the Slicer -> Report Connections -> Select the checkboxes for both Pivot Tables.",
+      "B": "Group both Pivot Tables together by selecting them and pressing Ctrl + G.",
+      "C": "Duplicate the Slicer and overlay them on top of each other.",
+      "D": "Modify the Pivot Table settings to allow shared slicers."
+    },
+    "correctAnswer": "A",
+    "explanation": "Slicers can be connected to multiple Pivot Tables (provided they share the same data source/cache). This is managed via the 'Report Connections' option in the Slicer menu.",
+    "topic": "Pivot Tables and Pivot Charts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "When grouping dates in a Pivot Table by Month and Year, what happens if the source data contains blank cells or text values in the date column?",
+    "options": {
+      "A": "Excel will disable the Grouping feature and display the error message 'Cannot group that selection'.",
+      "B": "Excel automatically ignores the blank cells and groups only the valid dates.",
+      "C": "Excel converts blank cells into January 1, 1900, and groups them normally.",
+      "D": "The Pivot Table crashes and requires a source data refresh."
+    },
+    "correctAnswer": "A",
+    "explanation": "For Excel to group dates, all cells in the date column of the source range must contain valid date values. A single blank cell, null value, or text string will prevent Excel from grouping, returning the 'Cannot group that selection' error.",
+    "topic": "Pivot Tables and Pivot Charts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "You want a Pivot Table to show sales figures as a running total over time. Which setting under the 'Show Values As' menu in Value Field Settings should you select?",
+    "options": {
+      "A": "Running Total in",
+      "B": "% of Grand Total",
+      "C": "Difference From",
+      "D": "% of Running Total"
+    },
+    "correctAnswer": "A",
+    "explanation": "'Running Total in' calculates a cumulative sum for a specified base field (such as Date or Month), adding each period's value to the previous period's sum.",
+    "topic": "Pivot Tables and Pivot Charts",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "By default, does Excel automatically update (refresh) Pivot Tables when the underlying source data in the worksheet is modified?",
+    "options": {
+      "A": "No, Pivot Tables do not refresh automatically when source data changes; you must manually click Refresh or write VBA to trigger it.",
+      "B": "Yes, they refresh instantly whenever any cell in the workbook changes.",
+      "C": "Yes, but only if the formula bar is active.",
+      "D": "No, they only refresh when the workbook is saved."
+    },
+    "correctAnswer": "A",
+    "explanation": "Excel Pivot Tables are built on a data cache ('pivot cache') to save memory. They do not update automatically when source data changes. The user must manually click Refresh, refresh all, or configure the Pivot Table options to refresh when opening the file.",
+    "topic": "Pivot Tables and Pivot Charts",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "Which of the following is a key limitation when creating a Pivot Chart in Excel?",
+    "options": {
+      "A": "You cannot create an XY Scatter chart, Stock chart, or Bubble chart directly from a Pivot Table.",
+      "B": "Pivot Charts cannot have legends or axis titles.",
+      "C": "Pivot Charts cannot be formatted using custom color themes.",
+      "D": "Pivot Charts must always reside on the same worksheet as the Pivot Table."
+    },
+    "correctAnswer": "A",
+    "explanation": "Certain chart types, such as XY Scatter, Bubble, and Stock charts, cannot be created directly from Pivot Tables. If you try to insert one, Excel will prompt you to copy the data outside the Pivot Table first.",
+    "topic": "Pivot Tables and Pivot Charts",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What is the purpose of the 'Defer Layout Update' option located at the bottom of the Pivot Table Fields pane?",
+    "options": {
+      "A": "It pauses the recalculation and rebuilding of the Pivot Table layout until you click the Update button, which is useful when dealing with very large datasets.",
+      "B": "It schedules the Pivot Table refresh for a later time when system resources are free.",
+      "C": "It prevents other users from editing the Pivot Table layout.",
+      "D": "It saves the Pivot Table layout as a template."
+    },
+    "correctAnswer": "A",
+    "explanation": "When working with large datasets, dragging fields can cause slow recalculations after every single movement. Checking 'Defer Layout Update' halts updates until you manually click 'Update', saving time.",
+    "topic": "Pivot Tables and Pivot Charts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What happens to a Slicer if you filter the Pivot Table using the standard column filters instead of the Slicer buttons?",
+    "options": {
+      "A": "The Slicer automatically updates its selected buttons to match the standard filters applied to the Pivot Table.",
+      "B": "The Slicer becomes inactive and greyed out until cleared.",
+      "C": "The Slicer continues to show all items selected, creating a mismatch.",
+      "D": "The Slicer is deleted from the worksheet."
+    },
+    "correctAnswer": "A",
+    "explanation": "Slicers are fully synchronized with Pivot Table filters. Filtering a field in the Pivot Table directly updates the selected states in the corresponding Slicer, and vice-versa.",
+    "topic": "Pivot Tables and Pivot Charts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "How does the GETPIVOTDATA function behave if you attempt to reference a field or item that is currently filtered out (hidden) in the Pivot Table layout?",
+    "options": {
+      "A": "It returns a #REF! error.",
+      "B": "It returns a 0 value.",
+      "C": "It retrieves the hidden data from the Pivot Cache anyway.",
+      "D": "It returns a #N/A error."
+    },
+    "correctAnswer": "A",
+    "explanation": "GETPIVOTDATA can only retrieve data that is currently visible in the Pivot Table. If an item or field is filtered out, the function returns a #REF! error.",
+    "topic": "Pivot Tables and Pivot Charts",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "You want to ensure that users can only enter unique values in column A (no duplicate entries allowed). Which custom Data Validation formula should you apply to cell A2 (assuming A2 is the active cell in the validation setup)?",
+    "options": {
+      "A": "=COUNTIF(A:A, A2)<=1",
+      "B": "=COUNTIF(A:A, A2)=0",
+      "C": "=UNIQUE(A:A)=A2",
+      "D": "=EXACT(A2, A:A)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Applying a custom Data Validation formula of `=COUNTIF(A:A, A2)<=1` evaluates the count of the entry in Column A. If it exceeds 1, the validation rule fails and blocks the duplicate input.",
+    "topic": "Data validation and formatting rules",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "You want to write a Conditional Formatting rule that highlights the entire row (A2:D100) if the value in Column D (Status) is 'Complete'. What formula should you use for the rule?",
+    "options": {
+      "A": "=$D2=\"Complete\"",
+      "B": "=D2=\"Complete\"",
+      "C": "=$D$2=\"Complete\"",
+      "D": "=A2:D100=\"Complete\""
+    },
+    "correctAnswer": "A",
+    "explanation": "To highlight the entire row, you must lock the column reference with a dollar sign (`$D2`). This ensures that as Excel evaluates cells in columns A, B, C, and D, it always checks the value in Column D of that specific row. Locking the row (`$D$2`) would evaluate everything based on cell D2 only.",
+    "topic": "Data validation and formatting rules",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What is the function of the 'Stop If True' check box in the Conditional Formatting Rules Manager?",
+    "options": {
+      "A": "It prevents Excel from processing subsequent conditional formatting rules on the selected cells if the current rule's condition is met.",
+      "B": "It halts all calculations in the workbook if a formatting error occurs.",
+      "C": "It locks the cell so that users cannot change its value or formatting.",
+      "D": "It hides the cell content if the condition evaluates to true."
+    },
+    "correctAnswer": "A",
+    "explanation": "Excel evaluates conditional formatting rules in precedence order from top to bottom. If 'Stop If True' is checked, and the rule evaluates to true, Excel does not evaluate any lower-priority rules for those same cells.",
+    "topic": "Data validation and formatting rules",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "You want to create a dropdown list in cell B2 whose choices depend on what the user selects in cell A2. Which function can you use in the Data Validation Source box to reference a named range matching the text in A2?",
+    "options": {
+      "A": "=INDIRECT(A2)",
+      "B": "=OFFSET(A2)",
+      "C": "=INDEX(A2)",
+      "D": "=CHOOSE(A2)"
+    },
+    "correctAnswer": "A",
+    "explanation": "The INDIRECT function converts a text string into a valid cell reference or named range. If A2 contains 'Fruits', `=INDIRECT(A2)` returns the range named 'Fruits', creating a dependent dropdown list.",
+    "topic": "Data validation and formatting rules",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "Consider the custom number format: `[Green]$#,##0;[Red]($#,##0);\"-\"` . How will Excel display a zero value in a cell formatted with this pattern?",
+    "options": {
+      "A": "It will display a hyphen (-)",
+      "B": "It will display the text 'Zero'",
+      "C": "It will display $0 in green font color",
+      "D": "It will hide the cell content completely"
+    },
+    "correctAnswer": "A",
+    "explanation": "Excel's custom number formatting code consists of up to four sections separated by semicolons: `positive format; negative format; zero format; text format`. The third section is `\"-\"`, so zero values are formatted as a hyphen.",
+    "topic": "Data validation and formatting rules",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "In Excel, which command under the Data Validation dropdown menu allows you to visually identify cells that violate validation rules after the rules have been applied?",
+    "options": {
+      "A": "Circle Invalid Data",
+      "B": "Highlight Violations",
+      "C": "Audit Validation",
+      "D": "Show Error Alerts"
+    },
+    "correctAnswer": "A",
+    "explanation": "The 'Circle Invalid Data' tool draws red circles around any cells in the worksheet that contain values violating their current Data Validation rules. This is useful for finding incorrect entries entered before validation was applied or pasted into the sheet.",
+    "topic": "Data validation and formatting rules",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What is the structural difference in behavior between the 'Stop', 'Warning', and 'Information' error alerts in Data Validation?",
+    "options": {
+      "A": "Stop prevents the user from entering invalid data; Warning allows entry after a prompt; Information allows entry and shows a message box.",
+      "B": "Stop deletes the cell; Warning highlights it yellow; Information plays a beep sound.",
+      "C": "Stop requires VBA code; Warning works in standard Excel; Information is a formula error.",
+      "D": "There is no difference; all three block invalid inputs entirely."
+    },
+    "correctAnswer": "A",
+    "explanation": "The 'Stop' alert blocks the input and forces the user to retry or cancel. The 'Warning' alert displays a dialog box asking if they want to proceed (Yes/No/Cancel). The 'Information' alert notifies the user but allows the invalid input anyway.",
+    "topic": "Data validation and formatting rules",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "Which custom Data Validation formula prevents users from entering dates that fall on a weekend (Saturday or Sunday), assuming the date is entered in cell C2?",
+    "options": {
+      "A": "=WEEKDAY(C2, 2)<6",
+      "B": "=WEEKDAY(C2, 1)=1",
+      "C": "=WORKDAY(C2, 1)",
+      "D": "=NETWORKDAYS(C2, C2)>1"
+    },
+    "correctAnswer": "A",
+    "explanation": "The WEEKDAY function with type 2 returns numbers 1 (Monday) through 7 (Sunday). Saturday is 6 and Sunday is 7. Thus, `=WEEKDAY(C2, 2)<6` evaluates to TRUE only for Monday through Friday, blocking weekend dates.",
+    "topic": "Data validation and formatting rules",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "You want to hide the contents of a cell completely using custom number formatting (so that it remains in the formula bar but is invisible on the grid). Which format code should you apply?",
+    "options": {
+      "A": ";;;",
+      "B": "###",
+      "C": "hidden",
+      "D": "***"
+    },
+    "correctAnswer": "A",
+    "explanation": "Using three semicolons `;;;` splits the custom format into positive, negative, zero, and text sections, but defines no visual layout for any of them. This makes cell contents invisible on the sheet while preserving the underlying value.",
+    "topic": "Data validation and formatting rules",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What happens when you copy a cell that has Data Validation applied, and paste it (Ctrl+V) onto a cell that does not have Data Validation?",
+    "options": {
+      "A": "The Data Validation rule is copied and applied to the destination cell along with the value.",
+      "B": "Excel prompts you with a warning that validation will be overwritten.",
+      "C": "The destination cell ignores the validation rule, pasting only the value.",
+      "D": "The worksheet becomes corrupted and enters read-only mode."
+    },
+    "correctAnswer": "A",
+    "explanation": "Pasting with Ctrl+V copies all cell attributes, including formatting, formulas, and Data Validation rules, overriding any validation that was or wasn't present at the destination.",
+    "topic": "Data validation and formatting rules",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "Which built-in tool in Excel is specifically designed to scan a workbook for hidden metadata, personal information, and comments before sharing the file externally?",
+    "options": {
+      "A": "Document Inspector",
+      "B": "Compatibility Checker",
+      "C": "Accessibility Checker",
+      "D": "Workbook Statistics"
+    },
+    "correctAnswer": "A",
+    "explanation": "Document Inspector (File > Info > Check for Issues > Inspect Document) scans the workbook for personal information, comments, hidden rows/columns, and worksheets, allowing you to remove them permanently before sharing.",
+    "topic": "Managing and formatting worksheets and workbooks",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "In Excel, what is the difference between setting a sheet's visibility to 'Hidden' using standard Excel commands versus setting it to 'xlSheetVeryHidden' in VBA?",
+    "options": {
+      "A": "A standard hidden sheet can be unhidden by any user via the right-click menu; an xlSheetVeryHidden sheet can only be unhidden via the VBA Editor or VBA code.",
+      "B": "An xlSheetVeryHidden sheet is deleted when the workbook is closed.",
+      "C": "A standard hidden sheet still calculates formulas; an xlSheetVeryHidden sheet pauses calculations.",
+      "D": "There is no difference; they are different terms for the same state."
+    },
+    "correctAnswer": "A",
+    "explanation": "Setting a worksheet's visible property to xlSheetVeryHidden makes it invisible to standard users, and it does not show up in the standard right-click 'Unhide' dialog box. It must be made visible again through the Visual Basic Editor or VBA code.",
+    "topic": "Managing and formatting worksheets and workbooks",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What is the difference between the 'Freeze Panes' command and the 'Split' command in the View tab?",
+    "options": {
+      "A": "Freeze Panes locks rows/columns at the top/left while scrolling; Split divides the screen into separate scrollable panes that view different parts of the same sheet.",
+      "B": "Freeze Panes makes rows read-only; Split divides columns into separate sheets.",
+      "C": "Split is for charts; Freeze Panes is for formulas.",
+      "D": "Freeze Panes is a legacy feature, while Split is the modern equivalent."
+    },
+    "correctAnswer": "A",
+    "explanation": "Freeze Panes locks a portion of the sheet in place while you scroll the rest of the sheet. Split creates separate window panes, each with its own scrollbars, letting you scroll and view different non-adjacent sections of the same sheet.",
+    "topic": "Managing and formatting worksheets and workbooks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "To repeat specific rows (like column headers) at the top of every printed page of a large worksheet, which command should you configure in the Page Setup dialog box?",
+    "options": {
+      "A": "Print Titles",
+      "B": "Print Area",
+      "C": "Gridlines",
+      "D": "Scale to Fit"
+    },
+    "correctAnswer": "A",
+    "explanation": "The 'Print Titles' command (Page Layout > Print Titles) allows you to select specific rows (e.g. `$1:$1`) to repeat at the top of every printed page.",
+    "topic": "Managing and formatting worksheets and workbooks",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What is the standard file extension used to save a workbook as an Excel Template?",
+    "options": {
+      "A": ".xltx",
+      "B": ".xltm",
+      "C": ".xlsx",
+      "D": ".xlst"
+    },
+    "correctAnswer": "A",
+    "explanation": "The standard macro-free Excel template extension is .xltx. If the template contains macros, it must be saved with the .xltm extension.",
+    "topic": "Managing and formatting worksheets and workbooks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "Which Excel feature has replaced the legacy 'Shared Workbook' feature for real-time collaboration in Excel 365?",
+    "options": {
+      "A": "Co-authoring (via OneDrive or SharePoint)",
+      "B": "Workbook Merging",
+      "C": "Compare and Merge Workbooks",
+      "D": "VBA Multi-User mode"
+    },
+    "correctAnswer": "A",
+    "explanation": "Co-authoring, powered by saving workbooks to OneDrive or SharePoint, has replaced the legacy 'Shared Workbook' feature, allowing real-time edits, auto-save, and tracking of changes by multiple users simultaneously.",
+    "topic": "Managing and formatting worksheets and workbooks",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "If a formula in cell A1 references cell B1, and cell B1 references cell A1, Excel displays a warning about what type of reference?",
+    "options": {
+      "A": "Circular Reference",
+      "B": "External Reference",
+      "C": "Recursive Reference",
+      "D": "Relative Reference"
+    },
+    "correctAnswer": "A",
+    "explanation": "A circular reference occurs when a formula refers directly or indirectly to its own cell, creating an infinite calculation loop unless iterative calculation is enabled.",
+    "topic": "Managing and formatting worksheets and workbooks",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What happens to the fonts and colors of elements in a workbook when you change the workbook Theme (Page Layout > Themes)?",
+    "options": {
+      "A": "Only elements styled with Theme Colors and Theme Fonts will automatically update to the new theme's palette and typography.",
+      "B": "All cells, including those styled with Standard Colors (like bright red, green, etc.), are modified.",
+      "C": "The formulas in the sheet are reformatted to match the new language.",
+      "D": "Only charts and shapes are affected; cells remain unchanged."
+    },
+    "correctAnswer": "A",
+    "explanation": "Themes only update elements that use theme-dependent fonts and colors. Hardcoded 'Standard Colors' or custom font overrides that are not linked to the theme will remain unaffected.",
+    "topic": "Managing and formatting worksheets and workbooks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "If you have a worksheet that is slightly too wide to fit on a single printed sheet, which Page Setup setting is the most efficient way to force all columns to print on one page?",
+    "options": {
+      "A": "Scale to: 1 page wide by (blank) pages tall",
+      "B": "Set Margins to Custom orientation",
+      "C": "Set scaling to Fit to: 1 page wide by 1 page tall",
+      "D": "Change orientation to Landscape and set row height to zero"
+    },
+    "correctAnswer": "A",
+    "explanation": "Setting scaling to 'Fit to 1 page wide' while leaving the height box blank forces Excel to shrink the width of columns to fit a single page while allowing rows to naturally spill over multiple pages.",
+    "topic": "Managing and formatting worksheets and workbooks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "Where can you find the list of active circular references in a workbook?",
+    "options": {
+      "A": "Formulas > Error Checking > Circular References",
+      "B": "Data > Data Tools > Circular Audit",
+      "C": "File > Info > Circular Check",
+      "D": "Review > Proofing > Circular References"
+    },
+    "correctAnswer": "A",
+    "explanation": "You can track and locate circular references by going to Formulas > Error Checking (dropdown) > Circular References, which lists the exact sheet and cell coordinates of the loops.",
+    "topic": "Managing and formatting worksheets and workbooks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "You are writing a formula inside an Excel Table named 'SalesData'. How do you write a structured reference to sum the values in the current row for the 'Q1' and 'Q2' columns?",
+    "options": {
+      "A": "=SUM([@Q1], [@Q2])",
+      "B": "=SUM(SalesData[Q1], SalesData[Q2])",
+      "C": "=SUM([Q1], [Q2])",
+      "D": "=SUM(SalesData[@Q1]:SalesData[@Q2])"
+    },
+    "correctAnswer": "A",
+    "explanation": "The `@` symbol in structured referencing denotes the 'current row'. `=SUM([@Q1], [@Q2])` adds the values of Q1 and Q2 from the active row. Specifying the table name is not necessary when writing a formula within the table itself.",
+    "topic": "Creating and modifying tables and charts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What happens to the formatting and formulas of a table if you convert it back to a normal range using the 'Convert to Range' command?",
+    "options": {
+      "A": "The formulas are retained (converting structured references to normal cell references), and the table's formatting styles are kept, but the dynamic table features (filters, structured referencing for new rows) are removed.",
+      "B": "All formatting and formulas are stripped, leaving only raw text values.",
+      "C": "The formulas remain structured references but throw a #REF! error.",
+      "D": "The workbook is converted into a CSV format."
+    },
+    "correctAnswer": "A",
+    "explanation": "Converting a table to a range retains the visual formatting (e.g. banded rows) and converts structured reference formulas into standard cell references (e.g., `A2+B2`), but disables dynamic filtering, automated column formulas, and sorting capabilities.",
+    "topic": "Creating and modifying tables and charts",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "Which chart type is best suited for showing cumulative effects of sequentially introduced positive and negative values, showing how an initial value increases or decreases to arrive at a final net value?",
+    "options": {
+      "A": "Waterfall chart",
+      "B": "Treemap chart",
+      "C": "Sunburst chart",
+      "D": "Radar chart"
+    },
+    "correctAnswer": "A",
+    "explanation": "Waterfall charts (bridge charts) show how an initial value is affected by a series of intermediate positive or negative values, leading to a final total, which is highly common in financial reporting.",
+    "topic": "Creating and modifying tables and charts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What is a major visual difference between a Treemap chart and a Sunburst chart in Excel?",
+    "options": {
+      "A": "Treemap displays hierarchical data as nested rectangles; Sunburst displays it as concentric rings (circles).",
+      "B": "Treemap is horizontal; Sunburst is vertical.",
+      "C": "Treemap only works with single-level categories; Sunburst works with multiple levels.",
+      "D": "Treemap displays time series trends; Sunburst displays ratios."
+    },
+    "correctAnswer": "A",
+    "explanation": "Both charts visualize hierarchical data. Treemaps use nested rectangles where the size represents value weight. Sunbursts use concentric rings, with the inner rings representing parent categories and outer rings representing child categories.",
+    "topic": "Creating and modifying tables and charts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "When creating a Combo Chart with two different data series (e.g. Sales Volume in millions, and Profit Margin in percentage), why would you put the Profit Margin on a Secondary Axis?",
+    "options": {
+      "A": "To prevent the percentage series from appearing as a flat line near zero due to the scale difference of the primary axis.",
+      "B": "To sort the data alphabetically.",
+      "C": "To hide the Profit Margin data from standard view.",
+      "D": "To place the chart in a separate worksheet tab."
+    },
+    "correctAnswer": "A",
+    "explanation": "When data ranges differ significantly (e.g., millions of dollars vs fractions of a percent), plotting them on the same axis makes the smaller numbers invisible. A secondary axis provides a separate scale on the right side of the chart.",
+    "topic": "Creating and modifying tables and charts",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "How do you create a dynamic chart range that automatically expands as you add new rows of data without using the Excel Table feature?",
+    "options": {
+      "A": "By using Name Manager to define names with OFFSET and COUNTA formulas, then using those named ranges as the chart series values.",
+      "B": "By saving the chart as a template and applying it after updates.",
+      "C": "By writing a VLOOKUP formula in the chart title.",
+      "D": "By setting the chart's source to the entire column (e.g., A:A)."
+    },
+    "correctAnswer": "A",
+    "explanation": "Before Excel Tables, dynamic chart ranges were constructed by creating Named Ranges using OFFSET and COUNTA (to count non-empty rows) and setting the Series values of the chart to the Named Range.",
+    "topic": "Creating and modifying tables and charts",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "You have added a Trendline to a scatter plot. What does the R-squared ($R^2$) value displayed on the chart represent?",
+    "options": {
+      "A": "The proportion of variance in the dependent variable that is predictable from the independent variable (model fit accuracy).",
+      "B": "The exact slope of the line.",
+      "C": "The percentage of outliers removed from the analysis.",
+      "D": "The mathematical average of all data points."
+    },
+    "correctAnswer": "A",
+    "explanation": "The R-squared value is a statistical measure of how close the data points are to the fitted regression line. An R-squared of 1.0 means the line perfectly fits the data.",
+    "topic": "Creating and modifying tables and charts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "In an Excel Histogram chart, what are the intervals into which data is partitioned called, and how can they be customized?",
+    "options": {
+      "A": "Bins; they can be customized by double-clicking the horizontal axis and setting the bin width or count in Format Axis.",
+      "B": "Slices; they are managed using the data legend.",
+      "C": "Categories; they are defined using Data Validation lists.",
+      "D": "Series; they can only be changed by altering the source values."
+    },
+    "correctAnswer": "A",
+    "explanation": "Histograms group continuous data into intervals called 'bins'. You can customize the bins by formatting the horizontal axis and specifying either the bin width, the total number of bins, or overflow/underflow thresholds.",
+    "topic": "Creating and modifying tables and charts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "If you copy and paste a sparkline group to a new set of rows, how does Excel handle the axis scale by default for each sparkline?",
+    "options": {
+      "A": "It scales the vertical axis individually for each sparkline based on that row's range, which can be misleading if comparing rows.",
+      "B": "It uses a uniform scale across all sparklines in the group.",
+      "C": "It locks the axis to a range of 0 to 100.",
+      "D": "It deletes the scale entirely and displays error codes."
+    },
+    "correctAnswer": "A",
+    "explanation": "By default, Sparklines scale their axes individually for each cell. If one row goes from 10 to 20, and another goes from 100 to 200, the line heights will look identical unless you change the sparkline settings to 'Same for All Sparklines'.",
+    "topic": "Creating and modifying tables and charts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "Which chart type is best suited to display the distribution of data using quartiles, median, and outliers?",
+    "options": {
+      "A": "Box and Whisker chart",
+      "B": "Treemap chart",
+      "C": "Radar chart",
+      "D": "Area chart"
+    },
+    "correctAnswer": "A",
+    "explanation": "Box and Whisker (boxplot) charts depict numerical data through their quartiles, showing the median, upper and lower quartiles, min/max range, and outlier points directly.",
+    "topic": "Creating and modifying tables and charts",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "You write a dynamic array formula in cell E2, but cell E5 contains a hardcoded value. What error will Excel display in cell E2?",
+    "options": {
+      "A": "#SPILL!",
+      "B": "#VALUE!",
+      "C": "#REF!",
+      "D": "#CALC!"
+    },
+    "correctAnswer": "A",
+    "explanation": "A #SPILL! error occurs when the spill range for a dynamic array formula is blocked by data, merged cells, or formulas. Clearing the blocking data allows the array to expand.",
+    "topic": "Array formulas and dynamic arrays",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "Cell G2 contains a dynamic array formula that spills into G2:G10. How should you write a formula in cell H2 to reference the entire spilled array range dynamically?",
+    "options": {
+      "A": "=G2#",
+      "B": "=G2:G10",
+      "C": "=G2*",
+      "D": "=SPILL(G2)"
+    },
+    "correctAnswer": "A",
+    "explanation": "The spill range operator (#) is placed after the top-left cell of a spilled array (e.g. `G2#`) to refer to the entire dynamic range, regardless of how many rows it currently occupies.",
+    "topic": "Array formulas and dynamic arrays",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "You want to use the FILTER function to retrieve rows from range A2:C100 where Column A equals 'West' AND Column B is greater than 1000. How should you specify the 'include' argument of the FILTER function?",
+    "options": {
+      "A": "=(A2:A100=\"West\") * (B2:B100>1000)",
+      "B": "=(A2:A100=\"West\") + (B2:B100>1000)",
+      "C": "AND(A2:A100=\"West\", B2:B100>1000)",
+      "D": "=IF(A2:A100=\"West\", B2:B100>1000)"
+    },
+    "correctAnswer": "A",
+    "explanation": "In dynamic arrays, boolean math is used for multiple criteria. Multiplication (`*`) represents logical AND because `TRUE (1) * TRUE (1) = 1` while any FALSE (0) results in 0. Addition (`+`) represents OR.",
+    "topic": "Array formulas and dynamic arrays",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "The UNIQUE function has three arguments: `=UNIQUE(array, [by_col], [exactly_once])`. What does setting the third argument [exactly_once] to TRUE do?",
+    "options": {
+      "A": "It returns only values that appear exactly once in the source list (filtering out any value that has duplicates).",
+      "B": "It removes duplicates and leaves one occurrence of each item.",
+      "C": "It ignores empty cells.",
+      "D": "It sorts the unique list alphabetically."
+    },
+    "correctAnswer": "A",
+    "explanation": "By default, [exactly_once] is FALSE, meaning UNIQUE returns a list of unique values (deduplicated). Setting it to TRUE returns only the values that appear exactly once in the range (i.e. values with no duplicates).",
+    "topic": "Array formulas and dynamic arrays",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What is the difference between the SORT function and the SORTBY function in Excel?",
+    "options": {
+      "A": "SORT sorts a range based on a column index within that range; SORTBY sorts a range based on an external range or array that is not necessarily included in the sorted range.",
+      "B": "SORT is only for numbers; SORTBY is only for text values.",
+      "C": "SORT is a legacy array formula; SORTBY is a modern dynamic array.",
+      "D": "There is no difference; they are interchangeable."
+    },
+    "correctAnswer": "A",
+    "explanation": "SORT(array, [sort_index], [sort_order]) uses a column number from the input array. SORTBY(array, by_array1, [sort_order1], ...) sorts an array based on values in a separate, corresponding array (or multiple arrays).",
+    "topic": "Array formulas and dynamic arrays",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "Which dynamic array formula generates a 5-row by 3-column grid of numbers starting at 10 and incrementing by 5?",
+    "options": {
+      "A": "=SEQUENCE(5, 3, 10, 5)",
+      "B": "=SEQUENCE(3, 5, 10, 5)",
+      "C": "=SEQUENCE(5, 3, 5, 10)",
+      "D": "=SEQUENCE(10, 5, 5, 3)"
+    },
+    "correctAnswer": "A",
+    "explanation": "The SEQUENCE function syntax is `SEQUENCE(rows, columns, start, step)`. Thus, `SEQUENCE(5, 3, 10, 5)` generates a 5x3 array starting at 10 and incrementing by 5.",
+    "topic": "Array formulas and dynamic arrays",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What error is returned by the FILTER function if no rows meet the specified 'include' criteria and the optional 'if_empty' argument is omitted?",
+    "options": {
+      "A": "#CALC!",
+      "B": "#N/A",
+      "C": "#VALUE!",
+      "D": "#SPILL!"
+    },
+    "correctAnswer": "A",
+    "explanation": "If the filter criteria match no records, and no alternative value is supplied in the third argument (if_empty), Excel returns the #CALC! error, which indicates an invalid or empty calculation range.",
+    "topic": "Array formulas and dynamic arrays",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What is the primary purpose of the LAMBDA function in Excel?",
+    "options": {
+      "A": "To create custom, reusable functions using standard formula syntax without writing VBA or JavaScript.",
+      "B": "To connect Excel worksheets to cloud databases.",
+      "C": "To solve linear programming constraints.",
+      "D": "To format cells dynamically based on font size."
+    },
+    "correctAnswer": "A",
+    "explanation": "LAMBDA allows you to define custom functions. By combining LAMBDA with Name Manager, you can name the function and reuse it across the workbook as a native function.",
+    "topic": "Array formulas and dynamic arrays",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "Which dynamic array helper function scans a range and accumulates a single final value by applying a LAMBDA function at each step (e.g. generating a running sum)?",
+    "options": {
+      "A": "REDUCE",
+      "B": "MAP",
+      "C": "BYROW",
+      "D": "MAKEARRAY"
+    },
+    "correctAnswer": "A",
+    "explanation": "REDUCE reduces an array to an accumulated value by applying a LAMBDA function to each value and updating the accumulator value at each iteration.",
+    "topic": "Array formulas and dynamic arrays",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "How did legacy array formulas differ from modern dynamic arrays regarding how they were entered and calculated?",
+    "options": {
+      "A": "Legacy array formulas required selecting the target output cells and pressing Ctrl+Shift+Enter (CSE), enclosing the formula in curly braces `{}`; modern dynamic arrays spill automatically from a single cell.",
+      "B": "Legacy array formulas could only evaluate a single row of data.",
+      "C": "Legacy array formulas were written in VBA code.",
+      "D": "Modern dynamic arrays require special plugins to run."
+    },
+    "correctAnswer": "A",
+    "explanation": "In older versions of Excel, array formulas did not spill. You had to select the exact destination range, type the formula, and press Ctrl+Shift+Enter (CSE) to create a multi-cell array formula.",
+    "topic": "Array formulas and dynamic arrays",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "Which window in the Visual Basic Editor (VBE) is used to display the hierarchical structure of worksheets, workbooks, and code modules in your project?",
+    "options": {
+      "A": "Project Explorer",
+      "B": "Properties Window",
+      "C": "Immediate Window",
+      "D": "Locals Window"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Project Explorer window displays the project tree showing Microsoft Excel Objects (sheets, ThisWorkbook), Modules, Class Modules, and UserForms.",
+    "topic": "Excel macros and VBA basics",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What is the primary operational difference between a Sub procedure and a Function procedure in VBA?",
+    "options": {
+      "A": "A Sub procedure performs actions on Excel objects but cannot return a value directly to a cell; a Function procedure calculates and returns a specific value.",
+      "B": "A Sub procedure can only be called from a worksheet formula, while a Function cannot.",
+      "C": "A Function procedure can edit worksheet formatting, whereas a Sub procedure cannot.",
+      "D": "There is no difference; they are synonyms."
+    },
+    "correctAnswer": "A",
+    "explanation": "Sub procedures perform actions (like sorting, formatting, saving) but do not return values to the caller. Function procedures calculate a value and return it, and can be used as User Defined Functions (UDFs) directly in worksheet cells.",
+    "topic": "Excel macros and VBA basics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What is the purpose of placing the statement 'Option Explicit' at the very top of a VBA code module?",
+    "options": {
+      "A": "It forces the explicit declaration of all variables in the module, preventing bugs caused by typos in variable names.",
+      "B": "It encrypts the VBA module to prevent unauthorized editing.",
+      "C": "It optimizes calculation speed by turning off automatic formulas.",
+      "D": "It allows the macro to bypass standard security filters."
+    },
+    "correctAnswer": "A",
+    "explanation": "Option Explicit prevents typos from creating new variables on the fly. If you spell a variable name wrong, compiler errors alert you immediately, ensuring code reliability.",
+    "topic": "Excel macros and VBA basics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "In VBA, how does `Cells(3, 2)` refer to a cell compared to `Range(\"C2\")`?",
+    "options": {
+      "A": "`Cells(3, 2)` refers to cell B3 (Row 3, Column 2); `Range(\"C2\")` refers to Column C, Row 2.",
+      "B": "They refer to the exact same cell (B3).",
+      "C": "`Cells(3, 2)` refers to cell C2 (Row 2, Column 3).",
+      "D": "`Range(\"C2\")` refers to cell C3."
+    },
+    "correctAnswer": "A",
+    "explanation": "The Cells property uses the format `Cells(rowIndex, columnIndex)`. Therefore, `Cells(3, 2)` points to Row 3, Column B (B3). `Range(\"C2\")` points to column C, row 2.",
+    "topic": "Excel macros and VBA basics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What is the effect of recording a macro with 'Use Relative References' enabled on the Developer tab?",
+    "options": {
+      "A": "The recorded code uses offsets from the active cell rather than hardcoded cell coordinates (like Range('A1')).",
+      "B": "The macro is automatically converted into a worksheet formula.",
+      "C": "The macro runs slower because it references cells relatively.",
+      "D": "The recorded macro can only run on columns, not rows."
+    },
+    "correctAnswer": "A",
+    "explanation": "Recording with Relative References uses properties like Offset to perform actions relative to whatever cell is active when you run the macro, rather than always acting on the exact absolute cell coordinates recorded.",
+    "topic": "Excel macros and VBA basics",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "If you want a VBA macro to run automatically every time a user double-clicks any cell in a worksheet, where should you place the event procedure code?",
+    "options": {
+      "A": "In the Worksheet module for that specific sheet, inside the `Worksheet_BeforeDoubleClick` procedure.",
+      "B": "In a standard module (e.g. Module1) under `Sub Auto_Run()`.",
+      "C": "In the Workbook module inside the `Workbook_Open` procedure.",
+      "D": "In a Class module under `Double_Click_Event`."
+    },
+    "correctAnswer": "A",
+    "explanation": "Sheet-specific event handlers (like double-clicks) must reside inside the module of the worksheet where the action happens. The specific procedure is `Worksheet_BeforeDoubleClick`.",
+    "topic": "Excel macros and VBA basics",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "Which loop structure in VBA is most efficient for iterating through a collection of objects, such as all worksheets in a workbook or all cells in a range?",
+    "options": {
+      "A": "For Each...Next",
+      "B": "Do...Loop Until",
+      "C": "For...To...Step",
+      "D": "While...Wend"
+    },
+    "correctAnswer": "A",
+    "explanation": "For Each...Next is specifically designed for object collections. It loops through every object in the collection without requiring a counter index variable, making the code clean and fast.",
+    "topic": "Excel macros and VBA basics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What is the difference between a standard Module and a Sheet Module in the VBA editor?",
+    "options": {
+      "A": "Standard Modules are for general code and macros; Sheet Modules are specialized modules linked to sheets that contain event-handling procedures.",
+      "B": "Sheet Modules are deleted when sheets are closed; Standard Modules are permanent.",
+      "C": "Standard Modules can only be written in Python; Sheet Modules are written in VBA.",
+      "D": "Standard Modules do not support loops, whereas Sheet Modules do."
+    },
+    "correctAnswer": "A",
+    "explanation": "Standard Modules (Module1, Module2, etc.) contain general procedures that can be run from anywhere. Sheet modules are tied to specific tabs and contain sheet events (like Worksheet_Activate, Worksheet_Change).",
+    "topic": "Excel macros and VBA basics",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "In Excel Trust Center settings, how can you run macros in a workbook securely without enabling macros for all Excel files on your system?",
+    "options": {
+      "A": "Store the workbook in a designated 'Trusted Location' folder configured in the Trust Center.",
+      "B": "Rename the workbook extension to .xlsx.",
+      "C": "Convert the macro code to standard formulas.",
+      "D": "Run Excel as an Administrator."
+    },
+    "correctAnswer": "A",
+    "explanation": "Workbooks saved in a 'Trusted Location' are allowed to run macros without any security warnings or blocking, even if the general setting is set to 'Disable all macros with notification'.",
+    "topic": "Excel macros and VBA basics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What does the statement 'On Error Resume Next' do in a VBA macro?",
+    "options": {
+      "A": "It instructs the macro to ignore runtime errors and continue executing the next line of code.",
+      "B": "It restarts the macro from the beginning if an error occurs.",
+      "C": "It displays a customized error message box before terminating the macro.",
+      "D": "It automatically saves the workbook and exits Excel safely."
+    },
+    "correctAnswer": "A",
+    "explanation": "On Error Resume Next disables error trapping. If a runtime error occurs, Excel ignores it and continues processing the line immediately following the error. This must be used carefully to avoid silent bugs.",
+    "topic": "Excel macros and VBA basics",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "Which of the following is a key limitation of the built-in Goal Seek tool?",
+    "options": {
+      "A": "It can only adjust a single input cell to reach a target value, and it does not support constraints.",
+      "B": "It can only be used on cells that contain text data.",
+      "C": "It is an add-in that must be purchased separately.",
+      "D": "It only works when Solver is open."
+    },
+    "correctAnswer": "A",
+    "explanation": "Goal Seek is a single-variable solver. It modifies one input cell to make a dependent formula cell hit an exact target value. It does not handle multiple inputs or inequalities/constraints; Solver is required for that.",
+    "topic": "Data analysis tools (Solver, Goal Seek)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "When using Solver to find an optimal solution (e.g. maximizing profit), which solving method is best suited for smooth, continuous nonlinear problems?",
+    "options": {
+      "A": "GRG Nonlinear",
+      "B": "Simplex LP",
+      "C": "Evolutionary",
+      "D": "Descriptive Statistics"
+    },
+    "correctAnswer": "A",
+    "explanation": "The GRG (Generalized Reduced Gradient) Nonlinear engine is designed for smooth nonlinear problems (where variables are continuous and equations are curved). Simplex LP is for linear models, and Evolutionary is for non-smooth or discontinuous models.",
+    "topic": "Data analysis tools (Solver, Goal Seek)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "You are setting up Solver. You want to ensure that a decision variable (representing the number of items to manufacture) can only take integer values (no decimals). Which constraint parameter should you add?",
+    "options": {
+      "A": "int",
+      "B": "bin",
+      "C": "integer",
+      "D": ">=1"
+    },
+    "correctAnswer": "A",
+    "explanation": "In Solver's Add Constraint dialog, you select the variable cells and choose 'int' from the operator dropdown. This constrains the variables to whole numbers.",
+    "topic": "Data analysis tools (Solver, Goal Seek)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "After running Scenario Manager, what is the best way to compare all saved scenarios (e.g., Best Case, Worst Case) side-by-side?",
+    "options": {
+      "A": "Click the 'Summary' button to generate a Scenario Summary report worksheet.",
+      "B": "Export the scenarios to separate PDF files.",
+      "C": "Create a Pivot Chart using Scenario fields.",
+      "D": "Print the sheets and compare them manually."
+    },
+    "correctAnswer": "A",
+    "explanation": "The Scenario Summary report automatically compiles all scenarios, showing their input variables and resultant formula values side-by-side on a newly generated sheet.",
+    "topic": "Data analysis tools (Solver, Goal Seek)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "When creating a two-variable Data Table, where must the formula referencing the two input variables be placed in the table grid?",
+    "options": {
+      "A": "In the top-left cell of the table grid (at the intersection of the row values and column values).",
+      "B": "In the bottom-right cell of the table grid.",
+      "C": "In any cell outside the grid.",
+      "D": "In the headers of the source columns."
+    },
+    "correctAnswer": "A",
+    "explanation": "For a two-variable Data Table, the row input values are placed in the top row, the column input values in the first column, and the formula to evaluate must be written in the top-left intersection cell.",
+    "topic": "Data analysis tools (Solver, Goal Seek)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "In Solver, what does a 'Sensitivity Report' provide when solving a linear programming model?",
+    "options": {
+      "A": "Information about how changes in constraint limits or coefficient values will affect the optimal objective value.",
+      "B": "A list of all formulas that contain errors.",
+      "C": "A chart showing the speed of the solving algorithm.",
+      "D": "A list of variables sorted by their text length."
+    },
+    "correctAnswer": "A",
+    "explanation": "The Sensitivity Report calculates shadow prices and reduced costs, indicating how sensitive the optimal solution is to changes in parameters or constraints.",
+    "topic": "Data analysis tools (Solver, Goal Seek)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "What is the difference between setting a constraint to 'bin' versus 'int' in Solver?",
+    "options": {
+      "A": "'bin' restricts variables to binary (0 or 1) values; 'int' restricts variables to integers (whole numbers).",
+      "B": "'bin' is for formulas; 'int' is for text.",
+      "C": "'bin' is active only in Excel Online; 'int' works on desktop.",
+      "D": "There is no difference; they are different names for binary constraints."
+    },
+    "correctAnswer": "A",
+    "explanation": "A 'bin' (binary) constraint limits variable cell values to exactly 0 or 1 (useful for decision making: Yes/No). An 'int' (integer) constraint limits values to any whole number (e.g., 1, 2, 3...).",
+    "topic": "Data analysis tools (Solver, Goal Seek)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "Which tool on the Data tab allows you to quickly generate a visual forecasting worksheet with confidence intervals based on historical date-value pairs?",
+    "options": {
+      "A": "Forecast Sheet",
+      "B": "Scenario Manager",
+      "C": "Data Table",
+      "D": "Trendline Tool"
+    },
+    "correctAnswer": "A",
+    "explanation": "The 'Forecast Sheet' button (Data > Forecast > Forecast Sheet) automatically creates a new sheet containing a chart showing predicted trends with upper and lower confidence bounds using AAA version of Exponential Smoothing (ETS).",
+    "topic": "Data analysis tools (Solver, Goal Seek)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "Which tool in the Analysis ToolPak add-in calculates mean, median, standard deviation, skewness, and range for a set of numeric data?",
+    "options": {
+      "A": "Descriptive Statistics",
+      "B": "Regression",
+      "C": "Anova",
+      "D": "Correlation"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Descriptive Statistics tool in the Analysis ToolPak calculates a summary of statistical properties for a dataset, outputting key metrics like mean, median, standard deviation, variance, and range in a clean table.",
+    "topic": "Data analysis tools (Solver, Goal Seek)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "excel",
+    "questionType": "MCQ",
+    "text": "If Goal Seek is unable to find an exact match for a calculation, how can you improve its precision or number of attempts in Excel settings?",
+    "options": {
+      "A": "Excel Options > Formulas > Enable iterative calculation (adjust Max Iterations and Max Change).",
+      "B": "Excel Options > Advanced > Goal Seek Accuracy slider.",
+      "C": "Solver > Constraints > Set goal precision.",
+      "D": "Home > Number Formatting > Increase Decimals."
+    },
+    "correctAnswer": "A",
+    "explanation": "Goal Seek and iterative formula calculations rely on Excel's calculation iteration settings. Adjusting the Maximum Iterations and Maximum Change in Excel Options > Formulas directly affects how close Goal Seek tries to get to the solution.",
+    "topic": "Data analysis tools (Solver, Goal Seek)",
+    "difficulty": "HARD"
+  }
+]

@@ -85,9 +85,18 @@ export default function ExamLobbyPage() {
           <h1 className="font-display font-bold text-3xl md:text-4xl text-[var(--text-primary)] mb-2">
             {cert.name}
           </h1>
-          <p className="font-ui text-[var(--text-secondary)]">
+          <p className="font-ui text-[var(--text-secondary)] mb-6">
             Attempt {currentAttemptNum} of 3 for today
           </p>
+
+          {(cert as any)._count?.questions < cert.questionCount * 2 && (
+            <div className="max-w-md mx-auto bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/30 text-amber-900 dark:text-amber-300 px-4 py-3 rounded-2xl flex items-center gap-3 text-sm font-ui mb-6 shadow-sm">
+              <AlertTriangle size={18} className="text-amber-600 dark:text-amber-400 flex-shrink-0" />
+              <p className="text-left">
+                <strong>Question pool is being expanded.</strong> You may see repeated questions until more are added.
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Stats */}
@@ -111,6 +120,10 @@ export default function ExamLobbyPage() {
             </div>
           </div>
         </div>
+
+        <p className="text-center font-ui text-xs text-[var(--text-muted)] mb-10 -mt-6">
+          📅 Questions refresh daily at midnight. Come back tomorrow for a new set of questions.
+        </p>
 
         {/* Rules */}
         <div className="space-y-6 mb-10">

@@ -1,0 +1,1202 @@
+[
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "In a React component, you have a counter state variable and a useEffect hook that sets up an interval. The interval callback references the counter state but has an empty dependency array []. What behavior will be observed when the interval runs?",
+    "options": {
+      "A": "The interval will always log the initial value of the counter, because the callback function forms a stale closure over the initial state.",
+      "B": "The interval will cause a runtime exception because state variables cannot be read inside callbacks without proper dependencies.",
+      "C": "React will automatically detect the reference and update the callback dynamically, logging the current counter value.",
+      "D": "The interval callback will execute only once and then clean itself up automatically to prevent memory leaks."
+    },
+    "correctAnswer": "A",
+    "explanation": "When useEffect runs with an empty dependency array [], the effect callback runs only once. The interval callback created inside it closes over the lexical scope of the first render. Therefore, references to counter inside the interval callback will always refer to the value of counter during that first render (its initial value), creating a classic stale closure.",
+    "topic": "React state management and hooks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "In React 18, automatic state batching is introduced. Consider a handler function triggered inside an asynchronous setTimeout callback that updates two distinct state variables sequentially. How many times will the component re-render?",
+    "options": {
+      "A": "Exactly once, because React 18 batches state updates even inside promises, timeouts, and native event handlers.",
+      "B": "Twice, because automatic batching only applies to synchronous React event handlers.",
+      "C": "Twice, because timeouts run outside the React zone and bypass the reconciliation cycle.",
+      "D": "Zero times, because async updates must be wrapped in flushSync to trigger any render."
+    },
+    "correctAnswer": "A",
+    "explanation": "Before React 18, state updates inside promises, timeouts, or native event handlers were not batched. In React 18, automatic batching is enabled by default for all updates, meaning updates inside setTimeout, promises, and native events will be batched into a single re-render.",
+    "topic": "React state management and hooks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "You are designing a custom hook useInterval(callback, delay) in React. To prevent the interval from resetting every time the callback reference changes (which happens on every render if the parent component defines it inline), what is the best practice?",
+    "options": {
+      "A": "Store the callback in a useRef and update the ref's current value on each render, then call ref.current() inside the interval.",
+      "B": "Wrap the incoming callback with useMemo inside the custom hook before setting the interval dependency.",
+      "C": "Force the user to define the callback outside the component scope, otherwise throw an error inside the hook.",
+      "D": "Use a global variable outside the hook's scope to store the latest callback function reference."
+    },
+    "correctAnswer": "A",
+    "explanation": "By storing the callback in a mutable ref (useRef) and updating callbackRef.current = callback on every render, the interval can access the latest callback logic without needing to re-register the interval. This avoids resetting the interval timer (setInterval) and ensures reference stability.",
+    "topic": "React state management and hooks",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What problem does the useSyncExternalStore hook solve in React 18 concurrent rendering?",
+    "options": {
+      "A": "It prevents 'tearing', where different parts of the UI render different values of the same external store data due to concurrent updates.",
+      "B": "It automatically syncs local storage changes across different browser tabs without needing event listeners.",
+      "C": "It enables multi-threading in Web Workers by synchronizing state updates to the main thread.",
+      "D": "It replaces Redux and Context API by providing a built-in global reactive state engine."
+    },
+    "correctAnswer": "A",
+    "explanation": "useSyncExternalStore is designed to read and subscribe to external data stores in a way that is compatible with React 18's concurrent rendering features. It prevents 'tearing', which is a visual inconsistency where the UI displays multiple values for the same state because a concurrent render was interrupted by an update.",
+    "topic": "React state management and hooks",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "You notice that updating a value in a React Context Provider triggers re-renders in all consuming components, even if they only read parts of the context that did not change. Which of the following is an effective technique to optimize this?",
+    "options": {
+      "A": "Split the context into multiple smaller contexts, or wrap the consumer components' children in React.memo while passing down split state.",
+      "B": "Switch the Context Provider's value prop to be a frozen JavaScript object using Object.freeze().",
+      "C": "Call shouldComponentUpdate inside the consumer functional components to block the updates.",
+      "D": "Place the Context Provider inside a useRef to prevent it from recalculating its children list."
+    },
+    "correctAnswer": "A",
+    "explanation": "To prevent unnecessary renders in context consumers, you can split a large context into independent contexts (e.g., one for state, one for dispatch). Alternatively, consuming components can render a memoized child component (React.memo) that only receives the specific slice of state as props.",
+    "topic": "React state management and hooks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "In which of the following scenarios is useReducer generally preferred over useState in React?",
+    "options": {
+      "A": "When the state logic is complex, involves multiple sub-values, or the next state depends on the previous state.",
+      "B": "When you need to fetch data from an external REST API during component mount.",
+      "C": "When the component state only consists of a single boolean toggle value.",
+      "D": "When you want to store a reference to a physical DOM node without triggering a re-render."
+    },
+    "correctAnswer": "A",
+    "explanation": "useReducer is preferred for complex state objects with deeply nested values, or when the next state depends on the previous one. It also helps optimize performance for components that trigger deep updates because you can pass dispatch down instead of individual callbacks.",
+    "topic": "React state management and hooks",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What is the primary difference between useTransition and useDeferredValue in React 18?",
+    "options": {
+      "A": "useTransition wraps the state-updating function itself, while useDeferredValue wraps the resulting state value.",
+      "B": "useTransition is used in class components, whereas useDeferredValue is only for functional components.",
+      "C": "useTransition runs updates asynchronously on a web worker, while useDeferredValue runs on the main thread.",
+      "D": "useTransition delays state updates by a fixed millisecond timeout, while useDeferredValue is instantaneous."
+    },
+    "correctAnswer": "A",
+    "explanation": "useTransition provides a startTransition function to wrap state updates (e.g. startTransition(() => setCount(c => c + 1))), indicating that the update is a transition that can be interrupted. useDeferredValue takes a value and returns a deferred version of it that lags behind updates to prevent slow UI components from blocking typing.",
+    "topic": "React state management and hooks",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "When a React component re-renders because a dependency of a useEffect hook has changed, in what order do the effect and cleanup functions run?",
+    "options": {
+      "A": "The cleanup function for the previous render runs first, and then the effect function for the new render runs.",
+      "B": "The new effect function runs first, followed by the cleanup function for the previous render.",
+      "C": "They run simultaneously in parallel asynchronous threads to optimize performance.",
+      "D": "The cleanup function only runs when the component is entirely unmounted from the DOM."
+    },
+    "correctAnswer": "A",
+    "explanation": "React cleans up effects from the previous render before running the effects next time. This ensures that any subscriptions or timers set up in the previous render are cleaned up before the new ones are established.",
+    "topic": "React state management and hooks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "Why would you use the useImperativeHandle hook in a React component?",
+    "options": {
+      "A": "To customize the instance value that is exposed to parent components when they use a ref.",
+      "B": "To force a component to re-render imperatively bypassing the virtual DOM reconciliation.",
+      "C": "To directly mutate global window variables without warning alerts from ESLint.",
+      "D": "To assign CSS custom properties directly onto the DOM wrapper of a child component."
+    },
+    "correctAnswer": "A",
+    "explanation": "useImperativeHandle is used in conjunction with forwardRef to allow a child component to customize the methods/properties that a parent component can access through a ref. Instead of exposing the raw DOM node, you can expose custom functions (like focus() or scrollIntoView()).",
+    "topic": "React state management and hooks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "Consider the state initializations: const [val, setVal] = useState(getInitialData()) versus const [val, setVal] = useState(() => getInitialData()). What is the performance difference?",
+    "options": {
+      "A": "In the first version, getInitialData() runs on every single render; in the second version, it runs only on the initial mount.",
+      "B": "In the first version, the state is mutable; in the second version, the state becomes read-only.",
+      "C": "The second version runs asynchronously in a microtask, while the first version blocks the main thread.",
+      "D": "There is no performance difference; they are compiled to identical JavaScript by Babel."
+    },
+    "correctAnswer": "A",
+    "explanation": "Passing a function to useState is called lazy initialization. React will only execute the function during the initial mount. If you pass the function call result (getInitialData()) directly, the function is executed on every single render, even though React discards the result on subsequent renders.",
+    "topic": "React state management and hooks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "When passing data from a Next.js React Server Component (RSC) to a Client Component via props, what restriction applies to the passed values?",
+    "options": {
+      "A": "The props must be fully serializable (e.g. JSON-serializable objects, primitives, arrays), meaning functions and class instances cannot be passed.",
+      "B": "The props can only be strings; complex objects must be serialized to JSON manually before passing.",
+      "C": "There are no restrictions because they share the same memory heap in the browser runtime.",
+      "D": "Only database models can be passed; plain JavaScript objects trigger compiler errors."
+    },
+    "correctAnswer": "A",
+    "explanation": "Because Server Components render on the server and their outputs are serialized into a stream (JSON-like format) sent to the browser, any props passed across the server-client boundary must be serializable. Functions, class instances, and symbol references cannot be serialized and will throw an error.",
+    "topic": "Next.js server components and SSR",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "In the Next.js App Router, how do you trigger a refresh of the cached layout and page data after a Server Action executes a database update?",
+    "options": {
+      "A": "Invoke revalidatePath or revalidateTag inside the Server Action on the server.",
+      "B": "Call router.refresh() inside a client-side onClick handler after fetching completes.",
+      "C": "Wrap the form submit event in a useTransition and invoke window.location.reload().",
+      "D": "Configure a custom service worker to bust the browser cache whenever a POST request is detected."
+    },
+    "correctAnswer": "A",
+    "explanation": "Inside Server Actions, you can purge cached data using revalidatePath('/some-path') or revalidateTag('some-tag'). This instructs Next.js to regenerate the path or resource in the background and send the updated components to the client.",
+    "topic": "Next.js server components and SSR",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What is the primary use case for combining Parallel Routes (@folder) and Intercepting Routes ((.)folder) in the Next.js App Router?",
+    "options": {
+      "A": "To implement modals that can be shared via a URL, while maintaining the background page context when visited directly or reloaded.",
+      "B": "To execute database migrations in parallel with rendering client pages.",
+      "C": "To redirect mobile visitors to a separate subdomain without altering the browser address bar.",
+      "D": "To bypass middleware security checks for specific nested dynamic segments."
+    },
+    "correctAnswer": "A",
+    "explanation": "By combining Parallel Routes (which allow rendering multiple pages simultaneously in the same layout) and Intercepting Routes (which allow loading a route from another part of the application inside the current layout), you can build complex patterns like modals. When clicked, the modal opens in-context; when refreshed or visited directly, the full page is rendered.",
+    "topic": "Next.js server components and SSR",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "In the Next.js App Router, under what condition will a Route Handler (e.g. app/api/route.js) with a GET method be evaluated dynamically at runtime rather than cached at build time?",
+    "options": {
+      "A": "If it reads from request cookies, headers, or URL search parameters, or if it explicitly configures dynamic = 'force-dynamic'.",
+      "B": "If the handler function is declared using async/await syntax.",
+      "C": "If the response payload exceeds 4 megabytes in total size.",
+      "D": "If the API endpoint is accessed using a HTTPS protocol."
+    },
+    "correctAnswer": "A",
+    "explanation": "By default, Next.js caches GET Route Handlers at build time. However, using dynamic functions like cookies(), headers(), or reading URL search parameters (req.nextUrl.searchParams) opts the route out of caching. Setting export const dynamic = 'force-dynamic' also disables caching.",
+    "topic": "Next.js server components and SSR",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "In Next.js, how does Incremental Static Regeneration (ISR) handle a request for a page that has exceeded its revalidate period?",
+    "options": {
+      "A": "It serves the cached (stale) page immediately to the user, triggers a background regeneration of the page, and updates the cache once complete.",
+      "B": "It blocks the client request, generates the page synchronously on the server, and serves the new page once finished.",
+      "C": "It returns a 404 error and requests the client to trigger a browser-side refresh.",
+      "D": "It deletes the static page entirely and falls back to Client-Side Rendering (CSR) for subsequent requests."
+    },
+    "correctAnswer": "A",
+    "explanation": "When a request is made for a page that has expired its revalidation window, ISR serves the cached stale version first to ensure fast load times. In the background, Next.js triggers a rebuild of the page. Once regenerated, the cache is updated so subsequent requests receive the fresh content.",
+    "topic": "Next.js server components and SSR",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "How does Next.js optimize multiple fetch calls to the same endpoint with the same arguments across a single render pass in Server Components?",
+    "options": {
+      "A": "React automatically deduplicates identical fetch requests, meaning only one request is sent to the network.",
+      "B": "Next.js throws a compile error to force developers to store fetch responses in global variables.",
+      "C": "Next.js delegates the requests to the browser cache, which runs them in parallel.",
+      "D": "The Node.js environment blocks duplicates by returning cached local promises automatically."
+    },
+    "correctAnswer": "A",
+    "explanation": "Next.js extends the native fetch API to automatically cache and deduplicate requests. If you request the same data in multiple components (like in layout and a deep child page) during a single render pass, only one network request is made, preventing over-fetching.",
+    "topic": "Next.js server components and SSR",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "Where does Next.js middleware execute in the request-response lifecycle?",
+    "options": {
+      "A": "On the Edge network, running before any route handlers or page rendering occurs, before headers/cookies are processed.",
+      "B": "On the client browser, intercepting virtual DOM navigation before rendering layout components.",
+      "C": "Directly inside the PostgreSQL or MongoDB database driver pipeline.",
+      "D": "After the page has finished rendering, processing the HTML output stream before compression."
+    },
+    "correctAnswer": "A",
+    "explanation": "Next.js middleware runs on the Edge runtime (or Server runtime) before a request is completed. It allows you to redirect requests, rewrite paths, or modify headers/cookies before pages or Route Handlers are rendered.",
+    "topic": "Next.js server components and SSR",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "Which of the following is a primary security benefit of fetching data inside a React Server Component (RSC) compared to a Client Component?",
+    "options": {
+      "A": "API keys and sensitive database credentials remain secure on the server and are never exposed to the client browser.",
+      "B": "The data is automatically encrypted with AES-256 before being injected into the HTML.",
+      "C": "It bypasses the need for Cross-Origin Resource Sharing (CORS) configurations on the client.",
+      "D": "It prevents users from viewing any text content inside their browser's 'Inspect Element' tool."
+    },
+    "correctAnswer": "A",
+    "explanation": "Since Server Components run only on the server, they can access databases directly, query microservices, and use private API keys safely without exposing sensitive client-side credentials or endpoint schemas to the browser environment.",
+    "topic": "Next.js server components and SSR",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "How does streaming with Suspense improve page load metrics in Next.js?",
+    "options": {
+      "A": "It allows the server to send HTML in chunks as they are generated, improving Time to First Byte (TTFB) and First Contentful Paint (FCP).",
+      "B": "It minifies client-side JavaScript bundle files dynamically on the client's device.",
+      "C": "It converts all animated images into static SVG shapes to reduce payload.",
+      "D": "It runs multiple instances of Node.js on the client browser using WebAssembly."
+    },
+    "correctAnswer": "A",
+    "explanation": "Streaming breaks down the page's HTML into chunks. Non-blocking/static parts can be sent instantly, while dynamic/slow database-dependent sections are sent down the same connection as they resolve. This improves FCP and interactive metrics without blocking the entire page load.",
+    "topic": "Next.js server components and SSR",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "Why does the Next.js <Image> component require you to specify either a width and height (for non-static images) or use the fill property?",
+    "options": {
+      "A": "To reserve space on the page and prevent layout shifts (CLS) when the image loads dynamically.",
+      "B": "To force the image to compress to those exact dimensions on the server.",
+      "C": "Because the Edge network cannot scale images without strict integer attributes.",
+      "D": "To allow the CSS compiler to inline the image as a base64 URI."
+    },
+    "correctAnswer": "A",
+    "explanation": "Cumulative Layout Shift (CLS) occurs when elements shift on screen. Specifying the aspect ratio through width and height (or using fill relative to a positioned parent) allows the browser to calculate and reserve the exact box size before the image asset has downloaded, avoiding layout shifts.",
+    "topic": "Next.js server components and SSR",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What is the correct function signature for custom error-handling middleware in Express, and why is this exact signature mandatory?",
+    "options": {
+      "A": "function(err, req, res, next); the fourth argument identifies it to Express as an error-handling middleware.",
+      "B": "function(req, res, next, err); parameters are position-agnostic, but standard convention requires this order.",
+      "C": "function(err, req, res); only three parameters are needed because next is implicit.",
+      "D": "function(req, res, err); it must match normal route signatures but include err at the end."
+    },
+    "correctAnswer": "A",
+    "explanation": "Express uses the arity (parameter count) of functions to differentiate standard middleware (which take 3 arguments: req, res, next) from error-handling middleware (which must take exactly 4 arguments: err, req, res, next). If you omit next, Express will treat it as regular middleware and fail to route errors to it.",
+    "topic": "Node.js/Express backend routing and middleware",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "In Express, if you register two routes: app.get('/:id', ...) and app.get('/profile', ...), in that order, what happens when a user requests /profile?",
+    "options": {
+      "A": "The request matches /:id with parameter id set to 'profile', and the second route /profile is never reached.",
+      "B": "Express matches both routes and executes both handlers simultaneously.",
+      "C": "Express prioritizes exact string matches over route parameters automatically.",
+      "D": "Express throws a route collision compilation error during start."
+    },
+    "correctAnswer": "A",
+    "explanation": "Express matches routes in the order they are defined. Since /:id is a wildcard route parameter that matches any single path segment, it intercepts the request before it can reach /profile. To avoid this, specific routes must be defined before wildcards.",
+    "topic": "Node.js/Express backend routing and middleware",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "In Express 4, what happens when an error is thrown inside an asynchronous middleware handler (e.g. inside an await block) without a try...catch block?",
+    "options": {
+      "A": "The request hangs indefinitely, and the server log reports an unhandled promise rejection (potentially crashing the process).",
+      "B": "Express catches the rejected promise and forwards it to the error-handling middleware automatically.",
+      "C": "The server returns a '500 Internal Server Error' instantly using its default error page.",
+      "D": "Express automatically retries the asynchronous request until a timeout occurs."
+    },
+    "correctAnswer": "A",
+    "explanation": "In Express 4, standard routing does not automatically handle rejected promises. If an async function throws an error (or rejects) and it is not caught, it leads to an unhandled promise rejection. The request hangs unless caught by try...catch and passed to next(err). In Express 5, this behavior is resolved as routes automatically forward rejected promises to next().",
+    "topic": "Node.js/Express backend routing and middleware",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "In the Node.js event loop, where does process.nextTick() execute relative to the main phases?",
+    "options": {
+      "A": "Immediately after the current operation completes, before the event loop transitions to the next phase.",
+      "B": "In the 'check' phase immediately after setImmediate() callbacks.",
+      "C": "In the 'timers' phase, synchronized with setTimeout() execution.",
+      "D": "After all close callbacks have finished running at the end of the loop."
+    },
+    "correctAnswer": "A",
+    "explanation": "process.nextTick() is not technically part of the event loop. Instead, the nextTickQueue is processed immediately after the current operation completes, regardless of the current phase of the event loop. This means it executes before the event loop continues to its next phase.",
+    "topic": "Node.js/Express backend routing and middleware",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What is 'backpressure' in Node.js streams and how is it managed?",
+    "options": {
+      "A": "It occurs when a writable stream cannot keep up with the rate of data being written by a readable stream; it is managed by pausing the readable stream when write() returns false.",
+      "B": "It occurs when network connections are severed during a write, resolved by raising the internal buffer size manually.",
+      "C": "It is a CPU bottleneck caused by stream compression algorithms, solved by spawning more child processes.",
+      "D": "It is the mechanical pressure on disk drives during database reads, handled by throttling OS file handles."
+    },
+    "correctAnswer": "A",
+    "explanation": "Backpressure is the build-up of data when the source (readable stream) produces data faster than the destination (writable stream) can write it. Writable streams notify the source by returning false from write(). The readable stream should then pause reading until the writable stream emits the drain event.",
+    "topic": "Node.js/Express backend routing and middleware",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "You have a parent router mounting a sub-router: app.use('/users/:userId', userRouter). Inside userRouter, you define router.get('/posts', ...). How do you ensure req.params.userId is accessible inside the sub-router handler?",
+    "options": {
+      "A": "Instantiate the sub-router with express.Router({ mergeParams: true }).",
+      "B": "Configure app.set('inherit-params', true) inside the primary Express app initialization.",
+      "C": "Pass userId as a query parameter in the URL from the client.",
+      "D": "Store the userId in res.locals inside a custom middleware on the main app."
+    },
+    "correctAnswer": "A",
+    "explanation": "By default, router parameters are isolated to the router where they are defined. To allow nested routers to inherit parameters defined in parent routers, you must set { mergeParams: true } when creating the sub-router instance.",
+    "topic": "Node.js/Express backend routing and middleware",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What is a key functional difference between calling res.json(data) and res.end() in an Express routing handler?",
+    "options": {
+      "A": "res.json() formats data to a JSON string and sets the Content-Type: application/json header, while res.end() finishes the response immediately without appending additional headers or parsing.",
+      "B": "res.json() terminates the active server thread; res.end() keeps the socket open.",
+      "C": "res.end() is used only for files; res.json() is used for primitive strings and numbers.",
+      "D": "res.json() is asynchronous and requires await; res.end() is synchronous."
+    },
+    "correctAnswer": "A",
+    "explanation": "res.json() is a helper method that calls res.send() after converting the input to JSON, adding the Content-Type: application/json header. res.end() is used to quickly end the response without sending any body, useful for status responses like res.status(204).end().",
+    "topic": "Node.js/Express backend routing and middleware",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What is the lifetime scope of values stored in the res.locals object in an Express application?",
+    "options": {
+      "A": "They are scoped strictly to the current HTTP request-response cycle and are not shared across different users or subsequent requests.",
+      "B": "They are persisted in local server memory until the Node.js server process is restarted.",
+      "C": "They are shared globally across all active clients connected to the server.",
+      "D": "They are written to the browser's cookie storage and persist for 30 days."
+    },
+    "correctAnswer": "A",
+    "explanation": "res.locals is an object that contains response local variables scoped to the request. It is useful for exposing information to templates or subsequent middleware within the same request lifecycle. Once the response is sent, the object is discarded.",
+    "topic": "Node.js/Express backend routing and middleware",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "For which types of operations does Node.js rely on its internal thread pool (libuv worker threads), and how can you increase its size?",
+    "options": {
+      "A": "File system operations (fs), cryptography (crypto), and compression (zlib); configured using the env variable UV_THREADPOOL_SIZE.",
+      "B": "Database network queries and HTTP request forwarding; configured using process.setMaxListeners().",
+      "C": "JavaScript array maps and JSON parsing; configured using the command flag --max-http-header-size.",
+      "D": "DOM events and CSS layout calculations; configured via standard web worker allocations."
+    },
+    "correctAnswer": "A",
+    "explanation": "Although JavaScript is single-threaded, Node.js uses libuv's thread pool for blocking tasks like filesystem I/O (fs), cryptography (crypto), compression (zlib), and DNS lookups. The default thread pool size is 4, which can be increased by setting the environment variable UV_THREADPOOL_SIZE (up to 128).",
+    "topic": "Node.js/Express backend routing and middleware",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What is the primary advantage of using a process manager like PM2 in cluster mode to scale an Express app compared to a single-thread process?",
+    "options": {
+      "A": "It automatically spans multiple instances across all available CPU cores and handles zero-downtime reloads and automatic restarts on crash.",
+      "B": "It compiles JavaScript files into native C++ code to bypass the event loop entirely.",
+      "C": "It acts as a database connection proxy, replacing the need for poolers like PgBouncer.",
+      "D": "It replaces Express routing by distributing routes directly to the operating system network card."
+    },
+    "correctAnswer": "A",
+    "explanation": "PM2 in cluster mode spawns multiple instances of your Node.js application, one per CPU core, sharing the same port. It manages process monitors, automatically restarts crashed instances, and allows zero-downtime hot-reloads (pm2 reload), which makes it ideal for production deployments.",
+    "topic": "Node.js/Express backend routing and middleware",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "In PostgreSQL, why are B-Tree indexes preferred over Hash indexes for most indexing tasks?",
+    "options": {
+      "A": "B-Tree indexes support sorting, range queries (>, <), and multi-column composite search, whereas Hash indexes only support exact equality checks (=).",
+      "B": "Hash indexes require more storage space and cannot be updated dynamically after rows are inserted.",
+      "C": "B-Tree indexes are stored in CPU registers, making them ten times faster for small tables.",
+      "D": "Hash indexes are deprecated and will be removed in all modern SQL dialects."
+    },
+    "correctAnswer": "A",
+    "explanation": "Hash indexes in PostgreSQL are designed specifically for simple equality checks. They cannot help optimize queries that sort records, query range boundaries, or perform partial matches. B-Trees are balanced trees that handle equality, range queries, and sort orders efficiently.",
+    "topic": "Database indexing and query optimization (PostgreSQL/MongoDB)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "You run EXPLAIN ANALYZE SELECT email FROM users WHERE email = 'test@example.com'. The output indicates an 'Index Only Scan' was performed. What does this mean?",
+    "options": {
+      "A": "The query planner fetched the requested data directly from the index tree without needing to read the actual table heap blocks.",
+      "B": "The index is corrupted and database blocks had to be scanned sequentially.",
+      "C": "The query returned zero records because the index does not map to any active table data.",
+      "D": "The index is too large and PostgreSQL is warning that performance is degraded."
+    },
+    "correctAnswer": "A",
+    "explanation": "An Index Only Scan occurs when the index contains all the columns requested by the SELECT and WHERE clauses. Since PostgreSQL can resolve the query entirely using the index data, it bypasses fetching the corresponding rows from the main table storage (heap), saving valuable disk I/O.",
+    "topic": "Database indexing and query optimization (PostgreSQL/MongoDB)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "You create a composite index in PostgreSQL: CREATE INDEX idx_user_status_age ON users (status, age). Which of the following queries will benefit the MOST from this index?",
+    "options": {
+      "A": "SELECT * FROM users WHERE status = 'ACTIVE' AND age = 30;",
+      "B": "SELECT * FROM users WHERE age = 30;",
+      "C": "SELECT * FROM users WHERE age > 25 ORDER BY created_at DESC;",
+      "D": "SELECT * FROM users WHERE email = 'test@example.com';"
+    },
+    "correctAnswer": "A",
+    "explanation": "Composite indexes follow the leftmost prefix rule. The index is ordered first by status and then by age. A query filtering on both status and age, or just the first column status, can use the index efficiently. A query filtering only on age (the second column) cannot locate its prefix in the index structure, making the index much less effective or unusable.",
+    "topic": "Database indexing and query optimization (PostgreSQL/MongoDB)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "To optimize a MongoDB aggregation pipeline, where should $match and $project stages be placed?",
+    "options": {
+      "A": "Place $match as early as possible to reduce the number of documents passed down the pipeline; place $project near the end once calculations are complete.",
+      "B": "Place $project first to strip fields, followed by $match at the end to filter documents.",
+      "C": "Place both stages at the absolute end of the pipeline to leverage MongoDB's automatic grouping.",
+      "D": "Place them in alternating order inside a single nested $lookup sub-pipeline."
+    },
+    "correctAnswer": "A",
+    "explanation": "Placing $match at the beginning of the aggregation pipeline is critical because it filters the collection early, allowing MongoDB to utilize indexes and minimizing the volume of documents passing through memory in subsequent stages. $project should generally be placed later, as stripping fields early can prevent downstream stages from accessing needed fields or inhibit query optimizations.",
+    "topic": "Database indexing and query optimization (PostgreSQL/MongoDB)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "In PgBouncer, what is a key operational difference between 'Session' pooling and 'Transaction' pooling?",
+    "options": {
+      "A": "Session pooling keeps a database connection assigned to a client until they disconnect; Transaction pooling releases the connection back to the pool as soon as the active transaction finishes.",
+      "B": "Transaction pooling forces the server to create custom database templates for each client session.",
+      "C": "Session pooling does not allow data mutation queries; Transaction pooling handles both reads and writes.",
+      "D": "Transaction pooling connects to a mock database in memory to handle requests."
+    },
+    "correctAnswer": "A",
+    "explanation": "Session pooling keeps database connections linked to clients until they fully close their connection. Transaction pooling makes connections available back to the pool as soon as individual transactions finish, allowing far more clients to share fewer backend connections, though it does restrict some connection-specific features like temp tables.",
+    "topic": "Database indexing and query optimization (PostgreSQL/MongoDB)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What is a 'Multikey Index' in MongoDB, and what is its primary use case?",
+    "options": {
+      "A": "An index built on a field that stores an array, allowing MongoDB to index individual elements within the array.",
+      "B": "An index that joins tables across multiple distinct databases.",
+      "C": "A composite index containing more than five keys from different collections.",
+      "D": "An index designed to prevent duplicate string values in a document store."
+    },
+    "correctAnswer": "A",
+    "explanation": "In MongoDB, if you index a field that contains an array value, MongoDB automatically creates index keys for every single element in that array. This is called a Multikey Index, allowing fast queries for documents containing specific array items.",
+    "topic": "Database indexing and query optimization (PostgreSQL/MongoDB)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "PostgreSQL utilizes Multi-Version Concurrency Control (MVCC) to manage concurrent transactions. What is the default transaction isolation level in PostgreSQL, and what anomaly does it prevent?",
+    "options": {
+      "A": "Read Committed; it prevents Dirty Reads (reading uncommitted data from other transactions).",
+      "B": "Serializable; it prevents Phantom Reads and serialization anomalies.",
+      "C": "Repeatable Read; it prevents Dirty Reads and Non-repeatable Reads.",
+      "D": "Read Uncommitted; it does not prevent any transaction anomalies."
+    },
+    "correctAnswer": "A",
+    "explanation": "The default transaction isolation level in PostgreSQL is Read Committed. At this level, a query sees only data committed before the query began. This prevents 'Dirty Reads' where a transaction reads uncommitted changes made by another transaction.",
+    "topic": "Database indexing and query optimization (PostgreSQL/MongoDB)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "Under what scenario would you create a 'Partial Index' (or Filtered Index) in PostgreSQL?",
+    "options": {
+      "A": "When you frequently query a subset of rows defined by a constant condition, such as WHERE status = 'PENDING'.",
+      "B": "When you want to index only the first 10 characters of a long text column.",
+      "C": "When you have a table that is split into multiple shards across different database servers.",
+      "D": "When you need to index a column that contains nullable double-precision float values."
+    },
+    "correctAnswer": "A",
+    "explanation": "A partial index is created with a WHERE clause (e.g. CREATE INDEX ON orders (created_at) WHERE status = 'PENDING'). This indexes only the rows matching the condition, saving disk space and speed during writes since only relevant rows trigger index updates.",
+    "topic": "Database indexing and query optimization (PostgreSQL/MongoDB)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "How do you achieve a 'Covered Query' in MongoDB to maximize read performance?",
+    "options": {
+      "A": "Ensure all query filter fields are in an index, and use projection to return only indexed fields, explicitly excluding _id if it is not part of the index.",
+      "B": "Wrap the query in a transaction block with a readConcern of 'majority'.",
+      "C": "Configure the collections to reside entirely in the RAM cache using the $volatile parameter.",
+      "D": "Create a compound index containing every field present in the collection schema."
+    },
+    "correctAnswer": "A",
+    "explanation": "A covered query is a query that can be resolved entirely by reading the index keys without scanning any documents in the collection heap. To achieve this, the query must project only fields that are part of the index, and must explicitly set _id: 0 (unless _id is indexed).",
+    "topic": "Database indexing and query optimization (PostgreSQL/MongoDB)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "You observe that fetching a list of 100 books and their respective authors triggers 101 separate SQL queries. What is this optimization problem called, and what is a standard fix?",
+    "options": {
+      "A": "N+1 query problem; resolved by using Eager Loading (e.g. JOIN or include statement) to fetch authors in a single query.",
+      "B": "Cascading select anomaly; resolved by rebuilding table indexes using a Hash index.",
+      "C": "Transaction lock starvation; resolved by lowering the isolation level to Read Uncommitted.",
+      "D": "Network partition delay; resolved by adding a Redis caching layer in front of the database."
+    },
+    "correctAnswer": "A",
+    "explanation": "The N+1 query problem occurs when code executes one query to fetch a parent list (size N), and then loops through each record to run a separate query to fetch its child relationship. This triggers N+1 total queries. It is solved by using eager loading (joining tables or batching queries) so that child records are retrieved in one or two queries.",
+    "topic": "Database indexing and query optimization (PostgreSQL/MongoDB)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What is a primary security benefit of using the RS256 signing algorithm instead of HS256 for JSON Web Tokens?",
+    "options": {
+      "A": "RS256 uses asymmetric encryption, meaning only the authorization server needs the private key to sign tokens, while resource servers verify them with a public key.",
+      "B": "RS256 is three times faster to verify and results in a smaller token size.",
+      "C": "RS256 automatically encrypts the payload so that clients cannot read the claims inside.",
+      "D": "RS256 does not require a secret key and relies on DNS records for validation."
+    },
+    "correctAnswer": "A",
+    "explanation": "HS256 is a symmetric algorithm, meaning the same shared secret is used to sign and verify tokens. If a microservice needs to verify tokens, it must know the secret, which is a security risk. RS256 is asymmetric; the auth server signs with a private key, and other services verify using the public key without needing the signing credentials.",
+    "topic": "Web security (JWT, OAuth, CSRF, XSS)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "Why is Proof Key for Code Exchange (PKCE) highly recommended for OAuth 2.0 authorization flows in Single Page Applications (SPAs)?",
+    "options": {
+      "A": "It protects the authorization code from being intercepted and used by malicious actors who do not possess the dynamic code verifier secret.",
+      "B": "It enables biometric authentication (like FaceID) directly within the browser tab.",
+      "C": "It bypasses the need for the user to type in their password during authorization.",
+      "D": "It forces the authorization server to compress the access token payload to save bandwidth."
+    },
+    "correctAnswer": "A",
+    "explanation": "SPAs are 'public clients' that cannot protect a client secret. PKCE solves the vulnerability where an authorization code could be intercepted in transition. It introduces a high-entropy secret 'Code Verifier' and its hash 'Code Challenge'. The code can only be exchanged for an access token if the requester proves they know the original Code Verifier.",
+    "topic": "Web security (JWT, OAuth, CSRF, XSS)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "How does configuring cookie headers with SameSite=Lax protect a web application from Cross-Site Request Forgery (CSRF) attacks?",
+    "options": {
+      "A": "It prevents cookies from being sent along with cross-site requests (e.g. links clicked from external sites), except for top-level GET navigations.",
+      "B": "It blocks all JavaScript files from reading the cookie value using the document.cookie API.",
+      "C": "It forces the browser to verify the client's SSL certificate before sending the request.",
+      "D": "It encrypts the cookies using an ephemeral public key provided by the destination server."
+    },
+    "correctAnswer": "A",
+    "explanation": "SameSite=Lax is the modern default for many browsers. It ensures cookies are not sent on cross-site subrequests (such as images, AJAX, or POST forms loaded from third-party sites), blocking the classic CSRF exploit. It still sends cookies when a user clicks a standard external hyperlink (GET) to navigate to the site.",
+    "topic": "Web security (JWT, OAuth, CSRF, XSS)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "Which of the following client-side HTTP requests will trigger a Cross-Origin Resource Sharing (CORS) preflight OPTIONS request?",
+    "options": {
+      "A": "A POST request with a Content-Type header set to application/json.",
+      "B": "A GET request with standard headers like Accept and User-Agent.",
+      "C": "A POST request with a Content-Type header set to application/x-www-form-urlencoded.",
+      "D": "A HEAD request with standard cache headers."
+    },
+    "correctAnswer": "A",
+    "explanation": "Requests that are not 'simple requests' trigger a preflight check. A POST request with a Content-Type of application/json is not simple (only text/plain, multipart/form-data, and application/x-www-form-urlencoded are simple). Therefore, the browser sends an OPTIONS preflight request before the actual request.",
+    "topic": "Web security (JWT, OAuth, CSRF, XSS)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "An attacker inputs a script tag into a profile's biography field. Every user who visits that profile executes the script in their browser. What type of Cross-Site Scripting (XSS) is this?",
+    "options": {
+      "A": "Stored (Persistent) XSS",
+      "B": "Reflected (Non-persistent) XSS",
+      "C": "DOM-based XSS",
+      "D": "Blind SQL Injection"
+    },
+    "correctAnswer": "A",
+    "explanation": "Stored XSS occurs when a malicious script is permanently stored on the target server (e.g. in a database, comment field, or forum post) and is later retrieved and executed by other users in their browsers when they view the page.",
+    "topic": "Web security (JWT, OAuth, CSRF, XSS)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What is the primary function of the Strict-Transport-Security (HSTS) HTTP response header?",
+    "options": {
+      "A": "It forces the browser to only communicate with the server over HTTPS, preventing SSL-stripping man-in-the-middle attacks.",
+      "B": "It enforces strict limits on the number of cookies that can be assigned to a session.",
+      "C": "It blocks cross-origin page loads unless the target domain matches the client IP.",
+      "D": "It instructs the browser to disable the backward/forward navigation cache."
+    },
+    "correctAnswer": "A",
+    "explanation": "HSTS instructs browsers that the site must only be accessed using HTTPS. If a user tries to access the site via HTTP, the browser automatically translates it to HTTPS locally before sending requests, preventing attackers from intercepting requests or redirecting them (SSL stripping).",
+    "topic": "Web security (JWT, OAuth, CSRF, XSS)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "Because JWTs are stateless, revoking them before their expiration time can be difficult. What is a common architectural pattern to handle immediate JWT revocation?",
+    "options": {
+      "A": "Store blacklisted token identifiers (jti) in a fast in-memory store like Redis and query it during middleware authentication checks.",
+      "B": "Re-generate the server's public/private key pairs every time a user logs out.",
+      "C": "Decrease the client clock time dynamically using a WebSocket heartbeat signal.",
+      "D": "Store the entire JWT history of every user inside a relational database table."
+    },
+    "correctAnswer": "A",
+    "explanation": "To revoke a stateless JWT immediately, servers can store revoked token IDs (jti claim) or user logout timestamps in a high-performance database like Redis. The auth middleware queries Redis to verify the token is not blacklisted before approving the request.",
+    "topic": "Web security (JWT, OAuth, CSRF, XSS)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "How does a Content Security Policy (CSP) 'nonce' prevent Cross-Site Scripting (XSS) attacks?",
+    "options": {
+      "A": "It is a cryptographically strong, random token generated per-request; the browser only executes inline scripts containing a matching nonce attribute.",
+      "B": "It is a secret encryption key used to sign all stylesheet files compiled by Webpack.",
+      "C": "It is a cookie parameter that blocks the execution of asynchronous promises in third-party scripts.",
+      "D": "It automatically strips script tags from request payloads using regex filters on the server."
+    },
+    "correctAnswer": "A",
+    "explanation": "A CSP nonce (number used once) is generated dynamically for every HTTP response. The server inserts this nonce into the CSP header (e.g. script-src 'nonce-randomtoken') and also adds it to valid inline scripts. If an attacker injects a script tag, it will lack the secret nonce and the browser will refuse to execute it.",
+    "topic": "Web security (JWT, OAuth, CSRF, XSS)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "How does the 'Sliding Window Counter' rate-limiting algorithm differ from the 'Fixed Window' algorithm?",
+    "options": {
+      "A": "Sliding Window checks requests relative to the exact current timestamp instead of resetting limits at fixed block boundaries (e.g. exactly at the top of the hour), preventing traffic bursts at window edges.",
+      "B": "Sliding Window requires storing the request body in memory, whereas Fixed Window stores only the IP address.",
+      "C": "Fixed Window works only with Redis; Sliding Window requires PostgreSQL.",
+      "D": "Sliding Window blocks users permanently after their limit is reached."
+    },
+    "correctAnswer": "A",
+    "explanation": "Fixed window rate limiting resets counters at fixed intervals (e.g. every hour). An attacker can make their maximum quota of requests right before the hour ends, and another quota right as it starts, doubling their limit in a short span. Sliding window counter tracks timestamps or calculates weight based on the previous window, smoothed over time, avoiding boundary bursts.",
+    "topic": "Web security (JWT, OAuth, CSRF, XSS)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "Why is an algorithm like Argon2 or bcrypt preferred for password hashing over SHA-256?",
+    "options": {
+      "A": "Argon2 and bcrypt are deliberately designed to be computationally expensive and memory-hard, making brute-force attacks via GPUs much slower.",
+      "B": "SHA-256 does not support adding salt values to prevent rainbow table attacks.",
+      "C": "Argon2 is a symmetric encryption algorithm that allows retrieving the password on the server if needed.",
+      "D": "SHA-256 hashes are not unique and suffer from high collision rates on small strings."
+    },
+    "correctAnswer": "A",
+    "explanation": "SHA-256 is designed to be fast, making it easy for an attacker to compute billions of hashes per second using GPUs during a breach. Argon2, bcrypt, and PBKDF2 are slow hashing algorithms (stretching) with configurable cost/memory factors. This slows down brute-force and dictionary attacks significantly.",
+    "topic": "Web security (JWT, OAuth, CSRF, XSS)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What is the primary benefit of using multi-stage builds in a Dockerfile for a production full-stack application?",
+    "options": {
+      "A": "It allows separating build-time dependencies (like compilers, devDependencies, test packages) from the final runtime environment, resulting in a much smaller production image.",
+      "B": "It enables containers to share system memory dynamically, reducing resource requirements.",
+      "C": "It automatically replicates the container image across multiple cloud regions.",
+      "D": "It bypasses the need for writing shell commands in the docker build pipeline."
+    },
+    "correctAnswer": "A",
+    "explanation": "Multi-stage builds use multiple FROM instructions. You can install all compile tools (like npm devDependencies or compiler binaries) in one stage, compile the code, and then copy only the compiled production files into a fresh, minimal runtime stage, leaving build clutter behind.",
+    "topic": "CI/CD, Docker containerization, and cloud deployment",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "Consider two ways of structuring a Dockerfile:\n\nOption A:\nCOPY . .\nRUN npm install\n\nOption B:\nCOPY package*.json .\nRUN npm install\nCOPY . .\n\nWhy is Option B preferred?",
+    "options": {
+      "A": "Option B utilizes Docker's layer caching; if package.json hasn't changed, Docker skips RUN npm install and uses the cached layer, saving build time.",
+      "B": "Option A will fail to compile because package files must always be copied in isolation.",
+      "C": "Option B uses less space on the host disk because it deletes development packages dynamically.",
+      "D": "Option A causes database connections to fail due to network route isolation."
+    },
+    "correctAnswer": "A",
+    "explanation": "Docker caches the result of instructions. If files targeted by a COPY instruction change, all subsequent cached steps are invalidated. In Option A, changing any source file invalidates COPY . ., forcing npm install to run again. Option B only invalidates npm install if package.json or package-lock.json changes, which is much faster.",
+    "topic": "CI/CD, Docker containerization, and cloud deployment",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What is the difference between a Liveness probe and a Readiness probe in Kubernetes?",
+    "options": {
+      "A": "Liveness probes determine when to restart a container; Readiness probes determine if a container should receive network traffic from a Service.",
+      "B": "Readiness probes check system CPU usage; Liveness probes check network connectivity to external endpoints.",
+      "C": "Liveness probes run only on container startup; Readiness probes run continuously.",
+      "D": "There is no difference; they are aliases for the same health check mechanism."
+    },
+    "correctAnswer": "A",
+    "explanation": "Liveness probes check if a container has entered a broken state (deadlock). If the liveness probe fails, Kubernetes restarts the pod. Readiness probes check if the container is ready to handle requests (e.g. after loading cache or database migrations). If it fails, Kubernetes removes the pod from the service load balancer so no traffic is sent to it.",
+    "topic": "CI/CD, Docker containerization, and cloud deployment",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What is the main characteristic of using --network host when running a Docker container?",
+    "options": {
+      "A": "The container shares the host's network namespace directly, meaning ports mapped inside the container are exposed on the host's IP with no isolation.",
+      "B": "The container is assigned a private virtual IP that can only be reached by other containers on the same host.",
+      "C": "All network traffic is encrypted automatically using host-level TLS certificates.",
+      "D": "It completely blocks outbound internet access from inside the container."
+    },
+    "correctAnswer": "A",
+    "explanation": "In host networking mode, the container does not get its own IP address allocated. Instead, it runs directly on the host's network stack. For example, if a container runs a web server on port 80, it is immediately available on port 80 of the host's IP, bypassing bridge mapping.",
+    "topic": "CI/CD, Docker containerization, and cloud deployment",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What is the difference between Blue-Green and Canary deployment strategies?",
+    "options": {
+      "A": "Blue-Green deploys a full new environment (Green) alongside the old one (Blue) and switches 100% of traffic; Canary rolls out the new version to a small subset of users (e.g. 5%) first to verify stability.",
+      "B": "Blue-Green is for frontend assets only; Canary is for database schema updates.",
+      "C": "Canary deployment requires bringing the entire application offline; Blue-Green is completely zero-downtime.",
+      "D": "Blue-Green switches traffic randomly using DNS round-robin; Canary uses load balancers strictly."
+    },
+    "correctAnswer": "A",
+    "explanation": "Blue-Green deployment involves running two identical environments. The new code is deployed to Green, verified, and the router flips 100% of traffic to Green. Canary deployment rolls out updates incrementally to a small portion of live traffic first. If no errors are detected, the percentage is scaled up until 100% is reached.",
+    "topic": "CI/CD, Docker containerization, and cloud deployment",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "Why is Terraform described as a 'declarative' Infrastructure as Code (IaC) tool?",
+    "options": {
+      "A": "You define the desired target state of your infrastructure in configuration files, and Terraform determines the steps required to achieve that state.",
+      "B": "You must write detailed shell scripts describing every step of resource creation.",
+      "C": "It requires developers to declare variable types explicitly in the command line before running builds.",
+      "D": "It executes commands sequentially in a bash terminal window automatically."
+    },
+    "correctAnswer": "A",
+    "explanation": "Declarative tools allow you to describe 'what' the target architecture should look like (e.g. 'I want a VM with 2 CPUs and a security group'). The tool compares this with the actual state (via state files) and calculates the differences, generating the plan to add/remove/update resources automatically. Imperative tools require defining the specific 'how' steps.",
+    "topic": "CI/CD, Docker containerization, and cloud deployment",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What happens to a Docker container if it exceeds the memory limits configured using the -m or --memory flag?",
+    "options": {
+      "A": "The container is terminated by the host system's Out-Of-Memory (OOM) killer, exiting with code 137.",
+      "B": "The container's database connections are throttled to reduce memory allocation.",
+      "C": "Docker automatically creates swap space on the disk and continues execution without performance degradation.",
+      "D": "The container throws a standard Node.js catchable Exception block."
+    },
+    "correctAnswer": "A",
+    "explanation": "If a container exceeds its allocated memory limit and the kernel has no memory, the host's kernel Out-Of-Memory (OOM) killer will terminate the process. The container halts immediately, exiting with exit code 137 (128 + signal 9 SIGKILL).",
+    "topic": "CI/CD, Docker containerization, and cloud deployment",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What is a 'Cold Start' in serverless cloud functions (e.g. AWS Lambda), and how can you minimize its duration?",
+    "options": {
+      "A": "The latency spike when a function is invoked after being idle, because the cloud provider must allocate a container and initialize the runtime; minimized by reducing package sizes and dependencies.",
+      "B": "A failure that occurs when serverless regions freeze due to hardware issues, minimized by using CDN routing.",
+      "C": "The time it takes to boot the server database on demand; minimized by keeping the connection open permanently.",
+      "D": "The phase when a function is compiled to machine instructions; minimized by using JavaScript instead of compiled Go."
+    },
+    "correctAnswer": "A",
+    "explanation": "Serverless functions scale to zero when idle. When a new request arrives, a container must spin up, pull code, start the runtime, and run bootstrap code. This latency is a 'cold start'. Minimizing package size, bundling code efficiently, avoiding heavy global variables, and using lighter runtimes (Node.js/Go vs Java) helps reduce this delay.",
+    "topic": "CI/CD, Docker containerization, and cloud deployment",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "In what scenario should you configure a load balancer to use the 'Least Connections' algorithm instead of 'Round Robin'?",
+    "options": {
+      "A": "When client requests vary greatly in processing time or server resources required, causing uneven load distribution on servers.",
+      "B": "When you want to ensure the client always connects to the same server for session consistency.",
+      "C": "When you are distributing large media files sequentially to mobile devices.",
+      "D": "When all backend servers have identical hardware and request times are uniform."
+    },
+    "correctAnswer": "A",
+    "explanation": "Round Robin routes requests sequentially. If some requests take seconds (heavy reports) while others take milliseconds, some servers may get overloaded with slow requests. Least Connections routes traffic to the server currently handling the fewest active connections, balancing work more dynamically.",
+    "topic": "CI/CD, Docker containerization, and cloud deployment",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "Why is retrieving secrets from a dedicated secrets manager (like HashiCorp Vault or AWS Secrets Manager) considered more secure than hardcoding them in .env files in a repo?",
+    "options": {
+      "A": "It allows dynamic rotation, audit logging of access, and fine-grained access policies, while preventing secrets from leaking into version control or build logs.",
+      "B": "It automatically encrypts the data on the client's device using local storage keys.",
+      "C": "It forces the application code to run twice as fast because the secrets are pre-compiled.",
+      "D": "It prevents database instances from shutting down due to credential changes."
+    },
+    "correctAnswer": "A",
+    "explanation": "Hardcoded .env files or committing secrets to repositories is a major security risk. Using a secrets manager keeps sensitive keys out of the code base entirely. It allows automated rotation (changing keys periodically), logs who reads them, and enforces access control via IAM policies.",
+    "topic": "CI/CD, Docker containerization, and cloud deployment",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "How does the DataLoader library solve the N+1 query problem in GraphQL API implementations?",
+    "options": {
+      "A": "It batches multiple individual load requests within a single tick of the event loop and caches the results for the duration of the request.",
+      "B": "It automatically compiles all GraphQL query fragments into a single nested SQL JOIN statement.",
+      "C": "It runs queries in parallel worker threads using Node.js clustering.",
+      "D": "It replaces standard resolvers with pre-compiled database views."
+    },
+    "correctAnswer": "A",
+    "explanation": "DataLoader is a utility that solves N+1 fetching. It accepts individual keys to fetch (e.g. user IDs). Instead of running a query for each key instantly, it batches them during one event loop tick and runs a single query (e.g. WHERE id IN (...)), returning the results mapped to the requested keys. It also caches results for that specific request.",
+    "topic": "RESTful and GraphQL API design",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "In GraphQL schema design, why is it recommended to use a single custom input object type (e.g. input CreateUserInput) for mutation parameters instead of flat lists of arguments?",
+    "options": {
+      "A": "It makes mutations cleaner, permits adding new optional fields without breaking the schema signature, and facilitates client-side validation reuse.",
+      "B": "GraphQL does not support passing more than three arguments in a standard mutation definition.",
+      "C": "Input types are automatically encrypted with SSL before transit.",
+      "D": "It allows the schema compiler to automatically convert fields into database primary keys."
+    },
+    "correctAnswer": "A",
+    "explanation": "Using an input object type makes mutations more maintainable. If you add fields in the future, you do not change the argument signature of the mutation resolver. It also lets client libraries share input interfaces, and makes testing and logging inputs easier.",
+    "topic": "RESTful and GraphQL API design",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What do 'over-fetching' and 'under-fetching' mean in the context of API design?",
+    "options": {
+      "A": "Over-fetching is receiving more data than needed; under-fetching is not getting enough data in one request, requiring multiple subsequent API calls.",
+      "B": "Over-fetching is making too many network calls; under-fetching is querying offline database tables.",
+      "C": "Over-fetching is a memory leak on the client; under-fetching is database connection timeout.",
+      "D": "They refer to the size of HTTP request headers compared to the body size."
+    },
+    "correctAnswer": "A",
+    "explanation": "Over-fetching occurs when a REST endpoint returns a fixed data payload (e.g. returning 50 user fields when only the name is needed). Under-fetching occurs when an endpoint doesn't return related resources, forcing the client to make subsequent requests (e.g. fetching /users, then /users/1/orders, then /orders/2/items). GraphQL solves both by letting clients specify the exact shape and nested relationships required.",
+    "topic": "RESTful and GraphQL API design",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "How does 'Content Negotiation' versioning differ from 'URI versioning' in API design?",
+    "options": {
+      "A": "Content Negotiation versioning specifies the version in the Accept header (e.g. Accept: application/vnd.myapi.v2+json); URI versioning embeds the version in the path (e.g. /v2/users).",
+      "B": "Content Negotiation versioning requires creating separate domains for each version.",
+      "C": "URI versioning is only for static file routes; Content Negotiation versioning is for JSON APIs.",
+      "D": "Content Negotiation versioning is slower because it decrypts request headers dynamically."
+    },
+    "correctAnswer": "A",
+    "explanation": "URI versioning is visible in the URL path (e.g., api.example.com/v1/resource). Content negotiation (media type) versioning leaves the URL clean (e.g. api.example.com/resource) and uses request headers like Accept or a custom header (e.g. X-API-Version) to specify which version payload the server should return.",
+    "topic": "RESTful and GraphQL API design",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "An attacker can bring down a GraphQL server by sending a deeply nested query (e.g. author -> books -> author -> books...). What is the best strategy to mitigate this security risk?",
+    "options": {
+      "A": "Implement Query Depth and Complexity analysis middleware that calculates a score for queries and rejects them if they exceed limits before execution.",
+      "B": "Restrict queries to be sent only from authorized client IP addresses.",
+      "C": "Block all recursive relationships from the GraphQL schema entire definition.",
+      "D": "Add a database trigger that terminates long running connection threads."
+    },
+    "correctAnswer": "A",
+    "explanation": "Because GraphQL allows clients to request arbitrary nested data, attackers can construct malicious deeply nested queries to crash servers. By using libraries that analyze query depth (how deep the nesting is) or complexity (assigning scores to fields), the server can parse the query document and reject it early if the score is too high.",
+    "topic": "RESTful and GraphQL API design",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "Which of the following sets of HTTP methods are guaranteed to be idempotent according to the REST specifications?",
+    "options": {
+      "A": "GET, PUT, DELETE, OPTIONS",
+      "B": "POST, PATCH, PUT, DELETE",
+      "C": "POST, GET, PATCH, HEAD",
+      "D": "GET, POST, OPTIONS, DELETE"
+    },
+    "correctAnswer": "A",
+    "explanation": "An idempotent HTTP method is one where making multiple identical requests has the same effect on the server state as a single request. GET, HEAD, OPTIONS (safe methods) are idempotent. PUT (replaces resource) and DELETE (removes resource) are also idempotent. POST (creates new resources) and PATCH (modifies state partially) are not guaranteed to be idempotent.",
+    "topic": "RESTful and GraphQL API design",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What is a major performance drawback of using Offset-based pagination (LIMIT 10 OFFSET 1000000) at scale in relational databases, and what is the preferred alternative?",
+    "options": {
+      "A": "The database must scan and discard all preceding records (1,000,000 rows) before returning the requested page; solved by using Cursor-based (Keyset) pagination.",
+      "B": "Offset pagination locks the entire table heap, preventing parallel reads.",
+      "C": "Offset pagination cannot return partial columns, increasing network load.",
+      "D": "It triggers automatic database re-indexing on every query run."
+    },
+    "correctAnswer": "A",
+    "explanation": "With OFFSET 1000000, the database engine must read through and discard one million records to find the starting point. This makes offset pagination very slow for deep pages. Keyset (cursor-based) pagination uses a filter condition (e.g. WHERE id < last_seen_id ORDER BY id DESC LIMIT 10), which can use indexes directly and execute in constant time.",
+    "topic": "RESTful and GraphQL API design",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What custom HTTP headers does an API server commonly return to inform client applications about active rate limits?",
+    "options": {
+      "A": "X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset",
+      "B": "X-Limit-Max, X-Limit-Left, X-Limit-Refresh",
+      "C": "Rate-Quota, Rate-Used, Rate-Period",
+      "D": "HTTP-Rate-Max, HTTP-Rate-Left, HTTP-Rate-Timeout"
+    },
+    "correctAnswer": "A",
+    "explanation": "Although these are not strict RFC standards, many major APIs return these custom headers: X-RateLimit-Limit (quota allowed), X-RateLimit-Remaining (quota left in current window), and X-RateLimit-Reset (epoch timestamp indicating when the limit resets).",
+    "topic": "RESTful and GraphQL API design",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "In Apollo Federation, how do microservices coordinate to resolve a single federated GraphQL schema?",
+    "options": {
+      "A": "Individual subgraphs define their own schemas and use @key directives to define entities; a gateway/router queries the subgraphs and composes them into a single schema.",
+      "B": "All subgraphs must connect directly to the same centralized PostgreSQL database server.",
+      "C": "A centralized gateway duplicates all subgraph resolver code into a single monolithic deployment.",
+      "D": "The client browser makes parallel API calls to all microservices and combines them."
+    },
+    "correctAnswer": "A",
+    "explanation": "Apollo Federation allows splitting a GraphQL schema across multiple services (subgraphs). Each service defines its part of the graph and specifies keys (using @key). The gateway (or Apollo Router) reads these subgraph schemas, composes them into a unified federated schema, and handles routing queries to appropriate subgraphs efficiently.",
+    "topic": "RESTful and GraphQL API design",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What does the HATEOAS (Hypermedia As The Engine Of Application State) constraint imply for a client interacting with a REST API?",
+    "options": {
+      "A": "The client discovers available actions and transitions dynamically through hypermedia links returned in the API responses, rather than hardcoding resource URIs.",
+      "B": "The client must use a single GraphQL query schema to request API assets.",
+      "C": "The server maintains an active WebSocket session state with the client browser.",
+      "D": "The API must only return HTML layout documents instead of JSON payloads."
+    },
+    "correctAnswer": "A",
+    "explanation": "HATEOAS is a constraint of REST. The client needs little to no prior knowledge about how to interact with the API, because the server returns links (e.g. href relations) inside resource representations indicating what actions are currently possible (like edit, delete, pay), decoupling client routes from server routes.",
+    "topic": "RESTful and GraphQL API design",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "According to the CAP Theorem, in the presence of a network partition (P), what trade-off must a distributed system make?",
+    "options": {
+      "A": "The system must choose between Consistency (all nodes see same data) or Availability (every non-failing node returns a response).",
+      "B": "The system must choose between Performance (low latency) or Capacity (storage limit).",
+      "C": "The system must choose between Authentication (security) or Portability (multi-cloud).",
+      "D": "The system must choose between Scalability (node count) or Persistence (disk storage)."
+    },
+    "correctAnswer": "A",
+    "explanation": "The CAP Theorem states that a distributed system can guarantee at most two of: Consistency, Availability, and Partition Tolerance. Since network partitions (P) are inevitable in physical systems, a distributed database must choose between Consistency (C) (blocking reads/writes until partition heals) or Availability (A) (allowing reads/writes on local partitions, which creates data divergence).",
+    "topic": "System design and microservices",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What is a major architectural challenge introduced by implementing the Database-per-Service pattern in a microservices system?",
+    "options": {
+      "A": "Implementing distributed transactions (ensuring data consistency across databases) and querying joined data across services.",
+      "B": "Configuring different SQL dialects for each database service.",
+      "C": "The requirement that all microservices must run on identical operating system containers.",
+      "D": "The complete loss of indexing capabilities within each individual database instance."
+    },
+    "correctAnswer": "A",
+    "explanation": "The Database-per-service pattern ensures microservices are loosely coupled. However, because services cannot access other services' databases directly, joining data is slow (requires API orchestration), and implementing ACID transactions across databases is difficult, usually requiring patterns like Saga or Outbox.",
+    "topic": "System design and microservices",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "In message queue systems like Kafka or RabbitMQ, what is 'at-least-once' delivery, and how must consumer services be designed to handle it safely?",
+    "options": {
+      "A": "Messages are guaranteed to be delivered, but may be duplicated; consumers must be idempotent (processing duplicates does not change state).",
+      "B": "Messages are delivered exactly once, allowing consumers to process them without checking for duplicates.",
+      "C": "Messages are dropped if the server is busy, requiring consumers to poll periodically.",
+      "D": "Messages are encrypted at least once on transit; consumers must store decryption keys."
+    },
+    "correctAnswer": "A",
+    "explanation": "At-least-once delivery guarantees that a message will be delivered to the consumer. However, due to network dropouts or failed acknowledgments, the queue may send the message again. To prevent anomalies (like charging a credit card twice), consumers must be designed to be idempotent.",
+    "topic": "System design and microservices",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "In the Circuit Breaker pattern, what occurs when the breaker is in the 'Half-Open' state?",
+    "options": {
+      "A": "The system allows a limited number of trial requests to pass through to check if the failing downstream service has recovered.",
+      "B": "The system blocks all incoming requests instantly and returns a cached fallback payload.",
+      "C": "The system splits incoming traffic equally between the old database and the new database replica.",
+      "D": "The system is booting up from a crashed state and is loading static assets."
+    },
+    "correctAnswer": "A",
+    "explanation": "A Circuit Breaker starts in the Closed state (traffic passes). If failures exceed a threshold, it trips to Open (traffic fails fast, returns error). After a timeout, it transitions to Half-Open. In this state, a few test requests are allowed. If they succeed, the breaker closes. If they fail, it trips back to Open.",
+    "topic": "System design and microservices",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What is the key difference between Orchestration and Choreography approaches in the Saga pattern for distributed transactions?",
+    "options": {
+      "A": "Orchestration uses a centralized coordinator service to direct the participants; Choreography uses event-driven pub/sub where participants listen and react to events independently.",
+      "B": "Orchestration is used for SQL databases; Choreography is for NoSQL.",
+      "C": "Choreography is synchronous and blocking; Orchestration is asynchronous.",
+      "D": "Orchestration requires manual user approval; Choreography is fully automated."
+    },
+    "correctAnswer": "A",
+    "explanation": "The Saga pattern manages transactions across multiple microservices. In Orchestration, a central controller (orchestrator) tells participants which local transactions to execute. In Choreography, there is no central controller. Instead, services emit events (e.g. OrderCreated) and other services listen and execute their logic, publishing new events when done.",
+    "topic": "System design and microservices",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What is a 'Cache-Aside' (Lazy Loading) caching strategy, and what is its primary benefit?",
+    "options": {
+      "A": "The application queries the cache first. If a miss occurs, it fetches data from the database, writes it to the cache, and returns it; this ensures only requested data is cached.",
+      "B": "The application writes data to the cache and database simultaneously, ensuring the cache is never stale.",
+      "C": "The database automatically updates the cache whenever a write query is executed.",
+      "D": "The cache is loaded with all database records during server initialization."
+    },
+    "correctAnswer": "A",
+    "explanation": "In Cache-Aside, the application interacts with both the cache and the database. If a cache miss occurs, it queries the database and updates the cache. The benefit is that only requested data is cached, saving space. The drawback is a cache miss penalty on first load and potential stale data if database updates bypass the cache.",
+    "topic": "System design and microservices",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "Which of the following functions is typically handled by an API Gateway in a microservice architecture?",
+    "options": {
+      "A": "Request routing, protocol translation (e.g. HTTP to gRPC), rate limiting, and centralized authentication/authorization.",
+      "B": "Directly writing transactional SQL queries to service databases.",
+      "C": "Compiling client-side React code into static HTML files dynamically.",
+      "D": "Managing hardware server rack failover in localized data centers."
+    },
+    "correctAnswer": "A",
+    "explanation": "An API Gateway serves as a single entry point for clients. It routes client requests to backend services, handles cross-cutting concerns like rate limiting, logging, security/SSL termination, central token verification (auth), and can translate public HTTP requests into internal gRPC payloads.",
+    "topic": "System design and microservices",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "What is the primary motivation for implementing the Command Query Responsibility Segregation (CQRS) pattern?",
+    "options": {
+      "A": "To separate read operations (queries) from write operations (commands) into separate data models or databases to optimize performance, scaling, and security.",
+      "B": "To enforce strict CSS style conventions across development teams.",
+      "C": "To merge multiple microservices back into a single monolithic codebase.",
+      "D": "To bypass database connection limits by routing all requests through WebSockets."
+    },
+    "correctAnswer": "A",
+    "explanation": "CQRS segregates the database schema or services for writes (commands, state mutations) from reads (queries). This is useful in high-throughput systems, as reads can run on denormalized databases (like Elasticsearch or read-replicas) optimized for fast search, while writes run on normalized relational systems.",
+    "topic": "System design and microservices",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "In a microservice system, what is the role of a 'Sidecar Proxy' (e.g. Envoy in Istio) in a Service Mesh?",
+    "options": {
+      "A": "It runs alongside the service container in the same pod, intercepting all inbound and outbound network traffic to manage mTLS, routing, retries, and metrics.",
+      "B": "It performs secondary database backups to local node storage volumes.",
+      "C": "It compresses Javascript and CSS assets before they are served to clients.",
+      "D": "It replaces the host operating system's systemd process manager."
+    },
+    "correctAnswer": "A",
+    "explanation": "A service mesh uses a sidecar pattern. The sidecar proxy runs in the same container environment (pod) as the service. By intercepting network traffic, it handles service-to-service security (mutual TLS), circuit breaking, request retries, request tracking, and distributed metrics without requiring modifications to the application code.",
+    "topic": "System design and microservices",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "fullstack",
+    "questionType": "MCQ",
+    "text": "How is a transaction tracked across multiple independent microservices in a distributed tracing system?",
+    "options": {
+      "A": "A unique Trace ID is injected into request headers (e.g. traceparent) and propagated by each service when calling subsequent downstream APIs.",
+      "B": "Each service writes timestamps to a single shared network log file on the gateway server.",
+      "C": "The gateway holds the request socket open and blocks subsequent microservices until the first one completes.",
+      "D": "All microservices must run on the exact same physical machine to share thread IDs."
+    },
+    "correctAnswer": "A",
+    "explanation": "Distributed tracing works by passing correlation headers. When a request starts, the entry service (or gateway) generates a Trace ID. When it calls another service, it propagates this Trace ID along with a Span ID in the HTTP headers (standardized as W3C Trace Context, like traceparent). Downstream services read this header and pass it forward, allowing trace visualizers to reconstruct the entire request path.",
+    "topic": "System design and microservices",
+    "difficulty": "MEDIUM"
+  }
+]

@@ -1,0 +1,1202 @@
+[
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You are editing a query in Power Query Editor and need to reference a custom M function named 'getFormattedDate'. You write a step that references 'GetFormattedDate'. Why does this step fail with a 'Name not found' error?",
+    "options": {
+      "A": "Power Query M language is case-sensitive, so 'GetFormattedDate' and 'getFormattedDate' are treated as different identifiers.",
+      "B": "Custom functions must be registered in the model's schema before they can be called in Power Query.",
+      "C": "Power Query functions must always begin with an uppercase letter, so the original function name is invalid.",
+      "D": "You must use the 'Function.Call' library function to run any custom function in M."
+    },
+    "correctAnswer": "A",
+    "explanation": "The M formula language used in Power Query is completely case-sensitive. Therefore, 'getFormattedDate' and 'GetFormattedDate' are different identifiers, resulting in a 'Name not found' error if the casing does not match exactly.",
+    "topic": "Ingesting and transforming data",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "Which of the following Power Query transformations is most likely to break query folding when querying a standard relational database like SQL Server?",
+    "options": {
+      "A": "Merging a table with a local Excel file query",
+      "B": "Filtering rows based on a date column comparison",
+      "C": "Removing columns that are not needed in the final report",
+      "D": "Grouping by multiple columns and calculating sums"
+    },
+    "correctAnswer": "A",
+    "explanation": "Query folding requires that the entire execution plan can be translated into the native query language (e.g., SQL) of the source database. Merging a database table query with a local Excel file query forces Power BI to download the data from the database and perform the merge locally, breaking query folding at that step.",
+    "topic": "Ingesting and transforming data",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You need to merge two queries in Power Query Editor. Table A contains sales transactions and Table B contains currency exchange rates. You want to retrieve matching exchange rates for each sales transaction. If a sales transaction has a currency that does not exist in Table B, the transaction should still remain in the result with a null exchange rate. Which join type should you select?",
+    "options": {
+      "A": "Left Outer Join",
+      "B": "Inner Join",
+      "C": "Full Outer Join",
+      "D": "Left Anti Join"
+    },
+    "correctAnswer": "A",
+    "explanation": "A Left Outer Join preserves all rows from the first (left) table (Table A) and retrieves matching rows from the second (right) table (Table B). If there is no match, the columns from Table B will contain null values for that row.",
+    "topic": "Ingesting and transforming data",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "Your data source has columns for 'Year', 'Jan_Sales', 'Feb_Sales', 'Mar_Sales', and so on. You want to transform this table so that you have columns for 'Year', 'Month', and 'Sales Value' to optimize it for a star schema. Which transformation in Power Query Editor is best suited for this task?",
+    "options": {
+      "A": "Select 'Year', click 'Unpivot Other Columns'",
+      "B": "Select all sales columns, click 'Pivot Column'",
+      "C": "Select 'Year', click 'Transpose'",
+      "D": "Select all sales columns, click 'Group By'"
+    },
+    "correctAnswer": "A",
+    "explanation": "Unpivoting other columns takes all columns except 'Year' and transforms them into attribute-value pairs, which creates a 'Month' column (containing the old column headers) and a 'Sales Value' column (containing the values). Selecting 'Year' and choosing 'Unpivot Other Columns' is dynamic and handles future columns added to the source.",
+    "topic": "Ingesting and transforming data",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You are setting up a Power BI template (.pbit) that will be used by different departments. Each department needs to connect to the same SQL Server database schema, but to a different database name. How should you design the queries to support this requirement efficiently?",
+    "options": {
+      "A": "Create a Text parameter in Power Query for the database name and reference this parameter in the database connection step of your queries.",
+      "B": "Write a custom Python script in Power Query that prompts the user for the database name upon opening the file.",
+      "C": "Configure a separate gateway for each department and assign the gateway dynamically in the Power BI Service.",
+      "D": "Create separate queries for each database and use the 'Table.Combine' function to dynamically select the active one using a slicer."
+    },
+    "correctAnswer": "A",
+    "explanation": "By creating a Text parameter in Power Query and referencing it in the SQL database connection step (e.g. 'Sql.Database(Server, DatabaseParameter)'), you make the connection dynamic. Users will be prompted for the database name when they import the template, without needing to modify the underlying queries.",
+    "topic": "Ingesting and transforming data",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You are writing a custom M step to handle API requests that occasionally fail. You want to implement error handling so that if the step 'Web.Contents' returns an error, the query falls back to a locally cached table. Which syntax is valid in M for this purpose?",
+    "options": {
+      "A": "try Web.Contents(\"...\") otherwise CachedTable",
+      "B": "iferror(Web.Contents(\"...\"), CachedTable)",
+      "C": "try Web.Contents(\"...\") catch CachedTable",
+      "D": "if Web.Contents(\"...\") is error then CachedTable"
+    },
+    "correctAnswer": "A",
+    "explanation": "In the Power Query M formula language, error handling is implemented using the 'try ... otherwise' expression. If the expression after 'try' fails, the expression after 'otherwise' is evaluated and returned.",
+    "topic": "Ingesting and transforming data",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "In the Power Query Editor, under the View tab, you enable the 'Column Quality' feature. What metrics are displayed for each column under this view?",
+    "options": {
+      "A": "Valid, Error, and Empty percentages",
+      "B": "Min, Max, and Average values",
+      "C": "Distinct, Unique, and Duplicate counts",
+      "D": "Data Type, Format, and Collation settings"
+    },
+    "correctAnswer": "A",
+    "explanation": "Column Quality shows the percentage of values in the column that are Valid (no errors, not empty), Error (failed to evaluate), and Empty (blank or null).",
+    "topic": "Ingesting and transforming data",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You have a query that merges Table A (large) with Table B (small). Table B is referenced multiple times in nested iterations. To prevent Table B from being requested and loaded from the source on every single iteration, which M function should you use to load it into memory once?",
+    "options": {
+      "A": "Table.Buffer",
+      "B": "Table.Cache",
+      "C": "Table.Optimize",
+      "D": "Table.Persist"
+    },
+    "correctAnswer": "A",
+    "explanation": "Table.Buffer loads a table into memory (buffers it) during evaluation, preventing it from being re-retrieved or re-evaluated multiple times by downstream steps or nested iterations.",
+    "topic": "Ingesting and transforming data",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "In Power Query Editor, you notice that a column representing financial currency values is imported with the 'Decimal Number' data type. Why might you want to change this data type to 'Fixed Decimal Number' (Currency)?",
+    "options": {
+      "A": "Fixed Decimal Number stores values with exactly four decimal places, preventing floating-point rounding errors during aggregations.",
+      "B": "Fixed Decimal Number automatically applies the local currency symbol to all values in the data model.",
+      "C": "Decimal Number columns consume twice as much memory in the VertiPaq engine as Fixed Decimal Number columns.",
+      "D": "Decimal Number columns do not support relationships to other numerical columns."
+    },
+    "correctAnswer": "A",
+    "explanation": "The 'Fixed Decimal Number' data type in Power Query (and Currency in DAX) corresponds to a 64-bit integer divided by 10,000, meaning it has exactly four decimal places. This prevents floating-point precision errors that can accumulate when performing sums and averages on 'Decimal Number' (floating-point) types.",
+    "topic": "Ingesting and transforming data",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You have created a custom connector (.mez file) to fetch data from a proprietary internal API. When you copy it to the Documents\\Power BI Desktop\\Custom Connectors folder, it does not appear in the Get Data window in Power BI Desktop. What configuration change must you make?",
+    "options": {
+      "A": "In Power BI Desktop Options, under Security, set Data Extensions to allow any extension to load without validation.",
+      "B": "Sign the connector file with a Microsoft-trusted digital certificate and register it in the Windows registry.",
+      "C": "Set the Query Diagnostics level to 'High' to allow custom assembly injection.",
+      "D": "Enable the 'Allow Custom Connectors' setting in the Power BI Service Tenant Settings."
+    },
+    "correctAnswer": "A",
+    "explanation": "By default, Power BI Desktop restricts loading custom connectors that are not signed by Microsoft or certified. To load unsigned third-party connectors, you must go to Options -> Security -> Data Extensions and select '(Not Recommended) Allow any extension to load without validation or warning'.",
+    "topic": "Ingesting and transforming data",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You have a Sales table with three date columns: OrderDate, ShipDate, and DeliveryDate. You create relationships between these columns and the Date key in your Calendar table. By default, only the relationship with OrderDate is active. How should you calculate the sales amount by ShipDate in a DAX measure without creating additional tables?",
+    "options": {
+      "A": "Use CALCULATE and USERELATIONSHIP to activate the ShipDate relationship for the duration of the measure.",
+      "B": "Use FILTER and RELATED to join the tables manually on the ShipDate column.",
+      "C": "Use the KEEPFILTERS function to override the active relationship filter context.",
+      "D": "Set the relationship cross-filter direction of all three relationships to 'Both'."
+    },
+    "correctAnswer": "A",
+    "explanation": "The USERELATIONSHIP function in DAX enables you to specify an inactive relationship to be used for the evaluation of a specific expression, overriding the default active relationship.",
+    "topic": "Data modeling and relationships",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "Why is it generally recommended to avoid setting the cross-filter direction of relationships to 'Both' (bidirectional filtering) by default?",
+    "options": {
+      "A": "It can create ambiguous filter paths, lead to unexpected data aggregation, and degrade query performance.",
+      "B": "It prevents the use of calculated columns and parameters within the model.",
+      "C": "It limits the maximum capacity of the dataset to 1 GB in Premium workspaces.",
+      "D": "It forces all dimension tables to be merged into a single flat fact table."
+    },
+    "correctAnswer": "A",
+    "explanation": "Bidirectional cross-filtering allows filters to flow in both directions across a relationship. In complex models, this can introduce circular or ambiguous paths, resulting in incorrect calculations, and severely degrades query performance because filters propagate uncontrollably.",
+    "topic": "Data modeling and relationships",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You are modeling a dataset with a FactSales table containing 'OrderDate' and 'DeliveryDate'. To allow users to filter report pages by both OrderDate and DeliveryDate independently using slicers, what is the best practice data modeling approach?",
+    "options": {
+      "A": "Create two separate physical dimension tables in your model (e.g., DimOrderDate and DimDeliveryDate) based on the master calendar table.",
+      "B": "Create a single Calendar table and use two active relationships to the FactSales table.",
+      "C": "Merge the Calendar table directly into the FactSales table in Power Query.",
+      "D": "Create one active relationship and one inactive relationship, and tell users to write custom DAX for every visual."
+    },
+    "correctAnswer": "A",
+    "explanation": "To filter by multiple date fields independently on the same report page using standard slicers, you should create role-playing dimensions. This is achieved by importing or referencing the Date table multiple times, creating separate tables like DimOrderDate and DimDeliveryDate.",
+    "topic": "Data modeling and relationships",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "When comparing a Star Schema to a Snowflake Schema in Power BI, why does the Star Schema typically perform better in the VertiPaq engine?",
+    "options": {
+      "A": "It minimizes the number of table relationships and joins required to resolve queries, reducing DAX scanning overhead.",
+      "B": "It allows for higher compression rates on fact tables due to the normalization of dimension tables.",
+      "C": "It automatically enables query folding on all local Excel data sources.",
+      "D": "It eliminates the need for any storage space for index files in the model."
+    },
+    "correctAnswer": "A",
+    "explanation": "A Star Schema contains denormalized dimension tables, which means there are fewer tables and fewer joins required to filter the fact table. This reduces the number of operations the VertiPaq engine must perform to resolve visual queries, leading to better performance.",
+    "topic": "Data modeling and relationships",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You need to create a role-playing date table in Power BI Desktop that is a copy of your main 'Calendar' table. What is the most efficient way to create this table in the data model?",
+    "options": {
+      "A": "Create a new Calculated Table using the DAX expression: OrderCalendar = 'Calendar'.",
+      "B": "Duplicate the Calendar query in Power Query Editor and rename it.",
+      "C": "Use the Append Queries feature in Power Query to stack the table onto itself.",
+      "D": "Export the Calendar table to Excel and import it as a new file."
+    },
+    "correctAnswer": "A",
+    "explanation": "Using DAX to create a calculated table (e.g., OrderCalendar = 'Calendar') is a fast and efficient way to create a role-playing table because it is processed entirely in memory at the data model level and does not require re-fetching data from the source.",
+    "topic": "Data modeling and relationships",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You have a relationship between Table A and Table B. Table A contains unique values of Product Category, but also some blank values. Table B contains multiple transactions per Product Category. You define a Many-to-Many relationship. What behavior occurs when filters are applied?",
+    "options": {
+      "A": "Filters will propagate in the selected direction, but standard integrity checks are bypassed, which can lead to unexpected 'Blank' rows or incorrect totals.",
+      "B": "Power BI will automatically convert all blank values to the text string 'Unknown'.",
+      "C": "The relationship will fail to load and return a circular dependency error at runtime.",
+      "D": "The cross-filter direction is locked to 'Single' and cannot be changed."
+    },
+    "correctAnswer": "A",
+    "explanation": "Many-to-many relationships do not guarantee referential integrity. When filtering, rows that do not match across tables are handled differently than in one-to-many relationships (which create a virtual blank row to preserve integrity), which can lead to unexpected calculations and blank rows.",
+    "topic": "Data modeling and relationships",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "Why is it recommended to disable the 'Auto Date/Time' option in the global load settings of Power BI Desktop for large models?",
+    "options": {
+      "A": "It creates hidden, individual date tables for every Date or DateTime column in the model, significantly increasing file size and memory usage.",
+      "B": "It prevents the creation of manual active relationships between the fact and calendar tables.",
+      "C": "It automatically converts all dates to the local timezone of the client computer, causing data inconsistencies.",
+      "D": "It restricts the use of advanced DAX functions like CALCULATE and FILTER."
+    },
+    "correctAnswer": "A",
+    "explanation": "The 'Auto Date/Time' feature creates a hidden date table for every single date column in your dataset. In models with many date columns or large tables, this consumes substantial memory and increases the .pbix file size. Disabling it and using a single central calendar table is a core performance best practice.",
+    "topic": "Data modeling and relationships",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You have a Fact table with 50 million rows. One of the columns is a 'TransactionID' containing unique GUIDs. The column is not used in any visuals, filters, or relationships. How does this column affect the VertiPaq engine, and what is the best practice?",
+    "options": {
+      "A": "It hinders VertiPaq compression because of its high cardinality (unique values), consuming massive memory. It should be removed from the model.",
+      "B": "It is automatically optimized by the VertiPaq engine using run-length encoding, so no action is required.",
+      "C": "It should be converted to a calculated column to allow it to be compressed in the cloud.",
+      "D": "It should be set as the primary key of the table to speed up relationship lookups."
+    },
+    "correctAnswer": "A",
+    "explanation": "The VertiPaq engine compresses data column-by-column using dictionary and run-length encoding. Columns with high cardinality (many unique values, like GUIDs or unique keys) compress poorly and consume a large amount of memory. If a high-cardinality column is not needed for reports or relationships, it should be removed.",
+    "topic": "Data modeling and relationships",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "When analyzing visual load times using the Performance Analyzer in Power BI Desktop, you see that a specific card visual has a high 'DAX query' time but low 'Display' and 'Other' times. What does this indicate?",
+    "options": {
+      "A": "The bottleneck is in the complexity or efficiency of the DAX formulas referenced by the visual, requiring optimization of the DAX code.",
+      "B": "The visual's formatting properties (such as shadows or borders) are causing rendering bottlenecks.",
+      "C": "The gateway connection is slow, and data transmission is lagging.",
+      "D": "The underlying tables are not folded, and the SQL database is running slow."
+    },
+    "correctAnswer": "A",
+    "explanation": "A high 'DAX query' time indicates that the DAX engine spent most of the time computing the query results for the visual. To fix this, you should optimize the DAX measures or data model structure.",
+    "topic": "Data modeling and relationships",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "Under what conditions can you safely enable the 'Assume Referential Integrity' property on a relationship in a DirectQuery model?",
+    "options": {
+      "A": "When you are certain that the source database tables are joined using columns that have matching keys, with no unmatched key values on the many side.",
+      "B": "When the relationship is many-to-many and bidirectional cross-filtering is enabled.",
+      "C": "When the date format of both tables is identical down to the millisecond.",
+      "D": "When you want Power BI to automatically delete orphaned records from the fact table."
+    },
+    "correctAnswer": "A",
+    "explanation": "Enabling 'Assume Referential Integrity' allows Power BI to generate database queries using INNER JOINs instead of OUTER JOINs, which are faster and more efficient. This is only safe if you guarantee that every foreign key value in the many-side table has a corresponding primary key in the one-side table.",
+    "topic": "Data modeling and relationships",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "What is 'context transition' in DAX and when does it occur?",
+    "options": {
+      "A": "The transformation of row context into filter context, which occurs when a measure is evaluated or CALCULATE is called within a row context.",
+      "B": "The shifting of filters from a dimension table to a fact table when a visual is rendered.",
+      "C": "The conversion of a calculated column into a measure during database compression.",
+      "D": "The transition from import mode to DirectQuery mode when referencing database views."
+    },
+    "correctAnswer": "A",
+    "explanation": "Context transition is the process where DAX converts all active row contexts into an equivalent filter context. This happens automatically whenever a measure is called or when CALCULATE is invoked within an iterative function (like SUMX or ADDCOLUMNS) or calculated column.",
+    "topic": "DAX calculations",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You are writing a measure to calculate the percentage of total sales for each selected product category. The visual displays Product Category on the rows and is filtered by a Slicer for Product Color. You want the denominator of your percentage to respect the Color slicer filter, but ignore any filters on the individual rows of Product Category. Which DAX function configuration should you use for the denominator filter?",
+    "options": {
+      "A": "CALCULATE([Sales], ALLEXCEPT(Product, Product[Color]))",
+      "B": "CALCULATE([Sales], ALL(Product))",
+      "C": "CALCULATE([Sales], ALLSELECTED(Product[Category]))",
+      "D": "CALCULATE([Sales], KEEPFILTERS(Product[Category]))"
+    },
+    "correctAnswer": "A",
+    "explanation": "ALLEXCEPT removes all filters from the specified table except for the columns specified. By using CALCULATE([Sales], ALLEXCEPT(Product, Product[Color])), you preserve the filter on Product[Color] (from the slicer) while removing the filter on Product[Category] (from the rows of the visual).",
+    "topic": "DAX calculations",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "How does the KEEPFILTERS function modify the behavior of filters passed to CALCULATE?",
+    "options": {
+      "A": "Instead of replacing existing filters on the column, it intersects the new filter with the existing filters.",
+      "B": "It forces the filter context to remain active across all inactive relationships.",
+      "C": "It prevents Row-Level Security roles from filtering the data model.",
+      "D": "It caches the filter evaluation so it does not have to be computed again."
+    },
+    "correctAnswer": "A",
+    "explanation": "By default, filter arguments in CALCULATE overwrite any existing filters on the same columns. KEEPFILTERS changes this behavior so that the new filter is combined (intersected) with existing filters, meaning both conditions must be met.",
+    "topic": "DAX calculations",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You need to add a calculation to your model. It will calculate the profit margin as Profit / Sales. Since this calculation needs to be aggregated correctly at any level of detail in your visuals, how should you implement it?",
+    "options": {
+      "A": "As a Measure, because measures are evaluated dynamically at query time based on the visual's filter context.",
+      "B": "As a Calculated Column, because columns are computed row-by-row during data refresh and stored in memory.",
+      "C": "As a Calculated Table, because it allows you to view the individual values in the Data tab.",
+      "D": "As a Power Query custom column, because it folds back to the SQL database."
+    },
+    "correctAnswer": "A",
+    "explanation": "A profit margin percentage cannot be calculated row-by-row and then summed up (e.g. summing 10% + 5% = 15% is incorrect). It must be computed as an aggregate: SUM(Profit) / SUM(Sales). This must be a Measure so it calculates dynamically in the correct filter context of the visual.",
+    "topic": "DAX calculations",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You want a single measure named 'Sales KPI' to display as a percentage (e.g., '85.2%') when the selected metric is 'Growth Rate', but as currency (e.g., '$150,000') when the metric is 'Revenue'. What feature in Power BI Desktop should you use?",
+    "options": {
+      "A": "Dynamic Format Strings",
+      "B": "Format Painter",
+      "C": "Conditional formatting rules on the card visual",
+      "D": "Calculated columns with M syntax formatting"
+    },
+    "correctAnswer": "A",
+    "explanation": "Dynamic Format Strings allow you to write a DAX expression that returns a formatting string (like '$#,##0' or '0.0%') based on the context of the calculation, enabling a single measure to display with different formats dynamically.",
+    "topic": "DAX calculations",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You have two disconnected tables: 'TargetSales' and 'Sales'. 'TargetSales' has columns for 'Year' and 'TargetAmount', but has no physical relationship to the 'Calendar' table. Which DAX function can you use to apply the active year filter from the 'Calendar' table to the 'TargetSales'[Year] column within a measure?",
+    "options": {
+      "A": "TREATAS",
+      "B": "RELATED",
+      "C": "USERELATIONSHIP",
+      "D": "CROSSJOIN"
+    },
+    "correctAnswer": "A",
+    "explanation": "TREATAS applies the result of a table expression as filters to columns from an unrelated table. It is commonly used to build virtual relationships between tables that cannot have a physical relationship in the model.",
+    "topic": "DAX calculations",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "Which of the following is a strict requirement for a Date table in Power BI to ensure that DAX time intelligence functions (like YTD, SAMEPERIODLASTYEAR) work correctly?",
+    "options": {
+      "A": "The Date column must contain unique, contiguous dates with no gaps, covering full years, and be of Date or DateTime data type.",
+      "B": "The Date table must be joined to the Fact table using a Many-to-Many bidirectional relationship.",
+      "C": "The Date table must be generated using Power Query M code, not DAX.",
+      "D": "The Date column must be formatted as Text in the modeling view."
+    },
+    "correctAnswer": "A",
+    "explanation": "DAX time intelligence functions require a marked Date table. The key column must contain unique, contiguous dates without any gaps, spanning the full year (Jan 1 to Dec 31), and must be of the Date or DateTime data type.",
+    "topic": "DAX calculations",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "What is the primary advantage of using the DIVIDE function in DAX instead of the standard division operator (/)?",
+    "options": {
+      "A": "DIVIDE automatically handles division-by-zero errors by returning BLANK or an alternate value, rather than returning an error.",
+      "B": "DIVIDE executes up to 10 times faster than the division operator because it bypasses the formula engine.",
+      "C": "DIVIDE supports division of text columns, converting them to numbers automatically.",
+      "D": "DIVIDE is the only division method that works in calculated columns."
+    },
+    "correctAnswer": "A",
+    "explanation": "The DIVIDE function is designed to handle division by zero. If the denominator is zero or BLANK, it returns BLANK (or a custom alternate value if provided), whereas the '/' operator will return an error or infinity.",
+    "topic": "DAX calculations",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "What is the key difference between the CROSSJOIN and GENERATE functions in DAX?",
+    "options": {
+      "A": "CROSSJOIN returns a Cartesian product of all rows in the tables, while GENERATE evaluates the second table for each row in the first table (allowing row-context referencing).",
+      "B": "CROSSJOIN only works on physical tables, while GENERATE can only be used on measures.",
+      "C": "CROSSJOIN is case-sensitive, while GENERATE is completely case-insensitive.",
+      "D": "CROSSJOIN requires an active relationship between the tables, while GENERATE requires them to be disconnected."
+    },
+    "correctAnswer": "A",
+    "explanation": "CROSSJOIN returns the static Cartesian product of the tables. GENERATE is an iterator that evaluates the second table expression in the row context of the first table, allowing for dynamic, context-dependent table combinations.",
+    "topic": "DAX calculations",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "In DAX, when should you use RELATED instead of RELATEDTABLE?",
+    "options": {
+      "A": "Use RELATED when you want to retrieve a single value from the 'one' side of a relationship; use RELATEDTABLE to retrieve a table of rows from the 'many' side.",
+      "B": "Use RELATED in calculated columns; use RELATEDTABLE only in measures.",
+      "C": "Use RELATED for DirectQuery sources; use RELATEDTABLE only for import models.",
+      "D": "RELATED retrieves parent columns; RELATEDTABLE retrieves grandparent columns."
+    },
+    "correctAnswer": "A",
+    "explanation": "RELATED retrieves a single value from a related table on the 'one' side of a relationship. RELATEDTABLE returns a table containing all rows from the related table on the 'many' side of a relationship.",
+    "topic": "DAX calculations",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "What does the SELECTEDVALUE function return if there are multiple distinct values active in the current filter context for the specified column, and no alternate result is provided?",
+    "options": {
+      "A": "BLANK",
+      "B": "An evaluation error",
+      "C": "The first alphabetical value",
+      "D": "The sum of all values"
+    },
+    "correctAnswer": "A",
+    "explanation": "SELECTEDVALUE(Column, [AlternateResult]) returns the value when the column has been filtered down to one distinct value. If there are multiple values, it returns the AlternateResult, or BLANK if no alternate is specified.",
+    "topic": "DAX calculations",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "Which of the following is a restriction when using the USERELATIONSHIP function in DAX?",
+    "options": {
+      "A": "A relationship between the two columns must already be defined in the data model (active or inactive).",
+      "B": "The relationship must have bidirectional cross-filtering enabled.",
+      "C": "The columns used in USERELATIONSHIP must be of the Text data type.",
+      "D": "It can only be used inside calculated tables, not in measures."
+    },
+    "correctAnswer": "A",
+    "explanation": "USERELATIONSHIP does not create a new relationship; it only activates an existing one for the duration of the calculation. Therefore, the relationship must already be defined in the data model (as an inactive relationship).",
+    "topic": "DAX calculations",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You want to calculate sales for the previous month using DAX. You write Sales_Prev_Month = CALCULATE([Total Sales], DATEADD('Calendar'[Date], -1, MONTH)). If a user selects 'June 2026', this calculation returns sales for the entire month of May 2026. What would happen if you used EOMONTH instead of DATEADD?",
+    "options": {
+      "A": "EOMONTH returns a single date value (the last day of a month) rather than a table of dates, so it cannot be used directly to filter a whole month of sales.",
+      "B": "EOMONTH would return the exact same table of dates as DATEADD, but execute faster.",
+      "C": "EOMONTH would return an error because it only accepts integer parameters.",
+      "D": "EOMONTH would restrict the calculation to only look at tables that are in Import mode."
+    },
+    "correctAnswer": "A",
+    "explanation": "DATEADD is a time intelligence function that returns a table of dates shifted by the specified interval. EOMONTH is a date function that returns a single Date value representing the end of the month. Therefore, using EOMONTH directly in CALCULATE would filter the data to only that single day (e.g. May 31, 2026) rather than the entire month.",
+    "topic": "DAX calculations",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "How are filter arguments in a CALCULATE expression evaluated relative to the outer filter context?",
+    "options": {
+      "A": "Filter arguments are evaluated in the outer filter context, and then applied to modify the filter context before evaluating the expression.",
+      "B": "Filter arguments are evaluated after the expression is evaluated, acting as a post-filter.",
+      "C": "Filter arguments are evaluated using the inner context, overriding the expression's own context.",
+      "D": "Filter arguments are evaluated concurrently with the expression, and then merged."
+    },
+    "correctAnswer": "A",
+    "explanation": "In CALCULATE, all filter arguments are evaluated in the outer filter context (the context existing before CALCULATE is executed). Once evaluated, they are used to modify the filter context, and then the main expression is evaluated under this new modified context.",
+    "topic": "DAX calculations",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "What is the purpose of the COALESCE function in DAX?",
+    "options": {
+      "A": "It returns the first expression that does not evaluate to BLANK.",
+      "B": "It concatenates multiple string columns together, ignoring blanks.",
+      "C": "It combines two tables into a single table, removing duplicates.",
+      "D": "It converts null values into zeros only if they are formatted as currencies."
+    },
+    "correctAnswer": "A",
+    "explanation": "The COALESCE function returns the first of its arguments that does not evaluate to BLANK. It is a cleaner way to handle blank fallback values compared to writing nested IF(ISBLANK(...)) statements.",
+    "topic": "DAX calculations",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You notice a visual is loading slowly. What is the recommended workflow to troubleshoot and optimize this visual's underlying DAX query?",
+    "options": {
+      "A": "Open Performance Analyzer, start recording, refresh visuals, copy the DAX query for the slow visual, and paste it into DAX Studio to analyze the query plan and server timings.",
+      "B": "Export the report to a PDF file and use the Document Diagnostics Tool to inspect execution paths.",
+      "C": "Enable Query Diagnostics in Power Query and trace the SQL statements generated by the gateway.",
+      "D": "Restart Power BI Desktop in Safe Mode and check if the visual loads faster."
+    },
+    "correctAnswer": "A",
+    "explanation": "The standard optimization workflow is to use Performance Analyzer to record visual load times, copy the exact DAX query generated by the visual, and paste it into DAX Studio. In DAX Studio, you can enable Server Timings to see how the Formula Engine and Storage Engine process the query.",
+    "topic": "Creating and optimizing reports and dashboards",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You design a report page named 'SalesTooltip' to act as a custom tooltip for a bar chart on your main page. The bar chart shows Sales by Product Category. When a user hovers over a bar representing 'Electronics', what filter context is applied to the custom tooltip page?",
+    "options": {
+      "A": "The tooltip page is automatically filtered for Product Category = 'Electronics' based on the hovered data point.",
+      "B": "The tooltip page displays all categories because page-level filters do not apply to tooltips.",
+      "C": "The tooltip page displays an error unless you write a DAX measure to pass the filters.",
+      "D": "The tooltip page is filtered for all products except 'Electronics'."
+    },
+    "correctAnswer": "A",
+    "explanation": "Power BI automatically passes the filter context of the hovered data point (in this case, Product Category = 'Electronics') to the tooltip page, rendering the tooltip visuals filtered for that category.",
+    "topic": "Creating and optimizing reports and dashboards",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You are creating a bookmark in Power BI to toggle between a Chart view and a Table view on the same page. You want the bookmark to remember the visibility settings of the visuals (using the Selection Pane), but you do NOT want it to override any slicer filters the user has currently selected on the page. How should you configure the bookmark options?",
+    "options": {
+      "A": "Uncheck 'Data' and keep 'Display' checked in the bookmark settings.",
+      "B": "Check 'Data' and uncheck 'Display' in the bookmark settings.",
+      "C": "Set the bookmark type to 'Selected Visuals' and select all slicers.",
+      "D": "Disable the 'Page' option in the bookmark context menu."
+    },
+    "correctAnswer": "A",
+    "explanation": "In Power BI bookmarks, the 'Data' option controls whether the bookmark restores the state of filters, slicers, and sort order. Unchecking 'Data' while keeping 'Display' checked ensures that visual visibility (show/hide) is changed, but the user's current slicers are preserved.",
+    "topic": "Creating and optimizing reports and dashboards",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You have a multi-page report and want a slicer for 'Region' on Page 1 to also filter visuals on Page 2, but you do not want the slicer visual itself to be visible on Page 2. How should you configure this?",
+    "options": {
+      "A": "Open the 'Sync Slicers' pane, select the checkboxes to sync the slicer between Page 1 and Page 2, but uncheck the visibility checkbox for Page 2.",
+      "B": "Copy the slicer from Page 1 and paste it to Page 2, then set the slicer's transparency to 100%.",
+      "C": "Create a page-level filter on Page 2 and link it to the slicer using a DAX measure.",
+      "D": "Set the cross-filter direction of the relationship in the model to bidirectional."
+    },
+    "correctAnswer": "A",
+    "explanation": "The 'Sync Slicers' pane allows you to control which pages a slicer applies to (syncing) and on which pages it is visible. To sync without displaying the slicer on Page 2, check the sync column and uncheck the view (eye icon) column for Page 2.",
+    "topic": "Creating and optimizing reports and dashboards",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "By default, clicking a column in a column chart highlights a portion of the data in a card visual on the same page. You want the card visual to ignore clicks on the column chart entirely. How do you configure this?",
+    "options": {
+      "A": "Select the column chart, go to the Format tab, click 'Edit Interactions', then click the 'None' icon on the card visual.",
+      "B": "Create an inactive relationship between the tables representing the column chart and the card.",
+      "C": "Change the card visual's aggregation from SUM to MAX.",
+      "D": "Right-click the card visual and select 'Disable Drillthrough'."
+    },
+    "correctAnswer": "A",
+    "explanation": "Visual interactions control how selections in one visual affect others. To stop a chart from filtering/highlighting another visual, select the source visual, turn on 'Edit Interactions' in the Format ribbon, and select the 'None' icon (a circle with a diagonal line) on the target visual.",
+    "topic": "Creating and optimizing reports and dashboards",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "What is the primary purpose of the Tab Order setting in the Selection Pane in Power BI Desktop?",
+    "options": {
+      "A": "It defines the order in which elements are selected when a user presses the Tab key on their keyboard, which is essential for accessibility.",
+      "B": "It controls the visual rendering stack order (which visual is on top of another).",
+      "C": "It determines the order in which data fields are exported to Excel.",
+      "D": "It sets the order in which scheduled refreshes are executed."
+    },
+    "correctAnswer": "A",
+    "explanation": "The Tab Order setting allows report designers to customize the navigation path for users who navigate the report using a keyboard. Setting a logical tab order is critical for screen reader compatibility and keyboard accessibility.",
+    "topic": "Creating and optimizing reports and dashboards",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You are designing a dataset that connects to a huge data warehouse. Some tables are set to DirectQuery, while others are Imported. You have a dimension table 'DimProduct' that is joined to both an Import table and a DirectQuery table. What storage mode should you configure for 'DimProduct' to optimize relationship performance?",
+    "options": {
+      "A": "Dual",
+      "B": "Import",
+      "C": "DirectQuery",
+      "D": "Hybrid"
+    },
+    "correctAnswer": "A",
+    "explanation": "Setting a table's storage mode to 'Dual' allows Power BI to treat it as an Import table when querying Import tables, and as a DirectQuery table when querying DirectQuery tables. This avoids cross-source joins, optimizing relationship performance.",
+    "topic": "Creating and optimizing reports and dashboards",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You are setting up automatic page refresh for a report connected to a DirectQuery source. What is a key requirement to use 'Change Detection' instead of 'Fixed Interval' refresh?",
+    "options": {
+      "A": "You must have a Premium workspace and define a measure that returns a single value (such as MAX of a ID or Timestamp) to detect changes.",
+      "B": "The dataset must be configured to use a Personal Gateway.",
+      "C": "All visuals on the page must be converted to standard table visuals.",
+      "D": "The report must be shared via an anonymous Publish to Web link."
+    },
+    "correctAnswer": "A",
+    "explanation": "Change detection requires a Premium capacity workspace and uses a specific DAX measure (e.g. tracking MAX transaction ID) to query the source. Power BI evaluates this lightweight measure at a high frequency, and only refreshes the report visuals if the measure's value changes, reducing database query load.",
+    "topic": "Creating and optimizing reports and dashboards",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You configure a Drillthrough page in your report. By default, when a user drillsthrough from the main page to the drillthrough page, what happens to the filter context?",
+    "options": {
+      "A": "The filter context of the selected data point is passed to the drillthrough page, filtering all visuals on that page accordingly.",
+      "B": "All filters from the main page are cleared, and the drillthrough page shows unfiltered data.",
+      "C": "The user is prompted to manually re-select the filters on the drillthrough page.",
+      "D": "The filter context is converted into a SQL query and pushed to the gateway."
+    },
+    "correctAnswer": "A",
+    "explanation": "Drillthrough pages are designed to show detailed information. When a user right-clicks a data point and drillsthrough, Power BI carries over the filter context of that data point (and optionally all other active page filters if 'Keep all filters' is enabled) to the drillthrough page.",
+    "topic": "Creating and optimizing reports and dashboards",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You are creating a mobile layout for your report. You want to resize and rearrange the visuals for mobile screens. If you delete a visual in the Mobile Layout view, what happens to that visual in the Desktop Layout view?",
+    "options": {
+      "A": "It remains unaffected in the Desktop Layout view; it is only removed from the mobile canvas.",
+      "B": "It is permanently deleted from the entire report file.",
+      "C": "It is moved to the hidden selection pane on the Desktop layout.",
+      "D": "It is converted to a text box in the Desktop layout."
+    },
+    "correctAnswer": "A",
+    "explanation": "Deleting a visual from the Mobile Layout view only removes it from the mobile screen configuration. The visual remains completely intact on the standard Desktop Layout page.",
+    "topic": "Creating and optimizing reports and dashboards",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You are publishing a Power BI App from a workspace. You want the Sales department to see only Sales reports, and the Finance department to see only Finance reports from the same workspace. How should you configure this?",
+    "options": {
+      "A": "Create multiple Audience groups within the App, select which reports are visible to each group, and assign the respective security groups.",
+      "B": "Create separate workspaces for Sales and Finance, copying the reports to each workspace.",
+      "C": "Configure dynamic Row-Level Security on the reports to hide entire report pages.",
+      "D": "Export the reports as PDF and email them to the respective departments."
+    },
+    "correctAnswer": "A",
+    "explanation": "Power BI Apps support 'Audiences'. Within a single app, you can create up to 10 audience groups. For each group, you can choose which reports/pages are visible and assign specific target users or Microsoft Entra security groups, allowing you to control visibility of workspace contents in one app.",
+    "topic": "Power BI Service administration and sharing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "A user is assigned the 'Contributor' role in a Power BI workspace. Which of the following tasks is this user NOT allowed to perform?",
+    "options": {
+      "A": "Modify the members and permissions of the workspace",
+      "B": "Publish new reports and datasets to the workspace",
+      "C": "Edit existing reports and dashboards in the workspace",
+      "D": "Configure scheduled refresh for datasets they uploaded"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Contributor role can create, edit, and delete reports/datasets in the workspace, but they cannot manage workspace permissions or roles. Managing workspace access requires the Admin or Member role.",
+    "topic": "Power BI Service administration and sharing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "Your company has a strict security policy prohibiting public sharing of corporate data. As the Power BI Administrator, how can you prevent users from using the 'Publish to Web' feature?",
+    "options": {
+      "A": "Disable the 'Publish to Web' option in the Power BI Tenant settings in the Admin Portal, either for the entire organization or specific security groups.",
+      "B": "Set all workspace roles to Viewer for all users.",
+      "C": "Uninstall Power BI Desktop from all corporate computers.",
+      "D": "Enable Row-Level Security on all datasets published to the service."
+    },
+    "correctAnswer": "A",
+    "explanation": "The Power BI Tenant Settings in the Admin Portal control organizational access to features. The Administrator can disable 'Publish to Web' globally or restrict it to a specific security group to prevent public sharing of corporate data.",
+    "topic": "Power BI Service administration and sharing",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "Why is it highly dangerous to use 'Publish to Web' for internal corporate reports?",
+    "options": {
+      "A": "It generates a public URL that does not require authentication, allowing anyone on the internet to view the report and its underlying data.",
+      "B": "It limits the report visual count to a maximum of 5 visuals per page.",
+      "C": "It automatically deletes the dataset after 30 days of inactivity.",
+      "D": "It forces all data to be converted into a public Google Sheets file."
+    },
+    "correctAnswer": "A",
+    "explanation": "'Publish to Web' creates an anonymous public link. Anyone with the link can access the report, and the report may be indexed by search engines. No authentication is required, meaning corporate data is exposed to the public.",
+    "topic": "Power BI Service administration and sharing",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "When deploying a report and dataset through Power BI Deployment Pipelines, what occurs if the target stage already contains a dataset with the same name, and you choose to deploy?",
+    "options": {
+      "A": "Power BI performs an incremental deployment, updating the metadata schema of the target dataset while preserving connection settings and rules.",
+      "B": "The deployment fails and requests that you delete the target dataset first.",
+      "C": "A duplicate dataset is created with a timestamp appended to its name.",
+      "D": "The target dataset is completely overwritten, and all configured scheduled refreshes on it are deleted."
+    },
+    "correctAnswer": "A",
+    "explanation": "Deployment pipelines perform schema deployment. When deploying to a stage that has an existing dataset, Power BI updates the target dataset with the metadata schema of the source dataset, preserving deployment rules (like database connections and parameters) and gateway settings.",
+    "topic": "Power BI Service administration and sharing",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "What is the difference between 'Promoted' and 'Certified' datasets in the Power BI Service?",
+    "options": {
+      "A": "Promoted datasets can be marked by any dataset owner; Certified datasets require a specific authorization configured by the Power BI Administrator.",
+      "B": "Promoted datasets are hosted on Premium capacity; Certified datasets are hosted on shared capacity.",
+      "C": "Promoted datasets support DirectQuery; Certified datasets support Import only.",
+      "D": "There is no functional difference; they are different terms for the same endorsement."
+    },
+    "correctAnswer": "A",
+    "explanation": "Promoted datasets can be set by the content owner to highlight its quality. Certified datasets require a review process, and only users authorized by the Power BI Administrator (via tenant settings) can apply the Certified endorsement.",
+    "topic": "Power BI Service administration and sharing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "What is the primary benefit of using the Lineage View in a Power BI workspace?",
+    "options": {
+      "A": "It visualizes the end-to-end data flow and dependencies from the data sources, through dataflows and datasets, to reports and dashboards.",
+      "B": "It automatically generates a backup of the workspace in a SQL Server format.",
+      "C": "It translates the DAX code in datasets into M query syntax automatically.",
+      "D": "It allows administrators to assign tenant-wide security roles to guest users."
+    },
+    "correctAnswer": "A",
+    "explanation": "Lineage View provides a visual diagram showing the relationships and paths between all assets in a workspace, helping administrators and developers perform impact analysis when changing data sources or datasets.",
+    "topic": "Power BI Service administration and sharing",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "What is a major limitation of hosting reports in your Power BI Personal Workspace ('My Workspace')?",
+    "options": {
+      "A": "It is designed for personal sandbox work; you cannot collaborate with other authors or distribute content via a Power BI App.",
+      "B": "It does not support scheduled data refresh or gateway connections.",
+      "C": "You cannot export reports to PDF or PowerPoint from a personal workspace.",
+      "D": "It has a strict dataset storage limit of 100 MB."
+    },
+    "correctAnswer": "A",
+    "explanation": "'My Workspace' is a personal playground. You cannot create a Power BI App from it, nor can multiple authors collaborate on reports. For team collaboration and proper distribution, shared workspaces should be used.",
+    "topic": "Power BI Service administration and sharing",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You set up an email subscription for a Power BI report page for executive stakeholders. If the workspace is on a shared (Pro) capacity, what is the default attachment type they will receive in their email?",
+    "options": {
+      "A": "An image preview of the report page and a link to the report in the Service.",
+      "B": "A fully functional interactive HTML file of the report.",
+      "C": "A downloadable .pbix file containing the dataset.",
+      "D": "A CSV export of all the raw tables in the dataset."
+    },
+    "correctAnswer": "A",
+    "explanation": "By default, report subscriptions send an email containing a high-quality image preview of the report page and a link to view the report in the Power BI Service. Exporting attachments like PDF or PowerPoint is only supported under specific Premium capacity configurations.",
+    "topic": "Power BI Service administration and sharing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "How do Sensitivity Labels (Microsoft Purview Information Protection) behave when you export data from a labeled Power BI report to an Excel file?",
+    "options": {
+      "A": "The exported Excel file automatically inherits the sensitivity label and its corresponding encryption settings.",
+      "B": "The sensitivity label is stripped, and the Excel file is marked as Public.",
+      "C": "The export fails because labeled reports do not support data export.",
+      "D": "A notification is sent to the IT Administrator, but the label is not applied to the file."
+    },
+    "correctAnswer": "A",
+    "explanation": "Power BI inherits and enforces Microsoft Purview sensitivity labels. When data is exported from a labeled report to Excel, Word, or PDF, the sensitivity label and any configured protection/encryption settings are applied to the exported file.",
+    "topic": "Power BI Service administration and sharing",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You are setting up Dynamic RLS for a sales team. You have a table 'DimSalesperson' with columns 'Email' and 'Region'. Which DAX filter expression should you apply to the 'DimSalesperson' table role in Power BI Desktop to filter by the logged-in user?",
+    "options": {
+      "A": "[Email] = USERPRINCIPALNAME()",
+      "B": "[Email] = USERNAME()",
+      "C": "[Region] = LOOKUPVALUE(DimSalesperson[Region], DimSalesperson[Email], USERPRINCIPALNAME())",
+      "D": "[Email] = CUSTOMDATA()"
+    },
+    "correctAnswer": "A",
+    "explanation": "Applying [Email] = USERPRINCIPALNAME() ensures that the table is filtered to only include the row where the Email column matches the authenticated email address of the user viewing the report in the Power BI Service.",
+    "topic": "Security implementation (Row-Level Security)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "If Object-Level Security (OLS) is configured to hide the 'Salary' column from the 'Viewer' role, what happens when a user in the 'Viewer' role opens a report page containing a visual that references the 'Salary' column?",
+    "options": {
+      "A": "The visual displays an error indicating that the field cannot be found or the user does not have access, while other visuals on the page load normally.",
+      "B": "The visual loads but displays blank values for the Salary column.",
+      "C": "The entire report page fails to load and redirects to an Access Denied screen.",
+      "D": "Power BI automatically replaces the Salary column with the Average Salary of all employees."
+    },
+    "correctAnswer": "A",
+    "explanation": "Object-Level Security completely hides the column schema from the unauthorized user. Because the column does not exist from the user's perspective, any visual referencing that column will fail to render and display an error.",
+    "topic": "Security implementation (Row-Level Security)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You want to test your Row-Level Security (RLS) configuration in the Power BI Service. Where should you go to simulate the report view as a member of a specific security group?",
+    "options": {
+      "A": "In the workspace, go to the Dataset settings, click Security, click the ellipsis next to the role, and select 'Test as role'.",
+      "B": "Open the workspace settings and change the user's workspace role to Viewer.",
+      "C": "Go to Tenant settings in the Admin portal and enable 'Test RLS'.",
+      "D": "Open the report in edit mode and click 'View as' in the visualization pane."
+    },
+    "correctAnswer": "A",
+    "explanation": "In the Power BI Service, you can test RLS by navigating to the Dataset's Security page, clicking the ellipsis (...) next to a role, and selecting 'Test as role'. This opens a preview bar where you can test as a specific user or role.",
+    "topic": "Security implementation (Row-Level Security)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "When using Row-Level Security (RLS) on a dataset in DirectQuery mode, how are the security filters applied?",
+    "options": {
+      "A": "Power BI appends the DAX filter rules as SQL WHERE clauses and pushes them down to the source database during query execution.",
+      "B": "Power BI downloads all rows from the database and filters them in-memory in the cloud.",
+      "C": "DirectQuery databases do not support RLS; you must convert the model to Import mode first.",
+      "D": "The security filters are applied client-side inside the user's web browser."
+    },
+    "correctAnswer": "A",
+    "explanation": "For DirectQuery datasets, Power BI translates the model's RLS rules into native database query filters (e.g. SQL WHERE clauses). These filters are sent as part of the query to the source database, ensuring that only allowed data is retrieved.",
+    "topic": "Security implementation (Row-Level Security)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You assign a user the 'Contributor' role in a workspace. You also assign them to the 'EuropeSales' RLS role on the workspace dataset. When this user views the report in the workspace, what data do they see?",
+    "options": {
+      "A": "They see all data, bypassing the RLS role entirely.",
+      "B": "They see only Europe sales data, as RLS is strictly enforced.",
+      "C": "The report fails to load because of conflicting role permissions.",
+      "D": "They can see all columns, but the rows contain blank values."
+    },
+    "correctAnswer": "A",
+    "explanation": "Row-Level Security (RLS) is only enforced for users with the 'Viewer' role in a workspace. Workspace Admins, Members, and Contributors have edit permissions on the dataset, which automatically bypasses RLS rules, allowing them to see all data.",
+    "topic": "Security implementation (Row-Level Security)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You have a security table 'DimSecurity' joined to a dimension table 'DimProduct' using a Many-to-Many relationship. RLS is applied to 'DimSecurity'. What configuration on the relationship is required to ensure RLS filters propagate to 'DimProduct' and down to the Sales fact table?",
+    "options": {
+      "A": "The relationship must have its cross-filter direction set to 'Both' and the option 'Apply security filter in both directions' must be checked.",
+      "B": "The relationship must be set as Inactive and activated using USERRELATIONSHIP in all measures.",
+      "C": "The relationship must be set to One-to-One and import storage mode.",
+      "D": "The security filters must be applied to the Fact table directly, as dimension RLS does not propagate."
+    },
+    "correctAnswer": "A",
+    "explanation": "When RLS is defined on a table, the filters do not propagate across many-to-many relationships or bidirectional filters unless 'Apply security filter in both directions' is explicitly checked in the relationship settings.",
+    "topic": "Security implementation (Row-Level Security)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "What is the difference between the USERNAME() and USERPRINCIPALNAME() DAX functions when evaluated in the Power BI Service?",
+    "options": {
+      "A": "Both functions return the user's email address in the Service, but USERNAME() may return 'Domain\\User' when testing locally in Power BI Desktop.",
+      "B": "USERNAME() returns the user's full name; USERPRINCIPALNAME() returns their login GUID.",
+      "C": "USERNAME() works only with Import datasets; USERPRINCIPALNAME() works only with DirectQuery.",
+      "D": "USERPRINCIPALNAME() is case-sensitive, whereas USERNAME() is case-insensitive."
+    },
+    "correctAnswer": "A",
+    "explanation": "In the Power BI Service, both functions typically return the user's email address (UPN). However, in Power BI Desktop, USERNAME() returns the local computer's domain and username (e.g. DOMAIN\\username), while USERPRINCIPALNAME() returns the user's signed-in corporate email address, making USERPRINCIPALNAME() more consistent for testing dynamic RLS.",
+    "topic": "Security implementation (Row-Level Security)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "How can you test dynamic RLS using USERPRINCIPALNAME() in Power BI Desktop?",
+    "options": {
+      "A": "Click 'View as' on the Security tab, select 'Other user', type in a test email address, and select the target RLS role.",
+      "B": "Go to Options and change your logged-in Microsoft account email to the test user.",
+      "C": "Create a calculated column that hardcodes the test user's email.",
+      "D": "Upload the report to your personal workspace and run the report diagnostic tool."
+    },
+    "correctAnswer": "A",
+    "explanation": "In Power BI Desktop, you can simulate dynamic RLS by selecting 'View as' in the Modeling ribbon, checking 'Other user', entering the email address you want to test, and selecting the corresponding RLS role.",
+    "topic": "Security implementation (Row-Level Security)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "What is the best practice for applying Row-Level Security (RLS) in a star schema model?",
+    "options": {
+      "A": "Apply RLS filters to the dimension tables (e.g. DimRegion), and let the filters propagate down to the fact tables through relationships.",
+      "B": "Apply RLS filters to the fact table directly to minimize relationship filtering overhead.",
+      "C": "Apply duplicate RLS filters to all tables in the model to guarantee data isolation.",
+      "D": "Create a separate database connection for every security group in Power Query."
+    },
+    "correctAnswer": "A",
+    "explanation": "Applying RLS to dimension tables (e.g., filtering a 'DimRegion' table) is a best practice because it automatically filters the related fact table rows through the active one-to-many relationships, maintaining a clean structure and keeping RLS logic simple and easy to maintain.",
+    "topic": "Security implementation (Row-Level Security)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You write an RLS filter expression for the Sales table: [Sales Amount] > [Target Amount]. Why does this filter expression cause an error when saving the role in Power BI Desktop?",
+    "options": {
+      "A": "RLS filter expressions must evaluate to a Boolean value for each row and cannot reference measures; they can only reference columns.",
+      "B": "RLS filter expressions do not support the greater-than (>) operator.",
+      "C": "The Sales table must be set to DirectQuery storage to support comparison operators.",
+      "D": "You can only apply RLS to text columns, not numerical columns."
+    },
+    "correctAnswer": "A",
+    "explanation": "RLS expressions in DAX define a filter condition on a table row. They are evaluated row-by-row and must return a Boolean (True/False). They cannot reference measures because measures are dynamic aggregates, not static row values. If comparing columns, both columns must exist in the table or be retrieved via RELATED.",
+    "topic": "Security implementation (Row-Level Security)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You want to make a report accessible to visually impaired users who use screen readers. What should you configure for each visual on the page?",
+    "options": {
+      "A": "Type descriptive text in the 'Alternative text' field under the General formatting properties of each visual.",
+      "B": "Write a DAX measure that converts visual data into text strings.",
+      "C": "Enable the 'Screen Reader Mode' setting in the Power BI Service tenant portal.",
+      "D": "Format the visual titles using a bold 16pt Courier New font."
+    },
+    "correctAnswer": "A",
+    "explanation": "Alternative text (alt text) provides a description of the visual's content and insights for screen reader users. You can add it in Power BI Desktop under the formatting pane: Visual -> General -> Header icons -> Icons -> Alternative text.",
+    "topic": "Enhancing reports for usability and accessibility",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "When configuring a report page for keyboard-only navigation, you want to skip decorative shapes so that the screen reader ignores them. How do you accomplish this in the Tab Order settings?",
+    "options": {
+      "A": "In the Tab Order view of the Selection Pane, hover over the decorative shape and click the 'Skip' icon (the tab index number icon).",
+      "B": "Set the shape's transparency to 100% so it becomes invisible.",
+      "C": "Delete the shape visual and import it as a page background image instead.",
+      "D": "Right-click the shape and select 'Disable Accessibility' in the visual menu."
+    },
+    "correctAnswer": "A",
+    "explanation": "In the Tab Order tab of the Selection Pane, you can select the number next to a visual to exclude it from the tab sequence. The visual will still be visible on the page but will be skipped during keyboard navigation, which is ideal for decorative elements like lines or background cards.",
+    "topic": "Enhancing reports for usability and accessibility",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "Which design choice is a best practice for color contrast and accessibility in Power BI reports?",
+    "options": {
+      "A": "Avoid relying solely on color (such as red/green) to communicate status; use shapes, labels, or icons alongside colors to represent positive/negative changes.",
+      "B": "Use bright yellow backgrounds with white text to ensure maximum light output.",
+      "C": "Set the color contrast ratio of all text elements to exactly 1:1.",
+      "D": "Use a single shade of grey for both visual headers and data labels to maintain simplicity."
+    },
+    "correctAnswer": "A",
+    "explanation": "To support users with color vision deficiencies (colorblindness), report designers should never rely on color alone to convey meaning. Adding symbols, text labels, or distinct shapes (e.g. checkmarks or warning triangles) along with color helps ensure that status can be understood by everyone.",
+    "topic": "Enhancing reports for usability and accessibility",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "What accessibility benefit does the Smart Narrative visual provide in a Power BI report?",
+    "options": {
+      "A": "It automatically generates a natural language summary of the trends and insights in your report page, which updates dynamically with filters.",
+      "B": "It reads the report text aloud using high-fidelity text-to-speech audio for all viewers.",
+      "C": "It automatically translates the report pages into the viewer's browser language.",
+      "D": "It replaces all complex charts with standard text paragraphs to reduce clutter."
+    },
+    "correctAnswer": "A",
+    "explanation": "The Smart Narrative visual uses AI to analyze the data on a report page and provide a dynamic, natural language text summary of key findings, which updates as users interact with slicers. This provides excellent cognitive accessibility.",
+    "topic": "Enhancing reports for usability and accessibility",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "How can you add instructional help text to a complex visual without cluttering the report canvas?",
+    "options": {
+      "A": "Enable the 'Visual header tooltip' option in the visual's formatting pane and write the description in the tooltip text box.",
+      "B": "Create a separate text box visual and place it directly on top of the chart.",
+      "C": "Write the instructions in the visual's title field using parentheses.",
+      "D": "Configure a page-level drillthrough that redirects users to an instruction manual."
+    },
+    "correctAnswer": "A",
+    "explanation": "Under formatting -> General -> Header icons -> Icons -> Help tooltip, you can turn on the visual header tooltip. This adds a question mark (?) icon to the visual's header, and hovering over it displays a tooltip containing your custom help text or a custom tooltip page.",
+    "topic": "Enhancing reports for usability and accessibility",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "According to general web accessibility standards, what is the recommended minimum font size for body text and data labels in a report visual to ensure readability?",
+    "options": {
+      "A": "10 pt or higher",
+      "B": "6 pt or higher",
+      "C": "14 pt or higher",
+      "D": "8 pt or higher"
+    },
+    "correctAnswer": "A",
+    "explanation": "To ensure that text is readable for users with visual impairments, a minimum font size of 10 points (pt) is recommended for body text, table cells, and data labels. Titles should be larger (typically 12 pt to 16 pt or more).",
+    "topic": "Enhancing reports for usability and accessibility",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "When navigating a Power BI report page using a keyboard, how does a user enter focus into a visual (such as a table) to navigate its internal cells?",
+    "options": {
+      "A": "Navigate to the visual using the Tab key, then press Ctrl + Right Arrow.",
+      "B": "Double-click the visual using the mouse scroll wheel.",
+      "C": "Press the Esc key followed by the Spacebar.",
+      "D": "Hold down the Alt key and press the Enter key."
+    },
+    "correctAnswer": "A",
+    "explanation": "To interact with the contents of a visual using keyboard navigation, users tab to the visual, and then press Ctrl + Right Arrow to enter the visual's focus mode. Once inside, they can use arrow keys to navigate rows/cells.",
+    "topic": "Enhancing reports for usability and accessibility",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You are configuring conditional formatting for a Table visual's 'Margin' column. Which configuration is most accessible?",
+    "options": {
+      "A": "Applying a three-color gradient (Red, Yellow, Green) combined with distinct icons (X, Warning sign, Checkmark) representing the thresholds.",
+      "B": "Applying a background color gradient that ranges from dark red to light red.",
+      "C": "Changing the font family to a decorative script when the value is negative.",
+      "D": "Setting the text color to yellow for all values below average."
+    },
+    "correctAnswer": "A",
+    "explanation": "Combining color indicators with icons (such as X for bad, Warning for warning, and Checkmark for good) ensures that users who are colorblind or have low vision can easily distinguish the thresholds using shape cues, not just color.",
+    "topic": "Enhancing reports for usability and accessibility",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "What is the purpose of the 'Focus Mode' button located on the top-right header of a report visual?",
+    "options": {
+      "A": "It expands the visual to fill the entire report canvas, making it easier to read and inspect detailed data points.",
+      "B": "It pauses all background query refreshes for that specific visual.",
+      "C": "It locks the visual so that other users cannot apply filters to it.",
+      "D": "It exports the visual's underlying DAX query to the clipboard."
+    },
+    "correctAnswer": "A",
+    "explanation": "Focus Mode allows users to zoom into a single visual. It expands the visual to occupy the entire canvas, which is very helpful for reading small text, viewing large tables, and helping screen readers focus on that specific element.",
+    "topic": "Enhancing reports for usability and accessibility",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "When designing a report, you want to ensure that screen reader users hear the context of a visual's title and description before the screen reader reads the visual's data. How should you arrange this in the Tab Order?",
+    "options": {
+      "A": "Place the title/description text box directly above the visual in the Tab Order list.",
+      "B": "Group the text box and the visual together and set the group to 'Hide'.",
+      "C": "Place the visual at the top of the Tab Order and the text box at the bottom.",
+      "D": "Set the visual's tab index to 0 and the text box's tab index to 99."
+    },
+    "correctAnswer": "A",
+    "explanation": "A screen reader reads elements in the sequence defined by the Tab Order (from top to bottom). To provide context before reading data, place the descriptive label or title text box before (above) the actual visual in the Tab Order.",
+    "topic": "Enhancing reports for usability and accessibility",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "You are deciding between deploying an On-premises Data Gateway (Standard Mode) or an On-premises Data Gateway (Personal Mode). Which of the following is a key feature of the Standard Mode gateway?",
+    "options": {
+      "A": "It supports multi-user access, centralized management, and DirectQuery connections to local databases.",
+      "B": "It runs as an application in the user's local profile and closes when the user logs off.",
+      "C": "It can only be used to connect to local Excel files hosted in personal OneDrive folders.",
+      "D": "It does not require local installation and runs entirely in Azure."
+    },
+    "correctAnswer": "A",
+    "explanation": "Standard Mode Gateway is installed as a system service. It supports multiple users, centralized administration in the Power BI admin portal, and is required for DirectQuery and live connection workloads to local databases. Personal Mode only runs when the user is logged on and is restricted to a single user.",
+    "topic": "Power BI gateways and scheduled refreshes",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "What is the purpose of configuring a 'Gateway Cluster' in the Power BI Service?",
+    "options": {
+      "A": "To provide high availability and load balancing for data refreshes across multiple gateway instances, avoiding a single point of failure.",
+      "B": "To combine Import and DirectQuery tables into a single semantic model.",
+      "C": "To bypass the daily scheduled refresh limit on Pro capacities.",
+      "D": "To encrypt the connection between Power BI Service and Azure Active Directory."
+    },
+    "correctAnswer": "A",
+    "explanation": "A gateway cluster groups multiple standard gateways together. This provides high availability (if one gateway machine goes offline, others handle queries) and load balancing (distributing refresh requests across gateway machines in the cluster).",
+    "topic": "Power BI gateways and scheduled refreshes",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "What is the maximum number of scheduled refreshes you can configure per day for a single dataset hosted in a workspace with a Power BI Pro license?",
+    "options": {
+      "A": "8",
+      "B": "48",
+      "C": "24",
+      "D": "Unlimited"
+    },
+    "correctAnswer": "A",
+    "explanation": "A dataset in a Power BI Pro (shared) workspace is limited to 8 scheduled refreshes per day. Workspaces on Premium capacity (or Premium Per User) support up to 48 refreshes per day.",
+    "topic": "Power BI gateways and scheduled refreshes",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "After publishing a report that connects to an on-premises SQL Server database, you try to configure a scheduled refresh but get a 'Credentials are missing' error in the Service. Where must you configure these credentials?",
+    "options": {
+      "A": "In the Power BI Service, under the Gateway cluster settings for the specific data source linked to your dataset.",
+      "B": "In the Power BI Desktop Options, under the Global Security settings.",
+      "C": "Directly in the M query code of your dataset using clear-text connection strings.",
+      "D": "In the local computer's Windows Credential Manager of the gateway machine."
+    },
+    "correctAnswer": "A",
+    "explanation": "To refresh a dataset connecting through a gateway, you must define the data source under the gateway cluster in the Power BI Service and supply valid credentials (such as Windows, Basic, or OAuth2) so that the gateway can authenticate with the database on behalf of the cloud service.",
+    "topic": "Power BI gateways and scheduled refreshes",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "power-bi",
+    "questionType": "MCQ",
+    "text": "Your scheduled refresh fails with the error message: 'The gateway is offline or could not be reached'. Which of the following is the most likely cause of this error?",
+    "options": {
+      "A": "The machine hosting the on-premises data gateway is turned off, disconnected from the network, or the gateway service is stopped.",
+      "B": "The Power BI Service is experiencing a global outage affecting all premium capacities.",
+      "C": "The SQL database has too many rows and exceeded the maximum dataset load size of 10 GB.",
+      "D": "The user viewing the report does not have permission to access the gateway cluster."
+    },
+    "correctAnswer": "A",
+    "explanation": "The gateway offline error indicates that the Power BI cloud service cannot establish a network connection with the gateway machine. This usually happens when the host computer is turned off, lacks internet access, or the local 'On-premises data gateway' service has stopped running.",
+    "topic": "Power BI gateways and scheduled refreshes",
+    "difficulty": "MEDIUM"
+  }
+]

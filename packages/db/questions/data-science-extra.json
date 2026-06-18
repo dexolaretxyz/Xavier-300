@@ -1,0 +1,1802 @@
+[
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "When identifying outliers in a numerical dataset using the Interquartile Range (IQR) method, how are the upper and lower bounds traditionally calculated?",
+    "options": {
+      "A": "Lower Bound = Q1 - 1.5 * IQR, Upper Bound = Q3 + 1.5 * IQR",
+      "B": "Lower Bound = Median - 1.5 * IQR, Upper Bound = Median + 1.5 * IQR",
+      "C": "Lower Bound = Q1 - 3.0 * IQR, Upper Bound = Q3 + 3.0 * IQR",
+      "D": "Lower Bound = Mean - 2 * StdDev, Upper Bound = Mean + 2 * StdDev"
+    },
+    "correctAnswer": "A",
+    "explanation": "The standard IQR method defines outliers as data points falling below Q1 - 1.5 * IQR or above Q3 + 1.5 * IQR, where Q1 is the 25th percentile, Q3 is the 75th percentile, and IQR = Q3 - Q1.",
+    "topic": "Exploratory Data Analysis (EDA) and preprocessing",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the primary effect of using mean imputation to handle missing values in a continuous numerical feature?",
+    "options": {
+      "A": "It artificially reduces the variance of the feature.",
+      "B": "It increases the standard deviation of the feature.",
+      "C": "It introduces significant bias to the median of the feature.",
+      "D": "It preserves the original distribution shape of the feature."
+    },
+    "correctAnswer": "A",
+    "explanation": "Mean imputation replaces all missing values with a single constant (the mean). Because multiple values are set to the exact center, the spread or variance of the distribution is artificially underestimated and reduced.",
+    "topic": "Exploratory Data Analysis (EDA) and preprocessing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "A temperature sensor in a weather station fails to record measurements only when the temperature exceeds 40 degrees Celsius. What type of missing data mechanism does this represent?",
+    "options": {
+      "A": "Missing Not at Random (MNAR)",
+      "B": "Missing Completely at Random (MCAR)",
+      "C": "Missing at Random (MAR)",
+      "D": "Structurally Missing Data"
+    },
+    "correctAnswer": "A",
+    "explanation": "Missing Not at Random (MNAR) occurs when the probability of a value being missing is directly related to the value itself. Here, missingness depends on the temperature being high (>40C).",
+    "topic": "Exploratory Data Analysis (EDA) and preprocessing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which diagnostic metric measures the severity of multicollinearity in a multiple linear regression model by estimating how much the variance of an inflation coefficient is increased?",
+    "options": {
+      "A": "Variance Inflation Factor (VIF)",
+      "B": "Cook's Distance",
+      "C": "Durbin-Watson Statistic",
+      "D": "Mahalanobis Distance"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Variance Inflation Factor (VIF) measures how much the variance of an estimated regression coefficient is increased due to collinearity. A VIF value exceeding 5 or 10 indicates high multicollinearity.",
+    "topic": "Exploratory Data Analysis (EDA) and preprocessing",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is a key mathematical constraint when applying the standard Box-Cox transformation to a numerical feature for skewness correction?",
+    "options": {
+      "A": "All data values must be strictly positive (greater than zero).",
+      "B": "The dataset must contain at least 100 samples.",
+      "C": "The feature must be normalized between 0 and 1 first.",
+      "D": "The variance of the feature must be greater than its mean."
+    },
+    "correctAnswer": "A",
+    "explanation": "The standard Box-Cox transformation formula involves raising variables to a power lambda and requires strictly positive numbers (x > 0). For data containing zero or negative values, Yeo-Johnson transformation is preferred.",
+    "topic": "Exploratory Data Analysis (EDA) and preprocessing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "How does Winsorization handle extreme outliers in a numerical feature?",
+    "options": {
+      "A": "It replaces extreme values with specified percentiles (e.g., the 1st and 99th percentiles).",
+      "B": "It drops the extreme rows completely from the dataset.",
+      "C": "It sets all extreme outlier values to NaN so they can be imputed later.",
+      "D": "It applies a logarithmic transformation only to the outlier values."
+    },
+    "correctAnswer": "A",
+    "explanation": "Winsorization caps extreme values at a designated percentile (e.g., replacing values above the 99th percentile with the 99th percentile value, and values below the 1st percentile with the 1st percentile value) rather than deleting them.",
+    "topic": "Exploratory Data Analysis (EDA) and preprocessing",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In Exploratory Data Analysis, why is it beneficial to check for duplicate features (columns) in addition to duplicate rows?",
+    "options": {
+      "A": "Identical or near-identical features offer redundant information and can cause issues like multicollinearity.",
+      "B": "Duplicate columns always cause scikit-learn models to throw compile-time errors.",
+      "C": "Having duplicate columns doubles the execution speed of tree-based models.",
+      "D": "It prevents the model from predicting classes that have small sample sizes."
+    },
+    "correctAnswer": "A",
+    "explanation": "Duplicate or highly correlated columns add no new information, increase training time, and can lead to unstable parameter estimates in linear and logistic regression models.",
+    "topic": "Exploratory Data Analysis (EDA) and preprocessing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which of the following relationships between the mean, median, and mode is generally true for a left-skewed (negatively skewed) unimodal distribution?",
+    "options": {
+      "A": "Mean < Median < Mode",
+      "B": "Mode < Median < Mean",
+      "C": "Median < Mean < Mode",
+      "D": "Mean = Median = Mode"
+    },
+    "correctAnswer": "A",
+    "explanation": "In a negatively skewed (left-skewed) distribution, the long tail is on the left side. Extreme small values pull the mean down the most, followed by the median, while the mode remains at the peak, leading to Mean < Median < Mode.",
+    "topic": "Exploratory Data Analysis (EDA) and preprocessing",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which scikit-learn scaler scales features using statistics that are robust to outliers, specifically by subtracting the median and dividing by the interquartile range (IQR)?",
+    "options": {
+      "A": "RobustScaler",
+      "B": "MinMaxScaler",
+      "C": "StandardScaler",
+      "D": "Normalizer"
+    },
+    "correctAnswer": "A",
+    "explanation": "RobustScaler uses the median and the IQR (25th to 75th percentiles) for scaling. Unlike StandardScaler (which uses mean/std) and MinMaxScaler (which uses min/max), RobustScaler is not heavily influenced by extreme outliers.",
+    "topic": "Exploratory Data Analysis (EDA) and preprocessing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "When applying target encoding to high-cardinality categorical variables, what is the primary risk and a standard mitigation strategy?",
+    "options": {
+      "A": "Overfitting / Data Leakage; mitigated by adding smoothing or using out-of-fold target encoding.",
+      "B": "Underfitting; mitigated by converting the encoded variable back into one-hot vectors.",
+      "C": "Extreme sparsity; mitigated by applying Principal Component Analysis to the target.",
+      "D": "High CPU memory utilization; mitigated by replacing values with their alphabetical ranks."
+    },
+    "correctAnswer": "A",
+    "explanation": "Target encoding replaces categories with the mean target value. It can cause severe overfitting (data leakage) for rare categories. Mitigation strategies include smoothing (blending category mean with global mean) and K-fold target encoding.",
+    "topic": "Exploratory Data Analysis (EDA) and preprocessing",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "According to the Central Limit Theorem (CLT), what does the sampling distribution of the sample mean approximate as the sample size increases?",
+    "options": {
+      "A": "A normal distribution, regardless of the shape of the population distribution.",
+      "B": "The exact probability distribution of the underlying population.",
+      "C": "A uniform distribution centered around the population median.",
+      "D": "A Student's t-distribution with exactly one degree of freedom."
+    },
+    "correctAnswer": "A",
+    "explanation": "The Central Limit Theorem states that if you take sufficiently large samples from a population (typically n >= 30), the sampling distribution of the sample means will be approximately normal, regardless of the population's distribution.",
+    "topic": "Probability and statistical foundations",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "If a researcher rejects a null hypothesis that is actually true in the population, what error has occurred?",
+    "options": {
+      "A": "Type I error (False Positive)",
+      "B": "Type II error (False Negative)",
+      "C": "Standard Error of the Mean",
+      "D": "Measurement Error"
+    },
+    "correctAnswer": "A",
+    "explanation": "A Type I error (false positive) occurs when the null hypothesis is rejected when it is actually true. The probability of committing this error is denoted by alpha (significance level).",
+    "topic": "Probability and statistical foundations",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "How is the statistical power of a hypothesis test defined in relation to the probability of committing errors?",
+    "options": {
+      "A": "1 - Beta, where Beta is the probability of committing a Type II error.",
+      "B": "1 - Alpha, where Alpha is the probability of committing a Type I error.",
+      "C": "Alpha / Beta, representing the ratio of false positives to false negatives.",
+      "D": "The probability of accepting the null hypothesis when it is true."
+    },
+    "correctAnswer": "A",
+    "explanation": "Statistical power is the probability of correctly rejecting a false null hypothesis (detecting an effect that actually exists). It is mathematically expressed as 1 - Beta, where Beta is the Type II error probability.",
+    "topic": "Probability and statistical foundations",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "A rare disease has a prevalence of 0.1% in the population. A diagnostic test is 99% sensitive (true positive rate) and 95% specific (true negative rate). Using Bayes' Theorem, what is the probability that a person who tests positive actually has the disease?",
+    "options": {
+      "A": "Approximately 1.94%",
+      "B": "Approximately 99.00%",
+      "C": "Approximately 95.00%",
+      "D": "Approximately 50.00%"
+    },
+    "correctAnswer": "A",
+    "explanation": "Using Bayes' Theorem: P(D|+) = [P(+|D)*P(D)] / [P(+|D)*P(D) + P(+|not D)*P(not D)]. P(D|+) = [0.99 * 0.001] / [0.99 * 0.001 + 0.05 * 0.999] = 0.00099 / [0.00099 + 0.04995] = 0.00099 / 0.05094 ≈ 0.01943 or 1.94%.",
+    "topic": "Probability and statistical foundations",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In a hypothesis test, what does a calculated p-value of 0.03 represent?",
+    "options": {
+      "A": "The probability of obtaining the observed test results (or more extreme) under the assumption that the null hypothesis is true.",
+      "B": "The probability that the null hypothesis is true given the observed data sample.",
+      "C": "The probability that the alternative hypothesis is false.",
+      "D": "The probability of committing a Type II error during the analysis."
+    },
+    "correctAnswer": "A",
+    "explanation": "A p-value is the probability of obtaining test results at least as extreme as the results actually observed, assuming that the null hypothesis is correct. It is not the probability that the null hypothesis is true.",
+    "topic": "Probability and statistical foundations",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Why is Pearson's correlation coefficient preferred over covariance to describe the linear relationship between two variables?",
+    "options": {
+      "A": "Correlation is normalized between -1 and 1, making it scale-invariant, whereas covariance depends on the units of measurement.",
+      "B": "Correlation measures non-linear relationships, whereas covariance only measures linear relationships.",
+      "C": "Covariance calculations are sensitive to dividing by zero, while correlation is not.",
+      "D": "Correlation is always positive, preventing sign confusion during evaluations."
+    },
+    "correctAnswer": "A",
+    "explanation": "Covariance measures the joint variability of two variables, but its magnitude depends on the variables' scales. Pearson's correlation coefficient normalizes covariance by dividing by the product of the standard deviations, yielding a scale-free metric from -1 to 1.",
+    "topic": "Probability and statistical foundations",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which discrete probability distribution models the number of independent events occurring within a fixed interval of time or space, given a constant mean rate of occurrence?",
+    "options": {
+      "A": "Poisson Distribution",
+      "B": "Binomial Distribution",
+      "C": "Geometric Distribution",
+      "D": "Hypergeometric Distribution"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Poisson distribution models the count of events occurring in a fixed interval of time or space, assuming events occur independently and at a constant average rate.",
+    "topic": "Probability and statistical foundations",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "If two events A and B are mutually exclusive, what is the probability of their union, P(A ∪ B)?",
+    "options": {
+      "A": "P(A) + P(B)",
+      "B": "P(A) * P(B)",
+      "C": "P(A) + P(B) - P(A ∩ B)",
+      "D": "P(A) / P(B)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Mutually exclusive events cannot happen at the same time, meaning P(A ∩ B) = 0. Thus, the addition rule simplifies to P(A ∪ B) = P(A) + P(B).",
+    "topic": "Probability and statistical foundations",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "When is it appropriate to use a Chi-Square (χ²) Test of Independence?",
+    "options": {
+      "A": "To analyze whether a significant association exists between two categorical variables.",
+      "B": "To compare the means of a continuous variable across three or more groups.",
+      "C": "To evaluate the linear correlation between two continuous variables.",
+      "D": "To verify if a numerical target has equal variance across training and testing splits."
+    },
+    "correctAnswer": "A",
+    "explanation": "The Chi-Square Test of Independence evaluates whether there is a statistically significant association between two categorical variables by comparing observed frequencies in a contingency table with expected frequencies.",
+    "topic": "Probability and statistical foundations",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In A/B testing, how does reducing the Minimum Detectable Effect (MDE) influence the required sample size per variant, assuming significance level (alpha) and power (1-beta) are held constant?",
+    "options": {
+      "A": "It increases the required sample size.",
+      "B": "It decreases the required sample size.",
+      "C": "It has no impact on the required sample size.",
+      "D": "It increases the required sample size only if the conversion rate is above 50%."
+    },
+    "correctAnswer": "A",
+    "explanation": "To detect a smaller difference (smaller MDE) with the same level of confidence and power, you need more data (a larger sample size) to distinguish the subtle effect from random statistical noise.",
+    "topic": "Probability and statistical foundations",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What mathematical objective does a Support Vector Machine (SVM) optimize to find the optimal decision boundary?",
+    "options": {
+      "A": "Maximizing the margin (distance) between the separating hyperplane and the nearest support vectors.",
+      "B": "Minimizing the sum of squared residuals between training samples and the hyperplane.",
+      "C": "Maximizing the information gain at each split of the hyper-dimensional boundary.",
+      "D": "Minimizing the entropy of the classification predictions across validation sets."
+    },
+    "correctAnswer": "A",
+    "explanation": "SVMs aim to find a hyperplane in an N-dimensional space that distinctly classifies data points. The optimal hyperplane is identified by maximizing the margin between the hyperplane and the support vectors (closest data points of either class).",
+    "topic": "Supervised learning (linear models, trees, SVM)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the primary purpose of the 'kernel trick' in Support Vector Machines?",
+    "options": {
+      "A": "To project data into a higher-dimensional space where it becomes linearly separable, without explicitly computing the coordinates in that space.",
+      "B": "To reduce the feature space dimensionality using linear matrix operations.",
+      "C": "To regularize weight parameters and prevent overfitting on small training samples.",
+      "D": "To speed up gradient descent calculations by batching the support vector selection."
+    },
+    "correctAnswer": "A",
+    "explanation": "The kernel trick enables SVMs to model non-linear boundaries by computing inner products of data in a high-dimensional feature space implicitly, avoiding the expensive computation of coordinates in that space.",
+    "topic": "Supervised learning (linear models, trees, SVM)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In a Support Vector Machine classifier, what is the effect of setting a very high value for the regularization parameter C?",
+    "options": {
+      "A": "The model minimizes training classification errors, leading to a narrower margin and a higher risk of overfitting.",
+      "B": "The model maximizes the margin width, accepting more training misclassifications to improve generalization.",
+      "C": "The model ignores non-linear kernels, forcing a linear decision boundary.",
+      "D": "The weights of the features are shrunk exactly to zero, performing automated feature selection."
+    },
+    "correctAnswer": "A",
+    "explanation": "The parameter C controls the trade-off between margin width and training error. A large C penalizes misclassifications heavily, forcing the SVM to fit the training data tightly with a narrow margin. This increases the risk of overfitting.",
+    "topic": "Supervised learning (linear models, trees, SVM)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the range of Gini Impurity for a binary classification split, and how is it used to build a decision tree?",
+    "options": {
+      "A": "0 (pure) to 0.5 (maximum impurity); splits that result in the lowest Gini Impurity are selected.",
+      "B": "0 (pure) to 1.0 (maximum impurity); splits that maximize Gini Impurity are selected.",
+      "C": "-1.0 to +1.0; splits closest to 0 are selected.",
+      "D": "0 to infinity; splits with the highest values are preferred."
+    },
+    "correctAnswer": "A",
+    "explanation": "Gini Impurity for binary classification ranges from 0 (all samples in the node belong to one class) to 0.5 (even 50/50 split). Decision trees choose splits that minimize the weighted Gini Impurity of the child nodes.",
+    "topic": "Supervised learning (linear models, trees, SVM)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the impact of violating the homoscedasticity assumption in an Ordinary Least Squares (OLS) linear regression model?",
+    "options": {
+      "A": "The parameter estimates remain unbiased, but the standard errors are biased, rendering hypothesis tests and confidence intervals unreliable.",
+      "B": "The parameter estimates become highly biased, but the standard errors remain unaffected.",
+      "C": "The model coefficients are forced to zero, causing the model to underfit.",
+      "D": "It prevents the optimization algorithm from converging to a global minimum."
+    },
+    "correctAnswer": "A",
+    "explanation": "Under homoscedasticity (constant variance of residuals), OLS estimators are the Best Linear Unbiased Estimators (BLUE). Violating this means the standard errors are biased, invalidating statistical inference, although the coefficients themselves remain unbiased.",
+    "topic": "Supervised learning (linear models, trees, SVM)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In a decision tree model, what are the terminal nodes that do not split any further and contain final class predictions or regression values called?",
+    "options": {
+      "A": "Leaves / Leaf nodes",
+      "B": "Root nodes",
+      "C": "Internal splits",
+      "D": "Pruned branches"
+    },
+    "correctAnswer": "A",
+    "explanation": "Terminal nodes of a decision tree are called leaf nodes. They contain the final prediction (class label for classification, mean/median value for regression) for any sample that reaches them.",
+    "topic": "Supervised learning (linear models, trees, SVM)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Why does a Random Forest model generally exhibit lower variance compared to a single, fully-grown decision tree?",
+    "options": {
+      "A": "It averages the predictions of multiple decorrelated decision trees built on bootstrap samples and random feature subsets.",
+      "B": "It applies L1 regularization to the split thresholds of each tree.",
+      "C": "It prunes weak branches automatically using validation folds.",
+      "D": "It trains trees sequentially, allowing subsequent trees to correct the errors of previous trees."
+    },
+    "correctAnswer": "A",
+    "explanation": "Random Forest uses bagging (bootstrap aggregating) and random feature selection (feature bagging). This creates a set of diverse, decorrelated trees. Averaging their predictions reduces the variance of the ensemble without increasing bias.",
+    "topic": "Supervised learning (linear models, trees, SVM)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In Gradient Boosting algorithms (like XGBoost or LightGBM), how are subsequent decision trees constructed?",
+    "options": {
+      "A": "Sequentially, where each tree is fit to the negative gradients (pseudo-residuals) of the loss function of the previous ensemble's predictions.",
+      "B": "In parallel, where each tree is trained independently on random subsets of features and data.",
+      "C": "Sequentially, where each tree is trained on the misclassified classes using weighted sampling probabilities.",
+      "D": "By averaging the weights of the leaf nodes from a single deep neural network."
+    },
+    "correctAnswer": "A",
+    "explanation": "Gradient Boosting builds trees sequentially. Each new tree fits to the residuals (errors) or pseudo-residuals (negative gradient of the loss function) of the existing ensemble, moving predictions closer to the target.",
+    "topic": "Supervised learning (linear models, trees, SVM)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What regularisation penalty is added to the loss function of Ridge Regression, and what is its primary effect on model coefficients?",
+    "options": {
+      "A": "An L2 penalty (squared sum of weights); it shrinks coefficients close to zero but not exactly to zero.",
+      "B": "An L1 penalty (absolute sum of weights); it forces coefficients exactly to zero, performing feature selection.",
+      "C": "An L2 penalty (squared sum of weights); it forces coefficients exactly to zero.",
+      "D": "An L1 penalty (absolute sum of weights); it shrinks coefficients close to zero but not exactly to zero."
+    },
+    "correctAnswer": "A",
+    "explanation": "Ridge Regression adds an L2 regularization penalty (sum of squared coefficients multiplied by alpha). This shrinks the coefficients towards zero, reducing variance and mitigating multicollinearity, but does not perform sparse feature selection (coefficients do not reach absolute zero).",
+    "topic": "Supervised learning (linear models, trees, SVM)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which multi-class classification strategy trains one binary classifier per class, comparing that class against all other classes combined?",
+    "options": {
+      "A": "One-vs-Rest (OvR) / One-vs-All",
+      "B": "One-vs-One (OvO)",
+      "C": "Binary Tree Splitting",
+      "D": "Multinomial Logistic Softmax"
+    },
+    "correctAnswer": "A",
+    "explanation": "One-vs-Rest (OvR) trains N classifiers for N classes. For each classifier, one class is treated as positive and all other classes are grouped as negative. The class with the highest confidence prediction is chosen.",
+    "topic": "Supervised learning (linear models, trees, SVM)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the mathematical optimization objective of the K-Means clustering algorithm?",
+    "options": {
+      "A": "Minimizing the within-cluster sum of squared distances (inertia) between data points and their assigned centroids.",
+      "B": "Maximizing the distance between different cluster centroids.",
+      "C": "Minimizing the silhouette score across all clustered samples.",
+      "D": "Maximizing the density of points inside a specified epsilon radius."
+    },
+    "correctAnswer": "A",
+    "explanation": "K-Means aims to partition n observations into K clusters. It iteratively updates centroids to minimize the within-cluster sum of squares (WCSS), which represents the squared Euclidean distance from each point to its assigned centroid.",
+    "topic": "Unsupervised learning (clustering, dimensionality reduction)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "How is the Silhouette Coefficient for a clustered data point calculated and interpreted?",
+    "options": {
+      "A": "It compares the average intra-cluster distance (a) with the average nearest-cluster distance (b); values close to 1 indicate excellent clustering.",
+      "B": "It calculates the ratio of cluster variance to overall variance; values close to 0 are ideal.",
+      "C": "It measures the distance between the two furthest points in a cluster; values close to infinity are ideal.",
+      "D": "It counts the number of outlier points in a cluster; values close to 0 indicate good clustering."
+    },
+    "correctAnswer": "A",
+    "explanation": "The silhouette coefficient is computed as (b - a) / max(a, b), where 'a' is mean distance to other points in the same cluster, and 'b' is mean distance to points in the closest sibling cluster. Values close to +1 indicate the point is far from neighboring clusters and well matched to its own.",
+    "topic": "Unsupervised learning (clustering, dimensionality reduction)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What are the two core hyperparameters required by the Density-Based Spatial Clustering of Applications with Noise (DBSCAN) algorithm?",
+    "options": {
+      "A": "eps (epsilon neighborhood radius) and min_samples (minimum points to form a dense region).",
+      "B": "K (number of clusters) and max_iter (maximum iterations).",
+      "C": "linkage criterion and affinity metric.",
+      "D": "perplexity and learning rate."
+    },
+    "correctAnswer": "A",
+    "explanation": "DBSCAN requires: 1) 'eps' (the maximum distance between two samples for them to be considered as in the same neighborhood), and 2) 'min_samples' (the number of samples in a neighborhood for a point to be considered as a core point).",
+    "topic": "Unsupervised learning (clustering, dimensionality reduction)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In Agglomerative Hierarchical Clustering, what is the difference between single linkage and complete linkage?",
+    "options": {
+      "A": "Single linkage uses the minimum distance between any single point in cluster A and cluster B; complete linkage uses the maximum distance.",
+      "B": "Single linkage computes centroid distances; complete linkage computes average distances.",
+      "C": "Single linkage requires only one cluster; complete linkage runs until all clusters are merged.",
+      "D": "Single linkage uses L1 distance; complete linkage uses L2 Euclidean distance."
+    },
+    "correctAnswer": "A",
+    "explanation": "Linkage criteria define how distance between clusters is measured. Single linkage calculates the minimum distance between a point in cluster A and a point in B. Complete linkage calculates the maximum distance between a point in A and a point in B.",
+    "topic": "Unsupervised learning (clustering, dimensionality reduction)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In Principal Component Analysis (PCA), how are the principal components mathematically derived from the feature space?",
+    "options": {
+      "A": "They are the eigenvectors of the covariance matrix of the standardized features, sorted by their corresponding eigenvalues.",
+      "B": "They are the coefficients of a multi-variable logistic regression model.",
+      "C": "They are the clusters centroids computed by running K-Means on the raw rows.",
+      "D": "They are the gradients of the features calculated during backpropagation."
+    },
+    "correctAnswer": "A",
+    "explanation": "PCA standardizes the data, computes the covariance matrix, and finds its eigenvectors and eigenvalues. The eigenvectors represent the directions of maximum variance (principal components) and the eigenvalues indicate the magnitude of variance in those directions.",
+    "topic": "Unsupervised learning (clustering, dimensionality reduction)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Why is t-distributed Stochastic Neighbor Embedding (t-SNE) often preferred over Principal Component Analysis (PCA) for visualizing complex datasets in 2D or 3D?",
+    "options": {
+      "A": "t-SNE is a non-linear method that preserves local structures and clusters, whereas PCA is a linear method that focuses on global variance.",
+      "B": "t-SNE is much faster and computationally cheaper than PCA on massive datasets.",
+      "C": "t-SNE is deterministic and does not depend on random initialization.",
+      "D": "t-SNE can be directly used as a supervised feature selector for linear models."
+    },
+    "correctAnswer": "A",
+    "explanation": "PCA is linear and projects high-dimensional data onto axes of max variance, which can overlook complex non-linear cluster shapes. t-SNE is non-linear and models local pairwise similarities, keeping similar points close in lower-dimensional space, which is perfect for visualization.",
+    "topic": "Unsupervised learning (clustering, dimensionality reduction)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which of the following machine learning tasks is categorized under Unsupervised Learning?",
+    "options": {
+      "A": "Dimensionality reduction of high-dimensional sensor data.",
+      "B": "Predicting housing prices based on location and size.",
+      "C": "Classifying emails into Spam or Ham using historical flags.",
+      "D": "Fine-tuning a pre-trained model to detect defect categories."
+    },
+    "correctAnswer": "A",
+    "explanation": "Unsupervised learning involves modeling structures in unlabeled data. Dimensionality reduction (e.g., PCA, t-SNE) and clustering are typical unsupervised tasks.",
+    "topic": "Unsupervised learning (clustering, dimensionality reduction)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "K-Means clustering is highly sensitive to the initial positions of the cluster centroids. How is this limitation typically addressed in standard implementations like scikit-learn?",
+    "options": {
+      "A": "By using the k-means++ initialization algorithm, which spreads out initial centroids.",
+      "B": "By running DBSCAN first to find the exact centroid locations.",
+      "C": "By scale-normalizing the features between -1 and +1.",
+      "D": "By setting the number of clusters K to be equal to the number of columns."
+    },
+    "correctAnswer": "A",
+    "explanation": "The 'k-means++' initialization scheme selects the first centroid at random, and then selects subsequent centroids with a probability proportional to their squared distance from the closest existing centroid. This ensures centroids are spread out, leading to faster and more stable convergence.",
+    "topic": "Unsupervised learning (clustering, dimensionality reduction)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the 'curse of dimensionality' and its direct impact on distance-based machine learning models (like KNN or clustering)?",
+    "options": {
+      "A": "As the number of dimensions increases, the distance between any two points converges to a nearly constant value, making distance metrics ineffective.",
+      "B": "Adding dimensions causes the dataset to become highly dense, causing models to overfit.",
+      "C": "It increases the number of duplicate values in categorical columns.",
+      "D": "It causes linear regression models to fail due to division by zero errors."
+    },
+    "correctAnswer": "A",
+    "explanation": "In high-dimensional spaces, the volume of the space grows exponentially, causing data points to appear highly sparse and distant. The difference between the distance to the nearest point and the distance to the furthest point approaches zero, rendering distance-based classification/clustering ineffective.",
+    "topic": "Unsupervised learning (clustering, dimensionality reduction)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In Principal Component Analysis, how is the 'explained variance ratio' of a specific principal component calculated?",
+    "options": {
+      "A": "It is the eigenvalue of that component divided by the sum of all eigenvalues.",
+      "B": "It is the number of features divided by the index of the principal component.",
+      "C": "It is the average distance from the points to that eigenvector.",
+      "D": "It is the correlation between the component and the target class."
+    },
+    "correctAnswer": "A",
+    "explanation": "Each eigenvalue represents the amount of variance carried by its corresponding eigenvector (principal component). The explained variance ratio is computed by dividing a component's eigenvalue by the sum of all eigenvalues.",
+    "topic": "Unsupervised learning (clustering, dimensionality reduction)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the primary function of a Dropout layer during the training phase of a deep neural network?",
+    "options": {
+      "A": "To prevent overfitting by randomly setting a specified fraction of input activation units to zero during each training step.",
+      "B": "To speed up execution by deleting weak weights permanently from the network architecture.",
+      "C": "To normalize the input features of a mini-batch to speed up gradient descent.",
+      "D": "To replace negative activation values with zero to implement the ReLU function."
+    },
+    "correctAnswer": "A",
+    "explanation": "Dropout is a regularization technique. During training, it randomly deactivates (sets to zero) a fraction of neurons in a layer at each step. This prevents neurons from co-adapting and forces the network to learn redundant representations, improving generalization.",
+    "topic": "Deep learning and neural networks",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the key optimization advantage of the Adam (Adaptive Moment Estimation) optimizer compared to standard Stochastic Gradient Descent (SGD)?",
+    "options": {
+      "A": "Adam computes adaptive learning rates for each parameter by tracking both the first moment (mean) and second moment (uncentered variance) of the gradients.",
+      "B": "Adam adjusts the learning rate using the global loss validation score instead of mini-batch gradients.",
+      "C": "Adam uses second-order derivatives (Hessian matrix) to compute exact curvature updates.",
+      "D": "Adam guarantees that the neural network will never get stuck in local minima."
+    },
+    "correctAnswer": "A",
+    "explanation": "Adam combines the concepts of Momentum (damping oscillations using moving averages of gradients) and RMSProp (scaling updates by the square root of the running average of squared gradients), providing customized, adaptive learning rates for every weight parameter.",
+    "topic": "Deep learning and neural networks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In Convolutional Neural Networks (CNNs), what is the main purpose of applying a Pooling layer (such as Max Pooling) after convolutional layers?",
+    "options": {
+      "A": "To reduce the spatial dimensions of the feature maps, reducing parameters and computational cost, and providing translational invariance.",
+      "B": "To increase the depth (number of channels) of the feature maps to capture more complex patterns.",
+      "C": "To compute activation gradients during the forward pass of neural training.",
+      "D": "To apply non-linear activations to the output of the filters."
+    },
+    "correctAnswer": "A",
+    "explanation": "Pooling layers downsample the spatial height and width of feature maps. This reduces the number of parameters and computation in subsequent layers, helps control overfitting, and makes the network invariant to small shifts or translations in the input image.",
+    "topic": "Deep learning and neural networks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Why do standard Recurrent Neural Networks (RNNs) struggle to learn long-term dependencies in sequential data, and how do LSTM architectures address this?",
+    "options": {
+      "A": "Standard RNNs suffer from vanishing or exploding gradients over long sequences; LSTMs resolve this using a cell state regulated by input, forget, and output gates.",
+      "B": "Standard RNNs cannot run on GPUs; LSTMs introduce convolutional channels to bypass sequential bottlenecks.",
+      "C": "Standard RNNs only process sequences backwards; LSTMs process sequences in both directions simultaneously.",
+      "D": "Standard RNNs require one-hot targets; LSTMs can handle continuous targets natively."
+    },
+    "correctAnswer": "A",
+    "explanation": "Backpropagating through time in standard RNNs involves repeated matrix multiplication, causing gradients to explode or vanish. Long Short-Term Memory (LSTM) networks introduce a cell state (conveyor belt) and gating mechanisms that allow gradients to flow back unchanged, mitigating vanishing gradients.",
+    "topic": "Deep learning and neural networks",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which weight initialization technique is specifically designed for layers utilizing the Rectified Linear Unit (ReLU) activation function to prevent vanishing or exploding gradients?",
+    "options": {
+      "A": "He (Kaiming) Initialization",
+      "B": "Xavier (Glorot) Initialization",
+      "C": "Orthogonal Initialization",
+      "D": "Random Normal Uniform Initialization"
+    },
+    "correctAnswer": "A",
+    "explanation": "He initialization (named after Kaiming He) initializes weights with a variance of 2/n (where n is input units). It is optimized for ReLU activations, whereas Xavier initialization (variance of 1/n or 2/(n_in + n_out)) is optimized for symmetric activations like tanh or sigmoid.",
+    "topic": "Deep learning and neural networks",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "How does Batch Normalization stabilize and accelerate the training of deep neural networks?",
+    "options": {
+      "A": "By normalizing the activation inputs of each layer for each mini-batch, reducing internal covariate shift.",
+      "B": "By scale-standardizing the weights of the network to be strictly between 0 and 1.",
+      "C": "By running gradient descent on the entire training set instead of mini-batches.",
+      "D": "By pruning weak neural connections dynamically after each epoch."
+    },
+    "correctAnswer": "A",
+    "explanation": "Batch Normalization normalizes the outputs of a layer (mean=0, variance=1) for each mini-batch and applies learnable scale (gamma) and shift (beta) parameters. This stabilizes the distribution of activations (reducing internal covariate shift) and allows higher learning rates.",
+    "topic": "Deep learning and neural networks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which loss function is the standard choice for training a neural network on a binary classification task?",
+    "options": {
+      "A": "Binary Cross-Entropy / Log Loss",
+      "B": "Categorical Cross-Entropy",
+      "C": "Mean Squared Error (MSE)",
+      "D": "Mean Absolute Percentage Error (MAPE)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Binary Cross-Entropy measures the distance between the true binary labels (0 or 1) and the predicted probabilities, penalizing confident wrong predictions heavily.",
+    "topic": "Deep learning and neural networks",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "If a neural network is trained on a dataset containing 10,000 samples with a batch size of 100 for a total of 5 epochs, how many optimization steps (iterations) are executed?",
+    "options": {
+      "A": "500 steps",
+      "B": "100 steps",
+      "C": "5,000 steps",
+      "D": "50,000 steps"
+    },
+    "correctAnswer": "A",
+    "explanation": "One epoch is one complete pass over the dataset. Iterations per epoch = 10,000 / 100 = 100 steps. Total steps over 5 epochs = 100 steps/epoch * 5 epochs = 500 steps.",
+    "topic": "Deep learning and neural networks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Why does the Sigmoid activation function contribute to the vanishing gradient problem in deep feedforward neural networks?",
+    "options": {
+      "A": "The derivative of the Sigmoid function is capped at 0.25; backpropagating through multiple sigmoid layers multiplies these small values, causing gradients to shrink to zero.",
+      "B": "Sigmoid outputs are non-negative, which makes weight updates strictly positive.",
+      "C": "Sigmoid functions are computationally slow, causing training memory to overflow.",
+      "D": "The function is not differentiable, preventing gradient calculation."
+    },
+    "correctAnswer": "A",
+    "explanation": "The derivative of the sigmoid function, σ'(x) = σ(x)(1 - σ(x)), has a maximum value of 0.25 (when x=0). In deep networks, the chain rule multiplies these derivatives. Multiplying numbers less than 0.25 repeatedly causes the gradient to decay exponentially as it backpropagates to early layers.",
+    "topic": "Deep learning and neural networks",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In deep learning, what does the term 'Transfer Learning' refer to?",
+    "options": {
+      "A": "Taking a model trained on a large dataset and fine-tuning it on a smaller, domain-specific dataset.",
+      "B": "Moving trained weights from a CPU to a local graphics processing unit (GPU) for inference.",
+      "C": "Using a model's predictions as input features for a classical machine learning model.",
+      "D": "Converting a regression neural network into a classification network."
+    },
+    "correctAnswer": "A",
+    "explanation": "Transfer learning is the practice of reusing a pre-trained model (trained on a massive dataset like ImageNet) as a starting point for a model on a new, related task, saving training time and data requirements.",
+    "topic": "Deep learning and neural networks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the purpose of splitting a dataset into training, validation, and testing sets, rather than just training and testing sets?",
+    "options": {
+      "A": "To train the model on train data, tune hyperparameters on validation data, and get an unbiased evaluation on test data.",
+      "B": "To increase the absolute volume of training data.",
+      "C": "To train three different models in parallel and ensemble their predictions.",
+      "D": "To isolate categorical, numerical, and date columns."
+    },
+    "correctAnswer": "A",
+    "explanation": "If you tune hyperparameters on the test set, the model's test performance becomes optimistically biased. The validation set is used to select hyperparameters (like tree depth or regularization values), leaving the test set completely unseen for final evaluation.",
+    "topic": "Model evaluation and hyperparameter tuning",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Why is Random Search often preferred over Grid Search for hyperparameter tuning in high-dimensional search spaces?",
+    "options": {
+      "A": "Random Search does not waste runs on unimportant hyperparameters, allowing it to explore more configurations within a fixed budget.",
+      "B": "Random Search is guaranteed to find the absolute global optimum parameter combination.",
+      "C": "Random Search evaluates every possible hyperparameter combination in the defined grid.",
+      "D": "Random Search reduces the computational complexity of training individual models."
+    },
+    "correctAnswer": "A",
+    "explanation": "In high-dimensional spaces, many hyperparameters have a negligible effect on performance. Grid Search wastes runs testing all combinations of these unimportant parameters. Random Search samples parameters randomly, ensuring more values of important parameters are tested.",
+    "topic": "Model evaluation and hyperparameter tuning",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "When evaluating a classification model, in what scenario is Stratified K-Fold cross-validation preferred over standard K-Fold cross-validation?",
+    "options": {
+      "A": "When the dataset exhibits severe class imbalance.",
+      "B": "When the features are highly multicollinear.",
+      "C": "When the training dataset size is extremely small (less than 100 rows).",
+      "D": "When tuning continuous regression targets."
+    },
+    "correctAnswer": "A",
+    "explanation": "Stratified K-Fold ensures that each fold contains approximately the same percentage of samples for each target class as the complete dataset. This prevents folds from having zero or very few positive class instances, which would lead to unstable evaluation metrics.",
+    "topic": "Model evaluation and hyperparameter tuning",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the primary purpose of using Nested Cross-Validation?",
+    "options": {
+      "A": "To prevent optimistic bias in model evaluation when hyperparameter tuning is performed on the same dataset.",
+      "B": "To speed up cross-validation runtimes on large datasets.",
+      "C": "To train neural networks using multiple learning rate schedules.",
+      "D": "To cross-validate datasets containing nested hierarchical categories."
+    },
+    "correctAnswer": "A",
+    "explanation": "In nested CV, an inner loop is used for hyperparameter tuning (selecting the best model configuration), while an outer loop is used for model evaluation (estimating generalization error). This ensures the validation performance is not biased by the hyperparameter selection process.",
+    "topic": "Model evaluation and hyperparameter tuning",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Under what circumstance can the Area Under the Receiver Operating Characteristic (ROC-AUC) curve give an overly optimistic view of a binary classifier's performance?",
+    "options": {
+      "A": "When evaluating a classifier on a highly imbalanced dataset with a dominant negative class.",
+      "B": "When the classification threshold is set strictly to 0.5.",
+      "C": "When the model is underfitting the training data.",
+      "D": "When the features are scaled using Min-Max scaling instead of Standardization."
+    },
+    "correctAnswer": "A",
+    "explanation": "ROC curves plot True Positive Rate against False Positive Rate. When the negative class is massive, a large number of false positives yields a small False Positive Rate (FP / (FP + TN)). Consequently, the ROC curve can look great even if the precision is poor. A Precision-Recall curve is preferred for highly imbalanced data.",
+    "topic": "Model evaluation and hyperparameter tuning",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "When analyzing learning curves, what does it indicate if both the training error and validation error are high and close to each other, even as the training size increases?",
+    "options": {
+      "A": "High bias (underfitting).",
+      "B": "High variance (overfitting).",
+      "C": "Data leakage from the test set.",
+      "D": "Optimal trade-off between bias and variance."
+    },
+    "correctAnswer": "A",
+    "explanation": "High bias (underfitting) means the model is too simple to capture the underlying trend. Both training and validation errors will be high and converge close together. In contrast, high variance (overfitting) shows low training error but high validation error.",
+    "topic": "Model evaluation and hyperparameter tuning",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which metric evaluates regression models by computing the average of the absolute differences between the predicted values and the actual values?",
+    "options": {
+      "A": "Mean Absolute Error (MAE)",
+      "B": "Mean Squared Error (MSE)",
+      "C": "Root Mean Squared Error (RMSE)",
+      "D": "R-squared (Coefficient of Determination)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Mean Absolute Error (MAE) computes the average absolute distance: (1/n) * sum(|y_true - y_pred|). Unlike MSE, MAE does not penalize outliers quadratically, representing the average error magnitude in the original target unit.",
+    "topic": "Model evaluation and hyperparameter tuning",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Why is Adjusted R-squared preferred over standard R-squared when evaluating a multiple linear regression model with many features?",
+    "options": {
+      "A": "Adjusted R-squared penalizes the score for adding features that do not improve the model's explanatory power.",
+      "B": "Adjusted R-squared is scale-invariant and bounded strictly between -1 and 1.",
+      "C": "Adjusted R-squared is computationally faster to calculate on large arrays.",
+      "D": "Adjusted R-squared handles non-linear relationships natively."
+    },
+    "correctAnswer": "A",
+    "explanation": "Adding any feature to a linear model will always increase (or keep constant) the standard R-squared, even if the feature contains noise. Adjusted R-squared accounts for the number of predictors, penalizing the score for useless columns and preventing artificial score inflation.",
+    "topic": "Model evaluation and hyperparameter tuning",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What does Cohen's Kappa statistic measure in classification evaluation?",
+    "options": {
+      "A": "The level of agreement between two raters or prediction classifications, adjusted for agreement occurring by chance.",
+      "B": "The distance between the ROC curve and the diagonal random baseline.",
+      "C": "The ratio of true positives to false negatives across imbalanced folds.",
+      "D": "The similarity between the probability distributions of training and test sets."
+    },
+    "correctAnswer": "A",
+    "explanation": "Cohen's Kappa is a robust metric for classification, especially on imbalanced datasets. It measures inter-rater agreement (or prediction agreement with actual labels) while accounting for the probability that agreement occurred purely by chance.",
+    "topic": "Model evaluation and hyperparameter tuning",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the trigger criteria for 'Early Stopping' during the training loop of an iterative model like a neural network or gradient boosted trees?",
+    "options": {
+      "A": "When the validation loss stops improving (or starts to increase) for a specified number of epochs (patience).",
+      "B": "When the training accuracy reaches exactly 100%.",
+      "C": "When the learning rate is decayed to absolute zero.",
+      "D": "When the time limit for training on the current CPU is reached."
+    },
+    "correctAnswer": "A",
+    "explanation": "Early stopping is a regularization technique. It monitors the model's performance on a validation set. When the validation loss stops decreasing and begins to rise (indicating the model is beginning to overfit), training is halted.",
+    "topic": "Model evaluation and hyperparameter tuning",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In One-Hot Encoding, what is the 'dummy variable trap', and how is it typically avoided in linear models?",
+    "options": {
+      "A": "It refers to perfect multicollinearity among encoded columns; avoided by dropping one of the dummy categories.",
+      "B": "It refers to models ignoring rare category columns; avoided by adding a random float value.",
+      "C": "It refers to high CPU memory usage; avoided by converting numbers to floats.",
+      "D": "It refers to data leakage; avoided by fitting the encoder on the validation split."
+    },
+    "correctAnswer": "A",
+    "explanation": "When a categorical feature with K categories is encoded into K binary columns, the sum of these columns equals 1. This creates perfect multicollinearity with the intercept term (the dummy variable trap). It is avoided by dropping one category (creating K-1 columns).",
+    "topic": "Feature engineering and selection",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In tree-based algorithms, how is Gini Importance (mean decrease in impurity) calculated for a specific feature?",
+    "options": {
+      "A": "By summing the total reduction in Gini Impurity brought by that feature across all splits in all trees, normalized by the total splits.",
+      "B": "By measuring the decrease in validation accuracy when the values of the feature are randomly shuffled.",
+      "C": "By calculating the correlation coefficient of the feature with the target variable.",
+      "D": "By counting the total number of times the feature is selected at root nodes."
+    },
+    "correctAnswer": "A",
+    "explanation": "Gini Importance (or Mean Decrease Impurity) measures how much a feature's splits decrease the impurity of nodes in a tree. The reductions are aggregated across all trees in a forest to rank feature importance.",
+    "topic": "Feature engineering and selection",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "How does the Recursive Feature Elimination (RFE) algorithm select features?",
+    "options": {
+      "A": "It fits a model, ranks feature importances, removes the least important features, and recursively repeats the process until the target number of features is reached.",
+      "B": "It adds features one-by-one, calculating the AIC score at each step.",
+      "C": "It projects the features onto orthogonal eigenvectors and removes low-eigenvalue components.",
+      "D": "It calculates correlation coefficients and removes features with low values."
+    },
+    "correctAnswer": "A",
+    "explanation": "RFE is a wrapper feature selection method. It fits an estimator, ranks features by weight coefficients or importances, prunes the least important features, and repeats the process on the remaining features recursively.",
+    "topic": "Feature engineering and selection",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Why is additive smoothing (e.g., m-estimate) applied during target encoding of categorical columns?",
+    "options": {
+      "A": "To blend the category mean target value with the global mean target value, preventing overfitting on low-frequency categories.",
+      "B": "To ensure that all encoded values are scaled strictly between -1 and 1.",
+      "C": "To convert continuous numerical variables into discrete bins.",
+      "D": "To speed up the one-hot encoding process for high-cardinality features."
+    },
+    "correctAnswer": "A",
+    "explanation": "For rare categories, the sample mean target value is unreliable and can cause overfitting. Additive smoothing blends the category's target mean with the overall global target mean. The fewer samples a category has, the more weight is given to the global mean.",
+    "topic": "Feature engineering and selection",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Why is it critical to scale features (e.g., standardization) before applying Principal Component Analysis (PCA)?",
+    "options": {
+      "A": "PCA maximizes variance; features with larger raw scales will dominate the components regardless of their true information content.",
+      "B": "PCA will crash with division by zero errors if features have differing variances.",
+      "C": "Scaling converts categorical variables to numbers, which PCA requires.",
+      "D": "Standardization forces all eigenvalues of the covariance matrix to be exactly 1."
+    },
+    "correctAnswer": "A",
+    "explanation": "PCA projects data along directions of maximum variance. If one feature is measured in thousands (e.g., Salary) and another in units (e.g., Age), the salary feature will have a much larger variance and dominate the principal components, rendering PCA biased towards large-scale columns.",
+    "topic": "Feature engineering and selection",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In feature engineering, what does an 'interaction term' refer to?",
+    "options": {
+      "A": "A new feature created by multiplying, dividing, or combining two or more existing features to capture joint non-additive effects.",
+      "B": "A variable that tracks the correlation coefficient between features and the target.",
+      "C": "A data cleaning step that resolves duplicate rows using string matching.",
+      "D": "The feedback loop between a model's prediction and the feature scaling parameters."
+    },
+    "correctAnswer": "A",
+    "explanation": "An interaction feature represents the joint effect of two or more independent variables. For example, multiplying 'Temperature' and 'Humidity' captures their combined impact on a target, which a model using only individual linear terms might miss.",
+    "topic": "Feature engineering and selection",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the process of converting a continuous numerical feature into discrete intervals (bins) called?",
+    "options": {
+      "A": "Discretization / Binning",
+      "B": "One-Hot Encoding",
+      "C": "Dimensionality Reduction",
+      "D": "Normalisation"
+    },
+    "correctAnswer": "A",
+    "explanation": "Discretization (or binning) partitions a continuous variable into discrete intervals or classes (e.g., age into age groups). This can help linear models capture non-linear relationships.",
+    "topic": "Feature engineering and selection",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "If two features in a dataset have a Pearson correlation coefficient of 0.98, what is the standard feature selection action and why?",
+    "options": {
+      "A": "Drop one of the features, because they are highly redundant and can cause instability in linear/logistic regression models.",
+      "B": "Keep both features, because they double the mathematical signal for classification models.",
+      "C": "Multiply both features together to create a non-linear interaction term.",
+      "D": "Drop both features, because high correlation indicates that the data is corrupted."
+    },
+    "correctAnswer": "A",
+    "explanation": "A correlation of 0.98 indicates extreme collinearity. Keeping both features provides redundant information, inflates the variance of coefficients in linear models, and increases training time. Dropping one of the two resolves the issue.",
+    "topic": "Feature engineering and selection",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the primary advantage of Permutation Feature Importance over built-in tree-based feature importances?",
+    "options": {
+      "A": "It is model-agnostic and evaluated on a validation/test set, preventing bias towards high-cardinality features.",
+      "B": "It is much faster and does not require refitting or evaluating the model.",
+      "C": "It guarantees that the features selected will be linearly independent.",
+      "D": "It converts continuous variables into optimal target-encoded numbers."
+    },
+    "correctAnswer": "A",
+    "explanation": "Built-in Gini importance can bias toward continuous or high-cardinality categorical features because they have more split opportunities. Permutation importance is model-agnostic and computed by shuffling a feature's values on a validation set and measuring the drop in performance, yielding an unbiased score.",
+    "topic": "Feature engineering and selection",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is Frequency Encoding (or Count Encoding) in categorical feature engineering?",
+    "options": {
+      "A": "Replacing each categorical value with its occurrence frequency or percentage in the dataset.",
+      "B": "Replacing each category with its position in alphabetical order.",
+      "C": "Mapping each category to the average target value of that category.",
+      "D": "Dividing the categorical string length by the total row count."
+    },
+    "correctAnswer": "A",
+    "explanation": "Frequency encoding replaces categorical values with their frequency counts or relative frequencies in the training data, allowing models to leverage the popularity/prevalence of a category as a numerical signal.",
+    "topic": "Feature engineering and selection",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In the pandas library, which syntax is the correct way to filter a DataFrame 'df' to keep only rows where the column 'Age' is strictly greater than 30?",
+    "options": {
+      "A": "df[df['Age'] > 30]",
+      "B": "df.filter('Age' > 30)",
+      "C": "df.where(df['Age'] > 30)",
+      "D": "df.select(df['Age'] > 30)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Boolean indexing in pandas is performed by passing a boolean Series inside square brackets, e.g., df[df['Age'] > 30], which filters the DataFrame to include only rows where the condition evaluates to True.",
+    "topic": "Python libraries (numpy, pandas, scikit-learn)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the key functional difference between groupby().agg() and groupby().transform() in pandas?",
+    "options": {
+      "A": "agg() collapses the data, returning one row per group; transform() returns a Series/DataFrame of the original shape with group statistics mapped back to rows.",
+      "B": "agg() is only for numerical calculations; transform() is only for string functions.",
+      "C": "transform() deletes null values automatically, whereas agg() preserves them.",
+      "D": "agg() modifies the original DataFrame in-place; transform() returns a shallow copy."
+    },
+    "correctAnswer": "A",
+    "explanation": "In pandas, groupby().agg() reduces the rows to group-level aggregates (one row per group). groupby().transform() calculates group-level statistics but broadcasts the results back to match the original index and shape of the input DataFrame.",
+    "topic": "Python libraries (numpy, pandas, scikit-learn)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "According to NumPy broadcasting rules, when are two dimensions compatible for element-wise operations?",
+    "options": {
+      "A": "If they are equal, or if one of them is 1.",
+      "B": "If both dimensions are even numbers.",
+      "C": "If one dimension is a multiple of the other.",
+      "D": "Only if both dimensions are exactly equal."
+    },
+    "correctAnswer": "A",
+    "explanation": "NumPy broadcasting compares array shapes element-wise starting from trailing dimensions. Two dimensions are compatible if: 1) they are equal, or 2) one of them is 1. If these conditions are not met, a ValueError is raised.",
+    "topic": "Python libraries (numpy, pandas, scikit-learn)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "How does using a scikit-learn Pipeline prevent data leakage during cross-validation?",
+    "options": {
+      "A": "It ensures that transformers are fit ONLY on the training folds and applied (transformed) to the validation/test fold during each CV split.",
+      "B": "It encrypts the target columns during the cross-validation training splits.",
+      "C": "It automatically removes outliers from validation folds before fitting estimators.",
+      "D": "It forces the model to use the same random state for all iterations."
+    },
+    "correctAnswer": "A",
+    "explanation": "If you scale the whole dataset before cross-validation, information from the validation folds leaks into the scaler (e.g., the mean/variance of the test data is used to scale training data). A Pipeline encapsulates transformers and estimators, fitting the scaler only on the training split of each fold.",
+    "topic": "Python libraries (numpy, pandas, scikit-learn)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which base classes must you inherit from, and which methods must you implement, to create a custom transformer compatible with scikit-learn's Pipeline?",
+    "options": {
+      "A": "BaseEstimator and TransformerMixin; implement fit() and transform().",
+      "B": "ClassifierMixin and RegressorMixin; implement fit() and predict().",
+      "C": "Pipeline and FeatureUnion; implement fit_transform().",
+      "D": "TransformerMixin and EstimatorMixin; implement fit_predict()."
+    },
+    "correctAnswer": "A",
+    "explanation": "To create a custom transformer, you inherit from BaseEstimator (giving you get_params/set_params) and TransformerMixin (which automatically provides fit_transform from your fit and transform). You then implement the fit(X, y=None) and transform(X) methods.",
+    "topic": "Python libraries (numpy, pandas, scikit-learn)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which NumPy function is used to create a 1D array of 10 elements, all initialized to zero?",
+    "options": {
+      "A": "np.zeros(10)",
+      "B": "np.empty(10)",
+      "C": "np.ones(10) - 1",
+      "D": "np.arange(10) * 0"
+    },
+    "correctAnswer": "A",
+    "explanation": "np.zeros(shape) returns a new array of given shape and type, filled with zeros. np.zeros(10) creates a 1D array with 10 zero elements.",
+    "topic": "Python libraries (numpy, pandas, scikit-learn)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which parameters in pandas.merge should be set to perform the equivalent of an SQL LEFT OUTER JOIN between df1 (left) and df2 (right) on a common column 'id'?",
+    "options": {
+      "A": "pd.merge(df1, df2, on='id', how='left')",
+      "B": "pd.merge(df1, df2, left_on='id', how='outer')",
+      "C": "df1.join(df2, on='id', side='left')",
+      "D": "pd.concat([df1, df2], axis=1, join='left')"
+    },
+    "correctAnswer": "A",
+    "explanation": "In pandas, pd.merge(df1, df2, on='key', how='left') merges two DataFrames using the 'key' column, keeping all rows from the left DataFrame (df1) and matching rows from the right (df2), filling non-matches with NaN.",
+    "topic": "Python libraries (numpy, pandas, scikit-learn)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the core difference between calling fit() and calling fit_transform() on a scikit-learn StandardScaler?",
+    "options": {
+      "A": "fit() calculates the mean and standard deviation; fit_transform() calculates the statistics AND returns the scaled data.",
+      "B": "fit() is used for training data; fit_transform() is used only for validation and test data.",
+      "C": "fit() converts categorical features to integers; fit_transform() scales them.",
+      "D": "There is no difference; fit_transform() is a legacy alias for fit()."
+    },
+    "correctAnswer": "A",
+    "explanation": "fit() computes the mean and standard deviation of the input features and saves them as internal states. fit_transform() does this computation and immediately applies the transformation to scale the features, returning the scaled NumPy array.",
+    "topic": "Python libraries (numpy, pandas, scikit-learn)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is a highly effective way to reduce the memory footprint of a pandas DataFrame that contains low-cardinality categorical string columns?",
+    "options": {
+      "A": "Convert the columns' data types from 'object' to 'category'.",
+      "B": "Apply a log transformation to the string lengths.",
+      "C": "Save the DataFrame as a compressed CSV file.",
+      "D": "Convert the columns to 64-bit float representations."
+    },
+    "correctAnswer": "A",
+    "explanation": "For columns with strings that repeat often (low cardinality), converting the type to 'category' stores the unique string values once in memory and represents the rows using cheap integer codes, dramatically reducing memory usage.",
+    "topic": "Python libraries (numpy, pandas, scikit-learn)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Why are vectorized operations in NumPy significantly faster than standard Python loops for numerical array computations?",
+    "options": {
+      "A": "NumPy arrays are stored in contiguous memory blocks and execution is compiled in C, bypassing Python's dynamic type checking and looping overhead.",
+      "B": "NumPy automatically runs all vectorized operations on parallel threads across remote GPUs.",
+      "C": "NumPy converts all Python code to Cython at runtime.",
+      "D": "Vectorization restricts all numbers to integers, which are faster to process."
+    },
+    "correctAnswer": "A",
+    "explanation": "NumPy arrays are homogeneous and stored in contiguous memory blocks. Vectorized operations execute highly optimized compiled C code under the hood. This eliminates the overhead of Python's dynamic typing, reference counting, and interpreter loop.",
+    "topic": "Python libraries (numpy, pandas, scikit-learn)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which plot is specifically designed to visualize the five-number summary (minimum, Q1, median, Q3, maximum) and detect outliers?",
+    "options": {
+      "A": "Box Plot",
+      "B": "Histogram",
+      "C": "Scatter Plot",
+      "D": "QQ Plot"
+    },
+    "correctAnswer": "A",
+    "explanation": "A Box Plot (or box-and-whisker plot) displays the median, lower and upper quartiles (Q1, Q3), and minimum/maximum values, with whiskers extending to 1.5 * IQR. Points beyond the whiskers are plotted as individual outliers.",
+    "topic": "Exploratory Data Analysis (EDA) and preprocessing",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "If a feature's distribution is highly right-skewed, which mathematical transformation is most commonly applied to compress the right tail and make the distribution more normal?",
+    "options": {
+      "A": "Logarithmic Transformation (e.g., log(x + 1))",
+      "B": "Exponential Transformation (e.g., e^x)",
+      "C": "Min-Max Scaling to [0, 1]",
+      "D": "Standardization (Z-score)"
+    },
+    "correctAnswer": "A",
+    "explanation": "A logarithmic transformation normalizes right-skewed distributions. It compresses the scale of larger values much more than smaller values, bringing the long tail closer to the center.",
+    "topic": "Exploratory Data Analysis (EDA) and preprocessing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In a dataset of customer profiles, the 'Income' column has missing values. If income is missing because wealthier customers are less likely to report it, which missingness category applies?",
+    "options": {
+      "A": "Missing Not at Random (MNAR)",
+      "B": "Missing Completely at Random (MCAR)",
+      "C": "Missing at Random (MAR)",
+      "D": "Ignorable Missingness"
+    },
+    "correctAnswer": "A",
+    "explanation": "Since the probability of a value being missing depends directly on the unobserved value itself (higher income), the mechanism is Missing Not at Random (MNAR).",
+    "topic": "Exploratory Data Analysis (EDA) and preprocessing",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the primary difference between normalization (Min-Max Scaling) and standardization (Z-score normalization)?",
+    "options": {
+      "A": "Normalization scales values to a fixed range (usually [0, 1]), while standardization scales values to have a mean of 0 and a standard deviation of 1.",
+      "B": "Standardization is only applicable to categorical columns, while normalization is for numerical columns.",
+      "C": "Normalization makes the distribution normal, while standardization makes the distribution uniform.",
+      "D": "There is no difference; they use identical mathematical formulas."
+    },
+    "correctAnswer": "A",
+    "explanation": "Min-Max Normalization shifts and rescales values so they end up bounded between 0 and 1. Standardization centers the data by subtracting the mean and dividing by the standard deviation, resulting in a distribution with mean=0 and variance=1 (with no bounding limits).",
+    "topic": "Exploratory Data Analysis (EDA) and preprocessing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which visual diagnostic plot compares the quantiles of a sample dataset against a theoretical normal distribution to check if the sample is normally distributed?",
+    "options": {
+      "A": "Quantile-Quantile (Q-Q) Plot",
+      "B": "Receiver Operating Characteristic (ROC) Plot",
+      "C": "Violin Plot",
+      "D": "Residual Plot"
+    },
+    "correctAnswer": "A",
+    "explanation": "A Q-Q plot compares the sorted quantiles of your sample against the theoretical quantiles of a normal distribution. If the data is normally distributed, the points will fall approximately along a straight diagonal line.",
+    "topic": "Exploratory Data Analysis (EDA) and preprocessing",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which probability distribution models the number of successes in a fixed number of independent Bernoulli trials, where the probability of success is constant?",
+    "options": {
+      "A": "Binomial Distribution",
+      "B": "Poisson Distribution",
+      "C": "Normal Distribution",
+      "D": "Exponential Distribution"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Binomial distribution models the number of successes in 'n' independent yes/no trials, where each trial has the same probability of success 'p'.",
+    "topic": "Probability and statistical foundations",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What does a Type II error represent in hypothesis testing?",
+    "options": {
+      "A": "Failing to reject a false null hypothesis (False Negative).",
+      "B": "Rejecting a true null hypothesis (False Positive).",
+      "C": "Rejecting a true alternative hypothesis.",
+      "D": "Selecting an incorrect sample size for the test."
+    },
+    "correctAnswer": "A",
+    "explanation": "A Type II error (false negative) occurs when the test fails to reject the null hypothesis, even though the alternative hypothesis is true in reality.",
+    "topic": "Probability and statistical foundations",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In probability theory, if P(A) = 0.5, P(B) = 0.4, and events A and B are independent, what is the joint probability P(A ∩ B)?",
+    "options": {
+      "A": "0.20",
+      "B": "0.90",
+      "C": "0.10",
+      "D": "0.60"
+    },
+    "correctAnswer": "A",
+    "explanation": "For independent events, the joint probability is the product of their individual probabilities: P(A ∩ B) = P(A) * P(B) = 0.5 * 0.4 = 0.20.",
+    "topic": "Probability and statistical foundations",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the relationship between the standard deviation and the variance of a statistical variable?",
+    "options": {
+      "A": "The standard deviation is the square root of the variance.",
+      "B": "The standard deviation is twice the variance.",
+      "C": "The variance is the square root of the standard deviation.",
+      "D": "They are always equal."
+    },
+    "correctAnswer": "A",
+    "explanation": "Variance measures the average of squared deviations from the mean. Standard deviation is the square root of the variance, returning the dispersion metric back to the original units of measurement.",
+    "topic": "Probability and statistical foundations",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which theorem states that as a sample size grows, the sample mean gets closer to the expected value (mean) of the population?",
+    "options": {
+      "A": "Law of Large Numbers (LLN)",
+      "B": "Central Limit Theorem (CLT)",
+      "C": "Bayes' Theorem",
+      "D": "Chebyshev's Inequality"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Law of Large Numbers (LLN) states that the average of the results obtained from a large number of trials should be close to the expected value and will tend to become closer as more trials are performed.",
+    "topic": "Probability and statistical foundations",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which regularization method adds both L1 and L2 penalties to the loss function of a linear model?",
+    "options": {
+      "A": "Elastic Net",
+      "B": "Ridge Regression",
+      "C": "Lasso Regression",
+      "D": "Ordinary Least Squares (OLS)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Elastic Net is a regularized regression method that linearly combines the L1 (Lasso) and L2 (Ridge) penalties. This is useful when there are multiple correlated features.",
+    "topic": "Supervised learning (linear models, trees, SVM)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the primary function of the sigmoid function in Logistic Regression?",
+    "options": {
+      "A": "To map any real-valued number into a probability value between 0 and 1.",
+      "B": "To calculate the error of the model predictions.",
+      "C": "To find the optimal weight coefficients using matrix inversion.",
+      "D": "To scale continuous features to have zero mean and unit variance."
+    },
+    "correctAnswer": "A",
+    "explanation": "The sigmoid function, S(z) = 1 / (1 + e^-z), maps inputs (logits) from negative infinity to positive infinity into a probability range [0, 1], facilitating binary classification.",
+    "topic": "Supervised learning (linear models, trees, SVM)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What does Gini Impurity measure in a Decision Tree?",
+    "options": {
+      "A": "The probability that a randomly chosen element from the set would be incorrectly labeled if it were randomly labeled according to the distribution of labels in the subset.",
+      "B": "The difference between the predicted value and the actual target value.",
+      "C": "The linear distance between support vectors.",
+      "D": "The number of epochs required to train a single tree node."
+    },
+    "correctAnswer": "A",
+    "explanation": "Gini Impurity is a metric to measure the probability of misclassifying a randomly chosen element if it were randomly labeled according to the class distribution in the node. It is 0 when the node is completely pure.",
+    "topic": "Supervised learning (linear models, trees, SVM)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In a Support Vector Machine (SVM), what does the 'gamma' parameter in the RBF kernel define?",
+    "options": {
+      "A": "How far the influence of a single training example reaches, with low values meaning 'far' and high values meaning 'close'.",
+      "B": "The weight of the L1 regularization term.",
+      "C": "The maximum depth of the underlying decision tree.",
+      "D": "The rate at which the learning rate decays over iterations."
+    },
+    "correctAnswer": "A",
+    "explanation": "The 'gamma' parameter controls the width of the RBF kernel. A small gamma means a large kernel radius, meaning points far away from each other are considered similar, leading to a smoother decision boundary. A large gamma restricts influence to points close by, leading to a more complex boundary.",
+    "topic": "Supervised learning (linear models, trees, SVM)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which ensemble technique builds multiple models sequentially, where each new model is trained to predict the residuals of the preceding model?",
+    "options": {
+      "A": "Boosting",
+      "B": "Bagging",
+      "C": "Stacking",
+      "D": "Voting"
+    },
+    "correctAnswer": "A",
+    "explanation": "Boosting (e.g., AdaBoost, Gradient Boosting) is an ensemble method where weak learners are trained sequentially, each focusing on correcting the errors/residuals of the previous models.",
+    "topic": "Supervised learning (linear models, trees, SVM)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which distance metric is most commonly used by default in K-Means clustering?",
+    "options": {
+      "A": "Euclidean Distance",
+      "B": "Manhattan Distance",
+      "C": "Cosine Similarity",
+      "D": "Mahalanobis Distance"
+    },
+    "correctAnswer": "A",
+    "explanation": "Standard K-Means uses Euclidean distance (L2 norm) to compute the distance between points and centroids, which aligns with minimizing the within-cluster sum of squares.",
+    "topic": "Unsupervised learning (clustering, dimensionality reduction)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "How does the DBSCAN algorithm classify points that are within the epsilon neighborhood of a core point but do not have enough neighbors themselves to be core points?",
+    "options": {
+      "A": "Border points",
+      "B": "Noise points",
+      "C": "Centroids",
+      "D": "Support vectors"
+    },
+    "correctAnswer": "A",
+    "explanation": "In DBSCAN, a point is a core point if it has at least 'min_samples' in its neighborhood. A point is a border point if it is not a core point but is within the neighborhood of a core point. Other points are labeled as noise/outliers.",
+    "topic": "Unsupervised learning (clustering, dimensionality reduction)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the primary difference between PCA and Linear Discriminant Analysis (LDA) regarding their optimization objectives?",
+    "options": {
+      "A": "PCA is unsupervised and maximizes variance; LDA is supervised and maximizes class separability.",
+      "B": "PCA is supervised, while LDA is unsupervised.",
+      "C": "PCA projects data to non-linear spaces, whereas LDA is purely linear.",
+      "D": "PCA is used for clustering, while LDA is strictly for regression."
+    },
+    "correctAnswer": "A",
+    "explanation": "PCA is an unsupervised method that finds directions of maximum variance without considering class labels. LDA is a supervised method that seeks to project features onto a lower-dimensional space that maximizes the ratio of between-class variance to within-class variance.",
+    "topic": "Unsupervised learning (clustering, dimensionality reduction)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is a main drawback of K-Means clustering?",
+    "options": {
+      "A": "The user must specify the number of clusters (K) in advance.",
+      "B": "It is slow and cannot scale to large datasets.",
+      "C": "It cannot handle continuous numerical features.",
+      "D": "It always yields different cluster boundaries on identical runs."
+    },
+    "correctAnswer": "A",
+    "explanation": "K-Means requires the number of clusters 'K' to be chosen beforehand. If the true cluster count is unknown, the user must rely on heuristics like the elbow method or silhouette scores to estimate it.",
+    "topic": "Unsupervised learning (clustering, dimensionality reduction)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which dimensionality reduction technique is commonly used to construct dense embedding spaces for words (e.g., in Word2Vec) or visualize high-dimensional text data?",
+    "options": {
+      "A": "t-SNE / t-distributed Stochastic Neighbor Embedding",
+      "B": "StandardScaler",
+      "C": "DBSCAN",
+      "D": "Linear Regression"
+    },
+    "correctAnswer": "A",
+    "explanation": "t-SNE is highly effective at reducing high-dimensional embeddings (like word embeddings or document vectors) to 2D/3D spaces for visualization, preserving local clusters.",
+    "topic": "Unsupervised learning (clustering, dimensionality reduction)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What does the ReLU activation function output for an input value of -3.5?",
+    "options": {
+      "A": "0.0",
+      "B": "-3.5",
+      "C": "3.5",
+      "D": "0.5"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Rectified Linear Unit (ReLU) function is defined as f(x) = max(0, x). For any negative input, it returns exactly 0.0.",
+    "topic": "Deep learning and neural networks",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which layer type in a neural network is commonly used to process grid-like topology data, such as images, to extract spatial features?",
+    "options": {
+      "A": "Convolutional Layer",
+      "B": "LSTM Layer",
+      "C": "Dense / Fully Connected Layer",
+      "D": "Recurrent Layer"
+    },
+    "correctAnswer": "A",
+    "explanation": "Convolutional layers apply kernel filters that slide over the input height and width, capturing local spatial dependencies (e.g., edges, textures in images).",
+    "topic": "Deep learning and neural networks",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the primary cause of the 'exploding gradient' problem in deep neural networks, and what is a common mitigation strategy?",
+    "options": {
+      "A": "Repeated multiplication of gradients greater than 1; mitigated by gradient clipping.",
+      "B": "Using the ReLU activation function; mitigated by increasing the learning rate.",
+      "C": "Too many dropout layers; mitigated by removing hidden layers.",
+      "D": "Having too few weights in early layers; mitigated by zero initialization."
+    },
+    "correctAnswer": "A",
+    "explanation": "Exploding gradients occur when large gradients accumulate during backpropagation, leading to massive updates to weights and unstable training. Gradient clipping, which caps gradients at a maximum threshold, is a standard remedy.",
+    "topic": "Deep learning and neural networks",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which activation function is most appropriate in the output layer of a multi-label classification neural network where each sample can belong to multiple classes simultaneously?",
+    "options": {
+      "A": "Sigmoid",
+      "B": "Softmax",
+      "C": "ReLU",
+      "D": "Tanh"
+    },
+    "correctAnswer": "A",
+    "explanation": "For multi-label classification, each output node is treated as an independent binary classification task. Applying the sigmoid activation function to each output node calculates a separate probability [0, 1] for each class.",
+    "topic": "Deep learning and neural networks",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is a major advantage of using deep learning models over classical machine learning algorithms on unstructured data like raw audio or images?",
+    "options": {
+      "A": "Deep learning models automatically perform hierarchical feature extraction, reducing the need for manual feature engineering.",
+      "B": "Deep learning models require much less training data to reach optimal performance.",
+      "C": "Deep learning models are highly interpretable and their weights are easy to analyze.",
+      "D": "Deep learning models can be trained instantaneously on low-power CPUs."
+    },
+    "correctAnswer": "A",
+    "explanation": "Deep neural networks learn representations hierarchically (e.g., edges -> shapes -> object parts in images). This automates feature extraction directly from raw pixels, eliminating the need for manual hand-crafted features.",
+    "topic": "Deep learning and neural networks",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What does a Mean Squared Error (MSE) value of 0.0 indicate for a regression model?",
+    "options": {
+      "A": "The model's predictions match the actual target values perfectly.",
+      "B": "The model has high variance and is overfitting.",
+      "C": "The model has failed to learn any relationship.",
+      "D": "The model's coefficient values are all equal to zero."
+    },
+    "correctAnswer": "A",
+    "explanation": "MSE is the average of squared errors. An MSE of 0.0 means every prediction error is zero, indicating a perfect fit on the evaluated dataset.",
+    "topic": "Model evaluation and hyperparameter tuning",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "When tuning hyperparameters, how does Bayesian Optimization compare to Random Search?",
+    "options": {
+      "A": "Bayesian Optimization uses past evaluation results to construct a probabilistic model of the objective function, picking new candidates intelligently.",
+      "B": "Bayesian Optimization evaluates parameters completely at random to avoid bias.",
+      "C": "Bayesian Optimization is only applicable to linear regression models.",
+      "D": "Bayesian Optimization requires evaluating every possible parameter grid value."
+    },
+    "correctAnswer": "A",
+    "explanation": "Bayesian optimization uses a surrogate model (like Gaussian Processes) to model the objective function based on past runs. It uses an acquisition function to balance exploration and exploitation, finding optimal parameters in fewer steps than random search.",
+    "topic": "Model evaluation and hyperparameter tuning",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What does the diagonal line from (0,0) to (1,1) represent on an ROC curve plot?",
+    "options": {
+      "A": "The performance of a completely random classifier (AUC = 0.5).",
+      "B": "A classifier with perfect accuracy (AUC = 1.0).",
+      "C": "The threshold where precision matches recall.",
+      "D": "A classifier that outputs only the majority class."
+    },
+    "correctAnswer": "A",
+    "explanation": "The diagonal line represents a classifier that makes random guesses. Its True Positive Rate is equal to its False Positive Rate at all thresholds, resulting in an Area Under the Curve (AUC) of 0.5.",
+    "topic": "Model evaluation and hyperparameter tuning",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In classification, if we want to minimize the number of False Positives, which evaluation metric should we maximize?",
+    "options": {
+      "A": "Precision",
+      "B": "Recall",
+      "C": "Sensitivity",
+      "D": "Mean Squared Log Error"
+    },
+    "correctAnswer": "A",
+    "explanation": "Precision = TP / (TP + FP). To minimize False Positives (FP), we maximize Precision, ensuring that when the model predicts the positive class, it is highly likely to be correct.",
+    "topic": "Model evaluation and hyperparameter tuning",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the primary drawback of using validation set performance to select the final model hyperparameters?",
+    "options": {
+      "A": "The selected model may slightly overfit the validation set, requiring a separate test set for unbiased performance evaluation.",
+      "B": "It increases the number of features in the training dataset.",
+      "C": "It requires writing custom database storage protocols.",
+      "D": "It forces the validation split to have a mean of zero."
+    },
+    "correctAnswer": "A",
+    "explanation": "Because hyperparameters are selected specifically to maximize validation set performance, the validation set is 'leaked' into the tuning process. Thus, validation metrics are slightly optimistic, and an independent test set is required to estimate generalization accurately.",
+    "topic": "Model evaluation and hyperparameter tuning",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which feature selection technique evaluates the statistical significance of each feature independently against the target variable using univariate tests like ANOVA or Mutual Information?",
+    "options": {
+      "A": "Filter methods",
+      "B": "Wrapper methods",
+      "C": "Embedded methods",
+      "D": "Recursive Feature Elimination"
+    },
+    "correctAnswer": "A",
+    "explanation": "Filter methods select features based on their individual statistical relationships with the target (e.g., correlation, ANOVA F-value, Mutual Information), independently of any machine learning model.",
+    "topic": "Feature engineering and selection",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is a main risk of using target encoding on categorical columns that contain many categories with only one or two rows each?",
+    "options": {
+      "A": "Severe overfitting, as the encoded value directly reveals the target value for those rows.",
+      "B": "High multicollinearity between the encoded columns.",
+      "C": "Underestimating the variance of the target variable.",
+      "D": "The encoder crashing due to division by zero errors."
+    },
+    "correctAnswer": "A",
+    "explanation": "For rare categories, the category target mean matches the target of those few samples. This introduces a direct target leak into the features, causing the model to overfit heavily on those rows. Smoothing helps prevent this.",
+    "topic": "Feature engineering and selection",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which regularization technique performs built-in feature selection by shrinking coefficients of less useful features exactly to zero?",
+    "options": {
+      "A": "L1 (Lasso) Regularisation",
+      "B": "L2 (Ridge) Regularisation",
+      "C": "Ordinary Least Squares",
+      "D": "Min-Max Scaling"
+    },
+    "correctAnswer": "A",
+    "explanation": "Lasso regression adds an absolute value penalty. The geometry of the L1 diamond constraint allows some coefficient weights to become exactly zero, effectively dropping those features from the model.",
+    "topic": "Feature engineering and selection",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the process of generating new features by applying mathematical transformations (like square root or square) to existing continuous variables called?",
+    "options": {
+      "A": "Polynomial Feature Expansion",
+      "B": "One-Hot Encoding",
+      "C": "Principal Component Analysis",
+      "D": "Binarisation"
+    },
+    "correctAnswer": "A",
+    "explanation": "Polynomial feature expansion generates new columns representing the powers and cross-products of features (e.g., x1^2, x1*x2), allowing linear models to fit non-linear curved trends.",
+    "topic": "Feature engineering and selection",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "How does Principal Component Analysis (PCA) handle categorical features?",
+    "options": {
+      "A": "PCA requires all input features to be numerical; categorical variables must be encoded (e.g., one-hot encoded) before PCA can be applied.",
+      "B": "PCA automatically treats strings as numerical categories.",
+      "C": "PCA projects categorical features onto non-linear eigenvectors directly.",
+      "D": "PCA drops all categorical columns from the dataset automatically."
+    },
+    "correctAnswer": "A",
+    "explanation": "PCA relies on covariance matrix calculations, which require continuous numerical inputs. Any categorical columns must be encoded numerically first.",
+    "topic": "Feature engineering and selection",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In pandas, which function is used to convert a categorical column containing string values into numerical dummy indicator columns?",
+    "options": {
+      "A": "pd.get_dummies()",
+      "B": "pd.to_numeric()",
+      "C": "pd.factorize()",
+      "D": "pd.categorical()"
+    },
+    "correctAnswer": "A",
+    "explanation": "pd.get_dummies() converts categorical variables into dummy/indicator columns (one-hot encoding representation).",
+    "topic": "Python libraries (numpy, pandas, scikit-learn)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which numpy function returns the index locations of elements that satisfy a specific conditional expression?",
+    "options": {
+      "A": "np.where()",
+      "B": "np.select()",
+      "C": "np.argmax()",
+      "D": "np.index()"
+    },
+    "correctAnswer": "A",
+    "explanation": "np.where(condition) returns a tuple of arrays containing the indices of elements in the array where the condition is True.",
+    "topic": "Python libraries (numpy, pandas, scikit-learn)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "What is the scikit-learn class used to impute missing values in a dataset using strategies like mean, median, or most frequent?",
+    "options": {
+      "A": "SimpleImputer",
+      "B": "KNNImputer",
+      "C": "IterativeImputer",
+      "D": "MissingIndicator"
+    },
+    "correctAnswer": "A",
+    "explanation": "SimpleImputer provides basic imputation strategies (e.g., replacing NaN with the mean, median, mode, or a constant value) for numerical and categorical columns.",
+    "topic": "Python libraries (numpy, pandas, scikit-learn)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "In pandas, what is the key difference between the copy() method and assigning a DataFrame variable to another (e.g., df2 = df1)?",
+    "options": {
+      "A": "copy() creates a new object in memory; assignment just creates a reference to the same original DataFrame.",
+      "B": "Assignment copies the data; copy() only creates a pointer.",
+      "C": "copy() can only be done on series objects, not DataFrames.",
+      "D": "There is no difference in memory allocations."
+    },
+    "correctAnswer": "A",
+    "explanation": "Simple assignment (df2 = df1) copies the reference to the object. Modifying df2 will modify df1. df.copy() creates a deep/shallow copy, allocating new memory so modifications to the copy do not affect the original.",
+    "topic": "Python libraries (numpy, pandas, scikit-learn)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "data-science",
+    "questionType": "MCQ",
+    "text": "Which scikit-learn model selection utility is used to perform a search over a specified parameter grid, evaluating all combinations using cross-validation?",
+    "options": {
+      "A": "GridSearchCV",
+      "B": "RandomizedSearchCV",
+      "C": "cross_val_score",
+      "D": "KFold"
+    },
+    "correctAnswer": "A",
+    "explanation": "GridSearchCV exhaustively considers all parameter combinations defined in a grid dictionary, evaluating each configuration using cross-validation to select the best set of hyperparameters.",
+    "topic": "Python libraries (numpy, pandas, scikit-learn)",
+    "difficulty": "EASY"
+  }
+]

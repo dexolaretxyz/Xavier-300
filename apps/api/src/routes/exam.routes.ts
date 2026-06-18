@@ -66,21 +66,20 @@ router.post('/start', authenticate, async (req: express.Request, res, next) => {
     // 3. Get and shuffle questions
     let questions;
     try {
-      questions = await examService.getRandomQuestions(certId, cert.questionCount);
+      questions = await examService.getDailyQuestionsForUser(certId, userId, cert.questionCount);
     } catch (err: any) {
       return res.status(400).json({ success: false, error: { code: 'NOT_ENOUGH_QUESTIONS', message: err.message } });
     }
 
     const shuffledQuestions = questions.map(q => {
-      const shuffled = examService.shuffleOptions(q);
       // Strip correct answer before sending to client, but include type & image for display
       return {
-        id: shuffled.id,
-        text: shuffled.text,
-        options: shuffled.options,
-        questionType: shuffled.questionType || 'MCQ',
-        imageUrl: shuffled.imageUrl || null,
-        imageAlt: shuffled.imageAlt || null,
+        id: q.id,
+        text: q.text,
+        options: q.options as any,
+        questionType: q.questionType || 'MCQ',
+        imageUrl: q.imageUrl || null,
+        imageAlt: q.imageAlt || null,
         // No correctAnswer or explanation included!
       };
     });
@@ -151,8 +150,13 @@ router.post('/:id/submit', authenticate, async (req: express.Request, res, next)
       where: { id: { in: questionIds } }
     });
 
-    // 3. Calculate Results
-    const results = examService.calculateResults(answers, questions);
+    // 3. Calculate Results using deterministic seed based on start time
+    const dailySeed = examService.getDailySeed(attempt.startedAt);
+    const userSeed = attempt.userId.split('').reduce((acc, char) => 
+      acc + char.charCodeAt(0), 0);
+    const combinedSeed = dailySeed + userSeed;
+
+    const results = examService.calculateResults(answers, questions, combinedSeed);
 
     // 4. Save initial results (without AI recommendations)
     const updatedAttempt = await prisma.examAttempt.update({

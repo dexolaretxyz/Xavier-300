@@ -1,0 +1,1202 @@
+[
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "A company wants to protect their application from a localized power outage in a single datacenter while keeping network latency minimal. Which Azure feature should they use?",
+    "options": {
+      "A": "Availability Zones",
+      "B": "Resource Groups",
+      "C": "Geographic Regions",
+      "D": "Management Groups"
+    },
+    "correctAnswer": "A",
+    "explanation": "Availability Zones are physically separate locations within an Azure region that have independent power, cooling, and networking. Using them protects applications from datacenter-level failures.",
+    "topic": "Core Azure architectural components",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "What is the primary purpose of Azure Region Pairs?",
+    "options": {
+      "A": "To provide automatic replication of services and data across at least 300 miles for disaster recovery",
+      "B": "To load-balance web traffic between adjacent virtual networks",
+      "C": "To double the subscription limits for resource creation",
+      "D": "To group resources together for easier billing management"
+    },
+    "correctAnswer": "A",
+    "explanation": "Region pairs are located at least 300 miles apart and receive priority recovery during regional outages, minimizing risk from natural disasters or broad geographic outages.",
+    "topic": "Core Azure architectural components",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "If you delete an Azure Resource Group, what happens to the resources contained within it?",
+    "options": {
+      "A": "All resources within the group are automatically deleted",
+      "B": "The resources remain intact but are moved to a default resource group",
+      "C": "The deletion fails unless all resources inside are deleted manually first",
+      "D": "Only compute resources are deleted, while storage resources are preserved"
+    },
+    "correctAnswer": "A",
+    "explanation": "Resource Groups define a lifecycle boundary. Deleting a resource group automatically deletes all resources managed inside it.",
+    "topic": "Core Azure architectural components",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "What is the maximum depth level of the Management Group hierarchy tree in Azure, excluding the root level?",
+    "options": {
+      "A": "6 levels",
+      "B": "10 levels",
+      "C": "3 levels",
+      "D": "20 levels"
+    },
+    "correctAnswer": "A",
+    "explanation": "Management groups support a hierarchy that can go up to six levels deep, excluding the root level.",
+    "topic": "Core Azure architectural components",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which Azure sovereign region is physically isolated and specifically designed to meet strict security and compliance requirements for US federal, state, and local government agencies?",
+    "options": {
+      "A": "Azure Government",
+      "B": "Azure US East",
+      "C": "Azure Dedicated Cloud",
+      "D": "Azure Private Edge"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure Government is a dedicated, physically isolated instance of Azure designed to meet regulatory compliance constraints of US government entities.",
+    "topic": "Core Azure architectural components",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "An administrator creates a Resource Group in the 'East US' region. Can this Resource Group contain virtual machines located in the 'West Europe' region?",
+    "options": {
+      "A": "Yes, resource groups can contain resources from any Azure region",
+      "B": "No, resources must be created in the same region as their parent Resource Group",
+      "C": "Yes, but only if the resources are configured as read-only",
+      "D": "No, unless the subscription is upgraded to Enterprise Agreement"
+    },
+    "correctAnswer": "A",
+    "explanation": "A Resource Group stores metadata about the resources. The resources themselves can be located in any region, independent of the Resource Group's location.",
+    "topic": "Core Azure architectural components",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which format is used to write Azure Resource Manager (ARM) templates to deploy resources declaratively?",
+    "options": {
+      "A": "JSON",
+      "B": "XML",
+      "C": "YAML",
+      "D": "HTML"
+    },
+    "correctAnswer": "A",
+    "explanation": "ARM templates use JavaScript Object Notation (JSON) format to define the infrastructure and configuration for your deployment.",
+    "topic": "Core Azure architectural components",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which of the following can be used to separate Azure billing environments, apply access control boundaries, and set resource limits per environment?",
+    "options": {
+      "A": "Subscriptions",
+      "B": "Resource Groups",
+      "C": "Management Groups",
+      "D": "Azure Policy definitions"
+    },
+    "correctAnswer": "A",
+    "explanation": "An Azure Subscription serves as a billing, security, and quota boundary for Azure resource management.",
+    "topic": "Core Azure architectural components",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "What describes a system's ability to remain functional with zero downtime during a hardware component failure?",
+    "options": {
+      "A": "Fault Tolerance",
+      "B": "High Availability",
+      "C": "Elasticity",
+      "D": "Agility"
+    },
+    "correctAnswer": "A",
+    "explanation": "Fault tolerance is the capability of a system to continue operating with zero degradation or downtime in the event of a hardware failure.",
+    "topic": "Core Azure architectural components",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "What represents a defined area of the world that typically contains two or more Azure regions and preserves data residency and compliance boundaries?",
+    "options": {
+      "A": "Azure Geography",
+      "B": "Edge Location",
+      "C": "Availability Set",
+      "D": "Scale Set"
+    },
+    "correctAnswer": "A",
+    "explanation": "An Azure Geography is a discrete market, typically containing two or more regions, that preserves data residency and compliance boundaries (e.g., Canada, Europe).",
+    "topic": "Core Azure architectural components",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which resource defines the physical CPU, memory, and storage resource allocation used to run an Azure App Service web application?",
+    "options": {
+      "A": "App Service Plan",
+      "B": "Deployment Slot",
+      "C": "Azure App Container",
+      "D": "Virtual Machine Scale Set"
+    },
+    "correctAnswer": "A",
+    "explanation": "An App Service Plan defines the region, scale size, and instance count of the virtual servers that host your App Service web apps.",
+    "topic": "Azure compute services (VMs, App Services, Functions)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "What is the default maximum execution timeout limit for a single execution of a serverless function under the Azure Functions Consumption plan?",
+    "options": {
+      "A": "5 minutes",
+      "B": "60 seconds",
+      "C": "30 minutes",
+      "D": "24 hours"
+    },
+    "correctAnswer": "A",
+    "explanation": "Under the Azure Functions Consumption plan, the default timeout is 5 minutes, though it can be configured up to 10 minutes.",
+    "topic": "Azure compute services (VMs, App Services, Functions)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Your company wants to test a new version of a web application without affecting public users, and then swap the new version to production with zero downtime. Which App Service feature should they use?",
+    "options": {
+      "A": "Deployment Slots",
+      "B": "App Service Plans",
+      "C": "Traffic Manager",
+      "D": "Hybrid Connections"
+    },
+    "correctAnswer": "A",
+    "explanation": "Deployment slots are live apps with their own hostnames. Swapping a slot with the production slot redirects traffic to the new version instantly with zero downtime.",
+    "topic": "Azure compute services (VMs, App Services, Functions)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "A developer needs to run serverless, microservices-based containers that scale dynamically based on HTTP traffic, event triggers, or CPU load, without managing Kubernetes cluster infrastructure. Which service should they choose?",
+    "options": {
+      "A": "Azure Container Apps",
+      "B": "Azure Kubernetes Service (AKS)",
+      "C": "Azure Container Instances (ACI)",
+      "D": "Azure Functions"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure Container Apps is a serverless container service built on top of Kubernetes and KEDA, simplifying container deployment without managing Kubernetes API directly.",
+    "topic": "Azure compute services (VMs, App Services, Functions)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "An administrator wants to configure Azure to automatically add more virtual machines to a cluster when average CPU usage exceeds 80%. Which service should they deploy?",
+    "options": {
+      "A": "Virtual Machine Scale Sets",
+      "B": "Availability Sets",
+      "C": "Azure Dedicated Host",
+      "D": "Azure Bastion"
+    },
+    "correctAnswer": "A",
+    "explanation": "Virtual Machine Scale Sets allow you to deploy and manage a group of load-balanced VMs that scale horizontally up or down automatically based on demand or schedules.",
+    "topic": "Azure compute services (VMs, App Services, Functions)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "A company has strict compliance policies stating that physical servers hosting their virtual machines must not be shared with any other customer. Which Azure compute service meets this requirement?",
+    "options": {
+      "A": "Azure Dedicated Host",
+      "B": "Azure Spot VMs",
+      "C": "App Service Premium Plan",
+      "D": "Azure Container Instances"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure Dedicated Host provides physical servers that are dedicated to hosting a single customer's virtual machines, satisfying physical isolation requirements.",
+    "topic": "Azure compute services (VMs, App Services, Functions)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "In Azure Functions, what is the difference between a trigger and a binding?",
+    "options": {
+      "A": "A trigger defines how a function starts; a binding is a declarative way of connecting another resource to the function",
+      "B": "A trigger runs the function synchronously; a binding runs it asynchronously",
+      "C": "A trigger is code-based; a binding must be configured in the Azure Portal GUI only",
+      "D": "Triggers are for Linux runtimes; bindings are only for Windows runtimes"
+    },
+    "correctAnswer": "A",
+    "explanation": "A trigger defines how a function is invoked (e.g. an HTTP request, queue message). A binding simplifies reading from or writing to other services from within the function code.",
+    "topic": "Azure compute services (VMs, App Services, Functions)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which Azure service provides a cloud-based desktop and app virtualization experience that allows users to access Windows desktops securely from any device?",
+    "options": {
+      "A": "Azure Virtual Desktop",
+      "B": "Azure App Service",
+      "C": "Azure Bastion",
+      "D": "Azure Arc"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure Virtual Desktop (formerly Windows Virtual Desktop) is a desktop and application virtualization service that runs on the cloud.",
+    "topic": "Azure compute services (VMs, App Services, Functions)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "A university research group needs to run parallel, large-scale high-performance computing (HPC) jobs across thousands of compute nodes. Which Azure service is optimized for managing this batch processing workflow?",
+    "options": {
+      "A": "Azure Batch",
+      "B": "Azure Logic Apps",
+      "C": "Azure Functions",
+      "D": "Virtual Machine Scale Sets"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure Batch is designed to run large-scale parallel and high-performance computing applications efficiently in the cloud.",
+    "topic": "Azure compute services (VMs, App Services, Functions)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Within an Azure Kubernetes Service (AKS) cluster, what are the primary structural units that host containerized workloads and run the Kubernetes agent software (kubelet)?",
+    "options": {
+      "A": "Nodes within Node Pools",
+      "B": "Subnets",
+      "C": "Container Registries",
+      "D": "Resource Provider Groups"
+    },
+    "correctAnswer": "A",
+    "explanation": "AKS clusters run workloads on Kubernetes worker nodes, which are grouped into node pools and run the kubelet agent to interact with the control plane.",
+    "topic": "Azure compute services (VMs, App Services, Functions)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which storage redundancy option replicates your data synchronously three times within a single physical location in the primary region?",
+    "options": {
+      "A": "Locally Redundant Storage (LRS)",
+      "B": "Zone-Redundant Storage (ZRS)",
+      "C": "Geo-Redundant Storage (GRS)",
+      "D": "Read-Access Geo-Redundant Storage (RA-GRS)"
+    },
+    "correctAnswer": "A",
+    "explanation": "LRS replicates your data three times within a single datacenter in the primary region, protecting against local drive or server failures.",
+    "topic": "Azure storage services (Blob, Files, SQL Database)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which feature of Azure Blob Storage allows you to automatically transition blobs to cooler storage tiers or delete them after a specified number of days?",
+    "options": {
+      "A": "Lifecycle Management",
+      "B": "Storage Explorer",
+      "C": "Blob Versioning",
+      "D": "Object Replication"
+    },
+    "correctAnswer": "A",
+    "explanation": "Lifecycle management policies automate moving blobs to cooler tiers (Hot to Cool, Cool to Archive) or deleting them based on age or last modification time.",
+    "topic": "Azure storage services (Blob, Files, SQL Database)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which file sharing protocol is natively supported by Azure Files for mounting file shares on Windows, macOS, and Linux clients?",
+    "options": {
+      "A": "Server Message Block (SMB)",
+      "B": "File Transfer Protocol (FTP)",
+      "C": "Hypertext Transfer Protocol (HTTP)",
+      "D": "Simple Mail Transfer Protocol (SMTP)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure Files shares can be mounted via the industry-standard Server Message Block (SMB) protocol or Network File System (NFS) protocol.",
+    "topic": "Azure storage services (Blob, Files, SQL Database)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "What is the main difference between the DTU and vCore purchasing models in Azure SQL Database?",
+    "options": {
+      "A": "DTU bundles compute and storage into pre-configured units; vCore allows independent scaling of compute, memory, and storage resources",
+      "B": "DTU is only for NoSQL; vCore is for relational schemas",
+      "C": "DTU is billed hourly; vCore is billed only on a transaction-by-transaction basis",
+      "D": "DTU is for cloud databases; vCore is for on-premises database migration only"
+    },
+    "correctAnswer": "A",
+    "explanation": "DTU (Database Transaction Unit) represents a combined measure of CPU, memory, and writes. vCore provides greater flexibility, letting you select and scale compute and storage resources independently.",
+    "topic": "Azure storage services (Blob, Files, SQL Database)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "To grant temporary, fine-grained access permissions to specific blobs in an Azure Storage Account without exposing the account key, what should you generate?",
+    "options": {
+      "A": "Shared Access Signature (SAS)",
+      "B": "Access Control List (ACL)",
+      "C": "Storage Access Key",
+      "D": "Entra ID OAuth Client Secret"
+    },
+    "correctAnswer": "A",
+    "explanation": "A Shared Access Signature (SAS) is a URI that grants restricted access rights to Azure Storage resources, specifying the permissions, start time, and expiry.",
+    "topic": "Azure storage services (Blob, Files, SQL Database)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "What is the recommended default storage account type for most scenarios using blobs, files, queues, and tables in Azure?",
+    "options": {
+      "A": "General-purpose v2 (GPv2)",
+      "B": "BlobStorage",
+      "C": "General-purpose v1 (GPv1)",
+      "D": "Premium Block Blobs"
+    },
+    "correctAnswer": "A",
+    "explanation": "General-purpose v2 accounts support all the latest features for blobs, files, queues, and tables, and are the recommended default by Microsoft.",
+    "topic": "Azure storage services (Blob, Files, SQL Database)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "A financial institution must store database backups in a Write Once, Read Many (WORM) state to prevent data from being modified or deleted for five years. Which Azure Storage feature meets this?",
+    "options": {
+      "A": "Immutable Blob Storage",
+      "B": "Soft Delete",
+      "C": "Blob Versioning",
+      "D": "Infrastructure Encryption"
+    },
+    "correctAnswer": "A",
+    "explanation": "Immutable storage for Azure Blob Storage enables users to store sensitive data in a WORM state. Once set, data cannot be modified or deleted for the retention interval.",
+    "topic": "Azure storage services (Blob, Files, SQL Database)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which compute tier of Azure SQL Database automatically scales compute resources based on workload demand and bills for the compute used per second, including auto-pausing during inactive periods?",
+    "options": {
+      "A": "Serverless",
+      "B": "Provisioned",
+      "C": "Hyperscale",
+      "D": "Elastic Pool"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure SQL Database Serverless automatically scales compute based on workload demand, bills for compute used per second, and automatically pauses the database during inactive periods.",
+    "topic": "Azure storage services (Blob, Files, SQL Database)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which Azure Managed Disk storage type is designed to support the most demanding, IO-intensive workloads with sub-millisecond latencies and adjustable IOPS/throughput on the fly?",
+    "options": {
+      "A": "Ultra Disk",
+      "B": "Premium SSD",
+      "C": "Standard SSD",
+      "D": "Standard HDD"
+    },
+    "correctAnswer": "A",
+    "explanation": "Ultra Disks are Azure's highest-performing managed disks, offering configurable IOPS and throughput independently without resizing the disk, suitable for intensive databases.",
+    "topic": "Azure storage services (Blob, Files, SQL Database)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which standalone desktop application developed by Microsoft allows you to visually manage Azure cloud storage resources from Windows, macOS, and Linux?",
+    "options": {
+      "A": "Azure Storage Explorer",
+      "B": "Azure Portal App",
+      "C": "Azure Data Studio",
+      "D": "Azure Arc Dashboard"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure Storage Explorer is a free, standalone GUI tool that makes it easy to work with Azure Storage data on Windows, macOS, and Linux.",
+    "topic": "Azure storage services (Blob, Files, SQL Database)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "An administrator wants to apply security rules to a group of virtual machines based on their application function (e.g., 'WebServers') rather than filtering by individual IP addresses. What should they use?",
+    "options": {
+      "A": "Application Security Groups (ASGs)",
+      "B": "Network Security Groups (NSGs)",
+      "C": "Route Tables",
+      "D": "Azure Firewall"
+    },
+    "correctAnswer": "A",
+    "explanation": "ASGs let you configure network security as a natural extension of an application's structure, grouping VMs and defining security policies based on those groups.",
+    "topic": "Azure networking services (VNets, VPN, ExpressRoute)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "You peer VNet A to VNet B, and VNet B to VNet C. By default, can virtual machines in VNet A communicate with virtual machines in VNet C through VNet B?",
+    "options": {
+      "A": "No, VNet Peering is non-transitive by default",
+      "B": "Yes, VNet Peering is transitive for all traffic",
+      "C": "Yes, but only if they are in the same subscription",
+      "D": "No, unless a VPN Gateway is deleted from VNet B"
+    },
+    "correctAnswer": "A",
+    "explanation": "VNet Peering is non-transitive. A peered connection between A-B and B-C does not allow traffic to flow directly between A and C unless transit routing or custom gateways are configured.",
+    "topic": "Azure networking services (VNets, VPN, ExpressRoute)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "To force all outbound internet traffic from an Azure subnet back to an on-premises firewall for inspection (forced tunneling), what resource must you configure?",
+    "options": {
+      "A": "Route Table with User-Defined Routes (UDRs)",
+      "B": "Network Security Group (NSG)",
+      "C": "Application Security Group (ASG)",
+      "D": "Virtual Network Peering"
+    },
+    "correctAnswer": "A",
+    "explanation": "User-Defined Routes (UDRs) in a Route Table allow administrators to override Azure's default routing and direct traffic to custom network virtual appliances or gateways.",
+    "topic": "Azure networking services (VNets, VPN, ExpressRoute)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which service provides secure RDP and SSH connectivity to virtual machines directly through the Azure Portal over SSL, without exposing public IP addresses on the VMs?",
+    "options": {
+      "A": "Azure Bastion",
+      "B": "Azure VPN Gateway",
+      "C": "Azure ExpressRoute",
+      "D": "Azure Application Gateway"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure Bastion is a fully platform-managed PaaS service that you provision inside your VNet to provide secure, seamless RDP/SSH access to your VMs directly from the Azure portal over SSL.",
+    "topic": "Azure networking services (VNets, VPN, ExpressRoute)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "What Azure service allows you to use your own custom domain names for virtual machines within a private virtual network without needing to configure a custom DNS server solution?",
+    "options": {
+      "A": "Azure DNS Private Zones",
+      "B": "Azure Private Link",
+      "C": "Azure Traffic Manager",
+      "D": "Azure Front Door"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure DNS Private Zones provide domain name resolution within a virtual network (or between peered networks) without needing a custom DNS server.",
+    "topic": "Azure networking services (VNets, VPN, ExpressRoute)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "When configuring an Azure VPN Gateway, which gateway type should you select to support dynamic routing protocols like BGP and Point-to-Site client connections?",
+    "options": {
+      "A": "Route-based VPN Gateway",
+      "B": "Policy-based VPN Gateway",
+      "C": "ExpressRoute Gateway",
+      "D": "Static Route Gateway"
+    },
+    "correctAnswer": "A",
+    "explanation": "Route-based VPN gateways use IP routing (static or dynamic) to determine which interface to send packets through. They support point-to-site, multi-site, and BGP routing, unlike policy-based gateways.",
+    "topic": "Azure networking services (VNets, VPN, ExpressRoute)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which Azure load-balancing service operates at Layer 7 (Application layer) of the OSI model and supports URL path-based routing and SSL termination?",
+    "options": {
+      "A": "Azure Application Gateway",
+      "B": "Azure Load Balancer",
+      "C": "Azure Traffic Manager",
+      "D": "Azure Front Door"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure Application Gateway is a Layer 7 load balancer that handles HTTP/HTTPS traffic, offering features like cookie-based affinity, SSL offloading, and URL routing.",
+    "topic": "Azure networking services (VNets, VPN, ExpressRoute)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which feature provides a private IP address from your Virtual Network to access an Azure PaaS service (like Azure SQL Database) securely, keeping all traffic within the Microsoft backbone network?",
+    "options": {
+      "A": "Azure Private Endpoint",
+      "B": "Service Endpoints",
+      "C": "Network Security Group",
+      "D": "Azure Bastion"
+    },
+    "correctAnswer": "A",
+    "explanation": "A Private Endpoint is a network interface that uses a private IP address from your VNet. This effectively brings the service into your VNet, securing access.",
+    "topic": "Azure networking services (VNets, VPN, ExpressRoute)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "What is a primary difference between the Basic SKU and Standard SKU for Azure Public IP addresses?",
+    "options": {
+      "A": "Standard SKU is secure by default (closed to inbound traffic), whereas Basic SKU is open by default",
+      "B": "Basic SKU supports Availability Zones",
+      "C": "Standard SKU is always dynamic, while Basic is always static",
+      "D": "Standard SKU does not support routing preference configuration"
+    },
+    "correctAnswer": "A",
+    "explanation": "Standard SKU public IPs are secure by default (blocked to inbound traffic unless allowed by an NSG or firewall). Basic SKU is open to all traffic by default.",
+    "topic": "Azure networking services (VNets, VPN, ExpressRoute)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Why would you divide an Azure Virtual Network (VNet) into multiple subnets?",
+    "options": {
+      "A": "To organize resources logically, apply separate security rules (NSGs), and route traffic differently within the same network",
+      "B": "To increase the overall subscription cost limits",
+      "C": "To force resources to communicate only via public internet endpoints",
+      "D": "To bypass the requirement of configuring IP address spaces"
+    },
+    "correctAnswer": "A",
+    "explanation": "Subnets segment a VNet, allowing you to allocate discrete IP address ranges, enforce distinct network security group boundaries, and customize routing behavior.",
+    "topic": "Azure networking services (VNets, VPN, ExpressRoute)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which statement accurately describes Microsoft Entra ID compared to traditional Windows Server Active Directory?",
+    "options": {
+      "A": "Entra ID is a cloud-based identity and access management service using HTTP/HTTPS protocols; Active Directory is query-based using LDAP and Kerberos",
+      "B": "Entra ID can only manage Windows machines",
+      "C": "Active Directory runs in the cloud; Entra ID only runs on local office servers",
+      "D": "Entra ID uses Group Policies (GPOs) to manage local client machines"
+    },
+    "correctAnswer": "A",
+    "explanation": "Entra ID is a cloud identity service using modern protocols like SAML, OAuth, and OpenID Connect. AD DS is a local directory service using LDAP, Kerberos, and NTLM.",
+    "topic": "Azure identity, governance, privacy, and compliance (entra ID)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which Azure service allows cloud architects to define a repeatable set of Azure resources, resource groups, policies, and role assignments to deploy standardized environments?",
+    "options": {
+      "A": "Azure Blueprints",
+      "B": "Azure Resource Manager",
+      "C": "Azure Arc",
+      "D": "Azure Advisor"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure Blueprints enables cloud architects to define a repeatable set of Azure resources that implements and adheres to an organization's standards, patterns, and requirements.",
+    "topic": "Azure identity, governance, privacy, and compliance (entra ID)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "What feature of Microsoft Entra ID allows users to reset their forgotten passwords without contacting IT administrators or help desks?",
+    "options": {
+      "A": "Self-Service Password Reset (SSPR)",
+      "B": "Multi-Factor Authentication (MFA)",
+      "C": "Conditional Access",
+      "D": "Identity Protection"
+    },
+    "correctAnswer": "A",
+    "explanation": "SSPR gives users the ability to change or reset their password, with no administrator or help desk involvement, reducing support costs.",
+    "topic": "Azure identity, governance, privacy, and compliance (entra ID)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which premium feature of Microsoft Entra ID provides risk-based Conditional Access, just-in-time administrative access, and access reviews?",
+    "options": {
+      "A": "Microsoft Entra ID P2",
+      "B": "Microsoft Entra ID Free",
+      "C": "Microsoft Entra ID P1",
+      "D": "Azure Governance Basic"
+    },
+    "correctAnswer": "A",
+    "explanation": "Features like PIM (Privileged Identity Management) providing just-in-time access, and Identity Protection (risk-based Conditional Access) require the Entra ID P2 license tier.",
+    "topic": "Azure identity, governance, privacy, and compliance (entra ID)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which tool is used to synchronize user accounts from an on-premises Active Directory Domain Services environment to Microsoft Entra ID?",
+    "options": {
+      "A": "Microsoft Entra Connect",
+      "B": "Azure Arc",
+      "C": "Azure Service Bus",
+      "D": "Azure Data Factory"
+    },
+    "correctAnswer": "A",
+    "explanation": "Microsoft Entra Connect synchronizes identity data between on-premises Active Directory and Microsoft Entra ID, facilitating hybrid identity configurations.",
+    "topic": "Azure identity, governance, privacy, and compliance (entra ID)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "What happens if an administrator attempts to deploy a virtual machine that violates an Azure Policy with the 'Deny' effect?",
+    "options": {
+      "A": "The deployment is blocked immediately and fails",
+      "B": "The resource is created but flagged as non-compliant in reports",
+      "C": "The deployment succeeds but the VM is automatically shut down after one hour",
+      "D": "The policy is ignored unless evaluated manually"
+    },
+    "correctAnswer": "A",
+    "explanation": "The 'Deny' policy effect blocks the creation or update of any resource that does not match the policy criteria, causing the ARM deployment to fail.",
+    "topic": "Azure identity, governance, privacy, and compliance (entra ID)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which Azure service helps organizations govern, protect, and manage their entire data estate across multi-cloud and on-premises environments?",
+    "options": {
+      "A": "Microsoft Purview",
+      "B": "Azure Policy",
+      "C": "Azure Key Vault",
+      "D": "Microsoft Entra ID"
+    },
+    "correctAnswer": "A",
+    "explanation": "Microsoft Purview is a comprehensive data governance and compliance service that helps scan, catalog, and classify data across hybrid environments.",
+    "topic": "Azure identity, governance, privacy, and compliance (entra ID)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "If a user is assigned the 'Reader' role at the Resource Group level, what permissions do they have for resources inside that group?",
+    "options": {
+      "A": "They inherit the 'Reader' permission for all resources in that resource group",
+      "B": "They have no access unless explicitly assigned permissions on each resource",
+      "C": "They can modify settings but cannot delete the resources",
+      "D": "They have full control (Owner permissions) over the resources"
+    },
+    "correctAnswer": "A",
+    "explanation": "RBAC permissions are inherited downwards. Permissions assigned at a higher level (like a Resource Group) flow down to the children (like individual VMs or databases).",
+    "topic": "Azure identity, governance, privacy, and compliance (entra ID)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "What does Microsoft Entra ID Identity Protection analyze to detect anomalies and suspicious sign-ins, such as an 'impossible travel' scenario?",
+    "options": {
+      "A": "Sign-in risk and User risk",
+      "B": "Database CPU queries",
+      "C": "Source code changes in App Services",
+      "D": "Firewall access logs"
+    },
+    "correctAnswer": "A",
+    "explanation": "Entra ID Identity Protection uses machine learning to identify sign-in risk (probability that a sign-in is compromised) and user risk (probability that an identity is compromised, e.g. leaked credentials).",
+    "topic": "Azure identity, governance, privacy, and compliance (entra ID)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which Microsoft resource contains comprehensive details on Microsoft’s compliance with global regulations, such as GDPR and HIPAA, and provides guidelines for cloud security?",
+    "options": {
+      "A": "Microsoft Trust Center",
+      "B": "Azure Advisor Portal",
+      "C": "Azure Policy Center",
+      "D": "Microsoft Entra ID Dashboard"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Microsoft Trust Center is a public-facing website providing detailed information about privacy, security, compliance, and transparency practices across Microsoft cloud services.",
+    "topic": "Azure identity, governance, privacy, and compliance (entra ID)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "You need to estimate the monthly cost of deploying 5 new Azure Virtual Machines and 1 Azure SQL Database before creating the resources. Which tool should you use?",
+    "options": {
+      "A": "Azure Pricing Calculator",
+      "B": "Total Cost of Ownership (TCO) Calculator",
+      "C": "Azure Cost Management",
+      "D": "Azure Advisor"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Azure Pricing Calculator is designed to estimate the costs of services you plan to deploy. The TCO Calculator compares on-premises running costs to Azure.",
+    "topic": "Azure cost management and SLAs",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "An application uses an Azure App Service (99.95% SLA) and an Azure SQL Database (99.99% SLA). How do you calculate the composite SLA of this application?",
+    "options": {
+      "A": "Multiply the individual SLAs together (99.95% x 99.99% = 99.94%)",
+      "B": "Take the highest SLA (99.99%)",
+      "C": "Take the average of the two SLAs (99.97%)",
+      "D": "Add the two SLAs together (199.94%)"
+    },
+    "correctAnswer": "A",
+    "explanation": "The composite SLA of multiple connected services is calculated by multiplying the individual SLAs. This results in a lower overall SLA value because any component failure can cause an outage.",
+    "topic": "Azure cost management and SLAs",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "What is the primary benefit of purchasing Azure Reservations (Reserved Instances)?",
+    "options": {
+      "A": "Significant cost savings up to 72% in exchange for committing to a 1-year or 3-year plan",
+      "B": "Guaranteed physical security of the server hosting the database",
+      "C": "Automated horizontal scaling of compute power during peak hours",
+      "D": "Immediate migration of workloads to different cloud providers"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure Reservations provide discounts on resources (like VMs or SQL databases) by committing to a one- or three-year term, offering up to 72% cost savings compared to pay-as-you-go.",
+    "topic": "Azure cost management and SLAs",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which of the following is included in a standard Azure Free Account when you first register?",
+    "options": {
+      "A": "$200 USD credit for the first 30 days and 12 months of popular free services",
+      "B": "Unlimited computing power for any service for 5 years",
+      "C": "24/7 Enterprise-level support for free",
+      "D": "Exemption from all regulatory compliance rules"
+    },
+    "correctAnswer": "A",
+    "explanation": "A standard Azure Free Account gives new users a credit (typically $200) to spend in the first 30 days, along with access to a selection of free services for 12 months.",
+    "topic": "Azure cost management and SLAs",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "What type of alert can be configured in Azure Cost Management to notify stakeholders when spending reaches 80% of a predetermined monthly budget?",
+    "options": {
+      "A": "Budget Alert",
+      "B": "Subscription Quota Alert",
+      "C": "Activity Log Alert",
+      "D": "Service Health Alert"
+    },
+    "correctAnswer": "A",
+    "explanation": "Budget alerts notify you when your actual or forecasted spending exceeds the threshold specified in a budget you define.",
+    "topic": "Azure cost management and SLAs",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which of the following factors primarily influences the cost of outbound data transfers (egress) in Azure?",
+    "options": {
+      "A": "The destination zone and the amount of data transferred",
+      "B": "The operating system running on the source virtual machine",
+      "C": "The type of authentication used (MFA or single-factor)",
+      "D": "The Azure Resource Group naming conventions"
+    },
+    "correctAnswer": "A",
+    "explanation": "While inbound data transfers (ingress) are generally free, outbound data transfers (egress) are charged based on the volume of data and the source/destination billing zones.",
+    "topic": "Azure cost management and SLAs",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "If Microsoft fails to meet the uptime guarantee specified in a service's SLA, how are customers compensated?",
+    "options": {
+      "A": "They receive a service credit applied to their billing account",
+      "B": "They receive cash refunds wire-transferred directly to their bank",
+      "C": "Their resources are upgraded to Premium tier for free",
+      "D": "They receive free hardware upgrades for on-premises datacenters"
+    },
+    "correctAnswer": "A",
+    "explanation": "SLAs define the service credit (a percentage of the monthly service fee) that Microsoft awards back to customers if uptime targets are not met.",
+    "topic": "Azure cost management and SLAs",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which feature allows companies to use their existing on-premises Windows Server and SQL Server licenses with active Software Assurance to save on Azure virtual machine costs?",
+    "options": {
+      "A": "Azure Hybrid Benefit",
+      "B": "Azure Dev/Test Pricing",
+      "C": "Reserved Instances",
+      "D": "Spot Instances"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure Hybrid Benefit (AHUB) is a licensing benefit that lets you bring your on-premises software licenses with Software Assurance to Azure, substantially reducing compute costs.",
+    "topic": "Azure cost management and SLAs",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "How do Azure Dev/Test subscriptions help reduce costs for software development environments?",
+    "options": {
+      "A": "They offer discounted rates on select Azure services (like Windows VM rates matching Linux VM rates)",
+      "B": "They do not charge for storage or networking",
+      "C": "They offer unlimited CPU power at no cost",
+      "D": "They disable security features to speed up compute processing"
+    },
+    "correctAnswer": "A",
+    "explanation": "Dev/Test subscriptions provide access to discounted rates on various Azure services, such as running Windows VMs at standard Linux rates, to save costs during development.",
+    "topic": "Azure cost management and SLAs",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "What happens by default when an Azure Free Account exhausts its initial credit during the first 30 days?",
+    "options": {
+      "A": "A spending limit is hit and all resources are suspended to prevent accidental charges",
+      "B": "The subscription is automatically upgraded to Pay-As-You-Go and bills the credit card",
+      "C": "The account is permanently deleted and all data is lost",
+      "D": "The credit limit is automatically doubled"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure Free accounts have a default $0 spending limit to prevent users from incurring charges once the initial promotional credit is consumed. The resources are suspended unless the user explicitly removes the limit.",
+    "topic": "Azure cost management and SLAs",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "In the cloud security 'Defense in Depth' model, which layer focuses on protecting physical access to the servers in the datacenter?",
+    "options": {
+      "A": "Physical Security",
+      "B": "Identity and Access",
+      "C": "Network",
+      "D": "Perimeter"
+    },
+    "correctAnswer": "A",
+    "explanation": "Physical security is the first and outermost layer of defense, focusing on securing physical buildings and server racks against unauthorized access.",
+    "topic": "Core Azure security features",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Under the Shared Responsibility Model, who is responsible for patching the guest operating system of an Azure Virtual Machine?",
+    "options": {
+      "A": "The customer",
+      "B": "Microsoft",
+      "C": "Both the customer and Microsoft share it equally",
+      "D": "Third-party operating system vendors"
+    },
+    "correctAnswer": "A",
+    "explanation": "In Infrastructure as a Service (IaaS) like VMs, the customer is fully responsible for managing and patching the guest operating system. Microsoft is responsible for the physical host virtualization layer.",
+    "topic": "Core Azure security features",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which of the following is a valid type of asset that can be safely stored and managed inside an Azure Key Vault?",
+    "options": {
+      "A": "API credentials and database connection strings",
+      "B": "Virtual Machine backup disks",
+      "C": "Unencrypted relational database tables",
+      "D": "User profiles and email history"
+    },
+    "correctAnswer": "A",
+    "explanation": "Key Vault is designed specifically to secure keys (cryptographic keys), secrets (credentials, connection strings), and certificates.",
+    "topic": "Core Azure security features",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "What is a primary difference between Azure Firewall and a Network Security Group (NSG)?",
+    "options": {
+      "A": "Azure Firewall is a managed, stateful firewall service that spans multiple subnets and VNets; NSGs are basic packet-filtering rules applied at the subnet or NIC level",
+      "B": "NSGs are paid while Azure Firewall is completely free",
+      "C": "Azure Firewall is non-routable; NSGs are virtual routers",
+      "D": "NSGs can filter traffic based on web URLs, whereas Azure Firewall cannot"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure Firewall is a cloud-native, high-availability, stateful firewall-as-a-service. NSGs are basic, non-managed ACL rules applied directly to NICs or subnets to filter traffic based on IP, port, and protocol.",
+    "topic": "Core Azure security features",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which Azure DDoS protection tier is designed for small-to-medium businesses, providing cost-effective basic DDoS defense per public IP address without enterprise-scale pricing?",
+    "options": {
+      "A": "DDoS IP Protection",
+      "B": "DDoS Network Protection",
+      "C": "Basic DDoS Protection",
+      "D": "Premium DDoS Gateway"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure offers DDoS IP Protection as a cost-effective, per-IP defense tier tailored for SMBs. DDoS Network Protection is the enterprise-scale tier that covers all public IPs in a VNet.",
+    "topic": "Core Azure security features",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which Azure security tool provides Cloud Security Posture Management (CSPM) and Cloud Workload Protection (CWP) for your hybrid cloud resources?",
+    "options": {
+      "A": "Microsoft Defender for Cloud",
+      "B": "Azure Sentinel",
+      "C": "Azure Information Protection",
+      "D": "Azure Bastion"
+    },
+    "correctAnswer": "A",
+    "explanation": "Microsoft Defender for Cloud is a tool for security posture management and threat protection, evaluating configurations against security baselines.",
+    "topic": "Core Azure security features",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which cloud-native service acts as a Security Information and Event Management (SIEM) and Security Orchestration, Automation, and Response (SOAR) system?",
+    "options": {
+      "A": "Microsoft Sentinel",
+      "B": "Microsoft Defender for Cloud",
+      "C": "Azure Dedicated Host",
+      "D": "Azure Service Health"
+    },
+    "correctAnswer": "A",
+    "explanation": "Microsoft Sentinel (formerly Azure Sentinel) is a scalable, cloud-native SIEM/SOAR solution that aggregates security data across the enterprise.",
+    "topic": "Core Azure security features",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "What is the difference between Service-Side Encryption (SSE) and Azure Disk Encryption (ADE) for Azure Virtual Machine storage?",
+    "options": {
+      "A": "SSE encrypts the physical storage medium at rest at the Azure Storage layer; ADE encrypts the OS and data disks from within the VM using BitLocker or DM-Crypt",
+      "B": "SSE requires customer licenses; ADE is completely free",
+      "C": "SSE only encrypts databases; ADE only encrypts containers",
+      "D": "There is no difference; they are different names for the same feature"
+    },
+    "correctAnswer": "A",
+    "explanation": "SSE encrypts the physical storage medium at rest at the Azure Storage layer. ADE encrypts the actual VHDs using Windows BitLocker or Linux DM-Crypt, integration with Key Vault.",
+    "topic": "Core Azure security features",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which model is the modern, recommended approach to authorize control-plane and data-plane access to secrets inside Azure Key Vault?",
+    "options": {
+      "A": "Azure Role-Based Access Control (Azure RBAC)",
+      "B": "Key Vault Access Policies",
+      "C": "Shared Access Signatures",
+      "D": "Local Administrator accounts"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure RBAC is the recommended authorization model for Key Vault, providing unified access management across both management-plane and data-plane operations.",
+    "topic": "Core Azure security features",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "What metric in Microsoft Defender for Cloud helps organizations measure their current security posture and highlights recommendations to improve it?",
+    "options": {
+      "A": "Secure Score",
+      "B": "Compliance Index",
+      "C": "Threat Matrix",
+      "D": "Vulnerability Rating"
+    },
+    "correctAnswer": "A",
+    "explanation": "Secure Score aggregates security recommendations into a percentage value, showing how well your resources adhere to security best practices.",
+    "topic": "Core Azure security features",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "In Azure Monitor, how do Metrics differ from Logs?",
+    "options": {
+      "A": "Metrics are numerical values representing resource performance over time; Logs contain structured or unstructured record data organized in tables",
+      "B": "Metrics are stored in SQL tables; Logs are stored in flat text files on disk",
+      "C": "Metrics are collected daily; Logs are collected in real-time",
+      "D": "Metrics are paid; Logs are free of charge"
+    },
+    "correctAnswer": "A",
+    "explanation": "Metrics are lightweight, numerical values stored in a time-series database. Logs contain rich event/performance details queryable via Kusto Query Language (KQL).",
+    "topic": "Azure monitoring and management tools",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which query language is used to analyze log data collected in Azure Monitor Log Analytics workspaces?",
+    "options": {
+      "A": "Kusto Query Language (KQL)",
+      "B": "Structured Query Language (SQL)",
+      "C": "GraphQL",
+      "D": "XML Path Language (XPath)"
+    },
+    "correctAnswer": "A",
+    "explanation": "KQL is the read-only query language used to write queries and analyze data stored in Log Analytics and Microsoft Sentinel.",
+    "topic": "Azure monitoring and management tools",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which feature of Azure Monitor specifically monitors the performance, availability, and usage of your live web applications?",
+    "options": {
+      "A": "Application Insights",
+      "B": "VM Insights",
+      "C": "Container Insights",
+      "D": "Service Health"
+    },
+    "correctAnswer": "A",
+    "explanation": "Application Insights is an APM (Application Performance Management) service that collects telemetry from web applications to assist in debugging and performance tuning.",
+    "topic": "Azure monitoring and management tools",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "What is the difference between Azure Status and Azure Service Health?",
+    "options": {
+      "A": "Azure Status is a global public webpage showing health across all regions; Azure Service Health provides personalized alerts about services in your specific subscriptions",
+      "B": "Azure Status requires a paid support plan",
+      "C": "Azure Service Health only monitors virtual machine CPUs",
+      "D": "Azure Status displays historical database outage logs"
+    },
+    "correctAnswer": "A",
+    "explanation": "Azure Status reports global service outages publicly. Azure Service Health is custom-tailored, reporting only on outages, maintenance, and advisories affecting the specific resources you own.",
+    "topic": "Azure monitoring and management tools",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which Azure Monitor log source records control-plane events, such as when a virtual machine is stopped or a new resource group is created?",
+    "options": {
+      "A": "Azure Activity Log",
+      "B": "Diagnostic Logs",
+      "C": "Application Insights Logs",
+      "D": "Security Log"
+    },
+    "correctAnswer": "A",
+    "explanation": "The Activity Log records all subscription-level write, delete, and action operations (control plane). Diagnostic logs capture resource-specific internal data (data plane).",
+    "topic": "Azure monitoring and management tools",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "What is the primary logical container in Azure used to collect, consolidate, and analyze log data from various Azure resources?",
+    "options": {
+      "A": "Log Analytics workspace",
+      "B": "Storage Account",
+      "C": "Resource Group",
+      "D": "Azure Monitor Dashboard"
+    },
+    "correctAnswer": "A",
+    "explanation": "A Log Analytics workspace is the storage repository and analytical boundary where log data is collected and queried using KQL.",
+    "topic": "Azure monitoring and management tools",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "You want to trigger an automated email alert whenever an administrator successfully deletes an Azure Key Vault. What type of alert rule should you create?",
+    "options": {
+      "A": "Activity Log Alert",
+      "B": "Metric Alert",
+      "C": "Log Search Alert",
+      "D": "Smart Detection Alert"
+    },
+    "correctAnswer": "A",
+    "explanation": "Since deleting a Key Vault is a control-plane event logged in the Azure Activity Log, you must configure an Activity Log alert to trigger on this action.",
+    "topic": "Azure monitoring and management tools",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which of the following is NOT one of the five core optimization categories analyzed by Azure Advisor?",
+    "options": {
+      "A": "Database Sharding",
+      "B": "Cost",
+      "C": "Security",
+      "D": "Reliability"
+    },
+    "correctAnswer": "A",
+    "explanation": "The core categories for Azure Advisor are: Cost, Security, Reliability (formerly High Availability), Operational Excellence, and Performance. Database Sharding is not a category.",
+    "topic": "Azure monitoring and management tools",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "If a resource lock of type 'ReadOnly' is applied to an Azure Storage Account, what is the effect when a user attempts to read the storage access keys?",
+    "options": {
+      "A": "The request is blocked because reading keys is a POST operation that allows modifying the data-plane access",
+      "B": "The request succeeds because reading keys is a GET operation",
+      "C": "The keys are automatically rotated",
+      "D": "The lock is ignored for administrative users"
+    },
+    "correctAnswer": "A",
+    "explanation": "A ReadOnly lock on a storage account blocks listing the access keys. This is because listing keys is a POST action (which could allow write access to the data).",
+    "topic": "Azure monitoring and management tools",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "azure",
+    "questionType": "MCQ",
+    "text": "Which tool in Azure Network Watcher allows you to verify if a packet is allowed or denied to/from a virtual machine based on security rules?",
+    "options": {
+      "A": "IP Flow Verify",
+      "B": "Connection Troubleshoot",
+      "C": "Packet Capture",
+      "D": "Next Hop"
+    },
+    "correctAnswer": "A",
+    "explanation": "IP Flow Verify checks if a packet is allowed or denied based on 5-tuple parameters (Protocol, Local IP, Remote IP, Local Port, Remote Port) and indicates which security rule controls the traffic.",
+    "topic": "Azure monitoring and management tools",
+    "difficulty": "HARD"
+  }
+]

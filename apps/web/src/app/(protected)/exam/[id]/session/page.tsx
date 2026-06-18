@@ -230,12 +230,17 @@ export default function ExamSessionPage() {
           Question {currentIndex + 1} of {questions.length}
         </div>
 
-        <div className={`font-mono font-bold text-2xl px-4 py-1 rounded-lg ${
-          isTimeCritical 
-            ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 animate-pulse' 
-            : 'bg-[var(--bg-elevated)] text-[var(--text-primary)]'
-        }`}>
-          {formatTime(timeRemaining)}
+        <div className="flex items-center gap-4">
+          <span className="font-ui text-xs text-[var(--text-muted)] hidden md:inline-block">
+            Today's Session — {new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+          </span>
+          <div className={`font-mono font-bold text-2xl px-4 py-1 rounded-lg ${
+            isTimeCritical 
+              ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 animate-pulse' 
+              : 'bg-[var(--bg-elevated)] text-[var(--text-primary)]'
+          }`}>
+            {formatTime(timeRemaining)}
+          </div>
         </div>
       </header>
 

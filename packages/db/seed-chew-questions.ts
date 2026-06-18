@@ -16,7 +16,15 @@ async function main() {
     where: { certificationId: { in: chewCertIds } }
   });
 
-  const files = ['chew-objective.json', 'chew-objective-extra.json', 'chew-theory.json', 'chew-practical.json'];
+  const files = [
+    'chew-objective.json',
+    'chew-objective-extra.json',
+    'chew-objective-extra-2.json',
+    'chew-theory.json',
+    'chew-theory-extra.json',
+    'chew-practical.json',
+    'chew-practical-extra.json'
+  ];
   let totalInserted = 0;
 
   for (const file of files) {
@@ -52,7 +60,7 @@ async function main() {
     });
 
     totalInserted += formattedQuestions.length;
-    console.log(`Seeding CHEW questions... ${totalInserted}/170 inserted`);
+    console.log(`Seeding CHEW questions... ${totalInserted}/410 inserted`);
   }
 
   console.log('✅ Seeding complete.');

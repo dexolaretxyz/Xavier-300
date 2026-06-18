@@ -1,0 +1,1362 @@
+[
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A CHEW is assessing a child for malnutrition. When pressing their thumb on the dorsum of both feet for 3 seconds, the skin remains indented as shown in the image. What does this clinical sign indicate?",
+    "options": {
+      "A": "Bilateral pitting edema, indicating edematous severe acute malnutrition (Kwashiorkor)",
+      "B": "Normal tissue hydration and elasticity",
+      "C": "Severe dehydration requiring immediate intravenous rehydration",
+      "D": "Cellulitis caused by a bacterial skin infection"
+    },
+    "correctAnswer": "A",
+    "explanation": "Bilateral pitting pedal edema is the key diagnostic feature of Kwashiorkor (severe acute malnutrition). Pressing the thumb gently on the dorsum of both feet for 3 seconds leaves a persistent indentation (pit) in both feet, which is graded based on its vertical progression.",
+    "topic": "Identification of clinical signs",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Bilateral+Pitting+Edema+Test",
+    "imageAlt": "A clinical examiner pressing their thumb onto the top of a child's foot, leaving a visible, deep indentation that remains after pressure is released."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A child presents with bilateral pitting edema that extends past the feet and ankles to the knees and lower legs, but does not affect the face or arms. How should this edema be graded?",
+    "options": {
+      "A": "Grade + (Mild)",
+      "B": "Grade ++ (Moderate)",
+      "C": "Grade +++ (Severe)",
+      "D": "Grade 0 (Absent)"
+    },
+    "correctAnswer": "B",
+    "explanation": "Bilateral pitting edema is graded as follows: Grade + (mild) is limited to the feet/ankles; Grade ++ (moderate) involves the feet, ankles, lower legs up to the knees; and Grade +++ (severe) is generalized, affecting the feet, legs, arms, and face.",
+    "topic": "Identification of clinical signs",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Grading+Pedal+Edema",
+    "imageAlt": "A child's legs showing swelling that extends up to the mid-calf, with thumb indentations visible on the shins."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "An examination of a 2-year-old child shows severe muscle wasting, prominent ribs, a wrinkled 'old man' face, and loose skin folds on the buttocks (resembling 'baggy pants'). What condition does this clinical presentation represent?",
+    "options": {
+      "A": "Marasmus",
+      "B": "Kwashiorkor",
+      "C": "Pellagra",
+      "D": "Rickets"
+    },
+    "correctAnswer": "A",
+    "explanation": "Marasmus is a form of severe acute malnutrition characterized by severe wasting of muscle and subcutaneous fat, resulting in a 'skin and bones' appearance, prominent ribs, loose skin folds on the buttocks ('baggy pants' sign), and an 'old man' or senile facial appearance.",
+    "topic": "Identification of clinical signs",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Severe+Wasting+Marasmus",
+    "imageAlt": "A child with extreme muscle wasting, visible ribs, thin limbs, and loose skin hanging around the thighs and buttocks."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The examiner is gently pulling down the lower eyelid of a patient to inspect the conjunctiva as shown in the image. What is the primary purpose of this clinical assessment?",
+    "options": {
+      "A": "To check for conjunctival pallor, which indicates anemia",
+      "B": "To assess for cataract formation in the lens",
+      "C": "To diagnose active trachoma follicles",
+      "D": "To check for night blindness or xerophthalmia"
+    },
+    "correctAnswer": "A",
+    "explanation": "Inspecting the palpebral conjunctiva by gently pulling down the lower eyelid is the standard clinical method to check for conjunctival pallor. A pale or white conjunctiva instead of a healthy pink/red color suggests moderate to severe anemia.",
+    "topic": "Identification of clinical signs",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Conjunctival+Pallor+Assessment",
+    "imageAlt": "An examiner's gloved thumb gently depressing a patient's lower eyelid, exposing a pale, almost white inner mucosal surface instead of normal pink."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "While inspecting the palm of a child, the CHEW compares it to their own healthy palm and notes that the child's palm is completely white. How should this sign be classified under IMCI guidelines?",
+    "options": {
+      "A": "Severe palmar pallor, requiring urgent referral",
+      "B": "Some palmar pallor, requiring oral iron therapy",
+      "C": "No palmar pallor, requiring routine feeding advice",
+      "D": "Cyanosis, requiring immediate oxygen support"
+    },
+    "correctAnswer": "A",
+    "explanation": "Under Integrated Management of Childhood Illness (IMCI) guidelines, if the palm of the child is completely pale or white, it is classified as 'severe palmar pallor'. This is a danger sign indicating severe anemia, requiring urgent referral to a hospital for blood transfusion or advanced management.",
+    "topic": "Identification of clinical signs",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Palmar+Pallor+Comparison",
+    "imageAlt": "A health worker's warm pink palm held next to an infant's palm, which appears completely white and pale, lacking any reddish color in the creases."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A patient presents with yellow discoloration of the white part of the eyes (sclera) as shown in the image. What is this clinical sign called, and what does it suggest?",
+    "options": {
+      "A": "Scleral icterus (jaundice), indicating liver dysfunction or hemolysis",
+      "B": "Bitot's spots, indicating vitamin A deficiency",
+      "C": "Pterygium, indicating chronic sun and wind exposure",
+      "D": "Conjunctivitis, indicating an acute bacterial infection"
+    },
+    "correctAnswer": "A",
+    "explanation": "Yellowing of the sclera is called scleral icterus or jaundice. It is caused by the accumulation of bilirubin in the tissues, which occurs in liver diseases (e.g., hepatitis), biliary obstruction, or high rates of red blood cell destruction (hemolysis, as in malaria or sickle cell crisis).",
+    "topic": "Identification of clinical signs",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Scleral+Icterus+Jaundice",
+    "imageAlt": "A close-up of a patient's eye with the eyelid held open, showing the white area of the eye (sclera) stained a distinct yellow color."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A newborn infant is being examined for jaundice. The CHEW gently presses their finger on the infant's forehead to blanch the skin. What is the correct method to determine the clinical severity of neonatal jaundice?",
+    "options": {
+      "A": "Observe the dermal progression of yellowing from the head downwards to the chest, abdomen, and limbs (Kramer's rule)",
+      "B": "Measure the circumference of the infant's head",
+      "C": "Perform a skin pinch test on the abdomen and count the seconds",
+      "D": "Check if the baby responds to loud noises"
+    },
+    "correctAnswer": "A",
+    "explanation": "Neonatal jaundice progresses in a cephalocaudal direction (from head to toe). According to Kramer's rule, visual assessment involves blanching the skin; if yellowing is limited to the head/neck, bilirubin is low, but if it extends to the palms and soles, it indicates severe hyperbilirubinemia requiring immediate phototherapy or referral.",
+    "topic": "Identification of clinical signs",
+    "difficulty": "HARD",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Neonatal+Jaundice+Assessment",
+    "imageAlt": "A health worker gently pressing a finger against a newborn baby's forehead, which turns yellow when the finger is removed."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A 10-month-old infant presents with diarrhea. The skin pinch test on the abdomen shown in the image takes more than 2 seconds to go back to normal. What classification is appropriate based on this sign?",
+    "options": {
+      "A": "Severe dehydration",
+      "B": "Some dehydration",
+      "C": "No dehydration",
+      "D": "Severe malnutrition only"
+    },
+    "correctAnswer": "A",
+    "explanation": "A skin pinch that goes back very slowly (taking 2 seconds or longer) is a key sign of severe dehydration under the IMCI classification. Other features include lethargy/unconsciousness, sunken eyes, and inability to drink or drinking poorly.",
+    "topic": "Identification of clinical signs",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Very+Slow+Skin+Pinch+Test",
+    "imageAlt": "A clinician pinching the abdominal skin of a child between their thumb and forefinger, with the skin fold remaining elevated and standing after release."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "During an assessment of a child with a cough, the CHEW observes the lower chest wall moving inwards when the child breathes in, as shown in the image. What is this sign called, and what is its clinical significance?",
+    "options": {
+      "A": "Subcostal/chest indrawing, indicating severe pneumonia or respiratory distress",
+      "B": "Abdominal breathing, which is normal for all children under 5",
+      "C": "Intercostal retraction, indicating a mild upper respiratory tract infection",
+      "D": "Grunting, which indicates the child is attempting to speak"
+    },
+    "correctAnswer": "A",
+    "explanation": "Chest indrawing (inward movement of the lower chest wall/subcostal margin during inspiration) is a key sign of severe pneumonia or severe respiratory distress in infants under IMCI guidelines. It indicates that the child is working much harder than normal to draw air into the lungs.",
+    "topic": "Identification of clinical signs",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Chest+Indrawing+Infant",
+    "imageAlt": "An infant's chest during inhalation, showing a pronounced indentation/inward collapse of the skin and muscles below the rib cage."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The patient in the image exhibits a bluish discoloration of the tongue, lips, and mucosal membranes. What is this clinical sign, and what does it indicate?",
+    "options": {
+      "A": "Central cyanosis, indicating severe hypoxia or low blood oxygen saturation",
+      "B": "Peripheral cyanosis, indicating cold exposure in the fingers and toes",
+      "C": "Severe anemia, indicating a lack of red blood cells",
+      "D": "Melanosis, indicating a benign pigment accumulation"
+    },
+    "correctAnswer": "A",
+    "explanation": "Central cyanosis is characterized by a bluish tint of the tongue, lips, and oral mucosa. It is a critical sign indicating systemic hypoxia (low arterial oxygen saturation), requiring immediate oxygen therapy and emergency referral.",
+    "topic": "Identification of clinical signs",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Central+Cyanosis+Lips+Tongue",
+    "imageAlt": "A close-up of a patient's mouth showing a distinct dusky blue-purple coloration of the lips and the surface of the tongue."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "While inspecting the mouth of a child who has a high fever, runny nose, and red eyes, the CHEW spots small, white spots resembling grains of salt on a red background inside the cheeks (buccal mucosa). What are these spots called, and what disease do they diagnose?",
+    "options": {
+      "A": "Koplik spots, diagnostic of Measles",
+      "B": "Oral thrush, diagnostic of Candidiasis",
+      "C": "Aphthous ulcers, diagnostic of canker sores",
+      "D": "Leukoplakia, diagnostic of chronic irritation"
+    },
+    "correctAnswer": "A",
+    "explanation": "Koplik spots are small, white spots with a bluish-white center on an erythematous background, occurring on the buccal mucosa opposite the lower molars. They are pathognomonic (diagnostic) for measles and appear 2-3 days before the measles rash.",
+    "topic": "Identification of clinical signs",
+    "difficulty": "HARD",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Koplik+Spots+Measles",
+    "imageAlt": "Inside of a child's mouth showing tiny, pinpoint sand-like white spots with red rings around them on the inner lining of the cheek."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A woman from a rural community presents with a visible swelling in the front of her neck as shown in the image. What is this condition called, and what is its most common environmental cause?",
+    "options": {
+      "A": "Goiter, caused by chronic dietary iodine deficiency",
+      "B": "Mumps, caused by a paramyxovirus infection of the salivary glands",
+      "C": "Cervical lymphadenitis, caused by tuberculosis",
+      "D": "Thyrotoxic crisis, caused by excessive calcium intake"
+    },
+    "correctAnswer": "A",
+    "explanation": "A goiter is an abnormal enlargement of the thyroid gland, visible as a swelling in the anterior neck. In rural communities, it is most commonly caused by dietary iodine deficiency, which prevents the thyroid from producing adequate thyroid hormones, leading to compensatory hypertrophy.",
+    "topic": "Identification of clinical signs",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Anterior+Neck+Swelling+Goiter",
+    "imageAlt": "A front view of a woman's neck showing a large, symmetrical, smooth swelling just below the larynx, moving upward when she swallows."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A 3-year-old child presents with enlarged wrists, bow-legs (outward curving of the legs), and a line of bead-like swellings along the ribs (rachitic rosary). What nutritional deficiency is responsible for these signs?",
+    "options": {
+      "A": "Vitamin D deficiency (Rickets)",
+      "B": "Vitamin A deficiency (Xerophthalmia)",
+      "C": "Vitamin C deficiency (Scurvy)",
+      "D": "Protein-energy malnutrition (Marasmus)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Rickets is a bone-softening disease in children caused by Vitamin D or calcium deficiency. Classic signs include bow-legs, knock-knees, enlargement of the wrists and ankles, and 'rachitic rosary' (swelling at the costochondral junctions of the ribs).",
+    "topic": "Identification of clinical signs",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Rickets+Bow+Legs+Wrists",
+    "imageAlt": "A standing toddler showing outward bowing of both legs, widened ankle joints, and noticeably thickened wrists."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The child shown in the image has dry, dull eyes, and the conjunctiva has a wrinkled, grayish-white appearance with a foamy, triangular plaque near the outer corner. What is this plaque, and what does it indicate?",
+    "options": {
+      "A": "Bitot's spot, indicating vitamin A deficiency",
+      "B": "Pterygium, indicating wind and dust irritation",
+      "C": "Cataract, indicating clouding of the eye lens",
+      "D": "Chalazion, indicating a blocked meibomian gland"
+    },
+    "correctAnswer": "A",
+    "explanation": "Bitot's spots are dry, foamy, triangular plaques on the bulbar conjunctiva. They are a classic clinical sign of Vitamin A deficiency. If untreated, this progresses to corneal ulceration and permanent blindness (xerophthalmia).",
+    "topic": "Identification of clinical signs",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Bitots+Spot+Vitamin+A",
+    "imageAlt": "A close-up of a child's eye showing a distinct, triangular, foamy-looking white patch on the sclera near the outer edge of the cornea."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "During an assessment of a patient with suspected chronic tuberculosis, the CHEW notices clubbing of the fingernails as shown in the image (the angle between the nail and nail bed is lost). What does nail clubbing indicate?",
+    "options": {
+      "A": "Chronic hypoxemia or long-standing respiratory/cardiac disease",
+      "B": "Acute bacterial infection of the nail fold (paronychia)",
+      "C": "Fungal infection of the nails (onychomycosis)",
+      "D": "Severe iron-deficiency anemia (koilonychia)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Nail clubbing is characterized by softening of the nail bed, loss of the normal angle between the nail and nail bed (Schamroth's sign), and bulbous enlargement of the fingertips. It is associated with chronic hypoxemia, lung diseases (like TB, lung abscess, bronchiectasis), and cyanotic heart disease.",
+    "topic": "Identification of clinical signs",
+    "difficulty": "HARD",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Nail+Clubbing+Inspection",
+    "imageAlt": "Hands showing bulbous, dome-shaped fingertips with nails curving downwards like a spoon back, lacking the normal indentation at the base."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A CHEW performs a malaria Rapid Diagnostic Test (RDT) on a patient with fever. The test result window shows a line at the control zone (C) and no line at the test zone (T). What is the correct interpretation?",
+    "options": {
+      "A": "Negative for malaria; search for other causes of fever",
+      "B": "Positive for malaria; initiate artemisin-based combination therapy (ACT)",
+      "C": "Invalid test; repeat the test with a new RDT kit",
+      "D": "Invalid test; check if the buffer solution has expired"
+    },
+    "correctAnswer": "A",
+    "explanation": "A malaria RDT result with a single line at the Control (C) line and no line at the Test (T) line is negative. This indicates that malaria antigens were not detected in the patient's blood. The worker must look for other causes of the fever.",
+    "topic": "Reading diagnostic test kits",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Malaria+RDT+Negative",
+    "imageAlt": "A malaria RDT plastic cassette showing a clear pink band next to the letter 'C' and a completely blank area next to the letter 'T'."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A malaria RDT cassette displays a red line at the test zone (T) but no line at the control zone (C) after 15 minutes. What is the correct action?",
+    "options": {
+      "A": "Discard the test as invalid, and repeat the procedure using a new cassette",
+      "B": "Treat the patient immediately for severe malaria",
+      "C": "Record the test as positive and log it in the facility register",
+      "D": "Wait another 30 minutes to see if the control line appears"
+    },
+    "correctAnswer": "A",
+    "explanation": "If the control line (C) does not appear, the test is invalid, regardless of whether a test line (T) is visible or not. The test must be discarded, and the test repeated using a new kit and a new blood sample.",
+    "topic": "Reading diagnostic test kits",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Invalid+Malaria+RDT",
+    "imageAlt": "A malaria RDT cassette with a red band showing at the 'T' line, but the 'C' line position is completely white."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The malaria RDT cassette shown in the image has three lines labeled C, Pf, and Pan. Lines are visible at both C and Pf. What is the diagnosis?",
+    "options": {
+      "A": "Positive for Plasmodium falciparum malaria",
+      "B": "Positive for Plasmodium vivax, ovale, or malariae only",
+      "C": "Negative for all malaria species",
+      "D": "Invalid test; Pf and Pan cannot be read together"
+    },
+    "correctAnswer": "A",
+    "explanation": "Three-line malaria RDTs differentiate Plasmodium falciparum (Pf) from non-falciparum species (Pan). A line at C and Pf indicates a positive result for P. falciparum, which is the most dangerous and common species in sub-Saharan Africa.",
+    "topic": "Reading diagnostic test kits",
+    "difficulty": "HARD",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Pf+Malaria+RDT+Positive",
+    "imageAlt": "A malaria RDT cassette showing three line markers: 'C', 'Pf', and 'Pan'. Visible red bands are present at 'C' and 'Pf', but 'Pan' is blank."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "What is the primary risk of reading a malaria RDT cassette after the manufacturer's specified reading window (e.g., waiting 45 minutes instead of 15-20 minutes)?",
+    "options": {
+      "A": "False positive lines may appear due to sample evaporation and backflow",
+      "B": "The control line will disappear completely",
+      "C": "The blood sample will liquefy and ruin the plastic cassette",
+      "D": "The test will convert into a test for bacterial infection"
+    },
+    "correctAnswer": "A",
+    "explanation": "Malaria RDTs must be read within the time specified by the manufacturer (usually 15 to 20 minutes). Reading the test too late can lead to false-positive results because of the evaporation of the buffer fluid, which causes background clearing to fade and exposes faint non-specific bands.",
+    "topic": "Reading diagnostic test kits",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=RDT+Overtime+Reading",
+    "imageAlt": "A dried-out malaria RDT cassette with brown staining and blurry, faint lines visible throughout the test window."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A CHEW is performing an HIV screening test using a rapid antibody test strip. The strip shows a band at the control line (C) and a band at the test line (T). What is the correct interpretation and next step?",
+    "options": {
+      "A": "Reactive (Positive); perform a confirmatory HIV rapid test using a different kit",
+      "B": "Non-reactive (Negative); discharge the patient with prevention advice",
+      "C": "Invalid; discard the strip and repeat with the same kit",
+      "D": "Indeterminate; refer the patient immediately for PCR testing"
+    },
+    "correctAnswer": "A",
+    "explanation": "A rapid HIV test strip showing lines at both Control (C) and Test (T) is reactive (positive). Under national testing algorithms, a positive screening test must be confirmed using a second, different rapid test kit (confirmatory test) to ensure accuracy.",
+    "topic": "Reading diagnostic test kits",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=HIV+Test+Reactive",
+    "imageAlt": "An HIV rapid test device showing a distinct line at both the control mark 'C' and the test mark 'T'."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "While conducting a routine prenatal checkup, the CHEW performs a urine dipstick test. The protein pad on the dipstick turns a deep green color, corresponding to the '+++' (300 mg/dL) marker on the reference chart. What is the immediate clinical concern for this pregnant patient?",
+    "options": {
+      "A": "Pre-eclampsia, especially if accompanied by high blood pressure",
+      "B": "Gestational diabetes, requiring sugar restriction",
+      "C": "Dehydration, requiring increased oral fluid intake",
+      "D": "Normal pregnancy changes, requiring no action"
+    },
+    "correctAnswer": "A",
+    "explanation": "Significant protein in the urine (proteinuria, graded as ++ or +++) in a pregnant woman is a diagnostic marker for pre-eclampsia when paired with hypertension. This is a medical emergency that can progress to eclampsia (convulsions), endangering both mother and baby.",
+    "topic": "Reading diagnostic test kits",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Urine+Dipstick+Proteinuria",
+    "imageAlt": "A plastic urine dipstick held next to the bottle label's color chart, showing the protein indicator pad matching the dark blue-green color of the 3+ protein square."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The urine dipstick test shown in the image has a glucose pad that has turned dark brown, matching the 2% (2000 mg/dL) color scale. What does this finding indicate?",
+    "options": {
+      "A": "Glycosuria, suggesting uncontrolled diabetes mellitus",
+      "B": "Acetonuria, suggesting diabetic ketoacidosis",
+      "C": "Hematuria, suggesting a urinary tract infection",
+      "D": "Normal carbohydrate clearance"
+    },
+    "correctAnswer": "A",
+    "explanation": "A high level of glucose in the urine (glycosuria) occurs when blood glucose levels exceed the renal threshold (usually about 180 mg/dL), causing glucose to spill into the urine. This is a classic sign of undiagnosed or poorly managed diabetes mellitus.",
+    "topic": "Reading diagnostic test kits",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Urine+Dipstick+Glycosuria",
+    "imageAlt": "A urine dipstick where the glucose reagent pad has turned a dark brown color, compared to the light green negative control color on the bottle chart."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A patient presents with dysuria (painful urination) and frequency. A urine dipstick shows that both the Nitrite pad and the Leukocyte Esterase pad have changed color to pink and purple, respectively. What is the correct interpretation?",
+    "options": {
+      "A": "Highly suggestive of a Urinary Tract Infection (UTI)",
+      "B": "Suggestive of acute kidney injury",
+      "C": "Suggestive of normal urine composition",
+      "D": "Suggestive of liver disease and high bilirubin"
+    },
+    "correctAnswer": "A",
+    "explanation": "The presence of both nitrites (produced by Gram-negative bacteria like E. coli) and leukocytes (white blood cells indicating inflammation) in urine is highly indicative of a urinary tract infection (UTI). This clinical finding warrants antibiotic treatment.",
+    "topic": "Reading diagnostic test kits",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Urine+Dipstick+UTI+Signs",
+    "imageAlt": "A urine dipstick showing a bright pink Nitrite pad and a dark purple Leukocyte Esterase pad, matching the positive indicators on the comparison chart."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "Why must the urine dipstick strip be read within the exact time limits (e.g., 30 seconds for glucose, 60 seconds for protein, 120 seconds for leukocytes) specified by the manufacturer?",
+    "options": {
+      "A": "Delayed reading allows chemical reagents to continue reacting with air or neighboring pads, causing false-positive color changes",
+      "B": "The urine will dry out and the pads will turn completely white",
+      "C": "The plastic backing of the strip will dissolve and contaminate the bottle",
+      "D": "The colors will reverse back to their original state after 2 minutes"
+    },
+    "correctAnswer": "A",
+    "explanation": "Different chemical reactions on a urine dipstick occur at different rates. If a strip is read after the recommended time window, ongoing chemical changes, exposure to atmospheric oxygen, or bleeding of colors between adjacent pads can result in false-positive readings.",
+    "topic": "Reading diagnostic test kits",
+    "difficulty": "HARD",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Dipstick+Timing+Chart",
+    "imageAlt": "A hand holding a stopwatch next to a urine analysis strip container showing different reading times (30s, 60s, 120s) printed next to each test parameter."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A CHEW is using a pregnancy test strip (urine hCG) to confirm a pregnancy. The strip shows a dark line at the control window (C) and a very faint, light pink line at the test window (T). What does this result mean?",
+    "options": {
+      "A": "Positive; a faint line still indicates the presence of hCG and confirms pregnancy",
+      "B": "Negative; the line must be as dark as the control line to be positive",
+      "C": "Invalid; the test must be repeated using a morning blood sample",
+      "D": "Invalid; a faint line indicates a contaminated specimen"
+    },
+    "correctAnswer": "A",
+    "explanation": "A faint test line on a rapid urine hCG pregnancy test still indicates a positive (reactive) result, provided the control line is visible. The intensity of the test line depends on the concentration of hCG in the urine, which may be low in very early pregnancy.",
+    "topic": "Reading diagnostic test kits",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Faint+Line+Pregnancy+Test",
+    "imageAlt": "A pregnancy test strip showing a distinct dark red control line and a very light, faint pink line at the test position."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "During an outbreak of watery diarrhea, the CHEW uses a cholera rapid diagnostic test (RDT) dipstick. What is the correct method for preparing the stool specimen before dipping the strip?",
+    "options": {
+      "A": "Mix a small amount of liquid stool with the provided sample dilution buffer in a vial",
+      "B": "Heat the stool sample over a flame to concentrate it",
+      "C": "Centrifuge the stool at high speed to obtain a clear supernatant",
+      "D": "Dip the test strip directly into the toilet bowl or bedpan"
+    },
+    "correctAnswer": "A",
+    "explanation": "For cholera RDTs (like Crystal VC), the user must collect a small amount of liquid stool or watery rectal swab and mix it thoroughly with the sample dilution buffer in a tube. This dilutes the specimen and frees the antigens, allowing the liquid to migrate up the immunochromatographic strip.",
+    "topic": "Reading diagnostic test kits",
+    "difficulty": "HARD",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Cholera+Stool+Preparation",
+    "imageAlt": "A health worker using a plastic dropper to transfer a drop of watery stool into a small buffer vial containing liquid."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A patient is being tested for Syphilis using a rapid diagnostic test (RDT) strip. The strip shows no line at the control zone (C) and a dark line at the test zone (T). How should this test result be recorded?",
+    "options": {
+      "A": "Invalid; the test must be discarded and repeated",
+      "B": "Positive; the patient requires immediate penicillin injection",
+      "C": "Negative; the absence of a control line confirms no infection",
+      "D": "Equivocal; wait 24 hours and test the same strip again"
+    },
+    "correctAnswer": "A",
+    "explanation": "Any rapid test strip that does not show a control line (C) is invalid, as the control line confirms that the sample was applied correctly and the reagents migrated properly. The test cannot be interpreted and must be repeated with a new kit.",
+    "topic": "Reading diagnostic test kits",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Syphilis+RDT+Invalid",
+    "imageAlt": "A syphilis rapid test strip showing a white space at the control line 'C' mark and a red line at the test line 'T' mark."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "While inspecting the urine dipstick pad for Bilirubin, the CHEW notices a change to a light peach/pink color. What does the presence of Bilirubin in urine suggest?",
+    "options": {
+      "A": "Biliary tract obstruction or liver disease (e.g., hepatitis)",
+      "B": "Severe renal failure and loss of nephrons",
+      "C": "Dietary excess of citrus fruits and vitamin C",
+      "D": "Urinary tract infection by coliform bacteria"
+    },
+    "correctAnswer": "A",
+    "explanation": "Bilirubin is not normally detected in urine. Water-soluble conjugated bilirubin appears in urine (bilirubinuria) only when there is liver disease, hepatic damage, or an obstruction in the bile duct (e.g., gallstones or tumor) preventing its excretion via the intestine.",
+    "topic": "Reading diagnostic test kits",
+    "difficulty": "HARD",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Urine+Dipstick+Bilirubinuria",
+    "imageAlt": "A urine dipstick strip placed next to a bottle label color scale showing a color match for moderate bilirubin levels."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "When using a malaria RDT kit, the CHEW accidentally squeezes 5 drops of buffer into the sample well instead of the recommended 2 drops. What is the likely consequence?",
+    "options": {
+      "A": "The blood sample will be washed out too quickly, potentially causing a false negative result",
+      "B": "The test will take twice as long but remain accurate",
+      "C": "The test line will turn blue instead of red",
+      "D": "The cassette will overflow and damage the workbench"
+    },
+    "correctAnswer": "A",
+    "explanation": "Adding too much buffer can dilute the sample excessively and flush the blood through the cassette too quickly, preventing the malaria antigens from binding properly to the test line reagents. This can cause a false-negative result.",
+    "topic": "Reading diagnostic test kits",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Adding+RDT+Buffer",
+    "imageAlt": "A hand holding a buffer bottle, dropping liquid into the circular sample well of a plastic RDT cassette."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The CHEW is performing a Rapid Test for Hepatitis B surface Antigen (HBsAg). The strip shows a single line at the control zone (C) and no line at the test zone (T). What is the patient's status?",
+    "options": {
+      "A": "Negative for active Hepatitis B infection",
+      "B": "Positive for active Hepatitis B infection",
+      "C": "Immune to Hepatitis B due to vaccination",
+      "D": "Invalid test; repeat immediately"
+    },
+    "correctAnswer": "A",
+    "explanation": "A single line at the Control (C) zone and no line at the Test (T) zone on a rapid HBsAg test indicates a negative (non-reactive) result, meaning the patient does not have detectable levels of Hepatitis B surface antigen.",
+    "topic": "Reading diagnostic test kits",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=HBsAg+RDT+Negative",
+    "imageAlt": "A rapid HBsAg test strip showing one bold line at the top (C) and a blank area in the middle (T)."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The image shows a CHEW preparing to measure a patient's blood pressure. What is the correct height position for the blood pressure cuff relative to the patient's heart?",
+    "options": {
+      "A": "At the same level as the patient's heart",
+      "B": "At least 10 cm above the level of the heart",
+      "C": "At the level of the patient's lap or waist",
+      "D": "It does not matter as long as the patient is sitting"
+    },
+    "correctAnswer": "A",
+    "explanation": "For accurate blood pressure measurement, the arm cuff must be positioned at the level of the patient's heart (mid-sternum level). Placing the cuff below heart level falsely elevates the reading, while placing it above heart level falsely lowers it.",
+    "topic": "Proper use of medical equipment",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=BP+Cuff+Heart+Level",
+    "imageAlt": "A patient seated with their arm resting on a table so that the wrapped blood pressure cuff is aligned horizontally with their chest/heart level."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The CHEW is wrapping the blood pressure cuff around the patient's upper arm. How far above the antecubital fossa (elbow crease) should the lower edge of the cuff be positioned?",
+    "options": {
+      "A": "2 to 3 cm (about 1 inch) above the crease",
+      "B": "Directly over the elbow crease",
+      "C": "10 cm (4 inches) above the elbow crease",
+      "D": "Halfway up the shoulder"
+    },
+    "correctAnswer": "A",
+    "explanation": "The lower edge of the blood pressure cuff should be placed 2 to 3 cm (approximately 1 inch or two fingerbreadths) above the antecubital fossa. This prevents the stethoscope diaphragm from touching the cuff, which would create noise interference, and ensures proper compression of the brachial artery.",
+    "topic": "Proper use of medical equipment",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=BP+Cuff+Positioning+Arm",
+    "imageAlt": "A close-up of a blood pressure cuff wrapped on an arm, showing a clear two-finger space between the bottom of the cuff and the elbow joint."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "While measuring blood pressure, what is the recommended rate of deflation for the sphygmomanometer valve?",
+    "options": {
+      "A": "2 to 3 mmHg per second",
+      "B": "10 mmHg per second",
+      "C": "1 mmHg every 5 seconds",
+      "D": "As fast as possible to prevent patient discomfort"
+    },
+    "correctAnswer": "A",
+    "explanation": "The deflation valve of the sphygmomanometer bulb should be released slowly at a rate of 2 to 3 mmHg per second (or per heartbeat). Deflating the cuff too rapidly can lead to underestimation of systolic pressure and overestimation of diastolic pressure.",
+    "topic": "Proper use of medical equipment",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Sphygmomanometer+Deflation+Rate",
+    "imageAlt": "A hand slowly turning the metal screw valve of a black rubber inflation bulb, with the dial of the pressure gauge descending steadily."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "What is the correct placement for the stethoscope chestpiece when auscultating the blood pressure, as shown in the image?",
+    "options": {
+      "A": "Over the brachial artery pulse point in the antecubital fossa",
+      "B": "Tucked completely underneath the lower edge of the blood pressure cuff",
+      "C": "Over the radial pulse point on the wrist",
+      "D": "Over the biceps muscle"
+    },
+    "correctAnswer": "A",
+    "explanation": "The diaphragm or bell of the stethoscope must be placed directly over the brachial artery pulse point in the antecubital fossa. It should not be tucked underneath the BP cuff, as this can cause friction noises and distort the Korotkoff sounds, leading to inaccurate readings.",
+    "topic": "Proper use of medical equipment",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Stethoscope+Placement+BP",
+    "imageAlt": "A hand holding the flat chestpiece of a stethoscope over the inner elbow crease just below the lower edge of a blood pressure cuff."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A CHEW is assessing a pregnant woman using the wooden instrument shown in the image. What is this instrument, and what is its correct clinical application?",
+    "options": {
+      "A": "Pinard stethoscope (fetoscope), used to auscultate fetal heart sounds",
+      "B": "Acoustic amplifier, used to check maternal breathing",
+      "C": "Speculum handle, used for pelvic examination",
+      "D": "Percussion hammer, used to test deep tendon reflexes"
+    },
+    "correctAnswer": "A",
+    "explanation": "The instrument shown is a Pinard stethoscope (or wooden fetoscope). It is used to listen to the fetal heart rate (FHR). The wide end is placed flat against the maternal abdomen over the fetal back, and the clinician's ear is placed against the flat top of the narrow end.",
+    "topic": "Proper use of medical equipment",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Pinard+Stethoscope+Wood",
+    "imageAlt": "A hollow, funnel-shaped wooden instrument (Pinard stethoscope) lying on a clinical tray."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "When using a Pinard stethoscope, what is a critical technique rule for the examiner's hands to ensure clear sound reception?",
+    "options": {
+      "A": "Remove the hands from the stethoscope once it is held between the ear and the abdomen to prevent friction noise",
+      "B": "Hold the stethoscope tightly with both hands to stabilize it",
+      "C": "Gently tap the side of the wooden tube with a finger to calibrate the sound",
+      "D": "Use sterile gloves to hold the middle of the tube"
+    },
+    "correctAnswer": "A",
+    "explanation": "To listen clearly using a Pinard stethoscope, the examiner must place the wide end on the abdomen, rest their ear against the flat top, and then release their hand holding the stethoscope. Keeping a hand on it creates friction noises that mask the faint fetal heart tones.",
+    "topic": "Proper use of medical equipment",
+    "difficulty": "HARD",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Using+Pinard+Stethoscope",
+    "imageAlt": "A midwife listening to a pregnant woman's abdomen with a Pinard stethoscope, with her hands completely removed and resting by her side."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A CHEW is preparing to measure a 9-month-old infant's Mid-Upper Arm Circumference (MUAC). What is the first step in locating the correct measurement site?",
+    "options": {
+      "A": "Find the midpoint between the tip of the shoulder (acromion) and the elbow (olecranon) with the arm bent at 90 degrees",
+      "B": "Measure the circumference at the wrist joint and multiply by two",
+      "C": "Measure the thickest part of the biceps while the arm is fully extended",
+      "D": "Wrap the tape around the center of the forearm"
+    },
+    "correctAnswer": "A",
+    "explanation": "To locate the correct MUAC measurement site, the infant's arm is bent at 90 degrees. The CHEW uses a string or tape to measure the distance between the acromion (tip of shoulder) and olecranon (tip of elbow), marks the exact midpoint, and then performs the measurement at that midpoint with the arm hanging relaxed.",
+    "topic": "Proper use of medical equipment",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Locating+MUAC+Midpoint",
+    "imageAlt": "A health worker holding a measuring tape along a child's upper arm, which is bent at a 90-degree angle, making a mark with a pen on the skin at the midpoint."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "When wrapping the MUAC tape around the marked midpoint of a child's arm, how tight should the tape be pulled?",
+    "options": {
+      "A": "Snug against the skin, laying flat without pinching or indenting the flesh",
+      "B": "As tight as possible to ensure there is no air gap under the tape",
+      "C": "Loose enough to slide two fingers under the tape easily",
+      "D": "It should be pulled until the plastic tape stretches slightly"
+    },
+    "correctAnswer": "A",
+    "explanation": "The MUAC tape must be wrapped flat around the arm at the marked midpoint. It should be snug against the skin but not pulled so tight that it pinches or creates an indentation in the child's flesh, nor should it be loose enough to gap. Incorrect tension leads to inaccurate classification.",
+    "topic": "Proper use of medical equipment",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=MUAC+Tension+Check",
+    "imageAlt": "A close-up of a MUAC tape wrapped around a small arm; the tape is flush with the skin without causing any folding or skin indentation."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A child aged 24 months has a MUAC reading that falls in the yellow zone, measuring 12.0 cm. What does this indicate?",
+    "options": {
+      "A": "Moderate Acute Malnutrition (MAM)",
+      "B": "Severe Acute Malnutrition (SAM)",
+      "C": "Normal nutritional status",
+      "D": "Severe stunting"
+    },
+    "correctAnswer": "A",
+    "explanation": "For children aged 6 to 59 months, MUAC readings are classified as: Green (>= 12.5 cm) is normal; Yellow (11.5 cm to 12.4 cm) indicates Moderate Acute Malnutrition (MAM); and Red (< 11.5 cm) indicates Severe Acute Malnutrition (SAM).",
+    "topic": "Proper use of medical equipment",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=MUAC+Yellow+Zone+Reading",
+    "imageAlt": "A MUAC tape reading 12.0 cm, with the arrows pointing to the yellow segment of the tape."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A clinical thermometer is shown in the image. What is the correct direction to wipe the thermometer with an alcohol swab before and after using it on a patient?",
+    "options": {
+      "A": "Before: from stem to bulb. After: from bulb to stem.",
+      "B": "Before: from bulb to stem. After: from stem to bulb.",
+      "C": "Before and after: from bulb to stem only.",
+      "D": "Before and after: from stem to bulb only."
+    },
+    "correctAnswer": "A",
+    "explanation": "Before use, the thermometer is wiped from the cleanest part (stem) to the dirtiest part (bulb) to prevent moving contamination to the bulb. After use, the bulb is the most contaminated part, so it is wiped from the cleanest part (stem) toward the bulb (bulb to stem) to ensure proper disinfection.",
+    "topic": "Proper use of medical equipment",
+    "difficulty": "HARD",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Thermometer+Wiping+Steps",
+    "imageAlt": "A hand using an alcohol prep pad to wipe a glass thermometer from the top end down towards the bulb."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "What is the correct procedure for using a Salter spring scale to weigh an infant, as shown in the image?",
+    "options": {
+      "A": "Hang the scale securely, adjust the dial to zero (tare) with the empty weighing pants attached, place the child in the pants, and read the dial at eye level",
+      "B": "Hold the scale in one hand and lift the child with the other hand",
+      "C": "Place the child directly on the metal hook of the scale",
+      "D": "Tare the scale after putting the child into the weighing pants"
+    },
+    "correctAnswer": "A",
+    "explanation": "To weigh an infant using a Salter spring scale: hang the scale at eye level, attach the empty weighing sling/pants and adjust the calibration screw to read '0' (taring), place the undressed child in the pants, hang them on the scale hook, and read the weight once the needle stabilizes, looking directly at the dial.",
+    "topic": "Proper use of medical equipment",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Salter+Scale+Weighing",
+    "imageAlt": "A spring scale suspended from a wooden beam, with a child in blue weighing pants hanging from the bottom hook, and a health worker reading the dial at eye level."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The digital pulse oximeter shown in the image is flashing a warning. What is a common clinical cause of a false or failed reading on a pulse oximeter?",
+    "options": {
+      "A": "Cold hands or dark fingernail polish on the measured finger",
+      "B": "The patient is breathing too deeply",
+      "C": "The patient's skin is too dry",
+      "D": "The device is placed on the thumb instead of the index finger"
+    },
+    "correctAnswer": "A",
+    "explanation": "Pulse oximetry relies on light transmission through the nail bed. False, low, or failed readings can be caused by poor peripheral perfusion (cold hands, shock), dark nail polish (which blocks light), shivering, or movement of the hand.",
+    "topic": "Proper use of medical equipment",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Pulse+Oximeter+Error",
+    "imageAlt": "A finger with bright red nail polish inserted into a pulse oximeter, which is showing dashes (--) instead of oxygen saturation levels."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A CHEW is using a stethoscope to listen to a patient's lungs. What is the correct direction of the ear tips of the stethoscope when inserting them into the ears?",
+    "options": {
+      "A": "Angled forward (towards the nose)",
+      "B": "Angled backward (towards the back of the head)",
+      "C": "Straight down, perpendicular to the ear canal",
+      "D": "It does not affect sound transmission"
+    },
+    "correctAnswer": "A",
+    "explanation": "The ear tips of a stethoscope must point forward (anteriorly, towards the nose) when inserted. This aligns the ear tips with the natural forward angle of the human external acoustic meatus (ear canal), ensuring comfort and optimal sound transmission.",
+    "topic": "Proper use of medical equipment",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Stethoscope+Ear+Tips+Angle",
+    "imageAlt": "A close-up of a stethoscope headset, demonstrating the ear tips angled forward towards the front."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A newborn requires resuscitation. The CHEW selects a self-inflating bag-valve-mask (Ambu bag) as shown in the image. What is the correct technique for sealing the mask over the infant's face?",
+    "options": {
+      "A": "Use the 'E-C clamp' technique, forming a 'C' with the thumb and index finger to press the mask down, and an 'E' with the other three fingers to lift the jaw",
+      "B": "Press the mask flat onto the face using the palm of the hand",
+      "C": "Tightly hold only the nose portion of the mask with the index finger",
+      "D": "Cover the eyes and mouth while leaving the nose open"
+    },
+    "correctAnswer": "A",
+    "explanation": "The 'E-C clamp' technique is the standard method for securing a face mask during bag-valve-mask ventilation. The thumb and index finger form a 'C' shape over the mask to push its edges down for a tight seal, while the middle, ring, and little fingers form an 'E' under the mandible (jawbone) to lift it upward and open the airway.",
+    "topic": "Proper use of medical equipment",
+    "difficulty": "HARD",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Ambu+Bag+EC+Clamp",
+    "imageAlt": "A medical provider's hand holding a round pediatric face mask on a neonatal mannequin, demonstrating the thumb and index finger pressing the mask and three fingers lifting the jawline."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The image shows a height board (infantometer) being used to measure the length of a 6-month-old baby. What is the correct role of the assistant or mother during this measurement?",
+    "options": {
+      "A": "Hold the baby's head flat against the fixed headboard, keeping the head in the 'Frankfort plane' (eyes looking straight up)",
+      "B": "Hold the baby's feet together against the sliding footboard",
+      "C": "Gently press the baby's knees flat down against the board",
+      "D": "Pull the baby's arms straight above their head"
+    },
+    "correctAnswer": "A",
+    "explanation": "Measuring recumbent length in infants requires two people. The assistant or mother stands at the head end of the board and holds the infant's head gently but firmly against the fixed headboard, ensuring the head is in the Frankfort vertical plane. The examiner then straightens the baby's legs and slides the footboard against the soles of the feet.",
+    "topic": "Proper use of medical equipment",
+    "difficulty": "HARD",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Infantometer+Length+Measurement",
+    "imageAlt": "An infant lying on a wooden measuring board; one person holds the head against the fixed end, and another straightens the knees to slide the footboard."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The instrument shown in the image has ring handles, a locking ratchet mechanism, and transversely grooved jaws. What is this instrument, and what is its primary surgical use?",
+    "options": {
+      "A": "Artery forceps (hemostat), used to clamp blood vessels and control bleeding",
+      "B": "Needle holder, used to grip suturing needles",
+      "C": "Tissue forceps, used to pull skin margins together",
+      "D": "Surgical scissors, used to cut tissue and dressings"
+    },
+    "correctAnswer": "A",
+    "explanation": "Artery forceps (hemostatic forceps or hemostats) have ring handles, a locking ratchet to maintain pressure, and transverse grooves along the jaws. They are designed to clamp bleeding blood vessels to achieve hemostasis during minor surgical procedures.",
+    "topic": "Identifying surgical/first aid instruments",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Artery+Forceps+Hemostat",
+    "imageAlt": "A pair of stainless steel artery forceps, showing the scissor-like handles, the locking ratchet near the rings, and the fine grooved tips."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A CHEW is preparing a dressing tray. The image shows a pair of long, curved forceps with ring handles, large loop-like jaws, and no teeth. What is this instrument?",
+    "options": {
+      "A": "Sponge holding forceps (Foerster)",
+      "B": "Artery forceps (Kelly)",
+      "C": "Toothed dissecting forceps (Adson)",
+      "D": "Needle holder (Mayo-Hegar)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Sponge holding forceps (Foerster sponge forceps) have long shafts and large, rounded loop-like jaws. They are used to hold gauze sponges, cotton swabs, or prep pads during wound cleaning, skin preparation, or surgical procedures to keep the hands away from the sterile field.",
+    "topic": "Identifying surgical/first aid instruments",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Sponge+Holding+Forceps",
+    "imageAlt": "A pair of stainless steel Foerster sponge forceps with large, oval, loop-shaped jaws lying flat on a sterile tray."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The image shows a pair of tweezers-like forceps with small teeth at the tip. What is the name of this instrument, and what tissue is it best suited for holding?",
+    "options": {
+      "A": "Toothed dissecting forceps (tissue forceps), used for holding tough tissues like skin",
+      "B": "Non-toothed dissecting forceps, used for holding delicate blood vessels and nerves",
+      "C": "Cheatle forceps, used for lifting hot instrument trays",
+      "D": "Artery forceps, used for clamping bleeding points"
+    },
+    "correctAnswer": "A",
+    "explanation": "Toothed dissecting forceps (or tissue forceps) have tiny interlocking teeth at the tips. This provides a secure grip on tough tissues like skin and fascia without slipping. They should not be used on delicate organs or vessels as they can puncture or tear them.",
+    "topic": "Identifying surgical/first aid instruments",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Toothed+Tissue+Forceps",
+    "imageAlt": "A close-up of the tip of a pair of metal dissecting forceps, showing small interlocking teeth (1-into-2 design) at the point."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The non-toothed dissecting forceps shown in the image have flat, ribbed tips. When should a CHEW choose this tool over toothed forceps?",
+    "options": {
+      "A": "When handling delicate tissues, nerves, or applying dressings and sterile gauze",
+      "B": "When suturing tough abdominal wall fascia",
+      "C": "When clamping a major bleeding artery",
+      "D": "When removing a foreign body from deep muscle tissue"
+    },
+    "correctAnswer": "A",
+    "explanation": "Non-toothed dissecting forceps (or plain dressing forceps) have flat, serrated tips that provide a gentle grip. They are used for handling delicate tissues (like bowel or vessels) to prevent trauma, and for picking up and applying sterile dressings, cotton, or gauze.",
+    "topic": "Identifying surgical/first aid instruments",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Non-Toothed+Dressing+Forceps",
+    "imageAlt": "Serrated, flat-tipped metal forceps holding a piece of white sterile gauze over a clean tray."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "What is the name of the scissors shown in the image, characterized by a blunt, rounded node on the tip of the lower blade?",
+    "options": {
+      "A": "Lister bandage scissors",
+      "B": "Mayo dissecting scissors",
+      "C": "Iris fine-point scissors",
+      "D": "Suture cutting scissors"
+    },
+    "correctAnswer": "A",
+    "explanation": "Lister bandage scissors have an angled blade with a smooth, blunt, knob-like tip on the lower blade. This design allows the lower blade to slide under bandages or clothing flat against the patient's skin without causing accidental cuts or scratches during removal.",
+    "topic": "Identifying surgical/first aid instruments",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Lister+Bandage+Scissors",
+    "imageAlt": "Angled metal scissors with a flat, circular knob on the bottom tip of the lower blade, lying next to a roll of cotton bandage."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The instrument shown in the image has short, stout jaws with a shallow cross-hatched pattern on the inner surface and a longitudinal groove. What is this instrument?",
+    "options": {
+      "A": "Needle holder (needle driver)",
+      "B": "Artery forceps (hemostat)",
+      "C": "Suture scissors",
+      "D": "Towel clamp"
+    },
+    "correctAnswer": "A",
+    "explanation": "A needle holder (or needle driver, such as Mayo-Hegar) has short, thick jaws designed to hold a curved suturing needle securely without slipping. The jaws usually feature a cross-hatched grip pattern and a central groove that prevents the needle from rotating.",
+    "topic": "Identifying surgical/first aid instruments",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Needle+Holder+Jaws",
+    "imageAlt": "A close-up of the open jaws of a surgical needle holder, displaying the textured cross-hatched surface and a vertical groove in the center."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A scalpel handle is shown. How should a CHEW safely attach and detach a disposable surgical blade to this handle?",
+    "options": {
+      "A": "Use a heavy needle holder or artery forceps to grip the blade, slide it onto the groove until it clicks, and use the same tool to lift and slide it off",
+      "B": "Hold the blade in gloved fingers and push it onto the handle by hand",
+      "C": "Use clean teeth to stabilize the handle while pushing the blade on with a finger",
+      "D": "Solder the blade permanently onto the handle"
+    },
+    "correctAnswer": "A",
+    "explanation": "Surgical blades must never be handled directly with fingers due to the high risk of cuts and needle-stick style injuries. A needle holder or heavy hemostat must be used to grasp the spine of the blade, align it with the handle grooves, slide it on until it locks, and reverse the process to lift the base and slide it off into a sharps container.",
+    "topic": "Identifying surgical/first aid instruments",
+    "difficulty": "HARD",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Attaching+Scalpel+Blade",
+    "imageAlt": "A metal needle holder gripping a scalpel blade, aligning the slot of the blade with the grooved end of a number 3 scalpel handle."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The large, heavy-duty forceps shown are kept immersed in a jar of disinfectant solution in the clinic dressing room. What are these forceps called, and what is their function?",
+    "options": {
+      "A": "Cheatle forceps, used to transfer sterile instruments from sterilizers to trays",
+      "B": "Obstetric forceps, used to assist in vaginal deliveries",
+      "C": "Dental extraction forceps, used to pull teeth",
+      "D": "Bone rongeurs, used to chip away bone margins"
+    },
+    "correctAnswer": "A",
+    "explanation": "Cheatle forceps are large, heavy, angled forceps used to lift and transfer sterile instruments, dressings, or bowls from boilers, sterilizers, or storage jars to a sterile tray. They are kept in a container of antiseptic solution (like methylated spirit or chlorhexidine) to maintain sterility.",
+    "topic": "Identifying surgical/first aid instruments",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Cheatle+Forceps+Antiseptic",
+    "imageAlt": "A pair of long, heavy Cheatle forceps standing upright inside a metal container filled with clear blue antiseptic fluid."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The metallic, double-bladed instrument with a screw locking mechanism shown in the image is used during gynecological examinations. What is its name?",
+    "options": {
+      "A": "Graves vaginal speculum",
+      "B": "Uterine sound",
+      "C": "Tenaculum forceps",
+      "D": "Proctoscope"
+    },
+    "correctAnswer": "A",
+    "explanation": "The instrument is a Graves vaginal speculum. It is inserted into the vagina and expanded using the thumb piece and thumbscrew mechanism to retract the vaginal walls, allowing direct visualization of the cervix and vagina for examinations, swabs, or IUD insertion.",
+    "topic": "Identifying surgical/first aid instruments",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Graves+Vaginal+Speculum",
+    "imageAlt": "A shiny stainless steel Graves vaginal speculum with two duckbill-shaped blades and a metal thumbscrew adjusting lever."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The kidney-shaped metal bowl shown in the image is a standard item in first aid and dressing packs. What is it called, and what is its primary function?",
+    "options": {
+      "A": "Kidney dish (renal basin), used to collect soiled dressings, medical waste, or fluids",
+      "B": "Sterilization box, used to autoclave surgical needles",
+      "C": "Feeding bowl, used for pediatric nutritional assessments",
+      "D": "Sputum mug, used exclusively for tuberculosis patients"
+    },
+    "correctAnswer": "A",
+    "explanation": "A kidney dish (or kidney basin) is a shallow vessel with a kidney-shaped footprint. Its curved shape allows it to be held flush against the patient's body (under the chin, ear, or arm) to catch irrigation fluids, blood, or to hold soiled dressings and discarded instruments during procedures.",
+    "topic": "Identifying surgical/first aid instruments",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Kidney+Dish+Basin",
+    "imageAlt": "A kidney-shaped stainless steel basin lying on a clean white countertop."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A CHEW is exploring a deep puncture wound to check for hidden tracts or foreign objects. Which instrument shown in the image is designed for this task?",
+    "options": {
+      "A": "Surgical probe",
+      "B": "Scalpel handle",
+      "C": "Curved suture needle",
+      "D": "Toothed tissue forceps"
+    },
+    "correctAnswer": "A",
+    "explanation": "A surgical probe is a thin, flexible rod of metal with a blunt, rounded tip. It is used to explore wounds, sinuses, fistulas, or to determine the depth and direction of a wound tract without causing additional tissue damage.",
+    "topic": "Identifying surgical/first aid instruments",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Surgical+Probe+Instrument",
+    "imageAlt": "A thin, straight silver metal rod with a small bulbous tip lying next to a scalpel handle."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The flat, wooden blade shown in the image is disposable and used during a throat examination. What is this tool called, and how is it used correctly?",
+    "options": {
+      "A": "Tongue depressor; placed on the anterior two-thirds of the tongue to press it down flat",
+      "B": "Spatula; placed on the back of the throat to trigger a gag reflex",
+      "C": "Splint; used to immobilize broken fingers",
+      "D": "Stirrer; used to mix oral rehydration salts"
+    },
+    "correctAnswer": "A",
+    "explanation": "The tool is a wooden tongue depressor. To inspect the pharynx and throat clearly, it is placed on the anterior two-thirds of the tongue and pressed down. Placing it too far back (posterior third) will trigger the gag reflex, causing the patient to choke or vomit.",
+    "topic": "Identifying surgical/first aid instruments",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Wooden+Tongue+Depressor",
+    "imageAlt": "A single, flat, round-ended wooden tongue depressor resting on a white diagnostic table."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A patient presents with a severe laceration on the forearm. The CHEW applies a stretchy, elastic band above the wound to compress the blood vessels and stop life-threatening arterial bleeding. What is this device called?",
+    "options": {
+      "A": "Tourniquet",
+      "B": "Compression bandage",
+      "C": "Adhesive plaster",
+      "D": "Splint strap"
+    },
+    "correctAnswer": "A",
+    "explanation": "A tourniquet is a tight band or device applied to a limb to temporarily stop the flow of blood through arteries and veins. It is used in first aid to control life-threatening hemorrhage from a limb wound when direct pressure is ineffective or impossible.",
+    "topic": "Identifying surgical/first aid instruments",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=First+Aid+Tourniquet",
+    "imageAlt": "A tactical windlass tourniquet applied tightly to a mannequin's upper arm, with the plastic rod twisted and locked in place."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The image shows a plastic, serrated clip being placed on a newborn's umbilical cord. What is this device, and when is it safe to remove it?",
+    "options": {
+      "A": "Umbilical cord clamp; it remains in place until the cord dries and falls off naturally",
+      "B": "Surgical clip; it must be removed by the CHEW exactly 24 hours after birth",
+      "C": "Hemorrhage clamp; it must be removed as soon as the baby starts crying",
+      "D": "Placental retainer; it is removed after active third-stage labor completes"
+    },
+    "correctAnswer": "A",
+    "explanation": "The plastic umbilical cord clamp is applied tightly 2-3 cm from the baby's abdomen immediately after birth to prevent hemorrhage from the umbilical vessels. The clamp is left in place and falls off naturally along with the dried, necrotic umbilical stump (usually within 5 to 15 days).",
+    "topic": "Identifying surgical/first aid instruments",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Umbilical+Cord+Clamp",
+    "imageAlt": "A blue plastic clamp with interlocking teeth clamped securely onto a thick newborn umbilical cord near the infant's belly."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A patient has a deep cut that requires suturing. The CHEW opens a packet containing a curved needle attached directly to a suture thread, as shown in the image. What is this type of needle called?",
+    "options": {
+      "A": "Swaged (atraumatic) needle, where the suture is pre-attached to the needle end",
+      "B": "Eyed needle, which must be threaded manually before use",
+      "C": "Straight needle, used for suturing deep internal organs",
+      "D": "Hypodermic needle, used for local anesthesia delivery"
+    },
+    "correctAnswer": "A",
+    "explanation": "A swaged (or atraumatic) needle has the suture thread pre-attached directly inside the hollow end of the needle by the manufacturer. This design creates a smooth transition between the needle and thread, reducing tissue trauma and drag compared to eyed needles, which require doubling the thread through a hole.",
+    "topic": "Identifying surgical/first aid instruments",
+    "difficulty": "HARD",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Swaged+Suture+Needle",
+    "imageAlt": "A curved stainless steel cutting needle showing the dark suture thread emerging directly from its crimped, solid base without a loop or eye."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The CHEW is cleaning a simple contaminated laceration before dressing. What is the correct direction of wiping to maintain aseptic technique?",
+    "options": {
+      "A": "In a circular motion from the center of the wound outwards to the surrounding skin",
+      "B": "From the outer dry skin inwards to the center of the wound",
+      "C": "In a vigorous back-and-forth scrubbing motion across the entire area",
+      "D": "From the bottom of the wound vertically upwards to the top margin"
+    },
+    "correctAnswer": "A",
+    "explanation": "To clean a wound aseptically, the examiner wipes in a circular motion starting from the center (cleanest part) outwards to the periphery (dirtiest part). This prevents bacteria from the surrounding skin from being carried into the open wound.",
+    "topic": "Wound care and dressing procedures",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Wound+Cleaning+Direction",
+    "imageAlt": "A hand holding forceps with an antiseptic-soaked cotton swab, cleaning a cut on a forearm starting at the center and moving in an outward spiral."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A patient presents with a chronic leg ulcer containing yellow-gray, devitalized tissue (slough) as shown in the image. What is the primary purpose of removing this tissue (debridement)?",
+    "options": {
+      "A": "To remove dead tissue that acts as a breeding ground for bacteria and blocks healing",
+      "B": "To stop the wound from producing normal granulation tissue",
+      "C": "To keep the wound dry and prevent oxygen exposure",
+      "D": "To avoid having to apply daily sterile dressings"
+    },
+    "correctAnswer": "A",
+    "explanation": "Slough and necrotic tissue (eschar) in a wound delay healing and increase the risk of infection by acting as a reservoir for bacteria. Removing this tissue (debridement) exposes a healthy, bleeding wound bed that stimulates granulation tissue formation and contraction.",
+    "topic": "Wound care and dressing procedures",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Chronic+Ulcer+Slough",
+    "imageAlt": "A round skin ulcer on a lower leg showing a wet, yellow-ish layer of slough coating the center of the wound."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The CHEW is opening a sterile dressing pack on a trolley. Which flap of the sterile wrap should be opened first?",
+    "options": {
+      "A": "The furthest flap (pointing away from the CHEW)",
+      "B": "The closest flap (pointing towards the CHEW)",
+      "C": "The right side flap",
+      "D": "The left side flap"
+    },
+    "correctAnswer": "A",
+    "explanation": "When opening a sterile pack or drape, the furthest flap (pointing away) must be opened first. This prevents the health worker from reaching over the exposed sterile field when opening the remaining flaps, minimizing the risk of airborne or clothing-touch contamination.",
+    "topic": "Wound care and dressing procedures",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Sterile+Pack+Opening",
+    "imageAlt": "A health worker's hand picking up the corner of a folded paper wrap that points away from them, unfolding it backwards."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A patient has a wound on their leg with arterial spurting blood. What is the correct initial procedure to control the hemorrhage?",
+    "options": {
+      "A": "Apply firm, continuous direct pressure over the bleeding site using sterile gauze or a clean cloth",
+      "B": "Pour antiseptic liquid directly into the wound",
+      "C": "Elevate the leg while leaving the wound open to air",
+      "D": "Apply a loose cotton wrap around the thigh"
+    },
+    "correctAnswer": "A",
+    "explanation": "The priority in controlling external hemorrhage is to apply firm, direct pressure over the wound using a clean dressing or gloved hand. This compresses the broken blood vessels against the underlying bone/tissue and encourages blood clot formation. Tourniquets are reserved for severe limb injuries when direct pressure fails.",
+    "topic": "Wound care and dressing procedures",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Control+Bleeding+Pressure",
+    "imageAlt": "Hands in blue gloves holding a thick stack of white gauze firmly against a bleeding laceration on a patient's lower leg."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The image demonstrates the removal of surgical sutures. What is the correct technique to prevent introducing bacteria under the skin during suture removal?",
+    "options": {
+      "A": "Cut the suture close to the skin on one side of the knot, and pull the knot so that only the clean, buried part of the thread passes under the skin",
+      "B": "Cut the suture directly through the knot and pull from both sides",
+      "C": "Pull the suture up high and cut it as far from the skin as possible, then pull the dirty thread through the tissue",
+      "D": "Use toothed forceps to pull the entire suture out without cutting it"
+    },
+    "correctAnswer": "A",
+    "explanation": "To remove sutures safely, the suture is lifted gently with forceps, cut with sterile scissors right next to the skin (just below the knot on one side), and pulled out by the knot. This ensures that the exposed, contaminated portion of the thread is not dragged through the subcutaneous tissues, preventing micro-infections.",
+    "topic": "Wound care and dressing procedures",
+    "difficulty": "HARD",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Suture+Removal+Technique",
+    "imageAlt": "Forceps lifting a knot of a skin stitch, with fine scissors snuggling beneath the knot to snip the thread right at the skin surface."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The wound shown in the image has been closed using a series of individual, knotted stitches. What is this suturing pattern called?",
+    "options": {
+      "A": "Simple interrupted suture",
+      "B": "Continuous running suture",
+      "C": "Horizontal mattress suture",
+      "D": "Subcuticular suture"
+    },
+    "correctAnswer": "A",
+    "explanation": "A simple interrupted suture pattern consists of individual stitches that are placed and tied separately. If one stitch breaks or becomes infected, the remaining stitches stay intact, making it highly secure and the standard method for primary closure of traumatic lacerations.",
+    "topic": "Wound care and dressing procedures",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Simple+Interrupted+Sutures",
+    "imageAlt": "A closed linear skin wound showing five separate, evenly spaced black nylon stitches, each tied with a knot on the side of the cut."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A patient with a deep, dirty wound requires a 'wet-to-dry' dressing change. What is the primary therapeutic mechanism of a wet-to-dry dressing?",
+    "options": {
+      "A": "Non-selective mechanical debridement of necrotic tissue as the dry gauze is pulled away",
+      "B": "Keeping the wound completely moist to promote rapid epithelialization",
+      "C": "Delivering high concentrations of saline into the bloodstream",
+      "D": "Preventing the wound from closing so it can drain"
+    },
+    "correctAnswer": "A",
+    "explanation": "A wet-to-dry dressing involves placing moist saline gauze in the wound bed and letting it dry. When the dry gauze is pulled away, it adheres to and pulls out necrotic debris, slough, and exudate, providing mechanical debridement. This is a non-selective process that can also damage healthy granulation tissue.",
+    "topic": "Wound care and dressing procedures",
+    "difficulty": "HARD",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Wet+To+Dry+Dressing",
+    "imageAlt": "A clinical worker peeling back a dried gauze dressing from a deep open wound, with necrotic tissue sticking to the gauze fibers."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The bandage technique shown in the image is being applied to secure a dressing on a moving joint (the elbow). What is this type of bandaging pattern called?",
+    "options": {
+      "A": "Figure-of-eight bandage",
+      "B": "Spiral bandage",
+      "C": "Circular bandage",
+      "D": "Recurrent bandage"
+    },
+    "correctAnswer": "A",
+    "explanation": "A figure-of-eight bandage involves making alternating turns above and below a joint, crossing over the joint center in an '8' shape. This pattern is ideal for joints (elbow, knee, ankle) because it keeps the dressing secure while allowing moderate mobility without sliding.",
+    "topic": "Wound care and dressing procedures",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Figure+Of+Eight+Bandage",
+    "imageAlt": "A white roller bandage wrapped around a patient's elbow, crossing over the joint crease in a crisscross pattern resembling the number eight."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "Before administering an intramuscular injection, the CHEW cleans the skin with a 70% isopropyl alcohol swab. What is the correct protocol before inserting the needle?",
+    "options": {
+      "A": "Wait for the alcohol to dry completely on the skin (about 30 seconds) to ensure optimal antiseptic effect and reduce injection sting",
+      "B": "Inject immediately while the skin is wet to lubricate the needle entry",
+      "C": "Blow on the skin or fan it with a hand to dry the alcohol faster",
+      "D": "Wipe the wet alcohol off with a dry finger"
+    },
+    "correctAnswer": "A",
+    "explanation": "Alcohol requires air drying (evaporation) to destroy bacterial cell walls effectively. Injecting through wet alcohol causes it to be dragged into the subcutaneous tissue, causing a painful burning sensation for the patient and reducing the antiseptic efficacy.",
+    "topic": "Wound care and dressing procedures",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Alcohol+Prep+Drying",
+    "imageAlt": "A damp patch of alcohol shining on a patient's upper arm skin, with the health worker holding a syringe, waiting for it to dry."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The CHEW is preparing to perform a sterile procedure (a minor suture repair). They are donning sterile gloves. What is the correct touch technique for putting on the second glove?",
+    "options": {
+      "A": "Slide the gloved fingers of the first hand under the folded cuff of the second glove, avoiding touching the exposed inner surface",
+      "B": "Hold the outside of the second glove's cuff with the bare thumb of the un-gloved hand",
+      "C": "Slide the second glove on using a twisting motion with bare fingers on the palm",
+      "D": "Use sterile forceps to pull the second glove over the hand"
+    },
+    "correctAnswer": "A",
+    "explanation": "To maintain sterility: when putting on the first glove, you touch only the inside folded cuff (non-sterile side). When putting on the second glove, the gloved hand (sterile) must slide its fingers under the outer fold of the cuff (sterile side) of the second glove. The bare skin must never touch the sterile outer surface of the gloves.",
+    "topic": "Wound care and dressing procedures",
+    "difficulty": "HARD",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Sterile+Glove+Donning",
+    "imageAlt": "A gloved hand (right hand) slipping its fingers under the cuff of a sterile left glove, lifting it off the paper packaging."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The sanitary facility shown in the diagram is a Ventilated Improved Pit (VIP) latrine. What is the function of the mesh screen at the top of the tall vent pipe?",
+    "options": {
+      "A": "To trap flies inside the pipe so they die of dehydration and cannot escape to contaminate food",
+      "B": "To filter rainwater entering the pit toilet",
+      "C": "To prevent leaves and birds from falling down the toilet hole",
+      "D": "To support the plastic pipe structure"
+    },
+    "correctAnswer": "A",
+    "explanation": "In a VIP latrine, the interior is kept dark. Flies in the pit are attracted to the light at the top of the vent pipe, which is painted black to heat up and draw air out. When they fly up, they are blocked by the mesh screen and eventually die of dehydration.",
+    "topic": "Identifying sanitary structures",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=VIP+Latrine+Structure",
+    "imageAlt": "A cross-section diagram of a brick outhouse showing a pit below, a coverless squatting hole, a dark interior, and a vertical pipe extending above the roof with a mesh screen."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A soakaway pit (or soak pit) is being constructed as shown in the diagram. What is the primary purpose of this structure in domestic sanitation?",
+    "options": {
+      "A": "To safely dispose of non-sewage greywater (from washing, cooking) by filtering it through gravel layers into the soil",
+      "B": "To store solid human feces until it decays",
+      "C": "To serve as a well for drinking water collection",
+      "D": "To burn clinic plastic waste"
+    },
+    "correctAnswer": "A",
+    "explanation": "A soakaway pit is designed to receive and filter greywater (wastewater from handwashing, laundry, or kitchens) through layers of sand, charcoal, and stones, allowing it to seep safely into the ground without creating stagnant surface water where mosquitoes could breed.",
+    "topic": "Identifying sanitary structures",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Soakaway+Pit+Layers",
+    "imageAlt": "A diagram of a deep pit filled with layers: large stones at the bottom, smaller gravel in the middle, and sand/charcoal at the top, receiving a pipe from a wash basin."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The diagram shows a compost pit for organic household waste. What is the correct layering sequence from bottom to top to ensure proper decomposition and prevent odor?",
+    "options": {
+      "A": "Dry brown organic waste (leaves/twigs), green wet waste (food scraps), and a thin layer of soil",
+      "B": "Plastic bottles, food scraps, and metal cans",
+      "C": "Wet mud, dry sand, and chemical fertilizers",
+      "D": "Paper waste, animal manure, and wood ash only"
+    },
+    "correctAnswer": "A",
+    "explanation": "Effective composting requires alternating layers of carbon-rich 'brown' materials (dry leaves, straw) to provide structure and air channels, nitrogen-rich 'green' materials (vegetable peels, grass) to fuel microbes, and soil to introduce decomposing bacteria and prevent flies/odors.",
+    "topic": "Identifying sanitary structures",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Compost+Pit+Design",
+    "imageAlt": "A cross-section of a backyard pit showing distinct layers of dry brown leaves, green kitchen waste, and thin dark soil bands."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "What is the minimum recommended safe distance between a family's shallow drinking water well and a VIP latrine or septic tank?",
+    "options": {
+      "A": "30 meters (approximately 100 feet)",
+      "B": "5 meters (approximately 15 feet)",
+      "C": "100 meters (approximately 330 feet)",
+      "D": "15 meters (approximately 50 feet)"
+    },
+    "correctAnswer": "A",
+    "explanation": "To prevent microbiological contamination of drinking water from fecal pathogens seeping through groundwater, latrines and septic soakaways must be located down-gradient and at a minimum distance of 30 meters (100 feet) from shallow wells.",
+    "topic": "Identifying sanitary structures",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Safe+Well+Latrine+Distance",
+    "imageAlt": "A site map showing a house, a well on one side, and a latrine on the opposite side with a distance marker labeled '30m Min' between them."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "The image shows a water well with a concrete apron, a raised wall (parapet), and a secure cover. What is the primary purpose of these sanitary features?",
+    "options": {
+      "A": "To prevent surface runoff, mud, and dirty bucket water from entering and contaminating the well",
+      "B": "To keep the water inside the well cool",
+      "C": "To prevent children from looking into the well",
+      "D": "To increase the water pressure inside the well"
+    },
+    "correctAnswer": "A",
+    "explanation": "A sanitary well protection structure includes a concrete apron (which drains water away from the opening), a raised brick wall/parapet, and a cover. These features prevent contaminated surface water, mud, insect vectors, and animal waste from falling directly into the well water.",
+    "topic": "Identifying sanitary structures",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Protected+Sanitary+Well",
+    "imageAlt": "A concrete well structure raised 1 meter above the ground, surrounded by a wide, sloping concrete pad (apron) and covered with a heavy metal lid."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A double-chamber septic tank is shown in the diagram. What is the function of the internal baffle wall that divides the two chambers?",
+    "options": {
+      "A": "To retain solid sludge and scum in the first chamber, allowing only clarified liquid to pass to the second chamber",
+      "B": "To mix the sewage with fresh water to dilute it",
+      "C": "To aerate the waste by bubbling oxygen through it",
+      "D": "To block gas odors from escaping the tank"
+    },
+    "correctAnswer": "A",
+    "explanation": "The baffle wall in a septic tank separates the tank into two chambers. Heavy solids settle at the bottom of the first chamber as sludge, and grease floats as scum. The baffle prevents these solids from passing into the second chamber and clogging the outlet pipe that leads to the soakaway field.",
+    "topic": "Identifying sanitary structures",
+    "difficulty": "HARD",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Septic+Tank+Baffle+Wall",
+    "imageAlt": "A cutaway of an underground concrete tank, showing a divider wall with a T-pipe letting water pass through the middle, with thick sludge settled at the bottom of the first chamber."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A double-pit VIP latrine is shown. How are the two pits used to achieve safe pathogen die-off?",
+    "options": {
+      "A": "One pit is used until full, then sealed for at least 1-2 years to allow pathogens to die and turn into fertilizer while the second pit is used",
+      "B": "Both pits are used simultaneously to increase capacity",
+      "C": "One pit is for urine and the other is for feces",
+      "D": "The pits are swapped daily to balance the volume"
+    },
+    "correctAnswer": "A",
+    "explanation": "An alternating double-pit latrine system operates by using only one pit at a time. When the first pit is nearly full, it is sealed. While the family uses the second pit, the waste in the sealed pit undergoes anaerobic decomposition, destroying pathogens over 12-24 months and turning it into safe humus (fertilizer).",
+    "topic": "Identifying sanitary structures",
+    "difficulty": "HARD",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Double+Pit+VIP+Latrine",
+    "imageAlt": "An outhouse building sits over two adjacent underground pits; one pit is open and receiving waste, while the other is capped with concrete."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A CHEW is teaching community members how to build a low-cost 'tippy tap' handwashing station. What is the key component that prevents the user from touching the device with dirty hands?",
+    "options": {
+      "A": "A foot pedal string mechanism that tilts the water container when stepped on",
+      "B": "An automatic motion-sensor valve",
+      "C": "A spring-loaded push button on the container cap",
+      "D": "A long lever operated by the elbow"
+    },
+    "correctAnswer": "A",
+    "explanation": "A 'tippy tap' is a simple, low-cost handwashing device made from a suspended plastic container. A foot pedal made of a stick and string allows the user to tilt the container to pour water without touching the tap with their hands, preventing the re-contamination of clean hands.",
+    "topic": "Identifying sanitary structures",
+    "difficulty": "EASY",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Tippy+Tap+Mechanism",
+    "imageAlt": "A plastic container suspended from a wooden tripod, with a string tied to its neck extending down to a wooden branch on the ground."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A CHEW inspects a community market drainage system and notices stagnant water. What concrete structure should be constructed to ensure storm water and greywater flow freely to prevent mosquito breeding?",
+    "options": {
+      "A": "A V-shaped concrete drainage channel",
+      "B": "An earthen collection pond",
+      "C": "A stone barrier dam",
+      "D": "A wide plastic pipeline"
+    },
+    "correctAnswer": "A",
+    "explanation": "A lined, V-shaped concrete drainage channel is highly effective for storm water and greywater drainage because the V-shape concentrates low flows in the center, keeping water moving fast enough to flush sediment and prevent stagnant pooling where malaria-carrying Anopheles mosquitoes could lay eggs.",
+    "topic": "Identifying sanitary structures",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=V+Shaped+Concrete+Drain",
+    "imageAlt": "A clean, concrete-lined ditch in a V-profile running alongside a market path, showing a trickle of clear water moving downstream."
+  },
+  {
+    "certificationSlug": "chew-practical",
+    "questionType": "PRACTICAL",
+    "text": "A small health post needs to dispose of infectious waste (like used needles and bloody gauze). What structure shown in the image is designed to safely destroy these wastes at high temperatures?",
+    "options": {
+      "A": "A brick incinerator",
+      "B": "A compost bin",
+      "C": "A septic tank pit",
+      "D": "A sanitary landfill cell"
+    },
+    "correctAnswer": "A",
+    "explanation": "A low-cost, brick-built medical waste incinerator (like the De Montfort design) is used by rural health clinics to burn infectious medical waste, sharps, and biological materials at high temperatures (over 800 degrees C), reducing them to harmless, sterile ash.",
+    "topic": "Identifying sanitary structures",
+    "difficulty": "MEDIUM",
+    "imageUrl": "https://placehold.co/600x400/1a1a18/ffffff?text=Clinic+Brick+Incinerator",
+    "imageAlt": "A small brick tower structure with a metal chimney pipe and a latch door, situated in the secure fenced yard of a clinic."
+  }
+]

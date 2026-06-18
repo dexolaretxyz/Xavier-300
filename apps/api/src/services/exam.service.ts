@@ -1,64 +1,55 @@
 import jwt from 'jsonwebtoken';
 import prisma from '../lib/db';
-import crypto from 'crypto';
+import redis from '../lib/redis';
+import { Question } from '@prisma/client';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'fallback_secret_do_not_use_in_prod';
 
-function cryptoShuffle<T>(array: T[]): T[] {
+function getDailySeed(date: Date = new Date()): number {
+  // Convert to WAT (UTC+1)
+  const wat = new Date(date.getTime() + (60 * 60 * 1000));
+  // Create seed from year + month + day
+  const dateString = `${wat.getFullYear()}${String(wat.getMonth() + 1).padStart(2, '0')}${String(wat.getDate()).padStart(2, '0')}`;
+  return parseInt(dateString);
+}
+
+function seededShuffle<T>(array: T[], seed: number): T[] {
   const arr = [...array];
+  let currentSeed = seed;
+  
+  function seededRandom() {
+    currentSeed = (currentSeed * 1664525 + 1013904223) & 0xffffffff;
+    return (currentSeed >>> 0) / 0xffffffff;
+  }
+  
   for (let i = arr.length - 1; i > 0; i--) {
-    const j = crypto.randomInt(0, i + 1);
+    const j = Math.floor(seededRandom() * (i + 1));
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
   return arr;
 }
 
+export function shuffleOptions(
+  options: Record<string, string>, 
+  seed: number
+): Record<string, string> {
+  const entries = Object.entries(options);
+  const shuffled = seededShuffle(entries, seed);
+  return Object.fromEntries(shuffled);
+}
+
 export const examService = {
-  // 1. Get random approved questions for the exam
-  async getRandomQuestions(certificationId: string, count: number = 40) {
-    // Note: PostgreSQL `ORDER BY RANDOM()` can be slow on large tables, 
-    // but Prisma doesn't natively support it easily. 
-    // We'll fetch IDs and shuffle in memory if the table isn't huge, or use raw SQL.
-    // For MVP, we will fetch all approved question IDs, shuffle, and pick `count`.
-    
-    const allQuestions = await prisma.question.findMany({
-      where: {
-        certificationId,
-        status: 'APPROVED'
-      },
-      select: { id: true }
-    });
-
-    if (allQuestions.length < count) {
-      throw new Error(`Not enough approved questions. Found ${allQuestions.length}, required ${count}.`);
-    }
-
-    // Shuffle using cryptoShuffle
-    const shuffledAll = cryptoShuffle(allQuestions);
-    const selectedIds = shuffledAll.slice(0, count).map(q => q.id);
-
-    const questions = await prisma.question.findMany({
-      where: {
-        id: { in: selectedIds }
-      }
-    });
-
-    // Postgres findMany order is not guaranteed. We shuffle the final array to match random order.
-    return cryptoShuffle(questions);
-  },
-
-  // 2. Shuffle options (A,B,C,D) and remap the correct answer
-  shuffleOptions(question: any) {
+  // Shuffles options and remaps the correct answer key using a seed
+  shuffleQuestionOptions(question: any, seed: number) {
     if (question.questionType === 'THEORY') {
-      return question; // Theory questions don't have option choices to shuffle
+      return question;
     }
     const optionsObj = question.options as Record<string, string>;
     const correctAnswerLetter = question.correctAnswer as string;
     const correctText = optionsObj[correctAnswerLetter];
 
-    const entries = Object.entries(optionsObj);
-    // Shuffle entries using cryptoShuffle
-    const shuffledEntries = cryptoShuffle(entries);
+    const shuffledOptionsObj = shuffleOptions(optionsObj, seed);
+    const shuffledEntries = Object.entries(shuffledOptionsObj);
 
     const labels = ['A', 'B', 'C', 'D'];
     const newOptions: Record<string, string> = {};
@@ -79,8 +70,61 @@ export const examService = {
     };
   },
 
+  // 1. Get random approved questions for the exam using daily seed and userId
+  async getRandomQuestions(
+    certId: string, 
+    count: number, 
+    userId: string
+  ): Promise<Question[]> {
+    const allQuestions = await prisma.question.findMany({
+      where: { certificationId: certId, status: 'APPROVED' }
+    });
+
+    if (allQuestions.length < count) {
+      throw new Error(`Not enough approved questions. Found ${allQuestions.length}, required ${count}.`);
+    }
+
+    const dailySeed = getDailySeed();
+    const userSeed = userId.split('').reduce((acc, char) => 
+      acc + char.charCodeAt(0), 0);
+    const combinedSeed = dailySeed + userSeed;
+
+    const shuffled = seededShuffle(allQuestions, combinedSeed);
+    const selected = shuffled.slice(0, count);
+
+    return selected.map(q => 
+      this.shuffleQuestionOptions(q, combinedSeed + q.id.charCodeAt(0))
+    ) as any[];
+  },
+
+  // 2. Cache Daily Questions Per User Per Cert
+  async getDailyQuestionsForUser(
+    certId: string,
+    userId: string,
+    count: number
+  ): Promise<Question[]> {
+    const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+    const cacheKey = `daily-questions:${certId}:${userId}:${today}`;
+
+    const cached = await redis.get(cacheKey);
+    if (cached) {
+      return JSON.parse(cached);
+    }
+
+    const questions = await this.getRandomQuestions(certId, count, userId);
+
+    const now = new Date();
+    const midnight = new Date(now);
+    midnight.setHours(24, 0, 0, 0); // Next midnight
+    const ttl = Math.floor((midnight.getTime() - now.getTime()) / 1000);
+
+    await redis.setex(cacheKey, ttl, JSON.stringify(questions));
+
+    return questions;
+  },
+
   // 3. Calculate results and identify weak topics
-  calculateResults(userAnswers: Record<string, string>, questions: any[]) {
+  calculateResults(userAnswers: Record<string, string>, questions: any[], combinedSeed: number = 0) {
     let correctAnswersCount = 0;
     const totalQuestions = questions.length;
     const topicStats: Record<string, { correct: number; total: number }> = {};
@@ -92,7 +136,13 @@ export const examService = {
       }
       topicStats[topic].total += 1;
 
-      if (userAnswers[q.id] === q.correctAnswer) {
+      if (q.questionType === 'THEORY') {
+        continue;
+      }
+
+      const shuffledQ = this.shuffleQuestionOptions(q, combinedSeed + q.id.charCodeAt(0));
+
+      if (userAnswers[q.id] === shuffledQ.correctAnswer) {
         correctAnswersCount += 1;
         topicStats[topic].correct += 1;
       }
@@ -106,7 +156,7 @@ export const examService = {
         score: Math.round((stats.correct / stats.total) * 100),
         total: stats.total
       }))
-      .filter(t => t.score < 70) // Less than 70% is weak
+      .filter(t => t.score < 70)
       .sort((a, b) => a.score - b.score);
 
     return {
@@ -117,7 +167,7 @@ export const examService = {
     };
   },
 
-  // 4. Generate signed session token with 35min expiry (30min exam + 5min grace)
+  // 4. Generate signed session token with 35min expiry
   generateSessionToken(examAttemptId: string, userId: string) {
     return jwt.sign(
       { attemptId: examAttemptId, userId },
@@ -132,5 +182,7 @@ export const examService = {
     } catch (e) {
       return null;
     }
-  }
+  },
+
+  getDailySeed
 };

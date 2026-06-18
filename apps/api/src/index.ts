@@ -16,6 +16,7 @@ import ticketRoutes from './routes/ticket.routes';
 import adminRoutes from './routes/admin.routes';
 import { initLeaderboardJob } from './jobs/leaderboard.job';
 import { initNotificationJobs } from './jobs/notification.job';
+import { initDailyResetJob } from './jobs/daily-reset.job';
 
 dotenv.config({ path: '../../.env' }); // Load root .env
 
@@ -33,6 +34,7 @@ Sentry.init({
 
 // Initialize Cron Jobs
 initLeaderboardJob();
+initDailyResetJob();
 
 // Middleware
 app.use(helmet());
@@ -84,6 +86,7 @@ if (require.main === module) {
     console.log(`Xavier 300 API running on port ${PORT}`);
     // Initialize node-cron jobs
     initLeaderboardJob();
+    initDailyResetJob();
     initNotificationJobs();
   });
 }

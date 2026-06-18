@@ -1,0 +1,1202 @@
+[
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is appointed to a new enterprise software implementation project. During the initiating phase, the project manager is drafting the Project Charter. Which of the following is the MOST accurate description of the primary purpose and content of the Project Charter?",
+    "options": {
+      "A": "It contains the detailed work packages, activity lists, resource assignments, and the project schedule baseline.",
+      "B": "It establishes a partnership between the performing and requesting organizations, formally authorizes the project, and provides the project manager with authority to apply resources.",
+      "C": "It is a legally binding contract signed between the project manager and the corporate sponsor detailing salary and bonuses.",
+      "D": "It serves as the configuration management baseline, detailing the software versioning strategy and repository URLs."
+    },
+    "correctAnswer": "B",
+    "explanation": "The Project Charter formally authorizes the existence of a project and provides the project manager with the authority to apply organizational resources to project activities. It is not a detailed project schedule or WBS, nor is it a personal employment contract or repository log.",
+    "topic": "Project Integration and Scope Management",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "During project execution, a developer notes that a specific technical component has been modified without any documentation, bypassing the standard change control procedure. The developer asserts that the change was minor and improves performance. How should the project manager address the difference between Configuration Management and Change Management in this context?",
+    "options": {
+      "A": "Configuration management controls changes to the cost baseline, while change management controls changes to the quality metrics.",
+      "B": "Configuration management focuses on the specification of the deliverables and processes, while change management focuses on identifying, documenting, and controlling changes to the project documents and baselines.",
+      "C": "Configuration management is only applicable in predictive lifecycles, whereas change management is exclusive to agile and hybrid lifecycles.",
+      "D": "Configuration management is performed by the database administrator, while change management is performed by the sponsor."
+    },
+    "correctAnswer": "B",
+    "explanation": "Configuration management focuses on product and service specification details, control of versions, and configuration audits. Change management manages changes to project baselines (scope, schedule, cost) and project documents.",
+    "topic": "Project Integration and Scope Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is facilitating a workshop to decompose the project scope into a Work Breakdown Structure (WBS). The team is debating the rule governing the relationship between the lower-level work packages and the upper-level summary deliverables. Which rule should the project manager emphasize?",
+    "options": {
+      "A": "The 8/80 rule, which states that no single work package can represent less than 8 hours or more than 80 hours of work.",
+      "B": "The 100% rule, which states that the total work represented by the child nodes must equal 100% of the work represented by the parent node, without excluding or adding any work.",
+      "C": "The Pareto rule, which states that 80% of the deliverables must be placed under 20% of the parent control accounts.",
+      "D": "The critical path rule, which requires all WBS components to lie on the critical path of the project schedule."
+    },
+    "correctAnswer": "B",
+    "explanation": "The 100% rule is a core WBS design principle. It states that the WBS contains 100% of the work defined by the project scope and captures all deliverables—internal, external, and interim. The sum of the work at the child level must equal 100% of the work at the parent level.",
+    "topic": "Project Integration and Scope Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "During the 'Control Scope' process, the project manager discovers a variance between the planned scope baseline and the actual deliverables completed. To address this variance, the project manager uses Alternative Analysis. Which of the following best describes this technique?",
+    "options": {
+      "A": "Evaluating different options or approaches to determine the best way to execute and perform project work or resolve scope discrepancies.",
+      "B": "Consulting with an independent external auditor to verify the code file extensions.",
+      "C": "Calculating the mathematical probability of a change request failing when presented to the Change Control Board.",
+      "D": "Comparing the earned value of scope items with the actual cost of purchasing servers."
+    },
+    "correctAnswer": "A",
+    "explanation": "Alternative analysis is a data analysis technique used to evaluate identified options in order to select which options or approaches to use to execute and perform the work of the project, especially when resolving variance in scope.",
+    "topic": "Project Integration and Scope Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project sponsor is reviewing a proposal to change the project's execution methodology midway through development. The sponsor asks the project manager why a Benefits Management Plan is necessary when a Business Case already exists. How should the project manager explain the difference?",
+    "options": {
+      "A": "The Business Case details the physical features of the product, while the Benefits Management Plan is a financial ledger.",
+      "B": "The Business Case justifies the investment and economic feasibility of the project, while the Benefits Management Plan describes how and when the benefits of the project will be delivered and measured.",
+      "C": "The Business Case is created during the closing phase, while the Benefits Management Plan is drafted during initiation.",
+      "D": "The Business Case is a public marketing document, while the Benefits Management Plan is confidential to developers."
+    },
+    "correctAnswer": "B",
+    "explanation": "The Business Case provides economic justification for the project, showing cost-benefit analysis and strategic alignment. The Benefits Management Plan outlines the processes for creating, maximizing, and sustaining the benefits provided by the project, detailing metrics, owners, and timelines for realization.",
+    "topic": "Project Integration and Scope Management",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is establishing the Scope Baseline for a new financial application. The project manager must ensure all components of the Scope Baseline are approved and documented. Which components constitute the Scope Baseline?",
+    "options": {
+      "A": "Project Scope Statement, Work Breakdown Structure (WBS), and WBS Dictionary.",
+      "B": "Project Charter, Business Case, and Benefits Management Plan.",
+      "C": "Activity List, Activity Attributes, and Milestone List.",
+      "D": "Requirements Management Plan, Stakeholder Register, and Risk Register."
+    },
+    "correctAnswer": "A",
+    "explanation": "The Scope Baseline is the approved version of a scope statement, WBS, and its associated WBS dictionary. It can be changed only through formal change control procedures.",
+    "topic": "Project Integration and Scope Management",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A software team member is confused about the level of detail required for a specific work package on the WBS. The team member asks the project manager where to find the detailed description of work, responsible resources, quality requirements, and cost estimates associated with that WBS element. Where should the project manager direct them?",
+    "options": {
+      "A": "The WBS Dictionary",
+      "B": "The Activity List",
+      "C": "The Project Scope Statement",
+      "D": "The Requirements Traceability Matrix"
+    },
+    "correctAnswer": "A",
+    "explanation": "The WBS Dictionary is a document that provides detailed deliverable, activity, and scheduling information about each component in the WBS, linking WBS elements to the specific resources, criteria, and requirements needed.",
+    "topic": "Project Integration and Scope Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is executing the project closure phase. The project has met all quality criteria and the client has signed off on the final deliverables. Which of the following is the CORRECT order of activities to finalize the closure of the project?",
+    "options": {
+      "A": "Release resources, update lessons learned, write the final report, archive project files.",
+      "B": "Update lessons learned, archive project files, write final report, release resources.",
+      "C": "Write the final report, update lessons learned, archive project files, release project resources.",
+      "D": "Archive project files, release project resources, update lessons learned, draft the Project Charter."
+    },
+    "correctAnswer": "C",
+    "explanation": "During project closure, the project manager first completes administrative tasks (like the final project report and documenting lessons learned), archives all records for organizational history, and finally releases resources back to their functional managers.",
+    "topic": "Project Integration and Scope Management",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A client approaches a team member directly during a coffee break and requests a change to the user interface that will require about three days of coding. The team member implements the change without notifying anyone because they want to delight the client. The project manager discovers this during a testing phase. What has occurred, and how should it have been prevented?",
+    "options": {
+      "A": "Scope Creep; prevented by following the Change Management Plan and directing all changes through a formal change request process.",
+      "B": "Gold Plating; prevented by allocating more budget reserves to cover the developer's overtime.",
+      "C": "Resource Smoothing; prevented by utilizing a strict RACI matrix to monitor daily developer coffee breaks.",
+      "D": "Scope Variance; prevented by submitting the original design files to the corporate procurement office."
+    },
+    "correctAnswer": "A",
+    "explanation": "Scope creep is the uncontrolled expansion to product or project scope without adjustments to time, cost, and resources. Implementing changes directly without going through formal change control is a classic cause of scope creep.",
+    "topic": "Project Integration and Scope Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "During the initiation of a new regulatory compliance project, the sponsor asks the project manager who holds ultimate responsibility for maintaining and updating the Project Business Case. What is the correct response?",
+    "options": {
+      "A": "The Project Manager is responsible for maintaining and updating the Business Case throughout the project lifecycle.",
+      "B": "The Project Sponsor is responsible for maintaining the Business Case, while the Project Manager is responsible for providing recommendations and delivering project deliverables that align with it.",
+      "C": "The external compliance auditor is responsible for drafting and updating the Business Case.",
+      "D": "The Scrum Master is responsible for updating the Business Case at the end of each sprint review."
+    },
+    "correctAnswer": "B",
+    "explanation": "The Project Sponsor is typically accountable for the development and maintenance of the project business case. The project manager is responsible for keeping the project aligned with the business case and managing the project to deliver the expected benefits.",
+    "topic": "Project Integration and Scope Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project scheduler is performing a backward pass on a project network diagram to determine the late start (LS) and late finish (LF) dates for each activity. Which of the following statements is TRUE regarding the calculation of late dates?",
+    "options": {
+      "A": "Late Start = Late Finish - Duration + 1 (assuming standard 1-based calendar calculations).",
+      "B": "Late Start = Early Start + Total Float.",
+      "C": "Late Finish of an activity is determined by the minimum Late Start of all its immediate successor activities.",
+      "D": "All of the above statements are mathematically correct and true."
+    },
+    "correctAnswer": "D",
+    "explanation": "All options represent standard scheduling math rules: LS = LF - Duration + 1; LS = ES + TF; and the LF of an activity is the minimum of the LS values of its successors during the backward pass.",
+    "topic": "Schedule and Cost Management (EVM)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "Activity C has an Early Start (ES) of Day 5, an Early Finish (EF) of Day 12, a Late Start (LS) of Day 9, and a Late Finish (LF) of Day 16. What is the Total Float of Activity C, and can it be delayed without delaying the project completion date?",
+    "options": {
+      "A": "Total Float is 4 days; yes, the task can be delayed up to 4 days without delaying the project completion date.",
+      "B": "Total Float is 7 days; yes, the task can be delayed up to 7 days without delaying the project completion date.",
+      "C": "Total Float is 4 days; no, any delay to Activity C will immediately delay the project completion date.",
+      "D": "Total Float is 14 days; yes, the task can be delayed up to 14 days without affecting successors."
+    },
+    "correctAnswer": "A",
+    "explanation": "Total Float = LS - ES = 9 - 5 = 4 days (or LF - EF = 16 - 12 = 4 days). Because the total float is greater than zero, the activity can be delayed by up to 4 days without delaying the overall project completion date.",
+    "topic": "Schedule and Cost Management (EVM)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager has resource constraints on key database engineers, causing resource overallocation. The project manager decides to apply a technique that adjusts start and end dates to balance demand for resources with the available supply, which is expected to extend the critical path. What is this technique?",
+    "options": {
+      "A": "Resource Smoothing",
+      "B": "Resource Leveling",
+      "C": "Fast Tracking",
+      "D": "Crashing"
+    },
+    "correctAnswer": "B",
+    "explanation": "Resource Leveling is a resource optimization technique in which start and finish dates are adjusted based on resource constraints, with the goal of balancing demand for resources with available supply. It often changes the critical path and extends the project schedule. Resource Smoothing, on the other hand, adjusts activities within their float and does not extend the critical path.",
+    "topic": "Schedule and Cost Management (EVM)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is reviewing performance metrics for a software project at Month 6. The metrics are: Planned Value (PV) = $120,000; Earned Value (EV) = $100,000; Actual Cost (AC) = $110,000. What are the Cost Variance (CV) and Schedule Variance (SV) for this project?",
+    "options": {
+      "A": "CV = -$10,000; SV = -$20,000",
+      "B": "CV = +$10,000; SV = +$20,000",
+      "C": "CV = -$20,000; SV = -$10,000",
+      "D": "CV = -$10,000; SV = +$20,000"
+    },
+    "correctAnswer": "A",
+    "explanation": "Cost Variance (CV) = EV - AC = $100,000 - $110,000 = -$10,000. Schedule Variance (SV) = EV - PV = $100,000 - $120,000 = -$20,000.",
+    "topic": "Schedule and Cost Management (EVM)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project has an Earned Value (EV) of $45,000, an Actual Cost (AC) of $50,000, and a Planned Value (PV) of $40,000. Which of the following is the correct interpretation of the project status based on CPI and SPI?",
+    "options": {
+      "A": "CPI = 0.90, SPI = 1.13; the project is over budget and ahead of schedule.",
+      "B": "CPI = 1.11, SPI = 0.89; the project is under budget and behind schedule.",
+      "C": "CPI = 0.90, SPI = 0.89; the project is over budget and behind schedule.",
+      "D": "CPI = 1.11, SPI = 1.13; the project is under budget and ahead of schedule."
+    },
+    "correctAnswer": "A",
+    "explanation": "CPI = EV / AC = 45,000 / 50,000 = 0.90 (less than 1.0 means over budget). SPI = EV / PV = 45,000 / 40,000 = 1.125 ~ 1.13 (greater than 1.0 means ahead of schedule).",
+    "topic": "Schedule and Cost Management (EVM)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is calculating performance metrics and needs to determine the Estimate at Completion (EAC). The project has a Budget at Completion (BAC) of $250,000. Currently, EV = $100,000 and AC = $125,000. The project manager believes that the factors causing the cost variance are TYPICAL and will persist for the remainder of the project. What is the EAC?",
+    "options": {
+      "A": "$312,500",
+      "B": "$275,000",
+      "C": "$300,000",
+      "D": "$250,000"
+    },
+    "correctAnswer": "A",
+    "explanation": "CPI = EV / AC = 100,000 / 125,000 = 0.80. When variances are typical and expected to continue, the formula is EAC = BAC / CPI = $250,000 / 0.80 = $312,500.",
+    "topic": "Schedule and Cost Management (EVM)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "On a project with a Budget at Completion (BAC) of $500,000, the current Earned Value (EV) is $200,000 and Actual Cost (AC) is $250,000. The project manager determines that the cost overrun was caused by a unique, one-time equipment failure (ATYPICAL variance) and that future work will be performed at the planned rate. What is the Estimate at Completion (EAC) under this condition?",
+    "options": {
+      "A": "$550,000",
+      "B": "$625,000",
+      "C": "$450,000",
+      "D": "$500,000"
+    },
+    "correctAnswer": "A",
+    "explanation": "When the variance is atypical and future work will be performed at the budgeted rate, the formula is EAC = AC + (BAC - EV). EAC = $250,000 + ($500,000 - $200,000) = $250,000 + $300,000 = $550,000.",
+    "topic": "Schedule and Cost Management (EVM)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A critical software project is struggling with budget overruns, and the project sponsor wants to know the feasibility of meeting the original BAC. The project manager decides to calculate the To-Complete Performance Index (TCPI) based on the BAC. The parameters are: BAC = $300,000; EV = $150,000; AC = $180,000. What is the TCPI, and what does it mean?",
+    "options": {
+      "A": "TCPI = 1.25; the team must perform at 125% efficiency (or earn $1.25 of value for every $1 spent) to meet the BAC constraint.",
+      "B": "TCPI = 0.83; the team can reduce efficiency and still meet the BAC constraint.",
+      "C": "TCPI = 1.00; the project is perfectly on budget relative to BAC.",
+      "D": "TCPI = 1.50; the project is completely unfeasible and must be aborted."
+    },
+    "correctAnswer": "A",
+    "explanation": "TCPI based on BAC = (BAC - EV) / (BAC - AC). TCPI = ($300,000 - $150,000) / ($300,000 - $180,000) = $150,000 / $120,000 = 1.25. This means the remaining work must be completed at a cost efficiency of 1.25 (125% of planned efficiency) to stay within the original BAC.",
+    "topic": "Schedule and Cost Management (EVM)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project team is using Three-Point Estimating to estimate the duration of a complex system migration activity. The team provides the following estimates: Optimistic (O) = 8 days; Most Likely (M) = 14 days; Pessimistic (P) = 26 days. Using the Beta (PERT) distribution, what is the calculated activity duration and its standard deviation?",
+    "options": {
+      "A": "Duration = 15 days, Standard Deviation = 3 days",
+      "B": "Duration = 16 days, Standard Deviation = 3 days",
+      "C": "Duration = 15 days, Standard Deviation = 9 days",
+      "D": "Duration = 14 days, Standard Deviation = 18 days"
+    },
+    "correctAnswer": "A",
+    "explanation": "Beta/PERT Duration = (O + 4M + P) / 6 = (8 + 4*14 + 26) / 6 = (8 + 56 + 26) / 6 = 90 / 6 = 15 days. Standard Deviation = (P - O) / 6 = (26 - 8) / 6 = 18 / 6 = 3 days.",
+    "topic": "Schedule and Cost Management (EVM)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "The critical path of a construction project is delayed by 2 weeks. The project manager must compress the schedule to meet the contract milestone. The project manager is comparing Fast Tracking and Crashing. Which statement represents the primary difference in risk and cost between these two techniques?",
+    "options": {
+      "A": "Fast tracking adds resources and increases cost, while crashing runs activities in parallel and increases risk.",
+      "B": "Fast tracking runs activities in parallel and increases risk, while crashing adds resources and increases cost.",
+      "C": "Both fast tracking and crashing decrease cost but increase risk.",
+      "D": "Fast tracking requires change control approval, while crashing can be done unilaterally by developers."
+    },
+    "correctAnswer": "B",
+    "explanation": "Fast Tracking involves performing activities in parallel that would normally be done sequentially, increasing the risk of rework. Crashing involves adding resources to activities on the critical path to shorten duration, which increases cost.",
+    "topic": "Schedule and Cost Management (EVM)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is analyzing the Cost of Quality (COQ) for a new manufacturing project. The manager is categorizing activities like inspections, physical testing, and equipment calibration. Under which COQ category do these activities fall?",
+    "options": {
+      "A": "Prevention Costs",
+      "B": "Appraisal Costs",
+      "C": "Internal Failure Costs",
+      "D": "External Failure Costs"
+    },
+    "correctAnswer": "B",
+    "explanation": "Appraisal costs are costs incurred to evaluate, measure, audit, or test products or services to ensure they conform to requirements. Examples include inspections, product testing, and equipment calibration.",
+    "topic": "Quality and Resource Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A software company releases a version of their software with a critical security vulnerability. After release, a major security breach occurs, forcing the company to pay legal damages, issue emergency hotfixes, and handle customer support complaints. How should the project manager classify these quality costs?",
+    "options": {
+      "A": "Internal Failure Costs",
+      "B": "External Failure Costs",
+      "C": "Prevention Costs",
+      "D": "Appraisal Costs"
+    },
+    "correctAnswer": "B",
+    "explanation": "External failure costs are costs associated with defects found after the customer receives the product or service. Examples include warranty claims, liabilities, recall costs, and customer support for failures.",
+    "topic": "Quality and Resource Management",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A quality manager is plotting samples on a process control chart. The control limits are set at +/- 3 standard deviations from the mean. The manager observes seven consecutive data points falling on one side of the mean line, but all points are within the control limits. What is this phenomenon, and what action should the manager take?",
+    "options": {
+      "A": "The Rule of Seven; the process is out of control and should be investigated immediately for assignable causes.",
+      "B": "Normal variance; since all points are within the control limits, no action is needed.",
+      "C": "The Rule of Five; the control limits must be recalculated immediately.",
+      "D": "Out-of-specification variance; the product must be recalled."
+    },
+    "correctAnswer": "A",
+    "explanation": "The Rule of Seven is a standard heuristic in quality control charts. It states that if seven consecutive points fall on one side of the mean, the process is considered out of control and requires immediate investigation for a non-random (assignable) cause, even if the points are within control limits.",
+    "topic": "Quality and Resource Management",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is creating a Responsibility Assignment Matrix (RAM) using the RACI format. When assigning roles for a critical deliverable, which rule must the project manager enforce to prevent communication failures and duplication of authority?",
+    "options": {
+      "A": "Every activity must have at least two Accountable (A) roles.",
+      "B": "Only one person can be Accountable (A) for a single activity, although multiple people can be Responsible (R), Consulted (C), or Informed (I).",
+      "C": "No team member can have more than one role (e.g., both Responsible and Accountable).",
+      "D": "All stakeholders must be Consulted (C) on every single task."
+    },
+    "correctAnswer": "B",
+    "explanation": "In a RACI chart, for any single activity, there must be exactly one person designated as Accountable (A) to ensure clear ownership. Having multiple people accountable leads to confusion and lack of true ownership.",
+    "topic": "Quality and Resource Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project team has recently transitioned from planning to execution. During team meetings, members are arguing about technical designs, expressing dissatisfaction with roles, and challenging the project manager's decisions. According to the Tuckman ladder of team development, what stage is the team in, and how should the project manager act?",
+    "options": {
+      "A": "Forming stage; the manager should act as a facilitator and encourage collaboration.",
+      "B": "Storming stage; the manager should guide the team to resolve conflicts, establish clear norms, and act directively or supportively.",
+      "C": "Norming stage; the manager should delegate authority and step back.",
+      "D": "Adjourning stage; the manager should document lessons learned."
+    },
+    "correctAnswer": "B",
+    "explanation": "The team is in the 'Storming' stage, where members compete for status and acceptance, leading to conflict. The project manager should act supportively to resolve conflicts and help the team establish norms to move to the 'Norming' stage.",
+    "topic": "Quality and Resource Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is trying to motivate a team by improving the physical workspace environment, offering better office coffee, and increasing administrative support. According to Herzberg's Motivation-Hygiene (Two-Factor) Theory, what will be the effect of these actions?",
+    "options": {
+      "A": "These actions will prevent dissatisfaction but will not act as true motivators to increase performance.",
+      "B": "These actions are direct motivators that will maximize performance and commitment.",
+      "C": "These actions will lead to immediate burnout because they ignore self-actualization needs.",
+      "D": "Herzberg's theory states that physical workplace changes have zero correlation with satisfaction."
+    },
+    "correctAnswer": "A",
+    "explanation": "Herzberg's Two-Factor Theory distinguishes between motivators (like recognition, work itself, responsibility) and hygiene factors (like working conditions, salary, administrative policies). Improving hygiene factors prevents dissatisfaction but does not create motivation; only motivators drive higher performance.",
+    "topic": "Quality and Resource Management",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "Two technical leads are in conflict over which database framework to use. One lead wants relational SQL, while the other wants NoSQL. The project manager intervenes and states: 'Let's focus on the fact that we both agree the database must handle high transaction volume. We will delay the framework decision until next week and focus on common ground.' Which conflict resolution strategy is the project manager using?",
+    "options": {
+      "A": "Collaborating / Problem Solving",
+      "B": "Compromising",
+      "C": "Smoothing / Accommodating",
+      "D": "Forcing / Directing"
+    },
+    "correctAnswer": "C",
+    "explanation": "Smoothing (or Accommodating) involves emphasizing areas of agreement rather than areas of difference, downplaying conflict to maintain harmony, and postponing the main issue for later resolution.",
+    "topic": "Quality and Resource Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "In a quality audit process, the quality auditor explains to the team that there is a fundamental difference between Quality Assurance (QA) and Quality Control (QC). Which statement represents the correct description?",
+    "options": {
+      "A": "QA is performed during the planning phase only, while QC is performed during closing.",
+      "B": "QA is process-oriented and focuses on preventing defects; QC is product-oriented and focuses on identifying defects in the deliverables.",
+      "C": "QA is performed by the development team, while QC is performed exclusively by the client.",
+      "D": "There is no difference; QA and QC are interchangeable terms for software testing."
+    },
+    "correctAnswer": "B",
+    "explanation": "Quality Assurance (QA) focuses on the processes used to prevent defects in the product. Quality Control (QC) focuses on the inspections and tests of the actual product/deliverable to identify and correct defects.",
+    "topic": "Quality and Resource Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is scheduling activities and reviewing resource availability. The manager notices that the Project Calendar allows work on weekends, but the Lead QA tester's Resource Calendar specifies they are unavailable on weekends. Which calendar dictates when the QA testing tasks can actually be scheduled?",
+    "options": {
+      "A": "The Project Calendar",
+      "B": "The Resource Calendar",
+      "C": "The Stakeholder Calendar",
+      "D": "The Release Calendar"
+    },
+    "correctAnswer": "B",
+    "explanation": "A Resource Calendar specifies the availability of a specific resource (working days and hours). When scheduling a task that requires that resource, the Resource Calendar overrides general Project Calendar working hours for that task's execution window.",
+    "topic": "Quality and Resource Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is managing a team using McClelland's Theory of Needs. One engineer shows a strong drive to excel, achieve in relation to a set of standards, and solve complex technical problems independently. According to McClelland, which need is this engineer high in, and how should the project manager assign them tasks?",
+    "options": {
+      "A": "Need for Affiliation (nAff); assign them to coordinate large group social events.",
+      "B": "Need for Achievement (nAch); assign them challenging tasks with clear goals and frequent performance feedback.",
+      "C": "Need for Power (nPow); assign them to supervise junior employees with strict authority.",
+      "D": "Need for Safety (nSaf); assign them low-risk, repetitive task lists."
+    },
+    "correctAnswer": "B",
+    "explanation": "McClelland's Theory identifies three needs: Achievement (nAch), Power (nPow), and Affiliation (nAff). Individuals high in nAch seek challenge, set personal goals, and want performance feedback. They work best when given challenging goals with ownership.",
+    "topic": "Quality and Resource Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project team originally had 8 members. Due to a change in scope, the project manager adds 4 new developers to the team. How many communication channels have been added to the project as a result of this team expansion?",
+    "options": {
+      "A": "28 channels",
+      "B": "38 channels",
+      "C": "66 channels",
+      "D": "12 channels"
+    },
+    "correctAnswer": "B",
+    "explanation": "The formula for communication channels is N * (N - 1) / 2. Original team of 8: 8 * 7 / 2 = 28 channels. Expanded team of 12 (8 + 4): 12 * 11 / 2 = 66 channels. Added channels = 66 - 28 = 38 channels.",
+    "topic": "Communications and Risk Management",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager must communicate a critical project architecture change to a large, global stakeholder group. The manager wants to ensure stakeholders can read the information at their convenience without cluttering their inbox. Which communication method is most appropriate?",
+    "options": {
+      "A": "Interactive communication, such as a video conference call with all 300 stakeholders.",
+      "B": "Push communication, such as sending a bulk email broadcast to all stakeholders.",
+      "C": "Pull communication, such as publishing the documentation to an intranet portal or wiki site.",
+      "D": "Informal communication, such as sending a text message to each stakeholder."
+    },
+    "correctAnswer": "C",
+    "explanation": "Pull communication is used for large volumes of information or large audiences, allowing recipients to access content at their own discretion (e.g., wikis, portals, document repositories).",
+    "topic": "Communications and Risk Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "During risk planning, a project manager is calculating the Expected Monetary Value (EMV) of a potential risk event. There is a 30% probability that a software integration delay will occur, which would cost the project $100,000 in penalties. What is the EMV of this risk?",
+    "options": {
+      "A": "-$30,000",
+      "B": "-$70,000",
+      "C": "$30,000",
+      "D": "-$100,000"
+    },
+    "correctAnswer": "A",
+    "explanation": "EMV = Probability * Impact. Here, EMV = 0.30 * (-$100,000) = -$30,000. It is a negative value because it represents a threat (cost).",
+    "topic": "Communications and Risk Management",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is outsourcing a high-risk security component to a specialized vendor. The vendor will take full legal responsibility for any security breaches. Which risk response strategy is the project manager executing?",
+    "options": {
+      "A": "Avoidance",
+      "B": "Mitigation",
+      "C": "Transference",
+      "D": "Acceptance"
+    },
+    "correctAnswer": "C",
+    "explanation": "Risk Transference involves shifting the ownership and impact of a threat to a third party (e.g., via insurance, warranties, or outsourcing contracts), typically paying a risk premium to the party taking on the risk.",
+    "topic": "Communications and Risk Management",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "The project manager decides to change the design of an application to bypass using a buggy third-party API entirely, writing the functionality in-house instead. Which risk response strategy does this represent?",
+    "options": {
+      "A": "Mitigation",
+      "B": "Avoidance",
+      "C": "Escalation",
+      "D": "Exploitation"
+    },
+    "correctAnswer": "B",
+    "explanation": "Risk Avoidance involves changing the project management plan to eliminate the threat entirely, isolating the project objectives from the risk's impact (e.g., removing scope, changing vendors, changing design).",
+    "topic": "Communications and Risk Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "After implementing a risk response to mitigate a server bottleneck by purchasing secondary backup servers, the project manager notes that there is still a small, residual risk of data latency. In addition, the backup servers introduce a new risk of synchronization failure. What are these two categories of risk called?",
+    "options": {
+      "A": "Secondary Risk (latency) and Residual Risk (synchronization).",
+      "B": "Residual Risk (latency) and Secondary Risk (synchronization).",
+      "C": "Inherent Risk (latency) and Pure Risk (synchronization).",
+      "D": "Contingency Risk (latency) and Active Risk (synchronization)."
+    },
+    "correctAnswer": "B",
+    "explanation": "Residual risk is the risk that remains after implementing risk responses. Secondary risk is a new risk that arises directly as a result of implementing a risk response (e.g. synchronization issues from adding backup servers).",
+    "topic": "Communications and Risk Management",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is using a Decision Tree to choose between two manufacturing approaches. Option A has a 60% chance of yielding a $100,000 profit and a 40% chance of yielding a $20,000 loss. Option B has a 50% chance of yielding an $80,000 profit and a 50% chance of yielding a $10,000 profit. What is the EMV of Option A and Option B, and which should be selected?",
+    "options": {
+      "A": "EMV A = $52,000, EMV B = $45,000; Select Option A.",
+      "B": "EMV A = $60,000, EMV B = $45,000; Select Option A.",
+      "C": "EMV A = $52,000, EMV B = $35,000; Select Option A.",
+      "D": "EMV A = $40,000, EMV B = $45,000; Select Option B."
+    },
+    "correctAnswer": "A",
+    "explanation": "EMV Option A = (0.60 * $100,000) + (0.40 * -$20,000) = $60,000 - $8,000 = $52,000. EMV Option B = (0.50 * $80,000) + (0.50 * $10,000) = $40,000 + $5,000 = $45,000. Option A has a higher EMV ($52,000 vs $45,000) and should be selected.",
+    "topic": "Communications and Risk Management",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is establishing a Risk Breakdown Structure (RBS) for an infrastructure deployment. What is the primary purpose of the Risk Breakdown Structure?",
+    "options": {
+      "A": "To assign specific risk owners to activities in the project schedule.",
+      "B": "To hierarchically categorize identified project risks by their source, helping to ensure all potential risk categories are considered.",
+      "C": "To calculate the probability-impact score of each risk.",
+      "D": "To document the financial reserves allocated for risk responses."
+    },
+    "correctAnswer": "B",
+    "explanation": "A Risk Breakdown Structure (RBS) is a hierarchical representation of potential sources of risk. It organizes and categorizes risks by source (e.g. Technical, External, Organizational, Project Management) to aid identification and analysis.",
+    "topic": "Communications and Risk Management",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "During execution, a project manager identifies a positive risk (opportunity): a new compiler version could reduce application build times by 40%. The project manager allocates their best engineer to test the compiler and ensure the project fully captures this time saving. Which risk response strategy is the project manager executing?",
+    "options": {
+      "A": "Exploit",
+      "B": "Enhance",
+      "C": "Share",
+      "D": "Accept"
+    },
+    "correctAnswer": "A",
+    "explanation": "The 'Exploit' strategy is used for high-priority opportunities where the organization wants to ensure that the opportunity is realized. By assigning the best resource to guarantee the benefit occurs, the manager is exploiting the opportunity.",
+    "topic": "Communications and Risk Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is explaining the distinction between Qualitative Risk Analysis and Quantitative Risk Analysis to team leads. Which statement is correct?",
+    "options": {
+      "A": "Qualitative Risk Analysis is performed by the team; Quantitative is performed by external auditors.",
+      "B": "Qualitative Risk Analysis assesses risk probability and impact using a subjective scale; Quantitative Risk Analysis mathematically models risk exposure using simulations like Monte Carlo.",
+      "C": "Qualitative Risk Analysis is only done in predictive projects; Quantitative is only done in agile projects.",
+      "D": "Qualitative Risk Analysis calculates EVM metrics; Quantitative calculates critical path float."
+    },
+    "correctAnswer": "B",
+    "explanation": "Qualitative risk analysis prioritizes risks by evaluating their probability of occurrence and impact using rating scales (e.g. High/Medium/Low). Quantitative risk analysis numerically analyzes the combined effect of identified risks on project objectives using mathematical models.",
+    "topic": "Communications and Risk Management",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A buying organization wants to purchase standard office chairs. The scope of work is fully defined, and the supplier has predictable manufacturing costs. Which contract type presents the LOWEST risk to the buyer, and the HIGHEST risk to the seller?",
+    "options": {
+      "A": "Firm Fixed Price (FFP)",
+      "B": "Cost Plus Fixed Fee (CPFF)",
+      "C": "Time and Material (T&M)",
+      "D": "Cost Plus Incentive Fee (CPIF)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Under a Firm Fixed Price (FFP) contract, the buyer pays a set price regardless of the seller's actual costs. This transfers risk entirely to the seller (who must manage their cost overruns), making it low risk for the buyer and high risk for the seller.",
+    "topic": "Procurement and Stakeholder Engagement",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A buyer and seller agree to a Cost Plus Incentive Fee (CPIF) contract with a Target Cost of $100,000, a Target Fee of $10,000, and a share ratio of 80/20 (buyer/seller). The contract specifies a ceiling price of $130,000. During execution, the seller's actual costs reach $120,000. What is the Point of Total Assumption (PTA) in a contract context, and what does it represent?",
+    "options": {
+      "A": "The point where the buyer stops paying fee and the contract converts to a fixed-price model, forcing the seller to bear all subsequent cost overruns.",
+      "B": "The point where the project manager's authority is transferred to the procurement team.",
+      "C": "The date when the seller must deliver all deliverables to avoid liquidated damages.",
+      "D": "The minimum profit fee guaranteed to the seller regardless of performance."
+    },
+    "correctAnswer": "A",
+    "explanation": "The Point of Total Assumption (PTA) is a point in incentive contracts where the seller assumes all responsibility for cost overruns. At this point, the contract behaves like a Firm Fixed Price contract, and the seller's fee decreases dollar-for-dollar as actual costs exceed this threshold up to the ceiling price.",
+    "topic": "Procurement and Stakeholder Engagement",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager must urgently contract an expert consultant to resolve an unexpected system crash. The scope of work cannot be defined in advance, and the consultant will be paid an hourly rate. Which contract type is most appropriate for this scenario?",
+    "options": {
+      "A": "Time and Material (T&M)",
+      "B": "Firm Fixed Price (FFP)",
+      "C": "Cost Plus Fixed Fee (CPFF)",
+      "D": "Fixed Price Incentive Fee (FPIF)"
+    },
+    "correctAnswer": "A",
+    "explanation": "Time and Material (T&M) contracts are hybrid contracts used when the scope cannot be quickly defined. They resemble cost-reimbursable contracts because they are open-ended, and fixed-price contracts because unit rates are preset.",
+    "topic": "Procurement and Stakeholder Engagement",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is analyzing stakeholders using a Stakeholder Engagement Assessment Matrix. The matrix displays the following states: Unaware, Resistant, Neutral, Supportive, and Leading. The project manager identifies that a key department manager is currently 'Resistant' (C) but must be 'Supportive' (D) for the project to succeed. What is the primary purpose of this matrix?",
+    "options": {
+      "A": "To identify gaps between current (C) and desired (D) engagement levels of stakeholders to plan targeted engagement strategies.",
+      "B": "To track the communication channels of the development team.",
+      "C": "To evaluate vendor compliance during contract closure audits.",
+      "D": "To plot the power and interest coordinates on a Cartesian plane."
+    },
+    "correctAnswer": "A",
+    "explanation": "The Stakeholder Engagement Assessment Matrix is a tool to compare the current engagement levels of stakeholders against the desired engagement levels required for successful project delivery, guiding engagement planning.",
+    "topic": "Procurement and Stakeholder Engagement",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is mapping stakeholders for a multi-national infrastructure project. The manager decides to use the Salience Model to prioritize stakeholders. Which three attributes are used to classify stakeholders in the Salience Model?",
+    "options": {
+      "A": "Power, Interest, Influence",
+      "B": "Power, Urgency, Legitimacy",
+      "C": "Influence, Impact, Concern",
+      "D": "Authority, Availability, Proximity"
+    },
+    "correctAnswer": "B",
+    "explanation": "The Salience Model classifies stakeholders based on three attributes: Power (their ability to impose their will), Urgency (their need for immediate attention), and Legitimacy (their involvement is appropriate).",
+    "topic": "Procurement and Stakeholder Engagement",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A manufacturing firm is deciding whether to build a custom inventory scanning system in-house or purchase an off-the-shelf software package. The company's business analyst conducts a Make-or-Buy analysis. What factors must the analyst weigh to make a valid decision?",
+    "options": {
+      "A": "Direct and indirect costs of build vs buy, core organizational competencies, and long-term support capabilities.",
+      "B": "Only the immediate cost of purchasing the software license.",
+      "C": "The velocity of the team's Scrum Master.",
+      "D": "The number of communication channels within the vendor organization."
+    },
+    "correctAnswer": "A",
+    "explanation": "Make-or-buy analysis evaluates both the financial costs (direct and indirect of building vs buying) and qualitative factors like strategic alignment, core competencies, risk management, and long-term maintenance resources.",
+    "topic": "Procurement and Stakeholder Engagement",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager discovers that the head of operations is resistant to the new ERP project because they feel it was forced upon their department without consultation. How should the project manager handle this situation to align the stakeholder's engagement?",
+    "options": {
+      "A": "Avoid contact and escalate the issue to the sponsor, asking to remove the head of operations from the project.",
+      "B": "Involve the head of operations in decision-making and planning, address their operational concerns, and demonstrate how the ERP will solve their pain points.",
+      "C": "Show them the Project Charter and demand compliance under corporate governance policies.",
+      "D": "Send them weekly status reports with technical code metrics to show progress."
+    },
+    "correctAnswer": "B",
+    "explanation": "To manage resistant stakeholders, the project manager should actively engage them, listen to their concerns, involve them in planning or decision-making where appropriate, and align project outcomes with their operational needs.",
+    "topic": "Procurement and Stakeholder Engagement",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project team is drafting Source Selection Criteria for a procurement package to construct a data center. What is the primary purpose of Source Selection Criteria?",
+    "options": {
+      "A": "To evaluate seller proposals objectively and select a vendor based on pre-established standards such as capability, cost, and risk.",
+      "B": "To write the detailed technical specification statement of work (SOW).",
+      "C": "To verify the vendor's financial invoice entries after delivery.",
+      "D": "To define the change control procedure for procurement contracts."
+    },
+    "correctAnswer": "A",
+    "explanation": "Source selection criteria are criteria created by the buyer to rate or evaluate seller proposals to choose the vendor that best meets project needs.",
+    "topic": "Procurement and Stakeholder Engagement",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "During the 'Close Procurement' process, the project manager conducts a Procurement Audit. What is the focus of a Procurement Audit?",
+    "options": {
+      "A": "Reviewing the procurement process from procurement planning through contract administration to identify successes and failures for future contracts.",
+      "B": "Calculating the financial tax deductions of the equipment purchased.",
+      "C": "Investigating the seller's personnel files for security clearance details.",
+      "D": "Adjusting the cost baseline to match the final contract price."
+    },
+    "correctAnswer": "A",
+    "explanation": "A procurement audit is a structured review of the procurement process from procurement planning through contract administration, aimed at capturing lessons learned for future procurement activities.",
+    "topic": "Procurement and Stakeholder Engagement",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A junior project manager asks a senior practitioner why stakeholder engagement is treated differently from stakeholder communication. What is the core difference?",
+    "options": {
+      "A": "Stakeholder communication is the physical exchange of information, while stakeholder engagement is the process of building relationships and actively involving stakeholders to support project success.",
+      "B": "Stakeholder communication is only done in Waterfall, while stakeholder engagement is exclusive to Agile.",
+      "C": "Stakeholder communication is public, while stakeholder engagement is confidential.",
+      "D": "There is no difference; the terms are synonyms."
+    },
+    "correctAnswer": "A",
+    "explanation": "Communication is about exchanging information (frequency, format, methods). Engagement is about relationship management, involving stakeholders in decision making, resolving their issues, and securing their active support.",
+    "topic": "Procurement and Stakeholder Engagement",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "In Scrum, the Scrum Master acts as a servant leader. Which of the following is a primary responsibility of the Scrum Master in this capacity?",
+    "options": {
+      "A": "Assigning tasks to individual developers daily and monitoring their working hours.",
+      "B": "Removing impediments that block the team's progress, facilitating Scrum events, and coaching the team on self-organization.",
+      "C": "Prioritizing the product backlog and deciding which features are released to customers.",
+      "D": "Writing technical code and designing database schemas."
+    },
+    "correctAnswer": "B",
+    "explanation": "The Scrum Master is a servant leader who helps the team by removing blockers, facilitating meetings, and coaching the team and organization on Agile principles. They do not assign tasks or own the backlog.",
+    "topic": "Agile Frameworks (Scrum, Kanban)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "During a sprint, the team realizes that they cannot complete all committed backlog items due to an unexpected technical hurdle. Which Scrum role has the authority to collaborate with the team, re-prioritize the backlog, or cancel the sprint if the Sprint Goal becomes obsolete?",
+    "options": {
+      "A": "The Scrum Master",
+      "B": "The Product Owner",
+      "C": "The Development Team Lead",
+      "D": "The Project Sponsor"
+    },
+    "correctAnswer": "B",
+    "explanation": "The Product Owner is responsible for maximizing the value of the product and managing the product backlog. The Product Owner is the only role with the authority to cancel a sprint if the Sprint Goal becomes obsolete.",
+    "topic": "Agile Frameworks (Scrum, Kanban)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A Scrum team is ending a sprint and wants to focus on process improvement, tool efficiency, and relationship dynamics. Which Scrum event is specifically dedicated to these goals?",
+    "options": {
+      "A": "Sprint Review",
+      "B": "Sprint Retrospective",
+      "C": "Sprint Planning",
+      "D": "Daily Scrum"
+    },
+    "correctAnswer": "B",
+    "explanation": "The Sprint Retrospective is held at the end of the sprint to plan ways to increase quality and effectiveness by inspecting how the last sprint went with regards to individuals, interactions, processes, and tools.",
+    "topic": "Agile Frameworks (Scrum, Kanban)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "What is the difference between 'Acceptance Criteria' and the 'Definition of Done' (DoD) in Agile project management?",
+    "options": {
+      "A": "Acceptance criteria apply to a specific user story; the Definition of Done applies globally to all product backlog items to ensure quality standards.",
+      "B": "Acceptance criteria are written by developers; the Definition of Done is written by the Scrum Master.",
+      "C": "Acceptance criteria are checked during planning; the Definition of Done is checked during the retrospective.",
+      "D": "There is no difference; they are interchangeable terms."
+    },
+    "correctAnswer": "A",
+    "explanation": "Acceptance criteria are unique to each user story and define the functional requirements for that story. The Definition of Done (DoD) is a shared, global checklist of quality and technical standards (e.g. tested, code reviewed, documented) that all increments must meet to be considered releasable.",
+    "topic": "Agile Frameworks (Scrum, Kanban)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A team is adopting Kanban and sets Work in Progress (WIP) limits for each column on their board. What is the primary purpose of establishing WIP limits?",
+    "options": {
+      "A": "To force team members to work on multiple tasks simultaneously to increase resource utilization.",
+      "B": "To optimize flow, expose bottlenecks, and prevent team members from taking on too much work at once.",
+      "C": "To calculate the team's velocity and assign tasks to developers.",
+      "D": "To document the project schedule baseline for stakeholder review."
+    },
+    "correctAnswer": "B",
+    "explanation": "WIP limits in Kanban help optimize flow by preventing team members from pulling new work until existing work is completed. This highlights bottlenecks and improves efficiency by encouraging focus.",
+    "topic": "Agile Frameworks (Scrum, Kanban)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A Kanban practitioner is measuring flow metrics. They want to calculate the time it takes for a work item from the moment it is entered into the backlog to the moment it is fully completed. What is this metric called, and how does it differ from 'Cycle Time'?",
+    "options": {
+      "A": "Lead Time; it measures the entire duration from request to delivery, whereas Cycle Time measures only the time the item is actively being worked on.",
+      "B": "Cycle Time; it measures the entire duration from request to delivery, whereas Lead Time measures active work time.",
+      "C": "Velocity; it measures story points completed, while Cycle Time measures calendar hours.",
+      "D": "Response Time; it measures customer wait time, while Lead Time measures server time."
+    },
+    "correctAnswer": "A",
+    "explanation": "Lead Time is the total time from the customer's request (backlog entry) to final delivery. Cycle Time is the time it takes to complete a work item once work actively begins on it.",
+    "topic": "Agile Frameworks (Scrum, Kanban)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is analyzing a Cumulative Flow Diagram (CFD) for a Kanban team. The manager notices that the band representing the 'In Testing' stage is widening significantly over time relative to the other bands. What does this widening indicate?",
+    "options": {
+      "A": "Testing speed is increasing and tasks are being completed faster.",
+      "B": "A bottleneck exists in the testing stage, as work is accumulating faster than it is being completed.",
+      "C": "The team's velocity is increasing.",
+      "D": "The project scope is decreasing."
+    },
+    "correctAnswer": "B",
+    "explanation": "On a Cumulative Flow Diagram (CFD), a widening band indicates that work is accumulating in that particular stage (Work in Progress is increasing), revealing a bottleneck where work items are blocked or delayed.",
+    "topic": "Agile Frameworks (Scrum, Kanban)",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "An agile team's velocity has been averaging 30 story points per sprint. A PMO director wants to compare this team's performance with another team whose velocity is 50 story points per sprint. What should the project manager explain regarding this comparison?",
+    "options": {
+      "A": "Velocity is a team-specific metric based on unique estimation baselines; comparing velocity across teams is invalid and counterproductive.",
+      "B": "The second team is executing at 66% higher efficiency and productivity.",
+      "C": "The first team must be coached to align their story point sizes to match the second team.",
+      "D": "Velocity can only be compared if both teams are using the same coding language."
+    },
+    "correctAnswer": "A",
+    "explanation": "Story points are relative estimations unique to each team's context, capabilities, and baseline. Comparing velocity between teams is meaningless because a story point for Team A may represent different effort than for Team B.",
+    "topic": "Agile Frameworks (Scrum, Kanban)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "In a Daily Standup (Daily Scrum), what is the primary purpose of the meeting under the Scrum framework?",
+    "options": {
+      "A": "To provide a detailed status report to the project manager and update the project schedule baseline.",
+      "B": "For developers to inspect progress toward the Sprint Goal and adapt the Sprint Backlog as necessary, coordinating activities for the next 24 hours.",
+      "C": "To demo the product increment to external clients and solicit feedback.",
+      "D": "To rewrite the product backlog user stories and estimate their effort sizes."
+    },
+    "correctAnswer": "B",
+    "explanation": "The Daily Scrum is a 15-minute event for the developers of the Scrum team to inspect progress toward the Sprint Goal and plan work for the next 24 hours. It is a coordination and planning meeting, not a management status report.",
+    "topic": "Agile Frameworks (Scrum, Kanban)",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "An agile team member refuses to participate in collaborative pairing and insists on working in isolation, resulting in integration delays. How should the project manager or Scrum Master address this behavior?",
+    "options": {
+      "A": "Assign them to a separate project where they can work alone indefinitely.",
+      "B": "Facilitate a team discussion during the retrospective to address collaboration norms, and coach the individual on the value of collective ownership and cross-functional work.",
+      "C": "Escalate the behavior to HR immediately for disciplinary action.",
+      "D": "Ignore the behavior as long as the member completes their individual coding tasks."
+    },
+    "correctAnswer": "B",
+    "explanation": "In Agile frameworks, issues are first addressed collaboratively within the team, such as during the retrospective. Coaching and explaining the rationale for agile collaboration (collective ownership, cross-functionality) is preferred over immediate escalation.",
+    "topic": "Agile Frameworks (Scrum, Kanban)",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "The PMBOK Guide 7th Edition shifts from process-based standards to principle-based standards. Which of the following represents the core components of the Value Delivery System as defined in this edition?",
+    "options": {
+      "A": "Portfolios, Programs, Projects, Operations, and Business Environment.",
+      "B": "Inputs, Tools & Techniques, and Outputs.",
+      "C": "Initiating, Planning, Executing, Monitoring, and Closing.",
+      "D": "Scope, Schedule, Cost, Quality, and Risk."
+    },
+    "correctAnswer": "A",
+    "explanation": "The System for Value Delivery in PMBOK 7 describes how portfolios, programs, projects, operations, and the business environment work collectively to create, sustain, and deliver value to organizations and stakeholders.",
+    "topic": "PMBOK Guide 7th Edition concepts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "One of the 12 Project Management Principles in PMBOK 7 is 'Demonstrate leadership behaviors.' What does this principle suggest about leadership on a project?",
+    "options": {
+      "A": "Leadership is the exclusive responsibility of the formally appointed Project Manager.",
+      "B": "Leadership behaviors can and should be demonstrated by any project team member, regardless of their formal role.",
+      "C": "Leadership is only required during conflict resolution events.",
+      "D": "Leadership requires directive authority and should avoid collaborative consensus."
+    },
+    "correctAnswer": "B",
+    "explanation": "PMBOK 7 emphasizes that leadership is about influence and behavior, not title. Any team member can exhibit leadership behaviors (e.g., motivating, guiding, listening) to support team success.",
+    "topic": "PMBOK Guide 7th Edition concepts",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "According to PMBOK 7, what is 'Tailoring' and why is it critical in project management?",
+    "options": {
+      "A": "Selecting the most restrictive processes to ensure 100% compliance with corporate policies.",
+      "B": "The deliberate adaptation of the project management approach, governance, and processes to make them suitable for the specific context of the project and environment.",
+      "C": "Outsourcing coding tasks to external software developers to reduce costs.",
+      "D": "Calculating the project cost baseline using historical databases."
+    },
+    "correctAnswer": "B",
+    "explanation": "Tailoring involves customizing the project management methodology, development approach, lifecycle, governance, and processes to fit the unique characteristics of the project, organization, and stakeholder needs, avoiding a one-size-fits-all approach.",
+    "topic": "PMBOK Guide 7th Edition concepts",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "Under PMBOK 7, the 'Uncertainty Performance Domain' addresses the project environment's volatility, complexity, ambiguity, and risk. Which of the following is an example of dealing with 'Ambiguity' in a project?",
+    "options": {
+      "A": "Calculating the critical path float to plan for delays.",
+      "B": "Establishing prototypes and progressive elaboration to clarify vague requirements or double-meanings in user feedback.",
+      "C": "Buying insurance to transfer financial liability.",
+      "D": "Conducting Daily Standups to track task progress."
+    },
+    "correctAnswer": "B",
+    "explanation": "Ambiguity is a state of being unclear or having difficulty identifying the cause of events. Prototypes, progressive elaboration, and feedback loops help clarify requirements and reduce ambiguity.",
+    "topic": "PMBOK Guide 7th Edition concepts",
+    "difficulty": "HARD"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "The PMBOK 7 'Measurement Performance Domain' encourages the use of leading and lagging indicators. What is the main difference between these two types of metrics?",
+    "options": {
+      "A": "Leading indicators predict future performance or trends; lagging indicators measure past performance and historical outcomes.",
+      "B": "Leading indicators are financial metrics; lagging indicators are quality metrics.",
+      "C": "Leading indicators are used in Agile; lagging indicators are used in Waterfall.",
+      "D": "Leading indicators measure developer tasks; lagging indicators measure sponsor approval times."
+    },
+    "correctAnswer": "A",
+    "explanation": "Leading indicators provide early signals of future performance (e.g. team morale, risk triggers). Lagging indicators measure final outcomes after they have occurred (e.g. actual costs, schedule variance).",
+    "topic": "PMBOK Guide 7th Edition concepts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "The PMBOK 7 'Delivery Performance Domain' shifts the focus of project success. According to this domain, what represents the ultimate measure of project success?",
+    "options": {
+      "A": "The creation of the specified physical deliverables within schedule and budget constraints.",
+      "B": "The realization of intended business outcomes and value for the organization and its stakeholders.",
+      "C": "The completion of all processes outlined in the Project Management Plan.",
+      "D": "The number of lines of code written by the developers."
+    },
+    "correctAnswer": "B",
+    "explanation": "PMBOK 7 emphasizes outcomes over outputs. While deliverables (outputs) are important, true success is measured by the value and business outcomes realized through those deliverables.",
+    "topic": "PMBOK Guide 7th Edition concepts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is presenting to the steering committee. The manager distinguishes between project deliverables and project outcomes. Which pair of examples best represents this distinction?",
+    "options": {
+      "A": "Deliverable: A new online shopping cart website; Outcome: A 15% increase in online sales revenue within 6 months.",
+      "B": "Deliverable: The project charter; Outcome: The scope baseline document.",
+      "C": "Deliverable: The team's velocity; Outcome: The sprint retrospective meeting.",
+      "D": "Deliverable: A server migration; Outcome: Purchasing cloud databases."
+    },
+    "correctAnswer": "A",
+    "explanation": "A deliverable is a tangible or intangible product or result (the output: shopping website). An outcome is an end result or consequence of a process or project (the value: increased sales revenue).",
+    "topic": "PMBOK Guide 7th Edition concepts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is selecting a development approach for a project. The requirements are stable, the technology is well-understood, and the delivery must occur as a single release at the end of the lifecycle. According to PMBOK 7, which development approach is most appropriate?",
+    "options": {
+      "A": "Predictive Approach",
+      "B": "Adaptive Approach",
+      "C": "Incremental Approach",
+      "D": "Hybrid Approach"
+    },
+    "correctAnswer": "A",
+    "explanation": "A predictive (predictive/waterfall) approach is appropriate when the project scope and requirements are well-defined, understood, and stable, and the deliverable is released at the end of the project.",
+    "topic": "PMBOK Guide 7th Edition concepts",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "One of the 12 principles of project management in PMBOK 7 is 'Systems Thinking.' How does a project manager apply systems thinking on a project?",
+    "options": {
+      "A": "By focusing exclusively on the technical design of the computer hardware systems.",
+      "B": "By recognizing, evaluating, and responding to the dynamic circumstances and interactions within and surrounding the project to optimize project performance.",
+      "C": "By ensuring all project documentation is stored in a computerized database system.",
+      "D": "By isolating the project team from external organizational changes."
+    },
+    "correctAnswer": "B",
+    "explanation": "Systems thinking involves understanding how the project interacts with other systems (e.g. programs, portfolios, operations, external environment) and recognizing that changes in one part of a system can impact other parts.",
+    "topic": "PMBOK Guide 7th Edition concepts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project team is operating in a VUCA environment. What does the acronym VUCA stand for, and what strategy helps address the 'Volatility' aspect?",
+    "options": {
+      "A": "Volatility, Uncertainty, Complexity, Ambiguity; addressed by maintaining flexible planning and contingency reserves.",
+      "B": "Velocity, Utility, Cost, Authority; addressed by increasing schedule audits.",
+      "C": "Variance, Uniqueness, Constraints, Assets; addressed by hiring more contractors.",
+      "D": "Volume, Usability, Compliance, Accuracy; addressed by strict quality assurance checks."
+    },
+    "correctAnswer": "A",
+    "explanation": "VUCA stands for Volatility, Uncertainty, Complexity, and Ambiguity. Volatility (rapid, unpredictable change) is addressed by building resilience, flexible planning, and maintaining risk reserves.",
+    "topic": "PMBOK Guide 7th Edition concepts",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is working in an organization where resources are controlled by functional managers, and the project manager acts as a coordinator or expediter with very limited authority. What organizational structure is this?",
+    "options": {
+      "A": "Weak Matrix",
+      "B": "Strong Matrix",
+      "C": "Projectized",
+      "D": "Balanced Matrix"
+    },
+    "correctAnswer": "A",
+    "explanation": "In a Weak Matrix organization, the project manager has low authority and behaves more like a coordinator or expediter. Power lies primarily with the functional managers.",
+    "topic": "Project Governance and Business Environment",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A corporate PMO provides templates, best practices, and training to project teams but does not impose strict policies or exercise direct management control. What type of Project Management Office (PMO) is this?",
+    "options": {
+      "A": "Supportive PMO",
+      "B": "Controlling PMO",
+      "C": "Directive PMO",
+      "D": "Advisory PMO"
+    },
+    "correctAnswer": "A",
+    "explanation": "PMOs are classified into three types: Supportive (provides templates, guidelines, and low control), Controlling (requires compliance with standards/frameworks, medium control), and Directive (manages projects directly, high control).",
+    "topic": "Project Governance and Business Environment",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "An organization is choosing between two mutually exclusive projects. Project Alpha has a Net Present Value (NPV) of $150,000 and a payback period of 3 years. Project Beta has an NPV of $120,000 and a payback period of 2 years. Based on financial selection criteria, which project should the organization select?",
+    "options": {
+      "A": "Project Alpha, because it has a higher Net Present Value.",
+      "B": "Project Beta, because it has a shorter payback period.",
+      "C": "Neither project, because the payback periods exceed one year.",
+      "D": "Both projects, because their financial metrics are positive."
+    },
+    "correctAnswer": "A",
+    "explanation": "When selecting projects based on NPV, the project with the highest positive NPV should be selected. NPV accounts for the time value of money and represents the true economic value added to the organization.",
+    "topic": "Project Governance and Business Environment",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project sponsor is reviewing proposals and notices that Project X has a Benefit-Cost Ratio (BCR) of 1.6, while Project Y has a BCR of 0.8. How should the sponsor interpret these ratios?",
+    "options": {
+      "A": "Project X is viable because its benefits outweigh its costs (BCR > 1); Project Y is not financially viable because its costs exceed its benefits.",
+      "B": "Project Y is superior because a lower ratio indicates less capital risk.",
+      "C": "Project X will take twice as long to complete as Project Y.",
+      "D": "Both projects are equal because BCR is independent of project selection."
+    },
+    "correctAnswer": "A",
+    "explanation": "A Benefit-Cost Ratio (BCR) greater than 1.0 indicates that the benefits (revenue/savings) exceed the costs. A BCR less than 1.0 means costs exceed benefits. Therefore, Project X (BCR = 1.6) is financially viable, while Project Y (BCR = 0.8) is not.",
+    "topic": "Project Governance and Business Environment",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "An organization wants to select a project that will recover its initial capital investment as quickly as possible. The projects under review are: Project A (Payback Period = 18 months), Project B (Payback Period = 24 months), and Project C (Payback Period = 12 months). Which project should be selected?",
+    "options": {
+      "A": "Project C",
+      "B": "Project A",
+      "C": "Project B",
+      "D": "None; payback period is not a valid project selection metric."
+    },
+    "correctAnswer": "A",
+    "explanation": "The Payback Period measures the time required to recover the initial investment. A shorter payback period is preferred when the primary objective is to recover capital quickly, making Project C (12 months) the best option.",
+    "topic": "Project Governance and Business Environment",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "An investment committee is reviewing two projects with different Internal Rates of Return (IRR). Project M has an IRR of 18%. Project N has an IRR of 12%. Assuming other risk factors are equal, which project should the committee select?",
+    "options": {
+      "A": "Project M, because a higher IRR represents a higher rate of return on invested capital.",
+      "B": "Project N, because a lower IRR represents a more stable interest rate baseline.",
+      "C": "Project M, but only if the payback period is identical.",
+      "D": "Neither, because IRR does not account for initial capital costs."
+    },
+    "correctAnswer": "A",
+    "explanation": "Internal Rate of Return (IRR) is the discount rate at which the net present value of costs and benefits equals zero. A higher IRR is preferred in project selection as it indicates a more profitable investment.",
+    "topic": "Project Governance and Business Environment",
+    "difficulty": "EASY"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is aligning project deliverables with the company's governance framework. What is the primary purpose of Project Governance?",
+    "options": {
+      "A": "To provide a structured framework for decision-making, accountability, and oversight to ensure the project aligns with corporate strategy and compliance.",
+      "B": "To monitor the daily work hours and timesheets of individual contractors.",
+      "C": "To establish version control rules for software repositories.",
+      "D": "To draft the marketing materials for the final product release."
+    },
+    "correctAnswer": "A",
+    "explanation": "Project governance is the framework, functions, and processes that guide project activities. It provides a structured decision-making model and oversight to align projects with strategic goals, governance policies, and compliance regulations.",
+    "topic": "Project Governance and Business Environment",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A project manager is implementing a new customer relation software that will change how the sales team handles client leads. To manage the human side of this business change, the manager uses the ADKAR model. What does ADKAR stand for?",
+    "options": {
+      "A": "Awareness, Desire, Knowledge, Ability, Reinforcement",
+      "B": "Analysis, Design, Key-deliverables, Action, Review",
+      "C": "Authority, Delegation, Knowledge, Action, Responsibility",
+      "D": "Agile, Delivery, Kanban, Assessment, Retrospective"
+    },
+    "correctAnswer": "A",
+    "explanation": "ADKAR is a popular change management model that stands for: Awareness of the need for change, Desire to participate and support the change, Knowledge of how to change, Ability to implement required skills and behaviors, and Reinforcement to sustain the change.",
+    "topic": "Project Governance and Business Environment",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "During planning, the project manager identifies that a new government data privacy regulation will take effect in Month 8 of the project. The manager updates the project schedule to include a compliance audit. How should the project manager categorize this constraint?",
+    "options": {
+      "A": "External compliance constraint in the business environment.",
+      "B": "Internal quality metric.",
+      "C": "Organizational process asset (OPA).",
+      "D": "Enterprise environmental factor (EEF) that can be ignored until it occurs."
+    },
+    "correctAnswer": "A",
+    "explanation": "Regulatory and legal requirements are external compliance constraints within the business environment. The project manager must ensure the project deliverables adhere to these regulations.",
+    "topic": "Project Governance and Business Environment",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "certificationSlug": "project-management",
+    "questionType": "MCQ",
+    "text": "A steering committee is reviewing the project lifecycle. They want to know the difference between the Business Case and the Benefits Management Plan during initiation. Which statement is correct?",
+    "options": {
+      "A": "The Business Case justifies why the project is worth investing in; the Benefits Management Plan details how and when the benefits will be realized and measured.",
+      "B": "The Business Case is a legal contract; the Benefits Management Plan is an employee handbook.",
+      "C": "The Business Case is created after the project ends; the Benefits Management Plan is created before.",
+      "D": "There is no difference; they are different names for the project charter."
+    },
+    "correctAnswer": "A",
+    "explanation": "The Business Case provides the financial and strategic justification for starting a project. The Benefits Management Plan defines the metrics, timelines, and responsibilities for capturing and maintaining the business value delivered by the project.",
+    "topic": "Project Governance and Business Environment",
+    "difficulty": "MEDIUM"
+  }
+]

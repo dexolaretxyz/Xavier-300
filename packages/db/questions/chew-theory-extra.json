@@ -1,0 +1,1362 @@
+[
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "A 3-year-old child is brought to the primary healthcare facility with a history of fever for 3 days. Outline the clinical decision-making process under the Integrated Management of Childhood Illness (IMCI) guidelines to assess and classify this child, highlighting key differential diagnoses.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Under the Integrated Management of Childhood Illness (IMCI) guidelines, the clinical decision-making process for a child presenting with fever begins with checking for general danger signs, including the inability to drink or breastfeed, vomiting everything, convulsing during this illness, or being lethargic/unconscious. If any danger sign is present, immediate pre-referral stabilization is required. Next, the health worker must assess the fever by asking about its duration, history of measles in the last three months, and checking for stiff neck. In malaria-endemic areas, a Rapid Diagnostic Test (RDT) or blood smear must be performed. The child is then classified based on the findings. If the child has a stiff neck or general danger signs, they are classified as having a Severe Febrile Disease, requiring urgent referral and pre-referral treatment like intramuscular Artesunate. If the RDT is positive and there are no severe signs, the child is classified as having Malaria, and oral Artemether-Lumefantrine is prescribed. The health worker must also check for signs of measles, such as generalized rash and cough, runny nose, or red eyes, and classify accordingly as severe, non-severe, or past measles. Finally, other sources of fever, such as pneumonia, ear infections, or urinary tract infections, must be ruled out.",
+    "topic": "Clinical decision-making in primary care",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Assess for general danger signs (inability to feed, vomiting everything, convulsions, lethargy) as the first priority.",
+      "Perform a malaria Rapid Diagnostic Test (RDT) or blood smear in malaria-endemic areas to confirm diagnosis.",
+      "Classify the febrile illness into severe (Severe Febrile Disease) or non-severe (Malaria) categories based on clinical and laboratory findings.",
+      "Evaluate the child for signs of measles (rash, cough, runny nose, red eyes) and classify the severity of measles complications.",
+      "Formulate a treatment plan (oral Artemether-Lumefantrine for malaria, or pre-referral Artesunate and urgent referral for severe disease)."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Explain the clinical decision-making steps for a 35-year-old client presenting at a primary health post with a persistent productive cough lasting more than two weeks, night sweats, and weight loss.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A patient presenting with a productive cough of more than two weeks, night sweats, and weight loss must be managed with high suspicion of pulmonary tuberculosis (TB). The clinical decision-making steps begin with immediate infection control: the patient should be given a face mask and escorted to a well-ventilated waiting area to minimize transmission. The health worker must perform a comprehensive history, looking for other symptoms such as chest pain, hemoptysis, fever, and contact history with confirmed TB cases. The next critical step is diagnostic evaluation. Under national guidelines, the CHEW must collect sputum samples (spot and morning) for microscopy or GeneXpert testing, or refer the patient to the nearest diagnostic site if the health post lacks these facilities. An HIV test must also be offered, as TB/HIV co-infection is highly prevalent and changes clinical management. While awaiting laboratory results, the patient should not be placed on empirical anti-TB medications. If the sputum is positive (microbial confirmation), the patient is registered, counseled on adherence, and initiated on the Directly Observed Treatment Short-course (DOTS) regimen. If the test is negative but symptoms persist, the patient is referred to a medical officer for chest X-ray and further clinical evaluation for smear-negative TB or other chronic lung diseases.",
+    "topic": "Clinical decision-making in primary care",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Initiate infection control measures immediately (face mask, separate well-ventilated waiting area) to protect staff and patients.",
+      "Obtain a detailed history covering chronic cough duration, night sweats, weight loss, hemoptysis, and TB contact history.",
+      "Arrange for sputum collection for GeneXpert or acid-fast bacilli (AFB) microscopy as the primary diagnostic step.",
+      "Screen the patient for HIV co-infection due to the high synergy between tuberculosis and HIV.",
+      "Explain the decision path: initiate DOTS if positive, refer to a medical officer for chest X-ray/clinical evaluation if negative but symptomatic."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the clinical assessment and classification of dehydration in a 9-month-old child presenting with acute watery diarrhea, and outline the corresponding management decision path.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "The clinical assessment of dehydration in a child presenting with acute watery diarrhea is a vital task in primary care. Under IMCI guidelines, the health worker evaluates four key physical signs: the child's general condition (alert, restless/irritable, or lethargic/unconscious), the appearance of the eyes (normal or sunken), the child's thirst behavior (drinks normally, drinks eagerly/thirsty, or drinks poorly/not able to drink), and the skin pinch test (goes back immediately, slowly, or very slowly/more than 2 seconds). Based on these signs, the child is classified into one of three categories. Severe Dehydration is diagnosed if at least two signs are present, including at least one key sign (lethargy/unconsciousness or poor drinking). The management path is Plan C: immediate intravenous fluid resuscitation with Ringer's Lactate (100 ml/kg split over 3 to 6 hours depending on age), or nasogastric tube administration if IV access is impossible, followed by urgent referral. Some Dehydration is diagnosed if two or more signs are present, such as restlessness/irritability, sunken eyes, and drinking eagerly. The management path is Plan B: administer Oral Rehydration Salts (ORS) in the clinic (75 ml/kg over 4 hours) and monitor. No Dehydration is diagnosed if there are insufficient signs to classify as some or severe. The management path is Plan A: home management with increased fluids, continued feeding, Zinc supplementation, and counseling on danger signs.",
+    "topic": "Clinical decision-making in primary care",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "List the four key clinical assessment signs for dehydration: general appearance, sunken eyes, thirst/drinking behavior, and skin pinch retraction time.",
+      "Define Severe Dehydration criteria (two or more signs including lethargy/poor drinking) and outline the Plan C IV fluid protocol.",
+      "Define Some Dehydration criteria (restlessness, sunken eyes, thirsty drinking) and outline the Plan B clinic ORS rehydration protocol.",
+      "Define No Dehydration criteria and outline the Plan A home management protocol (Zinc, ORS, increased fluids, feeding).",
+      "Detail the follow-up instructions and key danger signs (blood in stool, worsening diarrhea, inability to drink) that require returning to the clinic."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "A 10-year-old child presents with a high fever, severe headache, joint pain, and vomiting. How should a CHEW distinguish between simple and severe malaria in a rural clinic, and what are the immediate management steps for each?",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Distinguishing between simple and severe malaria is critical because severe malaria is a medical emergency with high mortality. The CHEW begins by performing a Rapid Diagnostic Test (RDT) or blood smear to confirm Plasmodium infection. Simple (uncomplicated) malaria is characterized by fever, headache, chills, joint pain, and mild vomiting, but without signs of vital organ dysfunction. The management step for simple malaria is the administration of oral Artemisinin-based Combination Therapy (ACT), such as Artemether-Lumefantrine or Artesunate-Amodiaquine, along with paracetamol for fever and counseling on completed treatment. Severe malaria is diagnosed when malaria parasitemia is present along with one or more clinical complications: altered consciousness (cerebral malaria), repeated convulsions (more than two in 24 hours), severe respiratory distress, circulatory collapse/shock, severe clinical anemia (pale conjunctiva/palms), hemoglobinuria (dark urine), jaundice, or hypoglycemia. The immediate management of severe malaria at the PHC level is the administration of a pre-referral dose of intramuscular Artesunate (2.4 mg/kg), stabilization of airway and blood glucose, and immediate referral to a secondary hospital. If IM Artesunate is unavailable, intramuscular Artemether or rectal Artesunate must be used as alternative pre-referral options.",
+    "topic": "Clinical decision-making in primary care",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Perform a malaria Rapid Diagnostic Test (RDT) or blood film to confirm the presence of Plasmodium parasites.",
+      "Define simple malaria as symptomatic parasitemia without signs of vital organ dysfunction or severe complications.",
+      "List at least three signs of severe malaria (altered consciousness, repeated seizures, severe anemia, respiratory distress, hypoglycemia).",
+      "Outline the management for simple malaria: oral ACT therapy, supportive care, and counseling on course completion.",
+      "Outline the pre-referral management for severe malaria: immediate intramuscular Artesunate (2.4 mg/kg), stabilization, and urgent referral."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "An adult patient with a history of Type 2 Diabetes Mellitus presents for routine follow-up with a random blood glucose of 350 mg/dL and deep, rapid breathing. Describe the clinical evaluation, decision-making, and immediate action steps.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A diabetic patient presenting with severe hyperglycemia (blood glucose of 350 mg/dL) and deep, rapid breathing (Kussmaul breathing) is likely experiencing Diabetic Ketoacidosis (DKA), a life-threatening metabolic emergency. The clinical evaluation starts with assessing the airway, breathing, and circulation (ABCs), checking vital signs (pulse, blood pressure, respiratory rate), and performing a quick neurological assessment. The health worker should check for a fruity/acetone odor on the breath, signs of severe dehydration (dry mouth, poor skin turgor, low blood pressure), abdominal pain, and confusion. A urine dipstick test must be performed immediately to detect glucose and ketones. The presence of significant ketonuria (2+ or higher) along with hyperglycemia and respiratory distress confirms the high probability of DKA. The clinical decision-making pathway dictates that DKA cannot be managed at a primary care clinic or health post. Immediate stabilization steps include securing intravenous access and starting rapid infusion of normal saline (0.9% Sodium Chloride) to address severe dehydration and restore circulating volume. A pre-referral dose of regular soluble insulin (usually 10 units intramuscularly or intravenously under strict medical officer standing orders) can be administered if authorized, and the patient must be transferred immediately to a secondary facility with continuous monitoring of vitals.",
+    "topic": "Clinical decision-making in primary care",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Recognize that severe hyperglycemia (350 mg/dL) and deep, rapid (Kussmaul) breathing suggest Diabetic Ketoacidosis (DKA).",
+      "Perform a physical assessment checking for dehydration (hypotension, dry mouth), breath odor, and level of consciousness.",
+      "Utilize a urine dipstick to confirm the presence of ketones and glucose in the urine.",
+      "Initiate emergency stabilization by starting intravenous fluid resuscitation with normal saline (0.9% NaCl).",
+      "State the clinical decision: DKA is a critical emergency requiring immediate pre-referral stabilization and urgent hospital transfer."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Explain the clinical decision-making framework for evaluating an adult patient presenting with acute-onset low back pain, highlighting the 'red flag' signs that require immediate referral.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "When an adult patient presents with acute-onset low back pain, the clinical decision-making framework at the primary care level focuses on distinguishing between benign mechanical back pain and serious underlying systemic conditions that require specialized intervention. The evaluation begins with a detailed history of the pain (onset, trigger, location, radiation, and relieving/aggravating factors) and physical examination, including assessing gait, spinal tenderness, and basic neurological reflexes. The health worker must actively screen for clinical 'red flag' signs, which indicate potentially dangerous conditions such as spinal infection, malignancy, spinal fracture, or severe nerve compression. These red flags include: age of onset under 20 or over 50 years, history of major trauma, unexplained weight loss, history of cancer, persistent fever, pain that is worse at rest or during the night, saddle anesthesia (numbness in the perineal region), and progressive bilateral neurological deficits (weakness in the legs, foot drop). The most critical emergency red flag is Cauda Equina Syndrome, characterized by saddle anesthesia, lower limb motor weakness, and sudden bowel or urinary incontinence/retention. If red flags are absent, the patient is diagnosed with mechanical back pain and managed with conservative therapy: short-term paracetamol or NSAIDs, advice to avoid bed rest, and gentle activity. If red flags are present, the patient must be referred immediately.",
+    "topic": "Clinical decision-making in primary care",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Distinguish between benign mechanical low back pain and serious systemic spinal pathologies using history and physical assessment.",
+      "List key demographic and history red flags (age <20 or >50, cancer history, trauma, nocturnal pain, unexplained weight loss).",
+      "Identify clinical neurological red flags (saddle anesthesia, progressive motor weakness, loss of deep tendon reflexes).",
+      "Recognize Cauda Equina Syndrome (incontinence/retention, saddle anesthesia) as a surgical emergency requiring immediate referral.",
+      "Outline the management for uncomplicated mechanical back pain: avoid prolonged bed rest, use simple analgesics, and apply hot/cold packs."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Outline the clinical assessment, classification, and primary care management decisions for a 24-year-old pregnant woman presenting with severe anemia at 28 weeks of gestation.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Severe anemia in pregnancy is a critical clinical condition that increases the risk of maternal mortality, low birth weight, and postpartum hemorrhage. The assessment starts with identifying clinical signs of anemia, such as severe pallor of the conjunctiva, tongue, nail beds, and palms, along with symptoms like severe fatigue, dizziness, palpitation, and shortness of breath at rest. The diagnosis is confirmed by measuring hemoglobin (Hb) level using a Sahli's hemoglobinometer or a digital HemoCue device. In pregnancy, severe anemia is defined as a hemoglobin level of less than 7.0 g/dL. Clinical decision-making depends on the severity of symptoms and the gestational age. If the patient has signs of congestive heart failure (such as tachypnea, tachycardia, basal lung crepitations, or neck vein distension) or an Hb below 7.0 g/dL in the third trimester, she must be referred immediately to a secondary facility for blood transfusion. For stable patients with moderate anemia (Hb 7.0 to 10.9 g/dL), treatment at the primary care level involves therapeutic doses of oral iron (200 mg of elemental iron daily) and folic acid (5 mg daily), deworming with Albendazole (after the first trimester), prescribing malaria prophylaxis (IPTp-SP), and intensive nutritional counseling. For severe anemia without heart failure, initial stabilization and urgent referral to a hospital for specialized care is mandatory.",
+    "topic": "Clinical decision-making in primary care",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Identify clinical signs of severe anemia, including severe palmar/conjunctival pallor, dyspnea at rest, and tachycardia.",
+      "State the diagnostic threshold for severe anemia in pregnant women as a hemoglobin level of < 7.0 g/dL.",
+      "Recognize signs of cardiac decompensation/heart failure (dyspnea, basal crepitations, jugular venous distension) as a critical referral indicator.",
+      "Outline the primary care management for moderate anemia: therapeutic oral iron/folate, deworming, IPTp-SP, and dietary advice.",
+      "Formulate the referral plan for severe anemia: pre-referral stabilization, ensuring transport safety, and direct referral for blood transfusion."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "A 28-year-old female presents with lower abdominal pain, abnormal vaginal discharge with a foul odor, and high fever. Detail the syndromic management approach and decision-making for this patient.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "This patient presents with classic signs of Pelvic Inflammatory Disease (PID), which is an infection of the upper female reproductive tract. Under the syndromic management of Sexually Transmitted Infections (STIs), this is evaluated under the 'Lower Abdominal Pain' flow chart. The clinical assessment begins by checking for pregnancy (via urine HCG), ruling out acute surgical emergencies (such as appendicitis or ectopic pregnancy), and performing a pelvic examination. The diagnostic criteria for PID under syndromic management include lower abdominal tenderness, bilateral adnexal tenderness, and cervical motion tenderness (excitation pain) on bimanual examination, accompanied by fever and purulent vaginal discharge. The clinical decision-making pathway dictates that if the patient shows severe symptoms (such as high fever, vomiting, signs of peritonitis/rebound tenderness, or is pregnant), she must be referred immediately for inpatient intravenous antibiotic therapy. If the symptoms are mild to moderate and the patient is stable, outpatient syndromic treatment is initiated. This regimen consists of a combination of antibiotics to cover common pathogens (Neisseria gonorrhoeae, Chlamydia trachomatis, and anaerobes): a single dose of intramuscular Ceftriaxone (250 mg) or oral Ciprofloxacin, combined with oral Doxycycline (100 mg twice daily for 14 days) and oral Metronidazole (400 mg twice daily for 14 days). The health worker must also counsel the patient on sexual abstinence during treatment, ensure partner notification and treatment, and schedule a follow-up visit in 3 days.",
+    "topic": "Clinical decision-making in primary care",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Apply the syndromic management flow chart for Lower Abdominal Pain to screen for Pelvic Inflammatory Disease (PID).",
+      "Conduct a physical and pelvic exam to assess for bilateral adnexal tenderness and cervical motion tenderness.",
+      "Rule out non-STI emergencies, such as ectopic pregnancy, appendicitis, and peritonitis, which require immediate surgical referral.",
+      "Prescribe the outpatient antibiotic combination (IM Ceftriaxone/oral Ciprofloxacin plus Doxycycline and Metronidazole for 14 days).",
+      "Detail patient counseling requirements: partner notification/treatment, condom use, compliance, and clinical follow-up in 72 hours."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Explain the clinical assessment, classification, and management decisions under IMCI guidelines for a 4-year-old child presenting with acute ear pain and yellow discharge from the ear canal.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Under the IMCI guidelines, when a child presents with a suspected ear problem, the health worker must ask three specific questions: Does the child have ear pain? Is there discharge from the ear? If yes, for how long? The health worker must then inspect the ear to look for pus/discharge draining from the ear and feel for tender swelling behind the ear (mastoiditis). Based on these findings, the child is classified. If there is a tender swelling behind the ear, the child is classified as having Mastoiditis. The decision path is immediate referral to a hospital, administering a first dose of a suitable antibiotic (such as intramuscular Ampicillin or oral Amoxicillin), and a dose of paracetamol for pain control. If there is pus draining from the ear and the discharge has been present for less than 14 days, or if there is severe ear pain with a red, bulging eardrum, the child is classified as having an Acute Ear Infection. The management decision is to give oral Amoxicillin for 5 days, paracetamol for pain, and teach the mother to dry the ear by wicking if there is discharge. If pus has been draining for 14 days or more, it is classified as a Chronic Ear Infection, managed by wicking the ear dry and applying topical antibiotic drops (like Ciprofloxacin) for 14 days, without oral antibiotics. If there is no pain and no discharge, the child has No Ear Infection.",
+    "topic": "Clinical decision-making in primary care",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Inquire about ear pain and ear discharge duration, and palpate the mastoid bone for tender swelling.",
+      "Classify as Mastoiditis if tender swelling is behind the ear; explain the immediate pre-referral antibiotic and referral protocol.",
+      "Classify as Acute Ear Infection if pus discharge is present for <14 days or acute pain exists; prescribe oral Amoxicillin and paracetamol.",
+      "Classify as Chronic Ear Infection if discharge is present for >=14 days; describe ear-wicking technique and topical ear drops.",
+      "Teach the mother how to safely wick the ear dry using clean, absorbent material, and caution against inserting foreign objects."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "A 45-year-old patient with a history of asthma presents to a rural health post in severe respiratory distress, unable to complete a sentence in one breath. Detail the clinical evaluation, immediate stabilization, and referral protocol.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A patient presenting with acute asthma exacerbation who is unable to complete a sentence in one breath is experiencing a severe asthma attack, which is a medical emergency. The clinical evaluation starts with assessing the ABCs. The health worker checks respiratory rate (typically >30 breaths/minute), heart rate (>120 beats/minute), use of accessory muscles of respiration (intercostal and supraclavicular retractions), and listens for wheezing. The clinical decision-making pathway targets immediate oxygenation and bronchodilation. The health worker should immediately place the patient in a comfortable upright sitting position (orthopneic position) to maximize lung expansion and administer high-flow oxygen if available. First-line pharmacological treatment is the administration of inhaled short-acting beta-2 agonists (Salbutamol) via a nebulizer or a metered-dose inhaler (MDI) with a spacer, delivering 4 to 10 puffs every 20 minutes for the first hour. Concurrently, a systemic corticosteroid (such as oral Prednisolone 40-50 mg or intravenous Hydrocortisone 100 mg) must be administered to reduce airway inflammation. If the patient does not improve after the first round of bronchodilators, or if silent chest is noted (absence of wheezing due to minimal air movement), this represents a life-threatening stage. The health worker must arrange immediate referral, continuing oxygen and inhaled salbutamol during transit.",
+    "topic": "Clinical decision-making in primary care",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Identify signs of a severe asthma attack: inability to complete sentences, tachypnea (>30/min), tachycardia (>120/bpm), and accessory muscle use.",
+      "Position the patient upright (sitting) and administer supplemental oxygen to relieve hypoxemia.",
+      "Administer rapid-acting bronchodilators (Salbutamol) via nebulizer or MDI with a spacer device (4-10 puffs repeated).",
+      "Give systemic corticosteroids (oral Prednisolone or IV Hydrocortisone) to address underlying bronchial inflammation.",
+      "Recognize 'silent chest' as a sign of impending respiratory failure and initiate urgent referral with transport-level monitoring."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the systematic steps a Community Health Extension Worker (CHEW) must follow when conducting a local outbreak investigation following reports of multiple cholera cases in a village.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "When a cholera outbreak is suspected, a systematic outbreak investigation is required to confirm the outbreak, identify the source, and implement control measures. The investigation follows ten standard epidemiological steps. First, prepare for fieldwork by gathering necessary supplies (media, specimen bottles, personal protective equipment, ORS). Second, verify the existence of the outbreak by comparing current case numbers with historical baseline data for the area. Third, confirm the diagnosis by collecting stool samples or rectal swabs from active cases for laboratory testing (culture for Vibrio cholerae). Fourth, establish a working case definition to identify cases systematically. Fifth, perform active case finding by searching clinics and households in the community, recording data on a line list. Sixth, perform descriptive epidemiology, analyzing data by time (onset dates), place (mapping affected households/water sources), and person (age, gender, occupation). Seventh, generate hypotheses regarding the source of infection (e.g., a contaminated community borehole). Eighth, test the hypothesis through an analytical study or environmental sampling of the suspected water source. Ninth, implement immediate containment and control measures, including chlorinating water sources, establishing an ORT corner, distributing soap, and educating the community. Finally, communicate findings by writing a detailed outbreak report to the Local Government Area (LGA) health department.",
+    "topic": "Outbreak investigation and reporting",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "State the initial steps: prepare for fieldwork, confirm the outbreak existence, and collect clinical specimens to confirm diagnosis.",
+      "Define a working case definition (clinical criteria of diarrhea/vomiting) and utilize a line list for active case finding.",
+      "Describe descriptive epidemiology analysis: analyzing cases by time (onset), place (location mapping), and person (demographics).",
+      "Formulate and test a hypothesis concerning the outbreak source (e.g., water source contamination or food vendor).",
+      "Implement control measures (water chlorination, hygiene campaigns) and submit a formal report to the LGA disease surveillance officer."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Explain the structure and function of the Integrated Disease Surveillance and Response (IDSR) framework at the primary healthcare level, focusing on immediate and weekly reportable diseases.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "The Integrated Disease Surveillance and Response (IDSR) is a comprehensive framework adopted by African countries, including Nigeria, to strengthen district-level surveillance and response capabilities. At the primary healthcare level, the IDSR structure relies on the CHEW to detect, record, and report priority diseases using standardized reporting forms. Priority diseases are classified based on their reporting urgency. Immediate reportable diseases include epidemic-prone diseases and diseases targeted for elimination, such as Cholera, Lassa Fever, Measles, Yellow Fever, Cerebrospinal Meningitis (CSM), Acute Flaccid Paralysis (AFP/Polio), and Neonatal Tetanus. For these conditions, a single suspected case triggers immediate notification (within 24 hours) to the LGA Disease Surveillance and Notification Officer (DSNO) via telephone or SMS, followed by the submission of the IDSR 001A case-based reporting form. Weekly reportable conditions, which include malaria, bloody diarrhea (dysentery), and severe acute malnutrition, are summarized and reported every Monday using the IDSR 002 form. The primary functions of IDSR at the clinic level are: early detection of outbreaks, timely reporting to enable prompt district-level response, monitoring disease trends over time, and providing local data to guide health resource allocation and preventive health campaigns.",
+    "topic": "Outbreak investigation and reporting",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Define the IDSR framework as a system to integrate surveillance activities and strengthen local outbreak detection and response.",
+      "Identify key immediate reportable diseases (e.g., Cholera, Lassa Fever, CSM, Measles, AFP) and the 24-hour reporting window.",
+      "Describe weekly reportable diseases (e.g., malaria, dysentery) and the weekly data aggregation process using IDSR forms.",
+      "Explain the role of the DSNO (Disease Surveillance and Notification Officer) in receiving facility-level reports.",
+      "Outline how IDSR data is used locally: monitoring epidemiological trends, detecting outbreak thresholds, and planning immunization drives."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Define the purpose of a 'case definition' in public health surveillance, and design a working case definition for a suspected measles outbreak in a rural community.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A case definition is a standardized set of clinical criteria (and sometimes laboratory and epidemiological criteria) used to decide whether a person should be classified as having a disease of interest. The primary purpose of a case definition in public health surveillance is to ensure consistency in data collection. It allows health workers at different facilities and times to count cases in the exact same way, eliminating subjective bias and enabling accurate tracking of disease trends. In an outbreak investigation, case definitions are typically categorized into three levels of certainty. A Suspected Case definition is broad and based entirely on clinical symptoms to catch as many potential cases as possible. For measles, a suspected case is defined as: 'Any person with fever and a generalized maculopapular rash, and at least one of the three Cs: cough, coryza (runny nose), or conjunctivitis (red eyes).' A Probable Case definition includes the clinical signs of a suspected case plus an epidemiological link to a confirmed case (e.g., living in the same village as a lab-confirmed case). A Confirmed Case definition requires laboratory confirmation (positive measles-specific IgM antibodies in blood or isolation of the virus) or epidemiological linkage to a lab-confirmed case in the absence of a blood sample. This tiered structure ensures rapid clinical action while maintaining data accuracy.",
+    "topic": "Outbreak investigation and reporting",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Explain that a case definition standardizes reporting criteria to ensure data consistency across health facilities and regions.",
+      "Define a Suspected Case of measles using clinical criteria (fever, generalized maculopapular rash, and one of: cough, coryza, conjunctivitis).",
+      "Define a Probable Case of measles as a suspected case with an epidemiological link to another case during an outbreak.",
+      "Define a Confirmed Case of measles as one with laboratory verification (measles-specific IgM positive) or epidemiologically linked.",
+      "State how a broad suspected case definition prevents missing cases during active surveillance in the community."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "What is an epidemic curve (epi curve), and how does a health worker construct and interpret it during a suspected community food poisoning outbreak?",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "An epidemic curve (epi curve) is a graphical representation of the distribution of cases of an outbreak plotted over time. The horizontal (X) axis represents the time of symptom onset, and the vertical (Y) axis represents the number of cases. To construct an epi curve during a food poisoning outbreak, the health worker must first collect detailed information on the exact time of symptom onset for all identified cases using a line list. The time intervals on the X-axis are chosen based on the incubation period of the suspected pathogen; for food poisoning, intervals are usually plotted in hours (e.g., 2-hour or 4-hour blocks) rather than days. The health worker then draws a bar graph where each bar represents the number of cases that began during each time interval. Interpreting the epi curve provides vital clues about the outbreak. The shape of the curve reveals the transmission pattern. A sharp, steep rise followed by a gradual decline indicates a Point Source Epidemic, meaning all cases were exposed to the same contaminated source (e.g., a common meal at a local wedding) at a single point in time. The curve also helps estimate the incubation period by identifying the time gap between the known exposure event and the peak of the curve, aiding in identifying the causative agent (e.g., Salmonella vs. Staphylococcus aureus).",
+    "topic": "Outbreak investigation and reporting",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Define an epi curve as a histogram displaying the number of outbreak cases plotted against their time of symptom onset.",
+      "Outline steps to construct the curve: compile onset times on a line list and plot bars using appropriate time intervals (hours for food poisoning).",
+      "Explain the visual characteristics of a Point Source Epidemic curve (steep upward slope, single peak, gradual decline).",
+      "Explain how the epi curve is interpreted to estimate the incubation period and time of exposure.",
+      "Identify the public health value: identifying the mode of transmission (point source vs. propagated) to direct control measures."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe active case finding strategies and their implementation during a localized yellow fever outbreak in a rural community.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Active case finding is a proactive surveillance strategy where health workers actively seek out patients who meet the case definition of a disease, rather than waiting for patients to present at a healthcare facility (passive surveillance). During a yellow fever outbreak, active case finding is critical because many cases may go unreported due to mild symptoms or poor access to health facilities. The implementation of active case finding involves several key strategies. First, health workers review daily registers and retrospective medical charts at all clinics, private pharmacies, traditional healer centers, and prayer houses within the affected area to identify patients who presented with symptoms matching yellow fever (acute fever followed by jaundice/yellowing of the eyes within 14 days, or bleeding). Second, community health volunteers are deployed to conduct house-to-house searches in the affected villages. They interview household heads about anyone currently suffering from fever and yellow eyes, or who recently died after a brief febrile illness. Third, contact tracing is integrated: the family, neighbors, and co-workers of confirmed cases are screened. When a suspected case is found through these active search activities, the CHEW records their details on a case investigation form, takes a blood sample for serological testing, provides immediate supportive treatment, and arranges referral if severe symptoms are present.",
+    "topic": "Outbreak investigation and reporting",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Differentiate active case finding (proactively seeking cases in the community) from passive surveillance (waiting for patients to visit the clinic).",
+      "Review clinic logs, pharmacy records, and traditional healer sites retrospectively for fever/jaundice cases.",
+      "Deploy trained community volunteers to perform door-to-door physical searches and resident interviews using a simple symptom guide.",
+      "Target the household members, neighbors, and workplace contacts of laboratory-confirmed cases for screening.",
+      "Collect clinical data and blood specimens for diagnostic validation upon identifying a suspected case."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Discuss the immediate epidemiological and clinical containment measures required to control a suspected outbreak of Cerebrospinal Meningitis (CSM) in a congested community settlement.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Cerebrospinal Meningitis (CSM) is a severe, highly contagious bacterial infection of the meninges, often occurring in seasonal outbreaks in the African 'meningitis belt.' In a congested settlement, immediate containment is critical to prevent rapid transmission. Containment measures are split into clinical and epidemiological actions. Clinically, any patient presenting with fever, headache, stiff neck, vomiting, or altered consciousness must be isolated immediately. The CHEW must secure intravenous access, administer a pre-referral dose of intramuscular or intravenous Ceftriaxone (or oily chloramphenicol if referral is delayed), and refer the patient immediately. Epidemiologically, the facility must notify the LGA health authority within 24 hours. The CHEW coordinates contact tracing: all close contacts of confirmed cases (household members, classmates) must receive chemoprophylaxis with oral Ciprofloxacin (single dose) or Rifampicin to eradicate carriage. In the community, health education campaigns must be launched immediately, urging residents to improve ventilation, open windows, avoid overcrowded spaces, cover their mouths when coughing, and report new fever cases. If the outbreak crosses the epidemic threshold (typically 10 cases per 100,000 population per week in districts with populations >30,000), the CHEW supports the LGA in planning and executing a mass reactive vaccination campaign targeting the vulnerable age groups in the community.",
+    "topic": "Outbreak investigation and reporting",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Isolate suspected meningitis cases immediately and administer pre-referral antibiotics (Ceftriaxone) before urgent transfer.",
+      "Notify the LGA health team within 24 hours and record all cases on an IDSR line list.",
+      "Provide antibiotic chemoprophylaxis (Ciprofloxacin or Rifampicin) to all close contact family members and caregivers.",
+      "Educate the community on preventive behaviors: enhancing home ventilation, reducing overcrowding, and respiratory hygiene.",
+      "Prepare for and support a reactive mass vaccination campaign if the epidemiological threshold is breached."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Explain the step-by-step procedure for collecting, packaging, and transporting biological blood samples from a patient with suspected Lassa Fever, adhering to biosafety standards.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Lassa Fever is a highly infectious viral hemorrhagic fever. Collecting and transporting blood samples from a suspected case carries a high risk of transmission to laboratory and health staff, requiring strict adherence to biosafety standards. The procedure must follow the triple packaging system. First, the health worker must don complete Personal Protective Equipment (PPE), including double gloves, a fluid-resistant gown, a face shield or goggles, and an N95 respirator. Using aseptic technique, the worker performs venipuncture to collect 5-10 ml of whole blood in a sterile EDTA (purple top) tube. The tube is labeled with the patient's name, ID, and collection date. The outside of the tube is disinfected with a 0.5% chlorine solution. This tube is the Primary Receptacle and must be wrapped in absorbent cotton wool to absorb any leakage. Next, the primary receptacle is placed inside a leak-proof Secondary Receptacle, such as a zip-lock plastic bag or plastic container. This is then placed into a rigid Outer Packaging (the third layer), which is an insulated cooler box containing frozen ice packs to keep the sample at 2-8°C during transit. The case investigation form is placed in a separate plastic pocket attached to the outside of the cooler. The cooler is labeled with biohazard stickers and sent immediately via a designated, trained courier to the reference laboratory.",
+    "topic": "Outbreak investigation and reporting",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Don full protective equipment (PPE) including double gloves, face shield, and N95 respirator prior to venipuncture.",
+      "Collect blood in an EDTA tube (primary receptacle), disinfect the exterior, and wrap it in absorbent material.",
+      "Place the primary container into a leak-proof secondary packaging (plastic bag or container).",
+      "Place the secondary packaging into a rigid outer container (cooler box) with ice packs to maintain 2-8°C.",
+      "Attach the completed case investigation form to the exterior of the package and label with a biohazard warning."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Outline the essential components of a formal Outbreak Investigation Report that a CHEW must compile and submit to the Local Government Area (LGA) health authorities.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A formal outbreak investigation report is a critical administrative and scientific document that records the details of an outbreak, the investigation findings, the control measures implemented, and recommendations for preventing future occurrences. The report must contain several structured components. First, the Executive Summary, providing a brief overview of the outbreak size, key findings, and actions taken. Second, the Introduction/Background, describing the location, population at risk, and how the outbreak was first detected. Third, the Objectives of the investigation. Fourth, Methods, detailing the case definition, active case finding strategies, laboratory methods, and statistical analysis used. Fifth, Results, which forms the core of the report. This section must include descriptive epidemiology (number of cases, deaths, attack rates, case fatality rate), an epidemic curve showing the trend over time, a map showing geographic distribution of cases, and descriptive tables of case demographics. Sixth, the Discussion, interpreting the findings, identifying the likely source of contamination, and acknowledging limitations of the data. Seventh, the Control Measures section, describing both immediate clinical and community interventions. Finally, Recommendations, offering actionable steps to improve local sanitation, immunization, or surveillance to prevent a recurrence.",
+    "topic": "Outbreak investigation and reporting",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Include an introductory background section describing the location, population, and initial outbreak notification.",
+      "Detail the methodology: case definitions used, active case finding, and laboratory diagnostic procedures.",
+      "Present epidemiological findings including case fatality rate (CFR), an epidemic curve, and geographic mapping.",
+      "Document the specific containment actions taken, such as water treatment, treatment centers, and ring vaccination.",
+      "Provide evidence-based recommendations for future prevention, infrastructure improvement, and surveillance capacity."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the contact tracing protocol to be implemented in a community during an active outbreak of Mpox (Monkeypox).",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Contact tracing is a key public health intervention used to interrupt transmission chains of infectious diseases. During an active Mpox outbreak, contact tracing is essential due to the virus's ability to spread through close physical contact. The protocol begins by identifying contacts from a confirmed or probable case. A contact is defined as any person who has had close physical contact (face-to-face, skin-to-skin, sexual contact, or contact with contaminated materials like bedding) with an infected person since the onset of their symptoms. The health worker interviews the index patient to list all such individuals and their contact details. These contacts are then classified based on their risk level. Once identified, contact monitoring begins: contacts are visited or called daily for 21 days (the maximum incubation period of Mpox) from the date of last exposure. They are monitored for the development of symptoms, specifically fever, headache, swollen lymph nodes (lymphadenopathy), body aches, and the appearance of skin rashes or lesions. Contacts are instructed to self-isolate, avoid sexual contact, and practice strict hand hygiene. If a contact develops a fever or rash, they are immediately classified as a suspected case, isolated, a diagnostic lesion swab is collected, and they are moved to clinical care, starting the tracing cycle anew for their own contacts.",
+    "topic": "Outbreak investigation and reporting",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Define an Mpox contact based on exposure criteria: close physical contact, skin-to-skin, or touching contaminated linen.",
+      "Establish a daily monitoring window of 21 days from the date of the last contact with the infected individual.",
+      "Monitor contacts daily for specific symptoms: fever, headache, lymphadenopathy, and progressive skin rashes.",
+      "Instruct contacts to self-isolate, avoid physical/sexual contact, and maintain high hand hygiene standards.",
+      "Transition contacts who develop symptoms into 'suspected cases,' isolating them and initiating diagnostic protocol."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Discuss risk communication strategies and methods to reduce public panic during a localized Lassa Fever outbreak in a rural community.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "During a localized outbreak of an infectious disease like Lassa Fever, risk communication is vital. Effective communication keeps the community informed, promotes preventive behaviors, and manages fear and misinformation, which can cause patients to hide symptoms or avoid clinics. First, the CHEW must engage community leaders: traditional rulers, religious leaders, and market women leaders. Mobilizing these trusted figures ensures that messages are culturally acceptable and taken seriously. Second, message development: the CHEW must create simple, clear messages in the local language, explaining how Lassa fever is transmitted (via rat urine and feces or person-to-person contact), what the symptoms are (fever, sore throat, bleeding), and that early treatment with Ribavirin at the hospital is highly effective. Third, utilize diverse communication channels: town criers, radio jingles on local stations, and distribution of simple leaflets with pictures. Interactive town hall meetings are crucial to allow residents to ask questions and express concerns, addressing rumors directly (e.g., debunking false herbal cures). Fourth, promote actionable prevention steps: storing food in rodent-proof containers, stopping the practice of drying crops on roadsides, and using protective gloves when caring for sick relatives. Finally, health workers must show empathy, maintaining transparency about case numbers to build public trust.",
+    "topic": "Outbreak investigation and reporting",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Engage and sensitize local traditional and religious leaders to serve as primary, trusted channels of health communication.",
+      "Develop simple, pictorial messages in local languages focusing on transmission routes, symptoms, and the efficacy of early treatment.",
+      "Utilize local channels (town criers, community radio, posters) to reach all demographics within the settlement.",
+      "Conduct town hall discussions to actively address rumors, myths, and public anxieties about the outbreak.",
+      "Promote clear, actionable household behaviors: rodent-proof food storage, handwashing, and avoiding direct contact with bodily fluids."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Explain the concept and steps of 'community entry' when initiating a community diagnosis, and why obtaining the support of local leadership is essential.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Community entry is the process of establishing a collaborative relationship between a health worker and a community before initiating any health programs, such as a community diagnosis. The steps of community entry are structured to respect local customs and hierarchies. The first step is to collect preliminary information about the community's leadership structure, cultural norms, and taboos. The second step is to pay a formal courtesy visit to the paramount traditional ruler (the King, Chief, or Baale) and the council of elders. During this visit, the health worker introduces themselves, explains the purpose of the community diagnosis (which is to work with the community to identify their health problems and resources), and explicitly asks for their permission and blessing. The third step is to meet with other key stakeholders: religious leaders, market leaders (Iyaloja), youth group presidents, and the Ward Development Committee (WDC). Obtaining the support of local leadership is essential for several reasons. Traditional and religious leaders are the custodians of trust. If they endorse the health worker, the community members will feel safe and cooperate during household surveys, focus groups, and interviews. Without leadership support, health workers face suspicion, low participation rates, and resistance, which can lead to complete failure of the community diagnosis and subsequent health interventions.",
+    "topic": "Community diagnosis and action planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Define community entry as the systematic process of introducing oneself and building rapport with community structures before conducting health activities.",
+      "Outline steps: research local context, pay courtesy visits to the paramount chief/elders, and engage key stakeholders (WDC, religious leaders).",
+      "Explain that securing leader approval builds trust and legitimacy, neutralizing community suspicion of outside health workers.",
+      "Describe the role of leaders in mobilizing community residents to actively participate in surveys and focus groups.",
+      "Highlight the risk of project failure and community resistance if local leadership and traditional protocols are bypassed."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Design a basic quantitative questionnaire consisting of five key household indicators to assess water, sanitation, and hygiene (WASH) status during a community diagnosis survey.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A quantitative questionnaire is a vital tool during a community diagnosis to gather structured, measurable data on key determinants of health, such as water, sanitation, and hygiene (WASH). The questionnaire must be designed with clear, closed-ended questions that are easy for community health volunteers to administer and analyze. A standard five-question WASH household assessment contains the following indicators. Question 1 (Water Source): 'What is the main source of drinking water for this household?' Options include: Piped water, borehole/protected well, unprotected spring/well, or river/pond. Question 2 (Water Treatment): 'Do you treat your water before drinking, and if yes, how?' Options: No treatment, boiling, chlorination/WaterGuard, or filtration. Question 3 (Sanitation Facility): 'What type of toilet facility does this household use?' Options: Flush toilet, Ventilated Improved Pit (VIP) latrine, simple pit latrine, or open defecation (no facility). Question 4 (Handwashing Practice): 'Is there a handwashing station with soap and water within 10 paces of your toilet facility?' Options: Yes (with soap and water), Yes (water only), or No station. Question 5 (Waste Disposal): 'How does this household dispose of solid household waste?' Options: Government collection, buried/burned in yard, dumped in open community spaces, or dumped in water bodies. Gathering this data enables statistical analysis of risk factors for diarrheal diseases.",
+    "topic": "Community diagnosis and action planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Incorporate a question assessing the primary drinking water source (protected vs. unprotected sources).",
+      "Include a question verifying water treatment habits (boiling, chlorination, filtration, or none).",
+      "Formulate an indicator measuring the type of toilet facility used to evaluate open defecation risks.",
+      "Design a question to verify the presence of a functional handwashing station with soap near the toilet.",
+      "Create an indicator assessing solid waste disposal methods to identify vector breeding risk factors."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Discuss the role, planning, and execution of Focus Group Discussions (FGDs) as a qualitative data collection tool during a community diagnosis.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "While surveys provide quantitative data, Focus Group Discussions (FGDs) provide rich, qualitative insights into community perceptions, beliefs, cultural barriers, and motivations regarding health behaviors. The role of FGDs in community diagnosis is to understand the 'why' behind the numbers (e.g., why women do not attend antenatal care despite a clinic being nearby). Planning an FGD requires careful group composition. Participants should be homogenous to encourage free expression; thus, separate groups are planned for married young women, older men, youth, and traditional birth attendants, usually containing 6 to 12 participants. A facilitator (to guide the discussion using an open-ended question guide) and a note-taker (to record dialogue and non-verbal cues) are assigned. The location must be quiet, neutral, and comfortable. Execution begins with welcoming participants, obtaining consent (written or verbal), and establishing ground rules (respecting opinions, confidentiality). The facilitator uses open-ended prompts (e.g., 'What are the challenges women in this village face when they are about to give birth?') and encourages all members to speak, preventing dominant individuals from controlling the discussion. The note-taker records the discussion. Afterward, the qualitative data is analyzed by identifying recurring themes, which are used to design culturally appropriate interventions.",
+    "topic": "Community diagnosis and action planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Explain the role of FGDs in gathering qualitative data on community attitudes, beliefs, and barriers to healthcare utilization.",
+      "Describe the planning phase: selecting homogeneous groups (6-12 participants) to ensure comfortable and open dialogue.",
+      "Outline the roles of the FGD team: a facilitator to guide conversation and a note-taker to document verbal/non-verbal responses.",
+      "Detail execution steps: obtaining informed consent, setting ground rules, and using open-ended questions.",
+      "Explain how FGD findings are analyzed by themes to inform culturally acceptable community health interventions."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Explain how a health worker utilizes the Hanlon Method to prioritize identified health problems in partnership with a Ward Development Committee (WDC).",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A community diagnosis often reveals multiple health problems, but resources are always limited. Therefore, prioritization is necessary. The Hanlon Method is a structured, objective tool used to prioritize health problems in a participatory manner with community stakeholders like the Ward Development Committee (WDC). The method evaluates problems against three core criteria, scoring each from 0 to 10. Criterion A is the Size of the Problem, based on the percentage of the population affected by the condition. Criterion B is the Seriousness of the Problem, evaluated by factors like urgency, severity, economic loss, and mortality rates. Criterion C is the Effectiveness of the Intervention, assessing how easily the problem can be solved or prevented using available technology and resources. These scores are combined using the Hanlon formula: Priority Score = (A + B) x C. Additionally, a feasibility test called PEARL (Propriety, Economics, Acceptability, Resources, Legality) is applied. If an intervention is not culturally acceptable or too expensive (scoring 0 on PEARL), it is eliminated regardless of its Hanlon score. The CHEW facilitates this process by presenting the diagnosis data, explaining the criteria, and guiding the WDC members in voting on the scores. This collaborative process ensures that the community takes ownership of the prioritized health problems.",
+    "topic": "Community diagnosis and action planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Define the Hanlon Method as a systematic tool to prioritize community health issues using objective criteria and stakeholder input.",
+      "Explain Criterion A (Size of the problem based on population prevalence data).",
+      "Explain Criterion B (Seriousness of the problem based on mortality, urgency, and socio-economic impact).",
+      "Explain Criterion C (Effectiveness/feasibility of potential interventions) and the calculation formula.",
+      "Describe the PEARL feasibility filter (Propriety, Economics, Acceptability, Resources, Legality) to ensure cultural and financial viability."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the components of a Logical Framework (Logframe) matrix, and develop a simple logframe for a community project aimed at reducing childhood malaria.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A Logical Framework (Logframe) is a systematic planning, monitoring, and evaluation tool that outlines the causal chain of a project. It is structured as a 4x4 matrix. The columns represent: Project Description (the hierarchy of objectives), Objectively Verifiable Indicators (OVIs - how success is measured), Sources of Verification (SoVs - where the data to measure success comes from), and Assumptions (external factors that must hold true for the project to succeed). The rows represent: Goal (long-term impact), Outcome/Purpose (immediate project effect), Outputs (tangible products or services delivered), and Activities (actions required to produce outputs). For a project to reduce childhood malaria, the logframe is constructed as follows. Goal: Reduce under-5 mortality from malaria in Ward X by 30% in two years. OVI: Clinic records of under-5 malaria deaths. SoV: PHC monthly IDSR reports. Outcome: Increase the use of insecticide-treated nets (ITNs) among under-5 children. OVI: Percentage of households with children sleeping under ITNs. SoV: Household survey. Outputs: 2,000 ITNs distributed; 5 community sanitations completed. OVI: Number of nets distributed; number of sanitation events. SoV: Distribution logs and photos. Activities: Procure nets, conduct community sensitization meetings, train volunteers. OVI: Money spent, number of volunteers trained. SoV: Attendance sheets and financial receipts. Assumptions: The community accepts ITN use, and the weather allows outdoor mobilization.",
+    "topic": "Community diagnosis and action planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Explain the four columns of a Logframe: Project Description, Indicators (OVIs), Sources of Verification (SoVs), and Assumptions.",
+      "Explain the four vertical levels: Goal (long-term impact), Outcome (purpose), Outputs (results), and Activities (actions).",
+      "Formulate a clear Goal and corresponding indicator/SoV for a malaria reduction project (e.g., reduce under-5 malaria mortality).",
+      "Develop an Outcome and Output level with measurable indicators (e.g., percentage of ITN usage, number of ITNs distributed).",
+      "Identify realistic Assumptions (e.g., sustained vaccine supply, community acceptance) necessary for project success."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "What is 'community mapping', and how does a CHEW use this participatory tool during the initial phase of a community diagnosis?",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Community mapping is a participatory rural appraisal (PRA) tool where community members draw a visual map of their locality, representing its physical layout, resources, infrastructure, and health risks. Instead of the health worker drawing the map, community members use local materials (like sticks, leaves, chalk, or colored powder on the ground) to create it. The CHEW facilitates this by gathering a diverse group of residents (men, women, youth, elders) in an open space. The participants are asked to draw key landmarks, such as roads, rivers, markets, schools, and houses. They then mark the location of health resources, including the health post, traditional birth attendants' homes, patent medicine stores, and functional water boreholes. Next, they map health hazards, such as open defecation sites, stagnant water breeding mosquitoes, illegal refuse dumps, and areas prone to flooding. The CHEW uses the map to stimulate discussion, asking questions like: 'Why are diarrheal cases concentrated near this stream?' Community mapping serves multiple purposes: it gathers valuable spatial data on health determinants, ensures the active involvement of non-literate community members, builds collective awareness of environmental hazards, and fosters a sense of ownership, making the community more willing to cooperate in the subsequent action plan.",
+    "topic": "Community diagnosis and action planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Define community mapping as a participatory tool where residents visually plot their geography, resources, and hazards.",
+      "Explain the role of the CHEW as a facilitator who encourages diverse community subgroups to actively participate in drawing the map.",
+      "Identify items to be mapped: infrastructure (roads, schools), health assets (PHC, boreholes), and health hazards (refuse dumps, stagnant pools).",
+      "Describe how the map is used to prompt critical discussion about the spatial links between environmental hazards and local disease outbreaks.",
+      "Highlight how mapping empowers illiterate or marginalized residents to contribute valuable insights to the community diagnosis."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Draft a structured Community Action Plan to address a high rate of maternal mortality due to delayed clinic arrival in a remote ward.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A Community Action Plan is a detailed roadmap designed to address a prioritized health problem using local and external resources. To address high maternal mortality caused by delayed clinic arrival (the 'second delay' in maternal care), the action plan must target transport barriers and community awareness. The plan is structured as a table containing five columns: Problem/Objective, Activities, Responsible Persons, Resources Needed, and Timeline. Problem: High maternal mortality due to delayed transfer. Objective: Establish a functional emergency transport scheme for pregnant women in Ward Y within three months. Activities: First, hold a meeting with the local commercial transport union (such as motorcyclists or taxi drivers) to establish an Emergency Transport System (ETS) where drivers volunteer to transport laboring women to the clinic at any hour. Second, establish a community emergency blood donor registry. Third, create a community emergency health fund managed by the WDC to cover transport costs for poor families. Fourth, sensitize traditional birth attendants (TBAs) to refer women immediately at the onset of labor. Responsible Persons: WDC Chairman, CHEW, Transport Union Leader. Resources: Safe transport vehicles, phone credit for communication, community contributions for the emergency fund. Timeline: Month 1: Mobilize drivers and raise funds; Month 2: Train TBAs and drivers; Month 3: Launch the scheme and monitor monthly maternal referrals.",
+    "topic": "Community diagnosis and action planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Define the objective clearly: establishing an emergency transport scheme to reduce delays in reaching maternal care.",
+      "Outline key activities: negotiating with local transport unions (ETS), creating a community emergency fund, and sensitizing TBAs.",
+      "Identify responsible stakeholders (WDC members, CHEW, local transport union executives) to ensure accountability.",
+      "Detail the resources required (e.g., local volunteer vehicles, basic communication tools, community-raised cash reserves).",
+      "Provide a realistic, phased timeline (e.g., 3-month schedule) for mobilizing, training, and executing the plan."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Discuss the selection of monitoring and evaluation (M&E) indicators to track the success of a community-led total sanitation (CLTS) campaign over a twelve-month period.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Monitoring and Evaluation (M&E) is essential to determine whether a community-led total sanitation (CLTS) campaign is achieving its goal of ending open defecation and improving community hygiene. Indicators must be selected at different levels of the project cycle: input, process, output, and outcome/impact. Input indicators measure the resources invested, such as the number of health workers trained in CLTS facilitation and the budget spent on educational materials. Process indicators measure activities carried out, such as the number of 'triggering' sessions conducted in different villages. Output indicators measure the immediate tangible results of the activities, which include: the number of households that constructed new latrines (pit or VIP) during the campaign, the number of handwashing stations installed near toilets, and the number of latrines fitted with functional vent pipes or drop-hole covers. Outcome indicators measure the changes in behavior and environmental status, most critically the 'Open Defecation Free' (ODF) status of the villages, verified by independent inspection teams. Impact indicators measure long-term health changes, specifically the reduction in the incidence of waterborne and diarrheal diseases among children under five years in the community, measured through clinic registers.",
+    "topic": "Community diagnosis and action planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Differentiate between project M&E levels: input, process, output, outcome, and long-term health impact.",
+      "List output indicators: number of household latrines constructed and number of handwashing stations installed.",
+      "Identify the primary outcome indicator: attainment of verified 'Open Defecation Free' (ODF) status for the community.",
+      "State the long-term impact indicator: reduction in childhood diarrheal disease incidence recorded in clinic registers.",
+      "Explain how periodic data collection (surveys, register reviews) is scheduled to track these indicators over a 12-month period."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Explain how a CHEW retrieves, analyzes, and utilizes secondary health data from primary care clinic registers during the community diagnosis process.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Secondary health data refers to existing records that were previously collected for routine administrative or clinical purposes, rather than specifically for the community diagnosis. In a primary care setting, the main sources of secondary data are the outpatient department (OPD) register, the antenatal care (ANC) register, the immunization register, and the IDSR monthly summary sheets. To retrieve this data, the CHEW reviews these paper registers for the past 12 to 24 months, extracting key variables such as the total number of patients seen, diagnoses, patient addresses (to locate disease hotspots), ages, and immunization status. The CHEW then analyzes this data by calculating key health indicators, such as the top five causes of morbidity in the clinic (e.g., malaria, respiratory infections, diarrhea), the percentage of pregnant women who completed four ANC visits, and the immunization drop-out rate (e.g., BCG to Measles). Utilizing this data is highly beneficial: it provides a historical baseline of disease burden without the cost of a new survey, identifies seasonal trends (such as malaria spikes during the rainy season), and highlights gaps in service coverage (such as low tetanus toxoid coverage among pregnant women), which guides the priorities of the community action plan.",
+    "topic": "Community diagnosis and action planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Identify primary sources of secondary clinic data: OPD registers, ANC registers, immunization logs, and IDSR summary sheets.",
+      "Describe the extraction process: pulling data on disease diagnoses, client age, geographic origin, and immunization drop-outs over 12-24 months.",
+      "Detail data analysis steps: calculating percentages, ratios, and identifying the top causes of local morbidity.",
+      "Explain how secondary data is utilized to detect seasonal trends and baseline service coverage gaps.",
+      "Contrast secondary data review with primary data collection (surveys), noting its cost-effectiveness and efficiency."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the process and objectives of hosting a community feedback meeting (town hall) to present community diagnosis findings to local leaders and residents.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Once data collection and analysis for a community diagnosis are complete, the findings must not be kept by the health worker; they must be shared with the community. Hosting a community feedback meeting, often called a town hall, is the standard method for this. The objectives of this meeting are: to validate the collected data (ensuring the community agrees the findings reflect their reality), to raise collective awareness of local health problems, to demystify health data, and to build consensus on priorities for the community action plan. The process begins with scheduling the meeting at a convenient time and neutral location (such as a school hall or community square) and sending formal invitations to traditional rulers, religious leaders, WDC members, and youth/women groups. During the meeting, the CHEW presents the data using simple, non-technical language and visual aids (like charts, drawings, or community maps). For example, instead of saying 'the prevalence of Giardiasis is 15%,' the CHEW explains that '15 out of every 100 children tested have stomach worms because of drinking untreated stream water.' The CHEW then opens the floor for discussion, allowing residents to ask questions, add their perspectives, and collectively vote on the priority areas to be addressed in the action plan.",
+    "topic": "Community diagnosis and action planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "State objectives of the town hall: data validation, awareness raising, and collaborative priority setting.",
+      "Describe preparation steps: select neutral venues, timing that accommodates working residents, and inviting key community leaders.",
+      "Explain communication methods: using simple local languages, avoiding complex medical jargon, and utilizing visual charts/maps.",
+      "Outline the interactive discussion: encouraging feedback, addressing community concerns, and correcting misunderstandings.",
+      "Explain how the meeting concludes with a consensus-based vote to select the priority issues for the action plan."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the design, purpose, and detailed procedure for maintaining a Stock Card (bin card) for essential medicines in a health post.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A Stock Card, also known as a bin card, is a paper-based inventory management record kept directly in the drug store alongside each specific medicine. The primary purpose of a stock card is to maintain a continuous, real-time record of all transactions (receipts, issues, balances) for an individual drug item. This ensures accountability, prevents pilferage, and guides reordering decisions. A stock card is designed with columns for: Date, Voucher Number, Source (where received from) or Destination (where issued to), Quantity Received, Quantity Issued, Balance on Hand, Expiry Date, Batch Number, and the Signature of the officer making the entry. The procedure for maintaining the card is strict: a separate stock card must be opened for each drug formulation and strength (e.g., paracetamol 500 mg tablets and paracetamol syrup have separate cards). Every time a drug is received from the central store or issued to the dispensing unit, the transaction must be recorded on the card immediately before the physical drugs are moved. The card balance must always match the physical count of the drugs on the shelf. If a discrepancy is found, it must be investigated and reconciled immediately. The stock card also highlights expiry dates, allowing the health worker to identify drugs that must be used first.",
+    "topic": "Health post management and inventory control",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Explain the purpose of a stock card: tracking real-time transactions of individual drug items to ensure inventory control.",
+      "List the essential column headers of a stock card (date, quantity received/issued, balance, batch number, expiry date, signature).",
+      "State the rule of opening separate stock cards for each unique drug name, dosage form, and strength.",
+      "Explain the protocol of immediate recording: entries must be made at the exact time of drug receipt or issue.",
+      "Highlight the requirement that the stock card balance must always equal the physical count of items on the shelf."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Define the terms 'minimum stock level,' 'reorder level,' and 'lead time,' and explain how a CHEW calculates these values to prevent drug stock-outs.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "To prevent stock-outs of essential medicines at a health post, a CHEW must understand and apply basic inventory control calculations. Lead Time is the interval of time between placing an order for a drug and when that order actually arrives at the health post and is ready for use. Average Monthly Consumption (AMC) is calculated by adding the quantities of a drug used over the past 3 to 6 months and dividing by the number of months. The Minimum Stock Level (safety stock) is the quantity of stock kept to protect against stock-outs caused by unexpected delays in delivery or sudden surges in patient demand. It is typically calculated as: Minimum Stock = AMC x Lead Time (or a set buffer period, e.g., 1 month). The Reorder Level (ROL) is the physical stock level at which a new order must be placed to ensure the new stock arrives before the current stock is exhausted. It is calculated using the formula: Reorder Level = (AMC x Lead Time) + Minimum Stock. For example, if a health post uses 500 doses of ACT per month (AMC = 500), and it takes 2 weeks (0.5 months) for an order to arrive (Lead Time = 0.5), and the safety buffer is 1 month (Minimum Stock = 500), the ROL would be (500 x 0.5) + 500 = 750 doses. When the physical stock of ACT drops to 750, the CHEW must place a new order immediately.",
+    "topic": "Health post management and inventory control",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Define Lead Time as the time duration between placing a drug order and its physical delivery to the health post.",
+      "Explain how to calculate Average Monthly Consumption (AMC) using historical dispensing data.",
+      "Define Minimum Stock Level as the buffer/safety stock kept to prevent stock-outs during demand spikes or supply delays.",
+      "Explain the calculation and purpose of the Reorder Level (ROL) using the standard AMC and Lead Time formula.",
+      "Provide a simple numerical example showing how these calculations apply to a clinical item like ACT or ORS."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Discuss the implementation of the First-Expired, First-Out (FEFO) principle in a health post pharmacy store, and contrast it with First-In, First-Out (FIFO).",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "In a health post pharmacy store, managing drug expiration is a primary responsibility of the health worker. The First-Expired, First-Out (FEFO) principle dictates that pharmaceutical products with the earliest expiration date must be placed at the front of the shelf and distributed first, regardless of when they were received at the facility. First-In, First-Out (FIFO), on the other hand, distributes items based on the order of their arrival at the store (the oldest stock received is distributed first). In healthcare inventory management, FEFO is highly preferred over FIFO because manufacturers' batches may arrive out of order; for example, a new shipment of amoxicillin received today might have an earlier expiry date than a shipment received last month due to different production runs. Implementing FEFO requires specific organization. When a new batch of drugs arrives, the CHEW must check the expiry dates of the new stock against the existing stock. The drugs with the earliest expiry dates are placed at the front of the shelves, while those with later expiry dates are placed at the back. Shelves must be clearly labeled, and regular visual inspections of expiry dates should be conducted. Applying FEFO prevents the waste of precious medicines through expiration, saving costs and ensuring patients receive potent, safe drugs.",
+    "topic": "Health post management and inventory control",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Define the FEFO (First-Expired, First-Out) principle as distributing drugs with the shortest expiry dates first.",
+      "Contrast FEFO with FIFO (First-In, First-Out), explaining why FEFO is critical for pharmaceutical shelf-life safety.",
+      "Describe physical shelf arrangement: placing early-expiry drugs at the front and later-expiry drugs behind them.",
+      "Identify the risk of using FIFO in medicine storage (e.g., newer shipments might expire sooner than older stocks).",
+      "State the public health and financial benefits of FEFO: reducing drug wastage, saving resources, and ensuring clinical potency."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the procedure for conducting a physical inventory count of medical supplies at a primary health clinic, and how to document and reconcile discrepancies.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A physical inventory count is a systematic process of counting every medical item in the clinic store to verify that the physical quantities match the balances recorded on the stock cards. It should be conducted monthly. The procedure begins by choosing a time when the store is closed or during low-activity hours to prevent transactions during the count. The CHEW prepares an inventory count sheet listing all items, strengths, and units. Working in pairs (one to count, one to record) is recommended to ensure accuracy. For each item, the physical count is conducted, noting the expiry date and batch number. The counted number is compared with the balance on the corresponding stock card. If the physical count matches the card balance, the count date is written on the card in red ink, signed by the examiner. If there is a discrepancy (underage or overage), it must be documented. Reconciling a discrepancy involves: checking transaction records for math errors, verifying if drugs were dispensed without being recorded, or checking for physical theft. If a math error is found, a correction entry is made on the stock card. If the discrepancy is unresolved, it must be reported to the clinic supervisor and noted as a loss or adjustment in the inventory report.",
+    "topic": "Health post management and inventory control",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "State the frequency (monthly) and preparation requirements (closed store, standardized count sheet) for physical inventory.",
+      "Describe the counting method: physical verification of every item, batch, and expiry date, ideally using a two-person team.",
+      "Compare physical count figures directly with the balances written on stock cards.",
+      "List common causes of inventory discrepancies (omitted entries, dispensing errors, pilferage, calculation mistakes).",
+      "Outline the correction and reporting process for unresolved discrepancies on the stock card and to higher authorities."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Outline the security, storage, and documentation protocols for controlled and dangerous drugs (such as narcotics or strong psychotropics) at a health post.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Controlled and dangerous drugs, including narcotics (like morphine or pethidine) and psychotropic substances (like diazepam), have a high risk of abuse, addiction, and diversion. Therefore, their storage and management are regulated by strict national laws. At a primary health post, these drugs must be stored in a double-locked metal cabinet or safe that is permanently bolted to the wall or floor of the drug store. The keys to this cabinet must remain in the physical possession of the Officer-in-Charge (OIC) or a designated senior CHEW at all times. Documentation requires a dedicated Controlled Drugs Register, which is a bound book with numbered pages. For every transaction, the register must record: the date, patient's name, prescription number, quantity dispensed, prescribing officer's signature, and the remaining balance. A physical count of controlled drugs must be performed daily during shift handovers, and both the outgoing and incoming health workers must sign the register to confirm that the physical count matches the recorded balance. Any loss, theft, or unexplained discrepancy of controlled drugs must be reported immediately to the police and the national drug regulatory agency (e.g., NAFDAC).",
+    "topic": "Health post management and inventory control",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Specify storage requirements: a double-locked metal safe or cabinet permanently secured to the building structure.",
+      "State that keys to the controlled drugs safe must be held exclusively by the facility head or designated officer.",
+      "Detail documentation requirements: using a bound, page-numbered Controlled Drugs Register for every transaction.",
+      "Describe the daily verification protocol during shift changeovers, requiring signatures from both incoming and outgoing staff.",
+      "Outline the immediate reporting protocol to security and regulatory agencies in case of theft or unexplained inventory loss."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the administrative and biosafety procedures for disposing of expired medicines and medical sharps at a rural health post.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "The accumulation of expired medicines and medical waste (like used sharps) at a health post poses severe health and environmental hazards. Expired medicines must never be thrown into regular refuse dumps or flushed down toilets, as this contaminates water sources and allows scavenging of dangerous chemicals. The administrative procedure for expired medicines begins by removing them from active shelves immediately and placing them in a separate, clearly marked box labeled 'EXPIRED MEDICINES - DO NOT DISPENSE.' The CHEW documents the items (name, batch, expiry, quantity, cost value) on a condemnation form and submits it to the LGA health department. Safe disposal is coordinated by regulatory authorities: drugs are either incinerated at high temperatures (above 800°C) or buried in secured sanitary landfills. For medical sharps (needles, syringes, ampoules), the health post must use color-coded yellow safety boxes. Sharps are dropped into the safety box immediately after use, without recapping needles (which causes needle-stick injuries). Once the safety box is three-quarters full, it is sealed. The sealed boxes are transported to the designated facility incinerator or buried in a concrete-lined deep sharps pit on the clinic grounds, which is kept locked to prevent access.",
+    "topic": "Health post management and inventory control",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Isolate expired medicines immediately from active inventory in a clearly labeled box to prevent accidental dispensing.",
+      "Document expired drugs on a condemnation form for submission to the LGA health department for official auditing.",
+      "Explain that final drug disposal requires high-temperature incineration or secure chemical landfilling by authorized personnel.",
+      "Describe sharps disposal using puncture-proof safety boxes, highlighting the strict rule against recapping needles.",
+      "Detail the disposal of safety boxes: incineration or secure burial in a concrete-lined clinic sharps pit."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Explain the management of a Drug Revolving Fund (DRF) at a primary health care clinic, outlining its purpose and key financial control measures.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A Drug Revolving Fund (DRF) is a financial management system designed to ensure the continuous availability of essential medicines at public health facilities. Under the DRF, the initial stock of medicines is provided as a seed grant. These medicines are sold to patients at a small profit margin that covers operational costs, losses, and inflation. The revenue generated from these sales is placed in a dedicated bank account and used exclusively to purchase replacement drugs, creating a self-sustaining cycle. Managing a DRF requires strict financial controls. First, the separation of duties: the person who dispenses the drugs (dispenser) must not be the one who collects the money (cashier), and both must keep independent records. Second, documentation: every sale must be recorded on a multi-copy receipt, with one copy given to the patient, one kept by the cashier, and one remaining in the receipt book. The cashier compiles a daily sales report and reconciles the cash collected with the copies of the receipts and the daily stock card issues. Third, banking: all cash received must be deposited into the DRF bank account daily or weekly, and bank reconciliations must be reviewed monthly by the WDC and the facility head. Funds must never be diverted for non-drug expenses.",
+    "topic": "Health post management and inventory control",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Explain the purpose of a Drug Revolving Fund (DRF): a self-sustaining financial mechanism to ensure continuous drug availability.",
+      "Describe the separation of financial duties: separating drug dispensing roles from cash collection roles.",
+      "Detail receipt control: using pre-numbered, triplicate receipt books for every patient cash transaction.",
+      "Outline daily cash reconciliation: matching cash on hand against receipt totals and drug issue balances.",
+      "Specify the banking and auditing rules: regular bank deposits and restricting DRF cash usage solely to drug replenishment."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Develop a preventive maintenance plan for essential medical equipment (such as adult weighing scales, BP cuffs, and solar refrigerators) in a primary health care center.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Preventive maintenance is the systematic, routine inspection, cleaning, and calibration of medical equipment to prevent breakdown, ensure accurate clinical measurements, and extend equipment lifespan. A facility preventive maintenance plan defines daily, weekly, and monthly tasks. For adult weighing scales (mechanical or digital), daily tasks include wiping the platform clean; weekly tasks include checking that the needle rests exactly at zero when empty, and calibrating the scale using a known standard weight (e.g., a 5 kg weight). For sphygmomanometers (BP cuffs), daily tasks include checking the cuff fabric and tubing for leaks or wear; weekly tasks include verifying that the mercury level (if applicable) or dial pointer is at zero, and ensuring the inflation valve turns smoothly. For solar-powered vaccine refrigerators, maintenance is critical for cold chain safety: daily tasks include recording the minimum and maximum temperature twice daily, checking the solar panel indicator light, and wiping dust off the solar panels (weekly in dusty seasons) to ensure maximum light absorption; monthly tasks include checking door seal tightness using the paper test (closing the door on a piece of paper; if it pulls out easily, the seal is worn and must be replaced). All maintenance activities must be logged in an equipment maintenance register.",
+    "topic": "Health post management and inventory control",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Define preventive maintenance as routine care and calibration to prevent equipment failure and ensure clinical accuracy.",
+      "Detail maintenance for weighing scales: cleaning, checking zero alignment, and using standard weights for weekly calibration.",
+      "Detail maintenance for BP cuffs: inspecting tubes for leaks, validating zero balance, and checking inflation valves.",
+      "Detail maintenance for solar refrigerators: twice-daily temperature logs, cleaning solar panels, and checking door seals.",
+      "Establish an equipment maintenance register to document all inspection dates, findings, and repairs."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Discuss conflict resolution strategies and workload management methods a CHEW supervisor can use to coordinate community health volunteers.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Coordinating community health volunteers (CHVs) is a key supervisory role of the CHEW. Because volunteers are not salaried employees, traditional command-and-control management does not work; the supervisor must rely on motivation, clear communication, and conflict resolution. Conflict among volunteers often arises from perceived inequality in workload, differences in access to incentives (like t-shirts or transport stipends), or personal differences. Conflict resolution strategies include: active listening (giving both parties an opportunity to speak without taking sides), holding mediation meetings in a private setting to identify the root cause of the dispute, and focusing on shared goals (the health of the community). Workload management is crucial to prevent volunteer burnout and conflict. The CHEW supervisor should implement three methods. First, clear role definitions: using written volunteer agreement sheets detailing their specific catchment households and tasks. Second, equitable distribution of work: ensuring no volunteer has twice the number of households to visit compared to others. Third, participatory scheduling: holding monthly planning meetings where volunteers choose their duty days and hours based on their farming or trading schedules, which increases compliance and reduces absenteeism.",
+    "topic": "Health post management and inventory control",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Explain that managing volunteers requires motivational leadership and participatory management rather than authoritarian command.",
+      "Identify common sources of volunteer conflict: uneven workload, stipend allocation, and role overlap.",
+      "Describe conflict resolution steps: private mediation, active listening, and refocusing on community service objectives.",
+      "Outline workload management: assigning clear geographic boundaries and household quotas for each volunteer.",
+      "Utilize monthly participatory scheduling to align volunteer health tasks with their seasonal farming/trading calendars."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Explain the importance of maintaining data quality in the facility's daily outpatient (OPD) and maternal care registers, and how a CHEW validates this data before reporting.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Daily clinic registers are the primary sources of health management information system (HMIS) data. High data quality—characterized by accuracy, completeness, timeliness, and consistency—is essential because this data is used by local and national governments to purchase drugs, plan vaccination campaigns, and monitor disease outbreaks. Poor data leads to drug stock-outs or vaccine shortages. To maintain data quality, the CHEW must fill registers immediately during patient encounters, rather than waiting until the end of the day when details may be forgotten. Before submitting monthly reports to the LGA monitoring and evaluation officer, the CHEW must validate the data using a systematic review. This includes: verifying that all columns (such as age, gender, diagnosis, treatment, and referral status) are completely filled with no blank spaces; checking that the total number of individual cases recorded in the daily register equals the sum reported on the monthly summary sheet; and checking for consistency (e.g., ensuring a male patient is not recorded under 'Antenatal Care'). Any discrepancies found must be traced back to the patient card and corrected. The validated summary must be signed by the facility OIC to certify its accuracy before submission.",
+    "topic": "Health post management and inventory control",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "State that register data quality directly influences national drug supply forecasting and epidemic surveillance accuracy.",
+      "Identify data quality dimensions: accuracy, completeness, timeliness, and logical consistency.",
+      "Detail validation procedures: verifying that all register columns are filled and checking for logical consistency (e.g., age vs. diagnosis).",
+      "Describe cross-checking: reconciling daily raw registers with monthly summary report totals.",
+      "Explain that verified monthly reports must be formally signed by the clinic head prior to administrative submission."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the standard operating procedures for completing a referral form and communicating with a receiving secondary hospital during a clinical emergency.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "During a clinical emergency at a primary care clinic, a timely and structured referral process can mean the difference between life and death. The standard operating procedure involves three key stages: documentation, pre-arrival communication, and transport facilitation. The referral form is a legal and clinical document that must be filled out legibly and completely by the referring health worker. It must contain the following information: the name of the referring facility and the receiving hospital, patient's demographic details, date and time of referral, chief presenting complaint, key physical examination findings (especially vital signs), diagnostic test results (e.g., RDT or hemoglobin), pre-referral treatment administered (e.g., IV fluids, antibiotics, or anticonvulsants), the reason for referral (e.g., obstructed labor, severe head injury), and the referring officer's name and contact number. Simultaneously, the CHEW must make a pre-arrival phone call to the emergency room or maternity unit of the receiving hospital. This communication alerts the hospital staff of the incoming patient's condition, allows them to prepare resources (like blood, operating theaters, or oxygen), and provides an opportunity for the specialist to advise the CHEW on intermediate stabilization steps during transport. A health worker or trained volunteer should accompany the patient in the vehicle to monitor vitals and hand over the referral form to the receiving clinician.",
+    "topic": "Referral procedures and emergency stabilization",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "List essential information required on a referral form (patient vitals, pre-referral drugs, reason for transfer, clinical findings).",
+      "Explain the critical role of pre-arrival phone communication with the receiving hospital emergency department.",
+      "Describe the purpose of pre-arrival calls: alerting specialists, preparing surgical/blood resources, and receiving clinical advice.",
+      "Highlight the requirement that a clinical staff member or trained transport partner must accompany the unstable patient.",
+      "Detail the handover process: delivering the referral form and providing an oral briefing to the receiving clinical team."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Outline the emergency stabilization steps and pharmacological management for a patient presenting with acute anaphylactic shock at a primary care clinic.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Anaphylactic shock is a severe, life-threatening systemic allergic reaction characterized by rapid airway compromise and circulatory collapse. The stabilization protocol must be initiated immediately. First, the health worker must stop the administration of any suspected allergen (e.g., stopping an intravenous antibiotic infusion). Second, assess the airway, breathing, and circulation (ABCs). Place the patient flat on their back with their legs elevated (passive leg raise) to restore blood pressure; however, if the patient is experiencing severe airway swelling and respiratory distress, keep them in a semi-sitting position. The drug of choice is Adrenaline (Epinephrine), administered intramuscularly in the anterolateral thigh (muscle absorption is faster than subcutaneous injection). The adult dose is 0.5 mg of Adrenaline 1:1,000 solution (0.5 mL). For children, the dose is 0.01 mg/kg or a standard dose (e.g., 0.15 mg for infants, 0.3 mg for older children). This can be repeated every 5 to 15 minutes if symptoms do not improve. High-flow oxygen must be administered. Intravenous access must be secured, and a rapid bolus of Normal Saline or Ringer's Lactate (1-2 liters for adults, 20 ml/kg for children) is infused to treat hypotension. Secondary drugs like intravenous Hydrocortisone (100-200 mg) and Promethazine (25-50 mg) are given to prevent late-phase allergic reactions, and the patient is prepared for immediate transfer.",
+    "topic": "Referral procedures and emergency stabilization",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Identify anaphylactic shock signs (airway swelling, wheezing, hypotension) and immediately stop any suspected allergens.",
+      "Administer intramuscular Adrenaline 1:1,000 in the anterolateral thigh (0.5 mg for adults, weight-based for children) as first-line treatment.",
+      "Position the patient correctly: flat with legs elevated to combat shock, or semi-upright if airway obstruction dominates.",
+      "Establish IV access and infuse rapid crystalloid fluid boluses (Normal Saline or Ringer's Lactate) to restore blood pressure.",
+      "Administer adjunctive therapies (corticosteroids, antihistamines) and arrange immediate referral for continuous observation."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Detail the clinical assessment and emergency stabilization protocol for a patient presenting with severe head trauma from a motorcycle accident.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Severe head trauma from a road traffic accident is a high-priority emergency. The primary goal of stabilization is to prevent secondary brain injury by maintaining oxygenation, blood pressure, and spinal alignment. The protocol begins with cervical spine stabilization: the head and neck must be manually aligned and immobilized using a cervical collar or sandbags on both sides of the neck, as spinal injuries are common in high-impact trauma. The health worker assesses the airway. If the airway is obstructed by blood or secretions, it must be cleared using suction or the jaw-thrust maneuver (do not perform the head-tilt maneuver, as it can worsen cervical spine injuries). High-flow oxygen is administered. Check breathing and circulation. Assess the neurological status using the Glasgow Coma Scale (GCS) or the simpler AVPU scale (Alert, Voice, Pain, Unresponsive) and check pupil size and reaction to light (unequal or non-reactive pupils indicate severe intracranial pressure). External scalp wounds, which can bleed profusely, must be controlled using direct pressure with clean sterile dressings. Intravenous access is secured, and Normal Saline (0.9% NaCl) is infused to maintain a systolic blood pressure above 90 mmHg. Avoid hypotonic fluids (like 5% Dextrose), which worsen brain swelling. The patient is kept warm and referred immediately to a facility with neurosurgical capacity.",
+    "topic": "Referral procedures and emergency stabilization",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Prioritize manual cervical spine immobilization and avoid neck movement throughout the stabilization and transfer process.",
+      "Manage the airway using the jaw-thrust maneuver (instead of head-tilt) and clear blood/secretions via suction.",
+      "Conduct a rapid neurological assessment checking pupil reactivity and using the GCS or AVPU scale.",
+      "Control external cranial hemorrhage using direct pressure and sterile pressure dressings.",
+      "Infuse isotonic crystalloids (Normal Saline) to maintain blood pressure, while avoiding hypotonic solutions that increase cerebral edema."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Explain the pre-referral stabilization protocol for a 12-month-old child presenting with severe dehydration and hypovolemic shock due to acute gastroenteritis.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A child in hypovolemic shock due to severe dehydration is in imminent danger of cardiac arrest. The clinical signs include lethargy or unconsciousness, cold extremities, a rapid and weak/thread pulse, low blood pressure, and skin pinch retracting very slowly (longer than 2 seconds). Pre-referral stabilization requires rapid intravenous fluid resuscitation under IMCI Plan C. The health worker must immediately secure intravenous access, using an intraosseous line in the tibia if peripheral veins cannot be accessed within 5 minutes. The fluid of choice is Ringer's Lactate or Normal Saline. For a child under 12 months, the protocol is to administer 100 ml/kg of fluid split into two phases: first, give 30 ml/kg over 1 hour; second, give the remaining 70 ml/kg over 5 hours. (For children over 12 months, give 30 ml/kg over 30 minutes, and 70 ml/kg over 2.5 hours). The health worker must monitor the child's pulse and breathing rate constantly. If the pulse remains weak after the first 30 ml/kg, the bolus can be repeated. Once the child can swallow, oral rehydration salts (ORS) are given at 5 ml/kg/hour to restore potassium and base balance. If IV/IO access is impossible, a nasogastric (NG) tube is passed, and ORS is administered at 20 ml/kg/hour. The child is referred urgently once the initial shock is resolved.",
+    "topic": "Referral procedures and emergency stabilization",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Identify signs of pediatric hypovolemic shock: lethargy, cold extremities, thread pulse, and prolonged capillary refill.",
+      "Establish immediate IV or intraosseous (IO) access as the primary route for fluid resuscitation.",
+      "Select Ringer's Lactate or Normal Saline and detail the age-specific volume/time protocol (e.g., 30 ml/kg then 70 ml/kg).",
+      "Describe constant monitoring of vital signs (pulse, respiration, level of consciousness) to assess fluid response.",
+      "Identify alternative hydration routes: nasogastric (NG) tube infusion of ORS if vascular access is impossible."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "What is status epilepticus, and what are the clinical assessment, stabilization, and referral guidelines for a patient in active, continuous seizures?",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Status epilepticus is defined as a state of continuous seizure activity lasting more than 5 minutes, or recurrent seizures without recovery of consciousness between episodes. It is a neurological emergency that can cause irreversible brain damage, hyperthermia, and respiratory failure. Clinical assessment begins by observing the seizure type (usually generalized tonic-clonic) and checking the airway and breathing. The health worker must not insert any objects (like spoons or wooden blocks) into the patient's mouth, as this can break teeth, cause airway obstruction, or injure the health worker. The patient must be placed on a flat surface, rolled onto their side (recovery position) to prevent aspiration of saliva, and sharp objects must be removed from their surroundings. High-flow oxygen is administered. The pharmacological agent of choice to stop the seizure is Diazepam. In adults, administer 10 mg of Diazepam intravenously slowly over 2 minutes, or 10-20 mg rectally using a syringe without a needle. In children, the dose is 0.2-0.5 mg/kg rectally. If the seizure does not stop after 10 minutes, a second dose can be given. Concurrently, check blood glucose using a glucometer, as hypoglycemia is a common reversible cause of seizures; if low, administer 50 ml of 50% Dextrose IV (for adults) or 5 ml/kg of 10% Dextrose (for children). Once stabilized, the patient is referred immediately.",
+    "topic": "Referral procedures and emergency stabilization",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Define status epilepticus as continuous seizure activity lasting >5 minutes or multiple seizures without regaining consciousness.",
+      "Prioritize safety: place in the recovery position, clear the area of hazards, and avoid placing foreign objects in the mouth.",
+      "Administer Diazepam as the primary anticonvulsant (IV slowly or rectally using correct pediatric/adult dosing).",
+      "Perform a blood glucose check to rule out and treat hypoglycemia with intravenous Dextrose.",
+      "State the referral protocol: monitor respiratory depression (a side effect of Diazepam) and transfer to a secondary facility."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Outline the immediate first aid stabilization and immobilization procedures for a patient with a suspected compound (open) fracture of the femur.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A compound (open) fracture of the femur is a severe injury where the broken bone ends penetrate the skin, creating a direct communication between the fracture and the environment. This carries high risks of massive hemorrhage, hypovolemic shock, and osteomyelitis. Stabilization begins with addressing the ABCs. The first priority is to control external bleeding, which is done by applying direct pressure around the wound using sterile pressure dressings; do not push the protruding bone ends back into the wound. The wound should be covered with a sterile, moist dressing to prevent contamination. The second priority is pain management and immobilization. The fractured leg must be splinted immediately to prevent bone movement, which causes severe pain, tissue damage, and laceration of the femoral artery. The splint (preferably a Thomas splint or simple long wooden board) must span from the hip to below the ankle, padded well at bony prominences, and secured firmly but not tightly. Check the distal pulses (dorsalis pedis and posterior tibial) and capillary refill before and after splinting to ensure the bandage does not block blood circulation. Establish intravenous access, start crystalloid fluids (Normal Saline) to maintain blood pressure, administer a first dose of broad-spectrum antibiotics (such as Ceftriaxone) and tetanus toxoid, and refer immediately.",
+    "topic": "Referral procedures and emergency stabilization",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Control external bleeding using direct pressure with sterile dressings without pushing exposed bone ends back into the flesh.",
+      "Cover the open wound with a clean, sterile, moist dressing to minimize bacterial contamination.",
+      "Immobilize the limb using a splint that spans the joints above (hip) and below (knee/ankle) the fracture.",
+      "Evaluate distal neurovascular status by checking pedal pulses and capillary refill before and after splinting.",
+      "Administer pre-referral supportive treatments: IV fluids for shock prevention, pain control, antibiotics, and Tetanus Toxoid."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "A postpartum patient presents with heavy vaginal bleeding (postpartum hemorrhage) at a rural health post. Describe the clinical evaluation, immediate stabilization, and referral protocol.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Postpartum Hemorrhage (PPH) is the leading cause of maternal mortality in developing countries. It is defined as blood loss of 500 mL or more after vaginal delivery, or any amount that compromises the mother's hemodynamic stability. The clinical evaluation starts with checking vital signs (pulse, blood pressure) and identifying the cause of PPH using the '4 Ts' framework: Tone (uterine atony), Tissue (retained placenta), Trauma (vaginal/cervical lacerations), and Thrombin (coagulation disorders). The most common cause is uterine atony (soft, boggy uterus). Immediate stabilization steps must be performed rapidly. First, perform continuous bimanual uterine massage to stimulate uterine contractions. Second, administer uterotonics: Oxytocin is the first-line drug (10 IU intramuscularly, or 20 IU in 1 liter of Normal Saline infused rapidly). If oxytocin is unavailable or ineffective, administer Misoprostol (800 micrograms rectally) or intramuscular Ergometrine (0.2 mg, contraindicated in hypertensive patients). Third, secure two large-bore (16G or 18G) intravenous lines and start rapid infusion of Normal Saline or Ringer's Lactate. Fourth, perform bladder catheterization, as a full bladder prevents the uterus from contracting. If the bleeding persists, apply a Non-pneumatic Anti-Shock Garment (NASG) if available, and arrange urgent transfer accompanied by a health worker who continues uterine massage during transit.",
+    "topic": "Referral procedures and emergency stabilization",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Identify PPH criteria (blood loss >= 500 ml or hemodynamic compromise) and evaluate cause using the '4 Ts' framework.",
+      "Perform immediate external and bimanual uterine massage to stimulate contractions for uterine atony.",
+      "Administer first-line uterotonic drugs: Oxytocin (IM or IV infusion) and/or Misoprostol (rectal route).",
+      "Insert a Foley catheter to empty the bladder, removing mechanical barriers to uterine contraction.",
+      "Establish dual large-bore IV access for volume replacement and apply the NASG (Anti-Shock Garment) before referral."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Detail the clinical assessment, immediate stabilization, and referral protocol for a patient presenting with suspected organophosphate (pesticide) poisoning.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Organophosphate poisoning, commonly occurring through accidental exposure or self-harm using agricultural pesticides, is a critical emergency. Organophosphates inhibit acetylcholinesterase, leading to an excess of acetylcholine and severe cholinergic crisis. Clinical assessment reveals characteristic symptoms summarized by the acronym DUMBELS: Diarrhea, Urination, Miosis (pinpoint pupils), Bronchospasm/Bradycardia, Emesis, Lacrimation, and Salivation. The patient may also present with muscle fasciculations, confusion, and respiratory distress. Immediate stabilization requires biosafety precautions for health staff; they must don gowns and gloves to avoid secondary exposure. The patient's clothing must be removed, and their skin washed with soap and water to stop dermal absorption. The pharmacological antidote is Atropine. The health worker administers 1.2 to 2.0 mg of Atropine intravenously every 5 to 10 minutes. The objective of atropinization is to clear bronchial secretions, dilate pupils, and increase the heart rate; atropinization is maintained until chest auscultation reveals clear breath sounds. Oxygen is administered to relieve hypoxia. Intravenous fluids are infused to support blood pressure. If available, Pralidoxime is administered. The patient is referred immediately to an intensive care facility, with close monitoring of respiratory status.",
+    "topic": "Referral procedures and emergency stabilization",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Recognize signs of cholinergic crisis (pinpoint pupils, excess secretions, bradycardia, muscle twitching) indicating organophosphate toxicity.",
+      "Implement safety measures: don protective gear and decontaminate the patient by removing clothes and washing the skin.",
+      "Administer the antidote Atropine IV (1.2-2.0 mg repeated every 5-10 minutes) until clinical endpoints of atropinization are reached.",
+      "Define target endpoints of atropinization: clear chest sounds, dried secretions, dilated pupils, and resolved bradycardia.",
+      "Administer supplemental oxygen and initiate immediate transfer to a facility with mechanical ventilation capabilities."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the clinical technique, equipment, and troubleshooting steps for setting up an intravenous (IV) line in a collapsed patient under emergency conditions.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Establishing intravenous (IV) access is a fundamental emergency skill. The equipment required includes: tourniquet, alcohol swabs, sterile IV cannulas (large-bore 16G or 18G for shock resuscitation, 22G or 24G for pediatrics), IV infusion set, prescribed IV fluid (e.g., Ringer's Lactate), adhesive tape, and gloves. The clinical technique starts with donning gloves, applying a tourniquet 10 cm above the selected site (usually the cubital fossa or back of the hand), and cleansing the skin with alcohol. The health worker holds the cannula at a 15-to-30-degree angle, inserts it into the vein with the needle bevel facing up. Once a flash of blood is seen in the chamber, the angle is lowered, the cannula is advanced over the needle into the vein, the needle is withdrawn, the tourniquet is released, the infusion set is connected, and the cannula is secured with tape. In a collapsed patient, veins are often vasoconstricted and difficult to locate. Troubleshooting steps include: tapping the vein gently to cause vasodilation, warming the limb, allowing the arm to hang down, or using a double tourniquet. If peripheral access fails after three attempts or 5 minutes, alternative routes such as an intraosseous (IO) line (in the proximal tibia) or immediate surgical cutdown must be considered, or the patient must be referred immediately with an NG tube in place.",
+    "topic": "Referral procedures and emergency stabilization",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Select appropriate equipment including large-bore cannulas (16G or 18G) for emergency fluid resuscitation.",
+      "Perform aseptic venipuncture technique: apply tourniquet, clean skin, insert cannula at correct angle, and verify flashback.",
+      "Release the tourniquet and connect the IV tubing before securing the cannula firmly with medical tape.",
+      "Apply troubleshooting methods for collapsed veins: gentle vein tapping, limb warming, gravity assistance, or double tourniquet.",
+      "Detail alternative options if IV access fails: intraosseous (IO) infusion or immediate referral with nasogastric hydration."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Discuss the logistics, planning, and communication challenges when arranging safe emergency transport for a critically ill patient from a remote health post to a secondary referral hospital.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "In rural, low-resource settings, organizing safe emergency transport is a complex challenge that requires advance planning and community collaboration. The primary barriers include the absence of formal ambulance services, poor road conditions, lack of communication networks, and the high cost of transport, which often causes families to refuse referral. To address these logistics, the CHEW must work with the Ward Development Committee (WDC) to establish an Emergency Transport System (ETS). This system involves recruiting local commercial vehicle owners (taxi or motorcycle drivers) who agree to remain on call and transport emergency cases at negotiated, subsidized rates paid from a community-managed emergency fund. For communication, the clinic should maintain a list of updated phone numbers of the drivers and the emergency coordinators at the receiving hospital. Before transport, the CHEW must verify that the driver knows the route, ensure the vehicle has sufficient fuel, and provide a basic first aid kit and portable oxygen if available. The patient's family must be counseled on the necessity of the transfer, and a health worker or trained volunteer must accompany the patient to maintain airway clearance, monitor vitals, and manage IV lines during the journey, ensuring the patient does not arrive dead-on-arrival.",
+    "topic": "Referral procedures and emergency stabilization",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Analyze barriers to rural emergency transport: financial costs, lack of vehicles, poor roads, and communication deficits.",
+      "Describe the creation of an Emergency Transport System (ETS) in collaboration with local transport unions and the WDC.",
+      "Utilize a community-funded emergency pool to cover transport costs for low-income families, avoiding delay.",
+      "Detail pre-departure vehicle checks: route familiarity, adequate fuel, and equipping basic clinical supplies.",
+      "Explain the role of the accompanying health worker in monitoring patient stability (airway, IV fluids) during the journey."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "A 22-year-old primigravida at 34 weeks of gestation is brought to the clinic experiencing generalized tonic-clonic convulsions. Detail the emergency management and stabilization of eclampsia.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Eclampsia is a severe complication of pregnancy-induced hypertension, characterized by the onset of generalized tonic-clonic seizures in a woman with pre-eclampsia. It is a major cause of maternal and fetal mortality. The emergency management at a primary care clinic must be rapid. The first priority is to maintain airway and oxygenation: place the patient on her left side (left lateral position) to prevent aspiration and improve uterine blood flow, clear the airway of secretions using suction, insert a padded tongue depressor or airway only if it does not trigger vomiting, and administer high-flow oxygen. The drug of choice to control and prevent further seizures is Magnesium Sulfate (MgSO4). The standard loading dose is 14 grams administered as follows: 4 grams of MgSO4 (using a 20% solution) intravenously slowly over 5 to 10 minutes, plus 10 grams of MgSO4 (using a 50% solution) administered as deep intramuscular injections (5 grams in each buttock). The health worker must monitor the patient's vital signs, deep tendon reflexes (patellar reflex), respiratory rate (must be >16 breaths/minute), and urine output (must be >30 mL/hour) before giving any subsequent doses, as MgSO4 toxicity can cause respiratory arrest. The antidote, Calcium Gluconate (10 ml of 10% solution IV over 10 minutes), must be kept ready. Anti-hypertensive drugs like Labetalol or Hydralazine are administered to control high blood pressure, and the patient is referred immediately.",
+    "topic": "Maternal and child health emergencies",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Position the patient in the left lateral position and secure the airway to prevent aspiration and maximize uterine perfusion.",
+      "Administer the Magnesium Sulfate (MgSO4) loading dose: 4g IV slowly plus 10g IM (5g in each buttock).",
+      "Monitor for MgSO4 toxicity criteria: verify presence of patellar reflexes, respiratory rate >16/min, and urine output >30 ml/hour.",
+      "Identify the antidote for Magnesium Sulfate toxicity: Calcium Gluconate (10% IV solution administered over 10 minutes).",
+      "Control blood pressure using safe antihypertensive drugs (Hydralazine/Labetalol) and arrange immediate transfer."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the systematic steps of neonatal resuscitation at a primary health care clinic using the 'Helping Babies Breathe' (HBB) framework.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Neonatal resuscitation is a critical intervention for newborns who fail to breathe spontaneously at birth, a condition known as birth asphyxia. The 'Helping Babies Breathe' (HBB) framework focuses on the 'Golden Minute'—the first 60 seconds after birth when baby breathing must be established. The steps are structured. Immediately at birth, the health worker notes the time and dries the baby thoroughly with a clean, warm towel. The worker assesses the baby's breathing. If the baby is crying or breathing normally, routine care is provided (skin-to-skin contact, cord clamping, early breastfeeding). If the baby is not breathing or is gasping, the health worker must act within the Golden Minute. First, clear the airway: position the head slightly extended (sniffing position) and use a bulb suction to clear the mouth first, then the nose. If the baby still does not breathe, stimulate breathing by rubbing the baby's back or flicking the soles of the feet. If the baby remains apneic, immediate ventilation must begin: place a neonatal bag-and-mask on the baby's face, ensuring a tight seal, and ventilate at a rate of 30 to 50 breaths per minute. Watch for chest rise to confirm effective ventilation. Continue for 1 minute, then check the heart rate and chest movement. If the heart rate is low or absent after 20 minutes of effective ventilation, resuscitation is stopped; otherwise, continue and refer.",
+    "topic": "Maternal and child health emergencies",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "State the core concept of the 'Golden Minute': establishing neonatal breathing within the first 60 seconds of life.",
+      "Detail immediate steps: dry the baby, assess breathing, and maintain warmth through skin-to-skin contact.",
+      "Describe airway clearance: position the head in the sniffing position and suction the mouth first, then the nose.",
+      "Explain the ventilation technique: apply the bag-and-mask with a tight seal and ventilate at 30-50 breaths/minute.",
+      "Assess resuscitation efficacy: check chest rise, evaluate heart rate, and outline when to refer or cease efforts."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "A laboring woman experiences shoulder dystocia during delivery. Detail the clinical identification and the immediate manual maneuvers a CHEW must perform to resolve this emergency.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Shoulder dystocia is a major obstetric emergency that occurs when, after the delivery of the fetal head, the anterior shoulder becomes impacted behind the maternal pubic symphysis, preventing spontaneous delivery. Clinical identification is characterized by the 'turtle sign,' where the delivered fetal head retracts tightly against the perineum, and gentle downward traction fails to deliver the shoulders. The CHEW must act immediately, as cord compression can cause fetal brain injury within minutes. The patient must be instructed to stop pushing. The first maneuver is the McRoberts Maneuver: hyperflex the mother's thighs tightly against her abdomen. This flattens the sacrum and rotates the pubic symphysis anteriorly, releasing the impacted shoulder in over 80% of cases. Simultaneously, an assistant applies Suprapubic Pressure: steady, downward pressure applied just above the pubic bone at an angle to push the fetal shoulder under the pubic bone (do not apply fundal pressure, which worsens impaction and can rupture the uterus). If these fail, the CHEW can attempt the Rubin or Wood's screw maneuvers (internal rotation of the shoulders) or attempt to deliver the posterior arm. The patient must be prepared for immediate referral if maneuvers fail, maintaining lateral traction.",
+    "topic": "Maternal and child health emergencies",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Identify shoulder dystocia clinically by the 'turtle sign' and failure of the shoulders to deliver with routine traction.",
+      "Instruct the mother to stop pushing immediately to prevent further impaction of the shoulder.",
+      "Perform the McRoberts Maneuver: hyperflex the maternal legs against the abdomen to widen the pelvic outlet.",
+      "Apply Suprapubic Pressure (never fundal pressure) to dislodge the anterior shoulder from behind the pubic bone.",
+      "Explain that fundal pressure is strictly contraindicated due to risks of uterine rupture and worsened shoulder impaction."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Discuss the clinical signs, risk factors, and emergency stabilization protocols for a laboring woman with suspected Uterine Rupture at a primary care clinic.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Uterine rupture is a catastrophic obstetric emergency characterized by a tear in the wall of the uterus, usually during labor. It has a high maternal and fetal mortality rate. Risk factors include a history of previous cesarean section scar, multiparity, obstructed labor, improper use of uterotonics (like oxytocin or misoprostol to augment labor), and difficult instrumental deliveries. Clinical signs include: sudden, severe abdominal pain that persists between contractions; a feeling that 'something has ripped' inside; sudden cessation of uterine contractions; recession of the presenting fetal part (the head rises back up the birth canal); abdominal palpation revealing fetal parts felt easily under the skin separate from the contracted uterus; vaginal bleeding; and rapid maternal shock (tachycardia, hypotension). Emergency stabilization at the PHC level focuses on treating shock and preparing for immediate surgical transfer. The health worker must secure two large-bore IV lines and rapidly infuse Ringer's Lactate or Normal Saline. Administer high-flow oxygen. Keep the patient warm. A Foley catheter is inserted to monitor urine output. If the baby is still alive, place the mother in the left lateral position. The patient must be transferred immediately to a secondary facility with surgical capacity, as emergency laparotomy is required to save the lives of both mother and child.",
+    "topic": "Maternal and child health emergencies",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Identify major risk factors for uterine rupture, including prior cesarean scars, grand multiparity, and obstructed labor.",
+      "List key clinical signs: sudden severe pain, cessation of contractions, recession of fetal presentation, and maternal shock.",
+      "Establish dual large-bore intravenous lines for rapid crystalloid volume expansion to manage hypovolemic shock.",
+      "Perform bladder catheterization and administer supplemental oxygen as part of stabilization.",
+      "Refer the patient immediately to a hospital with emergency obstetric surgery (laparotomy) capability."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Explain the emergency evaluation and management of a 2-year-old child presenting with active Febrile Convulsions at a rural health post.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A febrile convulsion is a seizure associated with a high fever in a child aged 6 months to 5 years, in the absence of intracranial infection or metabolic disease. When a child presents with an active convulsion, the health worker must act quickly. First, secure physical safety: place the child on a flat, padded surface on their side (recovery position) to prevent aspiration, clear the airway of secretions, and do not place anything in the child's mouth. High-flow oxygen is administered if available. If the seizure lasts longer than 5 minutes, administer Diazepam rectally (0.5 mg/kg) using a plastic syringe without a needle, or give IV Diazepam (0.2-0.3 mg/kg) slowly if IV access is already established. Once the convulsion stops, the fever must be addressed immediately to prevent recurrence. This is done by administering paracetamol (15 mg/kg orally or rectally) and performing tepid sponging (using lukewarm water, not cold water or alcohol, which causes vasoconstriction and shivering, increasing core temperature). The health worker must then identify the source of the fever (e.g., malaria, pneumonia, otitis media) by performing an RDT, checking for neck stiffness (meningitis), and examining the chest, and treat or refer the child based on the findings.",
+    "topic": "Maternal and child health emergencies",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Secure the airway: place the child in the recovery position, clear secretions, and avoid inserting mouth objects.",
+      "Administer Diazepam rectally (0.5 mg/kg) or slowly IV if the active seizure exceeds 5 minutes.",
+      "Initiate fever reduction: administer paracetamol and perform tepid sponging with lukewarm water.",
+      "Explain that cold water or alcohol sponging is contraindicated because it triggers shivering and raises core temperature.",
+      "Conduct diagnostic screening (malaria RDT, meningitis signs) to treat the underlying febrile pathogen or refer."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "What is Cord Prolapse? Describe the clinical assessment and the immediate emergency maneuvers to protect the fetus before urgent referral.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Cord prolapse occurs when the umbilical cord slips down into the birth canal ahead of the presenting part of the fetus after the membranes have ruptured. It is a critical emergency because the presenting part (usually the head) compresses the cord against the pelvis, blocking fetal blood supply and causing hypoxia or fetal death. Clinical assessment involves observing the cord protruding from the vagina or feeling the pulsating cord during a vaginal examination. The primary objective of emergency stabilization is to relieve pressure on the cord. The patient must be instructed not to push. The first maneuver is to place the mother in the knee-chest position (kneeling with her chest flat on the bed and pelvis elevated) or the exaggerated Trendelenburg position. The second maneuver is manual elevation: the health worker inserts a gloved hand into the vagina and gently pushes the fetal presenting part upward off the umbilical cord, keeping the hand in place until a cesarean section can be performed at the hospital. The external portion of the cord must be wrapped in warm, moist sterile gauze to prevent vasospasm caused by exposure to cold air; do not attempt to push the cord back inside the uterus. The patient is referred immediately, maintaining manual elevation during transport.",
+    "topic": "Maternal and child health emergencies",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Define cord prolapse and explain the risk of fetal hypoxia due to mechanical compression of the umbilical cord.",
+      "Identify cord prolapse by direct visual inspection or palpation of a pulsating cord in the vaginal canal.",
+      "Position the mother in a knee-chest or Trendelenburg position to use gravity to reduce fetal head pressure on the cord.",
+      "Perform manual elevation of the fetal head using a sterile gloved hand, holding it in place during transfer.",
+      "Wrap the exposed cord in warm, moist sterile dressings, avoiding attempts to push the cord back into the uterus."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "A 3-year-old child presents with severe malaria and severe anemia. Detail the clinical assessment, stabilization, and referral protocol under pediatric emergency guidelines.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "The co-existence of severe malaria and severe anemia is a common, life-threatening emergency in young children in sub-Saharan Africa. Clinical assessment begins with checking for general danger signs (convulsions, lethargy, inability to drink) and measuring vital signs. Severe malaria is confirmed by a positive RDT or blood film along with clinical complications. Severe anemia is assessed by looking for severe palmar and conjunctival pallor, and confirmed by a hemoglobin level of less than 5.0 g/dL (or packed cell volume <15%). In this combined state, the child is at high risk of high-output heart failure. Immediate stabilization starts with administering oxygen. If the child is convulsing, give rectal diazepam. The first dose of antimalarial treatment must be given immediately: intramuscular Artesunate (2.4 mg/kg). For severe anemia, the definitive treatment is blood transfusion, which cannot be performed at a basic primary care post. The pre-referral step is to secure IV access and, if the child shows signs of heart failure (tachycardia, tachypnea, hepatomegaly), administer a single dose of a diuretic (such as Furosemide 1 mg/kg) to prevent fluid overload. Avoid rapid fluid boluses, which can worsen heart failure. Transfer the child immediately to a hospital with blood banking services.",
+    "topic": "Maternal and child health emergencies",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Assess for severe malaria signs (positive RDT, coma, convulsions) and severe anemia (severe palmar pallor, Hb < 5.0 g/dL).",
+      "Administer the first dose of intramuscular Artesunate (2.4 mg/kg) as the essential pre-referral antimalarial.",
+      "Administer oxygen therapy to address tissue hypoxia caused by severe hemoglobin depletion.",
+      "Give pre-referral Furosemide (1 mg/kg) if heart failure is present, and avoid rapid IV fluid boluses.",
+      "Initiate urgent transfer to a secondary facility equipped for blood matching and transfusion services."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Discuss the clinical signs, diagnostic criteria, and management of Puerperal Sepsis in a postpartum patient at a primary health care clinic.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Puerperal sepsis is a bacterial infection of the genital tract occurring at any time between the rupture of membranes or birth and the 42nd day postpartum. It is a major cause of maternal mortality, often linked to unsterile delivery conditions or retained products of conception. Diagnostic criteria include: a temperature of 38.5°C or higher, foul-smelling vaginal discharge (lochia), lower abdominal pain, uterine tenderness, subinvolution of the uterus (the uterus is larger and softer than expected for the postpartum day), and systemic signs like tachycardia, chills, and headache. The clinical evaluation starts with checking vital signs and palpating the abdomen. Management depends on severity. If the patient has signs of severe sepsis or septic shock (low blood pressure, confusion, rapid breathing, oliguria), she must be stabilized with intravenous fluids (Normal Saline) and high-dose intravenous antibiotics (such as Ampicillin and Metronidazole) and referred immediately. If the infection is mild and the patient is stable, outpatient treatment may be initiated under supervision, consisting of oral antibiotics (Amoxicillin, Metronidazole, and Clavulanic Acid) for 7 to 10 days. The CHEW must counsel the patient on personal hygiene, monitor for signs of worsening, and follow up in 48 hours.",
+    "topic": "Maternal and child health emergencies",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Define puerperal sepsis as a genital tract infection occurring within 42 days postpartum.",
+      "Identify diagnostic signs: fever >= 38.5°C, foul-smelling lochia, lower abdominal tenderness, and subinvolution of the uterus.",
+      "Differentiate mild cases from severe sepsis/septic shock (marked by hypotension, tachypnea, and oliguria).",
+      "Outline pre-referral care for severe cases: IV fluids and broad-spectrum antibiotics (Ampicillin/Metronidazole).",
+      "Provide counseling on postpartum perineal hygiene, compliance with antibiotics, and warning signs."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the clinical presentation, danger signs, and immediate management of Neonatal Sepsis in a newborn under 28 days of age.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Neonatal sepsis is a systemic bacterial infection in a newborn infant under 28 days of age, which can progress to meningitis and death within hours if untreated. The clinical presentation of neonatal sepsis is often subtle and non-specific, requiring a high index of suspicion. Under IMCI guidelines, the health worker screens for 'possible serious bacterial infection' (PSBI) using several key signs: history of difficulty feeding, the baby not feeding at all, convulsions, fast breathing (60 breaths per minute or more), severe chest indrawing, fever (37.5°C or higher), hypothermia (below 35.5°C), or the baby moving only when stimulated or not moving at all. Other localized signs include a red umbilical cord stump or pustules on the skin. Immediate management depends on the availability of referral. If referral is possible, the CHEW administers a first pre-referral dose of intramuscular Ampicillin (50 mg/kg) and intramuscular Gentamicin (2.5 mg/kg), keeps the baby warm (using Kangaroo Mother Care or wrapping in warm blankets), and refers the newborn immediately to a hospital. If the family refuses referral, the CHEW must manage the infant at the clinic using the WHO PSBI outpatient protocol, which involves daily intramuscular Gentamicin and oral Amoxicillin for 7 days, with daily follow-up.",
+    "topic": "Maternal and child health emergencies",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "List the diagnostic signs of neonatal sepsis/PSBI: poor feeding, convulsions, tachypnea (>=60/min), chest indrawing, and temperature instability.",
+      "Administer the first pre-referral doses of intramuscular Ampicillin (50 mg/kg) and Gentamicin (2.5 mg/kg).",
+      "Prevent neonatal hypothermia during stabilization and transfer using Kangaroo Mother Care or warm swaddling.",
+      "Outline the WHO PSBI outpatient management protocol (daily IM Gentamicin and oral Amoxicillin for 7 days) if referral is rejected.",
+      "Counsel the mother on exclusive breastfeeding, handwashing, and identifying worsening signs."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "A pregnant woman at 32 weeks of gestation presents with sudden, painless vaginal bleeding. How should a CHEW evaluate, stabilize, and refer this patient, highlighting key precautions?",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Sudden, painless vaginal bleeding in the second half of pregnancy is a classic presentation of Placenta Previa, where the placenta is implanted over or near the internal cervical os. It is an obstetric emergency due to the risk of sudden, massive maternal hemorrhage. The clinical evaluation starts with assessing maternal hemodynamic stability (blood pressure, pulse, pallor) and checking the fetal heart rate using a Pinard stethoscope or Doppler. The most critical precaution is: a digital vaginal examination (VE) is strictly contraindicated. Performing a vaginal exam can disrupt the placental attachment, triggering catastrophic, life-threatening hemorrhage. The CHEW must stabilize the patient immediately. Place the patient in a recumbent position and administer oxygen. Secure a large-bore intravenous line and start an infusion of Normal Saline or Ringer's Lactate to maintain blood pressure. Keep the patient warm and Nil Per Os (nothing by mouth) in anticipation of emergency cesarean section. The patient must be referred immediately to a secondary hospital with surgical and blood transfusion facilities. The referral form must clearly state: 'Suspected Placenta Previa - DO NOT PERFORM VAGINAL EXAMINATION.'",
+    "topic": "Maternal and child health emergencies",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Recognize sudden, painless vaginal bleeding in late pregnancy as a key indicator of Placenta Previa.",
+      "State the absolute contraindication of performing a digital vaginal examination (VE) due to risk of fatal hemorrhage.",
+      "Establish intravenous access and initiate crystalloid infusion to stabilize maternal blood pressure.",
+      "Keep the patient NPO (nothing by mouth) to prepare for potential emergency cesarean section under general anesthesia.",
+      "Include a clear warning on the referral documentation alerting hospital staff against conducting vaginal examinations."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Outline the systematic steps and key sanitary indicators a CHEW must assess when conducting a sanitary inspection of a local primary school premises.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A sanitary inspection of school premises is a preventive environmental health activity designed to ensure a safe, hygienic environment that promotes learning and prevents the transmission of communicable diseases. The systematic steps begin with obtaining administrative clearance from the school head teacher and explaining the purpose of the inspection. The CHEW then conducts a walk-through inspection of the premises, checking five key sanitary indicators. First, water supply: availability of safe, treated drinking water accessible to all students. Second, sanitation facilities: the number, cleanliness, and functionality of toilets. The national standard is at least one toilet for every 30 girls and one for every 40 boys, with separate facilities for teachers. Toilets must have handwashing stations equipped with soap and water. Third, classrooms: assessing ventilation, lighting, and overcrowding (ensuring adequate floor space per pupil to prevent airborne transmission of diseases). Fourth, waste management: checking for the presence of covered waste bins in classrooms and a safe disposal site (like a compost pit or incinerator) on the school grounds. Fifth, drainage and vector breeding: ensuring there is no stagnant water or tall weeds that harbor mosquitoes and rodents. The inspection concludes with a debriefing meeting with the head teacher and writing a report with recommendations.",
+    "topic": "Environmental health inspections",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Obtain administrative consent from school management and conduct a structured walk-through of the premises.",
+      "Assess water safety indicators: presence of protected, treated drinking water sources for pupils.",
+      "Evaluate toilet sanitation: separate, clean facilities for boys, girls, and staff, with functional handwashing stations.",
+      "Inspect classroom parameters: verify adequate ventilation, natural lighting, and prevention of overcrowding.",
+      "Document waste management systems (covered bins, disposal pits) and vector risks (standing water, weeds) in a formal report."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the sanitary inspection procedures for a local slaughterhouse (abattoir) to prevent the transmission of zoonotic and foodborne diseases to the community.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Sanitary inspections of abattoirs are critical to ensure that meat processed for public consumption is safe and free from disease. The inspection procedure is divided into three phases: pre-slaughter (ante-mortem) inspection, slaughter and processing inspection, and post-slaughter (post-mortem) inspection. Ante-mortem inspection involves examining the live animals in the lairage for signs of infectious diseases, such as tuberculosis, anthrax, or foot-and-mouth disease. Infected animals must be isolated and condemned. The processing inspection focuses on the abattoir environment. The CHEW checks: the availability of abundant clean water for washing carcasses, the cleanliness of slaughter tables and floors (must be concrete, impervious, and sloped to facilitate drainage), the hygiene of the slaughtermen (clothing, handwashing), and the absence of flies, dogs, and rodents. Post-mortem inspection requires examining the carcass and internal organs (lungs, liver, spleen, lymph nodes) for pathological lesions (like tuberculosis tubercles or tapeworm cysts). Condemned organs must be confiscated and disposed of safely (by deep burial with lime or incineration). Finally, the CHEW inspects the liquid waste drainage system and solid waste disposal methods to ensure they do not pollute surrounding community water bodies.",
+    "topic": "Environmental health inspections",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Explain the ante-mortem inspection phase to identify and isolate diseased live animals prior to slaughter.",
+      "Assess abattoir hygiene: concrete floors sloped for drainage, clean water supply, and worker hygiene.",
+      "Perform post-mortem carcass inspection, checking internal organs for pathology (tuberculosis, cysts, abscesses).",
+      "Detail safe disposal of condemned carcasses and organs via deep burial with lime or high-heat incineration.",
+      "Inspect wastewater drainage and solid waste disposal systems to prevent community environmental contamination."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the procedures and sanitary indicators for testing and certifying the safety of a community drinking water source using a water quality field testing kit.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Testing and certifying the safety of community drinking water is essential to prevent waterborne disease outbreaks like cholera and typhoid. The procedure begins by preparing the testing equipment, including a portable water quality testing kit (such as a DelAgua kit), sterile sampling bottles, reagents, and a thermometer. When collecting samples from a borehole or hand pump, the mouth of the pump must be flamed with a blowtorch to sterilize it, and water must flow for 1-2 minutes before filling the sterile container. For open wells or streams, the bottle is lowered using a weighted rope and submerged at least 30 cm below the surface to avoid surface debris. The sanitary assessment measures three categories of indicators. Physical indicators include temperature, turbidity (cloudiness), color, and odor. Chemical indicators include pH (normal range 6.5-8.5), nitrate levels, and chlorine residual (if testing treated water). Microbiological indicators are the most critical, specifically testing for thermotolerant (fecal) coliforms (E. coli) using membrane filtration and incubation at 44°C for 24 hours. A safe source must contain zero fecal coliforms per 100 mL of water. The CHEW documents these findings and issues a sanitary certification or recommends disinfection.",
+    "topic": "Environmental health inspections",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Outline sampling preparation steps: sterilizing sampling ports/pumps by flaming and allowing water to flush.",
+      "Differentiate sampling methods for deep groundwater (boreholes) and surface water (wells/streams).",
+      "List physical and chemical water quality indicators tested: pH, turbidity, temperature, and chlorine residuals.",
+      "State the microbiological standard: membrane filtration testing for E. coli with a threshold of 0 colonies per 100 mL.",
+      "Explain the process of compiling test results to issue a safety certificate or mandate immediate disinfection/chlorination."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Explain the design and execution of vector control inspections in a community to reduce the transmission of malaria and dengue fever.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Vector control inspections are proactive environmental health measures designed to identify and eliminate the breeding sites of disease-carrying insects, primarily Anopheles mosquitoes (vectors of malaria) and Aedes mosquitoes (vectors of dengue). The execution of an inspection campaign begins with community mobilization, where the CHEW recruits and trains community health volunteers. The team then conducts systematically mapped household and environmental inspections. The inspection targets larval breeding sites. Anopheles mosquitoes breed in clean, stagnant water exposed to sunlight, such as puddles, swampy areas, and irrigation furrows. Aedes mosquitoes breed in artificial water containers around homes, including discarded tires, open water storage drums, gutters, flower pots, and coconut shells. For each household, the inspectors check all water containers, advising residents to cover storage drums tightly, discard unwanted water-holding containers, clear clogged gutters, and drain stagnant pools. The inspectors also assess the use of personal protective measures, such as sleeping under insecticide-treated nets (ITNs) and installing window screens. In areas with high larval density, chemical larviciding (using temephos or Bacillus thuringiensis israelensis) or biological control (introducing larvivorous fish in ponds) is applied.",
+    "topic": "Environmental health inspections",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Distinguish between breeding habits of malaria vectors (Anopheles in natural pools) and dengue vectors (Aedes in domestic containers).",
+      "Inspect domestic water containers (drums, tires, gutters) for mosquito larvae and pupae during household visits.",
+      "Implement environmental modification strategies: draining stagnant pools, clearing vegetation, and filling puddles.",
+      "Promote chemical and biological larval control options (larvicides, introduction of larvivorous fish in standing water).",
+      "Evaluate household use of protective barriers including insecticide-treated nets (ITNs) and window mesh screens."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "A CHEW is conducting inspections of household waste disposal facilities in a suburban settlement. Detail the key sanitary criteria to evaluate and the advice to give on safe solid waste management.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Suburban settlements often suffer from poor waste management, leading to rodent infestations, fly breeding, and water contamination. During a household waste inspection, the CHEW evaluates four key sanitary criteria. First, waste storage: checking if the household has a dedicated waste bin, if the bin is constructed of durable, easy-to-clean material (plastic or metal), and if it has a tight-fitting lid to exclude pests. Second, segregation: checking if organic waste is separated from inorganic materials. Third, collection and disposal methods: identifying how the household disposes of stored waste (e.g., municipal collection, open dumping, burning, or backyard burying). Fourth, environmental cleanliness: checking the immediate surroundings for litter, odor, and signs of disease vectors (rats, cockroaches, flies). Based on these findings, the CHEW provides actionable public health advice. Households should be educated on the '3 Rs' (Reduce, Reuse, Recycle) and taught to compost organic waste for gardening. For disposal, the CHEW advises against open burning (which causes air pollution and respiratory disease) and open dumping (which blocks drains). Residents are encouraged to register with local waste management utilities or construct a sanitary backyard refuse pit, which must be situated at least 15 meters away from water wells.",
+    "topic": "Environmental health inspections",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Evaluate household waste storage bins for sanitary compliance: durable materials, adequate capacity, and tight lids.",
+      "Assess waste segregation practices (organic vs. inorganic) and inspect for pest infestations (rats, flies).",
+      "Inspect disposal pathways: identify and discourage open dumping, open burning, and disposal in water channels.",
+      "Counsel households on composting organic materials and adopting the '3 Rs' (Reduce, Reuse, Recycle) approach.",
+      "Specify safety requirements for backyard refuse pits: proper construction, regular covering, and minimum 15m distance from water wells."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Outline the criteria and step-by-step procedures for conducting a sanitary inspection of a public toilet facility in a busy market square.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Public toilets in busy markets are high-risk areas for the transmission of fecal-oral infections if not properly maintained. A sanitary inspection is conducted to ensure compliance with hygiene regulations. The inspection evaluates specific physical, structural, and behavioral criteria. First, structural integrity: the floor must be constructed of concrete or non-slippery tiles, sloped toward a drain to prevent standing water, and walls must be clean and free of cracks. There must be adequate ventilation (via windows or vent pipes) and natural or artificial lighting. Second, water and handwashing: checking for constant running water inside the facility and functional handwashing stations outside, stocked with soap. Third, waste disposal: presence of covered bins for menstrual hygiene products. Fourth, sewage containment: verifying that the septic tank or pit is intact, with no overflows or leakages. The step-by-step procedure begins with notifying the facility operator, conducting the physical assessment using a checklist, measuring water chlorine levels if applicable, and interviewing users about cleanliness. The CHEW scores the facility and details corrective actions, such as hiring a dedicated cleaner, repairing leaking pipes, and posting handwashing educational materials in local languages.",
+    "topic": "Environmental health inspections",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Inspect structural features of the toilet facility: impervious sloped floors, ventilation, and lighting.",
+      "Verify availability of handwashing infrastructure: running water and soap accessible at the exit of the facility.",
+      "Examine the waste containment system (septic tank, pit) to ensure no leakages or environmental contamination.",
+      "Review facility cleanliness and maintenance routines: check for odor, fly screens on vents, and availability of waste bins.",
+      "Document findings on a standard checklist and issue corrective notices to the operator with clear deadlines."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Discuss the management of domestic wastewater and drainage systems in a community to prevent the breeding of disease vectors and soil erosion.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Domestic wastewater (greywater from kitchens and bathrooms, and blackwater from toilets) must be managed systematically to protect public health. Poor drainage systems result in pools of stagnant water, which serve as breeding grounds for Culex and Anopheles mosquitoes, and cause soil erosion that undermines building foundations. In managing greywater, the CHEW inspects household drainage channels. Open drains must be concrete-lined, regularly cleared of silt, leaves, and plastic waste to ensure free flow, and covered with concrete slabs where they pass near homes. If concrete drainage is unavailable, households should construct a soakaway pit. A soakaway pit is an excavation filled with graded stones and sand that filters wastewater, allowing it to percolate safely into the soil without surfacing. For blackwater, the CHEW ensures that households use septic tanks or pit latrines that are sealed to prevent groundwater contamination. The CHEW educates the community on the dangers of discharging raw wastewater onto roads or vacant plots, conducts community clean-up campaigns to clear blocked public drains, and works with the local government to design gravity-based drainage networks that divert rainwater away from residential areas.",
+    "topic": "Environmental health inspections",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Classify domestic wastewater into greywater (wash water) and blackwater (sewage), outlining their distinct health risks.",
+      "Evaluate community drainage channels for siltation, blockages, and standing water that breed vectors.",
+      "Describe the construction and maintenance of a soakaway pit as a safe method for household greywater disposal.",
+      "Explain the risks of open wastewater discharge: vector breeding, foul odor, and water source pollution.",
+      "Coordinate community actions to clear public gutters and advocate for concrete-lined drainage infrastructure."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Explain the procedure for investigating a community complaint regarding an illegal refuse dump situated in a residential neighborhood.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Investigating a public health nuisance, such as an illegal refuse dump, is a formal environmental health task. The procedure begins with registering the complaint in the facility's environmental health log, noting the complainant's details, the location of the dump, and the duration of the nuisance. The CHEW then schedules a site visit. During the site inspection, the CHEW documents the physical extent of the dump, the types of waste present (e.g., household waste, medical waste, hazardous chemicals), the proximity to residential houses and water wells, and signs of vector infestation (rats, flies, mosquitoes). The CHEW interviews nearby residents to identify who is dumping waste and determine if any health issues (like respiratory complaints or malaria spikes) have increased. After gathering evidence, the CHEW identifies the responsible parties (e.g., landlord association, specific commercial entities). Under environmental laws, the CHEW issues a formal Abatement Notice to the responsible parties, ordering them to clear the dump within a specified timeframe (e.g., 7 to 14 days) and secure the area. If the source is unknown, the CHEW works with the Ward Development Committee to organize a community clean-up and erects 'No Dumping' signs.",
+    "topic": "Environmental health inspections",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Register the nuisance complaint formally and schedule a site investigation to collect physical evidence.",
+      "Conduct the site inspection: measure dump dimensions, categorize waste types, and note distance to houses/wells.",
+      "Interview residents to assess localized health impacts (odor, disease vectors) and identify the source of the waste.",
+      "Draft and serve a legally binding Abatement Notice to the responsible parties to clear the site within a deadline.",
+      "Facilitate community-based solutions (clean-up events, fencing, warning signs) if the dumping source is unidentified."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the step-by-step procedure for disinfecting a contaminated community well following a cholera outbreak, including calculations for chlorine dosage.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "When a community well is contaminated with Vibrio cholerae, it must be disinfected immediately to stop the transmission of cholera. The standard method is shock chlorination using calcium hypochlorite (HTH) powder (usually 65-70% active chlorine). The procedure begins by notifying the community to stop using the well during the disinfection process. The first step is to clean the well area, removing debris, and repairing any physical cracks in the well apron. The second step is to measure the volume of water in the well. To do this, the CHEW measures the depth of the water column (D) in meters using a weighted rope, and the diameter of the well (d) in meters. The volume (V) in cubic meters is calculated using the formula: V = 3.14 x (d/2)^2 x D. (Since 1 cubic meter equals 1,000 liters, multiply V by 1,000 to get total liters). The target chlorine concentration for disinfection is 50 mg/liter (or 50 ppm). The amount of HTH powder needed is calculated using the formula: Weight (grams) = (Target concentration x Volume in liters) / (% active chlorine in powder x 10). The calculated powder is dissolved in a bucket of clean water, poured into the well, and the well is stirred. The well is left covered for a contact time of at least 24 hours. Before reopening, the water must be pumped out until the free residual chlorine level drops to a safe level of 0.2 to 0.5 mg/liter.",
+    "topic": "Environmental health inspections",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Notify the community and suspend well water usage before initiating the disinfection protocol.",
+      "Determine the volume of water in the well using measurements of well diameter and water depth.",
+      "Calculate the weight of calcium hypochlorite (HTH) powder required to achieve a 50 mg/L target concentration.",
+      "Mix the chlorine powder in a bucket of water, pour it into the well, and allow a 24-hour contact time.",
+      "Flush the well until free residual chlorine levels are verified within the safe range of 0.2 to 0.5 mg/L."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Explain how a CHEW enforces environmental health regulations at public food markets and temporary public gatherings, such as festivals or camps.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Enforcing environmental health regulations at public markets and temporary gatherings is a vital regulatory function to prevent food contamination and cholera outbreaks. At public food markets, enforcement is routine. The CHEW conducts regular inspections of food stalls, focusing on food handling practices: ensuring food sellers do not display food on the ground, wash their hands regularly, keep food covered to exclude flies, and do not sell spoiled meat or fish. At temporary gatherings (such as refugee/IDP camps, religious festivals, or agricultural fairs), enforcement begins during the planning phase. The CHEW works with organizers to ensure the site plan includes: an adequate supply of safe drinking water (at least 15 liters per person per day), temporary trench latrines or mobile toilets (at least one per 20-50 people, separated by gender), and designated solid waste collection points with covered bins. During the event, the CHEW performs daily monitoring, checks water chlorine levels, inspects temporary food vendors for health certificates, and ensures waste is removed daily. If violations are found, the CHEW has the authority to issue warnings, confiscate contaminated food, close non-compliant stalls, or report the organizers to local government authorities.",
+    "topic": "Environmental health inspections",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Enforce food hygiene rules at markets: covered food displays, handwashing, and inspection of meat safety.",
+      "Review sanitation infrastructure at temporary gatherings: verify adequate latrine ratios (1:20-50) and gender separation.",
+      "Monitor water safety during public gatherings: check daily supply quantities and test for free residual chlorine.",
+      "Coordinate solid waste logistics during events: establish bins, monitor collections, and prevent littering.",
+      "Apply regulatory enforcement measures: issue health warnings, seize unsafe food, or close non-compliant vendor stalls."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Design a comprehensive Behavior Change Communication (BCC) strategy to promote Exclusive Breastfeeding (EBF) for the first six months of life in a rural community.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A Behavior Change Communication (BCC) strategy is a structured approach that uses communication to promote positive health behaviors. Designing a BCC strategy for Exclusive Breastfeeding (EBF) in a rural community involves five key steps. First, analysis: identifying the baseline EBF rate and current barriers (e.g., the belief that newborns need water during the dry season, or pressure from mothers-in-law to introduce herbal teas). Second, target audience segmentation: the primary audience is pregnant women and lactating mothers; the secondary audience includes husbands, mothers-in-law, and traditional birth attendants (TBAs), who act as key influencers. Third, message design: creating simple, culturally resonant messages in the local language, such as: 'Breast milk is complete food and water for your baby for the first six months.' Fourth, communication channels: utilizing a mix of channels. For mothers, interactive discussions during antenatal care and immunization clinics; for the community, town criers, radio dramas, and peer support groups led by volunteer 'expert mothers.' For mothers-in-law, specialized home visits are organized to address traditional myths. Fifth, monitoring and evaluation: tracking indicators like the number of mothers reached and the EBF rate at 6 months through household follow-ups.",
+    "topic": "Health education and campaign planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Analyze baseline practices and local barriers (e.g., traditional water/herbal feeding beliefs) before designing messages.",
+      "Segment the target audience into primary (pregnant/lactating women) and secondary influencers (husbands, mothers-in-law).",
+      "Formulate clear, local-language messages conveying that breast milk contains adequate water and nutrients for 6 months.",
+      "Select communication channels: clinic counseling, community peer support groups, and home visits for elders.",
+      "Establish monitoring indicators to track EBF adoption rates and evaluate the strategy's impact."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Outline the steps for planning, executing, and evaluating an immunization sensitization campaign (Maternal, Newborn, and Child Health Week - MNCHW) at the ward level.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Maternal, Newborn, and Child Health Week (MNCHW) is a biannual campaign designed to deliver a package of high-impact preventive interventions, including immunizations, Vitamin A, deworming tablets, and nutritional screening. Executing this campaign at the ward level requires systematic planning. The Planning Phase begins 4 weeks before the launch: the CHEW estimates target populations (under-5 children, pregnant women), inventories vaccine stock and supplies, secures transport logistics, and organizes training for immunization teams and community volunteers. The Execution Phase involves: setting up temporary fixed outreach posts in schools, churches, and markets to reach remote populations; deploying mobile teams; and coordinating social mobilization (using town criers, religious leaders, and posters) to announce the campaign locations. The CHEW supervises the field teams to ensure correct vaccine administration, cold chain preservation in vaccine carriers, and proper completion of tally sheets. The Evaluation Phase begins immediately after the campaign: the CHEW aggregates data from tally sheets to calculate coverage rates (e.g., total children immunized divided by target population), reviews vaccine wastage rates, identifies hard-to-reach pockets that were missed, and compiles a final report for the LGA immunization officer.",
+    "topic": "Health education and campaign planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Plan the pre-campaign logistics: calculate target populations, audit vaccine inventories, and recruit outreach volunteers.",
+      "Execute social mobilization using local leaders, town criers, and flyers to advertise immunization post locations.",
+      "Supervise campaign delivery: ensure vaccine safety, cold chain management, and accurate logging on tally sheets.",
+      "Evaluate campaign performance: calculate immunization coverage rates and assess vaccine wastage.",
+      "Identify missed settlements and compile a campaign report with recommendations for the next MNCHW cycle."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Explain how a CHEW develops culturally appropriate health education messages to counter vaccine hesitancy regarding routine childhood immunization.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Vaccine hesitancy is a complex challenge influenced by misinformation, religious beliefs, and cultural fears (e.g., rumors that vaccines cause infertility or are foreign plots). Developing culturally appropriate messages to counter hesitancy requires empathy and collaboration. The CHEW begins by holding focus group discussions with hesitant parents to understand their specific fears. The health worker must not argue with or patronize the community; instead, the CHEW acknowledges their concerns. The next step is to partner with trusted local advocates—such as respected religious leaders, traditional chiefs, and local doctors—to co-create messages. The messages should be framed in the local language, using positive cultural concepts. For example, rather than using dry statistical jargon, the message can compare vaccination to a traditional shield: 'Just as our ancestors built shields to protect our villages from invaders, immunizations build a shield inside our children's bodies to protect them from killer diseases.' Furthermore, the CHEW organizes 'immunization champions'—local mothers whose vaccinated children are healthy and thriving—to speak at community meetings. This peer-to-peer communication is highly effective in building trust and dispelling rumors.",
+    "topic": "Health education and campaign planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Investigate the specific local rumors and fears underlying vaccine hesitancy through focus groups.",
+      "Avoid confrontational language, using respectful engagement to build rapport with hesitant parents.",
+      "Partner with traditional and religious leaders to design and endorse pro-vaccination messages.",
+      "Frame messages using local cultural analogies (e.g., protective shields or crop protection) in local languages.",
+      "Mobilize peer advocates ('immunization champions') to share personal success stories within the community."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Discuss the utilization of interactive drama and storytelling as tools for community health education, highlighting their advantages over traditional lectures.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Interactive drama and storytelling are powerful, participatory health education tools, especially in communities with low literacy levels or deep-seated cultural taboos. Unlike traditional lectures, which are passive, top-down, and often boring, drama engages the community emotionally and intellectually. The CHEW can collaborate with local youth groups or schools to write and perform short plays about common health issues, such as cholera transmission or the dangers of self-medication. The performance is structured to invite audience participation. For example, at a critical moment in the play—such as a mother deciding whether to take a sick child to a traditional healer or the clinic—the drama is paused. The facilitator asks the audience: 'What should she do? What would happen if she goes to the healer?' Audience members are invited to suggest solutions or even step onto the stage to act out the decision. This method has several advantages: it breaks down complex medical concepts into simple visual narratives, bypasses literacy barriers, allows the safe discussion of sensitive topics (like family planning or STIs) through fictional characters, and promotes active problem-solving. This interactive approach leads to better retention of health messages and a higher likelihood of behavior change.",
+    "topic": "Health education and campaign planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Explain the concept of interactive drama/storytelling as participatory, emotional, and culturally relevant education tools.",
+      "Contrast drama with traditional lecturing, noting advantages in message retention and audience engagement.",
+      "Describe the facilitation technique: pausing the drama to ask audience members to make choices or act out scenes.",
+      "Highlight how storytelling bypasses literacy barriers and allows the safe discussion of taboo topics (e.g., family planning).",
+      "Explain how reflecting on the characters' choices promotes critical thinking and behavior change among spectators."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the planning, implementation, and content of a health education session on the prevention of hypertension and diabetes, conducted in a busy community market.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Conducting a health education session in a busy community market is an effective way to reach a large number of adults, but it requires adaptation to a noisy, fast-paced environment. The Planning Phase involves: obtaining permission from the market leader (Iyaloja/Babaloja), selecting a central, accessible space, and scheduling the session during mid-morning when the market is active but not peak-busy. The CHEW prepares visual aids (like large colorful posters) and diagnostic equipment (BP cuffs, glucometers) to offer free screenings, which serves as a major crowd puller. The Implementation Phase must be highly interactive and brief. The CHEW uses a megaphone or public address system to capture attention. The session content focuses on: explaining hypertension ('high blood pressure') and diabetes ('sugar disease') in simple terms; identifying modifiable risk factors (excessive salt intake, eating processed bouillon cubes, lack of exercise, smoking, and alcohol); and promoting practical preventions (reducing salt, eating more local vegetables, walking 30 minutes daily). The CHEW demonstrates correct portion sizes of local foods. Concurrently, team members conduct rapid blood pressure and blood glucose screenings for interested market sellers and buyers, referring those with abnormal readings to the clinic for diagnosis.",
+    "topic": "Health education and campaign planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Secure administrative approval from market authorities and select a high-foot-traffic venue and appropriate time.",
+      "Set up free clinical screenings (BP and blood glucose checks) to attract community interest.",
+      "Use local terminology and public address systems to communicate clearly in a loud market environment.",
+      "Deliver clear prevention messages: limit dietary salt/seasoning, avoid smoking, increase local vegetable intake, and exercise.",
+      "Incorporate a screening protocol to identify and refer high-risk individuals directly to the primary health center."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Outline the steps to plan and execute a school-based health education campaign focusing on personal hygiene and handwashing practices among primary school pupils.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A school-based health education campaign is an effective way to instill healthy habits in children, who can then act as agents of change in their families. Planning the campaign begins with coordinating with the school management and teachers to schedule the campaign during assembly or class hours. The CHEW audits the school's water and handwashing facilities to ensure students can practice what they learn. The execution of the campaign uses active, child-friendly learning methods. The educational session covers: the importance of personal hygiene (bathing daily, brushing teeth, cutting nails) and the 'critical times' for handwashing (after using the toilet, before eating, and after playing). Rather than just lecturing, the CHEW conducts a live demonstration of the six steps of handwashing with soap and water, highlighting the friction required to remove germs. The pupils then practice the steps in groups, singing a local handwashing song to ensure they wash for at least 20 seconds. To sustain the behavior, the CHEW helps the school establish a 'School Health Club' where selected pupil ambassadors monitor handwashing stations and ensure soap is always refilled, and leaves colorful handwashing posters near the school toilets.",
+    "topic": "Health education and campaign planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Coordinate with school heads and check the availability of functional handwashing resources (water, soap) at the school.",
+      "Identify 'critical times' for handwashing to teach the students (after toilet use, before meals, after play).",
+      "Demonstrate the structured steps of handwashing using soap and clean running water.",
+      "Use active learning techniques: group practice, songs to track time (20 seconds), and peer demonstration.",
+      "Establish a school health club or student monitoring system to maintain hygiene stations and sustain the behavior."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Explain how a CHEW utilizes social mobilization strategies to recruit, train, and supervise community volunteers for a mass distribution campaign of Insecticide-Treated Nets (ITNs).",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "A mass distribution campaign of Insecticide-Treated Nets (ITNs) is a large-scale public health intervention that relies heavily on community participation. Social mobilization is the process of bringing together all societal partners to coordinate action. The CHEW utilizes social mobilization through three phases. First, recruitment: the CHEW holds advocacy meetings with traditional chiefs and the Ward Development Committee (WDC) to explain the campaign goals. The leaders are asked to nominate trusted local residents (CHVs) from their villages to serve as net distributors and household mobilizers. Second, training: the CHEW conducts a practical training workshop for the recruited volunteers. The training covers: how to conduct a household registry, how to calculate net allocation (e.g., 1 net for every 2 people, up to a maximum of 3 nets per household), how to educate families on correct net hanging and care (drying the net in the shade for 24 hours before use, washing it gently with mild soap, and never using bleach), and how to document distribution on net cards. Third, supervision: during the distribution, the CHEW conducts field monitoring, checks volunteer registers for accuracy, resolves community complaints regarding net allocation, and ensures nets are distributed equitably without favoritism.",
+    "topic": "Health education and campaign planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Engage community leaders (chiefs, WDC) to recruit trusted local volunteers for the distribution campaign.",
+      "Train volunteers on net allocation guidelines (e.g., household ratio, maximum limits) and registration tools.",
+      "Educate volunteers on correct net usage instructions: drying nets in the shade for 24 hours and gentle washing rules.",
+      "Supervise volunteers in the field, verifying registration accuracy and monitoring distribution logs.",
+      "Manage community logistics: ensure fair net distribution and address supply chain discrepancies or favoritism."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Discuss the methods and data collection tools a health worker uses to evaluate the effectiveness of a community-wide campaign against open defecation.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Evaluating the effectiveness of a campaign against open defecation is crucial to determine if the community has successfully transitioned to Open Defecation Free (ODF) status and if behavior change is sustained. The evaluation is conducted using three primary methods. First, physical sanitary inspections: the CHEW, along with a community monitoring team, conducts structured walk-throughs of known open defecation areas (such as bushes, riverbanks, and railway tracks) to check for the presence of fresh feces. Second, household surveys: using a random sampling method, the CHEW visits households to inspect their latrines. The inspector uses a checklist to verify 'latrine usability' (checking for a clean slab, a drop-hole cover or functional water seal to exclude flies, and a vent pipe with a mesh screen). The inspector also checks for indicators of active use, such as a clear path to the toilet, a wet toilet floor, and the presence of a handwashing station with soap and water nearby. Third, focus group discussions: interviewing residents to assess changes in community norms, checking if there is active peer pressure against open defecation. The evaluation findings are compiled into an ODF verification report, which is shared with the WDC and the LGA sanitation department.",
+    "topic": "Health education and campaign planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Conduct physical environmental surveys of public zones (bushes, streams) to search for evidence of open defecation.",
+      "Perform household latrine inspections using a checklist verifying usability (slab, drop-hole cover, fly screens).",
+      "Verify indicators of active toilet utilization: well-worn paths, wet floors, and functional handwashing stations.",
+      "Conduct focus groups to evaluate changes in social norms and community-enforced sanitation bylaws.",
+      "Compile an ODF (Open Defecation Free) verification report for submission to local government authorities."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Describe the process of creating and pre-testing visual health education aids (such as posters or flipcharts) for a family planning sensitization campaign.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "Visual aids are essential tools in health education, but if they are poorly designed or culturally insensitive, they can lead to misunderstandings or resistance. The process of creating and pre-testing these aids involves several systematic steps. First, design: the CHEW, in collaboration with health educators and graphic designers, drafts the visual aids based on clear educational objectives. For a family planning campaign, the images must be simple, realistic, and culturally appropriate (e.g., showing local clothing and household settings). The text must be minimal, in the local language, and written in large, clear fonts. Second, pre-testing: before mass production, the draft posters/flipcharts must be tested with a small sample (10 to 15 individuals) of the target audience. During pre-testing, the CHEW shows the visual aid to a participant and asks structured questions: What do you see in this picture? What message is this poster trying to send? Is there anything in this picture that makes you feel uncomfortable or offended? Are the words easy to read? The CHEW notes all responses, checking if the visual's intent matches the participant's interpretation. Third, revision: based on the feedback, the images or text are modified (e.g., changing colors, replacing confusing symbols) to ensure the aid is fully understood and acceptable before printing.",
+    "topic": "Health education and campaign planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Draft visual aids (posters, flipcharts) ensuring cultural relevance, simple realistic imagery, and minimal local-language text.",
+      "Select a pre-test sample of 10-15 representatives from the target community group to review the drafts.",
+      "Administer structured interview questions to evaluate the comprehension, clarity, and acceptability of the visual design.",
+      "Identify and document any misinterpretations or offensive elements highlighted by the pre-test participants.",
+      "Revise the visual aids based on pre-test feedback before initiating mass printing and campaign distribution."
+    ]
+  },
+  {
+    "certificationSlug": "chew-theory",
+    "questionType": "THEORY",
+    "text": "Discuss strategies to mobilize and engage male partners in family planning and maternal health education in a conservative rural community.",
+    "options": {},
+    "correctAnswer": "",
+    "explanation": "In many conservative rural communities, men are the primary decision-makers regarding household finances and family size, yet family planning and maternal health programs often target women exclusively. This exclusion leads to husbands forbidding contraceptive use or refusing to pay for clinic birth fees. Mobilizing male partners is essential to improve maternal outcomes. The CHEW can implement several strategies. First, engage male community leaders: the CHEW meets with traditional chiefs, religious leaders, and elders to explain the health benefits of child spacing (reducing maternal deaths, improving family economy) and obtains their support. Second, create male-only educational spaces: men are often uncomfortable attending routine ANC clinics with women. The CHEW organizes 'Male Health Forums' or 'Husbands' Clubs' in neutral spaces, such as community squares or local halls, after working hours. These sessions are led by the CHEW or a respected male leader and focus on family planning as a tool for family well-being, rather than just women's health. Third, adapt communication: frame family planning in terms of economic responsibility, showing how spacing births allows a father to better feed and educate his children. Fourth, offer couple-friendly services: encouraging men to accompany their wives to ANC by providing fast-track services for couples, reducing waiting time.",
+    "topic": "Health education and campaign planning",
+    "difficulty": "MEDIUM",
+    "markingGuide": [
+      "Explain that men's engagement is critical because they hold primary household decision-making power over healthcare spending and family size.",
+      "Enlist male community and religious leaders to advocate for child spacing, reducing stigma among men.",
+      "Organize male-only health education forums in comfortable, neutral locations to discuss family planning and maternal health.",
+      "Frame contraceptive education around household economics, responsible fatherhood, and maternal safety.",
+      "Provide clinic incentives for couple visits, such as fast-track queues for women accompanied by their husbands."
+    ]
+  }
+]
