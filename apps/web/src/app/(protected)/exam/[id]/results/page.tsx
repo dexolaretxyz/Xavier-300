@@ -4,8 +4,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { useExamResults } from '@/hooks/useExam';
 import { useExamStore } from '@/store/exam.store';
+import { api } from '@/lib/api';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle2, XCircle, Clock, Zap, Target, BookOpen, AlertTriangle, ArrowRight, Trophy } from 'lucide-react';
+import { CheckCircle2, XCircle, Clock, Zap, Target, BookOpen, AlertTriangle, ArrowRight, Trophy, Flag, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ExamResultsPage() {
@@ -22,6 +23,12 @@ export default function ExamResultsPage() {
   }, [clearSession]);
 
   const [expandedQuestion, setExpandedQuestion] = useState<string | null>(null);
+
+  // Flag/Appeal state
+  const [flagOpenId, setFlagOpenId] = useState<string | null>(null);
+  const [flagText, setFlagText] = useState('');
+  const [flagLoading, setFlagLoading] = useState(false);
+  const [flagSuccess, setFlagSuccess] = useState<Record<string, boolean>>({});
 
   if (isLoading) {
     return <div className="p-12 text-center font-ui text-[var(--text-secondary)]">Crunching your results...</div>;
@@ -233,6 +240,71 @@ export default function ExamResultsPage() {
                             </div>
                           )}
                         </div>
+
+                        {/* Flag Question - only for wrong answers */}
+                        {!isCorrect && (
+                          <div className="mb-6">
+                            {flagSuccess[q.id] ? (
+                              <div className="flex items-center gap-2 text-green-700 dark:text-green-400 font-ui text-sm bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-900/50 rounded-xl p-4">
+                                <CheckCircle2 size={16} />
+                                ✓ Flag submitted — our team will review this question.
+                              </div>
+                            ) : flagOpenId === q.id ? (
+                              <div className="bg-[var(--bg-primary)] border border-[var(--border-subtle)] rounded-xl p-4 space-y-3">
+                                <p className="font-ui text-sm text-[var(--text-secondary)]">
+                                  I selected <span className="font-bold text-[var(--text-primary)]">{userAnswer}</span> but was marked wrong
+                                </p>
+                                <textarea
+                                  value={flagText}
+                                  onChange={(e) => setFlagText(e.target.value)}
+                                  placeholder="Explain why you think your answer is correct..."
+                                  className="w-full bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg p-3 font-ui text-sm outline-none focus:border-[var(--accent-primary)] resize-none min-h-[80px] text-[var(--text-primary)] placeholder:text-[var(--text-muted)]"
+                                />
+                                <div className="flex items-center gap-3">
+                                  <button
+                                    disabled={flagLoading || !flagText.trim()}
+                                    onClick={async () => {
+                                      try {
+                                        setFlagLoading(true);
+                                        await api.post('/api/tickets', {
+                                          subject: 'Question Answer Dispute',
+                                          description: `Student flagged question as incorrectly marked.\n\nQuestion: ${q.text.slice(0, 100)}\nStudent selected: ${userAnswer} (${q.options[userAnswer] || 'No answer'})\nMarked correct: ${q.correctAnswer} (${q.options[q.correctAnswer]})\n\nStudent explanation: ${flagText}`,
+                                          category: 'EXAM_BUG'
+                                        });
+                                        setFlagSuccess(prev => ({ ...prev, [q.id]: true }));
+                                        setFlagOpenId(null);
+                                        setFlagText('');
+                                      } catch (err) {
+                                        console.error('Failed to submit flag', err);
+                                        alert('Failed to submit flag. Please try again.');
+                                      } finally {
+                                        setFlagLoading(false);
+                                      }
+                                    }}
+                                    className="px-4 py-2 rounded-lg font-ui font-medium text-sm bg-[var(--accent-primary)] text-white hover:opacity-90 disabled:opacity-50 transition-opacity flex items-center gap-2"
+                                  >
+                                    {flagLoading && <Loader2 size={14} className="animate-spin" />}
+                                    Submit Flag
+                                  </button>
+                                  <button
+                                    onClick={() => { setFlagOpenId(null); setFlagText(''); }}
+                                    className="font-ui text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
+                                  >
+                                    Cancel
+                                  </button>
+                                </div>
+                              </div>
+                            ) : (
+                              <button
+                                onClick={() => setFlagOpenId(q.id)}
+                                className="font-ui text-sm text-[var(--text-muted)] hover:text-[var(--accent-primary)] transition-colors flex items-center gap-1.5"
+                              >
+                                <Flag size={14} /> Flag this question →
+                              </button>
+                            )}
+                          </div>
+                        )}
+
 
                         {q.explanation && (
                           <div className="bg-[var(--bg-primary)] p-5 rounded-xl border border-[var(--border-subtle)]">

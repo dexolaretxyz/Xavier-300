@@ -2,13 +2,16 @@
 
 import React, { useEffect, useState } from 'react';
 import { api } from '@/lib/api';
-import { Plus, Check, X, Search, Filter, Loader2, Sparkles, BrainCircuit } from 'lucide-react';
+import { Plus, Check, X, Search, Filter, Loader2, Sparkles, BrainCircuit, Eye } from 'lucide-react';
 import * as Dialog from '@radix-ui/react-dialog';
 
 export default function AdminQuestionsPage() {
   const [questions, setQuestions] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [actionLoadingId, setActionLoadingId] = useState<string | null>(null);
+
+  // Test Question Modal State
+  const [testQuestion, setTestQuestion] = useState<any | null>(null);
 
   // AI Modal State
   const [certifications, setCertifications] = useState<any[]>([]);
@@ -283,8 +286,11 @@ export default function AdminQuestionsPage() {
                             </button>
                           </>
                         )}
-                        <button className="text-xs font-medium text-[var(--accent-primary)] hover:underline ml-2">
-                          View
+                        <button 
+                          onClick={() => setTestQuestion(q)}
+                          className="text-xs font-medium text-[var(--accent-primary)] hover:underline ml-2 flex items-center gap-1"
+                        >
+                          <Eye size={14} /> Test
                         </button>
                       </div>
                     </td>
@@ -295,6 +301,95 @@ export default function AdminQuestionsPage() {
           </table>
         </div>
       </div>
+
+      {/* TEST QUESTION MODAL */}
+      <Dialog.Root open={!!testQuestion} onOpenChange={(open) => { if (!open) setTestQuestion(null); }}>
+        <Dialog.Portal>
+          <Dialog.Overlay className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50" />
+          <Dialog.Content className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-[var(--bg-primary)] p-8 rounded-2xl shadow-xl z-50 border border-[var(--border-subtle)]">
+            {testQuestion && (
+              <>
+                <div className="flex items-start justify-between mb-6">
+                  <Dialog.Title className="font-display font-bold text-xl text-[var(--text-primary)] flex items-center gap-2">
+                    <Eye className="text-[var(--accent-primary)]" size={22} /> Test Question
+                  </Dialog.Title>
+                  <Dialog.Close className="text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors">
+                    <X size={20} />
+                  </Dialog.Close>
+                </div>
+
+                {/* Question Text */}
+                <div className="bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-xl p-5 mb-6">
+                  <p className="font-ui text-[var(--text-primary)] text-base leading-relaxed">{testQuestion.text}</p>
+                </div>
+
+                {/* Question Image */}
+                {testQuestion.imageUrl && (
+                  <div className="mb-6 rounded-xl overflow-hidden border border-[var(--border-subtle)]">
+                    <img 
+                      src={testQuestion.imageUrl} 
+                      alt={testQuestion.imageAlt || 'Question image'} 
+                      className="w-full h-auto object-contain max-h-64"
+                    />
+                  </div>
+                )}
+
+                {/* Options */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                  {Object.entries(testQuestion.options as Record<string, string>).map(([letter, text]) => {
+                    const isCorrectOption = letter === testQuestion.correctAnswer;
+                    return (
+                      <div
+                        key={letter}
+                        className={`p-4 rounded-xl border-2 transition-colors ${
+                          isCorrectOption
+                            ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
+                            : 'border-[var(--border-subtle)] bg-[var(--bg-primary)]'
+                        }`}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-mono font-bold text-sm ${
+                            isCorrectOption
+                              ? 'bg-green-500 text-white'
+                              : 'bg-[var(--bg-secondary)] text-[var(--text-secondary)]'
+                          }`}>
+                            {isCorrectOption ? <Check size={16} /> : letter}
+                          </span>
+                          <span className={`font-ui text-sm pt-1 ${
+                            isCorrectOption ? 'text-green-800 dark:text-green-300 font-medium' : 'text-[var(--text-primary)]'
+                          }`}>
+                            {text}
+                          </span>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Correct Answer Info */}
+                <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-900/50 rounded-xl p-4 space-y-2">
+                  <p className="font-ui font-bold text-green-800 dark:text-green-300 text-sm flex items-center gap-2">
+                    <Check size={16} className="text-green-600" />
+                    Correct Answer: {testQuestion.correctAnswer} — {testQuestion.options[testQuestion.correctAnswer]}
+                  </p>
+                  <p className="font-ui text-green-700 dark:text-green-400 text-xs">
+                    This question will mark student correct if they select {testQuestion.correctAnswer}
+                  </p>
+                </div>
+
+                {/* Close Button */}
+                <div className="mt-6 flex justify-end">
+                  <Dialog.Close asChild>
+                    <button className="px-6 py-2.5 rounded-full font-ui font-medium text-sm border border-[var(--border-subtle)] text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] transition-colors">
+                      Close
+                    </button>
+                  </Dialog.Close>
+                </div>
+              </>
+            )}
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
       
     </div>
   );

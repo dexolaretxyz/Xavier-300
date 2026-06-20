@@ -63,28 +63,30 @@ router.post('/start', authenticate, async (req: express.Request, res, next) => {
       return res.status(404).json({ success: false, error: { code: 'NOT_FOUND', message: 'Certification not found' } });
     }
 
-    // 3. Get and shuffle questions
-    let questions;
+    const startedAt = new Date();
+
+    // 3. Get shuffled questions + session answer keys
+    let dailyResult;
     try {
-      questions = await examService.getDailyQuestionsForUser(certId, userId, cert.questionCount);
+      dailyResult = await examService.getDailyQuestionsForUser(certId, userId, cert.questionCount, startedAt);
     } catch (err: any) {
       return res.status(400).json({ success: false, error: { code: 'NOT_ENOUGH_QUESTIONS', message: err.message } });
     }
 
-    const shuffledQuestions = questions.map(q => {
-      // Strip correct answer before sending to client, but include type & image for display
-      return {
-        id: q.id,
-        text: q.text,
-        options: q.options as any,
-        questionType: q.questionType || 'MCQ',
-        imageUrl: q.imageUrl || null,
-        imageAlt: q.imageAlt || null,
-        // No correctAnswer or explanation included!
-      };
-    });
+    const { questions, sessionKeys } = dailyResult;
 
-    // 4. Create ExamAttempt record
+    // 4. Strip correct answers before sending to client
+    const clientQuestions = questions.map((q: any) => ({
+      id: q.id,
+      text: q.text,
+      options: q.options as any,
+      questionType: q.questionType || 'MCQ',
+      imageUrl: q.imageUrl || null,
+      imageAlt: q.imageAlt || null,
+      // No correctAnswer or explanation sent to client!
+    }));
+
+    // 5. Create ExamAttempt record
     const attempt = await prisma.examAttempt.create({
       data: {
         userId,
@@ -92,11 +94,15 @@ router.post('/start', authenticate, async (req: express.Request, res, next) => {
         totalQuestions: questions.length,
         attemptNumber: attemptsToday + 1,
         answers: {}, // Empty JSON
-        status: 'IN_PROGRESS'
+        status: 'IN_PROGRESS',
+        startedAt
       }
     });
 
-    // 5. Generate Session Token
+    // 6. Store session answer keys in Redis for reliable grading
+    await examService.storeExamSession(attempt.id, userId, sessionKeys, cert.examDuration);
+
+    // 7. Generate Session Token
     const sessionToken = examService.generateSessionToken(attempt.id, userId);
 
     // Determine question type from the certification's question pool
@@ -108,7 +114,7 @@ router.post('/start', authenticate, async (req: express.Request, res, next) => {
         attemptId: attempt.id,
         sessionToken,
         questionType,
-        questions: shuffledQuestions,
+        questions: clientQuestions,
         examDuration: cert.examDuration
       }
     });
@@ -150,13 +156,24 @@ router.post('/:id/submit', authenticate, async (req: express.Request, res, next)
       where: { id: { in: questionIds } }
     });
 
-    // 3. Calculate Results using deterministic seed based on start time
+    // 3. Reconstruct session answer keys deterministically using start time
     const dailySeed = examService.getDailySeed(attempt.startedAt);
     const userSeed = attempt.userId.split('').reduce((acc, char) => 
       acc + char.charCodeAt(0), 0);
     const combinedSeed = dailySeed + userSeed;
 
-    const results = examService.calculateResults(answers, questions, combinedSeed);
+    const sessionKeys = questions.map(q => {
+      const questionSeed = combinedSeed + q.id.split('').reduce(
+        (acc, char) => acc + char.charCodeAt(0), 0
+      );
+      const { sessionCorrectAnswer } = examService.shuffleQuestionOptions(q, questionSeed);
+      return {
+        id: q.id,
+        correctAnswer: sessionCorrectAnswer
+      };
+    });
+
+    const results = examService.calculateResults(answers, sessionKeys, questions);
 
     // 4. Save initial results (without AI recommendations)
     const updatedAttempt = await prisma.examAttempt.update({
@@ -361,7 +378,26 @@ router.get('/:id/results', authenticate, async (req: express.Request, res, next)
       where: { id: { in: questionIds } }
     });
 
-    res.json({ success: true, data: { attempt, questions } });
+    const dailySeed = examService.getDailySeed(attempt.startedAt);
+    const userSeed = attempt.userId.split('').reduce((acc, char) => 
+      acc + char.charCodeAt(0), 0);
+    const combinedSeed = dailySeed + userSeed;
+
+    const shuffledQuestions = questions.map(q => {
+      if (q.questionType === 'THEORY') {
+        return q;
+      }
+      const questionSeed = combinedSeed + q.id.split('').reduce(
+        (acc, char) => acc + char.charCodeAt(0), 0
+      );
+      const { question: shuffledQ, sessionCorrectAnswer } = examService.shuffleQuestionOptions(q, questionSeed);
+      return {
+        ...shuffledQ,
+        correctAnswer: sessionCorrectAnswer
+      };
+    });
+
+    res.json({ success: true, data: { attempt, questions: shuffledQuestions } });
   } catch (error) {
     next(error);
   }

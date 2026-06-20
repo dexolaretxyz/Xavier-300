@@ -94,13 +94,17 @@ async function main() {
         return {
           certificationId: certId,
           text: q.text,
-          options: q.options,
-          correctAnswer: q.correctAnswer,
-          explanation: q.explanation,
+          options: q.options || {},
+          correctAnswer: q.correctAnswer || '',
+          explanation: q.explanation || '',
           topic: q.topic,
           difficulty: q.difficulty || 'MEDIUM',
           source: 'ADMIN',
-          status: 'APPROVED'
+          status: 'APPROVED',
+          questionType: q.questionType || 'MCQ',
+          markingGuide: q.markingGuide || null,
+          imageUrl: q.imageUrl || null,
+          imageAlt: q.imageAlt || null
         };
       });
 
