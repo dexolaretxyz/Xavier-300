@@ -34,28 +34,37 @@ router.post('/signup', async (req: Request, res: Response): Promise<void> => {
     
     const existingUser = await prisma.user.findUnique({ where: { email: data.email } });
     if (existingUser) {
-      if (!existingUser.emailVerified) {
-        // User exists but never verified — resend a fresh OTP and redirect to verify
-        const otp = authService.generateOTP();
-        const otpExpiresAt = new Date(Date.now() + 15 * 60 * 1000);
-        await prisma.user.update({
-          where: { id: existingUser.id },
-          data: { verificationOTP: otp, otpExpiresAt }
-        });
-        // Fire and forget email dispatch to eliminate latency
-        authService.sendVerificationEmail(existingUser.email, otp).catch((e) => console.error('[EMAIL DISPATCH]', e));
-
-        res.status(409).json({
+      if (
+        !existingUser.emailVerified && 
+        existingUser.otpExpiresAt && 
+        new Date() > existingUser.otpExpiresAt &&
+        new Date().getTime() - existingUser.createdAt.getTime() 
+        > 24 * 60 * 60 * 1000
+      ) {
+        // Delete the stuck account and continue with signup
+        await prisma.user.delete({ where: { id: existingUser.id } });
+      } else if (!existingUser.emailVerified) {
+        res.status(400).json({
           success: false,
           error: {
-            code: 'EMAIL_UNVERIFIED',
-            message: 'This email is registered but not yet verified. We just sent you a fresh verification code.'
+            code: 'EMAIL_UNVERIFIED_EXISTS',
+            message: 'An account with this email exists but is not verified. Please check your email for the verification code.',
+            canResend: true,
+            email: data.email
+          }
+        });
+        return;
+      } else {
+        res.status(400).json({
+          success: false,
+          error: {
+            code: 'EMAIL_EXISTS',
+            message: 'An account with this email already exists. Please login instead.',
+            canLogin: true
           }
         });
         return;
       }
-      res.status(400).json({ success: false, error: { code: 'EMAIL_EXISTS', message: 'Email already registered' } });
-      return;
     }
 
     const passwordHash = await authService.hashPassword(data.password);
@@ -133,7 +142,20 @@ router.post('/login', async (req: Request, res: Response): Promise<void> => {
   try {
     const data = loginSchema.parse(req.body);
 
-    const user = await prisma.user.findUnique({ where: { email: data.email } });
+    const user = await prisma.user.findUnique({
+      where: { email: data.email },
+      select: {
+        id: true,
+        email: true,
+        passwordHash: true,
+        emailVerified: true,
+        role: true,
+        fullName: true,
+        subscriptionStatus: true,
+        trialStartedAt: true,
+        subscriptionEndsAt: true
+      }
+    });
     if (!user) {
       res.status(401).json({ success: false, error: { code: 'INVALID_CREDENTIALS', message: 'Invalid email or password' } });
       return;

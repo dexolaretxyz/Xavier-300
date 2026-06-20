@@ -8,6 +8,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Eye, EyeOff, Loader2 } from 'lucide-react';
 import { api } from '@/lib/api';
+import { toast } from 'sonner';
 
 const signupSchema = z.object({
   fullName: z.string().min(2, 'Full name must be at least 2 characters'),
@@ -67,13 +68,20 @@ export default function SignupPage() {
     } catch (error: any) {
       const errCode = error.response?.data?.error?.code;
       const errMsg = error.response?.data?.error?.message || 'An error occurred during signup. Please try again.';
-      if (errCode === 'EMAIL_UNVERIFIED') {
-        // Account exists but is unverified — backend already sent a fresh OTP
-        setApiError(errMsg);
+      
+      if (errCode === 'EMAIL_EXISTS') {
+        toast.error('Account already exists. Redirecting to login...');
+        setApiError('An account with this email already exists. Redirecting to login...');
+        setTimeout(() => {
+          router.push(`/login?email=${encodeURIComponent(data.email)}`);
+        }, 2000);
+      } else if (errCode === 'EMAIL_UNVERIFIED_EXISTS') {
+        toast.warning('Account exists but not verified.');
+        setApiError('An account with this email exists but is not verified. Redirecting to verification...');
         setUnverifiedRedirect(true);
         setTimeout(() => {
-          router.push(`/verify?email=${encodeURIComponent(data.email)}`);
-        }, 2500);
+          router.push(`/verify?email=${encodeURIComponent(data.email)}&resend=true`);
+        }, 2000);
       } else {
         setApiError(errMsg);
       }
@@ -253,13 +261,18 @@ export default function SignupPage() {
               Create Account
             </button>
 
-            <div className="text-center pt-4">
+            <div className="text-center pt-4 space-y-2">
               <p className="font-ui text-[var(--text-secondary)]">
                 Already have an account?{' '}
                 <Link href="/login" className="text-[var(--accent-primary)] font-medium hover:underline">
                   Sign in
                 </Link>
               </p>
+              <div className="pt-2">
+                <Link href="/account-help" className="text-sm font-ui text-[var(--accent-primary)] hover:underline font-medium">
+                  Having trouble? Get help →
+                </Link>
+              </div>
             </div>
           </form>
         </div>

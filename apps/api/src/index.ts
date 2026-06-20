@@ -13,6 +13,7 @@ import * as Sentry from '@sentry/node';
 import { nodeProfilingIntegration } from '@sentry/profiling-node';
 import cors from 'cors';
 import helmet from 'helmet';
+import compression from 'compression';
 import rateLimit from 'express-rate-limit';
 import { authRouter } from './routes/auth.routes';
 import domainRoutes from './routes/domain.routes';
@@ -45,6 +46,7 @@ initLeaderboardJob();
 initDailyResetJob();
 
 // Middleware
+app.use(compression());
 app.use(helmet());
 app.use(cors({ origin: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000', credentials: true }));
 app.use(express.json({
@@ -55,7 +57,7 @@ app.use(express.json({
 
 const authLimiter = rateLimit({
   windowMs: 1 * 60 * 1000,
-  max: 10,
+  max: process.env.NODE_ENV === 'production' ? 10 : 100,
   message: { success: false, error: { code: 'RATE_LIMIT_EXCEEDED', message: 'Too many requests to auth endpoints. Please try again later.' } }
 });
 

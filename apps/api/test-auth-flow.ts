@@ -66,12 +66,12 @@ async function runTest() {
   if (otp) { console.log('   ✅ PASS\n'); passed++; }
   else { console.log('   ❌ FAIL — no OTP\n'); failed++; return; }
 
-  // ── STEP 4: Signup again (expect EMAIL_UNVERIFIED + fresh OTP) ──
-  console.log('── STEP 4: Signup again with same email (expect EMAIL_UNVERIFIED) ──');
+  // ── STEP 4: Signup again (expect EMAIL_UNVERIFIED_EXISTS + fresh OTP) ──
+  console.log('── STEP 4: Signup again with same email (expect EMAIL_UNVERIFIED_EXISTS) ──');
   const signupAgain = await apiCall('/signup', TEST_DATA);
   console.log(`   Status: ${signupAgain.status} | Code: ${signupAgain.data?.error?.code}`);
   console.log(`   Message: ${signupAgain.data?.error?.message}`);
-  if (signupAgain.data?.error?.code === 'EMAIL_UNVERIFIED') { console.log('   ✅ PASS\n'); passed++; }
+  if (signupAgain.data?.error?.code === 'EMAIL_UNVERIFIED_EXISTS') { console.log('   ✅ PASS\n'); passed++; }
   else { console.log('   ❌ FAIL\n'); failed++; }
 
   // ── STEP 5: Verify new OTP was generated ──

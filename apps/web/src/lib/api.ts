@@ -4,6 +4,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
 
 export const api = axios.create({
   baseURL: API_URL,
+  timeout: 15000, // 15 second timeout
   headers: {
     'Content-Type': 'application/json',
   },
@@ -39,6 +40,19 @@ const processQueue = (error: any, token: string | null = null) => {
 api.interceptors.response.use(
   (response) => response,
   async (error) => {
+    if (error.code === 'ECONNABORTED') {
+      return Promise.reject({
+        response: {
+          data: {
+            error: {
+              code: 'TIMEOUT',
+              message: 'Request timed out. Please check your connection and try again.'
+            }
+          }
+        }
+      });
+    }
+
     const originalRequest = error.config;
 
     // Handle Subscription Hard Locks (403)

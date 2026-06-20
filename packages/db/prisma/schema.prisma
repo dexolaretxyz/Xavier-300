@@ -39,6 +39,10 @@ model User {
   weeklyScore       WeeklyScore?
   leaderboardWins   LeaderboardArchive[]
   ticketMessages    TicketMessage[]
+
+  @@index([email])
+  @@index([subscriptionStatus])
+  @@index([createdAt])
 }
 
 enum Role {

@@ -1,14 +1,15 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Eye, EyeOff, Loader2, Mail, RefreshCw } from 'lucide-react';
+import { Eye, EyeOff, Loader2 } from 'lucide-react';
 import { useAuthStore } from '@/store/auth.store';
 import { api } from '@/lib/api';
+import { toast } from 'sonner';
 
 const loginSchema = z.object({
   email: z.string().email('Invalid email address'),
@@ -17,38 +18,59 @@ const loginSchema = z.object({
 
 type LoginForm = z.infer<typeof loginSchema>;
 
-export default function LoginPage() {
+function LoginContent() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const emailFromParams = searchParams.get('email');
   const login = useAuthStore((state) => state.login);
   const [showPassword, setShowPassword] = useState(false);
   const [apiError, setApiError] = useState('');
-  const [unverifiedEmail, setUnverifiedEmail] = useState('');
-  const [resendStatus, setResendStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
+  
+  const [authError, setAuthError] = useState<{ type: string; message: string; email: string } | null>(null);
+  const [resendLoading, setResendLoading] = useState(false);
+  const [resendCooldown, setResendCooldown] = useState(0);
 
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<LoginForm>({
-    resolver: zodResolver(loginSchema)
+    resolver: zodResolver(loginSchema),
+    defaultValues: {
+      email: emailFromParams || '',
+      password: ''
+    }
   });
 
-  const handleResendVerification = async () => {
-    if (!unverifiedEmail || resendStatus === 'sending') return;
-    setResendStatus('sending');
-    try {
-      await api.post('/api/auth/resend-otp', { email: unverifiedEmail });
-      setResendStatus('sent');
-      // After success, redirect to the verification page after a short delay
-      setTimeout(() => {
-        router.push(`/verify?email=${encodeURIComponent(unverifiedEmail)}`);
-      }, 1500);
-    } catch (err: any) {
-      setApiError(err.response?.data?.error?.message || 'Failed to resend verification email.');
-      setResendStatus('idle');
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (resendCooldown > 0) {
+      interval = setInterval(() => {
+        setResendCooldown((prev) => {
+          if (prev <= 1) {
+            clearInterval(interval);
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
     }
-  };
+    return () => clearInterval(interval);
+  }, [resendCooldown]);
+
+  async function handleResendOTP(email: string) {
+    setResendLoading(true);
+    try {
+      await api.post('/api/auth/resend-otp', { email });
+      toast.success('Verification email sent! Check your inbox.');
+      setResendCooldown(60);
+      router.push(`/verify?email=${encodeURIComponent(email)}`);
+    } catch (error) {
+      toast.error('Failed to send email. Please try again.');
+    } finally {
+      setResendLoading(false);
+    }
+  }
 
   const onSubmit = async (data: LoginForm) => {
     setApiError('');
-    setUnverifiedEmail('');
-    setResendStatus('idle');
+    setAuthError(null);
     try {
       await login(data);
       router.push('/dashboard');
@@ -56,8 +78,11 @@ export default function LoginPage() {
       const errCode = error.response?.data?.error?.code;
       const errMsg = error.response?.data?.error?.message || 'An error occurred during login. Please try again.';
       if (errCode === 'UNVERIFIED_EMAIL') {
-        setUnverifiedEmail(data.email);
-        setApiError('Your email has not been verified yet. Please verify your email to continue.');
+        setAuthError({
+          type: 'unverified',
+          message: 'Your email is not verified yet.',
+          email: data.email
+        });
       } else {
         setApiError(errMsg);
       }
@@ -100,36 +125,59 @@ export default function LoginPage() {
           </div>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+            {emailFromParams && !authError && !apiError && (
+              <p className="text-sm text-[var(--accent-primary)] font-ui mb-4 text-left">
+                👋 Welcome! Please log in with your existing account.
+              </p>
+            )}
+
             {apiError && (
-              <div className="p-4 rounded-xl bg-[var(--error-light)] text-[var(--error)] text-sm border border-[var(--error)]/20">
-                <p>{apiError}</p>
-                {unverifiedEmail && (
-                  <div className="mt-3 pt-3 border-t border-[var(--error)]/10">
-                    {resendStatus === 'sent' ? (
-                      <div className="flex items-center gap-2 text-green-600 font-medium">
-                        <Mail size={16} />
-                        <span>Verification code sent! Redirecting...</span>
-                      </div>
-                    ) : (
-                      <button
-                        type="button"
-                        onClick={handleResendVerification}
-                        disabled={resendStatus === 'sending'}
-                        className="flex items-center gap-2 font-medium text-[var(--accent-primary)] hover:underline disabled:opacity-50 transition-all"
-                      >
-                        {resendStatus === 'sending' ? (
-                          <><Loader2 size={16} className="animate-spin" /> Sending...</>
-                        ) : (
-                          <><RefreshCw size={16} /> Resend Verification Email</>
-                        )}
-                      </button>
-                    )}
-                  </div>
-                )}
+              <div className="p-4 rounded-xl bg-[var(--error-light)] text-[var(--error)] text-sm border border-[var(--error)]/20 text-left">
+                {apiError}
               </div>
             )}
 
-            <div className="space-y-2">
+            {authError?.type === 'unverified' && (
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mt-4 text-left">
+                <p className="text-amber-800 font-ui text-sm font-medium mb-1">
+                  ⚠️ Email Not Verified
+                </p>
+                <p className="text-amber-700 font-ui text-sm mb-3">
+                  You signed up but haven't verified your email yet.
+                  Check your inbox for the verification code, or 
+                  click below to get a new one.
+                </p>
+                <div className="flex gap-3">
+                  <button
+                    type="button"
+                    onClick={() => handleResendOTP(authError.email)}
+                    disabled={resendLoading || resendCooldown > 0}
+                    className="px-4 py-2 rounded-full bg-amber-600 text-white 
+                               text-sm font-ui font-medium hover:bg-amber-700
+                               disabled:opacity-60 transition-all"
+                  >
+                    {resendLoading 
+                      ? 'Sending...' 
+                      : resendCooldown > 0 
+                      ? `Resend in ${resendCooldown}s`
+                      : 'Resend Verification Email'}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => router.push(
+                      `/verify?email=${encodeURIComponent(authError.email)}`
+                    )}
+                    className="px-4 py-2 rounded-full border border-amber-300 
+                               text-amber-700 text-sm font-ui font-medium 
+                               hover:bg-amber-50 transition-all"
+                  >
+                    Enter Code Manually
+                  </button>
+                </div>
+              </div>
+            )}
+
+            <div className="space-y-2 text-left">
               <label htmlFor="email" className="block font-ui text-[var(--text-primary)] font-medium">Email</label>
               <input 
                 id="email" 
@@ -141,7 +189,7 @@ export default function LoginPage() {
               {errors.email && <p className="text-[var(--error)] text-sm mt-1">{errors.email.message}</p>}
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-2 text-left">
               <div className="flex items-center justify-between">
                 <label htmlFor="password" className="block font-ui text-[var(--text-primary)] font-medium">Password</label>
               </div>
@@ -158,7 +206,7 @@ export default function LoginPage() {
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-4 top-1/2 -translate-y-1/2 text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
                 >
-                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                  {showPassword ? <Loader2 className="w-5 h-5 animate-spin" /> : <Eye size={20} />}
                 </button>
               </div>
               {errors.password && <p className="text-[var(--error)] text-sm mt-1">{errors.password.message}</p>}
@@ -173,10 +221,16 @@ export default function LoginPage() {
             <button 
               type="submit" 
               disabled={isSubmitting}
-              className="w-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white rounded-[100px] py-[14px] font-ui font-medium text-[16px] transition-colors mt-[32px] flex items-center justify-center"
+              className="w-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white rounded-[100px] py-[14px] font-ui font-medium text-[16px] transition-all mt-[32px] flex items-center justify-center gap-2 disabled:opacity-70"
             >
-              {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin mr-2" /> : null}
-              Sign In
+              {isSubmitting ? (
+                <>
+                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  <span>Signing you in...</span>
+                </>
+              ) : (
+                'Sign In'
+              )}
             </button>
 
             <div className="relative flex items-center py-4">
@@ -185,17 +239,34 @@ export default function LoginPage() {
               <div className="flex-grow border-t border-[var(--border-medium)]"></div>
             </div>
 
-            <div className="text-center">
+            <div className="text-center space-y-2">
               <p className="font-ui text-[var(--text-secondary)]">
                 Don't have an account?{' '}
                 <Link href="/signup" className="text-[var(--accent-primary)] font-medium hover:underline">
                   Sign up
                 </Link>
               </p>
+              <div className="pt-2">
+                <Link href="/account-help" className="text-sm font-ui text-[var(--accent-primary)] hover:underline font-medium">
+                  Having trouble? Get help →
+                </Link>
+              </div>
             </div>
           </form>
         </div>
       </div>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600" />
+      </div>
+    }>
+      <LoginContent />
+    </Suspense>
   );
 }
