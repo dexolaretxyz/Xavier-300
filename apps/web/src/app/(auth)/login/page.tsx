@@ -144,30 +144,26 @@ function LoginContent() {
                 </p>
                 <p className="text-amber-700 font-ui text-sm mb-3">
                   You signed up but haven't verified your email yet.
-                  Check your inbox for the verification code, or 
-                  click below to get a new one.
                 </p>
-                <div className="flex gap-3">
+                <div className="flex flex-col gap-2">
                   <button
                     type="button"
                     onClick={() => handleResendOTP(authError.email)}
                     disabled={resendLoading || resendCooldown > 0}
-                    className="px-4 py-2 rounded-full bg-amber-600 text-white 
-                               text-sm font-ui font-medium hover:bg-amber-700
-                               disabled:opacity-60 transition-all"
+                    className="text-amber-600 hover:text-amber-800 text-sm font-ui font-medium text-left underline disabled:no-underline disabled:opacity-60 transition-all"
                   >
                     {resendLoading 
                       ? 'Sending...' 
                       : resendCooldown > 0 
                       ? `Resend in ${resendCooldown}s`
-                      : 'Resend Verification Email'}
+                      : "Didn't receive the email? Click here to resend"}
                   </button>
                   <button
                     type="button"
                     onClick={() => router.push(
                       `/verify?email=${encodeURIComponent(authError.email)}`
                     )}
-                    className="px-4 py-2 rounded-full border border-amber-300 
+                    className="w-full mt-2 text-center px-4 py-2 rounded-full border border-amber-300 
                                text-amber-700 text-sm font-ui font-medium 
                                hover:bg-amber-50 transition-all"
                   >

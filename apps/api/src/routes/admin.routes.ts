@@ -201,6 +201,40 @@ router.patch('/users/:id/verify-manually', async (req: any, res: any) => {
   }
 });
 
+/**
+ * GET /api/admin/users/:email/otp
+ */
+router.get('/users/:email/otp', async (req: any, res: any) => {
+  try {
+    const { email } = req.params;
+
+    const user = await prisma.user.findUnique({
+      where: { email },
+      select: {
+        email: true,
+        verificationOTP: true,
+        otpExpiresAt: true
+      }
+    });
+
+    if (!user) {
+      return res.status(404).json({ success: false, error: { message: 'User not found' } });
+    }
+
+    return res.json({
+      success: true,
+      data: {
+        email: user.email,
+        verificationOTP: user.verificationOTP,
+        otpExpiresAt: user.otpExpiresAt
+      }
+    });
+  } catch (error) {
+    console.error('Admin get user OTP error:', error);
+    return res.status(500).json({ success: false, error: { message: 'Internal server error' } });
+  }
+});
+
 // ==========================================
 // 3. PLATFORM ANALYTICS (STATS)
 // ==========================================

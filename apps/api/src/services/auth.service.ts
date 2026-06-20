@@ -9,26 +9,25 @@ const JWT_SECRET = process.env.JWT_SECRET || 'fallback_secret_do_not_use_in_prod
 const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET || 'fallback_refresh_do_not_use_in_prod';
 
 // ---------------------------------------------------------------------------
-// Email transport — Gmail SMTP (no domain needed, just Gmail + App Password)
+// Email transport — Gmail SMTP / General SMTP support
 // ---------------------------------------------------------------------------
-// ---------------------------------------------------------------------------
-// Email transport — Gmail SMTP (no domain needed, just Gmail + App Password)
-// ---------------------------------------------------------------------------
-const gmailUser = process.env.GMAIL_USER;
-const gmailPass = process.env.GMAIL_APP_PASSWORD;
+const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com';
+const smtpPort = parseInt(process.env.SMTP_PORT || '465', 10);
+const smtpUser = process.env.SMTP_USER || process.env.GMAIL_USER;
+const smtpPass = process.env.SMTP_PASS || process.env.GMAIL_APP_PASSWORD;
 
-if (!gmailUser || !gmailPass) {
-  console.warn('[EMAIL] GMAIL_USER or GMAIL_APP_PASSWORD not set — emails will not be sent.');
+if (!smtpUser || !smtpPass) {
+  console.warn('[EMAIL] GMAIL_USER/SMTP_USER or GMAIL_APP_PASSWORD/SMTP_PASS not set — emails will not be sent.');
 }
 
-const transporter = (gmailUser && gmailPass)
+const transporter = (smtpUser && smtpPass)
   ? nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 465,
-      secure: true,
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpPort === 465,
       auth: {
-        user: gmailUser,
-        pass: gmailPass,
+        user: smtpUser,
+        pass: smtpPass,
       },
       connectionTimeout: 10000, // 10 seconds max timeout
       greetingTimeout: 10000,
@@ -61,10 +60,13 @@ function buildEmailHtml(title: string, bodyHtml: string): string {
 }
 
 export async function sendVerificationEmail(email: string, otp: string) {
-  const fromEmail = process.env.GMAIL_USER || 'no-reply@xavier300';
+  const fromEmail = smtpUser || 'no-reply@xavier300';
+
+  console.log(`Attempting to send OTP via Nodemailer to: ${email}`);
+  console.log(`SMTP User present: ${!!smtpUser}`);
 
   if (!transporter) {
-    console.warn(`[EMAIL SKIP] Gmail not configured. OTP for ${email} is: ${otp}`);
+    console.warn(`[EMAIL SKIP] Gmail/SMTP not configured. OTP for ${email} is: ${otp}`);
     return;
   }
 
@@ -91,6 +93,7 @@ export async function sendVerificationEmail(email: string, otp: string) {
       subject: 'Your Xavier 300 Verification Code',
       html,
     });
+    console.log(`SUCCESS — Message ID: ${info.messageId}`);
     console.log(`[EMAIL OK] OTP sent to ${email}. Message ID: ${info.messageId}`);
   } catch (error: any) {
     console.error(`[EMAIL ERROR] Failed to send OTP to ${email}:`, error?.message || error);
@@ -99,7 +102,7 @@ export async function sendVerificationEmail(email: string, otp: string) {
 }
 
 export async function sendPasswordResetEmail(email: string, token: string) {
-  const fromEmail = process.env.GMAIL_USER || 'no-reply@xavier300';
+  const fromEmail = smtpUser || 'no-reply@xavier300';
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://xavier-300.vercel.app';
   const resetLink = `${appUrl}/reset-password?token=${token}`;
 

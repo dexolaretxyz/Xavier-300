@@ -92,8 +92,9 @@ app.use((err: any, req: any, res: any, next: any) => {
 });
 
 if (require.main === module) {
-  app.listen(PORT, () => {
-    console.log(`Xavier 300 API running on port ${PORT}`);
+  const serverPort = typeof PORT === 'string' ? parseInt(PORT, 10) : PORT;
+  app.listen(serverPort, '0.0.0.0', () => {
+    console.log(`Xavier 300 API running on port ${serverPort} and bound to 0.0.0.0`);
     // Initialize node-cron jobs
     initLeaderboardJob();
     initDailyResetJob();

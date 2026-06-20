@@ -40,15 +40,90 @@ router.get('/attempts/today', authenticate, async (req: express.Request, res, ne
 router.post('/start', authenticate, async (req: express.Request, res, next) => {
   const authReq = req as AuthRequest;
   try {
-    const { certId } = z.object({ certId: z.string() }).parse(req.body);
+    const { certId, certificationId, slug } = z.object({
+      certId: z.string().optional(),
+      certificationId: z.string().optional(),
+      slug: z.string().optional(),
+    }).parse(req.body);
+
     const userId = authReq.user!.userId;
+    const lookupId = certId || certificationId;
+
+    if (!lookupId && !slug) {
+      return res.status(400).json({ success: false, error: { code: 'BAD_REQUEST', message: 'certId, certificationId, or slug is required' } });
+    }
+
+    // Get Certification config
+    const cert = await prisma.certification.findFirst({
+      where: lookupId ? { id: lookupId } : { slug }
+    });
+    if (!cert) {
+      return res.status(404).json({ success: false, error: { code: 'NOT_FOUND', message: 'Certification not found' } });
+    }
+
+    const resolvedCertId = cert.id;
+
+    // Check for existing active attempt (IN_PROGRESS) for this user and certification
+    const activeAttempt = await prisma.examAttempt.findFirst({
+      where: {
+        userId,
+        certificationId: resolvedCertId,
+        status: 'IN_PROGRESS'
+      },
+      orderBy: { startedAt: 'desc' }
+    });
+
+    if (activeAttempt) {
+      // Calculate remaining time
+      const elapsedSeconds = Math.floor((Date.now() - activeAttempt.startedAt.getTime()) / 1000);
+      const totalDurationSeconds = cert.examDuration * 60;
+      const timeRemaining = Math.max(0, totalDurationSeconds - elapsedSeconds);
+
+      // Recreate the questions using the original start time
+      let dailyResult;
+      try {
+        dailyResult = await examService.getDailyQuestionsForUser(resolvedCertId, userId, cert.questionCount, activeAttempt.startedAt);
+      } catch (err: any) {
+        return res.status(400).json({ success: false, error: { code: 'NOT_ENOUGH_QUESTIONS', message: err.message } });
+      }
+
+      const { questions } = dailyResult;
+
+      const clientQuestions = questions.map((q: any) => ({
+        id: q.id,
+        text: q.text,
+        options: q.options as any,
+        questionType: q.questionType || 'MCQ',
+        imageUrl: q.imageUrl || null,
+        imageAlt: q.imageAlt || null,
+      }));
+
+      const sessionToken = examService.generateSessionToken(activeAttempt.id, userId);
+      const questionType = questions[0]?.questionType || 'MCQ';
+
+      return res.json({
+        success: true,
+        data: {
+          attemptId: activeAttempt.id,
+          sessionToken,
+          questionType,
+          questions: clientQuestions,
+          examDuration: cert.examDuration,
+          duration: cert.examDuration,
+          timeRemaining,
+          isResumed: true,
+          answers: activeAttempt.answers || {},
+          theoryAnswers: activeAttempt.theoryAnswers || {}
+        }
+      });
+    }
 
     // 1. Validate attempt limit
     const now = new Date();
     const attemptsToday = await prisma.examAttempt.count({
       where: {
         userId,
-        certificationId: certId,
+        certificationId: resolvedCertId,
         startedAt: { gte: startOfDay(now), lte: endOfDay(now) }
       }
     });
@@ -57,18 +132,12 @@ router.post('/start', authenticate, async (req: express.Request, res, next) => {
       return res.status(403).json({ success: false, error: { code: 'LIMIT_REACHED', message: 'Daily attempt limit (3) reached for this certification.' } });
     }
 
-    // 2. Get Certification config
-    const cert = await prisma.certification.findUnique({ where: { id: certId } });
-    if (!cert) {
-      return res.status(404).json({ success: false, error: { code: 'NOT_FOUND', message: 'Certification not found' } });
-    }
-
     const startedAt = new Date();
 
     // 3. Get shuffled questions + session answer keys
     let dailyResult;
     try {
-      dailyResult = await examService.getDailyQuestionsForUser(certId, userId, cert.questionCount, startedAt);
+      dailyResult = await examService.getDailyQuestionsForUser(resolvedCertId, userId, cert.questionCount, startedAt);
     } catch (err: any) {
       return res.status(400).json({ success: false, error: { code: 'NOT_ENOUGH_QUESTIONS', message: err.message } });
     }
@@ -83,14 +152,13 @@ router.post('/start', authenticate, async (req: express.Request, res, next) => {
       questionType: q.questionType || 'MCQ',
       imageUrl: q.imageUrl || null,
       imageAlt: q.imageAlt || null,
-      // No correctAnswer or explanation sent to client!
     }));
 
     // 5. Create ExamAttempt record
     const attempt = await prisma.examAttempt.create({
       data: {
         userId,
-        certificationId: certId,
+        certificationId: resolvedCertId,
         totalQuestions: questions.length,
         attemptNumber: attemptsToday + 1,
         answers: {}, // Empty JSON
@@ -115,7 +183,8 @@ router.post('/start', authenticate, async (req: express.Request, res, next) => {
         sessionToken,
         questionType,
         questions: clientQuestions,
-        examDuration: cert.examDuration
+        examDuration: cert.examDuration,
+        duration: cert.examDuration
       }
     });
   } catch (error) {
@@ -128,17 +197,21 @@ router.post('/:id/submit', authenticate, async (req: express.Request, res, next)
   const authReq = req as AuthRequest;
   try {
     const attemptId = req.params.id as string;
-    const { sessionToken, answers, timeTaken, integrityFlag } = z.object({
-      sessionToken: z.string(),
-      answers: z.record(z.string(), z.string()),
+    const { sessionToken, answers, theoryAnswers, examType, timeTaken, integrityFlag } = z.object({
+      sessionToken: z.string().optional(),
+      answers: z.record(z.string(), z.string()).optional(),
+      theoryAnswers: z.record(z.string(), z.string()).optional(),
+      examType: z.enum(['MCQ', 'THEORY', 'PRACTICAL']).optional(),
       timeTaken: z.number(),
       integrityFlag: z.boolean().default(false)
     }).parse(req.body);
 
-    // 1. Verify token
-    const decoded = examService.verifySessionToken(sessionToken);
-    if (!decoded || decoded.attemptId !== attemptId || decoded.userId !== authReq.user!.userId) {
-      return res.status(401).json({ success: false, error: { code: 'UNAUTHORIZED', message: 'Invalid or expired session token' } });
+    // 1. Verify token if provided
+    if (sessionToken) {
+      const decoded = examService.verifySessionToken(sessionToken);
+      if (!decoded || decoded.attemptId !== attemptId || decoded.userId !== authReq.user!.userId) {
+        return res.status(401).json({ success: false, error: { code: 'UNAUTHORIZED', message: 'Invalid or expired session token' } });
+      }
     }
 
     // 2. Fetch attempt and original questions
@@ -151,10 +224,72 @@ router.post('/:id/submit', authenticate, async (req: express.Request, res, next)
       return res.status(400).json({ success: false, error: { code: 'INVALID_STATE', message: 'Exam is not in progress' } });
     }
 
-    const questionIds = Object.keys(answers);
+    if (attempt.userId !== authReq.user!.userId) {
+      return res.status(403).json({ success: false, error: { code: 'FORBIDDEN', message: 'Access denied' } });
+    }
+
+    const resolvedAnswers = answers || theoryAnswers || {};
+    const questionIds = Object.keys(resolvedAnswers);
     const questions = await prisma.question.findMany({
       where: { id: { in: questionIds } }
     });
+
+    const isTheory = examType === 'THEORY' || 
+                     attempt.certification.slug.includes('essay') || 
+                     attempt.certification.slug.includes('theory') ||
+                     questions.some(q => q.questionType === 'THEORY');
+
+    if (isTheory) {
+      // Handle theory submission
+      const updatedAttempt = await prisma.examAttempt.update({
+        where: { id: attemptId },
+        data: {
+          status: integrityFlag ? 'INTEGRITY_VIOLATION' : 'COMPLETED',
+          completedAt: new Date(),
+          timeTaken,
+          theoryAnswers: resolvedAnswers as any,
+          answers: resolvedAnswers as any, // Store in answers too for compatibility
+          score: 0, // Will be updated once AI marks
+          correctAnswers: 0,
+          integrityFlag,
+          totalQuestions: questions.length,
+          theoryScores: [] // Will be filled by AI
+        }
+      });
+
+      // Trigger AI marking asynchronously
+      if (!integrityFlag) {
+        aiService.markTheoryAnswers(questions, resolvedAnswers)
+          .then(async (scores) => {
+            const totalScore = scores.reduce((sum, s) => sum + s.score, 0);
+            const maxPossible = scores.reduce((sum, s) => sum + s.maxScore, 0);
+            const percentage = maxPossible > 0 ? (totalScore / maxPossible) * 100 : 0;
+
+            const theoryScoresMap = scores.reduce((acc, s) => {
+              acc[s.questionId] = {
+                score: s.score,
+                maxScore: s.maxScore,
+                feedback: s.feedback,
+                pointsCovered: s.pointsCovered,
+                pointsMissed: s.pointsMissed
+              };
+              return acc;
+            }, {} as Record<string, any>);
+
+            await prisma.examAttempt.update({
+              where: { id: attemptId },
+              data: {
+                theoryScores: theoryScoresMap as any,
+                score: Math.round(percentage),
+                correctAnswers: scores.filter(s => s.score >= 7).length
+              }
+            });
+          })
+          .catch(console.error);
+      }
+
+      return res.json({ success: true, data: { attemptId: updatedAttempt.id, marking: 'pending' } });
+    }
 
     // 3. Reconstruct session answer keys deterministically using start time
     const dailySeed = examService.getDailySeed(attempt.startedAt);
@@ -173,7 +308,8 @@ router.post('/:id/submit', authenticate, async (req: express.Request, res, next)
       };
     });
 
-    const results = examService.calculateResults(answers, sessionKeys, questions);
+    const mcqAnswers = answers || {};
+    const results = examService.calculateResults(mcqAnswers, sessionKeys, questions);
 
     // 4. Save initial results (without AI recommendations)
     const updatedAttempt = await prisma.examAttempt.update({
@@ -184,7 +320,7 @@ router.post('/:id/submit', authenticate, async (req: express.Request, res, next)
         timeTaken,
         score: results.score,
         correctAnswers: results.correctAnswers,
-        answers,
+        answers: mcqAnswers,
         integrityFlag,
         weakTopics: results.weakTopics,
         aiRecommendations: []
@@ -398,6 +534,42 @@ router.get('/:id/results', authenticate, async (req: express.Request, res, next)
     });
 
     res.json({ success: true, data: { attempt, questions: shuffledQuestions } });
+  } catch (error) {
+    next(error);
+  }
+});
+
+// GET /exams/:id/theory-results - Get theory exam results
+router.get('/:id/theory-results', authenticate, async (req: express.Request, res, next) => {
+  const authReq = req as AuthRequest;
+  try {
+    const attemptId = req.params.id as string;
+
+    const attempt = await prisma.examAttempt.findUnique({
+      where: { id: attemptId },
+      include: { certification: true }
+    });
+
+    if (!attempt) {
+      return res.status(404).json({ success: false, error: { code: 'NOT_FOUND', message: 'Attempt not found' } });
+    }
+
+    if (attempt.userId !== authReq.user!.userId && authReq.user!.role !== 'ADMIN') {
+      return res.status(403).json({ success: false, error: { code: 'FORBIDDEN', message: 'Access denied' } });
+    }
+
+    if (attempt.status === 'IN_PROGRESS') {
+      return res.status(400).json({ success: false, error: { code: 'INVALID_STATE', message: 'Exam not completed yet' } });
+    }
+
+    const theoryAnswers = attempt.theoryAnswers as Record<string, string> || {};
+    const questionIds = Object.keys(theoryAnswers);
+
+    const questions = await prisma.question.findMany({
+      where: { id: { in: questionIds } }
+    });
+
+    res.json({ success: true, data: { attempt, questions } });
   } catch (error) {
     next(error);
   }
