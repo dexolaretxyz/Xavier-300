@@ -34,6 +34,26 @@ router.post('/signup', async (req: Request, res: Response): Promise<void> => {
     
     const existingUser = await prisma.user.findUnique({ where: { email: data.email } });
     if (existingUser) {
+      if (!existingUser.emailVerified) {
+        // User exists but never verified — resend a fresh OTP and redirect to verify
+        const otp = authService.generateOTP();
+        const otpExpiresAt = new Date(Date.now() + 15 * 60 * 1000);
+        await prisma.user.update({
+          where: { id: existingUser.id },
+          data: { verificationOTP: otp, otpExpiresAt }
+        });
+        // Fire and forget email dispatch to eliminate latency
+        authService.sendVerificationEmail(existingUser.email, otp).catch((e) => console.error('[EMAIL DISPATCH]', e));
+
+        res.status(409).json({
+          success: false,
+          error: {
+            code: 'EMAIL_UNVERIFIED',
+            message: 'This email is registered but not yet verified. We just sent you a fresh verification code.'
+          }
+        });
+        return;
+      }
       res.status(400).json({ success: false, error: { code: 'EMAIL_EXISTS', message: 'Email already registered' } });
       return;
     }
@@ -56,10 +76,12 @@ router.post('/signup', async (req: Request, res: Response): Promise<void> => {
       }
     });
 
-    await authService.sendVerificationEmail(user.email, otp);
+    // Fire and forget email dispatch to eliminate latency
+    authService.sendVerificationEmail(user.email, otp).catch((e) => console.error('[EMAIL DISPATCH]', e));
 
     res.status(201).json({ success: true, message: 'User created. Please check your email for OTP.' });
   } catch (error: any) {
+    console.error('[SIGNUP ERROR]', error);
     if (error instanceof z.ZodError) {
       res.status(400).json({ success: false, error: { code: 'VALIDATION_ERROR', message: (error as any).errors } });
     } else {
@@ -174,7 +196,8 @@ router.post('/resend-otp', async (req: Request, res: Response): Promise<void> =>
       data: { verificationOTP: otp, otpExpiresAt }
     });
 
-    await authService.sendVerificationEmail(user.email, otp);
+    // Fire and forget email dispatch
+    authService.sendVerificationEmail(user.email, otp).catch((e) => console.error('[EMAIL DISPATCH]', e));
 
     res.json({ success: true, message: 'OTP resent successfully' });
   } catch (error: any) {
@@ -189,7 +212,8 @@ router.post('/forgot-password', async (req: Request, res: Response): Promise<voi
     
     if (user) {
       const resetToken = jwt.sign({ userId: user.id }, process.env.JWT_SECRET || 'fallback_secret', { expiresIn: '1h' });
-      await authService.sendPasswordResetEmail(user.email, resetToken);
+      // Fire and forget password reset email
+      authService.sendPasswordResetEmail(user.email, resetToken).catch((e) => console.error('[EMAIL DISPATCH]', e));
     }
 
     // Always return success to prevent email enumeration

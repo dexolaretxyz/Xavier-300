@@ -3,9 +3,12 @@ import prisma from '../lib/db';
 import { notificationService } from '../services/notification.service';
 import IORedis from 'ioredis';
 
-const hasRedis = !!process.env.REDIS_URL;
+const isLocal = !process.env.RAILWAY_ENVIRONMENT && !process.env.RAILWAY_STATIC_URL;
+const isInternalRedis = process.env.REDIS_URL?.includes('railway.internal');
+const redisUrl = (process.env.REDIS_URL && !(isLocal && isInternalRedis)) ? process.env.REDIS_URL : undefined;
+const hasRedis = !!redisUrl;
 
-const connection = hasRedis ? new IORedis(process.env.REDIS_URL as string, {
+const connection = hasRedis ? new IORedis(redisUrl as string, {
   maxRetriesPerRequest: null,
   retryStrategy: (times) => {
     if (times > 3) return null; // Stop retrying after 3 attempts

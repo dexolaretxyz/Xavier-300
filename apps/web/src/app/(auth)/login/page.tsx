@@ -6,8 +6,9 @@ import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Eye, EyeOff, Loader2 } from 'lucide-react';
+import { Eye, EyeOff, Loader2, Mail, RefreshCw } from 'lucide-react';
 import { useAuthStore } from '@/store/auth.store';
+import { api } from '@/lib/api';
 
 const loginSchema = z.object({
   email: z.string().email('Invalid email address'),
@@ -21,13 +22,33 @@ export default function LoginPage() {
   const login = useAuthStore((state) => state.login);
   const [showPassword, setShowPassword] = useState(false);
   const [apiError, setApiError] = useState('');
+  const [unverifiedEmail, setUnverifiedEmail] = useState('');
+  const [resendStatus, setResendStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
 
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<LoginForm>({
     resolver: zodResolver(loginSchema)
   });
 
+  const handleResendVerification = async () => {
+    if (!unverifiedEmail || resendStatus === 'sending') return;
+    setResendStatus('sending');
+    try {
+      await api.post('/api/auth/resend-otp', { email: unverifiedEmail });
+      setResendStatus('sent');
+      // After success, redirect to the verification page after a short delay
+      setTimeout(() => {
+        router.push(`/verify?email=${encodeURIComponent(unverifiedEmail)}`);
+      }, 1500);
+    } catch (err: any) {
+      setApiError(err.response?.data?.error?.message || 'Failed to resend verification email.');
+      setResendStatus('idle');
+    }
+  };
+
   const onSubmit = async (data: LoginForm) => {
     setApiError('');
+    setUnverifiedEmail('');
+    setResendStatus('idle');
     try {
       await login(data);
       router.push('/dashboard');
@@ -35,7 +56,8 @@ export default function LoginPage() {
       const errCode = error.response?.data?.error?.code;
       const errMsg = error.response?.data?.error?.message || 'An error occurred during login. Please try again.';
       if (errCode === 'UNVERIFIED_EMAIL') {
-        router.push(`/verify?email=${encodeURIComponent(data.email)}`);
+        setUnverifiedEmail(data.email);
+        setApiError('Your email has not been verified yet. Please verify your email to continue.');
       } else {
         setApiError(errMsg);
       }
@@ -80,7 +102,30 @@ export default function LoginPage() {
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
             {apiError && (
               <div className="p-4 rounded-xl bg-[var(--error-light)] text-[var(--error)] text-sm border border-[var(--error)]/20">
-                {apiError}
+                <p>{apiError}</p>
+                {unverifiedEmail && (
+                  <div className="mt-3 pt-3 border-t border-[var(--error)]/10">
+                    {resendStatus === 'sent' ? (
+                      <div className="flex items-center gap-2 text-green-600 font-medium">
+                        <Mail size={16} />
+                        <span>Verification code sent! Redirecting...</span>
+                      </div>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={handleResendVerification}
+                        disabled={resendStatus === 'sending'}
+                        className="flex items-center gap-2 font-medium text-[var(--accent-primary)] hover:underline disabled:opacity-50 transition-all"
+                      >
+                        {resendStatus === 'sending' ? (
+                          <><Loader2 size={16} className="animate-spin" /> Sending...</>
+                        ) : (
+                          <><RefreshCw size={16} /> Resend Verification Email</>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                )}
               </div>
             )}
 

@@ -1,6 +1,8 @@
 import IORedis from 'ioredis';
 
-const redisUrl = process.env.REDIS_URL;
+const isLocal = !process.env.RAILWAY_ENVIRONMENT && !process.env.RAILWAY_STATIC_URL;
+const isInternalRedis = process.env.REDIS_URL?.includes('railway.internal');
+const redisUrl = (process.env.REDIS_URL && !(isLocal && isInternalRedis)) ? process.env.REDIS_URL : undefined;
 
 class MemoryFallback {
   private cache = new Map<string, { value: string; expiresAt: number }>();

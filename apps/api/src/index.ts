@@ -28,6 +28,7 @@ import { initNotificationJobs } from './jobs/notification.job';
 import { initDailyResetJob } from './jobs/daily-reset.job';
 
 const app = express();
+app.set('trust proxy', 1); // Trust Railway's reverse proxy (fixes rate limit error)
 const PORT = process.env.PORT || 4000;
 
 Sentry.init({

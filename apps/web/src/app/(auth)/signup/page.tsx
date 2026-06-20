@@ -56,13 +56,27 @@ export default function SignupPage() {
 
   const strength = getPasswordStrength(passwordValue);
 
+  const [unverifiedRedirect, setUnverifiedRedirect] = useState(false);
+
   const onSubmit = async (data: SignupForm) => {
     setApiError('');
+    setUnverifiedRedirect(false);
     try {
       await api.post('/api/auth/signup', data);
       router.push(`/verify?email=${encodeURIComponent(data.email)}`);
     } catch (error: any) {
-      setApiError(error.response?.data?.error?.message || 'An error occurred during signup. Please try again.');
+      const errCode = error.response?.data?.error?.code;
+      const errMsg = error.response?.data?.error?.message || 'An error occurred during signup. Please try again.';
+      if (errCode === 'EMAIL_UNVERIFIED') {
+        // Account exists but is unverified — backend already sent a fresh OTP
+        setApiError(errMsg);
+        setUnverifiedRedirect(true);
+        setTimeout(() => {
+          router.push(`/verify?email=${encodeURIComponent(data.email)}`);
+        }, 2500);
+      } else {
+        setApiError(errMsg);
+      }
     }
   };
 
@@ -101,8 +115,14 @@ export default function SignupPage() {
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
             {apiError && (
-              <div className="p-4 rounded-xl bg-[var(--error-light)] text-[var(--error)] text-sm border border-[var(--error)]/20">
-                {typeof apiError === 'string' ? apiError : JSON.stringify(apiError)}
+              <div className={`p-4 rounded-xl text-sm border ${unverifiedRedirect ? 'bg-amber-50 text-amber-800 border-amber-200' : 'bg-[var(--error-light)] text-[var(--error)] border-[var(--error)]/20'}`}>
+                <p>{typeof apiError === 'string' ? apiError : JSON.stringify(apiError)}</p>
+                {unverifiedRedirect && (
+                  <div className="mt-3 pt-3 border-t border-amber-200 flex items-center gap-2">
+                    <Loader2 size={14} className="animate-spin" />
+                    <span className="font-medium">Redirecting to verification page...</span>
+                  </div>
+                )}
               </div>
             )}
 

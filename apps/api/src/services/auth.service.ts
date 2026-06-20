@@ -21,12 +21,22 @@ function createTransporter() {
   }
 
   return nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, // true for 465, false for other ports
     auth: {
       user: gmailUser,
-      pass: gmailPass,   // This is a Gmail App Password, NOT your regular password
+      pass: gmailPass,
     },
-  });
+    connectionTimeout: 10000, // 10 seconds max timeout
+    greetingTimeout: 10000,
+    tls: { rejectUnauthorized: false }, // Useful fallback if certificates act up
+    pool: true,
+    maxConnections: 1,
+    maxMessages: 10,
+    // Fix ENETUNREACH error on Railway (force IPv4)
+    family: 4 
+  } as nodemailer.TransportOptions);
 }
 
 // Shared branded HTML email template
@@ -103,7 +113,7 @@ export const authService = {
       console.log(`[EMAIL OK] OTP sent to ${email}. Message ID: ${info.messageId}`);
     } catch (error: any) {
       console.error(`[EMAIL ERROR] Failed to send OTP to ${email}:`, error?.message || error);
-      throw new Error(`Failed to send verification email: ${error?.message || error}`);
+      // Don't throw — the OTP is stored in DB, user can request resend later
     }
   },
 
