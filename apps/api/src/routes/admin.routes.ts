@@ -125,7 +125,10 @@ router.get('/users', async (req: any, res: any) => {
         role: true,
         subscriptionStatus: true,
         trialStartedAt: true,
-        createdAt: true
+        createdAt: true,
+        emailVerified: true,
+        verificationOTP: true,
+        otpExpiresAt: true
       },
       take: 100
     });
@@ -157,6 +160,43 @@ router.patch('/users/:id', async (req: any, res: any) => {
     return res.json({ success: true, data: user });
   } catch (error) {
     console.error('Admin update user error:', error);
+    return res.status(500).json({ success: false, error: { message: 'Internal server error' } });
+  }
+});
+
+/**
+ * PATCH /api/admin/users/:id/verify-manually
+ */
+router.patch('/users/:id/verify-manually', async (req: any, res: any) => {
+  try {
+    const { id } = req.params;
+
+    const user = await prisma.user.update({
+      where: { id },
+      data: {
+        emailVerified: true,
+        verificationOTP: null,
+        otpExpiresAt: null,
+        trialStartedAt: new Date(),
+        subscriptionStatus: 'FREE_TRIAL'
+      },
+      select: {
+        id: true,
+        email: true,
+        fullName: true,
+        role: true,
+        subscriptionStatus: true,
+        trialStartedAt: true,
+        createdAt: true,
+        emailVerified: true,
+        verificationOTP: true,
+        otpExpiresAt: true
+      }
+    });
+
+    return res.json({ success: true, data: user });
+  } catch (error) {
+    console.error('Admin manually verify user error:', error);
     return res.status(500).json({ success: false, error: { message: 'Internal server error' } });
   }
 });

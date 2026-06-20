@@ -15,13 +15,22 @@ function VerifyContent() {
   const setAuth = useAuthStore(state => state.setUser);
   
   const [code, setCode] = useState(['', '', '', '', '', '']);
-  const [countdown, setCountdown] = useState(60);
+  const [countdown, setCountdown] = useState(3600);
   const [isVerifying, setIsVerifying] = useState(false);
   const [error, setError] = useState('');
   const [resending, setResending] = useState(false);
   const [wrongAttempts, setWrongAttempts] = useState(0);
   
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
+
+  const formatCountdown = () => {
+    if (countdown <= 0) {
+      return "Your code has expired. Click resend to get a new one.";
+    }
+    const minutes = Math.floor(countdown / 60);
+    const seconds = countdown % 60;
+    return `Code expires in: ${minutes} minutes ${seconds} seconds`;
+  };
 
   const handleResend = async (force: boolean = false) => {
     if (!email) return;
@@ -32,7 +41,7 @@ function VerifyContent() {
     try {
       await api.post('/api/auth/resend-otp', { email });
       toast.success('Verification email sent! Check your inbox.');
-      setCountdown(60);
+      setCountdown(3600);
     } catch (err: any) {
       setError(err.response?.data?.error?.message || 'Failed to resend code.');
       toast.error('Failed to resend verification email.');
@@ -89,7 +98,7 @@ function VerifyContent() {
           await api.post('/api/auth/resend-otp', { email });
           setError("Too many incorrect attempts. We've sent a new code.");
           toast.warning("New verification code sent due to incorrect attempts.");
-          setCountdown(60);
+          setCountdown(3600);
           setWrongAttempts(0);
         } catch (resendErr: any) {
           setError(resendErr.response?.data?.error?.message || 'Too many incorrect attempts. Failed to resend code.');
@@ -163,7 +172,9 @@ function VerifyContent() {
         <div className="font-ui text-[var(--text-secondary)] text-[16px] mb-8 space-y-2">
           <p>We sent a 6-digit verification code to <span className="font-medium text-[var(--text-primary)]">{email}</span></p>
           <p className="text-sm text-[var(--text-muted)]">Can't find it? Check your spam folder.</p>
-          <p className="text-xs text-[var(--text-muted)] italic">The code expires in 15 minutes.</p>
+          <p className="text-xs text-[var(--text-muted)] italic font-medium">
+            {formatCountdown()}
+          </p>
         </div>
 
         {error && (
@@ -202,7 +213,7 @@ function VerifyContent() {
           disabled={countdown > 0 || resending}
           className="font-ui text-[var(--text-secondary)] hover:text-[var(--text-primary)] disabled:opacity-50 transition-colors font-medium"
         >
-          {resending ? 'Resending...' : countdown > 0 ? `Resend in ${countdown}s` : 'Resend code'}
+          {resending ? 'Resending...' : countdown > 0 ? `Resend in ${Math.floor(countdown / 60)}m ${countdown % 60}s` : 'Resend code'}
         </button>
       </div>
     </div>

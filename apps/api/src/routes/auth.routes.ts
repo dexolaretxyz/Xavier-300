@@ -69,7 +69,7 @@ router.post('/signup', async (req: Request, res: Response): Promise<void> => {
 
     const passwordHash = await authService.hashPassword(data.password);
     const otp = authService.generateOTP();
-    const otpExpiresAt = new Date(Date.now() + 15 * 60 * 1000); // 15 mins
+    const otpExpiresAt = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
 
     const user = await prisma.user.create({
       data: {
@@ -211,7 +211,7 @@ router.post('/resend-otp', async (req: Request, res: Response): Promise<void> =>
     }
 
     const otp = authService.generateOTP();
-    const otpExpiresAt = new Date(Date.now() + 15 * 60 * 1000);
+    const otpExpiresAt = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
 
     await prisma.user.update({
       where: { id: user.id },

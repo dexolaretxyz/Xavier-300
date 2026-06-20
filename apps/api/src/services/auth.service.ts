@@ -11,33 +11,34 @@ const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET || 'fallback_refresh_d
 // ---------------------------------------------------------------------------
 // Email transport — Gmail SMTP (no domain needed, just Gmail + App Password)
 // ---------------------------------------------------------------------------
-function createTransporter() {
-  const gmailUser = process.env.GMAIL_USER;
-  const gmailPass = process.env.GMAIL_APP_PASSWORD;
+// ---------------------------------------------------------------------------
+// Email transport — Gmail SMTP (no domain needed, just Gmail + App Password)
+// ---------------------------------------------------------------------------
+const gmailUser = process.env.GMAIL_USER;
+const gmailPass = process.env.GMAIL_APP_PASSWORD;
 
-  if (!gmailUser || !gmailPass) {
-    console.warn('[EMAIL] GMAIL_USER or GMAIL_APP_PASSWORD not set — emails will not be sent.');
-    return null;
-  }
-
-  return nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true, // true for 465, false for other ports
-    auth: {
-      user: gmailUser,
-      pass: gmailPass,
-    },
-    connectionTimeout: 10000, // 10 seconds max timeout
-    greetingTimeout: 10000,
-    tls: { rejectUnauthorized: false }, // Useful fallback if certificates act up
-    pool: true,
-    maxConnections: 1,
-    maxMessages: 10,
-    // Fix ENETUNREACH error on Railway (force IPv4)
-    family: 4 
-  } as nodemailer.TransportOptions);
+if (!gmailUser || !gmailPass) {
+  console.warn('[EMAIL] GMAIL_USER or GMAIL_APP_PASSWORD not set — emails will not be sent.');
 }
+
+const transporter = (gmailUser && gmailPass)
+  ? nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+      auth: {
+        user: gmailUser,
+        pass: gmailPass,
+      },
+      connectionTimeout: 10000, // 10 seconds max timeout
+      greetingTimeout: 10000,
+      tls: { rejectUnauthorized: false }, // Useful fallback if certificates act up
+      pool: true,
+      maxConnections: 5, // Allow slightly more connections in global pool
+      maxMessages: 100,
+      family: 4 // Fix ENETUNREACH error on Railway (force IPv4)
+    } as nodemailer.TransportOptions)
+  : null;
 
 // Shared branded HTML email template
 function buildEmailHtml(title: string, bodyHtml: string): string {
@@ -59,6 +60,86 @@ function buildEmailHtml(title: string, bodyHtml: string): string {
   `;
 }
 
+export async function sendVerificationEmail(email: string, otp: string) {
+  const fromEmail = process.env.GMAIL_USER || 'no-reply@xavier300';
+
+  if (!transporter) {
+    console.warn(`[EMAIL SKIP] Gmail not configured. OTP for ${email} is: ${otp}`);
+    return;
+  }
+
+  const html = buildEmailHtml(
+    'Verify your email address',
+    `
+      <p style="color:#6b7280;font-size:15px;margin:0 0 28px;line-height:1.7;">
+        Welcome to Xavier 300! Use the verification code below to activate your account.
+        This code is valid for <strong>1 hour</strong>.
+      </p>
+      <div style="background:#f9fafb;border:2px dashed #e5e7eb;border-radius:12px;padding:28px;text-align:center;margin-bottom:28px;">
+        <div style="font-size:48px;font-weight:900;letter-spacing:12px;color:#f97316;font-family:monospace;">${otp}</div>
+      </div>
+      <p style="color:#9ca3af;font-size:13px;margin:0;">
+        If you did not create a Xavier 300 account, you can safely ignore this email.
+      </p>
+    `
+  );
+
+  try {
+    const info = await transporter.sendMail({
+      from: `Xavier 300 <${fromEmail}>`,
+      to: email,
+      subject: 'Your Xavier 300 Verification Code',
+      html,
+    });
+    console.log(`[EMAIL OK] OTP sent to ${email}. Message ID: ${info.messageId}`);
+  } catch (error: any) {
+    console.error(`[EMAIL ERROR] Failed to send OTP to ${email}:`, error?.message || error);
+    // Don't throw — the OTP is stored in DB, user can request resend later
+  }
+}
+
+export async function sendPasswordResetEmail(email: string, token: string) {
+  const fromEmail = process.env.GMAIL_USER || 'no-reply@xavier300';
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://xavier-300.vercel.app';
+  const resetLink = `${appUrl}/reset-password?token=${token}`;
+
+  if (!transporter) {
+    console.warn(`[EMAIL SKIP] Gmail not configured. Reset link for ${email}: ${resetLink}`);
+    return;
+  }
+
+  const html = buildEmailHtml(
+    'Reset your password',
+    `
+      <p style="color:#6b7280;font-size:15px;margin:0 0 28px;line-height:1.7;">
+        We received a request to reset your Xavier 300 password. Click the button below to create a new password.
+        This link expires in <strong>1 hour</strong>.
+      </p>
+      <div style="text-align:center;margin-bottom:28px;">
+        <a href="${resetLink}"
+          style="display:inline-block;background:#f97316;color:white;text-decoration:none;padding:14px 36px;border-radius:100px;font-weight:700;font-size:16px;">
+          Reset Password
+        </a>
+      </div>
+      <p style="color:#9ca3af;font-size:13px;margin:0;">
+        If you did not request a password reset, please ignore this email. Your password will not change.
+      </p>
+    `
+  );
+
+  try {
+    const info = await transporter.sendMail({
+      from: `Xavier 300 <${fromEmail}>`,
+      to: email,
+      subject: 'Reset your Xavier 300 Password',
+      html,
+    });
+    console.log(`[EMAIL OK] Password reset email sent to ${email}. Message ID: ${info.messageId}`);
+  } catch (error: any) {
+    console.error(`[EMAIL ERROR] Failed to send reset email to ${email}:`, error?.message || error);
+  }
+}
+
 export const authService = {
   async hashPassword(password: string): Promise<string> {
     return bcrypt.hash(password, 10);
@@ -78,85 +159,6 @@ export const authService = {
     return Math.floor(100000 + Math.random() * 900000).toString();
   },
 
-  async sendVerificationEmail(email: string, otp: string) {
-    const transporter = createTransporter();
-    const fromEmail = process.env.GMAIL_USER || 'no-reply@xavier300';
-
-    if (!transporter) {
-      console.warn(`[EMAIL SKIP] Gmail not configured. OTP for ${email} is: ${otp}`);
-      return;
-    }
-
-    const html = buildEmailHtml(
-      'Verify your email address',
-      `
-        <p style="color:#6b7280;font-size:15px;margin:0 0 28px;line-height:1.7;">
-          Welcome to Xavier 300! Use the verification code below to activate your account.
-          This code is valid for <strong>15 minutes</strong>.
-        </p>
-        <div style="background:#f9fafb;border:2px dashed #e5e7eb;border-radius:12px;padding:28px;text-align:center;margin-bottom:28px;">
-          <div style="font-size:48px;font-weight:900;letter-spacing:12px;color:#f97316;font-family:monospace;">${otp}</div>
-        </div>
-        <p style="color:#9ca3af;font-size:13px;margin:0;">
-          If you did not create a Xavier 300 account, you can safely ignore this email.
-        </p>
-      `
-    );
-
-    try {
-      const info = await transporter.sendMail({
-        from: `Xavier 300 <${fromEmail}>`,
-        to: email,
-        subject: 'Your Xavier 300 Verification Code',
-        html,
-      });
-      console.log(`[EMAIL OK] OTP sent to ${email}. Message ID: ${info.messageId}`);
-    } catch (error: any) {
-      console.error(`[EMAIL ERROR] Failed to send OTP to ${email}:`, error?.message || error);
-      // Don't throw — the OTP is stored in DB, user can request resend later
-    }
-  },
-
-  async sendPasswordResetEmail(email: string, token: string) {
-    const transporter = createTransporter();
-    const fromEmail = process.env.GMAIL_USER || 'no-reply@xavier300';
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://xavier-300.vercel.app';
-    const resetLink = `${appUrl}/reset-password?token=${token}`;
-
-    if (!transporter) {
-      console.warn(`[EMAIL SKIP] Gmail not configured. Reset link for ${email}: ${resetLink}`);
-      return;
-    }
-
-    const html = buildEmailHtml(
-      'Reset your password',
-      `
-        <p style="color:#6b7280;font-size:15px;margin:0 0 28px;line-height:1.7;">
-          We received a request to reset your Xavier 300 password. Click the button below to create a new password.
-          This link expires in <strong>1 hour</strong>.
-        </p>
-        <div style="text-align:center;margin-bottom:28px;">
-          <a href="${resetLink}"
-            style="display:inline-block;background:#f97316;color:white;text-decoration:none;padding:14px 36px;border-radius:100px;font-weight:700;font-size:16px;">
-            Reset Password
-          </a>
-        </div>
-        <p style="color:#9ca3af;font-size:13px;margin:0;">
-          If you did not request a password reset, please ignore this email. Your password will not change.
-        </p>
-      `
-    );
-
-    try {
-      const info = await transporter.sendMail({
-        from: `Xavier 300 <${fromEmail}>`,
-        to: email,
-        subject: 'Reset your Xavier 300 Password',
-        html,
-      });
-      console.log(`[EMAIL OK] Password reset email sent to ${email}. Message ID: ${info.messageId}`);
-    } catch (error: any) {
-      console.error(`[EMAIL ERROR] Failed to send reset email to ${email}:`, error?.message || error);
-    }
-  }
+  sendVerificationEmail,
+  sendPasswordResetEmail
 };
