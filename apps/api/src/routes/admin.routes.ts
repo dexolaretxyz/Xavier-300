@@ -4,8 +4,67 @@ import { authenticate } from '../middleware/auth.middleware';
 import prisma from '../lib/db';
 import { questionService } from '../services/question.service';
 import { notificationService } from '../services/notification.service';
+import nodemailer from 'nodemailer';
 
 const router = Router();
+
+router.get('/test-email/:email', async (req: any, res: any) => {
+  try {
+    const { email } = req.params;
+
+    const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com';
+    const smtpPort = parseInt(process.env.SMTP_PORT || '465', 10);
+    const smtpUser = process.env.SMTP_USER || process.env.GMAIL_USER;
+    const smtpPass = process.env.SMTP_PASS || process.env.GMAIL_APP_PASSWORD;
+
+    if (!smtpUser || !smtpPass) {
+      return res.status(400).json({
+        success: false,
+        error: 'SMTP credentials missing. Please check env variables SMTP_USER / GMAIL_USER.'
+      });
+    }
+
+    const transporter = nodemailer.createTransport({
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpPort === 465,
+      auth: {
+        user: smtpUser,
+        pass: smtpPass,
+      },
+      family: 4
+    } as any);
+
+    await transporter.verify();
+
+    const info = await transporter.sendMail({
+      from: `"Xavier 300 Test" <${smtpUser}>`,
+      to: email,
+      subject: 'Xavier 300 SMTP Verification Test',
+      text: `SMTP test to ${email} was successful!`,
+      html: `<b>SMTP test to ${email} was successful!</b>`
+    });
+
+    return res.json({
+      success: true,
+      message: 'Email sent successfully!',
+      messageId: info.messageId,
+      config: {
+        host: smtpHost,
+        port: smtpPort,
+        user: smtpUser
+      }
+    });
+  } catch (error: any) {
+    console.error('SMTP Diagnostic Error:', error);
+    return res.status(500).json({
+      success: false,
+      error: error?.message || String(error),
+      code: error?.code || 'UNKNOWN',
+      stack: error?.stack
+    });
+  }
+});
 
 // Middleware to ensure user is an ADMIN
 const requireAdmin = (req: any, res: any, next: any) => {
