@@ -32,7 +32,13 @@ export default function LoginPage() {
       await login(data);
       router.push('/dashboard');
     } catch (error: any) {
-      setApiError(error.response?.data?.error?.message || 'An error occurred during login. Please try again.');
+      const errCode = error.response?.data?.error?.code;
+      const errMsg = error.response?.data?.error?.message || 'An error occurred during login. Please try again.';
+      if (errCode === 'UNVERIFIED_EMAIL') {
+        router.push(`/verify?email=${encodeURIComponent(data.email)}`);
+      } else {
+        setApiError(errMsg);
+      }
     }
   };
 
