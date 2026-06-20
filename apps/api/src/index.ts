@@ -1,10 +1,19 @@
+import dotenv from 'dotenv';
+import path from 'path';
+
+// Load root .env (for shared variables like DATABASE_URL)
+dotenv.config({ path: path.resolve(__dirname, '../../../.env') });
+// Load API-specific .env (for JWT_SECRET, PORT, etc.)
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
+
+console.log('DEBUG DATABASE_URL:', process.env.DATABASE_URL);
+
 import express from 'express';
 import * as Sentry from '@sentry/node';
 import { nodeProfilingIntegration } from '@sentry/profiling-node';
 import cors from 'cors';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
-import dotenv from 'dotenv';
 import { authRouter } from './routes/auth.routes';
 import domainRoutes from './routes/domain.routes';
 import userRoutes from './routes/user.routes';
@@ -17,8 +26,6 @@ import adminRoutes from './routes/admin.routes';
 import { initLeaderboardJob } from './jobs/leaderboard.job';
 import { initNotificationJobs } from './jobs/notification.job';
 import { initDailyResetJob } from './jobs/daily-reset.job';
-
-dotenv.config({ path: '../../.env' }); // Load root .env
 
 const app = express();
 const PORT = process.env.PORT || 4000;
