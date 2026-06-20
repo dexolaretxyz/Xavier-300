@@ -64,34 +64,69 @@ export async function sendVerificationEmail(email: string, otp: string) {
 
   console.log(`Attempting to send OTP via Nodemailer to: ${email}`);
   console.log(`SMTP User present: ${!!smtpUser}`);
+  console.log('[OTP] Sending code', otp, 'to', email);
 
   if (!transporter) {
     console.warn(`[EMAIL SKIP] Gmail/SMTP not configured. OTP for ${email} is: ${otp}`);
     return;
   }
 
-  const html = buildEmailHtml(
-    'Verify your email address',
-    `
-      <p style="color:#6b7280;font-size:15px;margin:0 0 28px;line-height:1.7;">
-        Welcome to Xavier 300! Use the verification code below to activate your account.
-        This code is valid for <strong>1 hour</strong>.
-      </p>
-      <div style="background:#f9fafb;border:2px dashed #e5e7eb;border-radius:12px;padding:28px;text-align:center;margin-bottom:28px;">
-        <div style="font-size:48px;font-weight:900;letter-spacing:12px;color:#f97316;font-family:monospace;">${otp}</div>
-      </div>
-      <p style="color:#9ca3af;font-size:13px;margin:0;">
-        If you did not create a Xavier 300 account, you can safely ignore this email.
-      </p>
-    `
-  );
-
   try {
     const info = await transporter.sendMail({
-      from: `Xavier 300 <${fromEmail}>`,
+      from: `"Xavier 300" <${process.env.GMAIL_USER || process.env.SMTP_USER || fromEmail}>`,
       to: email,
-      subject: 'Your Xavier 300 Verification Code',
-      html,
+      subject: `Your Xavier 300 Verification Code — ${otp}`,
+      html: `
+        <div style="font-family:Arial,sans-serif;max-width:480px;
+                    margin:0 auto;padding:40px 20px;">
+          <div style="background:#FFFFFF;border-radius:20px;
+                      padding:40px;text-align:center;
+                      box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+            
+            <div style="font-size:48px;margin-bottom:16px;">✉️</div>
+            
+            <h1 style="color:#1A1A18;font-size:24px;
+                       font-weight:700;margin:0 0 12px;">
+              Verify Your Email
+            </h1>
+            
+            <p style="color:#4A4A42;font-size:15px;
+                      line-height:1.6;margin:0 0 28px;">
+              Welcome to Xavier 300! Enter this 6-digit code 
+              to complete your registration.
+            </p>
+            
+            <div style="background:#F5F2EC;border-radius:16px;
+                        padding:28px;margin:0 0 24px;">
+              <p style="color:#8A8A7E;font-size:12px;margin:0 0 10px;
+                         text-transform:uppercase;letter-spacing:0.1em;
+                         font-weight:600;">
+                Verification Code
+              </p>
+              <p style="color:#3730A3;font-size:52px;font-weight:700;
+                         letter-spacing:0.25em;margin:0;
+                         font-family:monospace;">
+                ${otp}
+              </p>
+            </div>
+            
+            <p style="color:#8A8A7E;font-size:14px;margin:0 0 6px;">
+              ⏰ Expires in <strong>1 hour</strong>
+            </p>
+            <p style="color:#8A8A7E;font-size:13px;margin:0 0 28px;">
+              Didn't create an account? Ignore this email.
+            </p>
+            
+            <div style="border-top:1px solid #EDEAE2;padding-top:20px;">
+              <p style="color:#8A8A7E;font-size:12px;margin:0;">
+                Xavier 300 · Practice like it is real. 
+                Pass like you prepared.
+              </p>
+            </div>
+          </div>
+        </div>
+      `,
+      text: `Your Xavier 300 verification code is: ${otp}\n\nExpires in 1 hour.\n\nXavier 300`
     });
     console.log(`SUCCESS — Message ID: ${info.messageId}`);
     console.log(`[EMAIL OK] OTP sent to ${email}. Message ID: ${info.messageId}`);
