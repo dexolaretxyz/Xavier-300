@@ -1,5 +1,5 @@
 import webpush from 'web-push';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 import prisma from '../lib/db';
 import { Prisma } from '@prisma/client';
 
@@ -22,22 +22,17 @@ const initWebPush = () => {
 
 const isPushConfigured = initWebPush();
 
-function createTransporter() {
-  const gmailUser = process.env.GMAIL_USER;
-  const gmailPass = process.env.GMAIL_APP_PASSWORD;
-
-  if (!gmailUser || !gmailPass) {
-    console.warn('[EMAIL] GMAIL_USER or GMAIL_APP_PASSWORD not set — emails will not be sent.');
+// Lazy initialise Resend client
+let resendClient: Resend | null = null;
+function getResendClient(): Resend | null {
+  if (resendClient) return resendClient;
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.warn('[EMAIL SKIP] RESEND_API_KEY environment variable is not set — emails will not be sent.');
     return null;
   }
-
-  return nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: gmailUser,
-      pass: gmailPass,
-    },
-  });
+  resendClient = new Resend(apiKey);
+  return resendClient;
 }
 
 export const notificationService = {
@@ -89,16 +84,17 @@ export const notificationService = {
    */
   async sendEmailNotification(email: string, subject: string, content: string) {
     try {
-      const transporter = createTransporter();
-      const fromEmail = process.env.GMAIL_USER || 'no-reply@xavier300';
-      if (!transporter) {
+      const resend = getResendClient();
+      const fromEmail = process.env.EMAIL_FROM || 'onboarding@resend.dev';
+      
+      if (!resend) {
         console.log(`[MOCK EMAIL to ${email}] ${subject}: ${content}`);
         return true;
       }
 
-      await transporter.sendMail({
+      const { data, error } = await resend.emails.send({
         from: `Xavier 300 <${fromEmail}>`,
-        to: email,
+        to: [email],
         subject: subject,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden;">
@@ -114,9 +110,16 @@ export const notificationService = {
               © ${new Date().getFullYear()} Xavier 300. All rights reserved.
             </div>
           </div>
-        `
+        `,
+        text: content
       });
-      console.log(`[EMAIL OK] Notification sent to ${email}`);
+
+      if (error) {
+        console.error('[EMAIL ERROR] Resend error:', error);
+        return false;
+      }
+
+      console.log(`[EMAIL OK] Notification sent to ${email}. ID: ${data?.id}`);
       return true;
     } catch (error: any) {
       console.error('[EMAIL ERROR] Failed to send fallback email:', error?.message || error);

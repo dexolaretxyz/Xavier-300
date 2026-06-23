@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 import dotenv from 'dotenv';
 import path from 'path';
 dotenv.config({ path: path.resolve(__dirname, '../../.env') });
@@ -8,173 +8,261 @@ dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 const JWT_SECRET = process.env.JWT_SECRET || 'fallback_secret_do_not_use_in_prod';
 const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET || 'fallback_refresh_do_not_use_in_prod';
 
-// ---------------------------------------------------------------------------
-// Email transport — Gmail SMTP / General SMTP support
-// ---------------------------------------------------------------------------
-const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com';
-const smtpPort = parseInt(process.env.SMTP_PORT || '465', 10);
-const smtpUser = process.env.SMTP_USER || process.env.GMAIL_USER;
-const smtpPass = process.env.SMTP_PASS || process.env.GMAIL_APP_PASSWORD;
-
-if (!smtpUser || !smtpPass) {
-  console.warn('[EMAIL] GMAIL_USER/SMTP_USER or GMAIL_APP_PASSWORD/SMTP_PASS not set — emails will not be sent.');
-}
-
-const transporter = (smtpUser && smtpPass)
-  ? nodemailer.createTransport({
-      host: smtpHost,
-      port: smtpPort,
-      secure: smtpPort === 465,
-      auth: {
-        user: smtpUser,
-        pass: smtpPass,
-      },
-      connectionTimeout: 10000, // 10 seconds max timeout
-      greetingTimeout: 10000,
-      tls: { rejectUnauthorized: false }, // Useful fallback if certificates act up
-      pool: true,
-      maxConnections: 5, // Allow slightly more connections in global pool
-      maxMessages: 100,
-      family: 4 // Fix ENETUNREACH error on Railway (force IPv4)
-    } as nodemailer.TransportOptions)
-  : null;
-
-// Shared branded HTML email template
-function buildEmailHtml(title: string, bodyHtml: string): string {
-  return `
-    <div style="font-family:'Segoe UI',Arial,sans-serif;max-width:560px;margin:0 auto;background:#ffffff;border-radius:12px;overflow:hidden;border:1px solid #e5e7eb;">
-      <div style="background:#1a1a18;padding:32px 40px;text-align:center;">
-        <div style="display:inline-block;width:44px;height:44px;background:#f97316;border-radius:10px;line-height:44px;font-size:24px;font-weight:900;color:white;margin-bottom:12px;">X</div>
-        <h1 style="color:#ffffff;font-size:22px;margin:0;letter-spacing:-0.5px;">Xavier 300</h1>
-        <p style="color:#9ca3af;font-size:13px;margin:6px 0 0;">Nigeria's #1 Tech Certification Practice Platform</p>
-      </div>
-      <div style="padding:40px;">
-        <h2 style="color:#111827;font-size:20px;margin:0 0 16px;">${title}</h2>
-        ${bodyHtml}
-      </div>
-      <div style="background:#f9fafb;border-top:1px solid #e5e7eb;padding:20px 40px;text-align:center;">
-        <p style="color:#9ca3af;font-size:12px;margin:0;">© ${new Date().getFullYear()} Xavier 300. All rights reserved.</p>
-      </div>
-    </div>
-  `;
-}
-
-export async function sendVerificationEmail(email: string, otp: string) {
-  const fromEmail = smtpUser || 'no-reply@xavier300';
-
-  console.log(`Attempting to send OTP via Nodemailer to: ${email}`);
-  console.log(`SMTP User present: ${!!smtpUser}`);
-  console.log('[OTP] Sending code', otp, 'to', email);
-
-  if (!transporter) {
-    console.warn(`[EMAIL SKIP] Gmail/SMTP not configured. OTP for ${email} is: ${otp}`);
-    return;
+// Lazy initialise — only creates client when needed
+function getResendClient(): Resend | null {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey || apiKey === 're_your_key_here' || apiKey.startsWith('re_your_key')) {
+    console.warn('[EMAIL SKIP] RESEND_API_KEY is not set or is a placeholder — emails will be mocked.');
+    return null;
   }
+  return new Resend(apiKey);
+}
+
+// OTP Verification Email
+async function sendVerificationEmail(
+  email: string,
+  otp: string
+): Promise<void> {
+  console.log('[OTP EMAIL] Sending to:', email, '| Code:', otp);
 
   try {
-    const info = await transporter.sendMail({
-      from: `"Xavier 300" <${process.env.GMAIL_USER || process.env.SMTP_USER || fromEmail}>`,
-      to: email,
-      subject: `Your Xavier 300 Verification Code — ${otp}`,
-      html: `
-        <div style="font-family:Arial,sans-serif;max-width:480px;
-                    margin:0 auto;padding:40px 20px;">
-          <div style="background:#FFFFFF;border-radius:20px;
-                      padding:40px;text-align:center;
-                      box-shadow:0 4px 24px rgba(0,0,0,0.08);">
-            
-            <div style="font-size:48px;margin-bottom:16px;">✉️</div>
-            
-            <h1 style="color:#1A1A18;font-size:24px;
-                       font-weight:700;margin:0 0 12px;">
-              Verify Your Email
-            </h1>
-            
-            <p style="color:#4A4A42;font-size:15px;
-                      line-height:1.6;margin:0 0 28px;">
-              Welcome to Xavier 300! Enter this 6-digit code 
-              to complete your registration.
-            </p>
-            
-            <div style="background:#F5F2EC;border-radius:16px;
-                        padding:28px;margin:0 0 24px;">
-              <p style="color:#8A8A7E;font-size:12px;margin:0 0 10px;
-                         text-transform:uppercase;letter-spacing:0.1em;
-                         font-weight:600;">
-                Verification Code
-              </p>
-              <p style="color:#3730A3;font-size:52px;font-weight:700;
-                         letter-spacing:0.25em;margin:0;
-                         font-family:monospace;">
-                ${otp}
-              </p>
-            </div>
-            
-            <p style="color:#8A8A7E;font-size:14px;margin:0 0 6px;">
-              ⏰ Expires in <strong>1 hour</strong>
-            </p>
-            <p style="color:#8A8A7E;font-size:13px;margin:0 0 28px;">
-              Didn't create an account? Ignore this email.
-            </p>
-            
-            <div style="border-top:1px solid #EDEAE2;padding-top:20px;">
-              <p style="color:#8A8A7E;font-size:12px;margin:0;">
-                Xavier 300 · Practice like it is real. 
-                Pass like you prepared.
-              </p>
-            </div>
-          </div>
-        </div>
-      `,
-      text: `Your Xavier 300 verification code is: ${otp}\n\nExpires in 1 hour.\n\nXavier 300`
-    });
-    console.log(`SUCCESS — Message ID: ${info.messageId}`);
-    console.log(`[EMAIL OK] OTP sent to ${email}. Message ID: ${info.messageId}`);
-  } catch (error: any) {
-    console.error(`[EMAIL ERROR] Failed to send OTP to ${email}:`, error?.message || error);
-    // Don't throw — the OTP is stored in DB, user can request resend later
-  }
-}
+    const resend = getResendClient();
+    const fromEmail = process.env.EMAIL_FROM || 'onboarding@resend.dev';
 
-export async function sendPasswordResetEmail(email: string, token: string) {
-  const fromEmail = smtpUser || 'no-reply@xavier300';
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://xavier-300.vercel.app';
-  const resetLink = `${appUrl}/reset-password?token=${token}`;
+    if (!resend) {
+      console.log('[OTP EMAIL] (MOCKED) Sending to:', email, '| Code:', otp);
+      return;
+    }
 
-  if (!transporter) {
-    console.warn(`[EMAIL SKIP] Gmail not configured. Reset link for ${email}: ${resetLink}`);
-    return;
-  }
-
-  const html = buildEmailHtml(
-    'Reset your password',
-    `
-      <p style="color:#6b7280;font-size:15px;margin:0 0 28px;line-height:1.7;">
-        We received a request to reset your Xavier 300 password. Click the button below to create a new password.
-        This link expires in <strong>1 hour</strong>.
-      </p>
-      <div style="text-align:center;margin-bottom:28px;">
-        <a href="${resetLink}"
-          style="display:inline-block;background:#f97316;color:white;text-decoration:none;padding:14px 36px;border-radius:100px;font-weight:700;font-size:16px;">
-          Reset Password
-        </a>
-      </div>
-      <p style="color:#9ca3af;font-size:13px;margin:0;">
-        If you did not request a password reset, please ignore this email. Your password will not change.
-      </p>
-    `
-  );
-
-  try {
-    const info = await transporter.sendMail({
+    const { data, error } = await resend.emails.send({
       from: `Xavier 300 <${fromEmail}>`,
-      to: email,
-      subject: 'Reset your Xavier 300 Password',
-      html,
+      to: [email],
+      subject: 'Your Xavier 300 Verification Code',
+      html: `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" 
+                content="width=device-width, initial-scale=1.0">
+        </head>
+        <body style="margin:0;padding:0;
+                     background-color:#F5F2EC;
+                     font-family:Arial,sans-serif;">
+          <table width="100%" cellpadding="0" cellspacing="0"
+                 style="background:#F5F2EC;padding:40px 20px;">
+            <tr>
+              <td align="center">
+                <table width="480" cellpadding="0" cellspacing="0"
+                       style="background:#FFFFFF;
+                              border-radius:20px;
+                              padding:40px;
+                              text-align:center;
+                              box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+                  <tr>
+                    <td style="padding-bottom:16px;
+                               font-size:48px;">
+                      ✉️
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h1 style="color:#1A1A18;font-size:26px;
+                                 font-weight:700;margin:0 0 12px;">
+                        Verify Your Email
+                      </h1>
+                      <p style="color:#4A4A42;font-size:15px;
+                                line-height:1.6;margin:0 0 28px;">
+                        Welcome to Xavier 300! Enter the 6-digit 
+                        code below to complete your registration.
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="background:#F5F2EC;
+                                  border-radius:16px;
+                                  padding:28px;margin:0 0 24px;">
+                        <p style="color:#8A8A7E;font-size:12px;
+                                   margin:0 0 10px;
+                                   text-transform:uppercase;
+                                   letter-spacing:0.1em;
+                                   font-weight:600;">
+                          Your Verification Code
+                        </p>
+                        <p style="color:#3730A3;font-size:52px;
+                                   font-weight:700;
+                                   letter-spacing:0.25em;
+                                   margin:0;
+                                   font-family:monospace;">
+                          ${otp}
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="color:#8A8A7E;font-size:14px;
+                                margin:0 0 6px;">
+                        ⏰ This code expires in 
+                        <strong>1 hour</strong>.
+                      </p>
+                      <p style="color:#8A8A7E;font-size:14px;
+                                margin:0 0 28px;">
+                        Didn't create a Xavier 300 account? 
+                        Ignore this email.
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="border-top:1px solid #EDEAE2;
+                               padding-top:20px;">
+                      <p style="color:#8A8A7E;font-size:12px;
+                                margin:0;">
+                        Xavier 300 · Practice like it is real. 
+                        Pass like you prepared.
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </body>
+        </html>
+      `,
+      text: `Your Xavier 300 verification code is: ${otp}
+
+This code expires in 1 hour.
+
+If you did not create a Xavier 300 account, ignore this email.
+
+Xavier 300 — Practice like it is real. Pass like you prepared.`
     });
-    console.log(`[EMAIL OK] Password reset email sent to ${email}. Message ID: ${info.messageId}`);
-  } catch (error: any) {
-    console.error(`[EMAIL ERROR] Failed to send reset email to ${email}:`, error?.message || error);
+
+    if (error) {
+      console.error('[OTP EMAIL] Resend error:', error);
+      console.log('[OTP EMAIL] FALLBACK OTP:', otp, 'for', email);
+      return;
+    }
+
+    console.log('[OTP EMAIL] SUCCESS — Message ID:', data?.id);
+
+  } catch (err: any) {
+    console.error('[OTP EMAIL] Exception:', err?.message);
+    console.log('[OTP EMAIL] FALLBACK OTP:', otp, 'for', email);
+  }
+}
+
+// Password Reset Email
+async function sendPasswordResetEmail(
+  email: string,
+  resetToken: string
+): Promise<void> {
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || 
+                 'https://xavier-300.vercel.app';
+  const resetLink = `${appUrl}/reset-password?token=${resetToken}`;
+
+  console.log('[RESET EMAIL] Sending to:', email);
+
+  try {
+    const resend = getResendClient();
+    const fromEmail = process.env.EMAIL_FROM || 'onboarding@resend.dev';
+
+    if (!resend) {
+      console.log('[RESET EMAIL] (MOCKED) Sending reset link to:', email, '| Link:', resetLink);
+      return;
+    }
+
+    const { data, error } = await resend.emails.send({
+      from: `Xavier 300 <${fromEmail}>`,
+      to: [email],
+      subject: 'Reset Your Xavier 300 Password',
+      html: `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head><meta charset="UTF-8"></head>
+        <body style="margin:0;padding:0;
+                     background:#F5F2EC;
+                     font-family:Arial,sans-serif;">
+          <table width="100%" cellpadding="0" cellspacing="0"
+                 style="background:#F5F2EC;padding:40px 20px;">
+            <tr>
+              <td align="center">
+                <table width="480" cellpadding="0" cellspacing="0"
+                       style="background:#FFFFFF;border-radius:20px;
+                              padding:40px;text-align:center;">
+                  <tr>
+                    <td style="padding-bottom:16px;font-size:48px;">
+                      🔐
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h1 style="color:#1A1A18;font-size:26px;
+                                 font-weight:700;margin:0 0 12px;">
+                        Reset Your Password
+                      </h1>
+                      <p style="color:#4A4A42;font-size:15px;
+                                line-height:1.6;margin:0 0 28px;">
+                        Click the button below to reset your 
+                        Xavier 300 password. This link expires 
+                        in 1 hour.
+                      </p>
+                      <a href="${resetLink}"
+                         style="display:inline-block;
+                                background:#3730A3;color:#FFFFFF;
+                                padding:16px 40px;
+                                border-radius:100px;
+                                text-decoration:none;
+                                font-size:16px;font-weight:600;
+                                margin:0 0 24px;">
+                        Reset Password
+                      </a>
+                      <p style="color:#8A8A7E;font-size:13px;
+                                margin:0 0 28px;">
+                        If the button doesn't work, copy this link:
+                        <br/>
+                        <a href="${resetLink}" 
+                           style="color:#3730A3;word-break:break-all;">
+                          ${resetLink}
+                        </a>
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="border-top:1px solid #EDEAE2;
+                               padding-top:20px;">
+                      <p style="color:#8A8A7E;font-size:12px;
+                                margin:0;">
+                        If you didn't request a password reset, 
+                        ignore this email.
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </body>
+        </html>
+      `,
+      text: `Reset your Xavier 300 password: ${resetLink}
+
+This link expires in 1 hour.
+
+If you did not request this, ignore this email.`
+    });
+
+    if (error) {
+      console.error('[RESET EMAIL] Resend error:', error);
+      return;
+    }
+
+    console.log('[RESET EMAIL] SUCCESS — ID:', data?.id);
+
+  } catch (err: any) {
+    console.error('[RESET EMAIL] Exception:', err?.message);
   }
 }
 

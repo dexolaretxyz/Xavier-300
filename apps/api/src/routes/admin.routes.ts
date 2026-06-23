@@ -4,63 +4,54 @@ import { authenticate } from '../middleware/auth.middleware';
 import prisma from '../lib/db';
 import { questionService } from '../services/question.service';
 import { notificationService } from '../services/notification.service';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
 const router = Router();
 
 router.get('/test-email/:email', async (req: any, res: any) => {
   try {
     const { email } = req.params;
+    const apiKey = process.env.RESEND_API_KEY;
+    const fromEmail = process.env.EMAIL_FROM || 'onboarding@resend.dev';
 
-    const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com';
-    const smtpPort = parseInt(process.env.SMTP_PORT || '465', 10);
-    const smtpUser = process.env.SMTP_USER || process.env.GMAIL_USER;
-    const smtpPass = process.env.SMTP_PASS || process.env.GMAIL_APP_PASSWORD;
-
-    if (!smtpUser || !smtpPass) {
-      return res.status(400).json({
-        success: false,
-        error: 'SMTP credentials missing. Please check env variables SMTP_USER / GMAIL_USER.'
+    if (!apiKey || apiKey === 're_your_key_here' || apiKey.startsWith('re_your_key')) {
+      return res.json({
+        success: true,
+        message: 'Resend is using a placeholder API key. Mock email sent successfully (no email actually delivered).',
+        config: { fromEmail }
       });
     }
 
-    const transporter = nodemailer.createTransport({
-      host: smtpHost,
-      port: smtpPort,
-      secure: smtpPort === 465,
-      auth: {
-        user: smtpUser,
-        pass: smtpPass,
-      },
-      family: 4
-    } as any);
-
-    await transporter.verify();
-
-    const info = await transporter.sendMail({
-      from: `"Xavier 300 Test" <${smtpUser}>`,
-      to: email,
-      subject: 'Xavier 300 SMTP Verification Test',
-      text: `SMTP test to ${email} was successful!`,
-      html: `<b>SMTP test to ${email} was successful!</b>`
+    const resend = new Resend(apiKey);
+    const { data, error } = await resend.emails.send({
+      from: `Xavier 300 Test <${fromEmail}>`,
+      to: [email],
+      subject: 'Xavier 300 Resend Verification Test',
+      text: `Resend test to ${email} was successful!`,
+      html: `<b>Resend test to ${email} was successful!</b>`
     });
+
+    if (error) {
+      return res.status(500).json({
+        success: false,
+        error: error.message,
+        details: error
+      });
+    }
 
     return res.json({
       success: true,
       message: 'Email sent successfully!',
-      messageId: info.messageId,
+      messageId: data?.id,
       config: {
-        host: smtpHost,
-        port: smtpPort,
-        user: smtpUser
+        from: fromEmail
       }
     });
   } catch (error: any) {
-    console.error('SMTP Diagnostic Error:', error);
+    console.error('Resend Diagnostic Error:', error);
     return res.status(500).json({
       success: false,
       error: error?.message || String(error),
-      code: error?.code || 'UNKNOWN',
       stack: error?.stack
     });
   }
