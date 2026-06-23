@@ -177,15 +177,17 @@ export default function ProfilePage() {
               <div>
                 <p className="font-ui text-sm text-[var(--text-secondary)]">Current Plan</p>
                 <p className="font-display font-bold text-xl text-[var(--accent-primary)]">
-                  {user.subscriptionStatus === 'ACTIVE' ? 'Pro Access' : 
+                  {user.subscriptionStatus === 'SUBSCRIBED' || user.subscriptionStatus === 'ACTIVE' ? 'Pro Access (Free Launch Tier)' : 
                    user.subscriptionStatus === 'FREE_TRIAL' ? 'Free Trial' : 'Inactive'}
                 </p>
               </div>
-              {user.subscriptionStatus !== 'ACTIVE' && (
+              {/* PAYMENT_DISABLED: Re-enable when launching paid tier
+              {user.subscriptionStatus !== 'ACTIVE' && user.subscriptionStatus !== 'SUBSCRIBED' && (
                 <Link href="/pricing" className="bg-[var(--accent-primary)] text-center text-white px-4 py-2 rounded-lg font-ui font-bold text-sm hover:opacity-90 transition-opacity">
                   Upgrade to Pro
                 </Link>
               )}
+              */}
             </div>
           </div>
 

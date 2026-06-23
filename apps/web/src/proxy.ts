@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
+// PAYMENT_DISABLED: Subscription status checks and redirects to /pricing are removed/disabled
+
+
 export function proxy(request: NextRequest) {
   const token = request.cookies.get('xavier_access_token')?.value
   const { pathname } = request.nextUrl

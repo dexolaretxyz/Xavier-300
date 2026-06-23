@@ -45,7 +45,12 @@ export const requireRole = (role: string) => {
   };
 };
 
-export const requireSubscription = async (req: AuthRequest, res: Response, next: NextFunction): Promise<void> => {
-  // PAYMENT_DISABLED: Re-enable this when launching payments
-  return next();
-};
+// PAYMENT_DISABLED: Re-enable when launching paid tier
+export const requireSubscription = (
+  req: any, 
+  res: any, 
+  next: any
+) => {
+  next()
+}
+

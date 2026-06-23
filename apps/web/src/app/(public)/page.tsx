@@ -77,7 +77,7 @@ export default function LandingPage() {
               href="/signup"
               className="w-full sm:w-auto bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white px-8 py-4 rounded-full font-ui font-medium text-lg transition-colors shadow-sm"
             >
-              Start Free Trial
+              Start Practicing Free
             </Link>
             <Link 
               href="#domains"
@@ -157,55 +157,25 @@ export default function LandingPage() {
             Built for Nigerian tech professionals
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-            {/* Free Trial */}
-            <div className="bg-[var(--bg-primary)] border border-[var(--border-subtle)] rounded-[24px] p-8 flex flex-col shadow-sm">
-              <h3 className="font-ui font-semibold text-xl text-[var(--text-primary)] mb-2">Free Trial</h3>
-              <div className="font-display font-bold text-4xl text-[var(--text-primary)] mb-6">1 Week Free</div>
-              <ul className="space-y-4 mb-8 font-ui text-[var(--text-secondary)] flex-1">
-                <li className="flex items-center gap-3"><span className="text-[var(--accent-primary)]">✓</span> All 9 domains</li>
-                <li className="flex items-center gap-3"><span className="text-[var(--accent-primary)]">✓</span> 3 attempts per day</li>
-                <li className="flex items-center gap-3"><span className="text-[var(--accent-primary)]">✓</span> AI recommendations</li>
-              </ul>
-              <Link href="/signup" className="block text-center w-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white py-3 rounded-full font-ui font-medium transition-colors">
-                Start Free Trial
-              </Link>
-            </div>
-
-            {/* Monthly */}
-            <div className="bg-[var(--bg-primary)] border-2 border-[var(--accent-primary)] rounded-[24px] p-8 flex flex-col shadow-md relative transform md:-translate-y-4">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--accent-primary)] text-white px-4 py-1 rounded-full text-xs font-ui font-bold uppercase tracking-wider">
-                Most Popular
-              </div>
-              <h3 className="font-ui font-semibold text-xl text-[var(--text-primary)] mb-2">Monthly</h3>
-              <div className="font-display font-bold text-4xl text-[var(--text-primary)] mb-6">₦5,000<span className="text-xl text-[var(--text-muted)] font-normal"> / mo</span></div>
-              <ul className="space-y-4 mb-8 font-ui text-[var(--text-secondary)] flex-1">
-                <li className="flex items-center gap-3"><span className="text-[var(--accent-primary)]">✓</span> All 9 domains</li>
-                <li className="flex items-center gap-3"><span className="text-[var(--accent-primary)]">✓</span> Unlimited attempts</li>
-                <li className="flex items-center gap-3"><span className="text-[var(--accent-primary)]">✓</span> AI recommendations</li>
-                <li className="flex items-center gap-3"><span className="text-[var(--accent-primary)]">✓</span> Global Leaderboard</li>
-              </ul>
-              <Link href="/signup" className="block text-center w-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white py-3 rounded-full font-ui font-medium transition-colors">
-                Get Started
-              </Link>
-            </div>
-
-            {/* Annual */}
-            <div className="bg-[var(--bg-primary)] border border-[var(--border-subtle)] rounded-[24px] p-8 flex flex-col shadow-sm relative">
-              <div className="absolute top-4 right-4 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 px-3 py-1 rounded-full text-xs font-ui font-bold">
-                Save ₦10,000
-              </div>
-              <h3 className="font-ui font-semibold text-xl text-[var(--text-primary)] mb-2">Annual</h3>
-              <div className="font-display font-bold text-4xl text-[var(--text-primary)] mb-6">₦50,000<span className="text-xl text-[var(--text-muted)] font-normal"> / yr</span></div>
-              <ul className="space-y-4 mb-8 font-ui text-[var(--text-secondary)] flex-1">
-                <li className="flex items-center gap-3"><span className="text-[var(--accent-primary)]">✓</span> All features included</li>
-                <li className="flex items-center gap-3"><span className="text-[var(--accent-primary)]">✓</span> Priority support</li>
-                <li className="flex items-center gap-3"><span className="text-[var(--accent-primary)]">✓</span> 2 months free</li>
-              </ul>
-              <Link href="/signup" className="block text-center w-full bg-[var(--accent-light)] text-[var(--accent-primary)] hover:bg-[var(--accent-primary)] hover:text-white py-3 rounded-full font-ui font-medium transition-colors">
-                Best Value
-              </Link>
-            </div>
+          <div className="bg-bg-secondary rounded-2xl p-8 border-2 border-accent-primary text-center max-w-md mx-auto">
+            <div className="text-5xl mb-4">🆓</div>
+            <h3 className="font-display text-3xl font-bold text-text-primary mb-2">
+              Completely Free
+            </h3>
+            <p className="text-text-secondary font-ui mb-6">
+              Full access during our launch period. 
+              No credit card required.
+            </p>
+            <ul className="text-left space-y-2 mb-8 font-ui text-text-secondary">
+              <li>✅ All certifications</li>
+              <li>✅ Unlimited exams</li>
+              <li>✅ AI recommendations</li>
+              <li>✅ Leaderboard</li>
+            </ul>
+            <a href="/signup" 
+               className="block w-full py-4 rounded-full bg-accent-primary text-white font-semibold text-lg hover:bg-accent-hover transition-all">
+              Start Practicing Free
+            </a>
           </div>
         </div>
       </section>

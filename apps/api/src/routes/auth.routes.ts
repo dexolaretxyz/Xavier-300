@@ -81,7 +81,10 @@ router.post('/signup', async (req: Request, res: Response): Promise<void> => {
         occupation: data.occupation,
         yearsExperience: data.yearsExperience,
         verificationOTP: otp,
-        otpExpiresAt
+        otpExpiresAt,
+        // PAYMENT_DISABLED: Changed from FREE_TRIAL to SUBSCRIBED
+        subscriptionStatus: 'SUBSCRIBED',
+        subscriptionEndsAt: new Date('2030-12-31')
       }
     });
 
@@ -126,7 +129,9 @@ router.post('/verify-email', async (req: Request, res: Response): Promise<void> 
         verificationOTP: null,
         otpExpiresAt: null,
         trialStartedAt: new Date(),
-        subscriptionStatus: 'FREE_TRIAL'
+        // PAYMENT_DISABLED: Changed from FREE_TRIAL to SUBSCRIBED
+        subscriptionStatus: 'SUBSCRIBED',
+        subscriptionEndsAt: new Date('2030-12-31')
       }
     });
 
