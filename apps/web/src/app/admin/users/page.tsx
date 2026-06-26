@@ -46,13 +46,13 @@ export default function AdminUsersPage() {
     }
   };
 
-  const handleResendOTP = async (email: string) => {
+  const handleResendVerification = async (email: string) => {
     try {
       setResending(true);
-      await api.post('/api/auth/resend-otp', { email });
-      toast.success('Verification code resent successfully.');
+      await api.post('/api/auth/resend-verification', { email });
+      toast.success('Verification link resent successfully.');
       
-      // Reload users to get updated OTP & expiry
+      // Reload users to get updated token & expiry
       const { data } = await api.get('/api/admin/users');
       setUsers(data.data);
       
@@ -209,13 +209,13 @@ export default function AdminUsersPage() {
                   </div>
 
                   <div className="p-4 bg-orange-50/50 border border-orange-100 rounded-xl text-center space-y-2">
-                    <span className="text-xs text-orange-600 font-bold uppercase tracking-wider">Active OTP Code</span>
-                    <div className="text-3xl font-mono font-black tracking-widest text-[var(--accent-primary)]">
-                      {selectedUser.verificationOTP || 'N/A'}
+                    <span className="text-xs text-orange-600 font-bold uppercase tracking-wider">Active Verification Token</span>
+                    <div className="text-sm font-mono break-all text-[var(--accent-primary)] font-medium">
+                      {selectedUser.verificationToken || 'N/A'}
                     </div>
                     <div className="text-xs text-[var(--text-muted)]">
-                      {selectedUser.otpExpiresAt ? (
-                        <>Expires: {new Date(selectedUser.otpExpiresAt).toLocaleString()}</>
+                      {selectedUser.tokenExpiresAt ? (
+                        <>Expires: {new Date(selectedUser.tokenExpiresAt).toLocaleString()}</>
                       ) : (
                         <>No active expiry set</>
                       )}
@@ -234,12 +234,12 @@ export default function AdminUsersPage() {
                   </button>
 
                   <button
-                    onClick={() => handleResendOTP(selectedUser.email)}
+                    onClick={() => handleResendVerification(selectedUser.email)}
                     disabled={resending}
                     className="w-full py-2.5 px-4 bg-[var(--bg-secondary)] hover:bg-[var(--bg-secondary)]/80 border border-[var(--border-subtle)] text-[var(--text-primary)] rounded-xl font-medium transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
                   >
                     {resending ? <Loader2 size={16} className="animate-spin" /> : <Mail size={16} />}
-                    Resend OTP Email
+                    Resend Verification Email
                   </button>
 
                   <Dialog.Close asChild>

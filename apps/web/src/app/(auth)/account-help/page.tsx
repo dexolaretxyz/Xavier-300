@@ -20,17 +20,17 @@ export default function AccountHelpPage() {
   const [ticketDescription, setTicketDescription] = useState('');
   const [ticketLoading, setTicketLoading] = useState(false);
 
-  const handleResendOTP = async (e: React.FormEvent) => {
+  const handleResendVerification = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!resendEmail) return;
     
     setResendLoading(true);
     try {
-      await api.post('/api/auth/resend-otp', { email: resendEmail });
-      toast.success('Verification code resent successfully!');
+      await api.post('/api/auth/resend-verification', { email: resendEmail });
+      toast.success('Verification link sent! Check your inbox.');
       router.push(`/verify?email=${encodeURIComponent(resendEmail)}`);
     } catch (err: any) {
-      toast.error(err.response?.data?.error?.message || 'Failed to resend verification code. Make sure email exists.');
+      toast.error(err.response?.data?.error?.message || 'Failed to resend verification link. Make sure email exists.');
     } finally {
       setResendLoading(false);
     }
@@ -95,7 +95,7 @@ export default function AccountHelpPage() {
                   I can't verify my email
                 </h3>
                 <p className="font-ui text-sm text-[var(--text-muted)] mt-1">
-                  Resend the 6-digit verification code to your email.
+                  Resend the verification link to your email.
                 </p>
               </div>
             </button>
@@ -157,7 +157,7 @@ export default function AccountHelpPage() {
         )}
 
         {activeTab === 'resend' && (
-          <form onSubmit={handleResendOTP} className="space-y-5 text-left">
+          <form onSubmit={handleResendVerification} className="space-y-5 text-left">
             <div className="space-y-2">
               <label htmlFor="resendEmail" className="block font-ui text-[var(--text-primary)] font-medium">Email Address</label>
               <input

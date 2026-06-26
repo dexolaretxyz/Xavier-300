@@ -57,16 +57,16 @@ async function runTest() {
   if (loginBefore.data?.error?.code === 'UNVERIFIED_EMAIL') { console.log('   ✅ PASS\n'); passed++; }
   else { console.log('   ❌ FAIL\n'); failed++; }
 
-  // ── STEP 3: Read OTP from database ──
-  console.log('── STEP 3: Read OTP from database ──');
+  // ── STEP 3: Read verification token from database ──
+  console.log('── STEP 3: Read verification token from database ──');
   const user = await prisma.user.findUnique({ where: { email: TEST_EMAIL } });
   if (!user) { console.error('   ❌ FAIL — user not found'); failed++; return; }
-  const otp = user.verificationOTP;
-  console.log(`   OTP: ${otp} | Expires: ${user.otpExpiresAt} | Verified: ${user.emailVerified}`);
-  if (otp) { console.log('   ✅ PASS\n'); passed++; }
-  else { console.log('   ❌ FAIL — no OTP\n'); failed++; return; }
+  const token = user.verificationToken;
+  console.log(`   Token: ${token} | Expires: ${user.tokenExpiresAt} | Verified: ${user.emailVerified}`);
+  if (token) { console.log('   ✅ PASS\n'); passed++; }
+  else { console.log('   ❌ FAIL — no verification token\n'); failed++; return; }
 
-  // ── STEP 4: Signup again (expect EMAIL_UNVERIFIED_EXISTS + fresh OTP) ──
+  // ── STEP 4: Signup again (expect EMAIL_UNVERIFIED_EXISTS + fresh token) ──
   console.log('── STEP 4: Signup again with same email (expect EMAIL_UNVERIFIED_EXISTS) ──');
   const signupAgain = await apiCall('/signup', TEST_DATA);
   console.log(`   Status: ${signupAgain.status} | Code: ${signupAgain.data?.error?.code}`);
@@ -74,24 +74,26 @@ async function runTest() {
   if (signupAgain.data?.error?.code === 'EMAIL_UNVERIFIED_EXISTS') { console.log('   ✅ PASS\n'); passed++; }
   else { console.log('   ❌ FAIL\n'); failed++; }
 
-  // ── STEP 5: Verify new OTP was generated ──
-  console.log('── STEP 5: Check if OTP was regenerated ──');
+  // ── STEP 5: Verify new token was generated ──
+  console.log('── STEP 5: Check if token was regenerated ──');
   const userAfter = await prisma.user.findUnique({ where: { email: TEST_EMAIL } });
-  const newOtp = userAfter?.verificationOTP;
-  console.log(`   Old OTP: ${otp} | New OTP: ${newOtp}`);
-  if (newOtp && newOtp !== otp) { console.log('   ✅ PASS — OTP was refreshed\n'); passed++; }
-  else { console.log('   ⚠️  OTP unchanged (may be same random value)\n'); passed++; }
+  const newToken = userAfter?.verificationToken;
+  console.log(`   Old Token: ${token} | New Token: ${newToken}`);
+  if (newToken && newToken !== token) { console.log('   ✅ PASS — Token was refreshed\n'); passed++; }
+  else { console.log('   ⚠️  Token unchanged (may be same random value)\n'); passed++; }
 
-  // ── STEP 6: Verify email with the latest OTP ──
-  console.log('── STEP 6: Verify email with OTP ──');
-  const verify = await apiCall('/verify-email', { email: TEST_EMAIL, otp: newOtp || otp });
-  console.log(`   Status: ${verify.status}`);
-  if (verify.data?.success) {
-    console.log(`   Tokens: ${verify.data.data.tokens ? 'YES' : 'NO'}`);
-    console.log(`   User: ${JSON.stringify(verify.data.data.user)}`);
+  // ── STEP 6: Verify email with the latest token ──
+  console.log('── STEP 6: Verify email with Token ──');
+  const verifyRes = await fetch(`${API_BASE}/verify-email?token=${newToken || token}&email=${encodeURIComponent(TEST_EMAIL)}`);
+  const verifyData = await verifyRes.json();
+  const verifyStatus = verifyRes.status;
+  console.log(`   Status: ${verifyStatus}`);
+  if (verifyData?.success) {
+    console.log(`   AccessToken: ${verifyData.data.accessToken ? 'YES' : 'NO'}`);
+    console.log(`   User: ${JSON.stringify(verifyData.data.user)}`);
     console.log('   ✅ PASS\n'); passed++;
   } else {
-    console.log(`   Error: ${JSON.stringify(verify.data?.error)}`);
+    console.log(`   Error: ${JSON.stringify(verifyData?.error)}`);
     console.log('   ❌ FAIL\n'); failed++;
   }
 

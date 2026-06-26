@@ -1,233 +1,254 @@
-"use client";
+'use client'
 
-import React, { useState, useEffect, useRef, Suspense } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
-import { Mail, Loader2 } from 'lucide-react';
-import { api } from '@/lib/api';
-import { useAuthStore } from '@/store/auth.store';
-import { toast } from 'sonner';
+import { useState, useEffect, Suspense } from 'react'
+import { useSearchParams, useRouter } from 'next/navigation'
+import { api } from '@/lib/api'
+import { useAuthStore } from '@/store/auth.store'
+import { toast } from 'sonner'
 
 function VerifyContent() {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const email = searchParams.get('email');
-  const shouldAutoResend = searchParams.get('resend') === 'true';
-  const setAuth = useAuthStore(state => state.setUser);
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  const { setUser } = useAuthStore()
   
-  const [code, setCode] = useState(['', '', '', '', '', '']);
-  const [countdown, setCountdown] = useState(3600);
-  const [isVerifying, setIsVerifying] = useState(false);
-  const [error, setError] = useState('');
-  const [resending, setResending] = useState(false);
-  const [wrongAttempts, setWrongAttempts] = useState(0);
+  const token = searchParams.get('token')
+  const email = searchParams.get('email')
   
-  const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
+  const [status, setStatus] = useState<
+    'pending' | 'verifying' | 'success' | 'error' | 'resending'
+  >('pending')
+  
+  const [errorMessage, setErrorMessage] = useState('')
+  const [resendEmail, setResendEmail] = useState(email || '')
+  const [resendCooldown, setResendCooldown] = useState(0)
 
-  const formatCountdown = () => {
-    if (countdown <= 0) {
-      return "Your code has expired. Click resend to get a new one.";
+  // If token is in URL, auto-verify immediately
+  useEffect(() => {
+    if (token && email) {
+      verifyToken()
     }
-    const minutes = Math.floor(countdown / 60);
-    const seconds = countdown % 60;
-    return `Code expires in: ${minutes} minutes ${seconds} seconds`;
-  };
+  }, [token, email])
 
-  const handleResend = async (force: boolean = false) => {
-    if (!email) return;
-    if (!force && countdown > 0) return;
-    
-    setResending(true);
-    setError('');
+  async function verifyToken() {
+    setStatus('verifying')
     try {
-      await api.post('/api/auth/resend-otp', { email });
-      toast.success('Verification email sent! Check your inbox.');
-      setCountdown(3600);
+      const response = await api.get(
+        `/api/auth/verify-email?token=${token}&email=${encodeURIComponent(email!)}`
+      )
+      
+      if (response.data.success) {
+        // Save tokens and user
+        localStorage.setItem(
+          'xavier_access_token', 
+          response.data.data.accessToken
+        )
+        localStorage.setItem(
+          'xavier_refresh_token', 
+          response.data.data.refreshToken
+        )
+        document.cookie = `xavier_access_token=${response.data.data.accessToken}; path=/; max-age=900`
+        setUser(response.data.data.user)
+        setStatus('success')
+        toast.success('Email verified successfully!')
+        
+        // Redirect to dashboard after 2 seconds
+        setTimeout(() => router.push('/dashboard'), 2000)
+      }
     } catch (err: any) {
-      setError(err.response?.data?.error?.message || 'Failed to resend code.');
-      toast.error('Failed to resend verification email.');
-    } finally {
-      setResending(false);
+      setStatus('error')
+      setErrorMessage(
+        err?.response?.data?.error?.message || 
+        'Verification failed. Please try again.'
+      )
+      toast.error('Verification failed.')
     }
-  };
+  }
 
-  useEffect(() => {
-    if (!email) {
-      router.push('/login');
-    }
-  }, [email, router]);
-
-  useEffect(() => {
-    if (shouldAutoResend && email) {
-      handleResend(true);
-    }
-  }, [shouldAutoResend, email]);
-
-  useEffect(() => {
-    if (countdown > 0) {
-      const timer = setTimeout(() => setCountdown(countdown - 1), 1000);
-      return () => clearTimeout(timer);
-    }
-  }, [countdown]);
-
-  const handleVerify = async (fullCode: string) => {
-    if (fullCode.length !== 6 || !email) return;
-    
-    setIsVerifying(true);
-    setError('');
-    
+  async function handleResend() {
+    if (!resendEmail) return
+    setStatus('resending')
     try {
-      const response = await api.post('/api/auth/verify-email', { email, otp: fullCode });
-      const { tokens, user } = response.data.data;
-      
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('xavier_access_token', tokens.accessToken);
-        localStorage.setItem('xavier_refresh_token', tokens.refreshToken);
-        document.cookie = `xavier_access_token=${tokens.accessToken}; path=/; max-age=900`;
-      }
-      
-      setAuth(user);
-      toast.success('Email verified successfully! Welcome to Xavier 300.');
-      router.push('/dashboard');
+      await api.post('/api/auth/resend-verification', { 
+        email: resendEmail 
+      })
+      setStatus('pending')
+      toast.success('Verification email sent! Check your inbox.')
+      // Start cooldown
+      setResendCooldown(60)
+      const interval = setInterval(() => {
+        setResendCooldown(prev => {
+          if (prev <= 1) { clearInterval(interval); return 0 }
+          return prev - 1
+        })
+      }, 1000)
     } catch (err: any) {
-      const nextAttempts = wrongAttempts + 1;
-      setWrongAttempts(nextAttempts);
-
-      if (nextAttempts >= 3) {
-        setResending(true);
-        try {
-          await api.post('/api/auth/resend-otp', { email });
-          setError("Too many incorrect attempts. We've sent a new code.");
-          toast.warning("New verification code sent due to incorrect attempts.");
-          setCountdown(3600);
-          setWrongAttempts(0);
-        } catch (resendErr: any) {
-          setError(resendErr.response?.data?.error?.message || 'Too many incorrect attempts. Failed to resend code.');
-        } finally {
-          setResending(false);
-          setIsVerifying(false);
-          setCode(['', '', '', '', '', '']);
-        }
-      } else {
-        const remaining = 3 - nextAttempts;
-        setError(`Incorrect code. Please try again. (${remaining} attempts remaining)`);
-        setIsVerifying(false);
-      }
+      setStatus('error')
+      setErrorMessage(err?.response?.data?.error?.message || 'Failed to resend link. Please try again.')
+      toast.error('Failed to resend verification link.')
     }
-  };
+  }
 
-  const handleChange = (index: number, value: string) => {
-    if (!/^[0-9]*$/.test(value)) return;
-    
-    const newCode = [...code];
-    newCode[index] = value.substring(value.length - 1);
-    setCode(newCode);
-
-    if (value && index < 5) {
-      inputRefs.current[index + 1]?.focus();
-    }
-
-    const fullCode = newCode.join('');
-    if (fullCode.length === 6) {
-      handleVerify(fullCode);
-    }
-  };
-
-  const handleKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Backspace' && !code[index] && index > 0) {
-      inputRefs.current[index - 1]?.focus();
-    }
-  };
-
-  const handlePaste = (e: React.ClipboardEvent) => {
-    e.preventDefault();
-    const pastedData = e.clipboardData.getData('text/plain').slice(0, 6).replace(/[^0-9]/g, '');
-    
-    if (pastedData) {
-      const newCode = [...code];
-      for (let i = 0; i < pastedData.length; i++) {
-        newCode[i] = pastedData[i];
-      }
-      setCode(newCode);
-      
-      const focusIndex = pastedData.length < 6 ? pastedData.length : 5;
-      inputRefs.current[focusIndex]?.focus();
-      
-      if (pastedData.length === 6) {
-        handleVerify(pastedData);
-      }
-    }
-  };
-
-  return (
-    <div className="w-full min-h-screen flex items-center justify-center p-6 bg-[var(--bg-primary)]">
-      <div className="w-full max-w-md bg-[var(--bg-elevated)] p-10 rounded-[32px] shadow-[var(--shadow-lg)] text-center border border-[var(--border-subtle)]">
-        
-        <div className="w-20 h-20 bg-[var(--accent-light)] rounded-full flex items-center justify-center mx-auto mb-8">
-          <Mail size={40} className="text-[var(--accent-primary)]" />
-        </div>
-        
-        <h1 className="font-ui font-bold text-3xl text-[var(--text-primary)] mb-3">
-          Check your email
-        </h1>
-        <div className="font-ui text-[var(--text-secondary)] text-[16px] mb-8 space-y-2">
-          <p>We sent a 6-digit verification code to <span className="font-medium text-[var(--text-primary)]">{email}</span></p>
-          <p className="text-sm text-[var(--text-muted)]">Can't find it? Check your spam folder.</p>
-          <p className="text-xs text-[var(--text-muted)] italic font-medium">
-            {formatCountdown()}
+  // VERIFYING STATE
+  if (status === 'verifying') {
+    return (
+      <div className="min-h-screen bg-[var(--bg-primary)] flex items-center justify-center px-4">
+        <div className="bg-[var(--bg-elevated)] rounded-[32px] p-10 max-w-md w-full text-center border border-[var(--border-subtle)] shadow-[var(--shadow-lg)]">
+          <div className="w-16 h-16 border-4 border-[var(--accent-primary)] border-t-transparent rounded-full animate-spin mx-auto mb-6" />
+          <h2 className="font-ui text-3xl font-bold text-[var(--text-primary)] mb-2">
+            Verifying...
+          </h2>
+          <p className="text-[var(--text-secondary)] font-ui text-sm">
+            Please wait while we verify your email.
           </p>
         </div>
+      </div>
+    )
+  }
 
-        {error && (
-          <div className="mb-6 p-4 rounded-xl bg-[var(--error-light)] text-[var(--error)] text-sm border border-[var(--error)]/20 text-left">
-            {error}
+  // SUCCESS STATE
+  if (status === 'success') {
+    return (
+      <div className="min-h-screen bg-[var(--bg-primary)] flex items-center justify-center px-4">
+        <div className="bg-[var(--bg-elevated)] rounded-[32px] p-10 max-w-md w-full text-center border border-[var(--border-subtle)] shadow-[var(--shadow-lg)]">
+          <div className="text-6xl mb-6">🎉</div>
+          <h2 className="font-ui text-3xl font-bold text-[var(--text-primary)] mb-2">
+            Email Verified!
+          </h2>
+          <p className="text-[var(--text-secondary)] font-ui mb-6 text-sm">
+            Welcome to Xavier 300! Redirecting you to your dashboard...
+          </p>
+          <div className="w-full h-2 bg-[var(--bg-primary)] rounded-full overflow-hidden">
+            <div className="h-full bg-[var(--accent-primary)] rounded-full animate-pulse" style={{ width: '100%' }} />
           </div>
-        )}
+        </div>
+      </div>
+    )
+  }
 
-        <div className="flex justify-between mb-8 gap-2">
-          {code.map((digit, idx) => (
+  // ERROR STATE
+  if (status === 'error') {
+    return (
+      <div className="min-h-screen bg-[var(--bg-primary)] flex items-center justify-center px-4">
+        <div className="bg-[var(--bg-elevated)] rounded-[32px] p-10 max-w-md w-full text-center border border-[var(--border-subtle)] shadow-[var(--shadow-lg)]">
+          <div className="text-6xl mb-6">❌</div>
+          <h2 className="font-ui text-3xl font-bold text-[var(--text-primary)] mb-2">
+            Link Invalid
+          </h2>
+          <p className="text-[var(--text-secondary)] font-ui mb-6 text-sm">
+            {errorMessage}
+          </p>
+          <div className="space-y-3">
             <input
-              key={idx}
-              ref={(el) => { inputRefs.current[idx] = el; }}
-              type="text"
-              inputMode="numeric"
-              maxLength={1}
-              value={digit}
-              onChange={(e) => handleChange(idx, e.target.value)}
-              onKeyDown={(e) => handleKeyDown(idx, e)}
-              onPaste={handlePaste}
-              disabled={isVerifying}
-              className="w-[56px] h-[64px] text-center font-mono text-2xl font-bold bg-[var(--bg-primary)] border border-[var(--border-medium)] rounded-xl focus:outline-none focus:border-[var(--accent-primary)] focus:ring-2 focus:ring-[var(--accent-glow)] transition-all disabled:opacity-50"
+              type="email"
+              value={resendEmail}
+              onChange={(e) => setResendEmail(e.target.value)}
+              placeholder="Enter your email"
+              className="w-full px-4 py-3 rounded-xl border border-[var(--border-medium)] bg-[var(--bg-primary)] text-[var(--text-primary)] font-ui focus:outline-none focus:border-[var(--accent-primary)]"
             />
-          ))}
+            <button
+              onClick={handleResend}
+              disabled={resendCooldown > 0}
+              className="w-full py-4 rounded-full bg-[var(--accent-primary)] text-white font-ui font-semibold text-base hover:bg-[var(--accent-hover)] disabled:opacity-60 transition-all"
+            >
+              Send New Verification Link
+            </button>
+            <button
+              onClick={() => router.push('/login')}
+              className="w-full py-4 rounded-full border border-[var(--border-medium)] text-[var(--text-secondary)] font-ui font-medium hover:bg-[var(--bg-primary)] transition-all"
+            >
+              Back to Login
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // DEFAULT STATE — waiting for user to check email
+  return (
+    <div className="min-h-screen bg-[var(--bg-primary)] flex items-center justify-center px-4">
+      <div className="bg-[var(--bg-elevated)] rounded-[32px] p-10 max-w-md w-full text-center border border-[var(--border-subtle)] shadow-[var(--shadow-lg)]">
+        
+        {/* Icon */}
+        <div className="w-20 h-20 bg-[var(--accent-light)] rounded-full flex items-center justify-center mx-auto mb-6">
+          <span className="text-4xl text-[var(--accent-primary)]">📧</span>
+        </div>
+        
+        <h2 className="font-ui text-3xl font-bold text-[var(--text-primary)] mb-3">
+          Check Your Email
+        </h2>
+        
+        <p className="text-[var(--text-secondary)] font-ui text-base leading-relaxed mb-2">
+          We sent a verification link to
+        </p>
+        <p className="text-[var(--accent-primary)] font-ui font-semibold text-lg mb-6">
+          {email || 'your email address'}
+        </p>
+
+        {/* Instructions box */}
+        <div className="bg-[var(--bg-primary)] rounded-xl p-5 mb-6 text-left space-y-3 border border-[var(--border-subtle)]">
+          <div className="flex items-start gap-3">
+            <span className="text-lg">1️⃣</span>
+            <p className="text-[var(--text-secondary)] font-ui text-sm">
+              Open your email inbox
+            </p>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="text-lg">2️⃣</span>
+            <p className="text-[var(--text-secondary)] font-ui text-sm">
+              Find the email from <strong>Xavier 300</strong>
+            </p>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="text-lg">3️⃣</span>
+            <p className="text-[var(--text-secondary)] font-ui text-sm">
+              Click the <strong>"Verify My Email"</strong> button
+            </p>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="text-lg">4️⃣</span>
+            <p className="text-[var(--text-secondary)] font-ui text-sm">
+              You will be automatically logged in
+            </p>
+          </div>
         </div>
 
-        {isVerifying && (
-          <div className="flex items-center justify-center text-[var(--accent-primary)] mb-6 font-ui">
-            <Loader2 className="animate-spin mr-2" size={20} />
-            Verifying code...
-          </div>
-        )}
+        <p className="text-[var(--text-muted)] font-ui text-sm mb-2">
+          Can't find the email? Check your spam folder.
+        </p>
 
-        <button 
-          onClick={() => handleResend(false)}
-          disabled={countdown > 0 || resending}
-          className="font-ui text-[var(--text-secondary)] hover:text-[var(--text-primary)] disabled:opacity-50 transition-colors font-medium"
+        {/* Resend button */}
+        <button
+          onClick={handleResend}
+          disabled={status === 'resending' || resendCooldown > 0}
+          className="w-full py-4 rounded-full border border-[var(--border-medium)] text-[var(--text-secondary)] font-ui font-medium mt-4 hover:bg-[var(--bg-primary)] disabled:opacity-60 transition-all"
         >
-          {resending ? 'Resending...' : countdown > 0 ? `Resend in ${Math.floor(countdown / 60)}m ${countdown % 60}s` : 'Resend code'}
+          {status === 'resending' 
+            ? 'Sending...' 
+            : resendCooldown > 0 
+            ? `Resend in ${resendCooldown}s`
+            : '📨 Resend Verification Email'}
+        </button>
+
+        <button
+          onClick={() => router.push('/login')}
+          className="w-full py-3 rounded-full text-[var(--text-muted)] font-ui text-sm mt-2 hover:text-[var(--text-primary)] transition-all"
+        >
+          Back to Login
         </button>
       </div>
     </div>
-  );
+  )
 }
 
 export default function VerifyPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600" />
+      <div className="min-h-screen flex items-center justify-center bg-[var(--bg-primary)]">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[var(--accent-primary)]" />
       </div>
     }>
       <VerifyContent />
     </Suspense>
-  );
+  )
 }

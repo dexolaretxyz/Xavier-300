@@ -29,8 +29,8 @@ async function main() {
     },
     data: {
       emailVerified: true,
-      verificationOTP: null,
-      otpExpiresAt: null,
+      verificationToken: null,
+      tokenExpiresAt: null,
       trialStartedAt: new Date(),
       subscriptionStatus: 'FREE_TRIAL'
     }

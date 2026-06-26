@@ -54,15 +54,15 @@ function LoginContent() {
     return () => clearInterval(interval);
   }, [resendCooldown]);
 
-  async function handleResendOTP(email: string) {
+  async function handleResendVerification(email: string) {
     setResendLoading(true);
     try {
-      await api.post('/api/auth/resend-otp', { email });
-      toast.success('Verification email sent! Check your inbox.');
+      await api.post('/api/auth/resend-verification', { email });
+      toast.success('Verification link sent! Check your inbox.');
       setResendCooldown(60);
       router.push(`/verify?email=${encodeURIComponent(email)}`);
     } catch (error) {
-      toast.error('Failed to send email. Please try again.');
+      toast.error('Failed to send verification link. Please try again.');
     } finally {
       setResendLoading(false);
     }
@@ -148,15 +148,15 @@ function LoginContent() {
                 <div className="flex flex-col gap-2">
                   <button
                     type="button"
-                    onClick={() => handleResendOTP(authError.email)}
+                    onClick={() => handleResendVerification(authError.email)}
                     disabled={resendLoading || resendCooldown > 0}
                     className="text-amber-600 hover:text-amber-800 text-sm font-ui font-medium text-left underline disabled:no-underline disabled:opacity-60 transition-all"
                   >
                     {resendLoading 
                       ? 'Sending...' 
                       : resendCooldown > 0 
-                      ? `Resend in ${resendCooldown}s`
-                      : "Didn't receive the email? Click here to resend"}
+                      ? `Resend link in ${resendCooldown}s`
+                      : "Didn't receive the email? Resend verification link"}
                   </button>
                   <button
                     type="button"
@@ -167,7 +167,7 @@ function LoginContent() {
                                text-amber-700 text-sm font-ui font-medium 
                                hover:bg-amber-50 transition-all"
                   >
-                    Enter Code Manually
+                    Go to Verification Page
                   </button>
                 </div>
               </div>

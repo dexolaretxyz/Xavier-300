@@ -20,8 +20,8 @@ model User {
   yearsExperience   Int
   role              Role           @default(STUDENT)
   emailVerified     Boolean        @default(false)
-  verificationOTP   String?
-  otpExpiresAt      DateTime?
+  verificationToken  String?   @unique
+  tokenExpiresAt     DateTime?
   subscriptionStatus SubStatus     @default(FREE_TRIAL)
   trialStartedAt    DateTime       @default(now())
   subscriptionEndsAt DateTime?

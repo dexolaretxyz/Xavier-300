@@ -177,8 +177,8 @@ router.get('/users', async (req: any, res: any) => {
         trialStartedAt: true,
         createdAt: true,
         emailVerified: true,
-        verificationOTP: true,
-        otpExpiresAt: true
+        verificationToken: true,
+        tokenExpiresAt: true
       },
       take: 100
     });
@@ -225,8 +225,8 @@ router.patch('/users/:id/verify-manually', async (req: any, res: any) => {
       where: { id },
       data: {
         emailVerified: true,
-        verificationOTP: null,
-        otpExpiresAt: null,
+        verificationToken: null,
+        tokenExpiresAt: null,
         trialStartedAt: new Date(),
         subscriptionStatus: 'FREE_TRIAL'
       },
@@ -239,8 +239,8 @@ router.patch('/users/:id/verify-manually', async (req: any, res: any) => {
         trialStartedAt: true,
         createdAt: true,
         emailVerified: true,
-        verificationOTP: true,
-        otpExpiresAt: true
+        verificationToken: true,
+        tokenExpiresAt: true
       }
     });
 
@@ -252,9 +252,9 @@ router.patch('/users/:id/verify-manually', async (req: any, res: any) => {
 });
 
 /**
- * GET /api/admin/users/:email/otp
+ * GET /api/admin/users/:email/token
  */
-router.get('/users/:email/otp', async (req: any, res: any) => {
+router.get('/users/:email/token', async (req: any, res: any) => {
   try {
     const { email } = req.params;
 
@@ -262,8 +262,8 @@ router.get('/users/:email/otp', async (req: any, res: any) => {
       where: { email },
       select: {
         email: true,
-        verificationOTP: true,
-        otpExpiresAt: true
+        verificationToken: true,
+        tokenExpiresAt: true
       }
     });
 
@@ -275,12 +275,12 @@ router.get('/users/:email/otp', async (req: any, res: any) => {
       success: true,
       data: {
         email: user.email,
-        verificationOTP: user.verificationOTP,
-        otpExpiresAt: user.otpExpiresAt
+        verificationToken: user.verificationToken,
+        tokenExpiresAt: user.tokenExpiresAt
       }
     });
   } catch (error) {
-    console.error('Admin get user OTP error:', error);
+    console.error('Admin get user token error:', error);
     return res.status(500).json({ success: false, error: { message: 'Internal server error' } });
   }
 });

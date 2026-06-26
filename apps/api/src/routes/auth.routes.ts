@@ -22,11 +22,6 @@ const loginSchema = z.object({
   password: z.string()
 });
 
-const verifySchema = z.object({
-  email: z.string().email(),
-  otp: z.string().length(6)
-});
-
 // Routes
 router.post('/signup', async (req: Request, res: Response): Promise<void> => {
   try {
@@ -36,8 +31,8 @@ router.post('/signup', async (req: Request, res: Response): Promise<void> => {
     if (existingUser) {
       if (
         !existingUser.emailVerified && 
-        existingUser.otpExpiresAt && 
-        new Date() > existingUser.otpExpiresAt &&
+        existingUser.tokenExpiresAt && 
+        new Date() > existingUser.tokenExpiresAt &&
         new Date().getTime() - existingUser.createdAt.getTime() 
         > 24 * 60 * 60 * 1000
       ) {
@@ -48,7 +43,7 @@ router.post('/signup', async (req: Request, res: Response): Promise<void> => {
           success: false,
           error: {
             code: 'EMAIL_UNVERIFIED_EXISTS',
-            message: 'An account with this email exists but is not verified. Please check your email for the verification code.',
+            message: 'An account with this email exists but is not verified. Please check your email for the verification link.',
             canResend: true,
             email: data.email
           }
@@ -68,8 +63,8 @@ router.post('/signup', async (req: Request, res: Response): Promise<void> => {
     }
 
     const passwordHash = await authService.hashPassword(data.password);
-    const otp = authService.generateOTP();
-    const otpExpiresAt = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
+    const token = authService.generateVerificationToken();
+    const tokenExpiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24 hours
 
     const user = await prisma.user.create({
       data: {
@@ -80,8 +75,8 @@ router.post('/signup', async (req: Request, res: Response): Promise<void> => {
         state: data.state,
         occupation: data.occupation,
         yearsExperience: data.yearsExperience,
-        verificationOTP: otp,
-        otpExpiresAt,
+        verificationToken: token,
+        tokenExpiresAt,
         // PAYMENT_DISABLED: Changed from FREE_TRIAL to SUBSCRIBED
         subscriptionStatus: 'SUBSCRIBED',
         subscriptionEndsAt: new Date('2030-12-31')
@@ -89,9 +84,9 @@ router.post('/signup', async (req: Request, res: Response): Promise<void> => {
     });
 
     // Fire and forget email dispatch to eliminate latency
-    authService.sendVerificationEmail(user.email, otp).catch((e) => console.error('[EMAIL DISPATCH]', e));
+    authService.sendVerificationEmail(user.email, token).catch((e) => console.error('[EMAIL DISPATCH]', e));
 
-    res.status(201).json({ success: true, message: 'User created. Please check your email for OTP.' });
+    res.status(201).json({ success: true, message: 'User created. Please check your email for the verification link.' });
   } catch (error: any) {
     console.error('[SIGNUP ERROR]', error);
     if (error instanceof z.ZodError) {
@@ -102,45 +97,85 @@ router.post('/signup', async (req: Request, res: Response): Promise<void> => {
   }
 });
 
-router.post('/verify-email', async (req: Request, res: Response): Promise<void> => {
-  try {
-    const data = verifySchema.parse(req.body);
-
-    const user = await prisma.user.findUnique({ where: { email: data.email } });
-    if (!user) {
-      res.status(404).json({ success: false, error: { code: 'NOT_FOUND', message: 'User not found' } });
-      return;
-    }
-
-    if (user.emailVerified) {
-      res.status(400).json({ success: false, error: { code: 'ALREADY_VERIFIED', message: 'Email already verified' } });
-      return;
-    }
-
-    if (user.verificationOTP !== data.otp || !user.otpExpiresAt || user.otpExpiresAt < new Date()) {
-      res.status(400).json({ success: false, error: { code: 'INVALID_OTP', message: 'Invalid or expired OTP' } });
-      return;
-    }
-
-    await prisma.user.update({
-      where: { id: user.id },
-      data: {
-        emailVerified: true,
-        verificationOTP: null,
-        otpExpiresAt: null,
-        trialStartedAt: new Date(),
-        // PAYMENT_DISABLED: Changed from FREE_TRIAL to SUBSCRIBED
-        subscriptionStatus: 'SUBSCRIBED',
-        subscriptionEndsAt: new Date('2030-12-31')
-      }
-    });
-
-    const tokens = authService.generateTokens(user.id, user.role);
-
-    res.json({ success: true, data: { tokens, user: { id: user.id, email: user.email, fullName: user.fullName, role: user.role } } });
-  } catch (error: any) {
-    res.status(400).json({ success: false, error: { code: 'VALIDATION_ERROR', message: error.message } });
+router.get('/verify-email', async (req: Request, res: Response): Promise<any> => {
+  const { token, email } = req.query as { 
+    token: string, 
+    email: string 
   }
+  
+  if (!token || !email) {
+    return res.status(400).json({
+      success: false,
+      error: { code: 'MISSING_PARAMS', 
+               message: 'Token and email are required' }
+    })
+  }
+  
+  const user = await prisma.user.findUnique({
+    where: { email }
+  })
+  
+  if (!user) {
+    return res.status(404).json({
+      success: false,
+      error: { code: 'USER_NOT_FOUND', message: 'User not found' }
+    })
+  }
+  
+  if (user.emailVerified) {
+    return res.status(400).json({
+      success: false,
+      error: { code: 'ALREADY_VERIFIED', 
+               message: 'Email already verified' }
+    })
+  }
+  
+  if (user.verificationToken !== token) {
+    return res.status(400).json({
+      success: false,
+      error: { code: 'INVALID_TOKEN', 
+               message: 'Invalid or expired verification link' }
+    })
+  }
+  
+  if (user.tokenExpiresAt && new Date() > user.tokenExpiresAt) {
+    return res.status(400).json({
+      success: false,
+      error: { code: 'TOKEN_EXPIRED', 
+               message: 'Verification link has expired. Request a new one.' }
+    })
+  }
+  
+  // Mark as verified
+  await prisma.user.update({
+    where: { email },
+    data: {
+      emailVerified: true,
+      verificationToken: null,
+      tokenExpiresAt: null,
+      trialStartedAt: new Date(),
+      subscriptionStatus: 'SUBSCRIBED',
+      subscriptionEndsAt: new Date('2030-12-31')
+    }
+  })
+  
+  // Generate tokens for auto-login
+  const { accessToken, refreshToken } = authService.generateTokens(
+    user.id, 
+    user.role
+  )
+  
+  return res.json({
+    success: true,
+    message: 'Email verified successfully',
+    data: { accessToken, refreshToken, user: {
+      id: user.id,
+      email: user.email,
+      fullName: user.fullName,
+      role: user.role,
+      subscriptionStatus: 'SUBSCRIBED'
+    }}
+  })
 });
 
 router.post('/login', async (req: Request, res: Response): Promise<void> => {
@@ -205,28 +240,37 @@ router.post('/refresh', (req: Request, res: Response): void => {
   }
 });
 
-router.post('/resend-otp', async (req: Request, res: Response): Promise<void> => {
+router.post('/resend-verification', async (req: Request, res: Response): Promise<any> => {
   try {
     const email = z.string().email().parse(req.body.email);
     const user = await prisma.user.findUnique({ where: { email } });
     
-    if (!user || user.emailVerified) {
-      res.status(400).json({ success: false, error: { code: 'INVALID_REQUEST', message: 'User not found or already verified' } });
-      return;
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        error: { code: 'USER_NOT_FOUND', message: 'Email not found' }
+      });
+    }
+    
+    if (user.emailVerified) {
+      return res.status(400).json({
+        success: false,
+        error: { code: 'ALREADY_VERIFIED', message: 'Email already verified' }
+      });
     }
 
-    const otp = authService.generateOTP();
-    const otpExpiresAt = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
+    const token = authService.generateVerificationToken();
+    const tokenExpiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24 hours
 
     await prisma.user.update({
       where: { id: user.id },
-      data: { verificationOTP: otp, otpExpiresAt }
+      data: { verificationToken: token, tokenExpiresAt }
     });
 
     // Fire and forget email dispatch
-    authService.sendVerificationEmail(user.email, otp).catch((e) => console.error('[EMAIL DISPATCH]', e));
+    authService.sendVerificationEmail(user.email, token).catch((e) => console.error('[EMAIL DISPATCH]', e));
 
-    res.json({ success: true, message: 'OTP resent successfully' });
+    res.json({ success: true, message: 'Verification email sent. Check your inbox.' });
   } catch (error: any) {
     res.status(400).json({ success: false, error: { code: 'VALIDATION_ERROR', message: error.message } });
   }
