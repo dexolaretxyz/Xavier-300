@@ -71,17 +71,13 @@ async function sendVerificationEmail(
                   <!-- Logo -->
                   <tr>
                     <td style="padding-bottom:24px;">
-                      <div style="width:60px;height:60px;
-                                  background:#3730A3;
-                                  border-radius:50%;
-                                  margin:0 auto;
-                                  display:flex;
-                                  align-items:center;
-                                  justify-content:center;">
-                        <span style="color:white;font-size:28px;
-                                     font-weight:bold;
-                                     line-height:60px;">X</span>
-                      </div>
+                      <table cellpadding="0" cellspacing="0" style="width:60px; height:60px; border-radius:50%; background:#3730A3; margin:0 auto; border-collapse:collapse;">
+                        <tr>
+                          <td align="center" valign="middle" style="color:#FFFFFF; font-size:28px; font-weight:bold; line-height:60px; font-family:Arial,sans-serif; text-align:center; vertical-align:middle;">
+                            X
+                          </td>
+                        </tr>
+                      </table>
                     </td>
                   </tr>
                   
@@ -121,7 +117,7 @@ async function sendVerificationEmail(
                                 font-size:18px;
                                 font-weight:700;
                                 letter-spacing:0.01em;">
-                        ✅ Verify My Email
+                        Verify My Email
                       </a>
                     </td>
                   </tr>
@@ -131,7 +127,7 @@ async function sendVerificationEmail(
                     <td style="padding-bottom:24px;">
                       <p style="color:#8A8A7E;font-size:14px;
                                 margin:0;">
-                        ⏰ This link expires in 
+                        This link expires in 
                         <strong>24 hours</strong>.
                       </p>
                     </td>
@@ -167,7 +163,7 @@ async function sendVerificationEmail(
                       <p style="color:#8A8A7E;font-size:12px;
                                 margin:8px 0 0;">
                         Xavier 300 · Practice like it is real. 
-                        Pass like you prepared. 🇳🇬
+                        Pass like you prepared.
                       </p>
                     </td>
                   </tr>
@@ -241,9 +237,16 @@ async function sendPasswordResetEmail(
                 <table width="480" cellpadding="0" cellspacing="0"
                        style="background:#FFFFFF;border-radius:20px;
                               padding:40px;text-align:center;">
+                  <!-- Logo -->
                   <tr>
-                    <td style="padding-bottom:16px;font-size:48px;">
-                      🔐
+                    <td style="padding-bottom:24px;">
+                      <table cellpadding="0" cellspacing="0" style="width:60px; height:60px; border-radius:50%; background:#3730A3; margin:0 auto; border-collapse:collapse;">
+                        <tr>
+                          <td align="center" valign="middle" style="color:#FFFFFF; font-size:28px; font-weight:bold; line-height:60px; font-family:Arial,sans-serif; text-align:center; vertical-align:middle;">
+                            X
+                          </td>
+                        </tr>
+                      </table>
                     </td>
                   </tr>
                   <tr>
