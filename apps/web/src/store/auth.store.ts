@@ -32,7 +32,7 @@ export const useAuthStore = create<AuthState>((set) => ({
     if (typeof window !== 'undefined') {
       localStorage.setItem('xavier_access_token', tokens.accessToken);
       localStorage.setItem('xavier_refresh_token', tokens.refreshToken);
-      document.cookie = `xavier_access_token=${tokens.accessToken}; path=/; max-age=900`;
+      document.cookie = `xavier_access_token=${tokens.accessToken}; path=/; max-age=604800`;
     }
     
     set({ user, isAuthenticated: true, isLoading: false });
@@ -62,6 +62,7 @@ export const useAuthStore = create<AuthState>((set) => ({
       if (typeof window !== 'undefined') {
         const token = localStorage.getItem('xavier_access_token');
         if (token) {
+          document.cookie = `xavier_access_token=${token}; path=/; max-age=604800`;
           const response = await api.get('/api/users/me');
           set({ user: response.data.data, isAuthenticated: true });
         } else {

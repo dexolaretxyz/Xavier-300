@@ -16,6 +16,7 @@ api.interceptors.request.use(
       const token = localStorage.getItem('xavier_access_token');
       if (token && config.headers) {
         config.headers.Authorization = `Bearer ${token}`;
+        document.cookie = `xavier_access_token=${token}; path=/; max-age=604800`;
       }
     }
     return config;
@@ -108,7 +109,7 @@ api.interceptors.response.use(
 
         if (typeof window !== 'undefined') {
           localStorage.setItem('xavier_access_token', newAccessToken);
-          document.cookie = `xavier_access_token=${newAccessToken}; path=/; max-age=900`;
+          document.cookie = `xavier_access_token=${newAccessToken}; path=/; max-age=604800`;
         }
         
         api.defaults.headers.common['Authorization'] = `Bearer ${newAccessToken}`;
