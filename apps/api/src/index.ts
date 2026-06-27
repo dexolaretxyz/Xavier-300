@@ -8,9 +8,16 @@ dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 console.log('DEBUG DATABASE_URL:', process.env.DATABASE_URL);
 
+// Catch uncaught errors to prevent silent crashes on Railway
+process.on('uncaughtException', (err) => {
+  console.error('UNCAUGHT EXCEPTION:', err);
+});
+process.on('unhandledRejection', (reason) => {
+  console.error('UNHANDLED REJECTION:', reason);
+});
+
 import express from 'express';
 import * as Sentry from '@sentry/node';
-import { nodeProfilingIntegration } from '@sentry/profiling-node';
 import cors from 'cors';
 import helmet from 'helmet';
 import compression from 'compression';
@@ -32,14 +39,30 @@ const app = express();
 app.set('trust proxy', 1); // Trust Railway's reverse proxy (fixes rate limit error)
 const PORT = process.env.PORT || 4000;
 
-Sentry.init({
-  dsn: process.env.SENTRY_DSN || "YOUR_SENTRY_DSN",
-  integrations: [
-    nodeProfilingIntegration(),
-  ],
-  tracesSampleRate: 1.0,
-  profilesSampleRate: 1.0,
-});
+// Initialize Sentry safely — profiling uses native bindings that can crash on some platforms
+try {
+  const sentryDsn = process.env.SENTRY_DSN;
+  if (sentryDsn && sentryDsn !== 'YOUR_SENTRY_DSN') {
+    let integrations: any[] = [];
+    try {
+      const { nodeProfilingIntegration } = require('@sentry/profiling-node');
+      integrations.push(nodeProfilingIntegration());
+    } catch (e) {
+      console.warn('[SENTRY] Profiling integration unavailable, skipping.');
+    }
+    Sentry.init({
+      dsn: sentryDsn,
+      integrations,
+      tracesSampleRate: 1.0,
+      profilesSampleRate: 1.0,
+    });
+    console.log('[SENTRY] Initialized successfully.');
+  } else {
+    console.log('[SENTRY] No valid DSN configured, skipping initialization.');
+  }
+} catch (err: any) {
+  console.error('[SENTRY] Failed to initialize:', err.message);
+}
 
 // Initialize Cron Jobs
 initLeaderboardJob();
