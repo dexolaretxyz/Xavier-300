@@ -56,11 +56,11 @@ export default function ProtectedLayout({ children }: { children: React.ReactNod
   return (
     <div className="min-h-screen bg-[var(--bg-secondary)] flex flex-col md:flex-row">
       {/* DESKTOP SIDEBAR */}
-      <aside className="hidden md:flex w-64 flex-col bg-[var(--bg-primary)] border-r border-[var(--border-subtle)] fixed h-full z-10">
+      <aside className="hidden md:flex w-64 flex-col bg-white border-r border-[var(--border-subtle)] fixed h-full z-10">
         <div className="p-6">
           <Link href="/dashboard" className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-[var(--accent-primary)] text-white flex items-center justify-center font-display font-bold text-xl">X</div>
-            <span className="font-ui font-semibold text-[var(--text-primary)] text-xl tracking-tight">Xavier 300</span>
+            <span className="font-display font-bold text-[var(--text-primary)] text-xl tracking-tight">Xavier 300</span>
           </Link>
         </div>
 
@@ -71,10 +71,10 @@ export default function ProtectedLayout({ children }: { children: React.ReactNod
               <Link
                 key={item.name}
                 href={item.href}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl font-ui font-medium transition-colors ${
+                className={`flex items-center gap-3 py-3 rounded-lg font-ui font-medium transition-all ${
                   isActive 
-                    ? 'bg-[var(--accent-light)] text-[var(--accent-primary)]' 
-                    : 'text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)]'
+                    ? 'border-l-4 border-[var(--accent-secondary)] bg-[var(--accent-light)] text-[var(--accent-primary)] pl-3 pr-4' 
+                    : 'text-[var(--text-secondary)] hover:bg-[var(--accent-light)]/50 hover:text-[var(--text-primary)] pl-4 pr-4'
                 }`}
               >
                 {item.icon}
@@ -121,7 +121,7 @@ export default function ProtectedLayout({ children }: { children: React.ReactNod
       {/* MAIN CONTENT AREA */}
       <div className="flex-1 md:ml-64 flex flex-col min-h-screen">
         {/* DESKTOP TOPBAR */}
-        <header className="hidden md:flex items-center justify-between px-8 py-4 bg-[var(--bg-primary)] border-b border-[var(--border-subtle)] sticky top-0 z-10">
+        <header className="hidden md:flex items-center justify-between px-8 py-4 bg-white border-b border-[var(--border-subtle)] sticky top-0 z-10">
           <div className="font-ui text-[var(--text-secondary)] text-sm">
             {new Date().toLocaleDateString('en-NG', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
           </div>

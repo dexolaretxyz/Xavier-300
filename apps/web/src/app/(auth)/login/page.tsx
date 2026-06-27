@@ -90,23 +90,14 @@ function LoginContent() {
   };
 
   return (
-    <div className="w-full flex min-h-screen">
+    <div className="w-full flex min-h-screen bg-[var(--bg-primary)]">
       {/* LEFT PANEL */}
-      <div className="hidden lg:flex w-1/2 bg-[var(--bg-secondary)] flex-col justify-center items-center relative overflow-hidden">
-        {/* Subtle noise texture */}
-        <div 
-          className="absolute inset-0 opacity-[0.04] pointer-events-none"
-          style={{
-            backgroundImage: `radial-gradient(circle, #000 1px, transparent 1px)`,
-            backgroundSize: '4px 4px'
-          }}
-        />
-        
+      <div className="hidden lg:flex w-1/2 bg-[var(--accent-primary)] flex-col justify-center items-center relative overflow-hidden">
         <div className="relative z-10 text-center px-12">
-          <h1 className="font-display font-bold text-7xl text-[var(--text-primary)] mb-6">
+          <h1 className="font-display font-bold text-7xl text-white mb-6">
             Xavier 300
           </h1>
-          <p className="font-ui text-lg text-[var(--text-secondary)] max-w-md mx-auto">
+          <p className="font-ui text-lg text-white/70 max-w-md mx-auto">
             Practice like it's real. Pass like you prepared.
           </p>
         </div>
@@ -114,9 +105,9 @@ function LoginContent() {
 
       {/* RIGHT PANEL */}
       <div className="w-full lg:w-1/2 bg-[var(--bg-primary)] flex items-center justify-center p-6 sm:p-12">
-        <div className="w-full max-w-[420px]">
+        <div className="w-full max-w-[440px] bg-white rounded-2xl p-8 shadow-[var(--shadow-card)]">
           <div className="mb-[32px]">
-            <h2 className="font-ui font-semibold text-[32px] text-[var(--text-primary)] leading-tight">
+            <h2 className="font-display font-bold text-[28px] text-[var(--accent-primary)] leading-tight">
               Welcome back
             </h2>
             <p className="font-ui text-[var(--text-muted)] mt-2 text-lg">
@@ -180,7 +171,7 @@ function LoginContent() {
                 type="email" 
                 placeholder="you@example.com" 
                 {...register('email')}
-                className={`w-full rounded-xl border ${errors.email ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow`}
+                className={`w-full rounded-lg border ${errors.email ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow`}
               />
               {errors.email && <p className="text-[var(--error)] text-sm mt-1">{errors.email.message}</p>}
             </div>
@@ -195,7 +186,7 @@ function LoginContent() {
                   type={showPassword ? 'text' : 'password'} 
                   placeholder="••••••••"
                   {...register('password')}
-                  className={`w-full rounded-xl border ${errors.password ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] pr-12 font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow`}
+                  className={`w-full rounded-lg border ${errors.password ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] pr-12 font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow`}
                 />
                 <button
                   type="button"
@@ -217,7 +208,7 @@ function LoginContent() {
             <button 
               type="submit" 
               disabled={isSubmitting}
-              className="w-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white rounded-[100px] py-[14px] font-ui font-medium text-[16px] transition-all mt-[32px] flex items-center justify-center gap-2 disabled:opacity-70"
+              className="w-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white rounded-lg py-[14px] font-ui font-medium text-[16px] transition-all mt-[32px] flex items-center justify-center gap-2 disabled:opacity-70"
             >
               {isSubmitting ? (
                 <>
