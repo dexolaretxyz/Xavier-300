@@ -41,7 +41,6 @@ export default function SignupPage() {
 
   const passwordValue = watch('password', '');
   
-  // Simple password strength calculation
   const getPasswordStrength = (pass: string) => {
     if (!pass) return { score: 0, label: '', color: 'bg-[var(--border-medium)]' };
     let score = 0;
@@ -89,21 +88,14 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="w-full flex min-h-screen">
+    <div className="w-full flex min-h-screen bg-[var(--bg-primary)]">
       {/* LEFT PANEL */}
-      <div className="hidden lg:flex w-1/2 bg-[var(--bg-secondary)] flex-col justify-center items-center relative overflow-hidden fixed h-screen">
-        <div 
-          className="absolute inset-0 opacity-[0.04] pointer-events-none"
-          style={{
-            backgroundImage: `radial-gradient(circle, #000 1px, transparent 1px)`,
-            backgroundSize: '4px 4px'
-          }}
-        />
+      <div className="hidden lg:flex w-1/2 bg-[var(--accent-primary)] flex-col justify-center items-center relative overflow-hidden fixed h-screen">
         <div className="relative z-10 text-center px-12">
-          <h1 className="font-display font-bold text-7xl text-[var(--text-primary)] mb-6">
+          <h1 className="font-display font-bold text-7xl text-white mb-6">
             Xavier 300
           </h1>
-          <p className="font-ui text-lg text-[var(--text-secondary)] max-w-md mx-auto">
+          <p className="font-ui text-lg text-white/70 max-w-md mx-auto">
             Practice like it's real. Pass like you prepared.
           </p>
         </div>
@@ -111,9 +103,9 @@ export default function SignupPage() {
 
       {/* RIGHT PANEL - Scrollable */}
       <div className="w-full lg:w-1/2 lg:ml-auto bg-[var(--bg-primary)] flex items-center justify-center p-6 sm:p-12 min-h-screen">
-        <div className="w-full max-w-[420px] py-12">
+        <div className="w-full max-w-[440px] bg-white rounded-2xl p-8 shadow-[var(--shadow-card)] my-12">
           <div className="mb-[32px]">
-            <h2 className="font-ui font-semibold text-[32px] text-[var(--text-primary)] leading-tight">
+            <h2 className="font-display font-bold text-[28px] text-[var(--accent-primary)] leading-tight">
               Create an account
             </h2>
             <p className="font-ui text-[var(--text-muted)] mt-2 text-lg">
@@ -134,31 +126,31 @@ export default function SignupPage() {
               </div>
             )}
 
-            <div className="space-y-2">
+            <div className="space-y-2 text-left">
               <label htmlFor="fullName" className="block font-ui text-[var(--text-primary)] font-medium">Full Name</label>
               <input 
                 id="fullName" 
                 type="text" 
                 placeholder="John Doe" 
                 {...register('fullName')}
-                className={`w-full rounded-xl border ${errors.fullName ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)]`}
+                className={`w-full rounded-lg border ${errors.fullName ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow`}
               />
               {errors.fullName && <p className="text-[var(--error)] text-sm mt-1">{errors.fullName.message}</p>}
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-2 text-left">
               <label htmlFor="email" className="block font-ui text-[var(--text-primary)] font-medium">Email</label>
               <input 
                 id="email" 
                 type="email" 
                 placeholder="you@example.com" 
                 {...register('email')}
-                className={`w-full rounded-xl border ${errors.email ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)]`}
+                className={`w-full rounded-lg border ${errors.email ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow`}
               />
               {errors.email && <p className="text-[var(--error)] text-sm mt-1">{errors.email.message}</p>}
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-2 text-left">
               <label htmlFor="password" className="block font-ui text-[var(--text-primary)] font-medium">Password</label>
               <div className="relative">
                 <input 
@@ -166,7 +158,7 @@ export default function SignupPage() {
                   type={showPassword ? 'text' : 'password'} 
                   placeholder="••••••••"
                   {...register('password')}
-                  className={`w-full rounded-xl border ${errors.password ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] pr-12 font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)]`}
+                  className={`w-full rounded-lg border ${errors.password ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] pr-12 font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow`}
                 />
                 <button
                   type="button"
@@ -194,25 +186,25 @@ export default function SignupPage() {
               {errors.password && <p className="text-[var(--error)] text-sm mt-1">{errors.password.message}</p>}
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-2 text-left">
               <label htmlFor="phone" className="block font-ui text-[var(--text-primary)] font-medium">Phone Number</label>
               <input 
                 id="phone" 
                 type="tel" 
                 placeholder="080XXXXXXXX" 
                 {...register('phone')}
-                className={`w-full rounded-xl border ${errors.phone ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)]`}
+                className={`w-full rounded-lg border ${errors.phone ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow`}
               />
               {errors.phone && <p className="text-[var(--error)] text-sm mt-1">{errors.phone.message}</p>}
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4 text-left">
               <div className="space-y-2">
                 <label htmlFor="state" className="block font-ui text-[var(--text-primary)] font-medium">State</label>
                 <select 
                   id="state" 
                   {...register('state')}
-                  className={`w-full rounded-xl border ${errors.state ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] appearance-none`}
+                  className={`w-full rounded-lg border ${errors.state ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow appearance-none`}
                 >
                   <option value="">Select state...</option>
                   {STATES.map(state => (
@@ -227,7 +219,7 @@ export default function SignupPage() {
                 <select 
                   id="yearsExperience" 
                   {...register('yearsExperience')}
-                  className={`w-full rounded-xl border ${errors.yearsExperience ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] appearance-none`}
+                  className={`w-full rounded-lg border ${errors.yearsExperience ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow appearance-none`}
                 >
                   <option value="">Select...</option>
                   <option value="0">0-1 years</option>
@@ -240,14 +232,14 @@ export default function SignupPage() {
               </div>
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-2 text-left">
               <label htmlFor="occupation" className="block font-ui text-[var(--text-primary)] font-medium">Occupation</label>
               <input 
                 id="occupation" 
                 type="text" 
                 placeholder="e.g. Software Engineer" 
                 {...register('occupation')}
-                className={`w-full rounded-xl border ${errors.occupation ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)]`}
+                className={`w-full rounded-lg border ${errors.occupation ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow`}
               />
               {errors.occupation && <p className="text-[var(--error)] text-sm mt-1">{errors.occupation.message}</p>}
             </div>
@@ -255,7 +247,7 @@ export default function SignupPage() {
             <button 
               type="submit" 
               disabled={isSubmitting}
-              className="w-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white rounded-[100px] py-[14px] font-ui font-medium text-[16px] transition-colors mt-[32px] flex items-center justify-center"
+              className="w-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white rounded-lg py-[14px] font-ui font-medium text-[16px] transition-colors mt-[32px] flex items-center justify-center"
             >
               {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin mr-2" /> : null}
               Create Account

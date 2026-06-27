@@ -8,9 +8,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Eye, EyeOff, Loader2, CheckCircle2 } from 'lucide-react';
 import { api } from '@/lib/api';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Button } from '@/components/ui/button';
 
 const resetSchema = z.object({
   password: z.string().min(8, 'Password must be at least 8 characters'),
@@ -53,88 +50,90 @@ function ResetPasswordContent() {
     }
   };
 
-  if (isSuccess) {
-    return (
-      <div className="w-full text-center animate-in fade-in duration-500">
-        <div className="flex justify-center mb-6">
-          <CheckCircle2 className="w-16 h-16 text-[var(--success)]" />
-        </div>
-        <h2 className="text-[var(--text-display)] font-display font-bold text-[var(--text-primary)] mb-4">
-          Password Reset Complete
-        </h2>
-        <p className="text-[var(--text-secondary)] mb-8">
-          Your password has been successfully updated. You can now log in with your new password.
-        </p>
-        <Link href="/login">
-          <Button className="bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white rounded-full px-8">
-            Go to Login
-          </Button>
-        </Link>
-      </div>
-    );
-  }
-
   return (
-    <div className="w-full animate-in fade-in duration-500">
-      <div className="mb-8">
-        <h2 className="text-[var(--text-display)] font-display font-bold text-[var(--text-primary)] leading-tight">
-          Reset Password
-        </h2>
-        <p className="text-[var(--text-secondary)] mt-2">
-          Create a new password for your account.
-        </p>
-      </div>
-
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-        {apiError && (
-          <div className="p-3 rounded-md bg-[var(--error-light)] text-[var(--error)] text-sm border border-[var(--error)]/20">
-            {apiError}
+    <div className="w-full flex min-h-screen items-center justify-center p-6 bg-[var(--bg-primary)]">
+      <div className="w-full max-w-[440px] bg-white p-8 rounded-2xl shadow-[var(--shadow-card)] border border-[var(--border-subtle)] text-left">
+        {isSuccess ? (
+          <div className="text-center py-6">
+            <div className="flex justify-center mb-6">
+              <CheckCircle2 className="w-16 h-16 text-[var(--success)]" />
+            </div>
+            <h2 className="font-display font-bold text-2xl text-[var(--accent-primary)] mb-4">
+              Password Reset Complete
+            </h2>
+            <p className="text-[var(--text-secondary)] mb-8">
+              Your password has been successfully updated. You can now log in with your new password.
+            </p>
+            <Link href="/login">
+              <button className="w-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white rounded-lg py-3.5 font-ui font-semibold text-base transition-colors cursor-pointer">
+                Go to Login
+              </button>
+            </Link>
           </div>
+        ) : (
+          <>
+            <div className="mb-8">
+              <h2 className="font-display font-bold text-[28px] text-[var(--accent-primary)] leading-tight">
+                Reset Password
+              </h2>
+              <p className="text-[var(--text-muted)] mt-2 text-[15px]">
+                Create a new password for your account.
+              </p>
+            </div>
+
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+              {apiError && (
+                <div className="p-3 rounded-md bg-[var(--error-light)] text-[var(--error)] text-sm border border-[var(--error)]/20">
+                  {apiError}
+                </div>
+              )}
+
+              <div className="space-y-2 relative">
+                <label className="block font-ui text-[var(--text-primary)] font-medium" htmlFor="password">New Password</label>
+                <div className="relative">
+                  <input 
+                    id="password" 
+                    type={showPassword ? 'text' : 'password'} 
+                    {...register('password')}
+                    className={`w-full rounded-lg border ${errors.password ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] pr-10 font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow`}
+                    disabled={!token}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)] hover:text-[var(--text-primary)]"
+                    disabled={!token}
+                  >
+                    {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                  </button>
+                </div>
+                {errors.password && <p className="text-[var(--error)] text-sm">{errors.password.message}</p>}
+              </div>
+
+              <div className="space-y-2">
+                <label className="block font-ui text-[var(--text-primary)] font-medium" htmlFor="confirmPassword">Confirm Password</label>
+                <input 
+                  id="confirmPassword" 
+                  type={showPassword ? 'text' : 'password'} 
+                  {...register('confirmPassword')}
+                  className={`w-full rounded-lg border ${errors.confirmPassword ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow`}
+                  disabled={!token}
+                />
+                {errors.confirmPassword && <p className="text-[var(--error)] text-sm">{errors.confirmPassword.message}</p>}
+              </div>
+
+              <button 
+                type="submit" 
+                disabled={isSubmitting || !token}
+                className="w-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white rounded-lg py-[14px] mt-4 font-ui font-semibold text-base transition-colors flex items-center justify-center cursor-pointer disabled:opacity-60"
+              >
+                {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin mr-2" /> : null}
+                Update Password
+              </button>
+            </form>
+          </>
         )}
-
-        <div className="space-y-2 relative">
-          <Label htmlFor="password">New Password</Label>
-          <div className="relative">
-            <Input 
-              id="password" 
-              type={showPassword ? 'text' : 'password'} 
-              {...register('password')}
-              className={errors.password ? "border-[var(--error)] pr-10" : "pr-10"}
-              disabled={!token}
-            />
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)] hover:text-[var(--text-primary)]"
-              disabled={!token}
-            >
-              {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-            </button>
-          </div>
-          {errors.password && <p className="text-[var(--error)] text-sm">{errors.password.message}</p>}
-        </div>
-
-        <div className="space-y-2">
-          <Label htmlFor="confirmPassword">Confirm Password</Label>
-          <Input 
-            id="confirmPassword" 
-            type={showPassword ? 'text' : 'password'} 
-            {...register('confirmPassword')}
-            className={errors.confirmPassword ? "border-[var(--error)]" : ""}
-            disabled={!token}
-          />
-          {errors.confirmPassword && <p className="text-[var(--error)] text-sm">{errors.confirmPassword.message}</p>}
-        </div>
-
-        <Button 
-          type="submit" 
-          disabled={isSubmitting || !token}
-          className="w-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white rounded-full py-6 mt-4 font-ui text-base transition-colors"
-        >
-          {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin mr-2" /> : null}
-          Update Password
-        </Button>
-      </form>
+      </div>
     </div>
   );
 }

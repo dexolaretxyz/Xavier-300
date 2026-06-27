@@ -33,8 +33,8 @@ export default function ForgotPasswordPage() {
   };
 
   return (
-    <div className="w-full flex items-center justify-center p-6 bg-[var(--bg-primary)]">
-      <div className="w-full max-w-[420px] bg-[var(--bg-elevated)] p-10 rounded-[32px] shadow-[var(--shadow-lg)] border border-[var(--border-subtle)]">
+    <div className="w-full flex min-h-screen items-center justify-center p-6 bg-[var(--bg-primary)]">
+      <div className="w-full max-w-[440px] bg-white p-8 rounded-2xl shadow-[var(--shadow-card)] border border-[var(--border-subtle)] text-left">
         
         <Link href="/login" className="inline-flex items-center text-[var(--text-muted)] hover:text-[var(--text-primary)] mb-8 transition-colors">
           <ArrowLeft size={20} className="mr-2" />
@@ -46,7 +46,7 @@ export default function ForgotPasswordPage() {
             <div className="w-16 h-16 bg-[var(--success-light)] rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle2 size={32} className="text-[var(--success)]" />
             </div>
-            <h2 className="font-ui font-semibold text-2xl text-[var(--text-primary)] mb-3">
+            <h2 className="font-display font-bold text-2xl text-[var(--accent-primary)] mb-3">
               Reset link sent!
             </h2>
             <p className="font-ui text-[var(--text-secondary)] mb-6">
@@ -56,10 +56,10 @@ export default function ForgotPasswordPage() {
         ) : (
           <>
             <div className="mb-8">
-              <h2 className="font-ui font-semibold text-[32px] text-[var(--text-primary)] leading-tight mb-2">
+              <h2 className="font-display font-bold text-[28px] text-[var(--accent-primary)] leading-tight mb-2">
                 Forgot password?
               </h2>
-              <p className="font-ui text-[var(--text-muted)] text-lg">
+              <p className="font-ui text-[var(--text-muted)] text-[15px]">
                 No worries, we'll send you reset instructions.
               </p>
             </div>
@@ -78,7 +78,7 @@ export default function ForgotPasswordPage() {
                   type="email" 
                   placeholder="you@example.com" 
                   {...register('email')}
-                  className={`w-full rounded-xl border ${errors.email ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-primary)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] transition-shadow`}
+                  className={`w-full rounded-lg border ${errors.email ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow`}
                 />
                 {errors.email && <p className="text-[var(--error)] text-sm mt-1">{errors.email.message}</p>}
               </div>
@@ -86,7 +86,7 @@ export default function ForgotPasswordPage() {
               <button 
                 type="submit" 
                 disabled={isSubmitting}
-                className="w-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white rounded-[100px] py-[14px] font-ui font-medium text-[16px] transition-colors flex items-center justify-center"
+                className="w-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white rounded-lg py-[14px] font-ui font-semibold text-[16px] transition-colors flex items-center justify-center cursor-pointer"
               >
                 {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin mr-2" /> : null}
                 Send Reset Link

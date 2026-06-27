@@ -46,7 +46,7 @@ function VerifyContent() {
           'xavier_refresh_token', 
           response.data.data.refreshToken
         )
-        document.cookie = `xavier_access_token=${response.data.data.accessToken}; path=/; max-age=900`
+        document.cookie = `xavier_access_token=${response.data.data.accessToken}; path=/; max-age=604800`
         setUser(response.data.data.user)
         setStatus('success')
         toast.success('Email verified successfully!')
@@ -92,12 +92,12 @@ function VerifyContent() {
   if (status === 'verifying') {
     return (
       <div className="min-h-screen bg-[var(--bg-primary)] flex items-center justify-center px-4">
-        <div className="bg-[var(--bg-elevated)] rounded-[32px] p-10 max-w-md w-full text-center border border-[var(--border-subtle)] shadow-[var(--shadow-lg)]">
+        <div className="bg-white rounded-2xl p-8 max-w-md w-full text-center border border-[var(--border-subtle)] shadow-[var(--shadow-card)]">
           <div className="w-16 h-16 border-4 border-[var(--accent-primary)] border-t-transparent rounded-full animate-spin mx-auto mb-6" />
-          <h2 className="font-ui text-3xl font-bold text-[var(--text-primary)] mb-2">
+          <h2 className="font-display font-bold text-[28px] text-[var(--accent-primary)] mb-2">
             Verifying...
           </h2>
-          <p className="text-[var(--text-secondary)] font-ui text-sm">
+          <p className="text-[var(--text-muted)] font-ui text-sm">
             Please wait while we verify your email.
           </p>
         </div>
@@ -109,12 +109,12 @@ function VerifyContent() {
   if (status === 'success') {
     return (
       <div className="min-h-screen bg-[var(--bg-primary)] flex items-center justify-center px-4">
-        <div className="bg-[var(--bg-elevated)] rounded-[32px] p-10 max-w-md w-full text-center border border-[var(--border-subtle)] shadow-[var(--shadow-lg)]">
+        <div className="bg-white rounded-2xl p-8 max-w-md w-full text-center border border-[var(--border-subtle)] shadow-[var(--shadow-card)]">
           <div className="text-6xl mb-6">🎉</div>
-          <h2 className="font-ui text-3xl font-bold text-[var(--text-primary)] mb-2">
+          <h2 className="font-display font-bold text-[28px] text-[var(--accent-primary)] mb-2">
             Email Verified!
           </h2>
-          <p className="text-[var(--text-secondary)] font-ui mb-6 text-sm">
+          <p className="text-[var(--text-muted)] font-ui mb-6 text-sm">
             Welcome to Xavier 300! Redirecting you to your dashboard...
           </p>
           <div className="w-full h-2 bg-[var(--bg-primary)] rounded-full overflow-hidden">
@@ -129,12 +129,12 @@ function VerifyContent() {
   if (status === 'error') {
     return (
       <div className="min-h-screen bg-[var(--bg-primary)] flex items-center justify-center px-4">
-        <div className="bg-[var(--bg-elevated)] rounded-[32px] p-10 max-w-md w-full text-center border border-[var(--border-subtle)] shadow-[var(--shadow-lg)]">
+        <div className="bg-white rounded-2xl p-8 max-w-md w-full text-center border border-[var(--border-subtle)] shadow-[var(--shadow-card)]">
           <div className="text-6xl mb-6">❌</div>
-          <h2 className="font-ui text-3xl font-bold text-[var(--text-primary)] mb-2">
+          <h2 className="font-display font-bold text-[28px] text-[var(--accent-primary)] mb-2">
             Link Invalid
           </h2>
-          <p className="text-[var(--text-secondary)] font-ui mb-6 text-sm">
+          <p className="text-[var(--text-muted)] font-ui mb-6 text-sm">
             {errorMessage}
           </p>
           <div className="space-y-3">
@@ -143,18 +143,18 @@ function VerifyContent() {
               value={resendEmail}
               onChange={(e) => setResendEmail(e.target.value)}
               placeholder="Enter your email"
-              className="w-full px-4 py-3 rounded-xl border border-[var(--border-medium)] bg-[var(--bg-primary)] text-[var(--text-primary)] font-ui focus:outline-none focus:border-[var(--accent-primary)]"
+              className="w-full px-4 py-3 rounded-lg border border-[var(--border-medium)] bg-white text-[var(--text-primary)] font-ui focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)]"
             />
             <button
               onClick={handleResend}
               disabled={resendCooldown > 0}
-              className="w-full py-4 rounded-full bg-[var(--accent-primary)] text-white font-ui font-semibold text-base hover:bg-[var(--accent-hover)] disabled:opacity-60 transition-all"
+              className="w-full py-4 rounded-lg bg-[var(--accent-primary)] text-white font-ui font-semibold text-base hover:bg-[var(--accent-hover)] disabled:opacity-60 transition-all cursor-pointer"
             >
               Send New Verification Link
             </button>
             <button
               onClick={() => router.push('/login')}
-              className="w-full py-4 rounded-full border border-[var(--border-medium)] text-[var(--text-secondary)] font-ui font-medium hover:bg-[var(--bg-primary)] transition-all"
+              className="w-full py-4 rounded-lg border border-[var(--border-medium)] text-[var(--text-secondary)] font-ui font-medium hover:bg-[var(--bg-primary)] transition-all cursor-pointer"
             >
               Back to Login
             </button>
@@ -167,18 +167,18 @@ function VerifyContent() {
   // DEFAULT STATE — waiting for user to check email
   return (
     <div className="min-h-screen bg-[var(--bg-primary)] flex items-center justify-center px-4">
-      <div className="bg-[var(--bg-elevated)] rounded-[32px] p-10 max-w-md w-full text-center border border-[var(--border-subtle)] shadow-[var(--shadow-lg)]">
+      <div className="bg-white rounded-2xl p-8 max-w-md w-full text-center border border-[var(--border-subtle)] shadow-[var(--shadow-card)]">
         
         {/* Icon */}
-        <div className="w-20 h-20 bg-[var(--accent-light)] rounded-full flex items-center justify-center mx-auto mb-6">
-          <span className="text-4xl text-[var(--accent-primary)]">📧</span>
+        <div className="w-16 h-16 bg-[var(--accent-light)] rounded-full flex items-center justify-center mx-auto mb-6">
+          <span className="text-3xl text-[var(--accent-primary)]">📧</span>
         </div>
         
-        <h2 className="font-ui text-3xl font-bold text-[var(--text-primary)] mb-3">
+        <h2 className="font-display font-bold text-[28px] text-[var(--accent-primary)] mb-3 leading-tight">
           Check Your Email
         </h2>
         
-        <p className="text-[var(--text-secondary)] font-ui text-base leading-relaxed mb-2">
+        <p className="text-[var(--text-muted)] font-ui text-base leading-relaxed mb-2">
           We sent a verification link to
         </p>
         <p className="text-[var(--accent-primary)] font-ui font-semibold text-lg mb-6">
@@ -221,7 +221,7 @@ function VerifyContent() {
         <button
           onClick={handleResend}
           disabled={status === 'resending' || resendCooldown > 0}
-          className="w-full py-4 rounded-full border border-[var(--border-medium)] text-[var(--text-secondary)] font-ui font-medium mt-4 hover:bg-[var(--bg-primary)] disabled:opacity-60 transition-all"
+          className="w-full py-4 rounded-lg border border-[var(--border-medium)] text-[var(--text-secondary)] font-ui font-medium mt-4 hover:bg-[var(--bg-primary)] disabled:opacity-60 transition-all cursor-pointer"
         >
           {status === 'resending' 
             ? 'Sending...' 
@@ -232,7 +232,7 @@ function VerifyContent() {
 
         <button
           onClick={() => router.push('/login')}
-          className="w-full py-3 rounded-full text-[var(--text-muted)] font-ui text-sm mt-2 hover:text-[var(--text-primary)] transition-all"
+          className="w-full py-3 rounded-lg text-[var(--text-muted)] font-ui text-sm mt-2 hover:text-[var(--text-primary)] transition-all"
         >
           Back to Login
         </button>

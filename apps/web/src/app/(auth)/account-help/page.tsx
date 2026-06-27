@@ -60,22 +60,22 @@ export default function AccountHelpPage() {
 
   return (
     <div className="w-full min-h-screen flex items-center justify-center p-6 bg-[var(--bg-primary)]">
-      <div className="w-full max-w-lg bg-[var(--bg-elevated)] p-8 sm:p-10 rounded-[32px] shadow-[var(--shadow-lg)] border border-[var(--border-subtle)]">
+      <div className="w-full max-w-lg bg-white p-8 sm:p-10 rounded-2xl shadow-[var(--shadow-card)] border border-[var(--border-subtle)] text-left">
         
         {activeTab !== 'options' && (
           <button
             onClick={() => setActiveTab('options')}
-            className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] mb-6 transition-colors"
+            className="flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] mb-6 transition-colors cursor-pointer"
           >
             <ArrowLeft size={16} /> Back to options
           </button>
         )}
 
         <div className="text-center mb-8">
-          <h1 className="font-ui font-bold text-3xl text-[var(--text-primary)]">
+          <h1 className="font-display font-bold text-[28px] text-[var(--accent-primary)]">
             Account Recovery
           </h1>
-          <p className="font-ui text-[var(--text-secondary)] mt-2">
+          <p className="font-ui text-[var(--text-muted)] mt-2 text-[15px]">
             Having trouble accessing your account? Select an option below.
           </p>
         </div>
@@ -85,7 +85,7 @@ export default function AccountHelpPage() {
             {/* OPTION 1 */}
             <button
               onClick={() => setActiveTab('resend')}
-              className="w-full flex items-start gap-4 p-5 rounded-2xl border border-[var(--border-medium)] bg-[var(--bg-primary)] hover:border-[var(--accent-primary)] hover:bg-[var(--bg-elevated)] text-left transition-all group"
+              className="w-full flex items-start gap-4 p-5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-primary)]/30 hover:border-[var(--accent-primary)] hover:bg-white text-left transition-all group cursor-pointer"
             >
               <div className="p-3 bg-amber-50 rounded-xl text-amber-600">
                 <Mail size={24} />
@@ -103,7 +103,7 @@ export default function AccountHelpPage() {
             {/* OPTION 2 */}
             <Link
               href="/forgot-password"
-              className="w-full flex items-start gap-4 p-5 rounded-2xl border border-[var(--border-medium)] bg-[var(--bg-primary)] hover:border-[var(--accent-primary)] hover:bg-[var(--bg-elevated)] text-left transition-all group"
+              className="w-full flex items-start gap-4 p-5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-primary)]/30 hover:border-[var(--accent-primary)] hover:bg-white text-left transition-all group"
             >
               <div className="p-3 bg-blue-50 rounded-xl text-blue-600">
                 <Key size={24} />
@@ -121,7 +121,7 @@ export default function AccountHelpPage() {
             {/* OPTION 3 */}
             <Link
               href="/signup"
-              className="w-full flex items-start gap-4 p-5 rounded-2xl border border-[var(--border-medium)] bg-[var(--bg-primary)] hover:border-[var(--accent-primary)] hover:bg-[var(--bg-elevated)] text-left transition-all group"
+              className="w-full flex items-start gap-4 p-5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-primary)]/30 hover:border-[var(--accent-primary)] hover:bg-white text-left transition-all group"
             >
               <div className="p-3 bg-green-50 rounded-xl text-green-600">
                 <UserPlus size={24} />
@@ -139,7 +139,7 @@ export default function AccountHelpPage() {
             {/* OPTION 4 */}
             <button
               onClick={() => setActiveTab('ticket')}
-              className="w-full flex items-start gap-4 p-5 rounded-2xl border border-[var(--border-medium)] bg-[var(--bg-primary)] hover:border-[var(--accent-primary)] hover:bg-[var(--bg-elevated)] text-left transition-all group"
+              className="w-full flex items-start gap-4 p-5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-primary)]/30 hover:border-[var(--accent-primary)] hover:bg-white text-left transition-all group cursor-pointer"
             >
               <div className="p-3 bg-purple-50 rounded-xl text-purple-600">
                 <LifeBuoy size={24} />
@@ -167,13 +167,13 @@ export default function AccountHelpPage() {
                 placeholder="you@example.com"
                 value={resendEmail}
                 onChange={(e) => setResendEmail(e.target.value)}
-                className="w-full rounded-xl border border-[var(--border-medium)] bg-[var(--bg-primary)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)]"
+                className="w-full rounded-lg border border-[var(--border-medium)] bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)]"
               />
             </div>
             <button
               type="submit"
               disabled={resendLoading}
-              className="w-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white rounded-[100px] py-[14px] font-ui font-medium text-[16px] transition-colors flex items-center justify-center gap-2"
+              className="w-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white rounded-lg py-[14px] font-ui font-semibold text-[16px] transition-colors flex items-center justify-center gap-2 cursor-pointer"
             >
               {resendLoading && <Loader2 className="w-5 h-5 animate-spin" />}
               Send Verification Email
@@ -192,7 +192,7 @@ export default function AccountHelpPage() {
                 placeholder="you@example.com"
                 value={ticketEmail}
                 onChange={(e) => setTicketEmail(e.target.value)}
-                className="w-full rounded-xl border border-[var(--border-medium)] bg-[var(--bg-primary)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)]"
+                className="w-full rounded-lg border border-[var(--border-medium)] bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)]"
               />
             </div>
 
@@ -205,14 +205,14 @@ export default function AccountHelpPage() {
                 placeholder="Include details like your registered email/phone and what happens when you try to sign in..."
                 value={ticketDescription}
                 onChange={(e) => setTicketDescription(e.target.value)}
-                className="w-full rounded-xl border border-[var(--border-medium)] bg-[var(--bg-primary)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)]"
+                className="w-full rounded-lg border border-[var(--border-medium)] bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)]"
               />
             </div>
 
             <button
               type="submit"
               disabled={ticketLoading}
-              className="w-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white rounded-[100px] py-[14px] font-ui font-medium text-[16px] transition-colors flex items-center justify-center gap-2"
+              className="w-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white rounded-lg py-[14px] font-ui font-semibold text-[16px] transition-colors flex items-center justify-center gap-2 cursor-pointer"
             >
               {ticketLoading && <Loader2 className="w-5 h-5 animate-spin" />}
               Submit Support Ticket
