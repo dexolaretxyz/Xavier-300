@@ -1,7 +1,7 @@
 /* Display — Editorial weight for hero headlines */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap');
-/* UI — Clean, readable, slightly warm */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;700&display=swap');
+/* UI — Clean, readable, standard sans */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 /* Mono — Timer, scores, code */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
 
@@ -26,6 +26,9 @@
   --color-accent-hover: var(--accent-hover);
   --color-accent-light: var(--accent-light);
   --color-accent-glow: var(--accent-glow);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-secondary-hover: var(--accent-secondary-hover);
+  --color-accent-secondary-light: var(--accent-secondary-light);
 
   --color-success: var(--success);
   --color-success-light: var(--success-light);
@@ -39,10 +42,10 @@
   --color-border-medium: var(--border-medium);
   --color-border-strong: var(--border-strong);
 
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-ui: 'DM Sans', sans-serif;
+  --font-display: 'Source Serif 4', Georgia, serif;
+  --font-ui: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  --font-sans: 'DM Sans', sans-serif; /* fallback */
+  --font-sans: 'Inter', sans-serif; /* fallback */
 
   --shadow-sm: var(--shadow-sm);
   --shadow-md: var(--shadow-md);
@@ -54,6 +57,7 @@
   --radius-lg: var(--radius-lg);
   --radius-xl: var(--radius-xl);
   --radius-pill: var(--radius-pill);
+  --radius: 0.5rem; /* shadcn fallback */
 
   /* Shadcn mappings */
   --color-background: var(--bg-primary);
@@ -83,26 +87,31 @@
 
 :root {
   /* Backgrounds */
-  --bg-primary:      #F5F2EC;   /* warm cream — main canvas */
-  --bg-secondary:    #EDEAE2;   /* warm off-white — card backgrounds */
-  --bg-glass:        rgba(245, 242, 236, 0.72); /* glassmorphism surface */
-  --bg-elevated:     #FFFFFF;   /* modals, dropdowns */
+  --bg-primary:      #F4F1EA;   /* warm cream — surface-cream */
+  --bg-secondary:    #FFFFFF;   /* white — card backgrounds */
+  --bg-glass:        rgba(244, 241, 234, 0.72);
+  --bg-elevated:     #FFFFFF;
 
   /* Text */
-  --text-primary:    #1A1A18;   /* near-obsidian — headlines */
-  --text-secondary:  #4A4A42;   /* warm dark grey — body */
-  --text-muted:      #8A8A7E;   /* captions, labels */
-  --text-inverse:    #F5F2EC;   /* on dark surfaces */
+  --text-primary:    #111111;   /* text-rich-black */
+  --text-secondary:  #454652;   /* on-surface-variant */
+  --text-muted:      #6B6B6B;   /* text-muted-gray */
+  --text-inverse:    #FFFFFF;
 
-  /* Accent — Indigo Authority */
-  --accent-primary:  #3730A3;   /* deep indigo */
-  --accent-hover:    #2E27A0;   /* darker indigo on hover */
-  --accent-light:    #EEF2FF;   /* indigo tint for badges, highlights */
-  --accent-glow:     rgba(55, 48, 163, 0.15); /* soft glow for focus states */
+  /* Accent — Deep Navy */
+  --accent-primary:  #1A237E;   /* deep-navy */
+  --accent-hover:    #0D1356;
+  --accent-light:    #E8EAF6;
+  --accent-glow:     rgba(26, 35, 126, 0.15);
+
+  /* Secondary Accent — Teal & Emerald */
+  --accent-secondary:  #00897B; /* vibrant-teal */
+  --accent-secondary-hover: #00796B;
+  --accent-secondary-light: #E0F2F1;
 
   /* Semantic */
-  --success:         #16A34A;   /* correct answers */
-  --success-light:   #DCFCE7;
+  --success:         #00897B;   /* vibrant teal */
+  --success-light:   #E0F2F1;
   --error:           #DC2626;   /* wrong answers */
   --error-light:     #FEE2E2;
   --warning:         #D97706;   /* timer warnings */
@@ -162,10 +171,10 @@
   --text-muted:      #6B6860;
   --text-inverse:    #1A1A18;
 
-  --accent-primary:  #6366F1;   /* lighter indigo for dark bg */
-  --accent-hover:    #7C7FF5;
-  --accent-light:    #1E1B4B;
-  --accent-glow:     rgba(99, 102, 241, 0.20);
+  --accent-primary:  #7986CB;   /* lighter deep-navy for dark bg */
+  --accent-hover:    #9FA8DA;
+  --accent-light:    #1A237E;
+  --accent-glow:     rgba(121, 134, 203, 0.20);
 
   --border-subtle:   rgba(240, 237, 230, 0.06);
   --border-medium:   rgba(240, 237, 230, 0.12);
