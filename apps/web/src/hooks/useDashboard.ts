@@ -17,5 +17,6 @@ export function useDashboardStats() {
       const { data } = await api.get('/api/users/me/stats');
       return data.data as DashboardStats;
     },
+    enabled: typeof window !== 'undefined',
   });
 }

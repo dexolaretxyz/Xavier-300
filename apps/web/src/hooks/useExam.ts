@@ -8,7 +8,7 @@ export function useExamResults(attemptId: string) {
       const { data } = await api.get(`/api/exams/${attemptId}/results`);
       return data.data; // { attempt, questions }
     },
-    enabled: !!attemptId,
+    enabled: typeof window !== 'undefined' && !!attemptId,
     // Poll every 4 seconds if:
     // - MCQ: weakTopics exist but aiRecommendations not yet generated
     // - Theory: theoryScores not yet filled by AI marking

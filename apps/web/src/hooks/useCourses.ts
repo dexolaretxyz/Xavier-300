@@ -8,6 +8,7 @@ export function useDomains() {
       const { data } = await api.get('/api/domains');
       return data.data;
     },
+    enabled: typeof window !== 'undefined',
   });
 }
 
@@ -18,7 +19,7 @@ export function useDomain(slug: string) {
       const { data } = await api.get(`/api/domains/${slug}`);
       return data.data;
     },
-    enabled: !!slug,
+    enabled: typeof window !== 'undefined' && !!slug,
   });
 }
 
@@ -29,7 +30,7 @@ export function useCertification(slug: string) {
       const { data } = await api.get(`/api/domains/certifications/${slug}`);
       return data.data;
     },
-    enabled: !!slug,
+    enabled: typeof window !== 'undefined' && !!slug,
   });
 }
 
@@ -40,6 +41,6 @@ export function useTodayAttempts(certId: string) {
       const { data } = await api.get(`/api/exams/attempts/today?certId=${certId}`);
       return data.data.count as number;
     },
-    enabled: !!certId,
+    enabled: typeof window !== 'undefined' && !!certId,
   });
 }

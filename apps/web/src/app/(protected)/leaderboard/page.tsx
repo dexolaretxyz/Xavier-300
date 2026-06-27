@@ -20,7 +20,8 @@ function useLeaderboard() {
         currentUser: weekly.data.currentUser,
         previous: previous.data
       };
-    }
+    },
+    enabled: typeof window !== 'undefined',
   });
 }
 
