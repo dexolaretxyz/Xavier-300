@@ -322,4 +322,16 @@ router.post('/logout', (req: Request, res: Response) => {
   res.json({ success: true, message: 'Logged out successfully' });
 });
 
+router.get('/debug-email', async (req: Request, res: Response): Promise<any> => {
+  const apiKey = process.env.RESEND_API_KEY;
+  const emailFrom = process.env.EMAIL_FROM;
+  
+  return res.json({
+    hasResendKey: !!apiKey,
+    keyPrefix: apiKey ? apiKey.substring(0, 10) : null,
+    emailFrom: emailFrom,
+    nodeEnv: process.env.NODE_ENV
+  });
+});
+
 export const authRouter = router;

@@ -151,31 +151,52 @@ export default function LandingPage() {
       <section className="w-full py-24 px-6 bg-[var(--bg-secondary)] relative overflow-hidden">
         <div className="max-w-5xl mx-auto relative z-10 text-center">
           <h2 className="font-display font-bold text-4xl md:text-5xl text-[var(--text-primary)] mb-4">
-            Simple, Affordable Pricing
+            Start Practicing Today
           </h2>
           <p className="font-ui text-xl text-[var(--text-secondary)] mb-16">
             Built for Nigerian tech professionals
           </p>
           
-          <div className="bg-bg-secondary rounded-2xl p-8 border-2 border-accent-primary text-center max-w-md mx-auto">
-            <div className="text-5xl mb-4">🆓</div>
-            <h3 className="font-display text-3xl font-bold text-text-primary mb-2">
-              Completely Free
-            </h3>
-            <p className="text-text-secondary font-ui mb-6">
-              Full access during our launch period. 
-              No credit card required.
-            </p>
-            <ul className="text-left space-y-2 mb-8 font-ui text-text-secondary">
-              <li>✅ All certifications</li>
-              <li>✅ Unlimited exams</li>
-              <li>✅ AI recommendations</li>
-              <li>✅ Leaderboard</li>
-            </ul>
-            <a href="/signup" 
-               className="block w-full py-4 rounded-full bg-accent-primary text-white font-semibold text-lg hover:bg-accent-hover transition-all">
-              Start Practicing Free
-            </a>
+          <div className="max-w-md w-full mx-auto">
+            <div className="bg-bg-secondary rounded-2xl p-10 border-2 border-accent-primary text-center">
+              
+              <h3 className="font-display text-4xl font-bold text-text-primary mb-3">
+                Completely Free
+              </h3>
+              
+              <p className="text-text-secondary font-ui text-base leading-relaxed mb-8">
+                Full access during our launch period.
+                No credit card required.
+              </p>
+              
+              <ul className="text-left space-y-3 mb-8">
+                <li className="flex items-center gap-3 text-text-secondary font-ui">
+                  <span className="text-green-500 text-lg">✅</span>
+                  All certifications
+                </li>
+                <li className="flex items-center gap-3 text-text-secondary font-ui">
+                  <span className="text-green-500 text-lg">✅</span>
+                  Unlimited exams
+                </li>
+                <li className="flex items-center gap-3 text-text-secondary font-ui">
+                  <span className="text-green-500 text-lg">✅</span>
+                  AI recommendations
+                </li>
+                <li className="flex items-center gap-3 text-text-secondary font-ui">
+                  <span className="text-green-500 text-lg">✅</span>
+                  Weekly leaderboard
+                </li>
+              </ul>
+              
+              <a href="/signup"
+                 className="block w-full py-4 rounded-full bg-accent-primary text-white font-ui font-semibold text-lg hover:bg-accent-hover transition-all text-center no-underline">
+                Start Practicing Free
+              </a>
+              
+              <p className="text-text-muted font-ui text-sm mt-4">
+                Paid plans coming soon. Early users get a special discount. 🇳🇬
+              </p>
+            </div>
           </div>
         </div>
       </section>
