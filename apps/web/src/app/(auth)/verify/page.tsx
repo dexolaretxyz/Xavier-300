@@ -37,21 +37,25 @@ function VerifyContent() {
       )
       
       if (response.data.success) {
-        // Save tokens and user
-        localStorage.setItem(
-          'xavier_access_token', 
-          response.data.data.accessToken
-        )
-        localStorage.setItem(
-          'xavier_refresh_token', 
-          response.data.data.refreshToken
-        )
-        document.cookie = `xavier_access_token=${response.data.data.accessToken}; path=/; max-age=604800`
+        // Set both localStorage and cookie
+        localStorage.setItem('xavier_access_token', response.data.data.accessToken)
+        localStorage.setItem('xavier_refresh_token', response.data.data.refreshToken)
+
+        document.cookie = [
+          `xavier_access_token=${response.data.data.accessToken}`,
+          'path=/',
+          'max-age=86400',
+          'SameSite=Lax',
+        ].join('; ')
+
         setUser(response.data.data.user)
+
+        // Wait for cookie to be written before redirect
+        await new Promise(resolve => setTimeout(resolve, 200))
+
         setStatus('success')
         toast.success('Email verified successfully!')
         
-        // Redirect to dashboard after 2 seconds
         setTimeout(() => router.push('/dashboard'), 2000)
       }
     } catch (err: any) {

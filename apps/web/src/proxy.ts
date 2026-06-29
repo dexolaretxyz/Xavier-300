@@ -1,13 +1,10 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-// PAYMENT_DISABLED: Subscription status checks and redirects to /pricing are removed/disabled
-
-
-export function proxy(request: NextRequest) {
-  const token = request.cookies.get('xavier_access_token')?.value
+export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
 
+  // Routes that require authentication
   const protectedPaths = [
     '/dashboard',
     '/courses',
@@ -16,20 +13,41 @@ export function proxy(request: NextRequest) {
     '/profile',
     '/support',
     '/admin',
-    '/teacher'
+    '/teacher',
   ]
 
-  const authPaths = ['/login', '/signup', '/verify', '/forgot-password', '/reset-password']
+  // Routes that should redirect to dashboard if already logged in
+  const authOnlyPaths = [
+    '/login',
+    '/signup',
+    '/forgot-password',
+    '/reset-password',
+  ]
 
-  const isProtectedPath = protectedPaths.some(path => pathname.startsWith(path))
-  const isAuthPath = authPaths.some(path => pathname.startsWith(path))
+  const isProtectedPath = protectedPaths.some(
+    path => pathname === path || pathname.startsWith(path + '/')
+  )
 
+  const isAuthPath = authOnlyPaths.some(
+    path => pathname === path
+  )
+
+  // Try multiple cookie names for compatibility
+  const token = 
+    request.cookies.get('xavier_access_token')?.value ||
+    request.cookies.get('token')?.value ||
+    request.cookies.get('accessToken')?.value
+
+  console.log('[PROXY]', pathname, '| token:', !!token)
+
+  // No token on protected route — go to login
   if (isProtectedPath && !token) {
-    const url = new URL('/login', request.url)
-    url.searchParams.set('callbackUrl', encodeURI(request.url))
-    return NextResponse.redirect(url)
+    const loginUrl = new URL('/login', request.url)
+    loginUrl.searchParams.set('from', pathname)
+    return NextResponse.redirect(loginUrl)
   }
 
+  // Has token on auth page — go to dashboard
   if (isAuthPath && token) {
     return NextResponse.redirect(new URL('/dashboard', request.url))
   }
@@ -49,10 +67,7 @@ export const config = {
     '/teacher/:path*',
     '/login',
     '/signup',
-    '/verify',
     '/forgot-password',
     '/reset-password',
   ],
 }
-
-export default proxy;

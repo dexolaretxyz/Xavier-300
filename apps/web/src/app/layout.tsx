@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Providers } from "../components/providers";
+import { AuthCookieSync } from "@/components/auth-cookie-sync";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -33,6 +34,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col font-ui bg-bg-primary text-text-primary antialiased selection:bg-accent-primary selection:text-text-inverse">
         <Providers>
+          <AuthCookieSync />
           {children}
         </Providers>
       </body>

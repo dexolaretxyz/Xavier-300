@@ -30,9 +30,17 @@ export const useAuthStore = create<AuthState>((set) => ({
     const { tokens, user } = response.data.data;
     
     if (typeof window !== 'undefined') {
+      // Save to localStorage (for API calls)
       localStorage.setItem('xavier_access_token', tokens.accessToken);
       localStorage.setItem('xavier_refresh_token', tokens.refreshToken);
-      document.cookie = `xavier_access_token=${tokens.accessToken}; path=/; max-age=604800`;
+      
+      // CRITICAL: Save to cookie (for proxy.ts middleware)
+      document.cookie = [
+        `xavier_access_token=${tokens.accessToken}`,
+        'path=/',
+        'max-age=86400',
+        'SameSite=Lax',
+      ].join('; ');
     }
     
     set({ user, isAuthenticated: true, isLoading: false });
@@ -45,9 +53,10 @@ export const useAuthStore = create<AuthState>((set) => ({
       console.error('Logout API failed, proceeding with local logout');
     } finally {
       if (typeof window !== 'undefined') {
+        // Clear cookie on logout
+        document.cookie = 'xavier_access_token=; path=/; max-age=0';
         localStorage.removeItem('xavier_access_token');
         localStorage.removeItem('xavier_refresh_token');
-        document.cookie = 'xavier_access_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
         window.location.href = '/login';
       }
       set({ user: null, isAuthenticated: false });
