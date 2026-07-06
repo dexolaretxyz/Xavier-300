@@ -42,7 +42,7 @@ async function main() {
     { domainSlug: 'data-science', name: 'Google ML', slug: 'google-ml', description: 'Google Machine Learning Engineer', difficulty: Difficulty.HARD },
     { domainSlug: 'data-science', name: 'Python for DS', slug: 'python-for-ds', description: 'Python for Data Science', difficulty: Difficulty.MEDIUM },
     
-    { domainSlug: 'cybersecurity', name: 'CompTIA Security+', slug: 'comptia-security-plus', description: 'CompTIA Security+ Certification', difficulty: Difficulty.MEDIUM },
+    { domainSlug: 'cybersecurity', name: 'CompTIA Security+', slug: 'comptia-security-plus', description: 'CompTIA Security+ Certification', difficulty: Difficulty.MEDIUM, examDuration: 90, questionCount: 90 },
     { domainSlug: 'cybersecurity', name: 'Clasptek_ Mock', slug: 'clasptek-mock', description: 'Clasptek Cybersecurity curriculum mock exam', difficulty: Difficulty.MEDIUM, examDuration: 25, questionCount: 40 },
     { domainSlug: 'cybersecurity', name: 'CEH', slug: 'ceh', description: 'Certified Ethical Hacker', difficulty: Difficulty.HARD },
     { domainSlug: 'cybersecurity', name: 'CISSP', slug: 'cissp', description: 'Certified Information Systems Security Professional', difficulty: Difficulty.HARD },

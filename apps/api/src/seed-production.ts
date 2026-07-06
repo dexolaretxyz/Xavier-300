@@ -35,6 +35,16 @@ export async function seedProductionClasptek() {
 
     console.log(`✅ [SEED] Certification "Clasptek_ Mock" is ready (ID: ${certification.id})`);
 
+    // Update CompTIA Security+ certification config to 90 minutes and 90 questions
+    await prisma.certification.updateMany({
+      where: { slug: 'cybersecurity' },
+      data: {
+        examDuration: 90,
+        questionCount: 90
+      }
+    });
+    console.log('✅ [SEED] Updated CompTIA Security+ (slug: cybersecurity) to 90 mins and 90 questions.');
+
     // Check count of approved questions
     const count = await prisma.question.count({
       where: { certificationId: certification.id, status: 'APPROVED' }
