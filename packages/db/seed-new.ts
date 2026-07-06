@@ -43,6 +43,7 @@ async function main() {
     { slug: 'data-analysis', domainSlug: 'data-analysis', name: 'Data Analysis (General)', description: 'Comprehensive practice exam for data analysts', difficulty: Difficulty.MEDIUM },
     { slug: 'data-science', domainSlug: 'data-science', name: 'Data Science (IBM/Google)', description: 'Mock exam covering core Data Science and ML objectives', difficulty: Difficulty.HARD },
     { slug: 'cybersecurity', domainSlug: 'cybersecurity', name: 'Cybersecurity (CompTIA Security+)', description: 'Practice exam for Security+ objectives', difficulty: Difficulty.MEDIUM },
+    { slug: 'clasptek-mock', domainSlug: 'cybersecurity', name: 'Clasptek_ Mock', description: 'Clasptek Cybersecurity curriculum mock exam', difficulty: Difficulty.MEDIUM, examDuration: 25, questionCount: 40 },
     { slug: 'azure', domainSlug: 'azure', name: 'Microsoft Azure Fundamentals (AZ-900)', description: 'Practice exam for Azure AZ-900 objectives', difficulty: Difficulty.EASY },
     { slug: 'excel', domainSlug: 'excel', name: 'Microsoft Excel (MOS)', description: 'Practice exam for Excel associate and expert levels', difficulty: Difficulty.MEDIUM },
     { slug: 'devops', domainSlug: 'devops', name: 'DevOps (AWS/Azure DevOps)', description: 'CI/CD, containers, and orchestration practice exam', difficulty: Difficulty.HARD },

@@ -43,13 +43,13 @@ async function main() {
     { domainSlug: 'data-science', name: 'Python for DS', slug: 'python-for-ds', description: 'Python for Data Science', difficulty: Difficulty.MEDIUM },
     
     { domainSlug: 'cybersecurity', name: 'CompTIA Security+', slug: 'comptia-security-plus', description: 'CompTIA Security+ Certification', difficulty: Difficulty.MEDIUM },
+    { domainSlug: 'cybersecurity', name: 'Clasptek_ Mock', slug: 'clasptek-mock', description: 'Clasptek Cybersecurity curriculum mock exam', difficulty: Difficulty.MEDIUM, examDuration: 25, questionCount: 40 },
     { domainSlug: 'cybersecurity', name: 'CEH', slug: 'ceh', description: 'Certified Ethical Hacker', difficulty: Difficulty.HARD },
     { domainSlug: 'cybersecurity', name: 'CISSP', slug: 'cissp', description: 'Certified Information Systems Security Professional', difficulty: Difficulty.HARD },
-
     { domainSlug: 'microsoft-azure', name: 'AZ-900', slug: 'az-900', description: 'Azure Fundamentals', difficulty: Difficulty.EASY },
     { domainSlug: 'microsoft-azure', name: 'AZ-104', slug: 'az-104', description: 'Azure Administrator', difficulty: Difficulty.MEDIUM },
     { domainSlug: 'microsoft-azure', name: 'AZ-204', slug: 'az-204', description: 'Azure Developer Associate', difficulty: Difficulty.MEDIUM },
-
+    
     { domainSlug: 'microsoft-excel', name: 'MOS Excel Associate', slug: 'mos-excel-associate', description: 'Microsoft Office Specialist: Excel Associate', difficulty: Difficulty.EASY },
     { domainSlug: 'microsoft-excel', name: 'MOS Excel Expert', slug: 'mos-excel-expert', description: 'Microsoft Office Specialist: Excel Expert', difficulty: Difficulty.MEDIUM },
 
@@ -77,6 +77,7 @@ async function main() {
       where: { slug: cert.slug },
       update: {
         questionCount: cert.questionCount || 40,
+        examDuration: cert.examDuration || 30,
       },
       create: {
         name: cert.name,
@@ -84,7 +85,7 @@ async function main() {
         description: cert.description,
         domainId: domainId,
         difficulty: cert.difficulty,
-        examDuration: 30,
+        examDuration: cert.examDuration || 30,
         questionCount: cert.questionCount || 40,
       },
     });
