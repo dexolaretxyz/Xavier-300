@@ -90,9 +90,9 @@ function LoginContent() {
   };
 
   return (
-    <div className="w-full flex min-h-screen bg-[var(--bg-primary)]">
+    <div className="w-full flex min-h-screen bg-bg-primary">
       {/* LEFT PANEL */}
-      <div className="hidden lg:flex w-1/2 bg-[var(--accent-primary)] flex-col justify-center items-center relative overflow-hidden">
+      <div className="hidden lg:flex w-1/2 bg-accent-primary flex-col justify-center items-center relative overflow-hidden">
         <div className="relative z-10 text-center px-12">
           <h1 className="font-display font-bold text-7xl text-white mb-6">
             Xavier 300
@@ -104,36 +104,36 @@ function LoginContent() {
       </div>
 
       {/* RIGHT PANEL */}
-      <div className="w-full lg:w-1/2 bg-[var(--bg-primary)] flex items-center justify-center p-6 sm:p-12">
-        <div className="w-full max-w-[440px] bg-white rounded-2xl p-8 shadow-[var(--shadow-card)]">
+      <div className="w-full lg:w-1/2 bg-bg-primary flex items-center justify-center p-6 sm:p-12">
+        <div className="w-full max-w-[440px] bg-bg-secondary border border-border-subtle rounded-2xl p-8 shadow-sm">
           <div className="mb-[32px]">
-            <h2 className="font-display font-bold text-[28px] text-[var(--accent-primary)] leading-tight">
+            <h2 className="font-display font-bold text-[28px] text-accent-primary leading-tight">
               Welcome back
             </h2>
-            <p className="font-ui text-[var(--text-muted)] mt-2 text-lg">
+            <p className="font-ui text-text-muted mt-2 text-lg">
               Sign in to continue your practice
             </p>
           </div>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
             {emailFromParams && !authError && !apiError && (
-              <p className="text-sm text-[var(--accent-primary)] font-ui mb-4 text-left">
+              <p className="text-sm text-accent-primary font-ui mb-4 text-left">
                 👋 Welcome! Please log in with your existing account.
               </p>
             )}
 
             {apiError && (
-              <div className="p-4 rounded-xl bg-[var(--error-light)] text-[var(--error)] text-sm border border-[var(--error)]/20 text-left">
+              <div className="p-4 rounded-xl bg-error-light text-error text-sm border border-error/20 text-left">
                 {apiError}
               </div>
             )}
 
             {authError?.type === 'unverified' && (
-              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mt-4 text-left">
-                <p className="text-amber-800 font-ui text-sm font-medium mb-1">
+              <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/50 rounded-xl p-4 mt-4 text-left">
+                <p className="text-amber-800 dark:text-amber-400 font-ui text-sm font-medium mb-1">
                   ⚠️ Email Not Verified
                 </p>
-                <p className="text-amber-700 font-ui text-sm mb-3">
+                <p className="text-amber-700 dark:text-amber-300 font-ui text-sm mb-3">
                   You signed up but haven't verified your email yet.
                 </p>
                 <div className="flex flex-col gap-2">
@@ -141,7 +141,7 @@ function LoginContent() {
                     type="button"
                     onClick={() => handleResendVerification(authError.email)}
                     disabled={resendLoading || resendCooldown > 0}
-                    className="text-amber-600 hover:text-amber-800 text-sm font-ui font-medium text-left underline disabled:no-underline disabled:opacity-60 transition-all"
+                    className="text-amber-600 dark:text-amber-400 hover:text-amber-800 dark:hover:text-amber-300 text-sm font-ui font-medium text-left underline disabled:no-underline disabled:opacity-60 transition-all cursor-pointer"
                   >
                     {resendLoading 
                       ? 'Sending...' 
@@ -154,9 +154,9 @@ function LoginContent() {
                     onClick={() => router.push(
                       `/verify?email=${encodeURIComponent(authError.email)}`
                     )}
-                    className="w-full mt-2 text-center px-4 py-2 rounded-full border border-amber-300 
-                               text-amber-700 text-sm font-ui font-medium 
-                               hover:bg-amber-50 transition-all"
+                    className="w-full mt-2 text-center px-4 py-2 rounded-full border border-amber-300 dark:border-amber-800 
+                               text-amber-700 dark:text-amber-300 text-sm font-ui font-medium 
+                               hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-all cursor-pointer"
                   >
                     Go to Verification Page
                   </button>
@@ -165,20 +165,20 @@ function LoginContent() {
             )}
 
             <div className="space-y-2 text-left">
-              <label htmlFor="email" className="block font-ui text-[var(--text-primary)] font-medium">Email</label>
+              <label htmlFor="email" className="block font-ui text-text-primary font-medium">Email</label>
               <input 
                 id="email" 
                 type="email" 
                 placeholder="you@example.com" 
                 {...register('email')}
-                className={`w-full rounded-lg border ${errors.email ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow`}
+                className={`w-full rounded-lg border ${errors.email ? 'border-error' : 'border-border-medium'} bg-bg-elevated px-4 py-[14px] font-ui text-[16px] text-text-primary focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-shadow`}
               />
-              {errors.email && <p className="text-[var(--error)] text-sm mt-1">{errors.email.message}</p>}
+              {errors.email && <p className="text-error text-sm mt-1">{errors.email.message}</p>}
             </div>
 
             <div className="space-y-2 text-left">
               <div className="flex items-center justify-between">
-                <label htmlFor="password" className="block font-ui text-[var(--text-primary)] font-medium">Password</label>
+                <label htmlFor="password" className="block font-ui text-text-primary font-medium">Password</label>
               </div>
               <div className="relative">
                 <input 
@@ -186,20 +186,20 @@ function LoginContent() {
                   type={showPassword ? 'text' : 'password'} 
                   placeholder="••••••••"
                   {...register('password')}
-                  className={`w-full rounded-lg border ${errors.password ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] pr-12 font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow`}
+                  className={`w-full rounded-lg border ${errors.password ? 'border-error' : 'border-border-medium'} bg-bg-elevated px-4 py-[14px] pr-12 font-ui text-[16px] text-text-primary focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-shadow`}
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted hover:text-text-primary transition-colors cursor-pointer"
                 >
                   {showPassword ? <Loader2 className="w-5 h-5 animate-spin" /> : <Eye size={20} />}
                 </button>
               </div>
-              {errors.password && <p className="text-[var(--error)] text-sm mt-1">{errors.password.message}</p>}
+              {errors.password && <p className="text-error text-sm mt-1">{errors.password.message}</p>}
               
               <div className="text-right pt-1">
-                <Link href="/forgot-password" className="text-sm font-ui text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors">
+                <Link href="/forgot-password" className="text-sm font-ui text-text-secondary hover:text-accent-primary transition-colors">
                   Forgot password?
                 </Link>
               </div>
@@ -208,7 +208,7 @@ function LoginContent() {
             <button 
               type="submit" 
               disabled={isSubmitting}
-              className="w-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white rounded-lg py-[14px] font-ui font-medium text-[16px] transition-all mt-[32px] flex items-center justify-center gap-2 disabled:opacity-70"
+              className="w-full bg-accent-primary hover:bg-accent-hover text-white rounded-lg py-[14px] font-ui font-medium text-[16px] transition-all mt-[32px] flex items-center justify-center gap-2 disabled:opacity-70 cursor-pointer"
             >
               {isSubmitting ? (
                 <>
@@ -221,20 +221,20 @@ function LoginContent() {
             </button>
 
             <div className="relative flex items-center py-4">
-              <div className="flex-grow border-t border-[var(--border-medium)]"></div>
-              <span className="flex-shrink-0 mx-4 text-[var(--text-muted)] font-ui text-sm">or</span>
-              <div className="flex-grow border-t border-[var(--border-medium)]"></div>
+              <div className="flex-grow border-t border-border-medium"></div>
+              <span className="flex-shrink-0 mx-4 text-text-muted font-ui text-sm">or</span>
+              <div className="flex-grow border-t border-border-medium"></div>
             </div>
 
             <div className="text-center space-y-2">
-              <p className="font-ui text-[var(--text-secondary)]">
+              <p className="font-ui text-text-secondary">
                 Don't have an account?{' '}
-                <Link href="/signup" className="text-[var(--accent-primary)] font-medium hover:underline">
+                <Link href="/signup" className="text-accent-primary font-medium hover:underline">
                   Sign up
                 </Link>
               </p>
               <div className="pt-2">
-                <Link href="/account-help" className="text-sm font-ui text-[var(--accent-primary)] hover:underline font-medium">
+                <Link href="/account-help" className="text-sm font-ui text-accent-primary hover:underline font-medium">
                   Having trouble? Get help →
                 </Link>
               </div>
@@ -249,8 +249,8 @@ function LoginContent() {
 export default function LoginPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600" />
+      <div className="min-h-screen flex items-center justify-center bg-bg-primary">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-accent-primary" />
       </div>
     }>
       <LoginContent />

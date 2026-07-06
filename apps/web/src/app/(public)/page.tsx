@@ -12,11 +12,8 @@ import {
   Infinity as InfinityIcon, 
   Code2, 
   BookOpen, 
-  PieChart,
   ArrowRight,
   Send,
-  ChevronRight,
-  GraduationCap,
   Check
 } from 'lucide-react';
 
@@ -80,7 +77,7 @@ export default function LandingPage() {
   ];
 
   return (
-    <div className="w-full bg-[var(--bg-primary)] overflow-x-hidden">
+    <div className="w-full bg-bg-primary text-text-primary overflow-x-hidden">
       
       {/* HERO SECTION — Split Layout */}
       <section className="relative py-20 lg:py-28 px-6">
@@ -92,7 +89,7 @@ export default function LandingPage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="inline-block font-ui text-xs font-semibold text-[var(--accent-secondary)] uppercase tracking-[0.05em]"
+              className="inline-block font-ui text-xs font-semibold text-accent-secondary uppercase tracking-[0.05em]"
             >
               Exam Practice Platform
             </motion.span>
@@ -101,7 +98,7 @@ export default function LandingPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.05 }}
-              className="font-display font-bold text-4xl md:text-[48px] text-[var(--accent-primary)] leading-[1.25] max-w-2xl"
+              className="font-display font-bold text-4xl md:text-[48px] text-accent-primary leading-[1.25] max-w-2xl"
             >
               Welcome to Your Practice Centre for Tech Certification
             </motion.h1>
@@ -110,7 +107,7 @@ export default function LandingPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-ui text-lg text-[var(--text-muted)] max-w-lg leading-[1.6]"
+              className="font-ui text-lg text-text-muted max-w-lg leading-[1.6]"
             >
               Exam-ready confidence. Nigerian pricing. World-class preparation. Designed for the ambitious tech professionals of Lagos, Abuja, and beyond.
             </motion.p>
@@ -127,7 +124,7 @@ export default function LandingPage() {
                 <div className="w-8 h-8 rounded-full border-2 border-white bg-teal-200 flex items-center justify-center font-bold text-[9px] text-teal-700">O</div>
                 <div className="w-8 h-8 rounded-full border-2 border-white bg-amber-200 flex items-center justify-center font-bold text-[9px] text-amber-700">K</div>
               </div>
-              <span className="text-xs font-semibold font-ui text-[var(--text-secondary)]">+10k Nigerian Students Practicing</span>
+              <span className="text-xs font-semibold font-ui text-text-secondary">+10k Nigerian Students Practicing</span>
             </motion.div>
             
             {/* CTA Buttons */}
@@ -139,13 +136,13 @@ export default function LandingPage() {
             >
               <Link 
                 href="/signup"
-                className="inline-flex justify-center items-center bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white px-8 py-4 rounded-full font-ui font-semibold shadow-lg hover:shadow-xl transition-all text-center"
+                className="inline-flex justify-center items-center bg-accent-primary hover:bg-accent-hover text-white px-8 py-4 rounded-full font-ui font-semibold shadow-lg hover:shadow-xl transition-all text-center"
               >
                 Start Practicing Free
               </Link>
               <Link 
                 href="#domains"
-                className="inline-flex justify-center items-center gap-2 bg-transparent border-2 border-[var(--accent-primary)]/20 text-[var(--accent-primary)] px-8 py-4 rounded-full font-ui font-semibold hover:bg-[var(--accent-light)] transition-all text-center"
+                className="inline-flex justify-center items-center gap-2 bg-transparent border-2 border-accent-primary/20 text-accent-primary px-8 py-4 rounded-full font-ui font-semibold hover:bg-accent-light transition-all text-center"
               >
                 Browse Courses
                 <ArrowRight size={18} />
@@ -159,7 +156,7 @@ export default function LandingPage() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="rounded-2xl overflow-hidden shadow-xl border border-[var(--border-subtle)]"
+              className="rounded-2xl overflow-hidden shadow-xl border border-border-subtle"
             >
               <img 
                 className="w-full h-[400px] object-cover" 
@@ -173,15 +170,15 @@ export default function LandingPage() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg border border-[var(--border-subtle)] flex items-center gap-3"
+              className="absolute -bottom-6 -left-6 bg-bg-secondary p-4 rounded-xl shadow-lg border border-border-subtle flex items-center gap-3"
             >
-              <div className="w-8 h-8 rounded-full bg-[var(--accent-secondary-light)] text-[var(--accent-secondary)] flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-accent-secondary/10 text-accent-secondary flex items-center justify-center">
                 <Check size={16} />
               </div>
               <div>
-                <span className="font-ui font-bold text-[var(--accent-primary)] text-sm block">98% Pass Rate</span>
-                <div className="w-24 h-1.5 bg-[var(--bg-primary)] rounded-full overflow-hidden mt-1">
-                  <div className="w-[98%] h-full bg-[var(--accent-secondary)] rounded-full"></div>
+                <span className="font-ui font-bold text-accent-primary text-sm block">98% Pass Rate</span>
+                <div className="w-24 h-1.5 bg-bg-primary rounded-full overflow-hidden mt-1">
+                  <div className="w-[98%] h-full bg-accent-secondary rounded-full"></div>
                 </div>
               </div>
             </motion.div>
@@ -193,8 +190,8 @@ export default function LandingPage() {
       <section id="domains" className="py-24 px-6">
         <div className="max-w-[1280px] mx-auto">
           <div className="text-center mb-16 space-y-3">
-            <span className="font-ui font-semibold text-xs text-[var(--accent-secondary)] tracking-widest uppercase">Expert Learning Paths</span>
-            <h2 className="font-display font-bold text-[32px] text-[var(--text-primary)]">Choose Your Certification Path</h2>
+            <span className="font-ui font-semibold text-xs text-accent-secondary tracking-widest uppercase">Expert Learning Paths</span>
+            <h2 className="font-display font-bold text-[32px] text-text-primary">Choose Your Certification Path</h2>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -202,24 +199,24 @@ export default function LandingPage() {
               <Link href={`/courses/${domain.slug}`} key={i} className="group">
                 <motion.div 
                   whileHover={{ y: -2 }}
-                  className="bg-white border border-[var(--border-subtle)] p-6 rounded-2xl transition-all duration-300 flex flex-col justify-between h-full shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)]"
+                  className="bg-bg-secondary border border-border-subtle p-6 rounded-2xl transition-all duration-300 flex flex-col justify-between h-full shadow-sm hover:shadow-md"
                 >
                   <div className="space-y-4">
                     <div className="w-10 h-10 rounded-full bg-[#4DB6AC]/10 text-[#4DB6AC] flex items-center justify-center transition-colors group-hover:bg-[#4DB6AC] group-hover:text-white">
                       {domain.icon}
                     </div>
                     <div>
-                      <h3 className="font-display font-semibold text-lg text-[var(--text-primary)] mb-1 leading-snug">
+                      <h3 className="font-display font-semibold text-lg text-text-primary mb-1 leading-snug">
                         {domain.name}
                       </h3>
-                      <p className="text-[var(--text-muted)] text-[13px] font-ui">
+                      <p className="text-text-muted text-[13px] font-ui">
                         {domain.count}
                       </p>
                     </div>
                   </div>
                   
-                  <div className="mt-6 pt-4 border-t border-[var(--border-subtle)]">
-                    <span className="text-[var(--accent-primary)] text-sm font-ui font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+                  <div className="mt-6 pt-4 border-t border-border-subtle">
+                    <span className="text-accent-primary text-sm font-ui font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
                       Explore track
                       <ArrowRight size={14} />
                     </span>
@@ -232,7 +229,7 @@ export default function LandingPage() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="bg-[var(--accent-primary)] py-24 px-6 overflow-hidden relative text-white">
+      <section className="bg-accent-primary py-24 px-6 overflow-hidden relative text-white">
         <div className="max-w-[1280px] mx-auto relative z-10">
           <div className="text-center mb-16 space-y-4">
             <h2 className="font-display font-bold text-[32px] text-white">How Xavier 300 Works</h2>
@@ -247,7 +244,7 @@ export default function LandingPage() {
             
             {steps.map((step, i) => (
               <div key={i} className="relative text-center group flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-[var(--accent-secondary)] text-white flex items-center justify-center font-ui font-bold text-xl mb-6 shadow-lg relative z-10 transition-transform group-hover:scale-110">
+                <div className="w-16 h-16 rounded-full bg-accent-secondary text-white flex items-center justify-center font-ui font-bold text-xl mb-6 shadow-lg relative z-10 transition-transform group-hover:scale-110">
                   {step.num}
                 </div>
                 <h3 className="font-ui font-semibold text-lg text-white mb-2">{step.title}</h3>
@@ -259,21 +256,21 @@ export default function LandingPage() {
       </section>
 
       {/* PRICING */}
-      <section className="py-24 px-6 bg-[var(--bg-primary)]">
+      <section className="py-24 px-6 bg-bg-primary">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 space-y-3">
-            <h2 className="font-display font-bold text-4xl text-[var(--accent-primary)]">Start Practicing Today</h2>
-            <p className="font-ui text-lg text-[var(--text-secondary)]">Built for Nigerian tech professionals</p>
+            <h2 className="font-display font-bold text-4xl text-accent-primary">Start Practicing Today</h2>
+            <p className="font-ui text-lg text-text-secondary">Built for Nigerian tech professionals</p>
           </div>
           
-          <div className="max-w-[480px] mx-auto bg-white border border-[var(--border-subtle)] rounded-2xl p-8 shadow-[var(--shadow-card)]">
+          <div className="max-w-[480px] mx-auto bg-bg-secondary border border-border-subtle rounded-2xl p-8 shadow-sm">
             <div className="text-center space-y-6">
               <div>
-                <span className="inline-block px-3 py-1 rounded-full bg-[var(--accent-secondary-light)] text-[var(--accent-secondary)] text-xs font-ui font-semibold uppercase tracking-wider mb-4">
+                <span className="inline-block px-3 py-1 rounded-full bg-accent-secondary/10 text-accent-secondary text-xs font-ui font-semibold uppercase tracking-wider mb-4">
                   Limited Offer
                 </span>
-                <h3 className="font-display text-[32px] font-bold text-[var(--accent-primary)]">Completely Free</h3>
-                <p className="text-[var(--text-muted)] text-base font-ui mt-2">
+                <h3 className="font-display text-[32px] font-bold text-accent-primary">Completely Free</h3>
+                <p className="text-text-muted text-base font-ui mt-2">
                   Full access during our launch period. No credit card required.
                 </p>
               </div>
@@ -281,8 +278,8 @@ export default function LandingPage() {
               <div className="grid grid-cols-2 gap-4 text-left">
                 {['All certifications', 'Unlimited exams', 'AI recommendations', 'Weekly leaderboard'].map((feature, i) => (
                   <div key={i} className="flex items-center gap-2">
-                    <Check size={16} className="text-[var(--accent-secondary)] flex-shrink-0" />
-                    <span className="font-ui text-sm text-[var(--text-primary)] font-medium">{feature}</span>
+                    <Check size={16} className="text-accent-secondary flex-shrink-0" />
+                    <span className="font-ui text-sm text-text-primary font-medium">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -290,11 +287,11 @@ export default function LandingPage() {
               <div className="space-y-3">
                 <Link 
                   href="/signup" 
-                  className="block w-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white px-8 py-4 rounded-lg font-ui font-semibold shadow-lg hover:shadow-xl transition-all text-center no-underline"
+                  className="block w-full bg-accent-primary hover:bg-accent-hover text-white px-8 py-4 rounded-lg font-ui font-semibold shadow-lg hover:shadow-xl transition-all text-center no-underline"
                 >
                   Start Practicing Free
                 </Link>
-                <p className="text-[var(--text-muted)] text-xs font-ui">
+                <p className="text-text-muted text-xs font-ui">
                   Paid plans coming soon. Early users get a special discount.
                 </p>
               </div>
@@ -304,7 +301,7 @@ export default function LandingPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-[var(--accent-primary)] text-white w-full py-20">
+      <footer className="bg-accent-primary text-white w-full py-20">
         <div className="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-1 space-y-4">
             <span className="font-display font-bold text-2xl text-white">Xavier 300</span>
@@ -315,17 +312,17 @@ export default function LandingPage() {
           <div className="space-y-6">
             <h4 className="font-ui font-semibold text-white uppercase tracking-wider text-xs">Platform</h4>
             <ul className="space-y-4 text-sm">
-              <li><Link className="text-white/70 hover:text-[var(--accent-secondary)] transition-all" href="/courses">Browse Courses</Link></li>
-              <li><Link className="text-white/70 hover:text-[var(--accent-secondary)] transition-all" href="/pricing">Pricing</Link></li>
-              <li><Link className="text-white/70 hover:text-[var(--accent-secondary)] transition-all" href="/support">Help Center</Link></li>
+              <li><Link className="text-white/70 hover:text-accent-secondary transition-all" href="/courses">Browse Courses</Link></li>
+              <li><Link className="text-white/70 hover:text-accent-secondary transition-all" href="/pricing">Pricing</Link></li>
+              <li><Link className="text-white/70 hover:text-accent-secondary transition-all" href="/support">Help Center</Link></li>
             </ul>
           </div>
           <div className="space-y-6">
             <h4 className="font-ui font-semibold text-white uppercase tracking-wider text-xs">Legal</h4>
             <ul className="space-y-4 text-sm">
-              <li><Link className="text-white/70 hover:text-[var(--accent-secondary)] transition-all" href="/terms">Terms of Service</Link></li>
-              <li><Link className="text-white/70 hover:text-[var(--accent-secondary)] transition-all" href="/privacy">Privacy Policy</Link></li>
-              <li><Link className="text-white/70 hover:text-[var(--accent-secondary)] transition-all" href="/support">Contact Us</Link></li>
+              <li><Link className="text-white/70 hover:text-accent-secondary transition-all" href="/terms">Terms of Service</Link></li>
+              <li><Link className="text-white/70 hover:text-accent-secondary transition-all" href="/privacy">Privacy Policy</Link></li>
+              <li><Link className="text-white/70 hover:text-accent-secondary transition-all" href="/support">Contact Us</Link></li>
             </ul>
           </div>
           <div className="space-y-6">
@@ -333,11 +330,11 @@ export default function LandingPage() {
             <p className="text-white/60 text-xs">Stay updated with the latest exam tracks.</p>
             <div className="flex">
               <input 
-                className="bg-white/10 border-0 rounded-l-lg px-4 py-2 w-full focus:ring-2 focus:ring-[var(--accent-secondary)] text-white placeholder-white/40 text-sm focus:outline-none" 
+                className="bg-white/10 border-0 rounded-l-lg px-4 py-2 w-full focus:ring-2 focus:ring-accent-secondary text-white placeholder-white/40 text-sm focus:outline-none" 
                 placeholder="Email address" 
                 type="email"
               />
-              <button className="bg-[var(--accent-secondary)] text-white px-4 rounded-r-lg hover:bg-[var(--accent-secondary-hover)] transition-colors">
+              <button className="bg-accent-secondary text-white px-4 rounded-r-lg hover:bg-accent-secondary/80 transition-colors">
                 <Send size={16} />
               </button>
             </div>

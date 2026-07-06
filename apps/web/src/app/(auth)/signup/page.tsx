@@ -42,7 +42,7 @@ export default function SignupPage() {
   const passwordValue = watch('password', '');
   
   const getPasswordStrength = (pass: string) => {
-    if (!pass) return { score: 0, label: '', color: 'bg-[var(--border-medium)]' };
+    if (!pass) return { score: 0, label: '', color: 'bg-border-medium' };
     let score = 0;
     if (pass.length >= 8) score++;
     if (pass.match(/[A-Z]/) && pass.match(/[0-9]/)) score++;
@@ -51,7 +51,7 @@ export default function SignupPage() {
     if (score === 1) return { score, label: 'Weak', color: 'bg-red-500' };
     if (score === 2) return { score, label: 'Fair', color: 'bg-amber-500' };
     if (score === 3) return { score, label: 'Strong', color: 'bg-green-500' };
-    return { score: 0, label: '', color: 'bg-[var(--border-medium)]' };
+    return { score: 0, label: '', color: 'bg-border-medium' };
   };
 
   const strength = getPasswordStrength(passwordValue);
@@ -88,9 +88,9 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="w-full flex min-h-screen bg-[var(--bg-primary)]">
+    <div className="w-full flex min-h-screen bg-bg-primary">
       {/* LEFT PANEL */}
-      <div className="hidden lg:flex w-1/2 bg-[var(--accent-primary)] flex-col justify-center items-center relative overflow-hidden fixed h-screen">
+      <div className="hidden lg:flex w-1/2 bg-accent-primary flex-col justify-center items-center relative overflow-hidden fixed h-screen">
         <div className="relative z-10 text-center px-12">
           <h1 className="font-display font-bold text-7xl text-white mb-6">
             Xavier 300
@@ -102,20 +102,20 @@ export default function SignupPage() {
       </div>
 
       {/* RIGHT PANEL - Scrollable */}
-      <div className="w-full lg:w-1/2 lg:ml-auto bg-[var(--bg-primary)] flex items-center justify-center p-6 sm:p-12 min-h-screen">
-        <div className="w-full max-w-[440px] bg-white rounded-2xl p-8 shadow-[var(--shadow-card)] my-12">
+      <div className="w-full lg:w-1/2 lg:ml-auto bg-bg-primary flex items-center justify-center p-6 sm:p-12 min-h-screen">
+        <div className="w-full max-w-[440px] bg-bg-secondary border border-border-subtle rounded-2xl p-8 shadow-sm my-12">
           <div className="mb-[32px]">
-            <h2 className="font-display font-bold text-[28px] text-[var(--accent-primary)] leading-tight">
+            <h2 className="font-display font-bold text-[28px] text-accent-primary leading-tight">
               Create an account
             </h2>
-            <p className="font-ui text-[var(--text-muted)] mt-2 text-lg">
+            <p className="font-ui text-text-muted mt-2 text-lg">
               Start your journey with Xavier 300
             </p>
           </div>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
             {apiError && (
-              <div className={`p-4 rounded-xl text-sm border ${unverifiedRedirect ? 'bg-amber-50 text-amber-800 border-amber-200' : 'bg-[var(--error-light)] text-[var(--error)] border-[var(--error)]/20'}`}>
+              <div className={`p-4 rounded-xl text-sm border ${unverifiedRedirect ? 'bg-amber-50 text-amber-800 border-amber-200' : 'bg-error-light text-error border-error/20'}`}>
                 <p>{typeof apiError === 'string' ? apiError : JSON.stringify(apiError)}</p>
                 {unverifiedRedirect && (
                   <div className="mt-3 pt-3 border-t border-amber-200 flex items-center gap-2">
@@ -127,43 +127,43 @@ export default function SignupPage() {
             )}
 
             <div className="space-y-2 text-left">
-              <label htmlFor="fullName" className="block font-ui text-[var(--text-primary)] font-medium">Full Name</label>
+              <label htmlFor="fullName" className="block font-ui text-text-primary font-medium">Full Name</label>
               <input 
                 id="fullName" 
                 type="text" 
                 placeholder="John Doe" 
                 {...register('fullName')}
-                className={`w-full rounded-lg border ${errors.fullName ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow`}
+                className={`w-full rounded-lg border ${errors.fullName ? 'border-error' : 'border-border-medium'} bg-bg-elevated px-4 py-[14px] font-ui text-[16px] text-text-primary focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-shadow`}
               />
-              {errors.fullName && <p className="text-[var(--error)] text-sm mt-1">{errors.fullName.message}</p>}
+              {errors.fullName && <p className="text-error text-sm mt-1">{errors.fullName.message}</p>}
             </div>
 
             <div className="space-y-2 text-left">
-              <label htmlFor="email" className="block font-ui text-[var(--text-primary)] font-medium">Email</label>
+              <label htmlFor="email" className="block font-ui text-text-primary font-medium">Email</label>
               <input 
                 id="email" 
                 type="email" 
                 placeholder="you@example.com" 
                 {...register('email')}
-                className={`w-full rounded-lg border ${errors.email ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow`}
+                className={`w-full rounded-lg border ${errors.email ? 'border-error' : 'border-border-medium'} bg-bg-elevated px-4 py-[14px] font-ui text-[16px] text-text-primary focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-shadow`}
               />
-              {errors.email && <p className="text-[var(--error)] text-sm mt-1">{errors.email.message}</p>}
+              {errors.email && <p className="text-error text-sm mt-1">{errors.email.message}</p>}
             </div>
 
             <div className="space-y-2 text-left">
-              <label htmlFor="password" className="block font-ui text-[var(--text-primary)] font-medium">Password</label>
+              <label htmlFor="password" className="block font-ui text-text-primary font-medium">Password</label>
               <div className="relative">
                 <input 
                   id="password" 
                   type={showPassword ? 'text' : 'password'} 
                   placeholder="••••••••"
                   {...register('password')}
-                  className={`w-full rounded-lg border ${errors.password ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] pr-12 font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow`}
+                  className={`w-full rounded-lg border ${errors.password ? 'border-error' : 'border-border-medium'} bg-bg-elevated px-4 py-[14px] pr-12 font-ui text-[16px] text-text-primary focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-shadow`}
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted hover:text-text-primary transition-colors cursor-pointer"
                 >
                   {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
@@ -174,7 +174,7 @@ export default function SignupPage() {
                 {[1, 2, 3].map((segment) => (
                   <div 
                     key={segment} 
-                    className={`h-1.5 w-1/3 rounded-full ${strength.score >= segment ? strength.color : 'bg-[var(--border-medium)]'}`}
+                    className={`h-1.5 w-1/3 rounded-full ${strength.score >= segment ? strength.color : 'bg-border-medium'}`}
                   />
                 ))}
               </div>
@@ -183,43 +183,43 @@ export default function SignupPage() {
                   {strength.label}
                 </p>
               )}
-              {errors.password && <p className="text-[var(--error)] text-sm mt-1">{errors.password.message}</p>}
+              {errors.password && <p className="text-error text-sm mt-1">{errors.password.message}</p>}
             </div>
 
             <div className="space-y-2 text-left">
-              <label htmlFor="phone" className="block font-ui text-[var(--text-primary)] font-medium">Phone Number</label>
+              <label htmlFor="phone" className="block font-ui text-text-primary font-medium">Phone Number</label>
               <input 
                 id="phone" 
                 type="tel" 
                 placeholder="080XXXXXXXX" 
                 {...register('phone')}
-                className={`w-full rounded-lg border ${errors.phone ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow`}
+                className={`w-full rounded-lg border ${errors.phone ? 'border-error' : 'border-border-medium'} bg-bg-elevated px-4 py-[14px] font-ui text-[16px] text-text-primary focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-shadow`}
               />
-              {errors.phone && <p className="text-[var(--error)] text-sm mt-1">{errors.phone.message}</p>}
+              {errors.phone && <p className="text-error text-sm mt-1">{errors.phone.message}</p>}
             </div>
 
             <div className="grid grid-cols-2 gap-4 text-left">
               <div className="space-y-2">
-                <label htmlFor="state" className="block font-ui text-[var(--text-primary)] font-medium">State</label>
+                <label htmlFor="state" className="block font-ui text-text-primary font-medium">State</label>
                 <select 
                   id="state" 
                   {...register('state')}
-                  className={`w-full rounded-lg border ${errors.state ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow appearance-none`}
+                  className={`w-full rounded-lg border ${errors.state ? 'border-error' : 'border-border-medium'} bg-bg-elevated px-4 py-[14px] font-ui text-[16px] text-text-primary focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-shadow appearance-none`}
                 >
                   <option value="">Select state...</option>
                   {STATES.map(state => (
                     <option key={state} value={state}>{state}</option>
                   ))}
                 </select>
-                {errors.state && <p className="text-[var(--error)] text-sm mt-1">{errors.state.message}</p>}
+                {errors.state && <p className="text-error text-sm mt-1">{errors.state.message}</p>}
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="yearsExperience" className="block font-ui text-[var(--text-primary)] font-medium">Experience</label>
+                <label htmlFor="yearsExperience" className="block font-ui text-text-primary font-medium">Experience</label>
                 <select 
                   id="yearsExperience" 
                   {...register('yearsExperience')}
-                  className={`w-full rounded-lg border ${errors.yearsExperience ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow appearance-none`}
+                  className={`w-full rounded-lg border ${errors.yearsExperience ? 'border-error' : 'border-border-medium'} bg-bg-elevated px-4 py-[14px] font-ui text-[16px] text-text-primary focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-shadow appearance-none`}
                 >
                   <option value="">Select...</option>
                   <option value="0">0-1 years</option>
@@ -228,40 +228,40 @@ export default function SignupPage() {
                   <option value="5">5-10 years</option>
                   <option value="10">10+ years</option>
                 </select>
-                {errors.yearsExperience && <p className="text-[var(--error)] text-sm mt-1">{errors.yearsExperience.message}</p>}
+                {errors.yearsExperience && <p className="text-error text-sm mt-1">{errors.yearsExperience.message}</p>}
               </div>
             </div>
 
             <div className="space-y-2 text-left">
-              <label htmlFor="occupation" className="block font-ui text-[var(--text-primary)] font-medium">Occupation</label>
+              <label htmlFor="occupation" className="block font-ui text-text-primary font-medium">Occupation</label>
               <input 
                 id="occupation" 
                 type="text" 
                 placeholder="e.g. Software Engineer" 
                 {...register('occupation')}
-                className={`w-full rounded-lg border ${errors.occupation ? 'border-[var(--error)]' : 'border-[var(--border-medium)]'} bg-[var(--bg-elevated)] px-4 py-[14px] font-ui text-[16px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent transition-shadow`}
+                className={`w-full rounded-lg border ${errors.occupation ? 'border-error' : 'border-border-medium'} bg-bg-elevated px-4 py-[14px] font-ui text-[16px] text-text-primary focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-transparent transition-shadow`}
               />
-              {errors.occupation && <p className="text-[var(--error)] text-sm mt-1">{errors.occupation.message}</p>}
+              {errors.occupation && <p className="text-error text-sm mt-1">{errors.occupation.message}</p>}
             </div>
 
             <button 
               type="submit" 
               disabled={isSubmitting}
-              className="w-full bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-white rounded-lg py-[14px] font-ui font-medium text-[16px] transition-colors mt-[32px] flex items-center justify-center"
+              className="w-full bg-accent-primary hover:bg-accent-hover text-white rounded-lg py-[14px] font-ui font-medium text-[16px] transition-colors mt-[32px] flex items-center justify-center cursor-pointer"
             >
               {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin mr-2" /> : null}
               Create Account
             </button>
 
             <div className="text-center pt-4 space-y-2">
-              <p className="font-ui text-[var(--text-secondary)]">
+              <p className="font-ui text-text-secondary">
                 Already have an account?{' '}
-                <Link href="/login" className="text-[var(--accent-primary)] font-medium hover:underline">
+                <Link href="/login" className="text-accent-primary font-medium hover:underline">
                   Sign in
                 </Link>
               </p>
               <div className="pt-2">
-                <Link href="/account-help" className="text-sm font-ui text-[var(--accent-primary)] hover:underline font-medium">
+                <Link href="/account-help" className="text-sm font-ui text-accent-primary hover:underline font-medium">
                   Having trouble? Get help →
                 </Link>
               </div>
