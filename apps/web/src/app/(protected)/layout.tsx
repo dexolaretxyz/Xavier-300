@@ -5,19 +5,17 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { LayoutDashboard, Library, Trophy, User, HelpCircle, Bell, Sun, Moon, Menu, X, LogOut } from 'lucide-react';
 import { useAuthStore } from '@/store/auth.store';
+import { useTheme } from '@/components/theme-provider';
 import { toast } from 'sonner';
 import { api } from '@/lib/api';
 
 export default function ProtectedLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const { user, logout } = useAuthStore();
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const { theme, toggleTheme } = useTheme();
   const [hasPracticedToday, setHasPracticedToday] = useState(true);
 
   useEffect(() => {
-    const savedTheme = document.documentElement.getAttribute('data-theme') || 'light';
-    setTheme(savedTheme as 'light' | 'dark');
-
     // Fetch practice status
     if (user) {
       api.get('/api/users/activity/today').then(res => {
@@ -27,13 +25,6 @@ export default function ProtectedLayout({ children }: { children: React.ReactNod
       }).catch(err => console.error('Failed to fetch activity', err));
     }
   }, [user]);
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
-  };
 
   const handleNotificationClick = () => {
     if (!hasPracticedToday) {
@@ -54,13 +45,13 @@ export default function ProtectedLayout({ children }: { children: React.ReactNod
   ];
 
   return (
-    <div className="min-h-screen bg-[var(--bg-secondary)] flex flex-col md:flex-row">
+    <div className="min-h-screen bg-bg-primary flex flex-col md:flex-row">
       {/* DESKTOP SIDEBAR */}
-      <aside className="hidden md:flex w-64 flex-col bg-white border-r border-[var(--border-subtle)] fixed h-full z-10">
+      <aside className="hidden md:flex w-64 flex-col bg-bg-secondary border-r border-border-subtle fixed h-full z-10">
         <div className="p-6">
           <Link href="/dashboard" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-[var(--accent-primary)] text-white flex items-center justify-center font-display font-bold text-xl">X</div>
-            <span className="font-display font-bold text-[var(--text-primary)] text-xl tracking-tight">Xavier 300</span>
+            <div className="w-8 h-8 rounded-lg bg-accent-primary text-white flex items-center justify-center font-display font-bold text-xl">X</div>
+            <span className="font-display font-bold text-text-primary text-xl tracking-tight">Xavier 300</span>
           </Link>
         </div>
 
@@ -73,8 +64,8 @@ export default function ProtectedLayout({ children }: { children: React.ReactNod
                 href={item.href}
                 className={`flex items-center gap-3 py-3 rounded-lg font-ui font-medium transition-all ${
                   isActive 
-                    ? 'border-l-4 border-[var(--accent-secondary)] bg-[var(--accent-light)] text-[var(--accent-primary)] pl-3 pr-4' 
-                    : 'text-[var(--text-secondary)] hover:bg-[var(--accent-light)]/50 hover:text-[var(--text-primary)] pl-4 pr-4'
+                    ? 'border-l-4 border-accent-secondary bg-accent-light text-accent-primary pl-3 pr-4' 
+                    : 'text-text-secondary hover:bg-accent-light/50 hover:text-text-primary pl-4 pr-4'
                 }`}
               >
                 {item.icon}
@@ -84,10 +75,10 @@ export default function ProtectedLayout({ children }: { children: React.ReactNod
           })}
         </nav>
 
-        <div className="p-4 border-t border-[var(--border-subtle)]">
+        <div className="p-4 border-t border-border-subtle">
           <Link
             href="/support"
-            className="flex items-center gap-3 px-4 py-3 rounded-xl font-ui font-medium text-[var(--text-secondary)] hover:bg-[var(--bg-hover)] hover:text-[var(--text-primary)] transition-colors"
+            className="flex items-center gap-3 px-4 py-3 rounded-xl font-ui font-medium text-text-secondary hover:bg-accent-light/50 hover:text-text-primary transition-colors"
           >
             <HelpCircle size={20} />
             Support
@@ -103,15 +94,15 @@ export default function ProtectedLayout({ children }: { children: React.ReactNod
       </aside>
 
       {/* MOBILE TOPBAR */}
-      <header className="md:hidden flex items-center justify-between p-4 bg-[var(--bg-primary)] border-b border-[var(--border-subtle)] sticky top-0 z-20">
+      <header className="md:hidden flex items-center justify-between p-4 bg-bg-primary border-b border-border-subtle sticky top-0 z-20">
         <Link href="/dashboard" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-[var(--accent-primary)] text-white flex items-center justify-center font-display font-bold text-xl">X</div>
+          <div className="w-8 h-8 rounded-lg bg-accent-primary text-white flex items-center justify-center font-display font-bold text-xl">X</div>
         </Link>
         <div className="flex items-center gap-4">
-          <button onClick={toggleTheme} className="text-[var(--text-secondary)]">
+          <button onClick={toggleTheme} className="text-text-secondary">
             {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
           </button>
-          <button onClick={handleNotificationClick} className="text-[var(--text-secondary)] relative">
+          <button onClick={handleNotificationClick} className="text-text-secondary relative">
             <Bell size={20} />
             {!hasPracticedToday && <span className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>}
           </button>
@@ -121,25 +112,25 @@ export default function ProtectedLayout({ children }: { children: React.ReactNod
       {/* MAIN CONTENT AREA */}
       <div className="flex-1 md:ml-64 flex flex-col min-h-screen">
         {/* DESKTOP TOPBAR */}
-        <header className="hidden md:flex items-center justify-between px-8 py-4 bg-white border-b border-[var(--border-subtle)] sticky top-0 z-10">
-          <div className="font-ui text-[var(--text-secondary)] text-sm">
+        <header className="hidden md:flex items-center justify-between px-8 py-4 bg-bg-secondary border-b border-border-subtle sticky top-0 z-10">
+          <div className="font-ui text-text-secondary text-sm">
             {new Date().toLocaleDateString('en-NG', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
           </div>
           
           <div className="flex items-center gap-6">
-            <button onClick={handleNotificationClick} className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors relative">
+            <button onClick={handleNotificationClick} className="text-text-secondary hover:text-text-primary transition-colors relative">
               <Bell size={20} />
               {!hasPracticedToday && <span className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>}
             </button>
-            <button onClick={toggleTheme} className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
+            <button onClick={toggleTheme} className="text-text-secondary hover:text-text-primary transition-colors">
               {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
             </button>
-            <div className="h-6 w-px bg-[var(--border-medium)]"></div>
+            <div className="h-6 w-px bg-border-medium"></div>
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-[var(--accent-light)] text-[var(--accent-primary)] flex items-center justify-center font-ui font-bold text-sm">
+              <div className="w-8 h-8 rounded-full bg-accent-light text-accent-primary flex items-center justify-center font-ui font-bold text-sm">
                 {user?.fullName?.charAt(0) || 'U'}
               </div>
-              <span className="font-ui font-medium text-[var(--text-primary)] text-sm">{user?.fullName?.split(' ')[0]}</span>
+              <span className="font-ui font-medium text-text-primary text-sm">{user?.fullName?.split(' ')[0]}</span>
             </div>
           </div>
         </header>
@@ -150,14 +141,14 @@ export default function ProtectedLayout({ children }: { children: React.ReactNod
       </div>
 
       {/* MOBILE BOTTOM TAB BAR */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-[var(--bg-primary)] border-t border-[var(--border-subtle)] px-6 py-3 flex justify-between z-20 pb-safe">
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-bg-primary border-t border-border-subtle px-6 py-3 flex justify-between z-20 pb-safe">
         {navItems.map((item) => {
           const isActive = pathname.startsWith(item.href);
           return (
             <Link
               key={item.name}
               href={item.href}
-              className={`flex flex-col items-center gap-1 ${isActive ? 'text-[var(--accent-primary)]' : 'text-[var(--text-secondary)]'}`}
+              className={`flex flex-col items-center gap-1 ${isActive ? 'text-accent-primary' : 'text-text-secondary'}`}
             >
               {item.icon}
               <span className="text-[10px] font-ui font-medium">{item.name}</span>
