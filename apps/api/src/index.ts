@@ -114,10 +114,18 @@ app.use((err: any, req: any, res: any, next: any) => {
   res.status(500).json({ success: false, error: { code: 'SERVER_ERROR', message: 'Internal server error' } });
 });
 
+import { seedProductionClasptek } from './seed-production';
+
 if (require.main === module) {
   const serverPort = typeof PORT === 'string' ? parseInt(PORT, 10) : PORT;
   app.listen(serverPort, '0.0.0.0', () => {
     console.log(`Xavier 300 API running on port ${serverPort} and bound to 0.0.0.0`);
+    
+    // Run production seed check for Clasptek_ Mock
+    seedProductionClasptek().catch(err => {
+      console.error('Failed to run production clasptek seed on startup:', err);
+    });
+
     // Initialize node-cron jobs
     initLeaderboardJob();
     initDailyResetJob();
