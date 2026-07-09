@@ -15,6 +15,7 @@ export function AuthCookieSync() {
         'path=/',
         'max-age=86400',
         'SameSite=Lax',
+        'Secure',
       ].join('; ')
     }
   }, [])

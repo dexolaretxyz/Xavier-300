@@ -102,7 +102,7 @@ export default function SignupPage() {
       </div>
 
       {/* RIGHT PANEL - Scrollable */}
-      <div className="w-full lg:w-1/2 lg:ml-auto bg-bg-primary flex items-center justify-center p-6 sm:p-12 min-h-screen">
+      <div className="w-full lg:w-1/2 lg:ml-auto bg-bg-primary flex items-start justify-center p-6 sm:p-12 min-h-screen">
         <div className="w-full max-w-[440px] bg-bg-secondary border border-border-subtle rounded-2xl p-8 shadow-sm my-12">
           <div className="mb-[32px]">
             <h2 className="font-display font-bold text-[28px] text-accent-primary leading-tight">

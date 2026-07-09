@@ -18,7 +18,7 @@ export async function seedProductionClasptek() {
         name: 'Clasptek_ Mock',
         description: 'Clasptek Cybersecurity curriculum mock exam',
         examDuration: 25,
-        questionCount: 40,
+        questionCount: 25,
         difficulty: Difficulty.MEDIUM,
         domainId: domain.id
       },
@@ -27,7 +27,7 @@ export async function seedProductionClasptek() {
         name: 'Clasptek_ Mock',
         description: 'Clasptek Cybersecurity curriculum mock exam',
         examDuration: 25,
-        questionCount: 40,
+        questionCount: 25,
         difficulty: Difficulty.MEDIUM,
         domainId: domain.id
       }
@@ -50,156 +50,84 @@ export async function seedProductionClasptek() {
       where: { certificationId: certification.id, status: 'APPROVED' }
     });
 
-    if (count < 40) {
-      console.log(`🧹 [SEED] Clasptek_ Mock has only ${count} questions. Re-seeding 40 questions...`);
+    if (count !== 25) {
+      console.log(`🧹 [SEED] Clasptek_ Mock has ${count} questions. Re-seeding 25 questions...`);
       await prisma.question.deleteMany({
         where: { certificationId: certification.id }
       });
 
       const questions = [
         {
-          "text": "What is the primary definition of cybersecurity according to the course material?",
+          "text": "Within the C-I-A Triad, which principle ensures the accuracy and completeness of information?",
           "options": {
-            "A": "The design of user-friendly computer interfaces.",
-            "B": "The practice of protecting systems, networks, and programs from digital attacks.",
-            "C": "The physical maintenance of server hardware.",
-            "D": "The process of developing new operating systems."
+            "A": "Confidentiality",
+            "B": "Integrity",
+            "C": "Availability",
+            "D": "Authentication"
           },
           "correctAnswer": "B",
-          "explanation": "Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks.",
-          "topic": "General Cybersecurity"
-        },
-        {
-          "text": "Within the C-I-A Triad, which principle ensures that information is protected from unauthorized access?",
-          "options": {
-            "A": "Availability",
-            "B": "Integrity",
-            "C": "Confidentiality",
-            "D": "Authorization"
-          },
-          "correctAnswer": "C",
-          "explanation": "Confidentiality ensures that information is protected from unauthorized access.",
+          "explanation": "Integrity ensures the accuracy and completeness of information.",
           "topic": "CIA Triad"
-        },
-        {
-          "text": "How is a 'Vulnerability' defined in the context of cybersecurity risks?",
-          "options": {
-            "A": "A potential source of harm to a system or network.",
-            "B": "The financial loss resulting from a cyberattack.",
-            "C": "A weakness in a system or network that threats can exploit.",
-            "D": "A secure protocol used to protect data."
-          },
-          "correctAnswer": "C",
-          "explanation": "A vulnerability is a weakness in a system or network that threats can exploit.",
-          "topic": "Cybersecurity Risks"
         },
         {
           "text": "Which type of malware specifically locks data and demands a payment for its release?",
           "options": {
-            "A": "Trojan",
-            "B": "Ransomware",
-            "C": "Spyware",
+            "A": "Spyware",
+            "B": "Trojan",
+            "C": "Ransomware",
             "D": "Worm"
           },
-          "correctAnswer": "B",
-          "explanation": "Ransomware locks data and demands payment for release.",
+          "correctAnswer": "C",
+          "explanation": "Ransomware locks data and demands a payment for its release.",
           "topic": "Malware"
         },
         {
-          "text": "An attack where malicious code is inserted into input fields to gain unauthorized access to a database is known as what?",
+          "text": "Intercepting communications between two parties to gain access to sensitive data is known as what type of attack?",
           "options": {
-            "A": "SQL Injection",
-            "B": "Denial of Service (DoS)",
-            "C": "Man-in-the-Middle (MITM)",
-            "D": "Phishing"
-          },
-          "correctAnswer": "A",
-          "explanation": "SQL Injection involves inserting malicious SQL code into input fields to manipulate database queries.",
-          "topic": "Web Security"
-        },
-        {
-          "text": "Intercepting communication over a public Wi-Fi network to gain access to sensitive data is an example of which attack?",
-          "options": {
-            "A": "Man-in-the-Middle (MITM)",
-            "B": "DDoS",
+            "A": "Denial of Service",
+            "B": "SQL Injection",
             "C": "Insider Threat",
-            "D": "Ransomware"
+            "D": "Man-in-the-Middle (MITM)"
           },
-          "correctAnswer": "A",
-          "explanation": "Man-in-the-Middle (MITM) attacks intercept communication between two parties.",
+          "correctAnswer": "D",
+          "explanation": "Intercepting communications between two parties to gain access to sensitive data is known as a Man-in-the-Middle (MITM) attack.",
           "topic": "Network Attacks"
         },
         {
-          "text": "What is the primary motive for 'Hacktivists' to conduct cyberattacks?",
+          "text": "What is the process of converting data into a fixed-length value primarily used for data verification, such as password storage?",
           "options": {
-            "A": "Financial gain and extortion.",
-            "B": "Political or social causes.",
-            "C": "Corporate espionage.",
-            "D": "Experimentation and fame."
+            "A": "Encryption",
+            "B": "Hashing",
+            "C": "Routing",
+            "D": "Authorization"
           },
           "correctAnswer": "B",
-          "explanation": "Hacktivists conduct cyberattacks to support political or social causes.",
-          "topic": "Attacker Motives"
-        },
-        {
-          "text": "Which term describes low-skill attackers who seek fun or fame by using publicly available hacking tools?",
-          "options": {
-            "A": "Nation-States",
-            "B": "Script Kiddies",
-            "C": "Insiders",
-            "D": "Cybercriminals"
-          },
-          "correctAnswer": "B",
-          "explanation": "Script Kiddies are low-skill attackers using pre-made public tools for fun or fame.",
-          "topic": "Attacker Types"
+          "explanation": "Hashing converts data into a fixed-length value for verification and password storage.",
+          "topic": "Cryptography"
         },
         {
           "text": "In the Cyber Kill Chain, which phase involves gathering information about the target system?",
           "options": {
             "A": "Exploitation",
-            "B": "Installation",
+            "B": "Delivery",
             "C": "Reconnaissance",
-            "D": "Weaponization"
+            "D": "Installation"
           },
           "correctAnswer": "C",
           "explanation": "Reconnaissance is the phase of gathering information about the target.",
           "topic": "Cyber Kill Chain"
         },
         {
-          "text": "What is the goal of the 'Command & Control (C2)' phase in the Attack Lifecycle?",
+          "text": "Which threat actors are primarily motivated by political or social causes?",
           "options": {
-            "A": "To establish communication for remote control of the compromised system.",
-            "B": "To steal the target's physical devices.",
-            "C": "To send the payload via a phishing email.",
-            "D": "To research the target's social media profiles."
+            "A": "Cybercriminals",
+            "B": "Script Kiddies",
+            "C": "Nation-States",
+            "D": "Hacktivists"
           },
-          "correctAnswer": "A",
-          "explanation": "Command & Control establishes communication channels to control compromised systems remotely.",
-          "topic": "Attack Lifecycle"
-        },
-        {
-          "text": "What is the difference between Authentication and Authorization?",
-          "options": {
-            "A": "Authentication encrypts data, while Authorization decrypts it.",
-            "B": "Authentication blocks attacks, while Authorization logs them.",
-            "C": "Authentication verifies who you are, while Authorization verifies what you can access.",
-            "D": "They are exactly the same concept."
-          },
-          "correctAnswer": "C",
-          "explanation": "Authentication verifies identity; Authorization determines permissions and access levels.",
-          "topic": "Authentication & Authorization"
-        },
-        {
-          "text": "Which cybersecurity concept involves converting data into a fixed-length value primarily used for data verification and password storage?",
-          "options": {
-            "A": "Encryption",
-            "B": "Hashing",
-            "C": "Authorization",
-            "D": "Firewalling"
-          },
-          "correctAnswer": "B",
-          "explanation": "Hashing converts data into a fixed-length one-way value for password storage and integrity verification.",
-          "topic": "Cryptography"
+          "correctAnswer": "D",
+          "explanation": "Hacktivists are threat actors motivated by political or social causes.",
+          "topic": "Attacker Motives"
         },
         {
           "text": "What are the five core components of the NIST Cybersecurity Framework (CSF)?",
@@ -207,122 +135,62 @@ export async function seedProductionClasptek() {
             "A": "Identify, Protect, Detect, Respond, Recover",
             "B": "Assess, Implement, Monitor, Defend, Audit",
             "C": "Confidentiality, Integrity, Availability, Authentication, Authorization",
-            "D": "Reconnaissance, Delivery, Exploitation, Installation, Actions"
+            "D": "Reconnaissance, Weaponization, Delivery, Exploitation, Installation"
           },
           "correctAnswer": "A",
           "explanation": "The five core functions of the NIST CSF are Identify, Protect, Detect, Respond, and Recover.",
           "topic": "Frameworks and Standards"
         },
         {
-          "text": "What is the primary focus of the ISO/IEC 27001 standard?",
+          "text": "Which global framework focuses on establishing, implementing, and maintaining an Information Security Management System (ISMS)?",
           "options": {
-            "A": "Providing technical defense scripts for Linux systems.",
-            "B": "Establishing and maintaining an Information Security Management System (ISMS).",
-            "C": "Outlining the steps for a successful penetration test.",
-            "D": "Defining the legal penalties for cybercriminals."
+            "A": "NIST RMF",
+            "B": "CIS Controls",
+            "C": "ISO/IEC 27001",
+            "D": "GDPR"
           },
-          "correctAnswer": "B",
+          "correctAnswer": "C",
           "explanation": "ISO/IEC 27001 focuses on establishing, implementing, operating, and maintaining an Information Security Management System (ISMS).",
           "topic": "Frameworks and Standards"
         },
         {
-          "text": "In Risk Management, how is 'Risk' typically calculated?",
+          "text": "In risk management, how is a Risk Score typically calculated?",
           "options": {
-            "A": "Threat x Vulnerability",
-            "B": "Likelihood x Impact",
-            "C": "Asset Value x Mitigation Cost",
-            "D": "Authentication x Authorization"
+            "A": "Threat × Vulnerability",
+            "B": "Asset Value × Mitigation Cost",
+            "C": "Likelihood × Impact",
+            "D": "Authentication × Authorization"
           },
-          "correctAnswer": "B",
+          "correctAnswer": "C",
           "explanation": "Risk is evaluated as Likelihood (probability) multiplied by Impact.",
           "topic": "Risk Management"
         },
         {
-          "text": "Which risk treatment strategy involves applying controls (like installing a firewall) to reduce the risk?",
+          "text": "Buying cybersecurity insurance or outsourcing a service is an example of which risk treatment strategy?",
           "options": {
             "A": "Avoid",
-            "B": "Accept",
-            "C": "Transfer",
-            "D": "Mitigate"
+            "B": "Mitigate",
+            "C": "Accept",
+            "D": "Transfer"
           },
           "correctAnswer": "D",
-          "explanation": "Risk Mitigation involves implementing controls to reduce the likelihood or impact of a risk.",
+          "explanation": "Transferring risk involves shifting the risk to a third party (like buying insurance).",
           "topic": "Risk Management"
         },
         {
-          "text": "If an organization decides to buy cybersecurity insurance, which risk treatment strategy are they employing?",
+          "text": "What is the core software that manages hardware resources and acts as the interface between the user, hardware, and applications?",
           "options": {
-            "A": "Accept",
-            "B": "Transfer",
-            "C": "Mitigate",
-            "D": "Avoid"
+            "A": "Command Line Interface",
+            "B": "Operating System",
+            "C": "File System",
+            "D": "Hypervisor"
           },
           "correctAnswer": "B",
-          "explanation": "Buying insurance is an example of risk transference, shifting the risk to a third party.",
-          "topic": "Risk Management"
-        },
-        {
-          "text": "What is the social engineering technique that uses phone calls to impersonate authority figures?",
-          "options": {
-            "A": "Vishing",
-            "B": "Phishing",
-            "C": "Smishing",
-            "D": "Baiting"
-          },
-          "correctAnswer": "A",
-          "explanation": "Vishing (voice phishing) uses phone calls for social engineering.",
-          "topic": "Social Engineering"
-        },
-        {
-          "text": "Which scenario best describes the social engineering tactic known as 'Pretexting'?",
-          "options": {
-            "A": "Leaving a free USB drive in a company parking lot.",
-            "B": "Following an authorized employee through a secure door.",
-            "C": "Fabricating a believable story, like pretending to be from HR, to gain trust and extract data.",
-            "D": "Sending a text message claiming the user has won a gift card."
-          },
-          "correctAnswer": "C",
-          "explanation": "Pretexting is creating a fabricated scenario (pretext) to persuade a victim to perform actions or release information.",
-          "topic": "Social Engineering"
-        },
-        {
-          "text": "An attacker offers a free movie download that actually contains hidden malware. What social engineering tactic is this?",
-          "options": {
-            "A": "Tailgating",
-            "B": "Baiting",
-            "C": "Pretexting",
-            "D": "Impersonation"
-          },
-          "correctAnswer": "B",
-          "explanation": "Baiting involves promising an item or good (like a free download or USB drive) to entice victims into a trap.",
-          "topic": "Social Engineering"
-        },
-        {
-          "text": "What is the primary function of an Operating System (OS)?",
-          "options": {
-            "A": "To compile source code into executable programs.",
-            "B": "To perform network vulnerability scans.",
-            "C": "To act as an interface between the user, hardware, and applications while managing resources.",
-            "D": "To encrypt all incoming and outgoing network traffic."
-          },
-          "correctAnswer": "C",
-          "explanation": "An Operating System acts as an interface between user applications and the hardware while managing system resources.",
+          "explanation": "An Operating System acts as an interface between user applications and hardware while managing resources.",
           "topic": "Operating Systems"
         },
         {
-          "text": "In the Linux Directory Structure, which directory primarily holds system configuration files?",
-          "options": {
-            "A": "/bin",
-            "B": "/home",
-            "C": "/var",
-            "D": "/etc"
-          },
-          "correctAnswer": "D",
-          "explanation": "The /etc directory contains system-wide configuration files in Linux.",
-          "topic": "Linux Administration"
-        },
-        {
-          "text": "When setting file permissions in Linux using numeric values, what number represents the 'Read' permission?",
+          "text": "When setting file permissions in Linux using numeric values, what number represents the \"Read\" permission?",
           "options": {
             "A": "1",
             "B": "2",
@@ -334,71 +202,59 @@ export async function seedProductionClasptek() {
           "topic": "Linux Administration"
         },
         {
-          "text": "What is the goal of 'System Hardening'?",
+          "text": "What is the primary purpose of system hardening?",
           "options": {
-            "A": "To increase the physical durability of server hardware.",
-            "B": "To secure a system by reducing its attack surface and removing unnecessary services.",
-            "C": "To intentionally infect a machine with malware to study it.",
-            "D": "To ensure maximum internet bandwidth is utilized."
+            "A": "Upgrading physical server components",
+            "B": "Securing a system by reducing its attack surface",
+            "C": "Implementing automated vulnerability scanners",
+            "D": "Increasing network bandwidth"
           },
           "correctAnswer": "B",
           "explanation": "System Hardening is the process of securing a system by minimizing its vulnerabilities and reducing its attack surface.",
           "topic": "System Security"
         },
         {
-          "text": "How is 'Cyber Hygiene' best described?",
+          "text": "What social engineering tactic involves attackers using phone calls to impersonate authority figures?",
           "options": {
-            "A": "The physical cleaning of keyboards and monitors.",
-            "B": "Daily practices and habits used to keep devices and data secure from online threats.",
-            "C": "A specialized software tool that removes computer viruses.",
-            "D": "The process of wiping a hard drive before disposal."
-          },
-          "correctAnswer": "B",
-          "explanation": "Cyber hygiene refers to daily practices and habits that improve security postures and keep devices safe.",
-          "topic": "Security Awareness"
-        },
-        {
-          "text": "What are the correct steps in the TCP 3-Way Handshake used to establish a reliable connection?",
-          "options": {
-            "A": "HELLO, READY, GO",
-            "B": "PING, PONG, ACK",
-            "C": "SYN, SYN-ACK, ACK",
-            "D": "REQ, RES, ACK"
+            "A": "Phishing",
+            "B": "Baiting",
+            "C": "Vishing",
+            "D": "Tailgating"
           },
           "correctAnswer": "C",
-          "explanation": "The TCP handshake process uses SYN, SYN-ACK, and ACK flags to establish connections.",
-          "topic": "Networking Protocols"
+          "explanation": "Vishing (voice phishing) uses phone calls for social engineering.",
+          "topic": "Social Engineering"
         },
         {
-          "text": "What is the function of the Domain Name System (DNS)?",
+          "text": "Which network service translates human-readable domain names (like www.example.com) into IP addresses?",
           "options": {
-            "A": "To translate human-readable domain names into IP addresses.",
-            "B": "To encrypt traffic between a web browser and a server.",
-            "C": "To block malicious packets from entering the local network.",
-            "D": "To automatically assign IP addresses to new devices on a network."
+            "A": "DHCP",
+            "B": "DNS",
+            "C": "ARP",
+            "D": "NAT"
           },
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "explanation": "DNS translates domain names like example.com to machine-routable IP addresses.",
           "topic": "Networking Protocols"
         },
         {
-          "text": "Which network device is responsible for connecting multiple different networks and directing data traffic between them using IP addresses?",
+          "text": "Which access control model assigns permissions based on a user's job function or group within an organization?",
           "options": {
-            "A": "Switch",
-            "B": "Hub",
-            "C": "Router",
-            "D": "Modem"
+            "A": "Discretionary Access Control (DAC)",
+            "B": "Role-Based Access Control (RBAC)",
+            "C": "Mandatory Access Control (MAC)",
+            "D": "Physical Access Control"
           },
-          "correctAnswer": "C",
-          "explanation": "A Router routes packets between different networks at Layer 3 of the OSI model using IP addresses.",
-          "topic": "Network Devices"
+          "correctAnswer": "B",
+          "explanation": "RBAC assigns permissions based on job roles or functions within an organization.",
+          "topic": "Access Control"
         },
         {
-          "text": "Which network device connects multiple devices within the same Local Area Network (LAN) and uses MAC addresses for packet forwarding?",
+          "text": "Which network device operates at Layer 2 and uses MAC addresses to forward packets to multiple devices within the same LAN?",
           "options": {
             "A": "Router",
-            "B": "Firewall",
-            "C": "Access Point (AP)",
+            "B": "Hub",
+            "C": "Modem",
             "D": "Switch"
           },
           "correctAnswer": "D",
@@ -406,136 +262,100 @@ export async function seedProductionClasptek() {
           "topic": "Network Devices"
         },
         {
-          "text": "What type of firewall tracks sessions and connection states to make intelligent traffic decisions?",
+          "text": "What are the correct steps in the TCP 3-Way Handshake used to establish a reliable connection?",
+          "options": {
+            "A": "SYN, SYN-ACK, ACK",
+            "B": "REQ, RES, ACK",
+            "C": "PING, PONG, ACK",
+            "D": "HELLO, READY, GO"
+          },
+          "correctAnswer": "A",
+          "explanation": "The TCP handshake process uses SYN, SYN-ACK, and ACK flags to establish connections.",
+          "topic": "Networking Protocols"
+        },
+        {
+          "text": "Which network security zone is designed to specifically host public-facing servers like web or mail servers?",
+          "options": {
+            "A": "Internal Network",
+            "B": "Perimeter Network",
+            "C": "Demilitarized Zone (DMZ)",
+            "D": "Virtual Local Area Network (VLAN)"
+          },
+          "correctAnswer": "C",
+          "explanation": "A DMZ is a physical or logical subnetwork that contains and exposes an organization's external-facing services.",
+          "topic": "Network Security"
+        },
+        {
+          "text": "Which tool is a free, open-source network protocol analyzer used for capturing live packets?",
+          "options": {
+            "A": "Nmap",
+            "B": "Snort",
+            "C": "Wireshark",
+            "D": "Metasploit"
+          },
+          "correctAnswer": "C",
+          "explanation": "Wireshark is a popular network protocol analyzer used to capture and inspect packets.",
+          "topic": "Ethical Hacking Tools"
+        },
+        {
+          "text": "Which dynamic routing protocol utilizes the Dijkstra algorithm and divides the network into areas to optimize routing?",
+          "options": {
+            "A": "BGP",
+            "B": "RIP",
+            "C": "EIGRP",
+            "D": "OSPF"
+          },
+          "correctAnswer": "D",
+          "explanation": "OSPF (Open Shortest Path First) is a link-state routing protocol that utilizes Dijkstra's algorithm.",
+          "topic": "Routing Protocols"
+        },
+        {
+          "text": "What type of firewall tracks active sessions and connection states to make more intelligent traffic decisions?",
           "options": {
             "A": "Stateless Firewall",
             "B": "Stateful Firewall",
-            "C": "Hub Firewall",
-            "D": "Proxy Server"
+            "C": "Packet-Filtering Firewall",
+            "D": "Web Application Firewall"
           },
           "correctAnswer": "B",
           "explanation": "A Stateful Firewall tracks connection states and sessions to perform packet filtering.",
           "topic": "Firewalls"
         },
         {
-          "text": "Using tools like Nmap to directly probe a target for open ports and services is an example of what?",
+          "text": "In Cisco networking, what is the defining characteristic of a Standard Access Control List (ACL)?",
           "options": {
-            "A": "Passive Reconnaissance",
-            "B": "Active Reconnaissance",
-            "C": "Weaponization",
-            "D": "Post-Exploitation"
-          },
-          "correctAnswer": "B",
-          "explanation": "Active Reconnaissance involves directly interacting with the target system to discover open ports and services.",
-          "topic": "Ethical Hacking"
-        },
-        {
-          "text": "What is the primary function of the Nmap tool in ethical hacking?",
-          "options": {
-            "A": "To crack password hashes offline.",
-            "B": "To act as a web vulnerability scanner.",
-            "C": "To discover hosts, open ports, and services on a network.",
-            "D": "To launch phishing campaigns."
-          },
-          "correctAnswer": "C",
-          "explanation": "Nmap is primarily used for host discovery, port scanning, and service version detection.",
-          "topic": "Ethical Hacking Tools"
-        },
-        {
-          "text": "Which of the following best describes OpenVAS?",
-          "options": {
-            "A": "A password management vault.",
-            "B": "A comprehensive automated vulnerability assessment platform.",
-            "C": "A Linux operating system distribution.",
-            "D": "A dynamic routing protocol."
-          },
-          "correctAnswer": "B",
-          "explanation": "OpenVAS is an open-source, comprehensive vulnerability scanning and assessment platform.",
-          "topic": "Vulnerability Scanning"
-        },
-        {
-          "text": "In the OWASP Top 10 web risks, what does 'A01' represent?",
-          "options": {
-            "A": "Injection",
-            "B": "Cryptographic Failures",
-            "C": "Security Misconfiguration",
-            "D": "Broken Access Control"
-          },
-          "correctAnswer": "D",
-          "explanation": "In the latest OWASP Top 10, A01 represents Broken Access Control.",
-          "topic": "OWASP Top 10"
-        },
-        {
-          "text": "For what primary purpose do security professionals use Burp Suite?",
-          "options": {
-            "A": "As a web proxy to intercept and manipulate HTTP traffic.",
-            "B": "To capture and analyze Layer 2 network packets.",
-            "C": "To generate graphical network diagrams.",
-            "D": "To execute brute-force attacks on RDP servers."
+            "A": "It filters based on source IP only.",
+            "B": "It filters based on source, destination, protocol, and port.",
+            "C": "It automatically encrypts the traffic it allows.",
+            "D": "It can only be applied to outbound traffic."
           },
           "correctAnswer": "A",
-          "explanation": "Burp Suite is a web proxy used to intercept, inspect, and modify HTTP/S traffic between browsers and web applications.",
-          "topic": "Ethical Hacking Tools"
+          "explanation": "Standard ACLs filter traffic based only on the source IP address.",
+          "topic": "Cisco Networking"
         },
         {
-          "text": "What post-exploitation action involves an attacker increasing their access from a limited user to a root or admin account?",
+          "text": "Which command is used on a Cisco device to encrypt plaintext passwords in the configuration file?",
           "options": {
-            "A": "Pivoting",
-            "B": "Lateral Movement",
-            "C": "Privilege Escalation",
-            "D": "Data Exfiltration"
+            "A": "enable secret",
+            "B": "login local",
+            "C": "service password-encryption",
+            "D": "transport input ssh"
           },
           "correctAnswer": "C",
-          "explanation": "Privilege Escalation is the process of gaining higher level privileges than initially assigned.",
-          "topic": "Post-Exploitation"
+          "explanation": "The `service password-encryption` command encrypts plaintext passwords in the Cisco configuration file.",
+          "topic": "Cisco Networking"
         },
         {
-          "text": "In the Metasploit Framework, what term is used for the code that is executed on the target system after an exploit is successful?",
+          "text": "Which protocol is primarily used to collect and store log messages from various network devices?",
           "options": {
-            "A": "Handler",
-            "B": "Payload",
-            "C": "Auxiliary",
-            "D": "Encoder"
-          },
-          "correctAnswer": "B",
-          "explanation": "The payload is the code that runs on the target system after successful exploitation (e.g., establishing a shell).",
-          "topic": "Ethical Hacking Tools"
-        },
-        {
-          "text": "What is the primary benefit of Multi-Factor Authentication (MFA)?",
-          "options": {
-            "A": "It encrypts user data stored on local hard drives.",
-            "B": "It adds a strong layer of protection by requiring two or more verification methods.",
-            "C": "It completely automates the password creation process.",
-            "D": "It eliminates the need for firewalls in a corporate network."
-          },
-          "correctAnswer": "B",
-          "explanation": "MFA drastically improves security by verifying multiple independent credentials across different factor categories.",
-          "topic": "Authentication"
-        },
-        {
-          "text": "How many bits constitute an IPv4 address?",
-          "options": {
-            "A": "16-bit",
-            "B": "64-bit",
-            "C": "128-bit",
-            "D": "32-bit"
-          },
-          "correctAnswer": "D",
-          "explanation": "An IPv4 address consists of 32 bits divided into four octets.",
-          "topic": "Networking Basics"
-        },
-        {
-          "text": "What is the key difference between Private and Public IP addresses?",
-          "options": {
-            "A": "Public IPs are only for servers, while private IPs are for mobile phones.",
-            "B": "Private IPs are used on the Internet, while public IPs are for local networks.",
-            "C": "Private IPs are used within local networks, while public IPs are assigned by ISPs and visible on the Internet.",
-            "D": "Private IPs are fully encrypted by default, whereas public IPs are unencrypted."
+            "A": "SNMP",
+            "B": "SSH",
+            "C": "Syslog",
+            "D": "SMTP"
           },
           "correctAnswer": "C",
-          "explanation": "Private IP addresses are reserved for internal use inside local networks, while public IPs are routable on the global Internet.",
-          "topic": "Networking Basics"
+          "explanation": "Syslog is a standard protocol for collecting and sending log messages from network devices.",
+          "topic": "Network Protocols"
         }
       ];
 
@@ -553,7 +373,7 @@ export async function seedProductionClasptek() {
           questionType: 'MCQ'
         }))
       });
-      console.log('🎉 [SEED] Imported 40 questions for Clasptek_ Mock in production!');
+      console.log('🎉 [SEED] Imported 25 questions for Clasptek_ Mock in production!');
     } else {
       console.log(`ℹ️ [SEED] Clasptek_ Mock already has ${count} questions. Skipping import.`);
     }

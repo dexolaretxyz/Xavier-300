@@ -16,7 +16,7 @@ api.interceptors.request.use(
       const token = localStorage.getItem('xavier_access_token');
       if (token && config.headers) {
         config.headers.Authorization = `Bearer ${token}`;
-        document.cookie = `xavier_access_token=${token}; path=/; max-age=604800`;
+        document.cookie = `xavier_access_token=${token}; path=/; max-age=604800; SameSite=Lax; Secure`;
       }
     }
     return config;
@@ -97,7 +97,7 @@ api.interceptors.response.use(
         if (typeof window !== 'undefined') {
           localStorage.removeItem('xavier_access_token');
           localStorage.removeItem('xavier_refresh_token');
-          document.cookie = 'xavier_access_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+          document.cookie = 'xavier_access_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Lax; Secure';
           window.location.href = '/login';
         }
         return Promise.reject(error);
@@ -109,7 +109,7 @@ api.interceptors.response.use(
 
         if (typeof window !== 'undefined') {
           localStorage.setItem('xavier_access_token', newAccessToken);
-          document.cookie = `xavier_access_token=${newAccessToken}; path=/; max-age=604800`;
+          document.cookie = `xavier_access_token=${newAccessToken}; path=/; max-age=604800; SameSite=Lax; Secure`;
         }
         
         api.defaults.headers.common['Authorization'] = `Bearer ${newAccessToken}`;
@@ -122,7 +122,7 @@ api.interceptors.response.use(
         if (typeof window !== 'undefined') {
           localStorage.removeItem('xavier_access_token');
           localStorage.removeItem('xavier_refresh_token');
-          document.cookie = 'xavier_access_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+          document.cookie = 'xavier_access_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Lax; Secure';
           window.location.href = '/login';
         }
         return Promise.reject(refreshError);

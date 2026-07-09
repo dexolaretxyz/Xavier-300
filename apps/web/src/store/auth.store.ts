@@ -40,6 +40,7 @@ export const useAuthStore = create<AuthState>((set) => ({
         'path=/',
         'max-age=86400',
         'SameSite=Lax',
+        'Secure',
       ].join('; ');
     }
     
@@ -54,7 +55,7 @@ export const useAuthStore = create<AuthState>((set) => ({
     } finally {
       if (typeof window !== 'undefined') {
         // Clear cookie on logout
-        document.cookie = 'xavier_access_token=; path=/; max-age=0';
+        document.cookie = 'xavier_access_token=; path=/; max-age=0; SameSite=Lax; Secure';
         localStorage.removeItem('xavier_access_token');
         localStorage.removeItem('xavier_refresh_token');
         window.location.href = '/login';
@@ -71,7 +72,7 @@ export const useAuthStore = create<AuthState>((set) => ({
       if (typeof window !== 'undefined') {
         const token = localStorage.getItem('xavier_access_token');
         if (token) {
-          document.cookie = `xavier_access_token=${token}; path=/; max-age=604800`;
+          document.cookie = `xavier_access_token=${token}; path=/; max-age=604800; SameSite=Lax; Secure`;
           const response = await api.get('/api/users/me');
           set({ user: response.data.data, isAuthenticated: true });
         } else {

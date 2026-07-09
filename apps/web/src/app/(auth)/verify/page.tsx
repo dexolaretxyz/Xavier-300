@@ -95,7 +95,7 @@ function VerifyContent() {
   // VERIFYING STATE
   if (status === 'verifying') {
     return (
-      <div className="min-h-screen bg-bg-primary flex items-center justify-center px-4">
+      <div className="min-h-screen w-full bg-bg-primary flex items-center justify-center px-4">
         <div className="bg-bg-secondary border border-border-subtle rounded-2xl p-8 max-w-md w-full text-center shadow-sm">
           <div className="w-16 h-16 border-4 border-accent-primary border-t-transparent rounded-full animate-spin mx-auto mb-6" />
           <h2 className="font-display font-bold text-[28px] text-accent-primary mb-2">
@@ -112,7 +112,7 @@ function VerifyContent() {
   // SUCCESS STATE
   if (status === 'success') {
     return (
-      <div className="min-h-screen bg-bg-primary flex items-center justify-center px-4">
+      <div className="min-h-screen w-full bg-bg-primary flex items-center justify-center px-4">
         <div className="bg-bg-secondary border border-border-subtle rounded-2xl p-8 max-w-md w-full text-center shadow-sm">
           <div className="text-6xl mb-6">🎉</div>
           <h2 className="font-display font-bold text-[28px] text-accent-primary mb-2">
@@ -132,7 +132,7 @@ function VerifyContent() {
   // ERROR STATE
   if (status === 'error') {
     return (
-      <div className="min-h-screen bg-bg-primary flex items-center justify-center px-4">
+      <div className="min-h-screen w-full bg-bg-primary flex items-center justify-center px-4">
         <div className="bg-bg-secondary border border-border-subtle rounded-2xl p-8 max-w-md w-full text-center shadow-sm">
           <div className="text-6xl mb-6">❌</div>
           <h2 className="font-display font-bold text-[28px] text-accent-primary mb-2">
@@ -170,62 +170,58 @@ function VerifyContent() {
 
   // DEFAULT STATE — waiting for user to check email
   return (
-    <div className="min-h-screen bg-bg-primary flex items-center justify-center px-4">
-      <div className="bg-bg-secondary border border-border-subtle rounded-2xl p-8 max-w-md w-full text-center shadow-sm">
+    <div className="min-h-screen w-full bg-bg-primary flex items-center justify-center px-4">
+      <div className="bg-bg-secondary rounded-2xl p-10 max-w-md w-full border border-border-subtle shadow-md">
         
-        {/* Icon */}
-        <div className="w-16 h-16 bg-bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
-          <span className="text-3xl text-accent-primary">📧</span>
-        </div>
+        {/* NO ICON HERE */}
         
-        <h2 className="font-display font-bold text-[28px] text-accent-primary mb-3 leading-tight">
+        <h2 className="font-display text-3xl font-bold text-text-primary mb-3 text-center">
           Check Your Email
         </h2>
         
-        <p className="text-text-muted font-ui text-base leading-relaxed mb-2">
+        <p className="text-text-secondary font-ui text-center mb-2">
           We sent a verification link to
         </p>
-        <p className="text-accent-primary font-ui font-semibold text-lg mb-6">
-          {email || 'your email address'}
+        <p className="text-accent-primary font-ui font-semibold text-lg mb-6 text-center">
+          {email}
         </p>
 
-        {/* Instructions box */}
-        <div className="bg-bg-primary rounded-xl p-5 mb-6 text-left space-y-3 border border-border-subtle">
+        {/* Steps box */}
+        <div className="bg-bg-primary rounded-xl p-5 mb-6 space-y-3">
           <div className="flex items-start gap-3">
-            <span className="text-lg">1️⃣</span>
+            <span className="text-sm font-bold text-accent-primary bg-accent-light w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">1</span>
             <p className="text-text-secondary font-ui text-sm">
               Open your email inbox
             </p>
           </div>
           <div className="flex items-start gap-3">
-            <span className="text-lg">2️⃣</span>
+            <span className="text-sm font-bold text-accent-primary bg-accent-light w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">2</span>
             <p className="text-text-secondary font-ui text-sm">
               Find the email from <strong>Xavier 300</strong>
             </p>
           </div>
           <div className="flex items-start gap-3">
-            <span className="text-lg">3️⃣</span>
+            <span className="text-sm font-bold text-accent-primary bg-accent-light w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">3</span>
             <p className="text-text-secondary font-ui text-sm">
               Click the <strong>"Verify My Email"</strong> button
             </p>
           </div>
           <div className="flex items-start gap-3">
-            <span className="text-lg">4️⃣</span>
+            <span className="text-sm font-bold text-accent-primary bg-accent-light w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">4</span>
             <p className="text-text-secondary font-ui text-sm">
               You will be automatically logged in
             </p>
           </div>
         </div>
 
-        <p className="text-text-muted font-ui text-sm mb-2">
+        <p className="text-text-muted font-ui text-sm text-center mb-4">
           Can't find the email? Check your spam folder.
         </p>
 
-        {/* Resend button */}
         <button
           onClick={handleResend}
           disabled={status === 'resending' || resendCooldown > 0}
-          className="w-full py-4 rounded-lg border border-border-medium text-text-secondary font-ui font-medium mt-4 hover:bg-bg-primary disabled:opacity-60 transition-all cursor-pointer"
+          className="w-full py-3 rounded-xl border border-border-medium text-text-secondary font-ui font-medium mb-3 hover:bg-bg-elevated disabled:opacity-60 transition-all cursor-pointer"
         >
           {status === 'resending' 
             ? 'Sending...' 
@@ -236,10 +232,11 @@ function VerifyContent() {
 
         <button
           onClick={() => router.push('/login')}
-          className="w-full py-3 rounded-lg text-text-muted font-ui text-sm mt-2 hover:text-text-primary transition-all cursor-pointer"
+          className="w-full py-3 rounded-xl text-text-muted font-ui text-sm hover:text-text-primary transition-all text-center cursor-pointer"
         >
           Back to Login
         </button>
+
       </div>
     </div>
   )
