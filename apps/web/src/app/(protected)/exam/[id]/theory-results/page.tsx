@@ -44,6 +44,14 @@ export default function TheoryResultsPage() {
   const theoryAnswers = (attempt.theoryAnswers as Record<string, string>) || 
                         (attempt.answers as Record<string, string>) || {};
   const isMarked = Object.keys(theoryScores).length > 0;
+  
+  const hasMarkingFailure = Object.values(theoryScores).some(
+    (s: any) => s.feedback && (
+      s.feedback.toLowerCase().includes('unavailable') || 
+      s.feedback.toLowerCase().includes('failed')
+    )
+  );
+
   const timeTakenMinutes = Math.floor((attempt.timeTaken || 0) / 60);
   const timeTakenSeconds = (attempt.timeTaken || 0) % 60;
 
@@ -78,6 +86,20 @@ export default function TheoryResultsPage() {
             <h3 className="font-ui font-bold text-red-800 dark:text-red-400 text-lg">Integrity Violation</h3>
             <p className="text-red-700 dark:text-red-300 mt-1 font-ui">Your exam was automatically submitted due to a violation of the anti-cheat rules.</p>
           </div>
+        </div>
+      )}
+
+      {/* AI marking failed banner */}
+      {hasMarkingFailure && (
+        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6">
+          <p className="text-amber-800 font-ui font-semibold mb-1">
+            ⚠️ Some Questions Could Not Be Marked
+          </p>
+          <p className="text-amber-700 font-ui text-sm">
+            AI marking was temporarily unavailable for some questions.
+            Affected questions have been scored 0. 
+            Please contact support to request a re-mark.
+          </p>
         </div>
       )}
 
