@@ -1,0 +1,47 @@
+services:
+  - type: web
+    name: xavier-300-api
+    runtime: node
+    region: frankfurt # closest Render region to Supabase eu-west-1 (Ireland)
+    plan: free
+    rootDir: apps/api
+    # prisma + typescript are devDependencies, so install them explicitly for the build
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20.12.2
+      - key: NODE_ENV
+        value: production
+      # Supabase transaction pooler (port 6543, ends with ?pgbouncer=true)
+      - key: DATABASE_URL
+        sync: false
+      # Supabase session pooler (port 5432). Only used by the Prisma CLI.
+      - key: DIRECT_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      # Used as the CORS allowed origin and in email links
+      - key: NEXT_PUBLIC_APP_URL
+        value: https://xavier-300.vercel.app
+      - key: EMAIL_FROM
+        value: noreply@xavier300.com.ng
+      - key: RESEND_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: PAYSTACK_SECRET_KEY
+        sync: false
+      - key: VAPID_EMAIL
+        sync: false
+      - key: VAPID_PRIVATE_KEY
+        sync: false
+      - key: NEXT_PUBLIC_VAPID_PUBLIC_KEY
+        sync: false
+      # Optional: leave unset to use the in-memory fallback (no Redis needed)
+      # - key: REDIS_URL
+      #   sync: false
